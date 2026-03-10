@@ -110,10 +110,13 @@ def get_closing_pr(owner: str, repo: str, issue_number: int) -> dict | None:
       3. Return only the PR whose merge actually triggered the close
     """
     url = f"https://api.github.com/repos/{owner}/{repo}/issues/{issue_number}/timeline"
+    events = []
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=15)
-        resp.raise_for_status()
-        events = resp.json()
+        while url:
+            resp = requests.get(url, headers=HEADERS, timeout=15)
+            resp.raise_for_status()
+            events.extend(resp.json())
+            url = resp.links.get("next", {}).get("url")
     except requests.HTTPError as e:
         log.warning(f"Timeline fetch failed for {owner}/{repo}#{issue_number}: {e}")
         return None

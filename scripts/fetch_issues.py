@@ -111,6 +111,7 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
                     "created_at": issue["created_at"],
                     "updated_at": issue["updated_at"],
                     "author": issue["user"]["login"],
+                    "listed_at": datetime.now(timezone.utc).isoformat(),
                 })
 
     # Shuffle and cap to configured limits

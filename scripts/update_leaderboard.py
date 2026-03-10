@@ -137,6 +137,7 @@ def get_closing_pr(owner: str, repo: str, issue_number: int) -> dict | None:
                                 "author_avatar": pr_data["user"]["avatar_url"],
                                 "pr_url": pr_data["html_url"],
                                 "merged_at": pr_data["merged_at"],
+                                "created_at": pr_data["created_at"],
                             }
     return None
 
@@ -177,6 +178,13 @@ def process_week(week_id: str, week_data: dict, scores: dict, issue_author_map: 
 
             pr = get_closing_pr(issue["owner"], issue["repo"], issue["number"])
             if not pr:
+                continue
+
+            # Enforce: PR must have been opened within 7 days of the issue being listed
+            listed_at = datetime.fromisoformat(issue.get("listed_at", week_data["fetched_at"]))
+            pr_created_at = datetime.fromisoformat(pr["created_at"].replace("Z", "+00:00"))
+            if pr_created_at > listed_at + timedelta(days=7):
+                log.info(f"Skipping {issue_key}: PR opened too late ({pr_created_at} > {listed_at + timedelta(days=7)})")
                 continue
 
             author = pr["author"]

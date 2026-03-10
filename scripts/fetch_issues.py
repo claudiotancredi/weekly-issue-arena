@@ -91,7 +91,7 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
     limits = config["limits"]
 
     results = {"gfi": [], "bug": [], "hard": []}
-
+    listed_at = datetime.now(timezone.utc).isoformat()  # compute once per run
     for repo_cfg in repos:
         owner = repo_cfg["owner"]
         repo = repo_cfg["repo"]
@@ -101,17 +101,20 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
             labels = label_mappings[category]
             issues = get_issues_for_repo(owner, repo, labels, limit=5)
             for issue in issues:
+                url_parts = issue["html_url"].split("/")  # https://github.com/OWNER/REPO/issues/N
+                owner_actual = url_parts[3]
+                repo_actual = url_parts[4]
                 results[category].append({
                     "number": issue["number"],
                     "title": issue["title"],
                     "url": issue["html_url"],
-                    "owner": owner,
-                    "repo": repo,
-                    "repo_url": f"https://github.com/{owner}/{repo}",
+                    "owner": owner_actual,
+                    "repo": repo_actual,
+                    "repo_url": f"https://github.com/{owner_actual}/{repo_actual}",
                     "created_at": issue["created_at"],
                     "updated_at": issue["updated_at"],
                     "author": issue["user"]["login"],
-                    "listed_at": datetime.now(timezone.utc).isoformat(),
+                    "listed_at": listed_at,
                 })
 
     # Shuffle and cap to configured limits

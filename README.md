@@ -13,7 +13,7 @@ No registration. No sign-ups. Just open source.
 Every **Friday at 17:00 UTC**, a GitHub Action automatically:
 1. Pulls fresh issues (labeled `good first issue`, `bug`, or `hard`) from a curated list of active repos
 2. Updates this README with the new weekly batch
-3. Tracks which PRs from last week's issues got merged, and awards points
+3. Archives the previous week's issues for contribution tracking
 
 You don't need to register — contributions are detected automatically via GitHub's public metadata.
 
@@ -123,14 +123,14 @@ You don't need to register — contributions are detected automatically via GitH
 
 Want to see what repos we pull issues from, or suggest a new one?
 → See [`config/repos.yml`](config/repos.yml)
-→ Open an [issue](../../issues) or [discussion](../../discussions) to suggest additions
+→ Open an [issue](https://github.com/claudiotancredi/weekly-issue-arena/issues) or [discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions) to suggest additions
 
 ---
 
 ## 🙋 FAQ
 
 **Q: My PR was merged but I didn't get points.**
-Open a thread in [Discussions](../../discussions). We track these to improve the automation.
+Open a thread in [Discussions](https://github.com/claudiotancredi/weekly-issue-arena/discussions). We track these to improve the automation.
 
 **Q: Can I request a specific repo to be added?**
 Yes! See [`config/repos.yml`](config/repos.yml) and open a PR or Discussion.
@@ -153,9 +153,9 @@ Via GitHub Actions + GitHub REST API. See [`.github/workflows/`](.github/workflo
 
 ## 🫂 Contributing to the Arena
 
-- 💬 [Start a Discussion](../../discussions) — ideas, questions, edge cases
-- 🪲 [File an Issue](../../issues) — bugs in the automation, rule suggestions
-- 📦 [Open a PR](../../pulls) — fix something, add a repo to the pool, improve the scripts
+- 💬 [Start a Discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions) — ideas, questions, edge cases
+- 🪲 [File an Issue](https://github.com/claudiotancredi/weekly-issue-arena/issues) — bugs in the automation, rule suggestions
+- 📦 [Open a PR](https://github.com/claudiotancredi/weekly-issue-arena/pulls) — fix something, add a repo to the pool, improve the scripts
 
 ---
 

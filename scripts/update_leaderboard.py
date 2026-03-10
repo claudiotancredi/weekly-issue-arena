@@ -103,43 +103,88 @@ def save_scores(scores: dict) -> None:
 
 def get_closing_pr(owner: str, repo: str, issue_number: int) -> dict | None:
     """
-    Check if an issue has been closed by a PR.
-    Uses the GitHub timeline API to find cross-references and closes events.
-    Returns the PR data if found, else None.
+    Find the specific PR that closed this issue.
+    Strategy:
+      1. Look for a 'closed' event in the timeline with a commit_id or source PR
+      2. Cross-reference with merged PRs that reference this issue
+      3. Return only the PR whose merge actually triggered the close
     """
     url = f"https://api.github.com/repos/{owner}/{repo}/issues/{issue_number}/timeline"
     try:
-        resp = requests.get(url, headers={**HEADERS, "Accept": "application/vnd.github.mockingbird-preview+json"}, timeout=15)
+        resp = requests.get(url, headers=HEADERS, timeout=15)
         resp.raise_for_status()
         events = resp.json()
     except requests.HTTPError as e:
         log.warning(f"Timeline fetch failed for {owner}/{repo}#{issue_number}: {e}")
         return None
 
+    # Step 1: collect all merged PRs that cross-referenced this issue
+    merged_prs = {}  # pr_number -> pr_data
+    for event in events:
+        if event.get("event") != "cross-referenced":
+            continue
+        source = event.get("source", {})
+        issue_data = source.get("issue", {})
+        if not issue_data.get("pull_request"):
+            continue
+        if issue_data.get("state") != "closed":
+            continue
+        pr_api_url = issue_data.get("pull_request", {}).get("url")
+        if not pr_api_url:
+            continue
+        try:
+            pr_resp = requests.get(pr_api_url, headers=HEADERS, timeout=10)
+            pr_resp.raise_for_status()
+            pr_data = pr_resp.json()
+            if pr_data.get("merged"):
+                merged_prs[pr_data["number"]] = pr_data
+        except requests.HTTPError:
+            continue
+
+    if not merged_prs:
+        return None
+
+    # Step 2: if only one merged PR, that's our answer
+    if len(merged_prs) == 1:
+        pr_data = next(iter(merged_prs.values()))
+        return {
+            "author": pr_data["user"]["login"],
+            "author_avatar": pr_data["user"]["avatar_url"],
+            "pr_url": pr_data["html_url"],
+            "merged_at": pr_data["merged_at"],
+            "created_at": pr_data["created_at"],
+        }
+
+    # Step 3: multiple merged PRs — find the one whose merge_commit_sha
+    # matches the commit_id in the 'closed' event
+    closing_commit = None
     for event in events:
         if event.get("event") == "closed" and event.get("commit_id"):
-            # Closed via commit — try to attribute to a PR
-            pass
-        if event.get("event") == "cross-referenced":
-            source = event.get("source", {})
-            issue_data = source.get("issue", {})
-            pr_url = issue_data.get("pull_request", {}).get("html_url")
-            if pr_url and issue_data.get("state") == "closed":
-                # Verify the PR was merged (not just closed)
-                pr_api_url = issue_data.get("pull_request", {}).get("url")
-                if pr_api_url:
-                    pr_resp = requests.get(pr_api_url, headers=HEADERS, timeout=10)
-                    if pr_resp.ok:
-                        pr_data = pr_resp.json()
-                        if pr_data.get("merged"):
-                            return {
-                                "author": pr_data["user"]["login"],
-                                "author_avatar": pr_data["user"]["avatar_url"],
-                                "pr_url": pr_data["html_url"],
-                                "merged_at": pr_data["merged_at"],
-                                "created_at": pr_data["created_at"],
-                            }
-    return None
+            closing_commit = event["commit_id"]
+            break
+
+    if closing_commit:
+        for pr_data in merged_prs.values():
+            if pr_data.get("merge_commit_sha") == closing_commit:
+                return {
+                    "author": pr_data["user"]["login"],
+                    "author_avatar": pr_data["user"]["avatar_url"],
+                    "pr_url": pr_data["html_url"],
+                    "merged_at": pr_data["merged_at"],
+                    "created_at": pr_data["created_at"],
+                }
+
+    # Step 4: no closing commit match — fall back to the most recently merged PR
+    # This handles cases where GitHub doesn't emit a commit_id on the closed event
+    most_recent = max(merged_prs.values(), key=lambda p: p["merged_at"])
+    log.info(f"Could not determine closing PR via commit — falling back to most recently merged PR for {owner}/{repo}#{issue_number}")
+    return {
+        "author": most_recent["user"]["login"],
+        "author_avatar": most_recent["user"]["avatar_url"],
+        "pr_url": most_recent["html_url"],
+        "merged_at": most_recent["merged_at"],
+        "created_at": most_recent["created_at"],
+    }
 
 
 def check_issue_still_open(owner: str, repo: str, issue_number: int) -> bool:

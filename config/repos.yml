@@ -1,0 +1,567 @@
+# Repositories tracked by the Weekly Issue Arena
+#
+# Focused on: Machine Learning, AI, Earth Observation, Satellite Data, Geospatial
+#
+# Inclusion criteria:
+#   - Actively maintained (commits within the last 6 months)
+#   - Uses standard GitHub issue labels (good first issue, bug, etc.)
+#   - Welcomes external contributions
+#
+# To suggest a new repo: open a PR editing this file or start a Discussion.
+
+repos:
+
+  # ---------------------------------------------------------------------------
+  # 🛰️  SATELLITE & EARTH OBSERVATION
+  # ---------------------------------------------------------------------------
+
+  - owner: torchgeo
+    repo: torchgeo
+    tags: [python, ml, satellite, geospatial, pytorch]
+    # PyTorch library for geospatial deep learning. Very active, has contribution guide.
+
+  - owner: CS-SI
+    repo: eodag
+    tags: [python, satellite, earth-observation, data-access]
+    # Earth Observation Data Access Gateway. Actively maintained by CS Group (French space).
+
+  - owner: sentinel-hub
+    repo: sentinelhub-py
+    tags: [python, satellite, sentinel, data-access]
+    # Python library for Sentinel Hub services.
+
+  - owner: stac-utils
+    repo: pystac
+    tags: [python, stac, satellite, geospatial]
+    # Python library for working with STAC (SpatioTemporal Asset Catalog).
+
+  - owner: stac-utils
+    repo: pystac-client
+    tags: [python, stac, satellite, geospatial]
+    # Python client for searching STAC APIs.
+
+  - owner: stac-utils
+    repo: stac-fastapi
+    tags: [python, stac, api, satellite]
+    # FastAPI implementation of the STAC API spec.
+
+  - owner: giswqs
+    repo: geemap
+    tags: [python, google-earth-engine, geospatial, satellite]
+    # Interactive mapping with Google Earth Engine. Very active community.
+
+  - owner: giswqs
+    repo: leafmap
+    tags: [python, geospatial, mapping, satellite]
+    # Python package for geospatial analysis and interactive mapping.
+
+  - owner: rasterio
+    repo: rasterio
+    tags: [python, raster, geospatial, satellite]
+    # Reads and writes geospatial raster data. Foundational EO library.
+
+  - owner: corteva
+    repo: rioxarray
+    tags: [python, raster, xarray, geospatial]
+    # Geospatial xarray extension powered by rasterio.
+
+  - owner: geopandas
+    repo: geopandas
+    tags: [python, geospatial, vector, pandas]
+    # Geospatial data operations in Python. Constantly active.
+
+  - owner: pydata
+    repo: xarray
+    tags: [python, array, geospatial, scientific]
+    # N-D labeled arrays and datasets. Used throughout EO for satellite cubes.
+
+  - owner: pyproj4
+    repo: pyproj
+    tags: [python, geospatial, projection, crs]
+    # Python interface to PROJ for cartographic projections.
+
+  - owner: Toblerity
+    repo: Fiona
+    tags: [python, vector, geospatial, io]
+    # Python wrapper for OGR for reading/writing geospatial vector data.
+
+  - owner: Toblerity
+    repo: shapely
+    tags: [python, geometry, geospatial, vector]
+    # Manipulation and analysis of geometric objects.
+
+  - owner: opendatacube
+    repo: odc-stac
+    tags: [python, stac, satellite, xarray]
+    # Load STAC items into xarray DataArrays. Pangeo ecosystem.
+
+  - owner: opendatacube
+    repo: datacube-core
+    tags: [python, satellite, earth-observation, analysis-ready-data]
+    # Open Data Cube: analysis-ready satellite data platform.
+
+  - owner: developmentseed
+    repo: titiler
+    tags: [python, raster, tiling, cog, api]
+    # Dynamic tile server for cloud-optimized raster data.
+
+  - owner: developmentseed
+    repo: cogeo-mosaic
+    tags: [python, raster, cog, mosaic]
+    # Create mosaics from Cloud Optimized GeoTIFFs.
+
+  - owner: sentinel-hub
+    repo: eo-learn
+    tags: [python, satellite, machine-learning, earth-observation]
+    # Earth observation processing framework in Python.
+
+  - owner: microsoft
+    repo: planetary-computer-sdk-for-python
+    tags: [python, stac, satellite, azure]
+    # Microsoft Planetary Computer Python SDK.
+
+  - owner: sertit
+    repo: eoreader
+    tags: [python, satellite, sar, optical, earth-observation]
+    # Multi-satellite reader for optical and SAR sensors (Sentinel, Landsat, etc.).
+
+  - owner: CosmiQ
+    repo: solaris
+    tags: [python, satellite, geospatial, ml, object-detection]
+    # Geospatial machine learning toolkit for satellite imagery.
+
+  - owner: dymaxionlabs
+    repo: satproc
+    tags: [python, satellite, processing, geospatial]
+    # Tools for processing satellite imagery for ML pipelines.
+
+  - owner: Esri
+    repo: arcgis-python-api
+    tags: [python, geospatial, gis, satellite]
+    # ArcGIS API for Python — large contributor base.
+
+  - owner: gboeing
+    repo: osmnx
+    tags: [python, geospatial, openstreetmap, urban]
+    # Street networks and geospatial features from OpenStreetMap.
+
+  - owner: scikit-image
+    repo: scikit-image
+    tags: [python, image-processing, scientific, satellite]
+    # Image processing in Python. Useful for satellite image preprocessing.
+
+  - owner: OSGeo
+    repo: gdal
+    tags: [python, c, raster, vector, geospatial]
+    # GDAL — the backbone of geospatial data I/O.
+
+  - owner: ESA-PhiLab
+    repo: OpenSarToolkit
+    tags: [python, sar, sentinel-1, satellite]
+    # ESA PhiLab's SAR processing toolkit for Sentinel-1.
+
+  # ---------------------------------------------------------------------------
+  # 🤖  MACHINE LEARNING CORE
+  # ---------------------------------------------------------------------------
+
+  - owner: scikit-learn
+    repo: scikit-learn
+    tags: [python, ml, sklearn, classical-ml]
+    # The ML library. Constantly active, excellent contributor guide.
+
+  - owner: pytorch
+    repo: pytorch
+    tags: [python, cpp, deep-learning, pytorch]
+    # PyTorch — foundational deep learning framework.
+
+  - owner: Lightning-AI
+    repo: pytorch-lightning
+    tags: [python, deep-learning, pytorch, training]
+    # High-level PyTorch training framework. Active, many GFIs.
+
+  - owner: huggingface
+    repo: transformers
+    tags: [python, nlp, deep-learning, llm]
+    # State-of-the-art pretrained models. Enormous GFI backlog.
+
+  - owner: huggingface
+    repo: datasets
+    tags: [python, nlp, data, ml]
+    # Hugging Face datasets library.
+
+  - owner: huggingface
+    repo: accelerate
+    tags: [python, deep-learning, distributed, pytorch]
+    # PyTorch distributed training made simple.
+
+  - owner: mlflow
+    repo: mlflow
+    tags: [python, mlops, experiment-tracking, ml]
+    # Open source ML lifecycle platform. Very active, many issues.
+
+  - owner: ray-project
+    repo: ray
+    tags: [python, distributed, ml, reinforcement-learning]
+    # Distributed ML framework. Active issue tracker.
+
+  - owner: dask
+    repo: dask
+    tags: [python, distributed, parallel, arrays]
+    # Parallel computing with task scheduling. Core Pangeo tool.
+
+  - owner: dask
+    repo: dask-ml
+    tags: [python, distributed, ml, sklearn]
+    # Scalable ML with Dask and scikit-learn.
+
+  - owner: pyg-team
+    repo: pytorch_geometric
+    tags: [python, graph-neural-networks, pytorch, gnn]
+    # Graph Neural Network library for PyTorch.
+
+  - owner: statsmodels
+    repo: statsmodels
+    tags: [python, statistics, econometrics, ml]
+    # Statistical models and tests in Python.
+
+  - owner: joblib
+    repo: joblib
+    tags: [python, parallel, caching, scientific]
+    # Lightweight pipelining and caching for Python.
+
+  - owner: Farama-Foundation
+    repo: Gymnasium
+    tags: [python, reinforcement-learning, ml]
+    # Maintained fork of OpenAI Gym.
+
+  - owner: tensorflow
+    repo: tensorflow
+    tags: [python, cpp, deep-learning, tensorflow]
+    # Google's deep learning framework.
+
+  - owner: keras-team
+    repo: keras
+    tags: [python, deep-learning, tensorflow, api]
+    # Deep learning for humans.
+
+  - owner: dmlc
+    repo: xgboost
+    tags: [python, cpp, gradient-boosting, ml]
+    # Scalable gradient boosting.
+
+  - owner: microsoft
+    repo: LightGBM
+    tags: [python, cpp, gradient-boosting, ml]
+    # Fast gradient boosting on decision trees.
+
+  - owner: catboost
+    repo: catboost
+    tags: [python, cpp, gradient-boosting, categorical]
+    # Gradient boosting with categorical feature support.
+
+  - owner: pola-rs
+    repo: polars
+    tags: [python, rust, dataframes, performance]
+    # Lightning-fast DataFrame library. Very active, great for data pipelines.
+
+  - owner: pandas-dev
+    repo: pandas
+    tags: [python, dataframes, data-analysis]
+    # The pandas DataFrame library. Always active.
+
+  - owner: numpy
+    repo: numpy
+    tags: [python, arrays, scientific-computing]
+    # Fundamental array library for Python. Core to everything.
+
+  - owner: scipy
+    repo: scipy
+    tags: [python, scientific-computing, statistics, signal-processing]
+    # Scientific computing in Python.
+
+  - owner: matplotlib
+    repo: matplotlib
+    tags: [python, visualization, plotting]
+    # The standard Python plotting library.
+
+  - owner: plotly
+    repo: plotly.py
+    tags: [python, visualization, interactive, dashboards]
+    # Interactive plotting library.
+
+  - owner: bokeh
+    repo: bokeh
+    tags: [python, visualization, interactive, web]
+    # Interactive web-based visualizations.
+
+  - owner: altair-viz
+    repo: altair
+    tags: [python, visualization, vega, declarative]
+    # Declarative statistical visualization.
+
+  # ---------------------------------------------------------------------------
+  # 🧠  AI / LLM / GenAI
+  # ---------------------------------------------------------------------------
+
+  - owner: langchain-ai
+    repo: langchain
+    tags: [python, llm, agents, rag]
+    # LLM application framework. Extremely active.
+
+  - owner: run-llama
+    repo: llama_index
+    tags: [python, llm, rag, indexing]
+    # Data framework for LLM applications.
+
+  - owner: BerriAI
+    repo: litellm
+    tags: [python, llm, api, proxy]
+    # Unified API for 100+ LLMs.
+
+  - owner: vllm-project
+    repo: vllm
+    tags: [python, llm, inference, serving]
+    # High-throughput LLM inference server.
+
+  - owner: ggerganov
+    repo: llama.cpp
+    tags: [cpp, llm, inference, quantization]
+    # C++ LLM inference. Enormous community.
+
+  - owner: ollama
+    repo: ollama
+    tags: [go, llm, local, serving]
+    # Run LLMs locally. Very active.
+
+  - owner: microsoft
+    repo: autogen
+    tags: [python, llm, agents, multi-agent]
+    # Multi-agent LLM framework.
+
+  - owner: openai
+    repo: openai-python
+    tags: [python, llm, api, openai]
+    # OpenAI's official Python SDK.
+
+  - owner: anthropics
+    repo: anthropic-sdk-python
+    tags: [python, llm, api, claude]
+    # Anthropic's official Python SDK.
+
+  - owner: guidance-ai
+    repo: guidance
+    tags: [python, llm, structured-generation, prompting]
+    # Structured generation and guidance for LLMs.
+
+  # ---------------------------------------------------------------------------
+  # 📊  MLOPS & DATA ENGINEERING
+  # ---------------------------------------------------------------------------
+
+  - owner: apache
+    repo: airflow
+    tags: [python, workflow, orchestration, mlops]
+    # Workflow orchestration platform. Massive community.
+
+  - owner: PrefectHQ
+    repo: prefect
+    tags: [python, workflow, orchestration, mlops]
+    # Modern workflow orchestration.
+
+  - owner: dagster-io
+    repo: dagster
+    tags: [python, orchestration, data-engineering, mlops]
+    # Data orchestration platform.
+
+  - owner: great-expectations
+    repo: great_expectations
+    tags: [python, data-quality, testing, mlops]
+    # Data validation and quality framework.
+
+  - owner: feast-dev
+    repo: feast
+    tags: [python, feature-store, mlops, ml]
+    # Open source feature store.
+
+  - owner: zenml-io
+    repo: zenml
+    tags: [python, mlops, pipelines, ml]
+    # MLOps framework for reproducible pipelines.
+
+  - owner: iterative
+    repo: dvc
+    tags: [python, version-control, mlops, data]
+    # Data version control for ML projects.
+
+  - owner: apache
+    repo: arrow
+    tags: [python, cpp, data, columnar]
+    # Columnar in-memory data format. Widely used in data pipelines.
+
+  - owner: zarr-developers
+    repo: zarr-python
+    tags: [python, arrays, storage, cloud]
+    # Chunked, compressed, N-D arrays. Standard for large satellite data cubes.
+
+  - owner: intake
+    repo: intake
+    tags: [python, data-access, catalogs, ml]
+    # Data loading and catalog framework.
+
+  # ---------------------------------------------------------------------------
+  # 🔬  SCIENTIFIC COMPUTING & SIGNAL PROCESSING
+  # ---------------------------------------------------------------------------
+
+  - owner: astropy
+    repo: astropy
+    tags: [python, astronomy, scientific, fits]
+    # Core astronomy library. Very active, excellent contributor pipeline.
+
+  - owner: sunpy
+    repo: sunpy
+    tags: [python, solar, scientific, satellite]
+    # Solar physics data analysis. Sister project to astropy.
+
+  - owner: pytroll
+    repo: satpy
+    tags: [python, satellite, meteorology, processing]
+    # Pytroll library for reading, enhancing and writing satellite data.
+
+  - owner: pytroll
+    repo: pyresample
+    tags: [python, satellite, resampling, geospatial]
+    # Resampling of Earth observation data.
+
+  - owner: simpeg
+    repo: simpeg
+    tags: [python, geophysics, inversion, scientific]
+    # Geophysical simulations and inversions in Python.
+
+  - owner: PyWavelets
+    repo: pywt
+    tags: [python, signal-processing, wavelets, scientific]
+    # Wavelet transforms in Python. Useful for SAR/signal processing.
+
+  - owner: nilearn
+    repo: nilearn
+    tags: [python, neuroscience, imaging, ml]
+    # Machine learning for neuroimaging (techniques transfer to satellite).
+
+  # ---------------------------------------------------------------------------
+  # 🛠️  DEV TOOLS & INFRASTRUCTURE (USED IN ML PROJECTS)
+  # ---------------------------------------------------------------------------
+
+  - owner: tiangolo
+    repo: fastapi
+    tags: [python, api, web, serving]
+    # FastAPI — used everywhere for ML model serving.
+
+  - owner: pydantic
+    repo: pydantic
+    tags: [python, validation, typing, configuration]
+    # Data validation using Python type annotations.
+
+  - owner: encode
+    repo: httpx
+    tags: [python, http, async, networking]
+    # Async HTTP client. Common in ML data fetching pipelines.
+
+  - owner: tqdm
+    repo: tqdm
+    tags: [python, progress-bar, cli, utilities]
+    # Progress bars for Python. Used in nearly every ML codebase.
+
+  - owner: psf
+    repo: requests
+    tags: [python, http, networking]
+    # HTTP for Humans. Staple dependency.
+
+  - owner: pallets
+    repo: click
+    tags: [python, cli, utilities]
+    # CLI framework. Used in many ML tooling projects.
+
+  - owner: Textualize
+    repo: rich
+    tags: [python, terminal, cli, formatting]
+    # Rich text and formatting in the terminal.
+
+  - owner: pytest-dev
+    repo: pytest
+    tags: [python, testing, developer-tools]
+    # The Python testing framework.
+
+  - owner: astral-sh
+    repo: ruff
+    tags: [python, rust, linting, formatting]
+    # Extremely fast Python linter. Very active.
+
+  - owner: psf
+    repo: black
+    tags: [python, formatting, developer-tools]
+    # Python code formatter.
+
+  - owner: pre-commit
+    repo: pre-commit
+    tags: [python, git, developer-tools, hooks]
+    # Pre-commit hooks manager.
+
+  - owner: jupyter
+    repo: notebook
+    tags: [python, jupyter, notebooks, scientific]
+    # Jupyter Notebook. Actively maintained.
+
+  - owner: jupyter
+    repo: jupyterlab
+    tags: [python, jupyter, ide, scientific]
+    # JupyterLab — next-gen Jupyter interface.
+
+  - owner: mwaskom
+    repo: seaborn
+    tags: [python, visualization, statistics, plotting]
+    # Statistical data visualization.
+
+  - owner: python-poetry
+    repo: poetry
+    tags: [python, package-management, dependency-management]
+    # Python dependency management.
+
+  - owner: grafana
+    repo: grafana
+    tags: [typescript, go, observability, dashboards]
+    # Observability platform. Very active, good for monitoring ML systems.
+
+  - owner: prometheus
+    repo: prometheus
+    tags: [go, monitoring, metrics, observability]
+    # Monitoring system. Often used with ML infrastructure.
+
+# ---------------------------------------------------------------------------
+# Label mappings
+# ---------------------------------------------------------------------------
+label_mappings:
+  gfi:
+    - "good first issue"
+    - "good-first-issue"
+    - "beginner"
+    - "beginner friendly"
+    - "beginner-friendly"
+    - "easy"
+    - "difficulty: easy"
+  bug:
+    - "bug"
+    - "bug fix"
+    - "bugfix"
+    - "type: bug"
+  hard:
+    - "hard"
+    - "complex"
+    - "advanced"
+    - "difficulty: hard"
+
+# ---------------------------------------------------------------------------
+# Weekly issue pool limits per category
+# ---------------------------------------------------------------------------
+limits:
+  gfi: 12
+  bug: 8
+  hard: 6

@@ -1,0 +1,158 @@
+[
+  {
+    "owner": "ray-project",
+    "repo": "ray",
+    "number": 61114,
+    "category": "gfi"
+  },
+  {
+    "owner": "pytorch",
+    "repo": "pytorch",
+    "number": 176621,
+    "category": "gfi"
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "number": 30082,
+    "category": "gfi"
+  },
+  {
+    "owner": "vllm-project",
+    "repo": "vllm",
+    "number": 30620,
+    "category": "gfi"
+  },
+  {
+    "owner": "matplotlib",
+    "repo": "matplotlib",
+    "number": 13044,
+    "category": "gfi"
+  },
+  {
+    "owner": "pandas-dev",
+    "repo": "pandas",
+    "number": 42785,
+    "category": "gfi"
+  },
+  {
+    "owner": "microsoft",
+    "repo": "LightGBM",
+    "number": 6231,
+    "category": "gfi"
+  },
+  {
+    "owner": "catboost",
+    "repo": "catboost",
+    "number": 1860,
+    "category": "gfi"
+  },
+  {
+    "owner": "ray-project",
+    "repo": "ray",
+    "number": 57825,
+    "category": "gfi"
+  },
+  {
+    "owner": "catboost",
+    "repo": "catboost",
+    "number": 1535,
+    "category": "gfi"
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "number": 119789,
+    "category": "gfi"
+  },
+  {
+    "owner": "python-poetry",
+    "repo": "poetry",
+    "number": 6687,
+    "category": "gfi"
+  },
+  {
+    "owner": "pyproj4",
+    "repo": "pyproj",
+    "number": 1548,
+    "category": "bug"
+  },
+  {
+    "owner": "zarr-developers",
+    "repo": "zarr-python",
+    "number": 3640,
+    "category": "bug"
+  },
+  {
+    "owner": "bokeh",
+    "repo": "bokeh",
+    "number": 14907,
+    "category": "bug"
+  },
+  {
+    "owner": "astropy",
+    "repo": "astropy",
+    "number": 19343,
+    "category": "bug"
+  },
+  {
+    "owner": "jupyter",
+    "repo": "notebook",
+    "number": 7838,
+    "category": "bug"
+  },
+  {
+    "owner": "run-llama",
+    "repo": "llama_index",
+    "number": 19515,
+    "category": "bug"
+  },
+  {
+    "owner": "corteva",
+    "repo": "rioxarray",
+    "number": 869,
+    "category": "bug"
+  },
+  {
+    "owner": "mwaskom",
+    "repo": "seaborn",
+    "number": 3585,
+    "category": "bug"
+  },
+  {
+    "owner": "matplotlib",
+    "repo": "matplotlib",
+    "number": 28769,
+    "category": "hard"
+  },
+  {
+    "owner": "matplotlib",
+    "repo": "matplotlib",
+    "number": 11233,
+    "category": "hard"
+  },
+  {
+    "owner": "scikit-learn",
+    "repo": "scikit-learn",
+    "number": 14437,
+    "category": "hard"
+  },
+  {
+    "owner": "pandas-dev",
+    "repo": "pandas",
+    "number": 54445,
+    "category": "hard"
+  },
+  {
+    "owner": "pandas-dev",
+    "repo": "pandas",
+    "number": 9379,
+    "category": "hard"
+  },
+  {
+    "owner": "scikit-learn",
+    "repo": "scikit-learn",
+    "number": 31542,
+    "category": "hard"
+  }
+]

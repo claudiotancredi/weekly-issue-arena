@@ -1,0 +1,273 @@
+{
+  "2026-W10": {
+    "fetched_at": "2026-03-10T00:02:14.242532+00:00",
+    "issues": {
+      "gfi": [
+        {
+          "number": 61114,
+          "title": "[Serve][LLM][Feature] SGLang Engine Community Support Tracker",
+          "url": "https://github.com/ray-project/ray/issues/61114",
+          "owner": "ray-project",
+          "repo": "ray",
+          "repo_url": "https://github.com/ray-project/ray",
+          "created_at": "2026-02-17T20:20:09Z",
+          "updated_at": "2026-03-06T01:55:18Z"
+        },
+        {
+          "number": 176621,
+          "title": "export:  `float8_e8m0fnu` fails to save",
+          "url": "https://github.com/pytorch/pytorch/issues/176621",
+          "owner": "pytorch",
+          "repo": "pytorch",
+          "repo_url": "https://github.com/pytorch/pytorch",
+          "created_at": "2026-03-05T18:27:10Z",
+          "updated_at": "2026-03-09T23:27:31Z"
+        },
+        {
+          "number": 30082,
+          "title": "Add `accept_none` to `SQLTableCheckOperator`",
+          "url": "https://github.com/apache/airflow/issues/30082",
+          "owner": "apache",
+          "repo": "airflow",
+          "repo_url": "https://github.com/apache/airflow",
+          "created_at": "2023-03-13T22:24:27Z",
+          "updated_at": "2026-03-09T17:41:24Z"
+        },
+        {
+          "number": 30620,
+          "title": "[Feature]: Remove Chunking From FusedMoE",
+          "url": "https://github.com/vllm-project/vllm/issues/30620",
+          "owner": "vllm-project",
+          "repo": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "created_at": "2025-12-13T18:22:30Z",
+          "updated_at": "2026-03-08T04:31:17Z"
+        },
+        {
+          "number": 13044,
+          "title": "Center of rotation for text with rotation_mode='anchor'",
+          "url": "https://github.com/matplotlib/matplotlib/issues/13044",
+          "owner": "matplotlib",
+          "repo": "matplotlib",
+          "repo_url": "https://github.com/matplotlib/matplotlib",
+          "created_at": "2018-12-23T18:23:04Z",
+          "updated_at": "2026-03-05T19:19:23Z"
+        },
+        {
+          "number": 42785,
+          "title": "BUG: Multiindex Categorical type lost after div operation",
+          "url": "https://github.com/pandas-dev/pandas/issues/42785",
+          "owner": "pandas-dev",
+          "repo": "pandas",
+          "repo_url": "https://github.com/pandas-dev/pandas",
+          "created_at": "2021-07-28T20:29:52Z",
+          "updated_at": "2026-03-08T07:04:21Z"
+        },
+        {
+          "number": 6231,
+          "title": "[ci] use a suppression file with valgrind checks",
+          "url": "https://github.com/lightgbm-org/LightGBM/issues/6231",
+          "owner": "microsoft",
+          "repo": "LightGBM",
+          "repo_url": "https://github.com/microsoft/LightGBM",
+          "created_at": "2023-12-12T03:46:10Z",
+          "updated_at": "2025-10-22T05:35:02Z"
+        },
+        {
+          "number": 1860,
+          "title": "can we add namespace when save_model in format cpp?",
+          "url": "https://github.com/catboost/catboost/issues/1860",
+          "owner": "catboost",
+          "repo": "catboost",
+          "repo_url": "https://github.com/catboost/catboost",
+          "created_at": "2021-09-25T07:30:39Z",
+          "updated_at": "2025-04-20T02:22:33Z"
+        },
+        {
+          "number": 57825,
+          "title": "[Data] DAG inconsistency in `Operator._apply_transform` when partial transformation occurs",
+          "url": "https://github.com/ray-project/ray/issues/57825",
+          "owner": "ray-project",
+          "repo": "ray",
+          "repo_url": "https://github.com/ray-project/ray",
+          "created_at": "2025-10-16T23:32:37Z",
+          "updated_at": "2026-03-04T06:38:12Z"
+        },
+        {
+          "number": 1535,
+          "title": "[FEATURE] specify number of trees for shap",
+          "url": "https://github.com/catboost/catboost/issues/1535",
+          "owner": "catboost",
+          "repo": "catboost",
+          "repo_url": "https://github.com/catboost/catboost",
+          "created_at": "2021-01-12T08:22:43Z",
+          "updated_at": "2025-04-19T22:07:58Z"
+        },
+        {
+          "number": 119789,
+          "title": "Dashboards: German Translation of the \"Refresh\" Button is overlapping with other buttons",
+          "url": "https://github.com/grafana/grafana/issues/119789",
+          "owner": "grafana",
+          "repo": "grafana",
+          "repo_url": "https://github.com/grafana/grafana",
+          "created_at": "2026-03-08T07:17:52Z",
+          "updated_at": "2026-03-09T11:49:19Z"
+        },
+        {
+          "number": 6687,
+          "title": "Omitting trailing slash on some PEP 503 repositories prevents inferring the correct upload URL",
+          "url": "https://github.com/python-poetry/poetry/issues/6687",
+          "owner": "python-poetry",
+          "repo": "poetry",
+          "repo_url": "https://github.com/python-poetry/poetry",
+          "created_at": "2022-10-03T03:05:31Z",
+          "updated_at": "2026-02-13T13:15:38Z"
+        }
+      ],
+      "bug": [
+        {
+          "number": 1548,
+          "title": "Hash/Equality contract violation",
+          "url": "https://github.com/pyproj4/pyproj/issues/1548",
+          "owner": "pyproj4",
+          "repo": "pyproj",
+          "repo_url": "https://github.com/pyproj4/pyproj",
+          "created_at": "2025-11-12T02:52:09Z",
+          "updated_at": "2025-11-13T15:44:26Z"
+        },
+        {
+          "number": 3640,
+          "title": "\"Fancy\" indexing a GPU-enabled `zarr.Array`",
+          "url": "https://github.com/zarr-developers/zarr-python/issues/3640",
+          "owner": "zarr-developers",
+          "repo": "zarr-python",
+          "repo_url": "https://github.com/zarr-developers/zarr-python",
+          "created_at": "2026-01-07T11:06:01Z",
+          "updated_at": "2026-02-04T16:07:27Z"
+        },
+        {
+          "number": 14907,
+          "title": "`NaT` is encoded as `float(nan)` by the serializer",
+          "url": "https://github.com/bokeh/bokeh/issues/14907",
+          "owner": "bokeh",
+          "repo": "bokeh",
+          "repo_url": "https://github.com/bokeh/bokeh",
+          "created_at": "2026-03-09T10:03:09Z",
+          "updated_at": "2026-03-09T10:19:42Z"
+        },
+        {
+          "number": 19343,
+          "title": "BUG:  SigmaClip objects cannot be pickled when Bottleneck is installed",
+          "url": "https://github.com/astropy/astropy/issues/19343",
+          "owner": "astropy",
+          "repo": "astropy",
+          "repo_url": "https://github.com/astropy/astropy",
+          "created_at": "2026-02-27T18:29:27Z",
+          "updated_at": "2026-03-09T14:10:28Z"
+        },
+        {
+          "number": 7838,
+          "title": "Remove Python 3.15 pin on CI",
+          "url": "https://github.com/jupyter/notebook/issues/7838",
+          "owner": "jupyter",
+          "repo": "notebook",
+          "repo_url": "https://github.com/jupyter/notebook",
+          "created_at": "2026-02-24T07:30:40Z",
+          "updated_at": "2026-02-24T17:29:44Z"
+        },
+        {
+          "number": 19515,
+          "title": "[Bug]: \"doc_id\" is hardcoded",
+          "url": "https://github.com/run-llama/llama_index/issues/19515",
+          "owner": "run-llama",
+          "repo": "llama_index",
+          "repo_url": "https://github.com/run-llama/llama_index",
+          "created_at": "2025-07-23T20:48:12Z",
+          "updated_at": "2026-03-09T20:48:59Z"
+        },
+        {
+          "number": 869,
+          "title": "Segmentation fault on Debian / sid",
+          "url": "https://github.com/corteva/rioxarray/issues/869",
+          "owner": "corteva",
+          "repo": "rioxarray",
+          "repo_url": "https://github.com/corteva/rioxarray",
+          "created_at": "2025-10-19T17:21:49Z",
+          "updated_at": "2025-10-24T15:22:49Z"
+        },
+        {
+          "number": 3585,
+          "title": "so.Est() + tick label formatter => 'PseudoAxis' object has no attribute '_view_interval'",
+          "url": "https://github.com/mwaskom/seaborn/issues/3585",
+          "owner": "mwaskom",
+          "repo": "seaborn",
+          "repo_url": "https://github.com/mwaskom/seaborn",
+          "created_at": "2023-12-05T22:25:21Z",
+          "updated_at": "2026-02-13T14:44:57Z"
+        }
+      ],
+      "hard": [
+        {
+          "number": 28769,
+          "title": "[Bug]: Gouraud shading for `plt.tripcolor` is slightly off",
+          "url": "https://github.com/matplotlib/matplotlib/issues/28769",
+          "owner": "matplotlib",
+          "repo": "matplotlib",
+          "repo_url": "https://github.com/matplotlib/matplotlib",
+          "created_at": "2024-08-30T06:04:52Z",
+          "updated_at": "2025-09-10T22:56:48Z"
+        },
+        {
+          "number": 11233,
+          "title": " figure including align fails to output eps using savefig",
+          "url": "https://github.com/matplotlib/matplotlib/issues/11233",
+          "owner": "matplotlib",
+          "repo": "matplotlib",
+          "repo_url": "https://github.com/matplotlib/matplotlib",
+          "created_at": "2018-05-11T17:52:15Z",
+          "updated_at": "2025-08-18T14:37:02Z"
+        },
+        {
+          "number": 14437,
+          "title": "Faster GPs using HODLR solver",
+          "url": "https://github.com/scikit-learn/scikit-learn/issues/14437",
+          "owner": "scikit-learn",
+          "repo": "scikit-learn",
+          "repo_url": "https://github.com/scikit-learn/scikit-learn",
+          "created_at": "2019-07-22T11:54:32Z",
+          "updated_at": "2025-11-27T09:30:39Z"
+        },
+        {
+          "number": 54445,
+          "title": "ENH: enable setitem dim2 test to work for EA with complex128 dtype",
+          "url": "https://github.com/pandas-dev/pandas/issues/54445",
+          "owner": "pandas-dev",
+          "repo": "pandas",
+          "repo_url": "https://github.com/pandas-dev/pandas",
+          "created_at": "2023-08-07T02:39:59Z",
+          "updated_at": "2024-07-17T22:23:25Z"
+        },
+        {
+          "number": 9379,
+          "title": "pandas.read_csv() won't read back in complex number dtypes from pandas.DataFrame.to_csv()",
+          "url": "https://github.com/pandas-dev/pandas/issues/9379",
+          "owner": "pandas-dev",
+          "repo": "pandas",
+          "repo_url": "https://github.com/pandas-dev/pandas",
+          "created_at": "2015-01-30T18:31:55Z",
+          "updated_at": "2025-10-08T16:15:19Z"
+        },
+        {
+          "number": 31542,
+          "title": "Huber Loss for HistGradientBoostingRegressor",
+          "url": "https://github.com/scikit-learn/scikit-learn/issues/31542",
+          "owner": "scikit-learn",
+          "repo": "scikit-learn",
+          "repo_url": "https://github.com/scikit-learn/scikit-learn",
+          "created_at": "2025-06-13T13:24:16Z",
+          "updated_at": "2026-02-15T22:03:19Z"
+        }
+      ]
+    }
+  }
+}

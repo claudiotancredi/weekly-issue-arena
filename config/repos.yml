@@ -80,16 +80,6 @@ repos:
     tags: [python, geospatial, projection, crs]
     # Python interface to PROJ for cartographic projections.
 
-  - owner: Toblerity
-    repo: Fiona
-    tags: [python, vector, geospatial, io]
-    # Python wrapper for OGR for reading/writing geospatial vector data.
-
-  - owner: Toblerity
-    repo: shapely
-    tags: [python, geometry, geospatial, vector]
-    # Manipulation and analysis of geometric objects.
-
   - owner: opendatacube
     repo: odc-stac
     tags: [python, stac, satellite, xarray]

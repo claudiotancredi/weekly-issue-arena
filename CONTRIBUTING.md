@@ -27,7 +27,7 @@ Open a GitHub Issue in this repo. Include:
 - Any relevant logs or screenshots
 
 ### Discuss ideas
-Use the [Discussions](../../discussions) tab for feature ideas, edge cases, or general feedback.
+Use the [Discussions](https://github.com/claudiotancredi/weekly-issue-arena/discussions) tab for feature ideas, edge cases, or general feedback.
 
 ---
 

@@ -18,7 +18,7 @@ import random
 import logging
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-
+import argparse
 import requests
 import yaml
 
@@ -199,6 +199,10 @@ def save_current_issues(issues: dict[str, list[dict]]) -> None:
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dry-run", action="store_true", help="Fetch and print issues without writing anything")
+    args = parser.parse_args()
+
     config = load_config()
     log.info("Fetching issues from configured repos...")
     issues = fetch_all_issues(config)
@@ -206,7 +210,14 @@ def main():
     total = sum(len(v) for v in issues.values())
     log.info(f"Total issues fetched: {total} (GFI: {len(issues['gfi'])}, Bug: {len(issues['bug'])}, Hard: {len(issues['hard'])})")
 
-    # Update README
+    if args.dry_run:
+        log.info("Dry run — skipping README and state writes.")
+        for category, issue_list in issues.items():
+            print(f"\n=== {category.upper()} ({len(issue_list)}) ===")
+            for issue in issue_list:
+                print(f"  [{issue['owner']}/{issue['repo']}#{issue['number']}] {issue['title'][:80]}")
+        raise SystemExit(0)
+
     readme = README_PATH.read_text()
     readme = update_readme_section(readme, "ISSUES:GFI", build_issue_table(issues["gfi"]))
     readme = update_readme_section(readme, "ISSUES:BUGS", build_issue_table(issues["bug"]))
@@ -214,7 +225,6 @@ def main():
     README_PATH.write_text(readme)
     log.info("README updated.")
 
-    # Save state for leaderboard tracking
     week_id = datetime.now(timezone.utc).strftime("%Y-W%W")
     save_state(issues, week_id)
     save_current_issues(issues)

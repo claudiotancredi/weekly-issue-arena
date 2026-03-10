@@ -51,18 +51,18 @@ You don't need to register — contributions are detected automatically via GitH
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [[Serve][LLM][Feature] SGLang Engine Community Support Tra...](https://github.com/ray-project/ray/issues/61114) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
-| 2 | [export:  `float8_e8m0fnu` fails to save](https://github.com/pytorch/pytorch/issues/176621) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🟢 Open |
-| 3 | [Add `accept_none` to `SQLTableCheckOperator`](https://github.com/apache/airflow/issues/30082) | [apache/airflow](https://github.com/apache/airflow) | 🟢 Open |
-| 4 | [[Feature]: Remove Chunking From FusedMoE](https://github.com/vllm-project/vllm/issues/30620) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟢 Open |
-| 5 | [Center of rotation for text with rotation_mode='anchor'](https://github.com/matplotlib/matplotlib/issues/13044) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 6 | [BUG: Multiindex Categorical type lost after div operation](https://github.com/pandas-dev/pandas/issues/42785) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 7 | [[ci] use a suppression file with valgrind checks](https://github.com/lightgbm-org/LightGBM/issues/6231) | [microsoft/LightGBM](https://github.com/microsoft/LightGBM) | 🟢 Open |
-| 8 | [can we add namespace when save_model in format cpp?](https://github.com/catboost/catboost/issues/1860) | [catboost/catboost](https://github.com/catboost/catboost) | 🟢 Open |
-| 9 | [[Data] DAG inconsistency in `Operator._apply_transform` w...](https://github.com/ray-project/ray/issues/57825) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
-| 10 | [[FEATURE] specify number of trees for shap](https://github.com/catboost/catboost/issues/1535) | [catboost/catboost](https://github.com/catboost/catboost) | 🟢 Open |
-| 11 | [Dashboards: German Translation of the "Refresh" Button is...](https://github.com/grafana/grafana/issues/119789) | [grafana/grafana](https://github.com/grafana/grafana) | 🟢 Open |
-| 12 | [Omitting trailing slash on some PEP 503 repositories prev...](https://github.com/python-poetry/poetry/issues/6687) | [python-poetry/poetry](https://github.com/python-poetry/poetry) | 🟢 Open |
+| 1 | [WMT21 & WMT22](https://github.com/huggingface/datasets/issues/4709) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
+| 2 | [Remove OOO Head compaction's dependency on the in-order H...](https://github.com/prometheus/prometheus/issues/11834) | [prometheus/prometheus](https://github.com/prometheus/prometheus) | 🟢 Open |
+| 3 | [27 tests fail](https://github.com/pyg-team/pytorch_geometric/issues/9660) | [pyg-team/pytorch_geometric](https://github.com/pyg-team/pytorch_geometric) | 🟢 Open |
+| 4 | [[Bug]: matryoshka need gpu-memory???](https://github.com/vllm-project/vllm/issues/36433) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟢 Open |
+| 5 | [`pl.datetime` needs a way to fail silently](https://github.com/pola-rs/polars/issues/21898) | [pola-rs/polars](https://github.com/pola-rs/polars) | 🟢 Open |
+| 6 | [[suggestions] When no labels are found with random walker...](https://github.com/nilearn/nilearn/issues/1245) | [nilearn/nilearn](https://github.com/nilearn/nilearn) | 🟢 Open |
+| 7 | [Add shell auto completion for different shell, like bash,...](https://github.com/openai/openai-python/issues/843) | [openai/openai-python](https://github.com/openai/openai-python) | 🟢 Open |
+| 8 | [Non-inclusive partial string indexing on DatetimeIndex](https://github.com/pandas-dev/pandas/issues/16571) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 9 | [[Roadmap] Heterogeneous Graphs Explainability Support](https://github.com/pyg-team/pytorch_geometric/issues/9112) | [pyg-team/pytorch_geometric](https://github.com/pyg-team/pytorch_geometric) | 🟢 Open |
+| 10 | [Remove references to `altair_data_server` in docs](https://github.com/vega/altair/issues/3048) | [altair-viz/altair](https://github.com/altair-viz/altair) | 🟢 Open |
+| 11 | [Center of rotation for text with rotation_mode='anchor'](https://github.com/matplotlib/matplotlib/issues/13044) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 12 | [[python-package] `Booster.refit()` raises a misleading wa...](https://github.com/lightgbm-org/LightGBM/issues/6793) | [microsoft/LightGBM](https://github.com/microsoft/LightGBM) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 ## 🪲 Bug Fixes
@@ -70,14 +70,14 @@ You don't need to register — contributions are detected automatically via GitH
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Hash/Equality contract violation](https://github.com/pyproj4/pyproj/issues/1548) | [pyproj4/pyproj](https://github.com/pyproj4/pyproj) | 🟢 Open |
-| 2 | ["Fancy" indexing a GPU-enabled `zarr.Array`](https://github.com/zarr-developers/zarr-python/issues/3640) | [zarr-developers/zarr-python](https://github.com/zarr-developers/zarr-python) | 🟢 Open |
-| 3 | [`NaT` is encoded as `float(nan)` by the serializer](https://github.com/bokeh/bokeh/issues/14907) | [bokeh/bokeh](https://github.com/bokeh/bokeh) | 🟢 Open |
-| 4 | [BUG:  SigmaClip objects cannot be pickled when Bottleneck...](https://github.com/astropy/astropy/issues/19343) | [astropy/astropy](https://github.com/astropy/astropy) | 🟢 Open |
-| 5 | [Remove Python 3.15 pin on CI](https://github.com/jupyter/notebook/issues/7838) | [jupyter/notebook](https://github.com/jupyter/notebook) | 🟢 Open |
-| 6 | [[Bug]: "doc_id" is hardcoded](https://github.com/run-llama/llama_index/issues/19515) | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🟢 Open |
-| 7 | [Segmentation fault on Debian / sid](https://github.com/corteva/rioxarray/issues/869) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
-| 8 | [so.Est() + tick label formatter => 'PseudoAxis' object ha...](https://github.com/mwaskom/seaborn/issues/3585) | [mwaskom/seaborn](https://github.com/mwaskom/seaborn) | 🟢 Open |
+| 1 | [Asset backfill hangs forever when run succeeds without ma...](https://github.com/dagster-io/dagster/issues/17745) | [dagster-io/dagster](https://github.com/dagster-io/dagster) | 🟢 Open |
+| 2 | [[BUG] ToolCallCorrectness and ToolCallEfficiency fails on...](https://github.com/mlflow/mlflow/issues/21487) | [mlflow/mlflow](https://github.com/mlflow/mlflow) | 🟢 Open |
+| 3 | [Possibly wrong derivative in `VectorAmplitude`](https://github.com/simpeg/simpeg/issues/1301) | [simpeg/simpeg](https://github.com/simpeg/simpeg) | 🟢 Open |
+| 4 | [Epoch start freezing regression](https://github.com/Lightning-AI/pytorch-lightning/issues/21550) | [Lightning-AI/pytorch-lightning](https://github.com/Lightning-AI/pytorch-lightning) | 🟢 Open |
+| 5 | [Deadlock when running multi tasks](https://github.com/huggingface/accelerate/issues/3814) | [huggingface/accelerate](https://github.com/huggingface/accelerate) | 🟢 Open |
+| 6 | [reprojecting xarray dataset: TypeError: only length-1 arr...](https://github.com/corteva/rioxarray/issues/848) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
+| 7 | [`GenericMap.plot` should support plotting on a WCSAxes ba...](https://github.com/sunpy/sunpy/issues/8416) | [sunpy/sunpy](https://github.com/sunpy/sunpy) | 🟢 Open |
+| 8 | [CLI list commands return oldest items first instead of ne...](https://github.com/zenml-io/zenml/issues/4455) | [zenml-io/zenml](https://github.com/zenml-io/zenml) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 ## 😓 Hard Issues
@@ -85,12 +85,12 @@ You don't need to register — contributions are detected automatically via GitH
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [[Bug]: Gouraud shading for `plt.tripcolor` is slightly off](https://github.com/matplotlib/matplotlib/issues/28769) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 2 | [ figure including align fails to output eps using savefig](https://github.com/matplotlib/matplotlib/issues/11233) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 3 | [Faster GPs using HODLR solver](https://github.com/scikit-learn/scikit-learn/issues/14437) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 4 | [ENH: enable setitem dim2 test to work for EA with complex...](https://github.com/pandas-dev/pandas/issues/54445) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 1 | [Warnings in plot directive aren't treated as such by Sphinx](https://github.com/matplotlib/matplotlib/issues/15715) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 2 | [Cannot recover DBSCAN from memory-overuse](https://github.com/scikit-learn/scikit-learn/issues/31407) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 3 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 4 | [Newlines should not be scaped when using setting usetex=True](https://github.com/matplotlib/matplotlib/issues/29628) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 | 5 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 6 | [Huber Loss for HistGradientBoostingRegressor](https://github.com/scikit-learn/scikit-learn/issues/31542) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 6 | [Faster GPs using HODLR solver](https://github.com/scikit-learn/scikit-learn/issues/14437) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 ---

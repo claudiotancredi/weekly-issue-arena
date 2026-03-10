@@ -1,26 +1,62 @@
 [
   {
-    "owner": "ray-project",
-    "repo": "ray",
-    "number": 61114,
+    "owner": "huggingface",
+    "repo": "datasets",
+    "number": 4709,
     "category": "gfi"
   },
   {
-    "owner": "pytorch",
-    "repo": "pytorch",
-    "number": 176621,
+    "owner": "prometheus",
+    "repo": "prometheus",
+    "number": 11834,
     "category": "gfi"
   },
   {
-    "owner": "apache",
-    "repo": "airflow",
-    "number": 30082,
+    "owner": "pyg-team",
+    "repo": "pytorch_geometric",
+    "number": 9660,
     "category": "gfi"
   },
   {
     "owner": "vllm-project",
     "repo": "vllm",
-    "number": 30620,
+    "number": 36433,
+    "category": "gfi"
+  },
+  {
+    "owner": "pola-rs",
+    "repo": "polars",
+    "number": 21898,
+    "category": "gfi"
+  },
+  {
+    "owner": "nilearn",
+    "repo": "nilearn",
+    "number": 1245,
+    "category": "gfi"
+  },
+  {
+    "owner": "openai",
+    "repo": "openai-python",
+    "number": 843,
+    "category": "gfi"
+  },
+  {
+    "owner": "pandas-dev",
+    "repo": "pandas",
+    "number": 16571,
+    "category": "gfi"
+  },
+  {
+    "owner": "pyg-team",
+    "repo": "pytorch_geometric",
+    "number": 9112,
+    "category": "gfi"
+  },
+  {
+    "owner": "altair-viz",
+    "repo": "altair",
+    "number": 3048,
     "category": "gfi"
   },
   {
@@ -30,117 +66,81 @@
     "category": "gfi"
   },
   {
-    "owner": "pandas-dev",
-    "repo": "pandas",
-    "number": 42785,
-    "category": "gfi"
-  },
-  {
     "owner": "microsoft",
     "repo": "LightGBM",
-    "number": 6231,
+    "number": 6793,
     "category": "gfi"
   },
   {
-    "owner": "catboost",
-    "repo": "catboost",
-    "number": 1860,
-    "category": "gfi"
-  },
-  {
-    "owner": "ray-project",
-    "repo": "ray",
-    "number": 57825,
-    "category": "gfi"
-  },
-  {
-    "owner": "catboost",
-    "repo": "catboost",
-    "number": 1535,
-    "category": "gfi"
-  },
-  {
-    "owner": "grafana",
-    "repo": "grafana",
-    "number": 119789,
-    "category": "gfi"
-  },
-  {
-    "owner": "python-poetry",
-    "repo": "poetry",
-    "number": 6687,
-    "category": "gfi"
-  },
-  {
-    "owner": "pyproj4",
-    "repo": "pyproj",
-    "number": 1548,
+    "owner": "dagster-io",
+    "repo": "dagster",
+    "number": 17745,
     "category": "bug"
   },
   {
-    "owner": "zarr-developers",
-    "repo": "zarr-python",
-    "number": 3640,
+    "owner": "mlflow",
+    "repo": "mlflow",
+    "number": 21487,
     "category": "bug"
   },
   {
-    "owner": "bokeh",
-    "repo": "bokeh",
-    "number": 14907,
+    "owner": "simpeg",
+    "repo": "simpeg",
+    "number": 1301,
     "category": "bug"
   },
   {
-    "owner": "astropy",
-    "repo": "astropy",
-    "number": 19343,
+    "owner": "Lightning-AI",
+    "repo": "pytorch-lightning",
+    "number": 21550,
     "category": "bug"
   },
   {
-    "owner": "jupyter",
-    "repo": "notebook",
-    "number": 7838,
-    "category": "bug"
-  },
-  {
-    "owner": "run-llama",
-    "repo": "llama_index",
-    "number": 19515,
+    "owner": "huggingface",
+    "repo": "accelerate",
+    "number": 3814,
     "category": "bug"
   },
   {
     "owner": "corteva",
     "repo": "rioxarray",
-    "number": 869,
+    "number": 848,
     "category": "bug"
   },
   {
-    "owner": "mwaskom",
-    "repo": "seaborn",
-    "number": 3585,
+    "owner": "sunpy",
+    "repo": "sunpy",
+    "number": 8416,
+    "category": "bug"
+  },
+  {
+    "owner": "zenml-io",
+    "repo": "zenml",
+    "number": 4455,
     "category": "bug"
   },
   {
     "owner": "matplotlib",
     "repo": "matplotlib",
-    "number": 28769,
-    "category": "hard"
-  },
-  {
-    "owner": "matplotlib",
-    "repo": "matplotlib",
-    "number": 11233,
+    "number": 15715,
     "category": "hard"
   },
   {
     "owner": "scikit-learn",
     "repo": "scikit-learn",
-    "number": 14437,
+    "number": 31407,
     "category": "hard"
   },
   {
     "owner": "pandas-dev",
     "repo": "pandas",
-    "number": 54445,
+    "number": 43770,
+    "category": "hard"
+  },
+  {
+    "owner": "matplotlib",
+    "repo": "matplotlib",
+    "number": 29628,
     "category": "hard"
   },
   {
@@ -152,7 +152,7 @@
   {
     "owner": "scikit-learn",
     "repo": "scikit-learn",
-    "number": 31542,
+    "number": 14437,
     "category": "hard"
   }
 ]

@@ -1,5 +1,7 @@
 {
   "players": {},
-  "credited_issues": [],
+  "credited_issues": [
+    "mlflow/mlflow#21487"
+  ],
   "weekly": {}
 }

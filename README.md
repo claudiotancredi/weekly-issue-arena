@@ -71,7 +71,7 @@ You don't need to register — contributions are detected automatically via GitH
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [Asset backfill hangs forever when run succeeds without ma...](https://github.com/dagster-io/dagster/issues/17745) | [dagster-io/dagster](https://github.com/dagster-io/dagster) | 🟢 Open |
-| 2 | [[BUG] ToolCallCorrectness and ToolCallEfficiency fails on...](https://github.com/mlflow/mlflow/issues/21487) | [mlflow/mlflow](https://github.com/mlflow/mlflow) | 🟢 Open |
+| 2 | [[BUG] ToolCallCorrectness and ToolCallEfficiency fails on...](https://github.com/mlflow/mlflow/issues/21487) | [mlflow/mlflow](https://github.com/mlflow/mlflow) | 🔴 Closed |
 | 3 | [Possibly wrong derivative in `VectorAmplitude`](https://github.com/simpeg/simpeg/issues/1301) | [simpeg/simpeg](https://github.com/simpeg/simpeg) | 🟢 Open |
 | 4 | [Epoch start freezing regression](https://github.com/Lightning-AI/pytorch-lightning/issues/21550) | [Lightning-AI/pytorch-lightning](https://github.com/Lightning-AI/pytorch-lightning) | 🟢 Open |
 | 5 | [Deadlock when running multi tasks](https://github.com/huggingface/accelerate/issues/3814) | [huggingface/accelerate](https://github.com/huggingface/accelerate) | 🟢 Open |

@@ -96,7 +96,7 @@ You don't need to register — contributions are detected automatically via GitH
 
 ## 🏆 Leaderboard
 
-*Updated daily. Top 10 all-time contributors.*
+*Updated hourly. Top 10 all-time contributors.*
 
 <!-- LEADERBOARD:START -->
 | Position | Contributor | Points | Rank |

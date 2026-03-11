@@ -48,7 +48,7 @@ jobs:
       - name: Post Discussion comment for new credits
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DISCUSSION_ID: "D_kwDO..."
+          DISCUSSION_ID: "D_kwDONjXVVM4Akt8_"
         run: |
           credits='${{ steps.leaderboard.outputs.new_credits }}'
           if [ -z "$credits" ]; then

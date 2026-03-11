@@ -40,10 +40,17 @@ if GITHUB_TOKEN:
 POINTS = {"gfi": 1, "bug": 2, "hard": 4}
 
 RANKS = [
-    (500, "Mr. Robot", "🤖"),
-    (100, "Bug Slayer", "🐛"),
-    (0,   "HW Engineer", "🔧"),
+    (500, "Mr. Robot"),
+    (100, "Bug Slayer"),
+    (0, "HW Engineer"),
 ]
+
+RANK_IMAGES = {
+    "Mr. Robot": "assets/mrrobot.png",
+    "Bug Slayer": "assets/bugslayer.png",
+    "HW Engineer": "assets/hwengineer.png",
+}
+
 
 def check_issue_status(owner: str, repo: str, number: int) -> str:
     url = f"https://api.github.com/repos/{owner}/{repo}/issues/{number}"
@@ -55,30 +62,34 @@ def check_issue_status(owner: str, repo: str, number: int) -> str:
     except requests.HTTPError:
         return "🟢 Open"  # assume open on error
 
+
 def update_issue_statuses(readme: str) -> str:
     if not CURRENT_ISSUES_PATH.exists():
         return readme
-    
+
     with open(CURRENT_ISSUES_PATH) as f:
         current = json.load(f)
-    
+
     for issue in current:
-        status = check_issue_status(issue["owner"], issue["repo"], issue["number"])
+        status = check_issue_status(
+            issue["owner"], issue["repo"], issue["number"]
+        )
         issue_url = f"https://github.com/{issue['owner']}/{issue['repo']}/issues/{issue['number']}"
         # Replace whichever status emoji is currently next to this issue URL
         readme = re.sub(
             rf"(\[.*?\]\({re.escape(issue_url)}\).*?\| )(?:🟢 Open|🔴 Closed)",
             rf"\g<1>{status}",
-            readme
+            readme,
         )
-    
+
     return readme
 
-def get_rank(points: int) -> tuple[str, str]:
-    for threshold, name, emoji in RANKS:
+
+def get_rank(points: int) -> str:
+    for threshold, name in RANKS:
         if points >= threshold:
-            return name, emoji
-    return "HW Engineer", "🔧"
+            return name
+    return "HW Engineer"
 
 
 def load_state() -> dict:
@@ -118,7 +129,9 @@ def get_closing_pr(owner: str, repo: str, issue_number: int) -> dict | None:
             events.extend(resp.json())
             url = resp.links.get("next", {}).get("url")
     except requests.HTTPError as e:
-        log.warning(f"Timeline fetch failed for {owner}/{repo}#{issue_number}: {e}")
+        log.warning(
+            f"Timeline fetch failed for {owner}/{repo}#{issue_number}: {e}"
+        )
         return None
 
     # Step 1: collect all merged PRs that cross-referenced this issue
@@ -180,7 +193,9 @@ def get_closing_pr(owner: str, repo: str, issue_number: int) -> dict | None:
     # Step 4: no closing commit match — fall back to the most recently merged PR
     # This handles cases where GitHub doesn't emit a commit_id on the closed event
     most_recent = max(merged_prs.values(), key=lambda p: p["merged_at"])
-    log.info(f"Could not determine closing PR via commit — falling back to most recently merged PR for {owner}/{repo}#{issue_number}")
+    log.info(
+        f"Could not determine closing PR via commit — falling back to most recently merged PR for {owner}/{repo}#{issue_number}"
+    )
     return {
         "author": most_recent["user"]["login"],
         "author_avatar": most_recent["user"]["avatar_url"],
@@ -200,7 +215,9 @@ def check_issue_still_open(owner: str, repo: str, issue_number: int) -> bool:
         return True  # Assume open on error
 
 
-def process_week(week_id: str, week_data: dict, scores: dict, issue_author_map: dict) -> list[dict]:
+def process_week(
+    week_id: str, week_data: dict, scores: dict
+) -> list[dict]:
     """
     For a given week's issues, check if any have been closed by a merged PR.
     Returns list of new credit events.
@@ -221,7 +238,9 @@ def process_week(week_id: str, week_data: dict, scores: dict, issue_author_map: 
             if issue_key in scores.get("credited_issues", []):
                 continue  # Already credited
 
-            if check_issue_still_open(issue["owner"], issue["repo"], issue["number"]):
+            if check_issue_still_open(
+                issue["owner"], issue["repo"], issue["number"]
+            ):
                 continue  # Still open
 
             pr = get_closing_pr(issue["owner"], issue["repo"], issue["number"])
@@ -229,16 +248,22 @@ def process_week(week_id: str, week_data: dict, scores: dict, issue_author_map: 
                 continue
 
             # Enforce: PR must have been opened within 7 days of the issue being listed
-            listed_at = datetime.fromisoformat(issue.get("listed_at", week_data["fetched_at"]))
-            pr_created_at = datetime.fromisoformat(pr["created_at"].replace("Z", "+00:00"))
+            listed_at = datetime.fromisoformat(
+                issue.get("listed_at", week_data["fetched_at"])
+            )
+            pr_created_at = datetime.fromisoformat(
+                pr["created_at"].replace("Z", "+00:00")
+            )
             if pr_created_at > listed_at + timedelta(days=7):
-                log.info(f"Skipping {issue_key}: PR opened too late ({pr_created_at} > {listed_at + timedelta(days=7)})")
+                log.info(
+                    f"Skipping {issue_key}: PR opened too late ({pr_created_at} > {listed_at + timedelta(days=7)})"
+                )
                 continue
 
             author = pr["author"]
 
             log.info(f"Crediting {author} {pts} pts for {issue_key}")
-            
+
             if author not in scores["players"]:
                 scores["players"][author] = {
                     "total_points": 0,
@@ -248,13 +273,15 @@ def process_week(week_id: str, week_data: dict, scores: dict, issue_author_map: 
 
             scores["players"][author]["total_points"] += pts
             scores["players"][author]["avatar_url"] = pr["author_avatar"]
-            scores["players"][author]["contributions"].append({
-                "issue": issue_key,
-                "points": pts,
-                "pr_url": pr["pr_url"],
-                "week": week_id,
-                "credited_at": datetime.now(timezone.utc).isoformat(),
-            })
+            scores["players"][author]["contributions"].append(
+                {
+                    "issue": issue_key,
+                    "points": pts,
+                    "pr_url": pr["pr_url"],
+                    "week": week_id,
+                    "credited_at": datetime.now(timezone.utc).isoformat(),
+                }
+            )
             scores["credited_issues"].append(issue_key)
 
             # Track weekly contributors
@@ -264,7 +291,9 @@ def process_week(week_id: str, week_data: dict, scores: dict, issue_author_map: 
             if author not in scores["weekly"][current_week]:
                 scores["weekly"][current_week].append(author)
 
-            new_credits.append({"author": author, "pts": pts, "issue": issue_key})
+            new_credits.append(
+                {"author": author, "pts": pts, "issue": issue_key}
+            )
 
     return new_credits
 
@@ -273,17 +302,24 @@ def build_leaderboard_md(scores: dict) -> str:
     header = "| Position | Contributor | Points | Rank |\n|----------|------------|--------|------|\n"
     players = scores.get("players", {})
     if not players:
-        return header + "| — | *No contributions yet — be the first!* | — | — |\n"
+        return (
+            header + "| — | *No contributions yet — be the first!* | — | — |\n"
+        )
 
-    sorted_players = sorted(players.items(), key=lambda x: (-x[1]["total_points"], x[0]))
+    sorted_players = sorted(
+        players.items(), key=lambda x: (-x[1]["total_points"], x[0])
+    )
     lines = []
     for i, (username, data) in enumerate(sorted_players[:10], 1):
         pts = data["total_points"]
-        rank_name, rank_emoji = get_rank(pts)
+        rank_name = get_rank(pts)
         avatar = data.get("avatar_url", "")
         profile_url = f"https://github.com/{username}"
-        avatar_html = f'<a href="{profile_url}"><img src="{avatar}" width="40" height="40" style="border-radius:50%"/></a>'
-        lines.append(f"| {i} | {avatar_html} [@{username}]({profile_url}) | {pts} | {rank_emoji} {rank_name} |")
+        avatar_html = f'<a href="{profile_url}"><img src="{avatar}" width="48" height="48" style="border-radius:50%;"/></a>'
+        rank_img = (
+            f'<img src="{RANK_IMAGES[rank_name]}" width="48" height="48"/>'
+        )
+        lines.append(f"| {i} | {avatar_html}<br/>[@{username}]({profile_url}) | {pts} | {rank_img} |")
     return header + "\n".join(lines) + "\n"
 
 
@@ -298,7 +334,9 @@ def build_weekly_contributors_md(scores: dict) -> str:
     for username in sorted(contributors):
         avatar = players.get(username, {}).get("avatar_url", "")
         profile_url = f"https://github.com/{username}"
-        avatars.append(f'<a href="{profile_url}"><img src="{avatar}" width="48" height="48" style="border-radius:50%;margin:2px" title="@{username}"/></a>')
+        avatars.append(
+            f'<a href="{profile_url}"><img src="{avatar}" width="64" height="64" style="border-radius:50%;" title="@{username}"/></a>'
+        )
     return " ".join(avatars) + "\n"
 
 
@@ -319,20 +357,15 @@ def main():
         log.info("No tracked issues found. Run fetch_issues.py first.")
         return
 
-    issue_author_map = {}
-    for week_data in state.values():
-        for category, issue_list in week_data["issues"].items():
-            for issue in issue_list:
-                key = f"{issue['owner']}/{issue['repo']}#{issue['number']}"
-                issue_author_map[key] = issue.get("author", "")
-
     all_new_credits = []
     for week_id, week_data in state.items():
-        new = process_week(week_id, week_data, scores, issue_author_map)
+        new = process_week(week_id, week_data, scores)
         all_new_credits.extend(new)
 
     if all_new_credits:
-        log.info(f"Awarded points in {len(all_new_credits)} new contributions.")
+        log.info(
+            f"Awarded points in {len(all_new_credits)} new contributions."
+        )
     else:
         log.info("No new contributions to credit this run.")
 
@@ -340,8 +373,12 @@ def main():
 
     # Update README
     readme = README_PATH.read_text()
-    readme = update_readme_section(readme, "LEADERBOARD", build_leaderboard_md(scores))
-    readme = update_readme_section(readme, "WEEKLY", build_weekly_contributors_md(scores))
+    readme = update_readme_section(
+        readme, "LEADERBOARD", build_leaderboard_md(scores)
+    )
+    readme = update_readme_section(
+        readme, "WEEKLY", build_weekly_contributors_md(scores)
+    )
     readme = update_issue_statuses(readme)
     README_PATH.write_text(readme)
     log.info("README leaderboard updated.")

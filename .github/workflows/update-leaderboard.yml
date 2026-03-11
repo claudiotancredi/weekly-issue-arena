@@ -48,7 +48,7 @@ jobs:
       - name: Post Discussion comment for new credits
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DISCUSSION_ID: "D_kwDONjXVVM4Akt8_"
+          DISCUSSION_ID: "D_kwDO..."
         run: |
           credits='${{ steps.leaderboard.outputs.new_credits }}'
           if [ -z "$credits" ]; then
@@ -63,10 +63,10 @@ jobs:
               lines.append(f\"@{c['author']} earned **{c['pts']} pt(s)** for closing [{c['issue']}](https://github.com/{c['issue'].replace('#', '/issues/')})\")
           print('\n'.join(lines))
           ")
-          gh api graphql -f query='
-            mutation(\$discussionId: ID!, \$body: String!) {
-              addDiscussionComment(input: {discussionId: \$discussionId, body: \$body}) {
+          gh api graphql --field discussionId="$DISCUSSION_ID" --field body="$MENTIONS" -f query='
+            mutation($discussionId: ID!, $body: String!) {
+              addDiscussionComment(input: {discussionId: $discussionId, body: $body}) {
                 comment { id }
               }
             }
-          ' -f discussionId="$DISCUSSION_ID" -f body="$MENTIONS"
+          '

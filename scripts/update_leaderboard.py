@@ -315,11 +315,9 @@ def build_leaderboard_md(scores: dict) -> str:
         rank_name = get_rank(pts)
         avatar = data.get("avatar_url", "")
         profile_url = f"https://github.com/{username}"
-        avatar_html = f'<a href="{profile_url}"><img src="{avatar}" width="48" height="48" style="border-radius:50%;"/></a>'
-        rank_img = (
-            f'<img src="{RANK_IMAGES[rank_name]}" width="48" height="48"/>'
-        )
-        lines.append(f"| {i} | {avatar_html}<br/>[@{username}]({profile_url}) | {pts} | {rank_img} |")
+        avatar_html = f'<a href="{profile_url}"><img src="{avatar}" width="64" height="64" style="border-radius:50%;"/></a>'
+        rank_img = f'<img src="{RANK_IMAGES[rank_name]}" width="64" height="64"/>'
+        lines.append(f"| {i} | <div align=\"center\">{avatar_html}<br/>[@{username}]({profile_url})</div> | {pts} | <div align=\"center\">{rank_img}</div> |")
     return header + "\n".join(lines) + "\n"
 
 
@@ -335,7 +333,7 @@ def build_weekly_contributors_md(scores: dict) -> str:
         avatar = players.get(username, {}).get("avatar_url", "")
         profile_url = f"https://github.com/{username}"
         avatars.append(
-            f'<a href="{profile_url}"><img src="{avatar}" width="64" height="64" style="border-radius:50%;" title="@{username}"/></a>'
+            f'<a href="{profile_url}"><img src="{avatar}" width="48" height="48" style="border-radius:50%;" title="@{username}"/></a>'
         )
     return " ".join(avatars) + "\n"
 

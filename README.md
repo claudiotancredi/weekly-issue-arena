@@ -25,7 +25,6 @@ You don't need to register — contributions are detected automatically via GitH
 - PRs are tracked for up to **6 months** to allow maintainer review time
 - If your PR closes the issue within that window, you earn points
 - If multiple PRs reference the same issue, **only the one that closes it** earns points
-- PRs by the issue's original author are not eligible
 - All contributors to Arena-listed issues are treated as participants — open source, open battle ⚔️
 
 ### 🎯 Point System

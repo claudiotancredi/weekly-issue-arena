@@ -236,12 +236,6 @@ def process_week(week_id: str, week_data: dict, scores: dict, issue_author_map: 
                 continue
 
             author = pr["author"]
-            # Don't credit the issue author
-            issue_author = issue_author_map.get(issue_key)
-            if issue_author and issue_author == author:
-                log.info(f"Skipping {issue_key}: closed by issue author {author}")
-                scores["credited_issues"].append(issue_key)
-                continue
 
             log.info(f"Crediting {author} {pts} pts for {issue_key}")
             

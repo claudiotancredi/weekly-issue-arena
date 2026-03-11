@@ -53,7 +53,7 @@ You don't need to register — contributions are detected automatically via GitH
 | 1 | [WMT21 & WMT22](https://github.com/huggingface/datasets/issues/4709) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
 | 2 | [Remove OOO Head compaction's dependency on the in-order H...](https://github.com/prometheus/prometheus/issues/11834) | [prometheus/prometheus](https://github.com/prometheus/prometheus) | 🟢 Open |
 | 3 | [27 tests fail](https://github.com/pyg-team/pytorch_geometric/issues/9660) | [pyg-team/pytorch_geometric](https://github.com/pyg-team/pytorch_geometric) | 🟢 Open |
-| 4 | [[Bug]: matryoshka need gpu-memory???](https://github.com/vllm-project/vllm/issues/36433) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟢 Open |
+| 4 | [[Bug]: matryoshka need gpu-memory???](https://github.com/vllm-project/vllm/issues/36433) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🔴 Closed |
 | 5 | [`pl.datetime` needs a way to fail silently](https://github.com/pola-rs/polars/issues/21898) | [pola-rs/polars](https://github.com/pola-rs/polars) | 🟢 Open |
 | 6 | [[suggestions] When no labels are found with random walker...](https://github.com/nilearn/nilearn/issues/1245) | [nilearn/nilearn](https://github.com/nilearn/nilearn) | 🟢 Open |
 | 7 | [Add shell auto completion for different shell, like bash,...](https://github.com/openai/openai-python/issues/843) | [openai/openai-python](https://github.com/openai/openai-python) | 🟢 Open |
@@ -101,7 +101,7 @@ You don't need to register — contributions are detected automatically via GitH
 <!-- LEADERBOARD:START -->
 | Position | Contributor | Points | Rank |
 |----------|------------|--------|------|
-| — | *No contributions yet — be the first!* | — | — |
+| 1 | <a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="40" height="40" style="border-radius:50%"/></a> [@LeviLong01](https://github.com/LeviLong01) | 2 | 🔧 HW Engineer |
 <!-- LEADERBOARD:END -->
 
 > In case of a tie, contributors are listed alphabetically by GitHub username.
@@ -113,7 +113,7 @@ You don't need to register — contributions are detected automatically via GitH
 *Everyone who earned points this week, regardless of leaderboard position.*
 
 <!-- WEEKLY:START -->
-*No contributions tracked yet for this week.*
+<a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="48" height="48" style="border-radius:50%;margin:2px" title="@LeviLong01"/></a>
 <!-- WEEKLY:END -->
 
 ---

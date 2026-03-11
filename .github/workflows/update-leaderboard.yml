@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  discussions: write
 
 jobs:
   update-leaderboard:
@@ -27,9 +28,14 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Update leaderboard
+        id: leaderboard
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/update_leaderboard.py
+        run: |
+          output=$(python scripts/update_leaderboard.py)
+          echo "$output"
+          credits=$(echo "$output" | grep "^NEW_CREDITS:" | sed 's/^NEW_CREDITS://')
+          echo "new_credits=$credits" >> $GITHUB_OUTPUT
 
       - name: Commit and push changes
         run: |
@@ -38,3 +44,29 @@ jobs:
           git add README.md .arena_state/
           git diff --staged --quiet || git commit -m "chore: hourly leaderboard update [skip ci]"
           git push
+
+      - name: Post Discussion comment for new credits
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISCUSSION_ID: "D_kwDONjXVVM4Akt8_"
+        run: |
+          credits='${{ steps.leaderboard.outputs.new_credits }}'
+          if [ -z "$credits" ]; then
+            echo "No new credits, skipping."
+            exit 0
+          fi
+          MENTIONS=$(python3 -c "
+          import json
+          credits = json.loads('$credits')
+          lines = []
+          for c in credits:
+              lines.append(f\"@{c['author']} earned **{c['pts']} pt(s)** for closing [{c['issue']}](https://github.com/{c['issue'].replace('#', '/issues/')})\")
+          print('\n'.join(lines))
+          ")
+          gh api graphql -f query='
+            mutation(\$discussionId: ID!, \$body: String!) {
+              addDiscussionComment(input: {discussionId: \$discussionId, body: \$body}) {
+                comment { id }
+              }
+            }
+          ' -f discussionId="$DISCUSSION_ID" -f body="$MENTIONS"

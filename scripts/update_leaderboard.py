@@ -380,6 +380,8 @@ def main():
     readme = update_issue_statuses(readme)
     README_PATH.write_text(readme)
     log.info("README leaderboard updated.")
+    if all_new_credits:
+        print("NEW_CREDITS:" + json.dumps(all_new_credits))
 
 
 if __name__ == "__main__":

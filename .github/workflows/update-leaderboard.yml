@@ -55,15 +55,16 @@ jobs:
             echo "No new credits, skipping."
             exit 0
           fi
-          MENTIONS=$(python3 -c "
+          python3 -c "
           import json
           credits = json.loads('$credits')
           lines = []
           for c in credits:
               lines.append(f\"@{c['author']} earned **{c['pts']} pt(s)** for closing [{c['issue']}](https://github.com/{c['issue'].replace('#', '/issues/')})\")
-          print('\n'.join(lines))
-          ")
-          gh api graphql --field discussionId="$DISCUSSION_ID" --field body="$MENTIONS" -f query='
+          with open('/tmp/mention.txt', 'w') as f:
+              f.write('\n'.join(lines))
+          "
+          gh api graphql --field discussionId="$DISCUSSION_ID" --field "body=@/tmp/mention.txt" -f query='
             mutation($discussionId: ID!, $body: String!) {
               addDiscussionComment(input: {discussionId: $discussionId, body: $body}) {
                 comment { id }

@@ -101,7 +101,7 @@ You don't need to register — contributions are detected automatically via GitH
 <!-- LEADERBOARD:START -->
 | Position | Contributor | Points | Rank |
 |----------|------------|--------|------|
-| 1 | <a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="40" height="40" style="border-radius:50%"/></a> [@LeviLong01](https://github.com/LeviLong01) | 2 | 🔧 HW Engineer |
+| 1 | <a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="48" height="48" style="border-radius:50%;"/></a><br/>[@LeviLong01](https://github.com/LeviLong01) | 2 | <img src="assets/hwengineer.png" width="48" height="48"/> |
 <!-- LEADERBOARD:END -->
 
 > In case of a tie, contributors are listed alphabetically by GitHub username.
@@ -113,7 +113,7 @@ You don't need to register — contributions are detected automatically via GitH
 *Everyone who earned points this week, regardless of leaderboard position.*
 
 <!-- WEEKLY:START -->
-<a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="48" height="48" style="border-radius:50%;margin:2px" title="@LeviLong01"/></a>
+<a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="64" height="64" style="border-radius:50%;" title="@LeviLong01"/></a>
 <!-- WEEKLY:END -->
 
 ---

@@ -6,6 +6,8 @@
 
 No registration. No sign-ups. Just open source.
 
+> ⚠️ **The Arena is temporarily paused for maintenance.** Back soon with a more stable release.
+
 ---
 
 ## 🏆 Leaderboard

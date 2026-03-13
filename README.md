@@ -8,40 +8,27 @@ No registration. No sign-ups. Just open source.
 
 ---
 
-## 💡 How It Works
+## 🏆 Leaderboard
 
-Every **Friday at 17:00 UTC**, a GitHub Action automatically:
-1. Pulls fresh issues (labeled `good first issue`, `bug`, or `hard`) from a curated list of active repos
-2. Updates this README with the new weekly batch
-3. Archives the previous week's issues for contribution tracking
+*Updated hourly. Top 10 all-time contributors.*
 
-You don't need to register — contributions are detected automatically via GitHub's public metadata.
+<!-- LEADERBOARD:START -->
+| Position | Contributor | Points | Rank |
+|----------|------------|--------|------|
+| 1 | <div align="center"><a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@LeviLong01](https://github.com/LeviLong01)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+<!-- LEADERBOARD:END -->
+
+> In case of a tie, contributors are listed alphabetically by GitHub username.
 
 ---
 
-## 📖 Rules
+## 🔥 This Week's Contributors
 
-- You have **one week** (Friday → Thursday) to open a PR for any listed issue
-- PRs are tracked for up to **6 months** to allow maintainer review time
-- If your PR closes the issue within that window, you earn points
-- If multiple PRs reference the same issue, **only the one that closes it** earns points
-- All contributors to Arena-listed issues are treated as participants — open source, open battle ⚔️
+*Everyone who earned points this week, regardless of leaderboard position.*
 
-### 🎯 Point System
-
-| Issue Type         | Points |
-|--------------------|--------|
-| Good First Issue   | 1 pt   |
-| Bug Fix            | 2 pts  |
-| Hard Issue         | 4 pts  |
-
-### 🌟 Player Ranks
-
-| Rank | Badge | Points Required |
-|------|-------|----------------|
-| Hello World Engineer | <img src="assets/hwengineer.png" width="88" height="88" /> | 0–99 pts |
-| Bug Slayer | <img src="assets/bugslayer.png" width="88" height="88" /> | 100–499 pts |
-| Mr. Robot | <img src="assets/mrrobot.png" width="88" height="88" /> | 500+ pts |
+<!-- WEEKLY:START -->
+<a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="48" height="48" style="border-radius:50%;" title="@LeviLong01"/></a>
+<!-- WEEKLY:END -->
 
 ---
 
@@ -94,51 +81,57 @@ You don't need to register — contributions are detected automatically via GitH
 
 ---
 
-## 🏆 Leaderboard
+## 💡 How It Works
 
-*Updated hourly. Top 10 all-time contributors.*
+Every **Friday at 17:00 UTC**, a GitHub Action automatically:
+1. Pulls fresh issues (labeled `good first issue`, `bug`, or `hard`) from a curated list of active repos
+2. Updates this README with the new weekly batch
+3. Archives the previous week's issues for contribution tracking
 
-<!-- LEADERBOARD:START -->
-| Position | Contributor | Points | Rank |
-|----------|------------|--------|------|
-| 1 | <div align="center"><a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@LeviLong01](https://github.com/LeviLong01)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-<!-- LEADERBOARD:END -->
-
-> In case of a tie, contributors are listed alphabetically by GitHub username.
+You don't need to register — contributions are detected automatically via GitHub's public metadata.
 
 ---
 
-## 🔥 This Week's Contributors
+## 📖 Rules
 
-*Everyone who earned points this week, regardless of leaderboard position.*
+- You have **one week** (Friday → Thursday) to open a PR for any listed issue
+- PRs are tracked for up to **28 weeks** to allow maintainer review time
+- If your PR closes the issue within that window, you earn points
+- Your PR must reference the issue using a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) to be automatically detected
+- If multiple PRs reference the same issue, **only the one that closes it** earns points
+- All contributors to Arena-listed issues are treated as participants — open source, open battle ⚔️
 
-<!-- WEEKLY:START -->
-<a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="48" height="48" style="border-radius:50%;" title="@LeviLong01"/></a>
-<!-- WEEKLY:END -->
+### 🎯 Point System
 
----
+| Issue Type         | Points |
+|--------------------|--------|
+| Good First Issue   | 1 pt   |
+| Bug Fix            | 2 pts  |
+| Hard Issue         | 4 pts  |
 
-## 🗂️ Tracked Issue Pool
+### 🌟 Player Ranks
 
-Want to see what repos we pull issues from, or suggest a new one?
-→ See [`config/repos.yml`](config/repos.yml)
-→ Open an [issue](https://github.com/claudiotancredi/weekly-issue-arena/issues) or [discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions) to suggest additions
+| Rank | Badge | Points Required |
+|------|-------|----------------|
+| Hello World Engineer | <img src="assets/hwengineer.png" width="88" height="88" /> | 0–99 pts |
+| Bug Slayer | <img src="assets/bugslayer.png" width="88" height="88" /> | 100–499 pts |
+| Mr. Robot | <img src="assets/mrrobot.png" width="88" height="88" /> | 500+ pts |
 
 ---
 
 ## 🙋 FAQ
 
 **Q: My PR was merged but I didn't get points.**
-Open a thread in [Discussions](https://github.com/claudiotancredi/weekly-issue-arena/discussions). We track these to improve the automation.
+Make sure your PR used a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) to reference the issue. Without it, the automation can't link the PR to the issue. If you did use one, open a thread in [Discussions](https://github.com/claudiotancredi/weekly-issue-arena/discussions).
 
 **Q: Can I request a specific repo to be added?**
-Yes! See [`config/repos.yml`](config/repos.yml) and open a PR or Discussion.
+Yes! See [`config/repos.yml`](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml) and open a PR or Discussion.
 
 **Q: What if I contributed without knowing about the Arena?**
 You're still counted — all contributors to Arena-listed issues are treated equally.
 
 **Q: How is this automated?**
-Via GitHub Actions + GitHub REST API. See [`.github/workflows/`](.github/workflows/) for the full scripts.
+Via GitHub Actions + GitHub REST API. See [`.github/workflows/`](https://github.com/claudiotancredi/weekly-issue-arena/tree/main/.github/workflows) for the full scripts.
 
 ---
 
@@ -147,6 +140,14 @@ Via GitHub Actions + GitHub REST API. See [`.github/workflows/`](.github/workflo
 - [How to contribute to open source (GitHub Docs)](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project)
 - [first-contributions](https://github.com/firstcontributions/first-contributions) — hands-on beginner guide
 - [goodfirstissue.dev](https://goodfirstissue.dev) — more issue discovery
+
+---
+
+## 🗂️ Tracked Issue Pool
+
+Want to see what repos we pull issues from, or suggest a new one?
+→ See [`config/repos.yml`](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml)
+→ Open an [issue](https://github.com/claudiotancredi/weekly-issue-arena/issues) or [discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions) to suggest additions
 
 ---
 
@@ -160,4 +161,4 @@ Via GitHub Actions + GitHub REST API. See [`.github/workflows/`](.github/workflo
 
 ## 📜 License
 
-MIT — see [`LICENSE`](LICENSE)
+MIT — see [`LICENSE`](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/LICENSE)

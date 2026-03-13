@@ -39,18 +39,18 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [WMT21 & WMT22](https://github.com/huggingface/datasets/issues/4709) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
-| 2 | [Remove OOO Head compaction's dependency on the in-order H...](https://github.com/prometheus/prometheus/issues/11834) | [prometheus/prometheus](https://github.com/prometheus/prometheus) | 🟢 Open |
-| 3 | [27 tests fail](https://github.com/pyg-team/pytorch_geometric/issues/9660) | [pyg-team/pytorch_geometric](https://github.com/pyg-team/pytorch_geometric) | 🟢 Open |
-| 4 | [[Bug]: matryoshka need gpu-memory???](https://github.com/vllm-project/vllm/issues/36433) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🔴 Closed |
-| 5 | [`pl.datetime` needs a way to fail silently](https://github.com/pola-rs/polars/issues/21898) | [pola-rs/polars](https://github.com/pola-rs/polars) | 🟢 Open |
-| 6 | [[suggestions] When no labels are found with random walker...](https://github.com/nilearn/nilearn/issues/1245) | [nilearn/nilearn](https://github.com/nilearn/nilearn) | 🟢 Open |
-| 7 | [Add shell auto completion for different shell, like bash,...](https://github.com/openai/openai-python/issues/843) | [openai/openai-python](https://github.com/openai/openai-python) | 🟢 Open |
-| 8 | [Non-inclusive partial string indexing on DatetimeIndex](https://github.com/pandas-dev/pandas/issues/16571) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 9 | [[Roadmap] Heterogeneous Graphs Explainability Support](https://github.com/pyg-team/pytorch_geometric/issues/9112) | [pyg-team/pytorch_geometric](https://github.com/pyg-team/pytorch_geometric) | 🟢 Open |
-| 10 | [Remove references to `altair_data_server` in docs](https://github.com/vega/altair/issues/3048) | [altair-viz/altair](https://github.com/altair-viz/altair) | 🟢 Open |
-| 11 | [Center of rotation for text with rotation_mode='anchor'](https://github.com/matplotlib/matplotlib/issues/13044) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 12 | [[python-package] `Booster.refit()` raises a misleading wa...](https://github.com/lightgbm-org/LightGBM/issues/6793) | [microsoft/LightGBM](https://github.com/microsoft/LightGBM) | 🟢 Open |
+| 1 | [Debugging grammars by example](https://github.com/guidance-ai/guidance/issues/561) | [guidance-ai/guidance](https://github.com/guidance-ai/guidance) | 🟢 Open |
+| 2 | [Period(s) in repository "name" causes issues](https://github.com/python-poetry/poetry/issues/1328) | [python-poetry/poetry](https://github.com/python-poetry/poetry) | 🟢 Open |
+| 3 | [Wishlist: doc examples wanted](https://github.com/plotly/plotly.py/issues/1965) | [plotly/plotly.py](https://github.com/plotly/plotly.py) | 🟢 Open |
+| 4 | [Time Series Support](https://github.com/torchgeo/torchgeo/issues/2382) | [torchgeo/torchgeo](https://github.com/torchgeo/torchgeo) | 🟢 Open |
+| 5 | [Highlight new contributors better in release notes](https://github.com/sunpy/sunpy/issues/7675) | [sunpy/sunpy](https://github.com/sunpy/sunpy) | 🟢 Open |
+| 6 | [`.str.split` coerces `dtype` to `object`](https://github.com/dask/dask/issues/11884) | [dask/dask](https://github.com/dask/dask) | 🟢 Open |
+| 7 | [Implementation of scipy.integrate.simps](https://github.com/dask/dask/issues/2629) | [dask/dask](https://github.com/dask/dask) | 🟢 Open |
+| 8 | [Adding Zarr visualization to docs ](https://github.com/zarr-developers/zarr-python/issues/1238) | [zarr-developers/zarr-python](https://github.com/zarr-developers/zarr-python) | 🟢 Open |
+| 9 | [Documentation says `grid_mapping` is in attrs but really ...](https://github.com/corteva/rioxarray/issues/815) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
+| 10 | [Return the name of the currently loaded file in the load_...](https://github.com/huggingface/datasets/issues/5806) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
+| 11 | [[c++] forcedsplits_filename pointing at a non-existent fi...](https://github.com/lightgbm-org/LightGBM/issues/6830) | [lightgbm-org/LightGBM](https://github.com/lightgbm-org/LightGBM) | 🟢 Open |
+| 12 | [Stream docker build to stdout](https://github.com/PrefectHQ/prefect/issues/18393) | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 ## 🪲 Bug Fixes
@@ -58,14 +58,14 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Asset backfill hangs forever when run succeeds without ma...](https://github.com/dagster-io/dagster/issues/17745) | [dagster-io/dagster](https://github.com/dagster-io/dagster) | 🟢 Open |
-| 2 | [[BUG] ToolCallCorrectness and ToolCallEfficiency fails on...](https://github.com/mlflow/mlflow/issues/21487) | [mlflow/mlflow](https://github.com/mlflow/mlflow) | 🔴 Closed |
-| 3 | [Possibly wrong derivative in `VectorAmplitude`](https://github.com/simpeg/simpeg/issues/1301) | [simpeg/simpeg](https://github.com/simpeg/simpeg) | 🟢 Open |
-| 4 | [Epoch start freezing regression](https://github.com/Lightning-AI/pytorch-lightning/issues/21550) | [Lightning-AI/pytorch-lightning](https://github.com/Lightning-AI/pytorch-lightning) | 🟢 Open |
-| 5 | [Deadlock when running multi tasks](https://github.com/huggingface/accelerate/issues/3814) | [huggingface/accelerate](https://github.com/huggingface/accelerate) | 🟢 Open |
-| 6 | [reprojecting xarray dataset: TypeError: only length-1 arr...](https://github.com/corteva/rioxarray/issues/848) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
-| 7 | [`GenericMap.plot` should support plotting on a WCSAxes ba...](https://github.com/sunpy/sunpy/issues/8416) | [sunpy/sunpy](https://github.com/sunpy/sunpy) | 🟢 Open |
-| 8 | [CLI list commands return oldest items first instead of ne...](https://github.com/zenml-io/zenml/issues/4455) | [zenml-io/zenml](https://github.com/zenml-io/zenml) | 🟢 Open |
+| 1 | [Bug on Running Files Dropdown Menu](https://github.com/jupyter/notebook/issues/7772) | [jupyter/notebook](https://github.com/jupyter/notebook) | 🟢 Open |
+| 2 | [Bedrock client failing to detect AWS region correctly can...](https://github.com/anthropics/anthropic-sdk-python/issues/892) | [anthropics/anthropic-sdk-python](https://github.com/anthropics/anthropic-sdk-python) | 🟢 Open |
+| 3 | [[Bug] NeptuneAnalyticsGraphStore' object has no attribute...](https://github.com/run-llama/llama_index/issues/18372) | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🟢 Open |
+| 4 | [Datasets concatenated along string dimension cannot write...](https://github.com/pydata/xarray/issues/11199) | [pydata/xarray](https://github.com/pydata/xarray) | 🟢 Open |
+| 5 | [Reference optional composite dependencies by name](https://github.com/pytroll/satpy/issues/161) | [pytroll/satpy](https://github.com/pytroll/satpy) | 🟢 Open |
+| 6 | [Collections with many items saving time issue](https://github.com/stac-utils/pystac/issues/1207) | [stac-utils/pystac](https://github.com/stac-utils/pystac) | 🟢 Open |
+| 7 | [[Bug Report] Docs website is extremely slow](https://github.com/Farama-Foundation/Gymnasium/issues/1455) | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 🟢 Open |
+| 8 | [algorithm contours return 500: ufunc 'invert' not supported](https://github.com/developmentseed/titiler/issues/1326) | [developmentseed/titiler](https://github.com/developmentseed/titiler) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 ## 😓 Hard Issues
@@ -73,12 +73,12 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Warnings in plot directive aren't treated as such by Sphinx](https://github.com/matplotlib/matplotlib/issues/15715) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 2 | [Cannot recover DBSCAN from memory-overuse](https://github.com/scikit-learn/scikit-learn/issues/31407) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 3 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 4 | [Newlines should not be scaped when using setting usetex=True](https://github.com/matplotlib/matplotlib/issues/29628) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 5 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 6 | [Faster GPs using HODLR solver](https://github.com/scikit-learn/scikit-learn/issues/14437) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 1 | [Newlines should not be scaped when using setting usetex=True](https://github.com/matplotlib/matplotlib/issues/29628) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 2 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 3 | [ENH: enable setitem dim2 test to work for EA with complex...](https://github.com/pandas-dev/pandas/issues/54445) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 4 | [Update ml_map.png](https://github.com/scikit-learn/scikit-learn/issues/7686) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 5 | [Rewrite _reproject() to use GDALWarp](https://github.com/rasterio/rasterio/issues/1990) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 6 | [Cannot recover DBSCAN from memory-overuse](https://github.com/scikit-learn/scikit-learn/issues/31407) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 ---

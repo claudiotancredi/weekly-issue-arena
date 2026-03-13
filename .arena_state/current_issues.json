@@ -1,141 +1,123 @@
 [
   {
-    "owner": "huggingface",
-    "repo": "datasets",
-    "number": 4709,
+    "owner": "guidance-ai",
+    "repo": "guidance",
+    "number": 561,
     "category": "gfi"
   },
   {
-    "owner": "prometheus",
-    "repo": "prometheus",
-    "number": 11834,
+    "owner": "python-poetry",
+    "repo": "poetry",
+    "number": 1328,
     "category": "gfi"
   },
   {
-    "owner": "pyg-team",
-    "repo": "pytorch_geometric",
-    "number": 9660,
+    "owner": "plotly",
+    "repo": "plotly.py",
+    "number": 1965,
     "category": "gfi"
   },
   {
-    "owner": "vllm-project",
-    "repo": "vllm",
-    "number": 36433,
+    "owner": "torchgeo",
+    "repo": "torchgeo",
+    "number": 2382,
     "category": "gfi"
-  },
-  {
-    "owner": "pola-rs",
-    "repo": "polars",
-    "number": 21898,
-    "category": "gfi"
-  },
-  {
-    "owner": "nilearn",
-    "repo": "nilearn",
-    "number": 1245,
-    "category": "gfi"
-  },
-  {
-    "owner": "openai",
-    "repo": "openai-python",
-    "number": 843,
-    "category": "gfi"
-  },
-  {
-    "owner": "pandas-dev",
-    "repo": "pandas",
-    "number": 16571,
-    "category": "gfi"
-  },
-  {
-    "owner": "pyg-team",
-    "repo": "pytorch_geometric",
-    "number": 9112,
-    "category": "gfi"
-  },
-  {
-    "owner": "altair-viz",
-    "repo": "altair",
-    "number": 3048,
-    "category": "gfi"
-  },
-  {
-    "owner": "matplotlib",
-    "repo": "matplotlib",
-    "number": 13044,
-    "category": "gfi"
-  },
-  {
-    "owner": "microsoft",
-    "repo": "LightGBM",
-    "number": 6793,
-    "category": "gfi"
-  },
-  {
-    "owner": "dagster-io",
-    "repo": "dagster",
-    "number": 17745,
-    "category": "bug"
-  },
-  {
-    "owner": "mlflow",
-    "repo": "mlflow",
-    "number": 21487,
-    "category": "bug"
-  },
-  {
-    "owner": "simpeg",
-    "repo": "simpeg",
-    "number": 1301,
-    "category": "bug"
-  },
-  {
-    "owner": "Lightning-AI",
-    "repo": "pytorch-lightning",
-    "number": 21550,
-    "category": "bug"
-  },
-  {
-    "owner": "huggingface",
-    "repo": "accelerate",
-    "number": 3814,
-    "category": "bug"
-  },
-  {
-    "owner": "corteva",
-    "repo": "rioxarray",
-    "number": 848,
-    "category": "bug"
   },
   {
     "owner": "sunpy",
     "repo": "sunpy",
-    "number": 8416,
+    "number": 7675,
+    "category": "gfi"
+  },
+  {
+    "owner": "dask",
+    "repo": "dask",
+    "number": 11884,
+    "category": "gfi"
+  },
+  {
+    "owner": "dask",
+    "repo": "dask",
+    "number": 2629,
+    "category": "gfi"
+  },
+  {
+    "owner": "zarr-developers",
+    "repo": "zarr-python",
+    "number": 1238,
+    "category": "gfi"
+  },
+  {
+    "owner": "corteva",
+    "repo": "rioxarray",
+    "number": 815,
+    "category": "gfi"
+  },
+  {
+    "owner": "huggingface",
+    "repo": "datasets",
+    "number": 5806,
+    "category": "gfi"
+  },
+  {
+    "owner": "lightgbm-org",
+    "repo": "LightGBM",
+    "number": 6830,
+    "category": "gfi"
+  },
+  {
+    "owner": "PrefectHQ",
+    "repo": "prefect",
+    "number": 18393,
+    "category": "gfi"
+  },
+  {
+    "owner": "jupyter",
+    "repo": "notebook",
+    "number": 7772,
     "category": "bug"
   },
   {
-    "owner": "zenml-io",
-    "repo": "zenml",
-    "number": 4455,
+    "owner": "anthropics",
+    "repo": "anthropic-sdk-python",
+    "number": 892,
     "category": "bug"
   },
   {
-    "owner": "matplotlib",
-    "repo": "matplotlib",
-    "number": 15715,
-    "category": "hard"
+    "owner": "run-llama",
+    "repo": "llama_index",
+    "number": 18372,
+    "category": "bug"
   },
   {
-    "owner": "scikit-learn",
-    "repo": "scikit-learn",
-    "number": 31407,
-    "category": "hard"
+    "owner": "pydata",
+    "repo": "xarray",
+    "number": 11199,
+    "category": "bug"
   },
   {
-    "owner": "pandas-dev",
-    "repo": "pandas",
-    "number": 43770,
-    "category": "hard"
+    "owner": "pytroll",
+    "repo": "satpy",
+    "number": 161,
+    "category": "bug"
+  },
+  {
+    "owner": "stac-utils",
+    "repo": "pystac",
+    "number": 1207,
+    "category": "bug"
+  },
+  {
+    "owner": "Farama-Foundation",
+    "repo": "Gymnasium",
+    "number": 1455,
+    "category": "bug"
+  },
+  {
+    "owner": "developmentseed",
+    "repo": "titiler",
+    "number": 1326,
+    "category": "bug"
   },
   {
     "owner": "matplotlib",
@@ -144,15 +126,33 @@
     "category": "hard"
   },
   {
+    "owner": "rasterio",
+    "repo": "rasterio",
+    "number": 1270,
+    "category": "hard"
+  },
+  {
     "owner": "pandas-dev",
     "repo": "pandas",
-    "number": 9379,
+    "number": 54445,
     "category": "hard"
   },
   {
     "owner": "scikit-learn",
     "repo": "scikit-learn",
-    "number": 14437,
+    "number": 7686,
+    "category": "hard"
+  },
+  {
+    "owner": "rasterio",
+    "repo": "rasterio",
+    "number": 1990,
+    "category": "hard"
+  },
+  {
+    "owner": "scikit-learn",
+    "repo": "scikit-learn",
+    "number": 31407,
     "category": "hard"
   }
 ]

@@ -18,6 +18,11 @@ Edit [`config/repos.yml`](config/repos.yml) and open a PR. Good candidates:
 ### Fix a bug or improve the scripts
 - Fork, clone, make changes, open a PR
 - Scripts are in [`scripts/`](scripts/) and are plain Python — no framework needed
+- Set up pre-commit hooks to catch linting issues before committing:
+```bash
+  pip install pre-commit
+  pre-commit install
+```
 - Please test locally before opening a PR: `python scripts/fetch_issues.py` (set `GITHUB_TOKEN` first)
 
 ### Report issues

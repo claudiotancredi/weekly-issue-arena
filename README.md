@@ -111,13 +111,16 @@ You don't need to register — contributions are detected automatically via GitH
 | Bug Fix            | 2 pts  |
 | Hard Issue         | 4 pts  |
 
-### 🌟 Player Ranks
+<details>
+<summary> 🌟 Player Ranks</summary>
 
 | Rank | Badge | Points Required |
 |------|-------|----------------|
 | Hello World Engineer | <img src="assets/hwengineer.png" width="88" height="88" /> | 0–99 pts |
 | Bug Slayer | <img src="assets/bugslayer.png" width="88" height="88" /> | 100–499 pts |
 | Mr. Robot | <img src="assets/mrrobot.png" width="88" height="88" /> | 500+ pts |
+
+</details>
 
 ---
 
@@ -137,27 +140,36 @@ Via GitHub Actions + GitHub REST API. See [`.github/workflows/`](https://github.
 
 ---
 
-## 🔗 Resources for First-Time Contributors
+<details>
+<summary>🔗 Resources for First-Time Contributors</summary>
 
 - [How to contribute to open source (GitHub Docs)](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project)
 - [first-contributions](https://github.com/firstcontributions/first-contributions) — hands-on beginner guide
 - [goodfirstissue.dev](https://goodfirstissue.dev) — more issue discovery
 
+</details>
+
 ---
 
-## 🗂️ Tracked Issue Pool
+<details>
+<summary> 🗂️ Tracked Issue Pool </summary>
 
 Want to see what repos we pull issues from, or suggest a new one?
 → See [`config/repos.yml`](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml)
 → Open an [issue](https://github.com/claudiotancredi/weekly-issue-arena/issues) or [discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions) to suggest additions
 
+</details>
+
 ---
 
-## 🫂 Contributing to the Arena
+<details>
+<summary> 🫂 Contributing to the Arena </summary>
 
 - 💬 [Start a Discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions) — ideas, questions, edge cases
 - 🪲 [File an Issue](https://github.com/claudiotancredi/weekly-issue-arena/issues) — bugs in the automation, rule suggestions
 - 📦 [Open a PR](https://github.com/claudiotancredi/weekly-issue-arena/pulls) — fix something, add a repo to the pool, improve the scripts
+
+</details>
 
 ---
 

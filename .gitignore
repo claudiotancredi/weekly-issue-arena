@@ -171,6 +171,7 @@ cython_debug/
 .pypirc
 
 .vscode/
+.claude/
 
 old/
 .ruff_cache

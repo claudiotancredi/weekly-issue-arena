@@ -1,24 +1,23 @@
 #!/usr/bin/env python3
-"""
-fetch_issues.py
----------------
-Fetches open issues from configured repos and updates the README issue tables.
+"""Fetch open issues from configured repos and update the README tables.
 
-Usage:
+Usage::
+
     python scripts/fetch_issues.py
 
 Environment variables:
-    GITHUB_TOKEN  — required for higher rate limits (5000 req/hr vs 60)
+    GITHUB_TOKEN  — required for higher rate limits (5 000 req/hr vs 60).
 """
 
-import os
-import re
-import json
-import random
-import logging
-from datetime import datetime, timezone, timedelta
-from pathlib import Path
 import argparse
+import json
+import logging
+import os
+import random
+import re
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
 import requests
 import yaml
 
@@ -38,12 +37,19 @@ if GITHUB_TOKEN:
     HEADERS["Authorization"] = f"Bearer {GITHUB_TOKEN}"
 
 
-def load_config() -> dict:
-    with open(CONFIG_PATH) as f:
+def load_configured_repos() -> dict:
+    """Loads the info about the configured repos for the Arena issues.
+
+    Returns:
+        dict: Information about the configured repos.
+    """
+    with open(CONFIG_PATH, encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 
-def get_issues_for_repo(owner: str, repo: str, labels: list[str], limit: int) -> list[dict]:
+def get_issues_for_repo(
+    owner: str, repo: str, labels: list[str], limit: int
+) -> list[dict]:
     """Fetch open issues from a repo matching any of the given labels."""
     collected = []
     cutoff = datetime.now(timezone.utc) - timedelta(weeks=104)  # 2 years
@@ -62,7 +68,9 @@ def get_issues_for_repo(owner: str, repo: str, labels: list[str], limit: int) ->
             "since": cutoff_str,
         }
         try:
-            resp = requests.get(url, headers=HEADERS, params=params, timeout=15)
+            resp = requests.get(
+                url, headers=HEADERS, params=params, timeout=15
+            )
             resp.raise_for_status()
             issues = resp.json()
             # Exclude pull requests (GitHub returns PRs in issues endpoint)
@@ -73,7 +81,11 @@ def get_issues_for_repo(owner: str, repo: str, labels: list[str], limit: int) ->
             log.warning(f"  Failed {owner}/{repo} [{label}]: {e}")
     return collected[:limit]
 
-def enforce_repo_diversity(issues: list[dict], max_per_repo: int = 2) -> list[dict]:
+
+def enforce_repo_diversity(
+    issues: list[dict], max_per_repo: int = 2
+) -> list[dict]:
+    """Cap the number of issues per repository to ensure diversity."""
     counts = {}
     result = []
     for issue in issues:
@@ -101,38 +113,49 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
             labels = label_mappings[category]
             issues = get_issues_for_repo(owner, repo, labels, limit=5)
             for issue in issues:
-                url_parts = issue["html_url"].split("/")  # https://github.com/OWNER/REPO/issues/N
+                url_parts = issue["html_url"].split(
+                    "/"
+                )  # https://github.com/OWNER/REPO/issues/N
                 owner_actual = url_parts[3]
                 repo_actual = url_parts[4]
-                results[category].append({
-                    "number": issue["number"],
-                    "title": issue["title"],
-                    "url": issue["html_url"],
-                    "owner": owner_actual,
-                    "repo": repo_actual,
-                    "repo_url": f"https://github.com/{owner_actual}/{repo_actual}",
-                    "created_at": issue["created_at"],
-                    "updated_at": issue["updated_at"],
-                    "author": issue["user"]["login"],
-                    "listed_at": listed_at,
-                })
+                results[category].append(
+                    {
+                        "number": issue["number"],
+                        "title": issue["title"],
+                        "url": issue["html_url"],
+                        "owner": owner_actual,
+                        "repo": repo_actual,
+                        "repo_url": f"https://github.com/{owner_actual}/{repo_actual}",
+                        "created_at": issue["created_at"],
+                        "updated_at": issue["updated_at"],
+                        "author": issue["user"]["login"],
+                        "listed_at": listed_at,
+                    }
+                )
 
     # Shuffle and cap to configured limits
     for category in results:
         random.shuffle(results[category])
-        results[category] = results[category][:limits[category] * 2]  # fetch extra buffer
+        results[category] = results[category][
+            : limits[category] * 2
+        ]  # fetch extra buffer
         results[category] = enforce_repo_diversity(results[category])
-        results[category] = results[category][:limits[category]]  # final cap
+        results[category] = results[category][: limits[category]]  # final cap
 
     return results
 
 
 def truncate_title(title: str, max_len: int = 60) -> str:
-    return title if len(title) <= max_len else title[:max_len - 3] + "..."
+    """Shorten a title with an ellipsis if it exceeds *max_len*."""
+    return title if len(title) <= max_len else title[: max_len - 3] + "..."
 
 
 def build_issue_table(issues: list[dict]) -> str:
-    header = "| # | Title | Repository | Status |\n|---|-------|------------|--------|\n"
+    """Build a Markdown table of issues for the README."""
+    header = (
+        "| # | Title | Repository | Status |\n"
+        "|---|-------|------------|--------|\n"
+    )
     if not issues:
         return header + "| — | *No issues found this week* | — | — |\n"
     lines = []
@@ -147,7 +170,7 @@ def build_issue_table(issues: list[dict]) -> str:
 
 
 def update_readme_section(content: str, tag: str, new_body: str) -> str:
-    """Replace content between <!-- TAG:START --> and <!-- TAG:END --> markers."""
+    """Replace content between matching START/END markers."""
     pattern = rf"(<!-- {tag}:START -->).*?(<!-- {tag}:END -->)"
     replacement = rf"\1\n{new_body}\2"
     updated, count = re.subn(pattern, replacement, content, flags=re.DOTALL)
@@ -159,11 +182,11 @@ def update_readme_section(content: str, tag: str, new_body: str) -> str:
 def save_state(issues: dict[str, list[dict]], week_id: str) -> None:
     """Persist fetched issues so the leaderboard script can track PRs."""
     STATE_PATH.parent.mkdir(exist_ok=True)
-    
+
     # Load existing state or create new
     state = {}
     if STATE_PATH.exists():
-        with open(STATE_PATH) as f:
+        with open(STATE_PATH, encoding="utf-8") as f:
             state = json.load(f)
 
     state[week_id] = {
@@ -174,54 +197,84 @@ def save_state(issues: dict[str, list[dict]], week_id: str) -> None:
     # Prune weeks older than 28 weeks (6+ months)
     cutoff = datetime.now(timezone.utc) - timedelta(weeks=28)
     state = {
-        k: v for k, v in state.items()
+        k: v
+        for k, v in state.items()
         if datetime.fromisoformat(v["fetched_at"]) > cutoff
     }
 
-    with open(STATE_PATH, "w") as f:
+    with open(STATE_PATH, "w", encoding="utf-8") as f:
         json.dump(state, f, indent=2)
     log.info(f"State saved to {STATE_PATH}")
 
 
 def save_current_issues(issues: dict[str, list[dict]]) -> None:
+    """Write the current week's issues for status-tracking."""
     current = []
     for category, issue_list in issues.items():
         for issue in issue_list:
-            current.append({
-                "owner": issue["owner"],
-                "repo": issue["repo"],
-                "number": issue["number"],
-                "category": category,
-            })
+            current.append(
+                {
+                    "owner": issue["owner"],
+                    "repo": issue["repo"],
+                    "number": issue["number"],
+                    "category": category,
+                }
+            )
     path = Path(".arena_state/current_issues.json")
-    with open(path, "w") as f:
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(current, f, indent=2)
 
 
 def main():
+    """Main function for fetching new issues.
+
+    If dry run flag is enabled, new issues are only printed and not
+    stored in README.
+    """
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dry-run", action="store_true", help="Fetch and print issues without writing anything")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Dry run: fetch and print issues without writing anything",
+    )
     args = parser.parse_args()
 
-    config = load_config()
+    log.info("Loading the information about the configured repos...")
+    config = load_configured_repos()
     log.info("Fetching issues from configured repos...")
     issues = fetch_all_issues(config)
 
     total = sum(len(v) for v in issues.values())
-    log.info(f"Total issues fetched: {total} (GFI: {len(issues['gfi'])}, Bug: {len(issues['bug'])}, Hard: {len(issues['hard'])})")
+    log.info(
+        f"Total issues fetched: {total} "
+        f"(GFI: {len(issues['gfi'])}, "
+        f"Bug: {len(issues['bug'])}, "
+        f"Hard: {len(issues['hard'])})"
+    )
 
     if args.dry_run:
         log.info("Dry run — skipping README and state writes.")
         for category, issue_list in issues.items():
             print(f"\n=== {category.upper()} ({len(issue_list)}) ===")
             for issue in issue_list:
-                print(f"  [{issue['owner']}/{issue['repo']}#{issue['number']}] {issue['title'][:80]}")
-        raise SystemExit(0)
+                print(
+                    f"  [{issue['owner']}/"
+                    f"{issue['repo']}"
+                    f"#{issue['number']}] "
+                    f"{issue['title'][:80]}"
+                )
+        return
 
     readme = README_PATH.read_text()
-    readme = update_readme_section(readme, "ISSUES:GFI", build_issue_table(issues["gfi"]))
-    readme = update_readme_section(readme, "ISSUES:BUGS", build_issue_table(issues["bug"]))
-    readme = update_readme_section(readme, "ISSUES:HARD", build_issue_table(issues["hard"]))
+    readme = update_readme_section(
+        readme, "ISSUES:GFI", build_issue_table(issues["gfi"])
+    )
+    readme = update_readme_section(
+        readme, "ISSUES:BUGS", build_issue_table(issues["bug"])
+    )
+    readme = update_readme_section(
+        readme, "ISSUES:HARD", build_issue_table(issues["hard"])
+    )
     README_PATH.write_text(readme)
     log.info("README updated.")
 

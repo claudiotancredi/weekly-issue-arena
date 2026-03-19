@@ -239,7 +239,7 @@ repos:
     tags: [python, cpp, gradient-boosting, ml]
     # Scalable gradient boosting.
 
-  - owner: microsoft
+  - owner: lightgbm-org
     repo: LightGBM
     tags: [python, cpp, gradient-boosting, ml]
     # Fast gradient boosting on decision trees.

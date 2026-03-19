@@ -49,24 +49,32 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISCUSSION_ID: "D_kwDONjXVVM4Akt8_"
+          NEW_CREDITS: ${{ steps.leaderboard.outputs.new_credits }}
         run: |
-          credits='${{ steps.leaderboard.outputs.new_credits }}'
-          if [ -z "$credits" ]; then
+          if [ -z "$NEW_CREDITS" ]; then
             echo "No new credits, skipping."
             exit 0
           fi
           python3 -c "
-          import json
-          credits = json.loads('$credits')
+          import json, os
+          credits = json.loads(os.environ['NEW_CREDITS'])
           lines = []
           for c in credits:
-              lines.append(f\"@{c['author']} earned **{c['pts']} pt(s)** for closing [{c['issue']}](https://github.com/{c['issue'].replace('#', '/issues/')})\")
+              issue_url = c['issue'].replace('#', '/issues/')
+              lines.append(
+                  f\"@{c['author']} earned **{c['pts']} pt(s)** \"
+                  f\"for closing [{c['issue']}]\"
+                  f\"(https://github.com/{issue_url})\"
+              )
           with open('/tmp/mention.txt', 'w') as f:
               f.write('\n'.join(lines))
           "
-          gh api graphql --field discussionId="$DISCUSSION_ID" --field "body=@/tmp/mention.txt" -f query='
-            mutation($discussionId: ID!, $body: String!) {
-              addDiscussionComment(input: {discussionId: $discussionId, body: $body}) {
+          gh api graphql \
+            --field discussionId="$DISCUSSION_ID" \
+            --field "body=@/tmp/mention.txt" \
+            -f query='
+            mutation(\$discussionId: ID!, \$body: String!) {
+              addDiscussionComment(input: {discussionId: \$discussionId, body: \$body}) {
                 comment { id }
               }
             }

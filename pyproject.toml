@@ -1,3 +1,10 @@
+[project]
+name = "weekly-issue-arena"
+version = "1.0.0"
+description = "A weekly-refreshed hub of open-source issues with a leaderboard for contributors who close them."
+requires-python = ">=3.12"
+license = "MIT"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 

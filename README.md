@@ -1,12 +1,12 @@
 # ⚔️ Weekly Issue Arena
 
+[![Lint & Test](https://github.com/claudiotancredi/weekly-issue-arena/actions/workflows/lint.yml/badge.svg)](https://github.com/claudiotancredi/weekly-issue-arena/actions/workflows/lint.yml)
+
 > A weekly-refreshed hub of open-source issues, with a leaderboard for contributors who close them.
 
 **Find an issue. Submit a PR. Earn points. Climb the leaderboard.**
 
 No registration. No sign-ups. Just open source.
-
-> ⚠️ **The Arena is temporarily paused for maintenance.** Back soon with a more stable release.
 
 ---
 
@@ -96,10 +96,11 @@ You don't need to register — contributions are detected automatically via GitH
 
 ## 📖 Rules
 
-- You have **one week** (Friday → Thursday) to open a PR for any listed issue
-- PRs are tracked for up to **28 weeks** to allow maintainer review time
-- If your PR closes the issue within that window, you earn points
-- Your PR must reference the issue using a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) to be automatically detected
+- You have **7 days** from when an issue is listed (Friday 17:00 UTC) to open a PR
+- Issues with a PR are tracked for up to **28 weeks** to allow maintainer review time
+- Issues with no PR after 7 days are dropped from tracking
+- If your PR closes the issue within the tracking window, you earn points
+- Your PR must reference the issue via a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) or be linked through GitHub's sidebar — the automation detects both
 - If multiple PRs reference the same issue, **only the one that closes it** earns points
 - All contributors to Arena-listed issues are treated as participants — open source, open battle ⚔️
 
@@ -127,7 +128,7 @@ You don't need to register — contributions are detected automatically via GitH
 ## 🙋 FAQ
 
 **Q: My PR was merged but I didn't get points.**
-Make sure your PR used a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) to reference the issue. Without it, the automation can't link the PR to the issue. If you did use one, open a thread in [Discussions](https://github.com/claudiotancredi/weekly-issue-arena/discussions).
+Make sure your PR references the issue — either via a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) in the PR body, or by linking the issue through GitHub's sidebar. The automation detects both. If you did link it, open a thread in [Discussions](https://github.com/claudiotancredi/weekly-issue-arena/discussions).
 
 **Q: Can I request a specific repo to be added?**
 Yes! See [`config/repos.yml`](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml) and open a PR or Discussion.

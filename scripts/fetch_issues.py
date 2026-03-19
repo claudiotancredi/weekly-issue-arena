@@ -12,29 +12,19 @@ Environment variables:
 import argparse
 import json
 import logging
-import os
 import random
-import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-import requests
 import yaml
+from utils import arena_week_id, github_get, update_readme_section
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 log = logging.getLogger(__name__)
 
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 CONFIG_PATH = Path("config/repos.yml")
 README_PATH = Path("README.md")
 STATE_PATH = Path(".arena_state/issues.json")
-
-HEADERS = {
-    "Accept": "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28",
-}
-if GITHUB_TOKEN:
-    HEADERS["Authorization"] = f"Bearer {GITHUB_TOKEN}"
 
 
 def load_configured_repos() -> dict:
@@ -68,16 +58,14 @@ def get_issues_for_repo(
             "since": cutoff_str,
         }
         try:
-            resp = requests.get(
-                url, headers=HEADERS, params=params, timeout=15
-            )
+            resp = github_get(url, params=params)
             resp.raise_for_status()
             issues = resp.json()
             # Exclude pull requests (GitHub returns PRs in issues endpoint)
             issues = [i for i in issues if "pull_request" not in i]
             collected.extend(issues)
             log.info(f"  {owner}/{repo} [{label}]: {len(issues)} issues")
-        except requests.HTTPError as e:
+        except Exception as e:
             log.warning(f"  Failed {owner}/{repo} [{label}]: {e}")
     return collected[:limit]
 
@@ -133,6 +121,9 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
                     }
                 )
 
+    # Seed RNG with the week ID for reproducible results
+    random.seed(arena_week_id())
+
     # Shuffle and cap to configured limits
     for category in results:
         random.shuffle(results[category])
@@ -167,16 +158,6 @@ def build_issue_table(issues: list[dict]) -> str:
             f"| [{repo_name}]({issue['repo_url']}) | 🟢 Open |"
         )
     return header + "\n".join(lines) + "\n"
-
-
-def update_readme_section(content: str, tag: str, new_body: str) -> str:
-    """Replace content between matching START/END markers."""
-    pattern = rf"(<!-- {tag}:START -->).*?(<!-- {tag}:END -->)"
-    replacement = rf"\1\n{new_body}\2"
-    updated, count = re.subn(pattern, replacement, content, flags=re.DOTALL)
-    if count == 0:
-        log.warning(f"Marker {tag} not found in README")
-    return updated
 
 
 def save_state(issues: dict[str, list[dict]], week_id: str) -> None:
@@ -278,7 +259,7 @@ def main():
     README_PATH.write_text(readme)
     log.info("README updated.")
 
-    week_id = datetime.now(timezone.utc).strftime("%Y-W%W")
+    week_id = arena_week_id()
     save_state(issues, week_id)
     save_current_issues(issues)
 

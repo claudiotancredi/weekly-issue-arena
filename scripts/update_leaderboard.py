@@ -12,30 +12,26 @@ Environment variables:
     GITHUB_TOKEN  — required.
 """
 
+import argparse
 import json
 import logging
-import os
 import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-import requests
+from utils import (
+    arena_week_id,
+    github_get,
+    update_readme_section,
+)
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 log = logging.getLogger(__name__)
 
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 README_PATH = Path("README.md")
 SCORES_PATH = Path(".arena_state/scores.json")
 STATE_PATH = Path(".arena_state/issues.json")
 CURRENT_ISSUES_PATH = Path(".arena_state/current_issues.json")
-
-HEADERS = {
-    "Accept": "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28",
-}
-if GITHUB_TOKEN:
-    HEADERS["Authorization"] = f"Bearer {GITHUB_TOKEN}"
 
 POINTS = {"gfi": 1, "bug": 2, "hard": 4}
 
@@ -56,11 +52,11 @@ def check_issue_status(owner: str, repo: str, number: int) -> str:
     """Return a status emoji string for the given issue."""
     url = f"https://api.github.com/repos/{owner}/{repo}/issues/{number}"
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=10)
+        resp = github_get(url, timeout=10)
         resp.raise_for_status()
         state = resp.json().get("state")
         return "🟢 Open" if state == "open" else "🔴 Closed"
-    except requests.HTTPError:
+    except Exception:
         return "🟢 Open"  # assume open on error
 
 
@@ -167,11 +163,11 @@ def get_closing_pr(owner: str, repo: str, issue_number: int) -> dict | None:
     events = []
     try:
         while url:
-            resp = requests.get(url, headers=HEADERS, timeout=15)
+            resp = github_get(url)
             resp.raise_for_status()
             events.extend(resp.json())
             url = resp.links.get("next", {}).get("url")
-    except requests.HTTPError as e:
+    except Exception as e:
         log.warning(
             f"Timeline fetch failed for {owner}/{repo}#{issue_number}: {e}"
         )
@@ -192,12 +188,12 @@ def get_closing_pr(owner: str, repo: str, issue_number: int) -> dict | None:
         if not pr_api_url:
             continue
         try:
-            pr_resp = requests.get(pr_api_url, headers=HEADERS, timeout=10)
+            pr_resp = github_get(pr_api_url, timeout=10)
             pr_resp.raise_for_status()
             pr_data = pr_resp.json()
             if pr_data.get("merged"):
                 merged_prs[pr_data["number"]] = pr_data
-        except requests.HTTPError:
+        except Exception:
             continue
 
     if not merged_prs:
@@ -255,10 +251,10 @@ def check_issue_still_open(owner: str, repo: str, issue_number: int) -> bool:
     """Return True if the issue is still open (or on API error)."""
     url = f"https://api.github.com/repos/{owner}/{repo}/issues/{issue_number}"
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=10)
+        resp = github_get(url, timeout=10)
         resp.raise_for_status()
         return resp.json().get("state") == "open"
-    except requests.HTTPError:
+    except Exception:
         # Assume open on error
         return True
 
@@ -352,7 +348,7 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
             scores["credited_issues"].append(issue_key)
 
             # Track weekly contributors
-            current_week = datetime.now(timezone.utc).strftime("%Y-W%W")
+            current_week = arena_week_id()
             if current_week not in scores["weekly"]:
                 scores["weekly"][current_week] = []
             if author not in scores["weekly"][current_week]:
@@ -413,7 +409,7 @@ def build_leaderboard_md(scores: dict) -> str:
 
 def build_weekly_contributors_md(scores: dict) -> str:
     """Render small avatar chips for this week's contributors."""
-    current_week = datetime.now(timezone.utc).strftime("%Y-W%W")
+    current_week = arena_week_id()
     week_contribs = scores.get("weekly", {}).get(current_week, [])
     if not week_contribs:
         return "*No contributions tracked yet for this week.*\n"
@@ -432,70 +428,74 @@ def build_weekly_contributors_md(scores: dict) -> str:
     return " ".join(avatars) + "\n"
 
 
-def update_readme_section(content: str, tag: str, new_body: str) -> str:
-    """Replace content between matching START/END markers."""
-    pattern = rf"(<!-- {tag}:START -->).*?(<!-- {tag}:END -->)"
-    replacement = rf"\1\n{new_body}\2"
-    updated, count = re.subn(pattern, replacement, content, flags=re.DOTALL)
-    if count == 0:
-        log.warning(f"Marker {tag} not found in README")
-    return updated
-
-
 def main():
     """Main function for updating the leaderboard."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Check issues and report without writing files",
+    )
+    args = parser.parse_args()
+
     # Load arena state (issues history)
     state = load_state()
     # Load players scores
     scores = load_scores()
 
     if state:
-        # Define start date for 28 weeks rolling window where
-        # old contributions are tracked and credited
+        # Prune issues older than the 28-week rolling window
         cutoff_date = datetime.now(timezone.utc) - timedelta(weeks=28)
-        # Iterate over issues history to filter out the ones fetched
-        # before the 28 weeks rolling window
         state = {
             k: v
             for k, v in state.items()
             if datetime.fromisoformat(v["fetched_at"]) >= cutoff_date
         }
-        # Write the state back to file
-        save_state(state)
+        if not args.dry_run:
+            save_state(state)
 
     if not state:
         log.info("No tracked issues found. Run fetch_issues.py first.")
         return
 
-    # Define list for new contributions
+    # Process each week in the rolling window
     all_new_credits = []
-    # Iterate over arena state entries
     for week_id, week_data in state.items():
         new = process_week(week_id, week_data, scores)
         all_new_credits.extend(new)
 
     if all_new_credits:
         log.info(
-            "Awarded points in %s new contributions.", len(all_new_credits)
+            f"Awarded points in {len(all_new_credits)} new contributions."
         )
     else:
         log.info("No new contributions to credit this run.")
 
+    if args.dry_run:
+        log.info("Dry run — skipping file writes.")
+        for c in all_new_credits:
+            print(
+                f"  @{c['author']} +{c['pts']}pt(s) "
+                f"for {c['issue']} (listed {c['week']})"
+            )
+        return
+
     save_scores(scores)
 
     # Remove credited issues from state to keep issues.json clean
+    credited = set(scores.get("credited_issues", []))
     for week_data in state.values():
         for category in week_data["issues"]:
             week_data["issues"][category] = [
                 issue
                 for issue in week_data["issues"][category]
-                if f"{issue['owner']}/{issue['repo']}#{issue['number']}"
-                not in scores["credited_issues"]
+                if (f"{issue['owner']}/{issue['repo']}#{issue['number']}")
+                not in credited
             ]
     save_state(state)
 
     # Update README
-    readme = README_PATH.read_text()
+    readme = README_PATH.read_text(encoding="utf-8")
     readme = update_readme_section(
         readme, "LEADERBOARD", build_leaderboard_md(scores)
     )
@@ -503,7 +503,7 @@ def main():
         readme, "WEEKLY", build_weekly_contributors_md(scores)
     )
     readme = update_issue_statuses(readme)
-    README_PATH.write_text(readme)
+    README_PATH.write_text(readme, encoding="utf-8")
     log.info("README leaderboard updated.")
     if all_new_credits:
         print("NEW_CREDITS:" + json.dumps(all_new_credits))

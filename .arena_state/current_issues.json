@@ -1,140 +1,248 @@
 [
   {
-    "owner": "guidance-ai",
-    "repo": "guidance",
-    "number": 561,
+    "owner": "matplotlib",
+    "repo": "matplotlib",
+    "number": 23548,
     "category": "gfi"
   },
   {
-    "owner": "python-poetry",
-    "repo": "poetry",
-    "number": 1328,
-    "category": "gfi"
-  },
-  {
-    "owner": "plotly",
-    "repo": "plotly.py",
-    "number": 1965,
-    "category": "gfi"
-  },
-  {
-    "owner": "torchgeo",
-    "repo": "torchgeo",
-    "number": 2382,
-    "category": "gfi"
-  },
-  {
-    "owner": "sunpy",
-    "repo": "sunpy",
-    "number": 7675,
-    "category": "gfi"
-  },
-  {
-    "owner": "dask",
-    "repo": "dask",
-    "number": 11884,
-    "category": "gfi"
-  },
-  {
-    "owner": "dask",
-    "repo": "dask",
-    "number": 2629,
-    "category": "gfi"
-  },
-  {
-    "owner": "zarr-developers",
-    "repo": "zarr-python",
-    "number": 1238,
-    "category": "gfi"
-  },
-  {
-    "owner": "corteva",
-    "repo": "rioxarray",
-    "number": 815,
+    "owner": "diesel-rs",
+    "repo": "diesel",
+    "number": 4153,
     "category": "gfi"
   },
   {
     "owner": "huggingface",
+    "repo": "diffusers",
+    "number": 8434,
+    "category": "gfi"
+  },
+  {
+    "owner": "matplotlib",
+    "repo": "matplotlib",
+    "number": 13044,
+    "category": "gfi"
+  },
+  {
+    "owner": "cilium",
+    "repo": "cilium",
+    "number": 17239,
+    "category": "gfi"
+  },
+  {
+    "owner": "pola-rs",
+    "repo": "polars",
+    "number": 12862,
+    "category": "gfi"
+  },
+  {
+    "owner": "vllm-project",
+    "repo": "vllm",
+    "number": 25750,
+    "category": "gfi"
+  },
+  {
+    "owner": "astral-sh",
+    "repo": "uv",
+    "number": 15241,
+    "category": "gfi"
+  },
+  {
+    "owner": "sktime",
+    "repo": "sktime",
+    "number": 9680,
+    "category": "gfi"
+  },
+  {
+    "owner": "huggingface",
+    "repo": "accelerate",
+    "number": 3078,
+    "category": "gfi"
+  },
+  {
+    "owner": "dmlc",
+    "repo": "xgboost",
+    "number": 11413,
+    "category": "gfi"
+  },
+  {
+    "owner": "mattermost",
+    "repo": "mattermost",
+    "number": 26917,
+    "category": "gfi"
+  },
+  {
+    "owner": "feast-dev",
+    "repo": "feast",
+    "number": 5788,
+    "category": "gfi"
+  },
+  {
+    "owner": "sphinx-doc",
+    "repo": "sphinx",
+    "number": 13180,
+    "category": "gfi"
+  },
+  {
+    "owner": "biomejs",
+    "repo": "biome",
+    "number": 8155,
+    "category": "gfi"
+  },
+  {
+    "owner": "mattermost",
+    "repo": "mattermost",
+    "number": 27377,
+    "category": "gfi"
+  },
+  {
+    "owner": "qdrant",
+    "repo": "qdrant",
+    "number": 3372,
+    "category": "gfi"
+  },
+  {
+    "owner": "pyg-team",
+    "repo": "pytorch_geometric",
+    "number": 10644,
+    "category": "gfi"
+  },
+  {
+    "owner": "pre-commit",
+    "repo": "pre-commit",
+    "number": 2732,
+    "category": "gfi"
+  },
+  {
+    "owner": "vega",
+    "repo": "altair",
+    "number": 3048,
+    "category": "gfi"
+  },
+  {
+    "owner": "linkerd",
+    "repo": "linkerd2",
+    "number": 14642,
+    "category": "bug"
+  },
+  {
+    "owner": "vercel",
+    "repo": "next.js",
+    "number": 68351,
+    "category": "bug"
+  },
+  {
+    "owner": "stanfordnlp",
+    "repo": "stanza",
+    "number": 1522,
+    "category": "bug"
+  },
+  {
+    "owner": "certbot",
+    "repo": "certbot",
+    "number": 9701,
+    "category": "bug"
+  },
+  {
+    "owner": "pallets",
+    "repo": "click",
+    "number": 843,
+    "category": "bug"
+  },
+  {
+    "owner": "gradio-app",
+    "repo": "gradio",
+    "number": 13044,
+    "category": "bug"
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "number": 21579,
+    "category": "bug"
+  },
+  {
+    "owner": "pypa",
+    "repo": "pip",
+    "number": 4615,
+    "category": "bug"
+  },
+  {
+    "owner": "ipython",
+    "repo": "ipython",
+    "number": 136,
+    "category": "bug"
+  },
+  {
+    "owner": "treeverse",
+    "repo": "dvc",
+    "number": 10560,
+    "category": "bug"
+  },
+  {
+    "owner": "microsoft",
+    "repo": "TypeScript",
+    "number": 63240,
+    "category": "bug"
+  },
+  {
+    "owner": "simpeg",
+    "repo": "simpeg",
+    "number": 1541,
+    "category": "bug"
+  },
+  {
+    "owner": "serde-rs",
+    "repo": "serde",
+    "number": 1183,
+    "category": "bug"
+  },
+  {
+    "owner": "huggingface",
     "repo": "datasets",
-    "number": 5806,
-    "category": "gfi"
-  },
-  {
-    "owner": "lightgbm-org",
-    "repo": "LightGBM",
-    "number": 6830,
-    "category": "gfi"
-  },
-  {
-    "owner": "PrefectHQ",
-    "repo": "prefect",
-    "number": 18393,
-    "category": "gfi"
-  },
-  {
-    "owner": "jupyter",
-    "repo": "notebook",
-    "number": 7772,
-    "category": "bug"
-  },
-  {
-    "owner": "anthropics",
-    "repo": "anthropic-sdk-python",
-    "number": 892,
-    "category": "bug"
-  },
-  {
-    "owner": "run-llama",
-    "repo": "llama_index",
-    "number": 18372,
-    "category": "bug"
-  },
-  {
-    "owner": "pydata",
-    "repo": "xarray",
-    "number": 11199,
-    "category": "bug"
-  },
-  {
-    "owner": "pytroll",
-    "repo": "satpy",
-    "number": 161,
-    "category": "bug"
-  },
-  {
-    "owner": "stac-utils",
-    "repo": "pystac",
-    "number": 1207,
-    "category": "bug"
-  },
-  {
-    "owner": "Farama-Foundation",
-    "repo": "Gymnasium",
-    "number": 1455,
-    "category": "bug"
-  },
-  {
-    "owner": "developmentseed",
-    "repo": "titiler",
-    "number": 1326,
+    "number": 2547,
     "category": "bug"
   },
   {
     "owner": "matplotlib",
     "repo": "matplotlib",
-    "number": 29628,
+    "number": 15715,
     "category": "hard"
   },
   {
-    "owner": "rasterio",
-    "repo": "rasterio",
-    "number": 1270,
+    "owner": "matplotlib",
+    "repo": "matplotlib",
+    "number": 23768,
+    "category": "hard"
+  },
+  {
+    "owner": "huggingface",
+    "repo": "diffusers",
+    "number": 12458,
+    "category": "hard"
+  },
+  {
+    "owner": "scikit-learn",
+    "repo": "scikit-learn",
+    "number": 22827,
     "category": "hard"
   },
   {
     "owner": "pandas-dev",
     "repo": "pandas",
     "number": 54445,
+    "category": "hard"
+  },
+  {
+    "owner": "pandas-dev",
+    "repo": "pandas",
+    "number": 62421,
+    "category": "hard"
+  },
+  {
+    "owner": "huggingface",
+    "repo": "diffusers",
+    "number": 12600,
     "category": "hard"
   },
   {
@@ -150,9 +258,9 @@
     "category": "hard"
   },
   {
-    "owner": "scikit-learn",
-    "repo": "scikit-learn",
-    "number": 31407,
+    "owner": "apache",
+    "repo": "echarts",
+    "number": 11115,
     "category": "hard"
   }
 ]

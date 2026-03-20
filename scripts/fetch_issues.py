@@ -13,6 +13,7 @@ import argparse
 import json
 import logging
 import random
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -92,33 +93,79 @@ def enforce_repo_diversity(
     return result
 
 
+def _fetch_repo(
+    owner: str,
+    repo: str,
+    label_mappings: dict,
+) -> dict[str, list[dict]]:
+    """Fetch issues for a single repo across all categories.
+
+    Returns a dict mapping category -> list of raw GitHub issues.
+    Called from worker threads.
+    """
+    log.info(f"Fetching from {owner}/{repo}...")
+    per_repo: dict[str, list[dict]] = {}
+    for category in ["hard", "bug", "gfi"]:
+        labels = label_mappings[category]
+        per_repo[category] = get_issues_for_repo(owner, repo, labels, limit=5)
+    return per_repo
+
+
+MAX_WORKERS = 10
+
+
 def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
     """Fetch GFI, bug, and hard issues from all configured repos."""
     repos = config["repos"]
     label_mappings = config["label_mappings"]
     limits = config["limits"]
 
-    results = {"gfi": [], "bug": [], "hard": []}
-    seen_globally: set[str] = set()  # dedup across categories
-    listed_at = arena_week_start().isoformat()  # pinned to Friday 17:00:00 UTC
-    for repo_cfg in repos:
-        owner = repo_cfg["owner"]
-        repo = repo_cfg["repo"]
-        log.info(f"Fetching from {owner}/{repo}...")
+    listed_at = arena_week_start().isoformat()
 
+    # Fetch all repos in parallel
+    repo_results: list[tuple[str, str, dict]] = []
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        futures = {
+            pool.submit(
+                _fetch_repo,
+                rc["owner"],
+                rc["repo"],
+                label_mappings,
+            ): rc
+            for rc in repos
+        }
+        for future in as_completed(futures):
+            rc = futures[future]
+            try:
+                per_repo = future.result()
+                repo_results.append((rc["owner"], rc["repo"], per_repo))
+            except Exception as e:
+                log.warning(f"Failed {rc['owner']}/{rc['repo']}: {e}")
+
+    # Sort to ensure deterministic order regardless of thread
+    # completion order (repos.yml order)
+    repo_order = {
+        f"{rc['owner']}/{rc['repo']}": i for i, rc in enumerate(repos)
+    }
+    repo_results.sort(key=lambda r: repo_order.get(f"{r[0]}/{r[1]}", 0))
+
+    # Dedup across categories (higher-value category wins)
+    results: dict[str, list[dict]] = {
+        "gfi": [],
+        "bug": [],
+        "hard": [],
+    }
+    seen_globally: set[str] = set()  # dedup across categories
+    for _owner, _repo, per_repo in repo_results:
         for category in ["hard", "bug", "gfi"]:
-            labels = label_mappings[category]
-            issues = get_issues_for_repo(owner, repo, labels, limit=5)
-            for issue in issues:
-                url_parts = issue["html_url"].split(
-                    "/"
-                )  # https://github.com/OWNER/REPO/issues/N
+            for issue in per_repo.get(category, []):
+                url_parts = issue["html_url"].split("/")
                 owner_actual = url_parts[3]
                 repo_actual = url_parts[4]
-                issue_key = f"{owner_actual}/{repo_actual}#{issue['number']}"
-                if issue_key in seen_globally:
+                key = f"{owner_actual}/{repo_actual}#{issue['number']}"
+                if key in seen_globally:
                     continue
-                seen_globally.add(issue_key)
+                seen_globally.add(key)
                 results[category].append(
                     {
                         "number": issue["number"],
@@ -126,7 +173,9 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
                         "url": issue["html_url"],
                         "owner": owner_actual,
                         "repo": repo_actual,
-                        "repo_url": f"https://github.com/{owner_actual}/{repo_actual}",
+                        "repo_url": (
+                            f"https://github.com/{owner_actual}/{repo_actual}"
+                        ),
                         "created_at": issue["created_at"],
                         "updated_at": issue["updated_at"],
                         "author": issue["user"]["login"],

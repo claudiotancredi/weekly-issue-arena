@@ -1,6 +1,10 @@
 # ⚔️ Weekly Issue Arena
 
 [![Lint & Test](https://github.com/claudiotancredi/weekly-issue-arena/actions/workflows/lint.yml/badge.svg)](https://github.com/claudiotancredi/weekly-issue-arena/actions/workflows/lint.yml)
+[![GitHub stars](https://img.shields.io/github/stars/claudiotancredi/weekly-issue-arena?style=flat&logo=github)](https://github.com/claudiotancredi/weekly-issue-arena/stargazers)
+[![GitHub contributors](https://img.shields.io/github/contributors/claudiotancredi/weekly-issue-arena?style=flat&logo=github)](https://github.com/claudiotancredi/weekly-issue-arena/graphs/contributors)
+[![Last commit](https://img.shields.io/github/last-commit/claudiotancredi/weekly-issue-arena?style=flat&logo=github)](https://github.com/claudiotancredi/weekly-issue-arena/commits/main)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/LICENSE)
 
 > A weekly-refreshed hub of open-source issues, with a leaderboard for contributors who close them.
 

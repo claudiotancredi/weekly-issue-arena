@@ -29,3 +29,25 @@ export const RANKS: Rank[] = [
 export function getRank(points: number): Rank {
   return RANKS.find((r) => points >= r.threshold) ?? RANKS[RANKS.length - 1];
 }
+
+export function getProgressToNextRank(points: number): {
+  current: Rank;
+  next: Rank | null;
+  progress: number;
+  pointsNeeded: number;
+} {
+  const current = getRank(points);
+  const currentIndex = RANKS.indexOf(current);
+  const next = currentIndex > 0 ? RANKS[currentIndex - 1] : null;
+
+  if (!next) {
+    return { current, next: null, progress: 1, pointsNeeded: 0 };
+  }
+
+  const rangeStart = current.threshold;
+  const rangeEnd = next.threshold;
+  const progress = (points - rangeStart) / (rangeEnd - rangeStart);
+  const pointsNeeded = rangeEnd - points;
+
+  return { current, next, progress: Math.min(progress, 1), pointsNeeded };
+}

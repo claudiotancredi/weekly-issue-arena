@@ -24,4 +24,53 @@ code {
   padding: 0.125rem 0.375rem;
   border-radius: 0.25rem;
   font-size: 0.875em;
+  white-space: nowrap;
+}
+
+/* Hero gradient animation */
+@keyframes hero-gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-gradient-animated {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.08) 0%,
+    rgba(139, 92, 246, 0.05) 25%,
+    transparent 50%,
+    rgba(99, 102, 241, 0.05) 75%,
+    rgba(139, 92, 246, 0.08) 100%
+  );
+  background-size: 200% 200%;
+  animation: hero-gradient 15s ease infinite;
+}
+
+/* Stat counter animation */
+@property --stat-val {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.stat-counter {
+  --stat-val: var(--stat-to, 0);
+  animation: stat-count 1.5s ease-out forwards;
+  counter-reset: stat-val var(--stat-val);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-counter::after {
+  content: counter(stat-val);
+}
+
+@keyframes stat-count {
+  from {
+    --stat-val: 0;
+  }
 }

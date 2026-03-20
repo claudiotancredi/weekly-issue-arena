@@ -28,8 +28,15 @@ const CATEGORY_COLORS: Record<string, string> = {
   hard: "#ef4444",
 };
 
+const STATUS_LABELS: Record<string, string> = {
+  all: "All",
+  open: "Open",
+  closed: "Closed",
+};
+
 export default function IssueFilter({ issues, base }: Props) {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [activeStatus, setActiveStatus] = useState("all");
   const [search, setSearch] = useState("");
 
   const counts = useMemo(() => {
@@ -40,10 +47,21 @@ export default function IssueFilter({ issues, base }: Props) {
     return c;
   }, [issues]);
 
+  const statusCounts = useMemo(() => {
+    const open = issues.filter((i) => !i.closed).length;
+    const closed = issues.filter((i) => i.closed).length;
+    return { all: issues.length, open, closed };
+  }, [issues]);
+
   const filtered = useMemo(() => {
     let result = issues;
     if (activeCategory !== "all") {
       result = result.filter((i) => i.category === activeCategory);
+    }
+    if (activeStatus === "open") {
+      result = result.filter((i) => !i.closed);
+    } else if (activeStatus === "closed") {
+      result = result.filter((i) => i.closed);
     }
     if (search.trim()) {
       const q = search.toLowerCase();
@@ -54,9 +72,23 @@ export default function IssueFilter({ issues, base }: Props) {
       );
     }
     return result;
-  }, [issues, activeCategory, search]);
+  }, [issues, activeCategory, activeStatus, search]);
 
   const categories = ["all", "gfi", "bug", "hard"];
+  const statuses = ["all", "open", "closed"];
+
+  const tabStyle = (active: boolean) => ({
+    padding: "0.375rem 0.75rem",
+    borderRadius: "0.5rem",
+    border: `1px solid ${active ? "#6366f1" : "#2a2a3e"}`,
+    background: active ? "rgba(99, 102, 241, 0.15)" : "#12121a",
+    color: active ? "#6366f1" : "#a1a1aa",
+    fontSize: "0.75rem",
+    fontWeight: 600,
+    fontFamily: "inherit",
+    cursor: "pointer",
+    transition: "all 0.15s",
+  });
 
   return (
     <div>
@@ -66,20 +98,21 @@ export default function IssueFilter({ issues, base }: Props) {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            style={{
-              padding: "0.375rem 0.75rem",
-              borderRadius: "0.5rem",
-              border: `1px solid ${activeCategory === cat ? "#6366f1" : "#2a2a3e"}`,
-              background: activeCategory === cat ? "rgba(99, 102, 241, 0.15)" : "#12121a",
-              color: activeCategory === cat ? "#6366f1" : "#a1a1aa",
-              fontSize: "0.75rem",
-              fontWeight: 600,
-              fontFamily: "inherit",
-              cursor: "pointer",
-              transition: "all 0.15s",
-            }}
+            style={tabStyle(activeCategory === cat)}
           >
             {cat === "all" ? "All" : CATEGORY_LABELS[cat]} ({counts[cat] || 0})
+          </button>
+        ))}
+
+        <span style={{ width: "1px", height: "1.25rem", background: "#2a2a3e" }} />
+
+        {statuses.map((status) => (
+          <button
+            key={status}
+            onClick={() => setActiveStatus(status)}
+            style={tabStyle(activeStatus === status)}
+          >
+            {STATUS_LABELS[status]} ({statusCounts[status as keyof typeof statusCounts]})
           </button>
         ))}
 
@@ -119,7 +152,8 @@ export default function IssueFilter({ issues, base }: Props) {
               border: "1px solid #2a2a3e",
               background: "#12121a",
               textDecoration: "none",
-              transition: "border-color 0.15s, background 0.15s",
+              transition: "border-color 0.15s, background 0.15s, opacity 0.15s",
+              opacity: issue.closed ? 0.6 : 1,
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.borderColor = "rgba(99, 102, 241, 0.5)";
@@ -150,15 +184,15 @@ export default function IssueFilter({ issues, base }: Props) {
               <span style={{ fontSize: "0.625rem", color: "#71717a", fontWeight: 600 }}>
                 +{issue.points} pt{issue.points !== 1 ? "s" : ""}
               </span>
+              <span style={{ marginLeft: "auto", fontSize: "0.625rem", fontWeight: 600, color: issue.closed ? "#f87171" : "#4ade80" }}>
+                {issue.closed ? "\uD83D\uDD34 Closed" : "\uD83D\uDFE2 Open"}
+              </span>
             </div>
             <div style={{ fontSize: "0.875rem", fontWeight: 500, color: "#e4e4e7", lineHeight: 1.4 }}>
               {issue.title.length > 80 ? issue.title.slice(0, 77) + "..." : issue.title}
             </div>
-            <div style={{ marginTop: "0.5rem", fontSize: "0.75rem", color: "#71717a", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span>{issue.owner}/{issue.repo}</span>
-              <span style={{ fontSize: "0.625rem", fontWeight: 600, color: issue.closed ? "#f87171" : "#4ade80" }}>
-                {issue.closed ? "\uD83D\uDD34 Closed" : "\uD83D\uDFE2 Open"}
-              </span>
+            <div style={{ marginTop: "0.5rem", fontSize: "0.75rem", color: "#71717a" }}>
+              {issue.owner}/{issue.repo}
             </div>
           </a>
         ))}

@@ -38,13 +38,13 @@ POINTS = {"gfi": 1, "bug": 2, "hard": 4}
 RANKS = [
     (500, "Mr. Robot"),
     (100, "Bug Slayer"),
-    (0, "HW Engineer"),
+    (0, "Hello World Engineer"),
 ]
 
 RANK_IMAGES = {
     "Mr. Robot": "assets/mrrobot.png",
     "Bug Slayer": "assets/bugslayer.png",
-    "HW Engineer": "assets/hwengineer.png",
+    "Hello World Engineer": "assets/hwengineer.png",
 }
 
 
@@ -91,7 +91,7 @@ def get_rank(points: int) -> str:
     for threshold, name in RANKS:
         if points >= threshold:
             return name
-    return "HW Engineer"
+    return "Hello World Engineer"
 
 
 def load_state() -> dict:

@@ -121,6 +121,7 @@ export function getAllCurrentIssues(): IssueWithCategory[] {
     }
   }
 
+  result.sort((a, b) => Number(a.closed) - Number(b.closed));
   return result;
 }
 
@@ -174,6 +175,23 @@ export function getRepoCount(): number {
 export function getTotalContributors(): number {
   const scores = getScores();
   return Object.keys(scores.players).length;
+}
+
+export function getPlayerWeeklyActivity(
+  contributions: Contribution[],
+): { week: string; count: number; points: number }[] {
+  const weekMap = new Map<string, { count: number; points: number }>();
+
+  for (const c of contributions) {
+    const existing = weekMap.get(c.week) ?? { count: 0, points: 0 };
+    existing.count++;
+    existing.points += c.points;
+    weekMap.set(c.week, existing);
+  }
+
+  return Array.from(weekMap.entries())
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([week, data]) => ({ week, ...data }));
 }
 
 export function getTotalIssuesThisWeek(): number {

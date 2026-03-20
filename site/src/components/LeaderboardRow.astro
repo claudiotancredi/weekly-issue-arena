@@ -1,6 +1,7 @@
 ---
 import RankBadge from "./RankBadge.astro";
 import type { LeaderboardEntry } from "../lib/data";
+import { getProgressToNextRank } from "../lib/ranks";
 
 interface Props {
   player: LeaderboardEntry;
@@ -8,20 +9,27 @@ interface Props {
 
 const { player } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const rankProgress = getProgressToNextRank(player.total_points);
 
 const positionColors: Record<number, string> = {
   1: "text-yellow-400",
   2: "text-gray-300",
   3: "text-amber-600",
 };
+
+const positionIcons: Record<number, string> = {
+  1: "\uD83E\uDD47",
+  2: "\uD83E\uDD48",
+  3: "\uD83E\uDD49",
+};
 ---
 
 <a
   href={`${base}player/${player.username}/`}
-  class="group grid grid-cols-[2.5rem_1fr_5rem_8rem] sm:grid-cols-[3rem_1fr_5rem_10rem] items-center gap-3 rounded-lg border border-border bg-surface-card px-4 py-3 transition-all hover:border-accent/50 hover:bg-surface-elevated"
+  class="group grid grid-cols-[2rem_1fr_4rem_3rem] sm:grid-cols-[3rem_1fr_5rem_10rem] items-center gap-3 rounded-lg border border-border bg-surface-card px-4 py-3 transition-all hover:border-accent/50 hover:bg-surface-elevated"
 >
   <span class={`text-lg font-bold text-right ${positionColors[player.position] ?? "text-zinc-500"}`}>
-    #{player.position}
+    {positionIcons[player.position] ?? `#${player.position}`}
   </span>
 
   <div class="flex items-center gap-3 min-w-0">
@@ -42,11 +50,24 @@ const positionColors: Record<number, string> = {
   </div>
 
   <div class="text-right">
-    <span class="text-sm font-bold text-points">{player.total_points}</span>
+    <span class="text-sm font-bold text-points" style="font-variant-numeric: tabular-nums;">{player.total_points}</span>
     <span class="text-xs text-zinc-500"> pts</span>
   </div>
 
-  <div class="hidden sm:block">
+  <div>
     <RankBadge points={player.total_points} size="sm" />
+    {rankProgress.next && (
+      <div class="mt-1 hidden sm:block">
+        <div class="h-1 w-full rounded-full bg-surface-elevated overflow-hidden">
+          <div
+            class="h-full rounded-full bg-accent"
+            style={`width: ${Math.round(rankProgress.progress * 100)}%;`}
+          />
+        </div>
+        <div class="text-[9px] text-zinc-500 mt-0.5 text-right">
+          {rankProgress.pointsNeeded} pts to {rankProgress.next.name}
+        </div>
+      </div>
+    )}
   </div>
 </a>

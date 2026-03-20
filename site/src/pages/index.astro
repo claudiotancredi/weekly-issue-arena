@@ -22,14 +22,14 @@ const base = import.meta.env.BASE_URL;
 
 // Pick one issue per category for featured section
 const featured = ["gfi", "bug", "hard"]
-  .map((cat) => issues.find((i) => i.category === cat))
+  .map((cat) => issues.find((i) => i.category === cat && !i.closed) ?? issues.find((i) => i.category === cat))
   .filter(Boolean);
 ---
 
 <BaseLayout title="Weekly Issue Arena | Find issues, earn points, climb the leaderboard">
   <!-- Hero -->
-  <section class="relative overflow-hidden border-b border-border">
-    <div class="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent"></div>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 hero-gradient-animated"></div>
     <div class="relative mx-auto max-w-6xl px-4 py-20 text-center">
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
         Weekly Issue<br />

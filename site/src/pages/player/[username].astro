@@ -2,8 +2,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import RankBadge from "../../components/RankBadge.astro";
 import ContributionItem from "../../components/ContributionItem.astro";
-import { getAllPlayerUsernames, getPlayer, getLeaderboard } from "../../lib/data";
-import { getRank } from "../../lib/ranks";
+import { getAllPlayerUsernames, getPlayer, getLeaderboard, getPlayerWeeklyActivity } from "../../lib/data";
+import { getRank, getProgressToNextRank } from "../../lib/ranks";
 
 export function getStaticPaths() {
   const usernames = getAllPlayerUsernames();
@@ -20,6 +20,7 @@ if (!player) {
 }
 
 const rank = getRank(player.total_points);
+const rankProgress = getProgressToNextRank(player.total_points);
 const leaderboard = getLeaderboard();
 const position = leaderboard.find((e) => e.username === username)?.position ?? 0;
 
@@ -30,6 +31,20 @@ const contributions = [...player.contributions].sort(
 
 // Unique weeks active
 const weeksActive = new Set(player.contributions.map((c) => c.week)).size;
+
+// Activity heatmap data
+const weeklyActivity = getPlayerWeeklyActivity(player.contributions);
+
+// Category breakdown
+const categoryBreakdown = player.contributions.reduce(
+  (acc, c) => {
+    const cat = c.points === 4 ? "hard" : c.points === 2 ? "bug" : "gfi";
+    acc[cat] = (acc[cat] || 0) + 1;
+    return acc;
+  },
+  {} as Record<string, number>,
+);
+const uniqueRepos = new Set(player.contributions.map((c) => c.issue.split("#")[0])).size;
 ---
 
 <BaseLayout
@@ -49,38 +64,136 @@ const weeksActive = new Set(player.contributions.map((c) => c.week)).size;
         <div class="mt-2">
           <RankBadge points={player.total_points} size="md" />
         </div>
+
+        {/* Progress bar to next rank */}
+        {rankProgress.next && (
+          <div class="mt-3 max-w-xs">
+            <div class="flex justify-between text-xs text-zinc-500 mb-1">
+              <span>{rankProgress.current.name}</span>
+              <span>{rankProgress.next.name}</span>
+            </div>
+            <div class="h-2 w-full rounded-full bg-surface-elevated overflow-hidden">
+              <div
+                class="h-full rounded-full bg-accent transition-all"
+                style={`width: ${Math.round(rankProgress.progress * 100)}%;`}
+              />
+            </div>
+            <div class="text-xs text-zinc-400 mt-1">
+              {player.total_points}/{rankProgress.next.threshold} pts
+              <span class="text-zinc-500">({rankProgress.pointsNeeded} to go)</span>
+            </div>
+          </div>
+        )}
+
         <a
           href={`https://github.com/${username}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="mt-2 inline-block text-xs text-zinc-400 hover:text-accent transition-colors"
+          class="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-card px-3 py-1.5 text-xs text-zinc-400 hover:text-white hover:border-accent/50 transition-all"
         >
-          View on GitHub &rarr;
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          @{username} on GitHub
         </a>
       </div>
     </div>
 
     <!-- Stats -->
-    <div class="grid grid-cols-3 gap-4 mb-10">
+    <div class="grid grid-cols-3 gap-4 mb-4">
       <div class="rounded-lg border border-border bg-surface-card p-4 text-center">
-        <div class="text-2xl font-bold text-points">{player.total_points}</div>
+        <div class="text-2xl font-bold text-points" style="font-variant-numeric: tabular-nums;">{player.total_points}</div>
         <div class="text-xs text-zinc-400 mt-1">Total Points</div>
       </div>
       <div class="rounded-lg border border-border bg-surface-card p-4 text-center">
-        <div class="text-2xl font-bold text-white">{player.contributions.length}</div>
+        <div class="text-2xl font-bold text-white" style="font-variant-numeric: tabular-nums;">{player.contributions.length}</div>
         <div class="text-xs text-zinc-400 mt-1">Contributions</div>
       </div>
       <div class="rounded-lg border border-border bg-surface-card p-4 text-center">
-        <div class="text-2xl font-bold text-white">{weeksActive}</div>
+        <div class="text-2xl font-bold text-white" style="font-variant-numeric: tabular-nums;">{weeksActive}</div>
         <div class="text-xs text-zinc-400 mt-1">Weeks Active</div>
       </div>
     </div>
+
+    <!-- Summary line -->
+    <div class="mb-6 text-sm text-zinc-400">
+      {player.contributions.length} contribution{player.contributions.length !== 1 ? "s" : ""} across {uniqueRepos} repo{uniqueRepos !== 1 ? "s" : ""} in {weeksActive} week{weeksActive !== 1 ? "s" : ""}
+    </div>
+
+    <!-- Category breakdown bar -->
+    {player.contributions.length > 0 && (
+      <div class="mb-10">
+        <div class="flex rounded-full overflow-hidden h-2">
+          {categoryBreakdown.gfi > 0 && (
+            <div class="bg-gfi" style={`width: ${(categoryBreakdown.gfi / player.contributions.length) * 100}%;`} />
+          )}
+          {categoryBreakdown.bug > 0 && (
+            <div class="bg-bug" style={`width: ${(categoryBreakdown.bug / player.contributions.length) * 100}%;`} />
+          )}
+          {categoryBreakdown.hard > 0 && (
+            <div class="bg-hard" style={`width: ${(categoryBreakdown.hard / player.contributions.length) * 100}%;`} />
+          )}
+        </div>
+        <div class="flex gap-4 mt-2 text-[10px]">
+          {categoryBreakdown.gfi > 0 && (
+            <span class="flex items-center gap-1">
+              <span class="inline-block w-2 h-2 rounded-full bg-gfi"></span>
+              <span class="text-zinc-400">Good First Issue ({categoryBreakdown.gfi})</span>
+            </span>
+          )}
+          {categoryBreakdown.bug > 0 && (
+            <span class="flex items-center gap-1">
+              <span class="inline-block w-2 h-2 rounded-full bg-bug"></span>
+              <span class="text-zinc-400">Bug Fix ({categoryBreakdown.bug})</span>
+            </span>
+          )}
+          {categoryBreakdown.hard > 0 && (
+            <span class="flex items-center gap-1">
+              <span class="inline-block w-2 h-2 rounded-full bg-hard"></span>
+              <span class="text-zinc-400">Hard Issue ({categoryBreakdown.hard})</span>
+            </span>
+          )}
+        </div>
+      </div>
+    )}
 
     {position > 0 && (
       <div class="mb-10 text-center sm:text-left">
         <span class="text-sm text-zinc-400">
           Ranked <span class="text-white font-semibold">#{position}</span> on the leaderboard
         </span>
+      </div>
+    )}
+
+    <!-- Activity Heatmap -->
+    {weeklyActivity.length > 0 && (
+      <div class="mb-10">
+        <h2 class="text-lg font-bold text-white mb-4">Activity</h2>
+        <div class="flex gap-1 flex-wrap">
+          {weeklyActivity.map((w) => {
+            const intensity = Math.min(w.points / 4, 1);
+            const opacity = 0.15 + intensity * 0.85;
+            return (
+              <div
+                class="rounded-sm"
+                style={`width: 2rem; height: 2rem; background: rgba(99, 102, 241, ${opacity}); border: 1px solid rgba(99, 102, 241, 0.3);`}
+                title={`${w.week}: ${w.count} contribution${w.count !== 1 ? "s" : ""}, ${w.points} pts`}
+              >
+                <span class="sr-only">{w.week}: {w.points} pts</span>
+              </div>
+            );
+          })}
+        </div>
+        <div class="flex items-center gap-2 mt-2 text-[10px] text-zinc-500">
+          <span>Less</span>
+          {[0.15, 0.35, 0.55, 0.75, 1].map((op) => (
+            <div
+              class="rounded-sm"
+              style={`width: 0.75rem; height: 0.75rem; background: rgba(99, 102, 241, ${op}); border: 1px solid rgba(99, 102, 241, 0.3);`}
+            />
+          ))}
+          <span>More</span>
+        </div>
       </div>
     )}
 

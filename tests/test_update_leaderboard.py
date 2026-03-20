@@ -26,12 +26,12 @@ class TestGetRank:
     """Tests for the get_rank helper."""
 
     def test_zero_points(self):
-        """Zero points yields HW Engineer."""
-        assert get_rank(0) == "HW Engineer"
+        """Zero points yields Hello World Engineer."""
+        assert get_rank(0) == "Hello World Engineer"
 
     def test_just_below_bug_slayer(self):
-        """99 points is still HW Engineer."""
-        assert get_rank(99) == "HW Engineer"
+        """99 points is still Hello World Engineer."""
+        assert get_rank(99) == "Hello World Engineer"
 
     def test_bug_slayer_threshold(self):
         """100 points reaches Bug Slayer."""

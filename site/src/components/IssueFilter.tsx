@@ -40,18 +40,24 @@ export default function IssueFilter({ issues, base }: Props) {
   const [search, setSearch] = useState("");
 
   const counts = useMemo(() => {
-    const c: Record<string, number> = { all: issues.length };
-    for (const issue of issues) {
+    const pool = activeStatus === "open" ? issues.filter((i) => !i.closed)
+      : activeStatus === "closed" ? issues.filter((i) => i.closed)
+      : issues;
+    const c: Record<string, number> = { all: pool.length };
+    for (const issue of pool) {
       c[issue.category] = (c[issue.category] || 0) + 1;
     }
     return c;
-  }, [issues]);
+  }, [issues, activeStatus]);
 
   const statusCounts = useMemo(() => {
-    const open = issues.filter((i) => !i.closed).length;
-    const closed = issues.filter((i) => i.closed).length;
-    return { all: issues.length, open, closed };
-  }, [issues]);
+    const pool = activeCategory !== "all"
+      ? issues.filter((i) => i.category === activeCategory)
+      : issues;
+    const open = pool.filter((i) => !i.closed).length;
+    const closed = pool.filter((i) => i.closed).length;
+    return { all: pool.length, open, closed };
+  }, [issues, activeCategory]);
 
   const filtered = useMemo(() => {
     let result = issues;

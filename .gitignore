@@ -150,6 +150,7 @@ venv.bak/
 site/node_modules/
 site/dist/
 site/.astro/
+site/public/badges/*.png
 
 # mypy
 .mypy_cache/

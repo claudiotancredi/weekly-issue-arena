@@ -40,7 +40,7 @@ No registration. No sign-ups. Just open source.
 ---
 
 <details>
-<summary> 🙂 Good First Issues (12)</summary>
+<summary> 🙂 Good First Issues (20)</summary>
 
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
@@ -62,7 +62,7 @@ No registration. No sign-ups. Just open source.
 </details>
 
 <details>
-<summary> 🪲 Bug Fixes (8)</summary>
+<summary> 🪲 Bug Fixes (14)</summary>
 
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
@@ -80,7 +80,7 @@ No registration. No sign-ups. Just open source.
 </details>
 
 <details>
-<summary> 😓 Hard Issues (6)</summary>
+<summary> 😓 Hard Issues (10)</summary>
 
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |

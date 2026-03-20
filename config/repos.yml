@@ -525,6 +525,1066 @@ repos:
     tags: [go, monitoring, metrics, observability]
     # Monitoring system. Often used with ML infrastructure.
 
+  # ---------------------------------------------------------------------------
+  # 🌐  WEB FRAMEWORKS & SERVERS
+  # ---------------------------------------------------------------------------
+
+  - owner: django
+    repo: django
+    tags: [python, web, framework, orm]
+    # The web framework for perfectionists with deadlines.
+
+  - owner: pallets
+    repo: flask
+    tags: [python, web, microframework]
+    # Lightweight WSGI web application framework.
+
+  - owner: encode
+    repo: starlette
+    tags: [python, asgi, web, async]
+    # ASGI framework. Foundation for FastAPI.
+
+  - owner: encode
+    repo: uvicorn
+    tags: [python, asgi, server, async]
+    # Lightning-fast ASGI server.
+
+  - owner: aio-libs
+    repo: aiohttp
+    tags: [python, http, async, web]
+    # Async HTTP client/server framework.
+
+  - owner: sanic-org
+    repo: sanic
+    tags: [python, web, async, fast]
+    # Async Python web server and framework.
+
+  - owner: litestar-org
+    repo: litestar
+    tags: [python, asgi, web, api]
+    # Modern ASGI framework. Production-ready.
+
+  - owner: pallets
+    repo: werkzeug
+    tags: [python, wsgi, http, utilities]
+    # Comprehensive WSGI web application library.
+
+  - owner: pallets
+    repo: jinja
+    tags: [python, templates, web]
+    # Fast, expressive template engine.
+
+  - owner: celery
+    repo: celery
+    tags: [python, task-queue, distributed, async]
+    # Distributed task queue for Python.
+
+  - owner: benoitc
+    repo: gunicorn
+    tags: [python, wsgi, server]
+    # Python WSGI HTTP Server for UNIX.
+
+  - owner: tornadoweb
+    repo: tornado
+    tags: [python, web, async, networking]
+    # Python web framework and asynchronous networking library.
+
+  # ---------------------------------------------------------------------------
+  # 📦  JAVASCRIPT / TYPESCRIPT
+  # ---------------------------------------------------------------------------
+
+  - owner: vercel
+    repo: next.js
+    tags: [javascript, react, framework, ssr]
+    # The React framework for the web.
+
+  - owner: facebook
+    repo: react
+    tags: [javascript, ui, library, frontend]
+    # Library for building user interfaces.
+
+  - owner: vuejs
+    repo: core
+    tags: [javascript, vue, framework, frontend]
+    # Vue.js 3 core repository.
+
+  - owner: sveltejs
+    repo: svelte
+    tags: [javascript, compiler, ui, framework]
+    # Cybernetically enhanced web apps.
+
+  - owner: angular
+    repo: angular
+    tags: [typescript, framework, google, frontend]
+    # Platform for building mobile and desktop web apps.
+
+  - owner: denoland
+    repo: deno
+    tags: [typescript, rust, runtime, javascript]
+    # Secure runtime for JavaScript and TypeScript.
+
+  - owner: oven-sh
+    repo: bun
+    tags: [javascript, typescript, runtime, bundler]
+    # Incredibly fast JavaScript runtime and package manager.
+
+  - owner: nodejs
+    repo: node
+    tags: [javascript, runtime, server, v8]
+    # Node.js JavaScript runtime.
+
+  - owner: expressjs
+    repo: express
+    tags: [javascript, web, framework, node]
+    # Fast, unopinionated web framework for Node.js.
+
+  - owner: nestjs
+    repo: nest
+    tags: [typescript, node, framework, enterprise]
+    # Progressive Node.js framework for server-side apps.
+
+  - owner: vitejs
+    repo: vite
+    tags: [javascript, typescript, bundler, dev-server]
+    # Next generation frontend tooling.
+
+  - owner: webpack
+    repo: webpack
+    tags: [javascript, bundler, module, build]
+    # Module bundler for JavaScript.
+
+  - owner: microsoft
+    repo: TypeScript
+    tags: [typescript, compiler, language, type-system]
+    # TypeScript language and compiler.
+
+  - owner: remix-run
+    repo: remix
+    tags: [javascript, react, framework, ssr]
+    # Full stack web framework for React.
+
+  - owner: nuxt
+    repo: nuxt
+    tags: [javascript, vue, framework, ssr]
+    # The intuitive Vue framework.
+
+  - owner: prisma
+    repo: prisma
+    tags: [typescript, orm, database, node]
+    # Next-generation ORM for Node.js and TypeScript.
+
+  - owner: storybookjs
+    repo: storybook
+    tags: [javascript, ui, testing, components]
+    # UI component explorer and workshop.
+
+  - owner: tailwindlabs
+    repo: tailwindcss
+    tags: [css, utility-first, framework, design]
+    # Utility-first CSS framework.
+
+  - owner: mermaid-js
+    repo: mermaid
+    tags: [javascript, diagrams, markdown, visualization]
+    # Diagramming and charting tool.
+
+  - owner: jestjs
+    repo: jest
+    tags: [javascript, testing, framework]
+    # Delightful JavaScript testing.
+
+  - owner: cypress-io
+    repo: cypress
+    tags: [javascript, testing, e2e, browser]
+    # Fast, easy, and reliable E2E testing.
+
+  - owner: eslint
+    repo: eslint
+    tags: [javascript, linting, code-quality]
+    # Pluggable linting utility for JavaScript.
+
+  - owner: prettier
+    repo: prettier
+    tags: [javascript, formatting, code-style]
+    # Opinionated code formatter.
+
+  - owner: biomejs
+    repo: biome
+    tags: [javascript, rust, toolchain, linting]
+    # One toolchain for web projects.
+
+  - owner: evanw
+    repo: esbuild
+    tags: [go, javascript, bundler, compiler]
+    # Extremely fast bundler for the web.
+
+  # ---------------------------------------------------------------------------
+  # 🦀  RUST ECOSYSTEM
+  # ---------------------------------------------------------------------------
+
+  - owner: rust-lang
+    repo: rust
+    tags: [rust, compiler, language, systems]
+    # The Rust programming language.
+
+  - owner: tokio-rs
+    repo: tokio
+    tags: [rust, async, runtime, networking]
+    # Asynchronous runtime for Rust.
+
+  - owner: serde-rs
+    repo: serde
+    tags: [rust, serialization, framework]
+    # Serialization framework for Rust.
+
+  - owner: actix
+    repo: actix-web
+    tags: [rust, web, framework, async]
+    # Powerful web framework for Rust.
+
+  - owner: hyperium
+    repo: hyper
+    tags: [rust, http, client, server]
+    # Fast and correct HTTP implementation.
+
+  - owner: tauri-apps
+    repo: tauri
+    tags: [rust, desktop, cross-platform, webview]
+    # Build smaller, faster, more secure desktop apps.
+
+  - owner: swc-project
+    repo: swc
+    tags: [rust, javascript, typescript, compiler]
+    # Super-fast JS/TS compiler written in Rust.
+
+  - owner: tracel-ai
+    repo: burn
+    tags: [rust, deep-learning, ml, framework]
+    # Deep learning framework for Rust.
+
+  - owner: huggingface
+    repo: candle
+    tags: [rust, ml, inference, tensors]
+    # Minimalist ML framework for Rust.
+
+  - owner: rust-lang
+    repo: cargo
+    tags: [rust, package-manager, build]
+    # The Rust package manager.
+
+  - owner: diesel-rs
+    repo: diesel
+    tags: [rust, orm, database, sql]
+    # Safe, extensible ORM for Rust.
+
+  - owner: launchbadge
+    repo: sqlx
+    tags: [rust, sql, async, database]
+    # Async SQL toolkit for Rust.
+
+  - owner: clap-rs
+    repo: clap
+    tags: [rust, cli, argument-parser]
+    # Command line argument parser for Rust.
+
+  - owner: BurntSushi
+    repo: ripgrep
+    tags: [rust, search, grep, cli]
+    # Fast line-oriented search tool.
+
+  - owner: starship
+    repo: starship
+    tags: [rust, shell, prompt, cli]
+    # Minimal, fast, customizable cross-shell prompt.
+
+  # ---------------------------------------------------------------------------
+  # 🐹  GO ECOSYSTEM
+  # ---------------------------------------------------------------------------
+
+  - owner: golang
+    repo: go
+    tags: [go, language, compiler, runtime]
+    # The Go programming language.
+
+  - owner: kubernetes
+    repo: kubernetes
+    tags: [go, containers, orchestration, cloud]
+    # Production-grade container orchestration.
+
+  - owner: moby
+    repo: moby
+    tags: [go, containers, docker, runtime]
+    # The Moby Project (Docker engine).
+
+  - owner: containerd
+    repo: containerd
+    tags: [go, containers, runtime, cncf]
+    # Container runtime. CNCF graduated project.
+
+  - owner: etcd-io
+    repo: etcd
+    tags: [go, distributed, key-value, consensus]
+    # Distributed reliable key-value store.
+
+  - owner: gin-gonic
+    repo: gin
+    tags: [go, web, framework, http]
+    # HTTP web framework written in Go.
+
+  - owner: gofiber
+    repo: fiber
+    tags: [go, web, framework, express]
+    # Express-inspired web framework for Go.
+
+  - owner: hashicorp
+    repo: terraform
+    tags: [go, infrastructure-as-code, cloud, devops]
+    # Infrastructure automation to provision any cloud.
+
+  - owner: hashicorp
+    repo: vault
+    tags: [go, secrets, security, encryption]
+    # Secrets and encryption management system.
+
+  - owner: hashicorp
+    repo: consul
+    tags: [go, service-mesh, networking, distributed]
+    # Service mesh and discovery.
+
+  - owner: hashicorp
+    repo: nomad
+    tags: [go, orchestration, scheduling, workloads]
+    # Workload orchestrator.
+
+  - owner: traefik
+    repo: traefik
+    tags: [go, reverse-proxy, load-balancer, cloud]
+    # Modern HTTP reverse proxy and load balancer.
+
+  - owner: minio
+    repo: minio
+    tags: [go, object-storage, s3, cloud]
+    # High-performance S3-compatible object storage.
+
+  - owner: cockroachdb
+    repo: cockroach
+    tags: [go, database, distributed, sql]
+    # Distributed SQL database.
+
+  - owner: nats-io
+    repo: nats-server
+    tags: [go, messaging, cloud-native, pubsub]
+    # High-performance cloud-native messaging system.
+
+  - owner: go-chi
+    repo: chi
+    tags: [go, http, router, middleware]
+    # Lightweight, composable HTTP router.
+
+  - owner: spf13
+    repo: cobra
+    tags: [go, cli, framework, commands]
+    # CLI framework for Go applications.
+
+  - owner: stretchr
+    repo: testify
+    tags: [go, testing, assertions, mocking]
+    # Testing toolkit with assertions and mocks.
+
+  # ---------------------------------------------------------------------------
+  # ☁️  CLOUD, DEVOPS & INFRASTRUCTURE
+  # ---------------------------------------------------------------------------
+
+  - owner: ansible
+    repo: ansible
+    tags: [python, automation, configuration, devops]
+    # IT automation platform. Massive community.
+
+  - owner: pulumi
+    repo: pulumi
+    tags: [go, infrastructure-as-code, cloud, multi-language]
+    # Infrastructure as code in any programming language.
+
+  - owner: argoproj
+    repo: argo-cd
+    tags: [go, gitops, kubernetes, cd]
+    # Declarative GitOps continuous delivery.
+
+  - owner: argoproj
+    repo: argo-workflows
+    tags: [go, workflows, kubernetes, orchestration]
+    # Workflow engine for Kubernetes.
+
+  - owner: crossplane
+    repo: crossplane
+    tags: [go, kubernetes, cloud, control-plane]
+    # Build control planes without needing to write code.
+
+  - owner: istio
+    repo: istio
+    tags: [go, service-mesh, kubernetes, networking]
+    # Connect, secure, control, and observe services.
+
+  - owner: linkerd
+    repo: linkerd2
+    tags: [go, rust, service-mesh, kubernetes]
+    # Ultralight, security-first service mesh.
+
+  - owner: cilium
+    repo: cilium
+    tags: [go, ebpf, networking, security]
+    # eBPF-based networking, security, and observability.
+
+  - owner: rancher
+    repo: rancher
+    tags: [go, kubernetes, management, multi-cluster]
+    # Complete container management platform.
+
+  - owner: k3s-io
+    repo: k3s
+    tags: [go, kubernetes, lightweight, edge]
+    # Lightweight Kubernetes for IoT and edge.
+
+  - owner: fluxcd
+    repo: flux2
+    tags: [go, gitops, kubernetes, cd]
+    # Open and extensible CD solution for Kubernetes.
+
+  - owner: helm
+    repo: helm
+    tags: [go, kubernetes, package-manager, charts]
+    # The Kubernetes package manager.
+
+  - owner: docker
+    repo: compose
+    tags: [go, docker, containers, orchestration]
+    # Define and run multi-container applications.
+
+  - owner: portainer
+    repo: portainer
+    tags: [go, docker, kubernetes, management-ui]
+    # Making Docker and Kubernetes management easy.
+
+  - owner: getsentry
+    repo: sentry
+    tags: [python, error-tracking, monitoring, observability]
+    # Developer-first error tracking and performance monitoring.
+
+  - owner: netdata
+    repo: netdata
+    tags: [c, monitoring, real-time, observability]
+    # Real-time performance and health monitoring.
+
+  - owner: open-telemetry
+    repo: opentelemetry-python
+    tags: [python, observability, tracing, metrics]
+    # OpenTelemetry Python SDK.
+
+  - owner: goharbor
+    repo: harbor
+    tags: [go, container-registry, security, cloud]
+    # Open source trusted cloud-native registry.
+
+  # ---------------------------------------------------------------------------
+  # 🗄️  DATABASES & DATA STORAGE
+  # ---------------------------------------------------------------------------
+
+  - owner: redis
+    repo: redis
+    tags: [c, database, in-memory, key-value]
+    # In-memory data structure store.
+
+  - owner: apache
+    repo: kafka
+    tags: [java, streaming, messaging, distributed]
+    # Distributed event streaming platform.
+
+  - owner: apache
+    repo: spark
+    tags: [scala, python, big-data, analytics]
+    # Unified analytics engine for large-scale data.
+
+  - owner: apache
+    repo: flink
+    tags: [java, streaming, batch, distributed]
+    # Stream and batch processing framework.
+
+  - owner: apache
+    repo: beam
+    tags: [java, python, batch, streaming]
+    # Unified model for batch and streaming data processing.
+
+  - owner: apache
+    repo: superset
+    tags: [python, typescript, bi, dashboards]
+    # Modern data exploration and visualization platform.
+
+  - owner: apache
+    repo: iceberg
+    tags: [java, table-format, analytics, data-lake]
+    # High-performance format for huge analytic tables.
+
+  - owner: timescale
+    repo: timescaledb
+    tags: [c, sql, time-series, postgresql]
+    # Open-source time-series SQL database.
+
+  - owner: questdb
+    repo: questdb
+    tags: [java, time-series, sql, performance]
+    # Fast SQL database for time series.
+
+  - owner: influxdata
+    repo: influxdb
+    tags: [go, rust, time-series, monitoring]
+    # Scalable time series database.
+
+  - owner: duckdb
+    repo: duckdb
+    tags: [cpp, sql, analytics, olap]
+    # Fast in-process analytical database.
+
+  - owner: trinodb
+    repo: trino
+    tags: [java, sql, distributed, query-engine]
+    # Fast distributed SQL query engine.
+
+  - owner: ClickHouse
+    repo: ClickHouse
+    tags: [cpp, sql, olap, column-oriented]
+    # Open source column-oriented DBMS.
+
+  - owner: supabase
+    repo: supabase
+    tags: [typescript, postgresql, firebase-alternative, backend]
+    # The open source Firebase alternative.
+
+  - owner: hasura
+    repo: graphql-engine
+    tags: [haskell, graphql, database, api]
+    # Instant GraphQL APIs on any Postgres database.
+
+  # ---------------------------------------------------------------------------
+  # 🧪  DEEP LEARNING & AI RESEARCH
+  # ---------------------------------------------------------------------------
+
+  - owner: microsoft
+    repo: DeepSpeed
+    tags: [python, deep-learning, distributed, optimization]
+    # Deep learning optimization library.
+
+  - owner: NVIDIA
+    repo: NeMo
+    tags: [python, nlp, speech, generative-ai]
+    # Framework for building conversational AI models.
+
+  - owner: facebookresearch
+    repo: detectron2
+    tags: [python, object-detection, segmentation, pytorch]
+    # Meta's detection and segmentation library.
+
+  - owner: open-mmlab
+    repo: mmdetection
+    tags: [python, object-detection, pytorch, toolbox]
+    # OpenMMLab detection toolbox.
+
+  - owner: open-mmlab
+    repo: mmsegmentation
+    tags: [python, semantic-segmentation, pytorch]
+    # OpenMMLab semantic segmentation toolbox.
+
+  - owner: ultralytics
+    repo: ultralytics
+    tags: [python, object-detection, yolo, pytorch]
+    # YOLO object detection and segmentation.
+
+  - owner: huggingface
+    repo: tokenizers
+    tags: [rust, python, nlp, tokenization]
+    # Fast state-of-the-art tokenizers.
+
+  - owner: huggingface
+    repo: diffusers
+    tags: [python, diffusion, generative-ai, pytorch]
+    # Diffusion models for image and audio generation.
+
+  - owner: huggingface
+    repo: peft
+    tags: [python, fine-tuning, llm, lora]
+    # Parameter-efficient fine-tuning of LLMs.
+
+  - owner: explosion
+    repo: spaCy
+    tags: [python, nlp, ner, parsing]
+    # Industrial-strength NLP library.
+
+  - owner: deepset-ai
+    repo: haystack
+    tags: [python, llm, rag, search]
+    # LLM orchestration framework.
+
+  - owner: optuna
+    repo: optuna
+    tags: [python, hyperparameter, optimization, automl]
+    # Automatic hyperparameter optimization.
+
+  - owner: wandb
+    repo: wandb
+    tags: [python, experiment-tracking, ml, visualization]
+    # ML experiment tracking and visualization.
+
+  - owner: bentoml
+    repo: BentoML
+    tags: [python, model-serving, deployment, ml]
+    # Build production-grade AI applications.
+
+  - owner: onnx
+    repo: onnx
+    tags: [python, cpp, model-format, interoperability]
+    # Open Neural Network Exchange.
+
+  - owner: microsoft
+    repo: onnxruntime
+    tags: [cpp, python, inference, optimization]
+    # Cross-platform inference and training accelerator.
+
+  - owner: apache
+    repo: tvm
+    tags: [python, cpp, compiler, deep-learning]
+    # Open deep learning compiler stack.
+
+  - owner: jax-ml
+    repo: jax
+    tags: [python, autograd, xla, gpu]
+    # Composable transformations of Python+NumPy programs.
+
+  - owner: google
+    repo: flax
+    tags: [python, jax, neural-networks, deep-learning]
+    # Neural network library for JAX.
+
+  - owner: fastai
+    repo: fastai
+    tags: [python, deep-learning, pytorch, education]
+    # Making neural nets uncool again.
+
+  - owner: facebookresearch
+    repo: faiss
+    tags: [cpp, python, similarity-search, vectors]
+    # Library for efficient similarity search.
+
+  - owner: chroma-core
+    repo: chroma
+    tags: [python, vector-database, embeddings, ai]
+    # The AI-native open-source embedding database.
+
+  - owner: qdrant
+    repo: qdrant
+    tags: [rust, vector-database, search, similarity]
+    # High-performance vector similarity search.
+
+  - owner: milvus-io
+    repo: milvus
+    tags: [go, vector-database, similarity-search, ai]
+    # Open-source vector database for AI.
+
+  - owner: sktime
+    repo: sktime
+    tags: [python, time-series, ml, forecasting]
+    # Unified framework for ML with time series.
+
+  # ---------------------------------------------------------------------------
+  # 💬  NLP & LANGUAGE PROCESSING
+  # ---------------------------------------------------------------------------
+
+  - owner: nltk
+    repo: nltk
+    tags: [python, nlp, text, education]
+    # Natural Language Toolkit for Python.
+
+  - owner: RasaHQ
+    repo: rasa
+    tags: [python, chatbots, nlp, dialogue]
+    # Open source conversational AI.
+
+  - owner: flairNLP
+    repo: flair
+    tags: [python, nlp, ner, embeddings]
+    # Framework for state-of-the-art NLP.
+
+  - owner: stanfordnlp
+    repo: stanza
+    tags: [python, nlp, stanford, linguistics]
+    # Stanford NLP library for many languages.
+
+  - owner: huggingface
+    repo: text-generation-inference
+    tags: [rust, python, llm, inference]
+    # Production-ready LLM text generation.
+
+  - owner: openai
+    repo: whisper
+    tags: [python, speech, transcription, ml]
+    # Robust speech recognition via large-scale supervision.
+
+  - owner: coqui-ai
+    repo: TTS
+    tags: [python, speech, text-to-speech, deep-learning]
+    # Deep learning toolkit for text-to-speech.
+
+  - owner: speechbrain
+    repo: speechbrain
+    tags: [python, speech, pytorch, asr]
+    # PyTorch-based speech toolkit.
+
+  - owner: argilla-io
+    repo: argilla
+    tags: [python, data-labeling, nlp, feedback]
+    # Data curation platform for LLMs.
+
+  - owner: guardrails-ai
+    repo: guardrails
+    tags: [python, llm, validation, safety]
+    # Adding guardrails to LLM outputs.
+
+  # ---------------------------------------------------------------------------
+  # 🖼️  COMPUTER VISION & IMAGE PROCESSING
+  # ---------------------------------------------------------------------------
+
+  - owner: opencv
+    repo: opencv
+    tags: [cpp, python, computer-vision, image-processing]
+    # Open Source Computer Vision Library.
+
+  - owner: python-pillow
+    repo: Pillow
+    tags: [python, image-processing, pil]
+    # Python Imaging Library fork.
+
+  - owner: imageio
+    repo: imageio
+    tags: [python, image-io, scientific, media]
+    # Library for reading and writing image data.
+
+  - owner: albumentations-team
+    repo: albumentations
+    tags: [python, image-augmentation, computer-vision, ml]
+    # Fast image augmentation library.
+
+  - owner: kornia
+    repo: kornia
+    tags: [python, computer-vision, pytorch, differentiable]
+    # Differentiable computer vision library for PyTorch.
+
+  - owner: roboflow
+    repo: supervision
+    tags: [python, computer-vision, detection, tracking]
+    # Reusable computer vision tools.
+
+  - owner: pytorch
+    repo: vision
+    tags: [python, pytorch, computer-vision, transforms]
+    # Datasets, transforms, and models for computer vision.
+
+  - owner: open-mmlab
+    repo: mmpose
+    tags: [python, pose-estimation, pytorch, toolbox]
+    # OpenMMLab pose estimation toolbox.
+
+  # ---------------------------------------------------------------------------
+  # 📊  DATA VISUALIZATION & DASHBOARDS (EXTENDED)
+  # ---------------------------------------------------------------------------
+
+  - owner: streamlit
+    repo: streamlit
+    tags: [python, dashboards, data-apps, ml]
+    # Framework for building data apps.
+
+  - owner: gradio-app
+    repo: gradio
+    tags: [python, ml-demos, web-ui, interfaces]
+    # Build ML demos and web apps.
+
+  - owner: holoviz
+    repo: panel
+    tags: [python, dashboards, interactive, data-apps]
+    # High-level app and dashboarding solution.
+
+  - owner: holoviz
+    repo: holoviews
+    tags: [python, visualization, declarative, interactive]
+    # Annotate your data, not your plots.
+
+  - owner: man-group
+    repo: dtale
+    tags: [python, dataframes, visualization, pandas]
+    # Visualizer for pandas data structures.
+
+  - owner: vega
+    repo: vega-lite
+    tags: [javascript, visualization, grammar, declarative]
+    # Grammar of interactive graphics.
+
+  - owner: d3
+    repo: d3
+    tags: [javascript, visualization, svg, data-driven]
+    # Data-Driven Documents.
+
+  - owner: apache
+    repo: echarts
+    tags: [javascript, visualization, charting, interactive]
+    # Apache ECharts interactive charting library.
+
+  # ---------------------------------------------------------------------------
+  # 🐍  PYTHON ECOSYSTEM & TOOLING
+  # ---------------------------------------------------------------------------
+
+  - owner: python
+    repo: cpython
+    tags: [python, c, interpreter, language]
+    # The Python programming language.
+
+  - owner: pypa
+    repo: pip
+    tags: [python, package-manager, packaging]
+    # The Python package installer.
+
+  - owner: pypa
+    repo: setuptools
+    tags: [python, packaging, build, distribution]
+    # Official Python packaging tools.
+
+  - owner: conda
+    repo: conda
+    tags: [python, package-manager, environment, data-science]
+    # OS-agnostic package and environment management.
+
+  - owner: astral-sh
+    repo: uv
+    tags: [rust, python, package-manager, fast]
+    # Extremely fast Python package installer.
+
+  - owner: pypa
+    repo: hatch
+    tags: [python, packaging, build, project-management]
+    # Modern, extensible Python project management.
+
+  - owner: python
+    repo: mypy
+    tags: [python, type-checking, static-analysis]
+    # Optional static typing for Python.
+
+  - owner: microsoft
+    repo: pyright
+    tags: [typescript, python, type-checking, lsp]
+    # Static type checker for Python.
+
+  - owner: ipython
+    repo: ipython
+    tags: [python, interactive, shell, repl]
+    # Official repository for IPython.
+
+  - owner: pypa
+    repo: virtualenv
+    tags: [python, virtual-environments, packaging]
+    # Tool to create isolated Python environments.
+
+  - owner: tox-dev
+    repo: tox
+    tags: [python, testing, automation, ci]
+    # Command line driven CI frontend and development tool.
+
+  - owner: sphinx-doc
+    repo: sphinx
+    tags: [python, documentation, restructuredtext]
+    # Python documentation generator.
+
+  - owner: PyCQA
+    repo: pylint
+    tags: [python, linting, code-quality, static-analysis]
+    # Static code analyser for Python.
+
+  - owner: PyCQA
+    repo: bandit
+    tags: [python, security, static-analysis, vulnerabilities]
+    # Security-oriented static analyser for Python.
+
+  # ---------------------------------------------------------------------------
+  # 🔒  SECURITY & NETWORKING
+  # ---------------------------------------------------------------------------
+
+  - owner: OWASP
+    repo: CheatSheetSeries
+    tags: [security, reference, web, best-practices]
+    # OWASP Cheat Sheet Series.
+
+  - owner: aquasecurity
+    repo: trivy
+    tags: [go, security, scanner, vulnerabilities]
+    # Comprehensive vulnerability scanner.
+
+  - owner: zaproxy
+    repo: zaproxy
+    tags: [java, security, web, penetration-testing]
+    # OWASP ZAP web security scanner.
+
+  - owner: certbot
+    repo: certbot
+    tags: [python, ssl, certificates, security]
+    # EFF's Certbot for Let's Encrypt.
+
+  - owner: mitmproxy
+    repo: mitmproxy
+    tags: [python, http, proxy, debugging]
+    # Interactive HTTPS proxy.
+
+  - owner: fail2ban
+    repo: fail2ban
+    tags: [python, security, intrusion-prevention, linux]
+    # Ban hosts that cause multiple auth errors.
+
+  - owner: coredns
+    repo: coredns
+    tags: [go, dns, networking, kubernetes]
+    # DNS server that chains plugins.
+
+  - owner: caddyserver
+    repo: caddy
+    tags: [go, web-server, https, reverse-proxy]
+    # Fast and extensible web server with automatic HTTPS.
+
+  # ---------------------------------------------------------------------------
+  # 📝  DOCUMENTATION & STATIC SITES
+  # ---------------------------------------------------------------------------
+
+  - owner: mkdocs
+    repo: mkdocs
+    tags: [python, documentation, markdown, static-site]
+    # Project documentation with Markdown.
+
+  - owner: squidfunk
+    repo: mkdocs-material
+    tags: [python, documentation, material-design, mkdocs]
+    # Material theme for MkDocs.
+
+  - owner: readthedocs
+    repo: readthedocs.org
+    tags: [python, documentation, hosting, sphinx]
+    # Documentation hosting platform.
+
+  - owner: withastro
+    repo: astro
+    tags: [javascript, static-site, islands, framework]
+    # The web framework for content-driven websites.
+
+  - owner: gohugoio
+    repo: hugo
+    tags: [go, static-site, cms, markdown]
+    # The world's fastest static site generator.
+
+  - owner: getpelican
+    repo: pelican
+    tags: [python, static-site, blog, markdown]
+    # Static site generator powered by Python.
+
+  # ---------------------------------------------------------------------------
+  # 📱  MOBILE & CROSS-PLATFORM
+  # ---------------------------------------------------------------------------
+
+  - owner: flutter
+    repo: flutter
+    tags: [dart, mobile, cross-platform, ui]
+    # Google's UI toolkit for mobile, web, and desktop.
+
+  - owner: facebook
+    repo: react-native
+    tags: [javascript, mobile, cross-platform, react]
+    # Framework for building native apps with React.
+
+  - owner: electron
+    repo: electron
+    tags: [javascript, desktop, cross-platform, chromium]
+    # Build cross-platform desktop apps.
+
+  - owner: kivy
+    repo: kivy
+    tags: [python, mobile, cross-platform, ui]
+    # Cross-platform Python framework for NUI.
+
+  - owner: ionic-team
+    repo: ionic-framework
+    tags: [typescript, mobile, cross-platform, web]
+    # Cross-platform UI toolkit for web and mobile.
+
+  - owner: expo
+    repo: expo
+    tags: [javascript, react-native, mobile, framework]
+    # Make any app with React Native.
+
+  # ---------------------------------------------------------------------------
+  # 🎲  MISCELLANEOUS POPULAR
+  # ---------------------------------------------------------------------------
+
+  - owner: home-assistant
+    repo: core
+    tags: [python, iot, automation, smart-home]
+    # Open source home automation.
+
+  - owner: yt-dlp
+    repo: yt-dlp
+    tags: [python, media, download, cli]
+    # Feature-rich media downloader.
+
+  - owner: httpie
+    repo: cli
+    tags: [python, http, cli, api-testing]
+    # Modern, user-friendly HTTP client for the CLI.
+
+  - owner: 3b1b
+    repo: manim
+    tags: [python, animation, math, education]
+    # Animation engine for explanatory math videos.
+
+  - owner: scrapy
+    repo: scrapy
+    tags: [python, web-scraping, crawling, data]
+    # Fast web crawling and scraping framework.
+
+  - owner: PostHog
+    repo: posthog
+    tags: [python, typescript, analytics, product]
+    # Open source product analytics.
+
+  - owner: localstack
+    repo: localstack
+    tags: [python, aws, cloud, testing]
+    # Fully functional local AWS cloud stack.
+
+  - owner: wagtail
+    repo: wagtail
+    tags: [python, cms, django, content]
+    # Django content management system.
+
+  - owner: zulip
+    repo: zulip
+    tags: [python, chat, team, communication]
+    # Organized team chat.
+
+  - owner: mattermost
+    repo: mattermost
+    tags: [go, typescript, chat, collaboration]
+    # Open source platform for developer collaboration.
+
+  - owner: n8n-io
+    repo: n8n
+    tags: [typescript, automation, workflow, integration]
+    # Source-available workflow automation tool.
+
+  - owner: nocodb
+    repo: nocodb
+    tags: [typescript, database, airtable-alternative, api]
+    # Open source Airtable alternative.
+
 # ---------------------------------------------------------------------------
 # Label mappings
 # ---------------------------------------------------------------------------
@@ -552,6 +1612,6 @@ label_mappings:
 # Weekly issue pool limits per category
 # ---------------------------------------------------------------------------
 limits:
-  gfi: 12
-  bug: 8
-  hard: 6
+  gfi: 20
+  bug: 14
+  hard: 10

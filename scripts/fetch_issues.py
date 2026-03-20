@@ -17,7 +17,12 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import yaml
-from utils import arena_week_id, github_get, update_readme_section
+from utils import (
+    arena_week_id,
+    arena_week_start,
+    github_get,
+    update_readme_section,
+)
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 log = logging.getLogger(__name__)
@@ -91,7 +96,7 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
     limits = config["limits"]
 
     results = {"gfi": [], "bug": [], "hard": []}
-    listed_at = datetime.now(timezone.utc).isoformat()  # compute once per run
+    listed_at = arena_week_start().isoformat()  # pinned to Friday 17:00:00 UTC
     for repo_cfg in repos:
         owner = repo_cfg["owner"]
         repo = repo_cfg["repo"]
@@ -175,7 +180,7 @@ def save_state(issues: dict[str, list[dict]], week_id: str) -> None:
             state = json.load(f)
 
     state[week_id] = {
-        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "fetched_at": arena_week_start().isoformat(),
         "issues": issues,
     }
 

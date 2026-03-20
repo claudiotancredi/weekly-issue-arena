@@ -68,6 +68,24 @@ def arena_week_id(dt: datetime | None = None) -> str:
     return friday_start.strftime("%G-W%V")
 
 
+def arena_week_start(dt: datetime | None = None) -> datetime:
+    """Return the exact start of the current arena week (Friday 17:00:00 UTC).
+
+    This is the canonical timestamp for ``listed_at`` so that the 7-day
+    PR deadline is always deterministic regardless of cron drift.
+    """
+    if dt is None:
+        dt = datetime.now(timezone.utc)
+
+    days_since_friday = (dt.weekday() - 4) % 7
+    friday_start = dt - timedelta(days=days_since_friday)
+
+    if days_since_friday == 0 and dt.hour < 17:
+        friday_start -= timedelta(weeks=1)
+
+    return friday_start.replace(hour=17, minute=0, second=0, microsecond=0)
+
+
 def update_readme_section(content: str, tag: str, new_body: str) -> str:
     """Replace content between matching START/END markers."""
     pattern = rf"(<!-- {tag}:START -->).*?(<!-- {tag}:END -->)"

@@ -118,7 +118,7 @@ You don't need to register — contributions are detected automatically via GitH
 - Issues with a PR are tracked for up to **28 weeks** to allow maintainer review time
 - Issues with no PR after 7 days are dropped from tracking
 - If your PR closes the issue within the tracking window, you earn points
-- Your PR must reference the issue via a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) or be linked through GitHub's sidebar — the automation detects both
+- Your PR must reference the issue via a closing keyword (**fixes #N**, **closes #N**, **resolves #N**) or be linked through GitHub's sidebar — the automation detects both
 - If multiple PRs reference the same issue, **only the one that closes it** earns points
 
 | Issue Type         | Points |
@@ -139,10 +139,10 @@ You don't need to register — contributions are detected automatically via GitH
 <summary> 🙋 FAQ</summary>
 
 **Q: My PR was merged but I didn't get points.**
-Make sure your PR references the issue — either via a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) in the PR body, or by linking the issue through GitHub's sidebar. The automation detects both. If you did link it, open a thread in [Discussions](https://github.com/claudiotancredi/weekly-issue-arena/discussions).
+Make sure your PR references the issue — either via a closing keyword (**fixes #N**, **closes #N**, **resolves #N**) in the PR body, or by linking the issue through GitHub's sidebar. The automation detects both. If you did link it, open a thread in [Discussions](https://github.com/claudiotancredi/weekly-issue-arena/discussions).
 
 **Q: Can I request a specific repo to be added?**
-Yes! See [`config/repos.yml`](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml) and open a PR or Discussion.
+Yes! See [config/repos.yml](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml) and open a PR or Discussion.
 
 **Q: What if I contributed without knowing about the Arena?**
 You're still counted — all contributors to Arena-listed issues are treated equally.

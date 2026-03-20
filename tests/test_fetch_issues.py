@@ -655,3 +655,55 @@ class TestSaveCurrentIssues:
             "number",
             "category",
         }
+
+
+# ── load_configured_repos ────────────────────────────────────
+
+
+class TestLoadConfiguredRepos:
+    """Tests for the load_configured_repos function."""
+
+    def test_loads_valid_yaml(self, tmp_path, monkeypatch):
+        """A valid repos.yml is parsed and returned as a dict."""
+        config = {
+            "repos": [{"owner": "org", "repo": "proj"}],
+            "label_mappings": {
+                "gfi": ["good first issue"],
+                "bug": ["bug"],
+                "hard": ["hard"],
+            },
+            "limits": {"gfi": 5, "bug": 3, "hard": 2},
+        }
+        f = tmp_path / "repos.yml"
+        import yaml
+
+        f.write_text(yaml.dump(config), encoding="utf-8")
+        monkeypatch.setattr("fetch_issues.CONFIG_PATH", f)
+        result = fetch_issues.load_configured_repos()
+        assert result["repos"][0]["owner"] == "org"
+        assert result["limits"]["gfi"] == 5
+
+    def test_has_required_keys(self, tmp_path, monkeypatch):
+        """Loaded config contains repos, label_mappings, and limits."""
+        config = {
+            "repos": [],
+            "label_mappings": {"gfi": [], "bug": [], "hard": []},
+            "limits": {"gfi": 0, "bug": 0, "hard": 0},
+        }
+        f = tmp_path / "repos.yml"
+        import yaml
+
+        f.write_text(yaml.dump(config), encoding="utf-8")
+        monkeypatch.setattr("fetch_issues.CONFIG_PATH", f)
+        result = fetch_issues.load_configured_repos()
+        assert "repos" in result
+        assert "label_mappings" in result
+        assert "limits" in result
+
+    def test_missing_file_raises(self, tmp_path, monkeypatch):
+        """Missing repos.yml raises FileNotFoundError."""
+        monkeypatch.setattr(
+            "fetch_issues.CONFIG_PATH", tmp_path / "missing.yml"
+        )
+        with pytest.raises(FileNotFoundError):
+            fetch_issues.load_configured_repos()

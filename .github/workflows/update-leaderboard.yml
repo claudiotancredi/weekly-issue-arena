@@ -60,7 +60,7 @@ jobs:
             echo "No new credits, skipping."
             exit 0
           fi
-          python3 -c "
+          python -c "
           import json, os
           credits = json.loads(os.environ['NEW_CREDITS'])
           lines = []

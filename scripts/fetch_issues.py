@@ -197,7 +197,7 @@ def save_state(issues: dict[str, list[dict]], week_id: str) -> None:
     state = {
         k: v
         for k, v in state.items()
-        if datetime.fromisoformat(v["fetched_at"]) > cutoff
+        if datetime.fromisoformat(v["fetched_at"]) >= cutoff
     }
 
     with open(STATE_PATH, "w", encoding="utf-8") as f:

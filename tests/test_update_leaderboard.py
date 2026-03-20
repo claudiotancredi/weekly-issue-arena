@@ -17,6 +17,7 @@ from update_leaderboard import (  # noqa: E402, I001
     process_week,
     save_scores,
     save_state,
+    update_issue_statuses,
 )
 
 
@@ -1074,3 +1075,99 @@ class TestBuildWeeklyContributorsMd:
         anna_pos = md.index("@anna")
         zara_pos = md.index("@zara")
         assert anna_pos < zara_pos
+
+
+# ── update_issue_statuses ─────────────────────────────────────
+
+
+class TestUpdateIssueStatuses:
+    """Tests for the update_issue_statuses function."""
+
+    @patch("update_leaderboard.check_issue_status")
+    def test_replaces_open_with_closed(
+        self, mock_status, tmp_path, monkeypatch
+    ):
+        """Status emoji is updated from open to closed."""
+        current = [{"owner": "org", "repo": "proj", "number": 1}]
+        f = tmp_path / "current_issues.json"
+        f.write_text(json.dumps(current), encoding="utf-8")
+        monkeypatch.setattr("update_leaderboard.CURRENT_ISSUES_PATH", f)
+        mock_status.return_value = "🔴 Closed"
+
+        url = "https://github.com/org/proj/issues/1"
+        readme = f"| [Title]({url}) | repo | 🟢 Open |"
+        result = update_issue_statuses(readme)
+
+        assert "🔴 Closed" in result
+        assert "🟢 Open" not in result
+
+    @patch("update_leaderboard.check_issue_status")
+    def test_replaces_closed_with_open(
+        self, mock_status, tmp_path, monkeypatch
+    ):
+        """Status emoji is updated from closed to open."""
+        current = [{"owner": "org", "repo": "proj", "number": 2}]
+        f = tmp_path / "current_issues.json"
+        f.write_text(json.dumps(current), encoding="utf-8")
+        monkeypatch.setattr("update_leaderboard.CURRENT_ISSUES_PATH", f)
+        mock_status.return_value = "🟢 Open"
+
+        url = "https://github.com/org/proj/issues/2"
+        readme = f"| [Title]({url}) | repo | 🔴 Closed |"
+        result = update_issue_statuses(readme)
+
+        assert "🟢 Open" in result
+        assert "🔴 Closed" not in result
+
+    def test_missing_current_issues_file_returns_readme_unchanged(
+        self, tmp_path, monkeypatch
+    ):
+        """Missing current_issues.json returns readme unchanged."""
+        monkeypatch.setattr(
+            "update_leaderboard.CURRENT_ISSUES_PATH",
+            tmp_path / "missing.json",
+        )
+        readme = "# README unchanged"
+        assert update_issue_statuses(readme) == readme
+
+    @patch("update_leaderboard.check_issue_status")
+    def test_unrelated_issue_url_not_modified(
+        self, mock_status, tmp_path, monkeypatch
+    ):
+        """Lines not matching the issue URL are not modified."""
+        current = [{"owner": "org", "repo": "proj", "number": 3}]
+        f = tmp_path / "current_issues.json"
+        f.write_text(json.dumps(current), encoding="utf-8")
+        monkeypatch.setattr("update_leaderboard.CURRENT_ISSUES_PATH", f)
+        mock_status.return_value = "🔴 Closed"
+
+        readme = (
+            "| [Other](https://github.com/x/y/issues/99) | repo | 🟢 Open |"
+        )
+        result = update_issue_statuses(readme)
+
+        assert result == readme  # no change — wrong issue URL
+
+    @patch("update_leaderboard.check_issue_status")
+    def test_multiple_issues_all_updated(
+        self, mock_status, tmp_path, monkeypatch
+    ):
+        """All issues in the list have their status updated."""
+        current = [
+            {"owner": "org", "repo": "proj", "number": 1},
+            {"owner": "org", "repo": "proj", "number": 2},
+        ]
+        f = tmp_path / "current_issues.json"
+        f.write_text(json.dumps(current), encoding="utf-8")
+        monkeypatch.setattr("update_leaderboard.CURRENT_ISSUES_PATH", f)
+        mock_status.side_effect = ["🔴 Closed", "🟢 Open"]
+
+        url1 = "https://github.com/org/proj/issues/1"
+        url2 = "https://github.com/org/proj/issues/2"
+        readme = (
+            f"| [T1]({url1}) | r | 🟢 Open |\n| [T2]({url2}) | r | 🟢 Open |"
+        )
+        result = update_issue_statuses(readme)
+
+        assert f"[T1]({url1}) | r | 🔴 Closed" in result
+        assert f"[T2]({url2}) | r | 🟢 Open" in result

@@ -1,0 +1,30 @@
+---
+import { getRank } from "../lib/ranks";
+
+interface Props {
+  points: number;
+  size?: "sm" | "md" | "lg";
+  showLabel?: boolean;
+}
+
+const { points, size = "md", showLabel = true } = Astro.props;
+const rank = getRank(points);
+const base = import.meta.env.BASE_URL;
+
+const sizes: Record<string, string> = {
+  sm: "w-8 h-8",
+  md: "w-12 h-12",
+  lg: "w-20 h-20",
+};
+---
+
+<div class="flex items-center gap-2">
+  <img
+    src={`${base}${rank.badge.slice(1)}`}
+    alt={rank.name}
+    class={`${sizes[size]} rounded-md`}
+  />
+  {showLabel && (
+    <span class="text-xs text-zinc-400">{rank.name}</span>
+  )}
+</div>

@@ -1,0 +1,52 @@
+---
+import RankBadge from "./RankBadge.astro";
+import type { LeaderboardEntry } from "../lib/data";
+
+interface Props {
+  player: LeaderboardEntry;
+}
+
+const { player } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const positionColors: Record<number, string> = {
+  1: "text-yellow-400",
+  2: "text-gray-300",
+  3: "text-amber-600",
+};
+---
+
+<a
+  href={`${base}player/${player.username}/`}
+  class="group grid grid-cols-[2.5rem_1fr_5rem_8rem] sm:grid-cols-[3rem_1fr_5rem_10rem] items-center gap-3 rounded-lg border border-border bg-surface-card px-4 py-3 transition-all hover:border-accent/50 hover:bg-surface-elevated"
+>
+  <span class={`text-lg font-bold text-right ${positionColors[player.position] ?? "text-zinc-500"}`}>
+    #{player.position}
+  </span>
+
+  <div class="flex items-center gap-3 min-w-0">
+    <img
+      src={player.avatar_url}
+      alt={player.username}
+      class="w-9 h-9 rounded-full flex-shrink-0"
+      loading="lazy"
+    />
+    <div class="min-w-0">
+      <div class="text-sm font-semibold text-white group-hover:text-accent transition-colors truncate">
+        @{player.username}
+      </div>
+      <div class="text-xs text-zinc-500">
+        {player.contributions.length} contribution{player.contributions.length !== 1 ? "s" : ""}
+      </div>
+    </div>
+  </div>
+
+  <div class="text-right">
+    <span class="text-sm font-bold text-points">{player.total_points}</span>
+    <span class="text-xs text-zinc-500"> pts</span>
+  </div>
+
+  <div class="hidden sm:block">
+    <RankBadge points={player.total_points} size="sm" />
+  </div>
+</a>

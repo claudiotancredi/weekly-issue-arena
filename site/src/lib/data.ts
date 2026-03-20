@@ -1,0 +1,178 @@
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { getRank } from "./ranks";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, "../../..");
+const ISSUES_PATH = path.join(ROOT, ".arena_state/issues.json");
+const SCORES_PATH = path.join(ROOT, ".arena_state/scores.json");
+const REPOS_PATH = path.join(ROOT, "config/repos.yml");
+
+// --- Types ---
+
+export interface Issue {
+  number: number;
+  title: string;
+  url: string;
+  owner: string;
+  repo: string;
+  repo_url: string;
+  created_at: string;
+  updated_at: string;
+  author: string;
+  listed_at: string;
+}
+
+export interface CategorizedIssues {
+  gfi: Issue[];
+  bug: Issue[];
+  hard: Issue[];
+}
+
+interface WeekData {
+  fetched_at: string;
+  issues: CategorizedIssues;
+}
+
+export interface Contribution {
+  issue: string;
+  points: number;
+  pr_url: string;
+  week: string;
+  credited_at: string;
+}
+
+export interface PlayerData {
+  total_points: number;
+  avatar_url: string;
+  contributions: Contribution[];
+}
+
+interface ScoresData {
+  players: Record<string, PlayerData>;
+  credited_issues: string[];
+  weekly: Record<string, string[]>;
+}
+
+export interface LeaderboardEntry {
+  username: string;
+  total_points: number;
+  avatar_url: string;
+  contributions: Contribution[];
+  rank: ReturnType<typeof getRank>;
+  position: number;
+}
+
+export interface IssueWithCategory extends Issue {
+  category: string;
+  points: number;
+}
+
+// --- Loaders ---
+
+function readJSON<T>(filepath: string): T | null {
+  try {
+    const raw = fs.readFileSync(filepath, "utf-8");
+    return JSON.parse(raw) as T;
+  } catch {
+    return null;
+  }
+}
+
+function getAllWeeks(): Record<string, WeekData> {
+  return readJSON<Record<string, WeekData>>(ISSUES_PATH) ?? {};
+}
+
+function getScores(): ScoresData {
+  return (
+    readJSON<ScoresData>(SCORES_PATH) ?? {
+      players: {},
+      credited_issues: [],
+      weekly: {},
+    }
+  );
+}
+
+export function getLatestWeekId(): string | null {
+  const weeks = Object.keys(getAllWeeks()).sort();
+  return weeks.length > 0 ? weeks[weeks.length - 1] : null;
+}
+
+export function getCurrentWeekIssues(): CategorizedIssues {
+  const weeks = getAllWeeks();
+  const weekIds = Object.keys(weeks).sort();
+  if (weekIds.length === 0) return { gfi: [], bug: [], hard: [] };
+  return weeks[weekIds[weekIds.length - 1]].issues;
+}
+
+export function getAllCurrentIssues(): IssueWithCategory[] {
+  const issues = getCurrentWeekIssues();
+  const result: IssueWithCategory[] = [];
+
+  for (const [category, items] of Object.entries(issues)) {
+    const points = category === "hard" ? 4 : category === "bug" ? 2 : 1;
+    for (const issue of items) {
+      result.push({ ...issue, category, points });
+    }
+  }
+
+  return result;
+}
+
+export function getLeaderboard(): LeaderboardEntry[] {
+  const scores = getScores();
+  const entries = Object.entries(scores.players)
+    .map(([username, data]) => ({
+      username,
+      total_points: data.total_points,
+      avatar_url: data.avatar_url,
+      contributions: data.contributions,
+      rank: getRank(data.total_points),
+      position: 0,
+    }))
+    .sort((a, b) => {
+      if (b.total_points !== a.total_points)
+        return b.total_points - a.total_points;
+      return a.username.localeCompare(b.username);
+    });
+
+  entries.forEach((e, i) => (e.position = i + 1));
+  return entries;
+}
+
+export function getPlayer(username: string): PlayerData | null {
+  const scores = getScores();
+  return scores.players[username] ?? null;
+}
+
+export function getAllPlayerUsernames(): string[] {
+  const scores = getScores();
+  return Object.keys(scores.players);
+}
+
+export function getWeeklyContributors(): string[] {
+  const scores = getScores();
+  const weekId = getLatestWeekId();
+  if (!weekId) return [];
+  return scores.weekly[weekId] ?? [];
+}
+
+export function getRepoCount(): number {
+  try {
+    const raw = fs.readFileSync(REPOS_PATH, "utf-8");
+    return (raw.match(/- owner:/g) || []).length;
+  } catch {
+    return 0;
+  }
+}
+
+export function getTotalContributors(): number {
+  const scores = getScores();
+  return Object.keys(scores.players).length;
+}
+
+export function getTotalIssuesThisWeek(): number {
+  const issues = getCurrentWeekIssues();
+  return issues.gfi.length + issues.bug.length + issues.hard.length;
+}

@@ -1,0 +1,31 @@
+---
+import RankBadge from "./RankBadge.astro";
+import type { LeaderboardEntry } from "../lib/data";
+
+interface Props {
+  player: LeaderboardEntry;
+}
+
+const { player } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<a
+  href={`${base}player/${player.username}/`}
+  class="group flex items-center gap-4 rounded-lg border border-border bg-surface-card p-4 transition-all hover:border-accent/50 hover:bg-surface-elevated"
+>
+  <span class="text-lg font-bold text-zinc-500 w-6 text-right">#{player.position}</span>
+  <img
+    src={player.avatar_url}
+    alt={player.username}
+    class="w-10 h-10 rounded-full"
+    loading="lazy"
+  />
+  <div class="flex-1 min-w-0">
+    <div class="text-sm font-semibold text-white group-hover:text-accent transition-colors truncate">
+      @{player.username}
+    </div>
+    <div class="text-xs text-zinc-400">{player.total_points} pts</div>
+  </div>
+  <RankBadge points={player.total_points} size="sm" showLabel={false} />
+</a>

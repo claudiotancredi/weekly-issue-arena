@@ -1,0 +1,84 @@
+---
+const currentPath = Astro.url.pathname;
+const base = import.meta.env.BASE_URL;
+
+const links = [
+  { href: `${base}`, label: "Home" },
+  { href: `${base}issues/`, label: "Issues" },
+  { href: `${base}leaderboard/`, label: "Leaderboard" },
+  { href: `${base}about/`, label: "About" },
+];
+
+function isActive(href: string): boolean {
+  if (href === `${base}`) return currentPath === href;
+  return currentPath.startsWith(href);
+}
+---
+
+<nav class="sticky top-0 z-50 border-b border-border bg-surface/95 backdrop-blur-sm">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+    <a href={base} class="flex items-center gap-2 text-lg font-bold text-white hover:text-accent transition-colors">
+      <span class="text-xl">&#9876;&#65039;</span>
+      <span class="hidden sm:inline">Weekly Issue Arena</span>
+      <span class="sm:hidden">Arena</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden sm:flex items-center gap-6">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class={`text-sm transition-colors ${
+            isActive(link.href)
+              ? "text-accent font-semibold"
+              : "text-zinc-400 hover:text-white"
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="https://github.com/claudiotancredi/weekly-issue-arena"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm text-zinc-400 hover:text-white transition-colors"
+      >
+        GitHub
+      </a>
+    </div>
+
+    <!-- Mobile nav toggle -->
+    <details class="sm:hidden group">
+      <summary class="cursor-pointer list-none text-zinc-400 hover:text-white p-1">
+        <svg class="w-6 h-6 group-open:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg class="w-6 h-6 hidden group-open:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </summary>
+      <div class="absolute right-0 left-0 top-full border-b border-border bg-surface px-4 py-3 flex flex-col gap-3">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class={`text-sm ${
+              isActive(link.href)
+                ? "text-accent font-semibold"
+                : "text-zinc-400"
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href="https://github.com/claudiotancredi/weekly-issue-arena"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-zinc-400"
+        >
+          GitHub
+        </a>
+      </div>
+    </details>
+  </div>
+</nav>

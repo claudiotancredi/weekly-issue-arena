@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import IssueFilter from "../components/IssueFilter";
+import { getAllCurrentIssues, getLatestWeekId } from "../lib/data";
+
+const issues = getAllCurrentIssues();
+const weekId = getLatestWeekId();
+const base = import.meta.env.BASE_URL;
+
+// Serialize issues for the Preact component
+const issueProps = issues.map((i) => ({
+  number: i.number,
+  title: i.title,
+  url: i.url,
+  owner: i.owner,
+  repo: i.repo,
+  category: i.category,
+  points: i.points,
+}));
+---
+
+<BaseLayout title="Issues | Weekly Issue Arena" description="Browse this week's curated open-source issues. Filter by difficulty, search by title or repo.">
+  <div class="mx-auto max-w-6xl px-4 py-12">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-white">This Week's Issues</h1>
+      <p class="mt-2 text-sm text-[#a1a1aa]">
+        {issues.length} issues from the open-source community.
+        {weekId && <span class="text-[#71717a]"> Week {weekId}</span>}
+      </p>
+    </div>
+
+    {issues.length > 0 ? (
+      <IssueFilter client:load issues={issueProps} base={base} />
+    ) : (
+      <div class="text-center py-20 text-[#71717a]">
+        <p class="text-lg">No issues yet this week.</p>
+        <p class="mt-2 text-sm">New issues are fetched every Friday at 17:00 UTC.</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>

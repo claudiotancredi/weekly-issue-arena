@@ -1,0 +1,179 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CategoryBadge from "../components/CategoryBadge.astro";
+import RankBadge from "../components/RankBadge.astro";
+import { getRepoCount } from "../lib/data";
+
+const repoCount = getRepoCount();
+---
+
+<BaseLayout title="About | Weekly Issue Arena" description="Learn how the Weekly Issue Arena works — rules, point system, ranks, and FAQ.">
+  <div class="mx-auto max-w-3xl px-4 py-12">
+
+    <h1 class="text-3xl font-bold text-white mb-8">About the Arena</h1>
+
+    <!-- How It Works -->
+    <section class="mb-12">
+      <h2 class="text-xl font-bold text-white mb-4">How It Works</h2>
+      <div class="space-y-3 text-sm text-zinc-400">
+        <p>
+          Every <strong class="text-white">Friday at 17:00 UTC</strong>, a GitHub Action automatically
+          pulls fresh issues from a curated pool of {repoCount}+ open-source repositories. Issues are
+          labeled as Good First Issues, Bugs, or Hard Issues.
+        </p>
+        <p>
+          Every <strong class="text-white">hour</strong>, another action checks whether any listed
+          issues have been closed by a pull request. If your PR closes an Arena issue, you automatically
+          earn points.
+        </p>
+        <p>
+          No registration required. Contributions are detected via GitHub's public metadata.
+        </p>
+      </div>
+    </section>
+
+    <!-- Rules -->
+    <section class="mb-12">
+      <h2 class="text-xl font-bold text-white mb-4">Rules</h2>
+      <ul class="space-y-2 text-sm text-zinc-400">
+        <li class="flex gap-2"><span class="text-accent">&bull;</span> You have <strong class="text-white">7 days</strong> from when an issue is listed to open a PR</li>
+        <li class="flex gap-2"><span class="text-accent">&bull;</span> Issues with a PR are tracked for up to <strong class="text-white">28 weeks</strong> to allow maintainer review time</li>
+        <li class="flex gap-2"><span class="text-accent">&bull;</span> Issues with no PR after 7 days are dropped from tracking</li>
+        <li class="flex gap-2"><span class="text-accent">&bull;</span> Your PR must reference the issue via a closing keyword (<code class="text-white">fixes #N</code>, <code class="text-white">closes #N</code>, <code class="text-white">resolves #N</code>) or be linked through GitHub's sidebar</li>
+        <li class="flex gap-2"><span class="text-accent">&bull;</span> If multiple PRs reference the same issue, <strong class="text-white">only the one that closes it</strong> earns points</li>
+        <li class="flex gap-2"><span class="text-accent">&bull;</span> All contributors to Arena-listed issues are treated as participants</li>
+      </ul>
+    </section>
+
+    <!-- Point System -->
+    <section class="mb-12">
+      <h2 class="text-xl font-bold text-white mb-4">Point System</h2>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="rounded-lg border border-border bg-surface-card p-4 text-center">
+          <CategoryBadge category="gfi" size="md" />
+          <div class="mt-3 text-2xl font-bold text-white">1 <span class="text-sm text-zinc-400">pt</span></div>
+        </div>
+        <div class="rounded-lg border border-border bg-surface-card p-4 text-center">
+          <CategoryBadge category="bug" size="md" />
+          <div class="mt-3 text-2xl font-bold text-white">2 <span class="text-sm text-zinc-400">pts</span></div>
+        </div>
+        <div class="rounded-lg border border-border bg-surface-card p-4 text-center">
+          <CategoryBadge category="hard" size="md" />
+          <div class="mt-3 text-2xl font-bold text-white">4 <span class="text-sm text-zinc-400">pts</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ranks -->
+    <section class="mb-12">
+      <h2 class="text-xl font-bold text-white mb-4">Player Ranks</h2>
+      <div class="space-y-4">
+        <div class="flex items-center gap-4 rounded-lg border border-border bg-surface-card p-4">
+          <RankBadge points={0} size="lg" showLabel={false} />
+          <div>
+            <div class="text-sm font-semibold text-white">Hello World Engineer</div>
+            <div class="text-xs text-zinc-400">0 &ndash; 99 points</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 rounded-lg border border-border bg-surface-card p-4">
+          <RankBadge points={100} size="lg" showLabel={false} />
+          <div>
+            <div class="text-sm font-semibold text-white">Bug Slayer</div>
+            <div class="text-xs text-zinc-400">100 &ndash; 499 points</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 rounded-lg border border-border bg-surface-card p-4">
+          <RankBadge points={500} size="lg" showLabel={false} />
+          <div>
+            <div class="text-sm font-semibold text-white">Mr. Robot</div>
+            <div class="text-xs text-zinc-400">500+ points</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-12">
+      <h2 class="text-xl font-bold text-white mb-4">FAQ</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-sm font-semibold text-white">My PR was merged but I didn't get points.</h3>
+          <p class="mt-1 text-sm text-zinc-400">
+            Make sure your PR references the issue &mdash; either via a closing keyword
+            (<code class="text-white">fixes #N</code>, <code class="text-white">closes #N</code>,
+            <code class="text-white">resolves #N</code>) in the PR body, or by linking the issue
+            through GitHub's sidebar. If you did link it, open a thread in
+            <a href="https://github.com/claudiotancredi/weekly-issue-arena/discussions" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Discussions</a>.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-white">Can I request a specific repo to be added?</h3>
+          <p class="mt-1 text-sm text-zinc-400">
+            Yes! See
+            <a href="https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">config/repos.yml</a>
+            and open a PR or Discussion.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-white">What if I contributed without knowing about the Arena?</h3>
+          <p class="mt-1 text-sm text-zinc-400">
+            You're still counted. All contributors to Arena-listed issues are treated equally.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-white">How is this automated?</h3>
+          <p class="mt-1 text-sm text-zinc-400">
+            Via GitHub Actions + GitHub REST API. See
+            <a href="https://github.com/claudiotancredi/weekly-issue-arena/tree/main/.github/workflows" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">.github/workflows/</a>
+            for the full scripts.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tracked repos -->
+    <section class="mb-12">
+      <h2 class="text-xl font-bold text-white mb-4">Tracked Repos</h2>
+      <p class="text-sm text-zinc-400">
+        Issues are pulled from <strong class="text-white">{repoCount}+</strong> curated repositories
+        spanning ML, AI, data science, geospatial, dev tools, and more.
+      </p>
+      <p class="mt-2 text-sm text-zinc-400">
+        <a href="https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
+          View the full repo list &rarr;
+        </a>
+      </p>
+    </section>
+
+    <!-- Contributing -->
+    <section class="rounded-lg border border-border bg-surface-card p-6">
+      <h2 class="text-lg font-bold text-white mb-3">Contributing to the Arena</h2>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="https://github.com/claudiotancredi/weekly-issue-arena/discussions"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-lg border border-border bg-surface px-4 py-2 text-sm text-zinc-400 hover:text-white hover:border-accent/50 transition-all"
+        >
+          Start a Discussion
+        </a>
+        <a
+          href="https://github.com/claudiotancredi/weekly-issue-arena/issues"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-lg border border-border bg-surface px-4 py-2 text-sm text-zinc-400 hover:text-white hover:border-accent/50 transition-all"
+        >
+          File an Issue
+        </a>
+        <a
+          href="https://github.com/claudiotancredi/weekly-issue-arena/pulls"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-lg border border-border bg-surface px-4 py-2 text-sm text-zinc-400 hover:text-white hover:border-accent/50 transition-all"
+        >
+          Open a PR
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

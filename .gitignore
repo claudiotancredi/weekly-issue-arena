@@ -144,7 +144,12 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-/site
+# /site  # disabled — site/ is the Astro frontend
+
+# Astro build artifacts
+site/node_modules/
+site/dist/
+site/.astro/
 
 # mypy
 .mypy_cache/

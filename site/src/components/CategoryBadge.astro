@@ -1,0 +1,22 @@
+---
+import { CATEGORY_LABELS } from "../lib/ranks";
+
+interface Props {
+  category: string;
+  size?: "sm" | "md";
+}
+
+const { category, size = "sm" } = Astro.props;
+
+const colors: Record<string, string> = {
+  gfi: "bg-gfi/15 text-gfi border-gfi/30",
+  bug: "bg-bug/15 text-bug border-bug/30",
+  hard: "bg-hard/15 text-hard border-hard/30",
+};
+
+const sizeClass = size === "md" ? "px-3 py-1 text-xs" : "px-2 py-0.5 text-[10px]";
+---
+
+<span class={`inline-block rounded-full border font-semibold uppercase tracking-wider ${sizeClass} ${colors[category] ?? colors.gfi}`}>
+  {CATEGORY_LABELS[category] ?? category}
+</span>

@@ -1,0 +1,103 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import RankBadge from "../../components/RankBadge.astro";
+import ContributionItem from "../../components/ContributionItem.astro";
+import { getAllPlayerUsernames, getPlayer, getLeaderboard } from "../../lib/data";
+import { getRank } from "../../lib/ranks";
+
+export function getStaticPaths() {
+  const usernames = getAllPlayerUsernames();
+  return usernames.map((username) => ({
+    params: { username },
+  }));
+}
+
+const { username } = Astro.params;
+const player = getPlayer(username!);
+
+if (!player) {
+  return Astro.redirect(import.meta.env.BASE_URL);
+}
+
+const rank = getRank(player.total_points);
+const leaderboard = getLeaderboard();
+const position = leaderboard.find((e) => e.username === username)?.position ?? 0;
+
+// Sort contributions most recent first
+const contributions = [...player.contributions].sort(
+  (a, b) => new Date(b.credited_at).getTime() - new Date(a.credited_at).getTime(),
+);
+
+// Unique weeks active
+const weeksActive = new Set(player.contributions.map((c) => c.week)).size;
+---
+
+<BaseLayout
+  title={`@${username} | Weekly Issue Arena`}
+  description={`${rank.name} with ${player.total_points} points. ${player.contributions.length} contributions to open source.`}
+>
+  <div class="mx-auto max-w-4xl px-4 py-12">
+    <!-- Profile Header -->
+    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-10">
+      <img
+        src={player.avatar_url}
+        alt={username}
+        class="w-24 h-24 rounded-full border-2 border-border"
+      />
+      <div class="text-center sm:text-left flex-1">
+        <h1 class="text-2xl font-bold text-white">@{username}</h1>
+        <div class="mt-2">
+          <RankBadge points={player.total_points} size="md" />
+        </div>
+        <a
+          href={`https://github.com/${username}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 inline-block text-xs text-zinc-400 hover:text-accent transition-colors"
+        >
+          View on GitHub &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-3 gap-4 mb-10">
+      <div class="rounded-lg border border-border bg-surface-card p-4 text-center">
+        <div class="text-2xl font-bold text-points">{player.total_points}</div>
+        <div class="text-xs text-zinc-400 mt-1">Total Points</div>
+      </div>
+      <div class="rounded-lg border border-border bg-surface-card p-4 text-center">
+        <div class="text-2xl font-bold text-white">{player.contributions.length}</div>
+        <div class="text-xs text-zinc-400 mt-1">Contributions</div>
+      </div>
+      <div class="rounded-lg border border-border bg-surface-card p-4 text-center">
+        <div class="text-2xl font-bold text-white">{weeksActive}</div>
+        <div class="text-xs text-zinc-400 mt-1">Weeks Active</div>
+      </div>
+    </div>
+
+    {position > 0 && (
+      <div class="mb-10 text-center sm:text-left">
+        <span class="text-sm text-zinc-400">
+          Ranked <span class="text-white font-semibold">#{position}</span> on the leaderboard
+        </span>
+      </div>
+    )}
+
+    <!-- Contributions -->
+    <div>
+      <h2 class="text-lg font-bold text-white mb-4">
+        Contributions ({contributions.length})
+      </h2>
+      {contributions.length > 0 ? (
+        <div class="flex flex-col gap-2">
+          {contributions.map((c) => (
+            <ContributionItem contribution={c} />
+          ))}
+        </div>
+      ) : (
+        <p class="text-sm text-zinc-500">No contributions yet.</p>
+      )}
+    </div>
+  </div>
+</BaseLayout>

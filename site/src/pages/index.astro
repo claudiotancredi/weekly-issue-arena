@@ -1,0 +1,148 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import StatCard from "../components/StatCard.astro";
+import IssueCard from "../components/IssueCard.astro";
+import PlayerCard from "../components/PlayerCard.astro";
+import {
+  getAllCurrentIssues,
+  getLeaderboard,
+  getRepoCount,
+  getTotalContributors,
+  getTotalIssuesThisWeek,
+  getLatestWeekId,
+} from "../lib/data";
+
+const issues = getAllCurrentIssues();
+const leaderboard = getLeaderboard();
+const repoCount = getRepoCount();
+const totalContributors = getTotalContributors();
+const totalIssues = getTotalIssuesThisWeek();
+const weekId = getLatestWeekId();
+const base = import.meta.env.BASE_URL;
+
+// Pick one issue per category for featured section
+const featured = ["gfi", "bug", "hard"]
+  .map((cat) => issues.find((i) => i.category === cat))
+  .filter(Boolean);
+---
+
+<BaseLayout title="Weekly Issue Arena | Find issues, earn points, climb the leaderboard">
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-border">
+    <div class="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent"></div>
+    <div class="relative mx-auto max-w-6xl px-4 py-20 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+        Weekly Issue<br />
+        <span class="text-accent">Arena</span>
+      </h1>
+      <p class="mx-auto mt-4 max-w-xl text-base sm:text-lg text-zinc-400">
+        Find an issue. Submit a PR. Earn points. Climb the leaderboard.
+      </p>
+      <p class="mt-2 text-sm text-zinc-500">
+        No registration. No sign-ups. Just open source.
+      </p>
+      <div class="mt-8 flex justify-center gap-4">
+        <a
+          href={`${base}issues/`}
+          class="rounded-lg bg-accent px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
+        >
+          Browse Issues
+        </a>
+        <a
+          href={`${base}leaderboard/`}
+          class="rounded-lg border border-border bg-surface-card px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-surface-elevated"
+        >
+          Leaderboard
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="mx-auto max-w-6xl px-4 -mt-6">
+    <div class="grid grid-cols-3 gap-4">
+      <StatCard value={totalIssues} label="Issues this week" />
+      <StatCard value={totalContributors} label="Contributors" />
+      <StatCard value={repoCount} label="Tracked repos" />
+    </div>
+  </section>
+
+  <!-- Featured Issues -->
+  {featured.length > 0 && (
+    <section class="mx-auto max-w-6xl px-4 py-16">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl font-bold text-white">Featured Issues</h2>
+        {weekId && <span class="text-xs text-zinc-500">{weekId}</span>}
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {featured.map((issue) => (
+          <IssueCard issue={issue!} />
+        ))}
+      </div>
+      <div class="mt-6 text-center">
+        <a
+          href={`${base}issues/`}
+          class="text-sm text-accent hover:text-accent-hover transition-colors"
+        >
+          View all {totalIssues} issues &rarr;
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- Top Players -->
+  {leaderboard.length > 0 && (
+    <section class="mx-auto max-w-6xl px-4 pb-16">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl font-bold text-white">Top Contributors</h2>
+      </div>
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {leaderboard.slice(0, 6).map((player) => (
+          <PlayerCard player={player} />
+        ))}
+      </div>
+      {leaderboard.length > 6 && (
+        <div class="mt-6 text-center">
+          <a
+            href={`${base}leaderboard/`}
+            class="text-sm text-accent hover:text-accent-hover transition-colors"
+          >
+            View full leaderboard &rarr;
+          </a>
+        </div>
+      )}
+    </section>
+  )}
+
+  <!-- How it works -->
+  <section class="border-t border-border bg-surface-card">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="text-xl font-bold text-white text-center mb-10">How It Works</h2>
+      <div class="grid gap-8 sm:grid-cols-3">
+        <div class="text-center">
+          <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent text-xl font-bold">1</div>
+          <h3 class="text-sm font-semibold text-white">Pick an Issue</h3>
+          <p class="mt-1 text-xs text-zinc-400">Browse curated issues from {repoCount}+ open-source repos, refreshed every Friday.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent text-xl font-bold">2</div>
+          <h3 class="text-sm font-semibold text-white">Open a PR</h3>
+          <p class="mt-1 text-xs text-zinc-400">Submit a pull request within 7 days. Reference the issue with a closing keyword.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent text-xl font-bold">3</div>
+          <h3 class="text-sm font-semibold text-white">Earn Points</h3>
+          <p class="mt-1 text-xs text-zinc-400">When your PR closes the issue, you earn points and climb the leaderboard. Automatically.</p>
+        </div>
+      </div>
+      <div class="mt-10 text-center">
+        <a
+          href={`${base}about/`}
+          class="text-sm text-accent hover:text-accent-hover transition-colors"
+        >
+          Read the full rules &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

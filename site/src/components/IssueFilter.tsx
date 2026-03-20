@@ -8,6 +8,7 @@ interface Issue {
   repo: string;
   category: string;
   points: number;
+  closed: boolean;
 }
 
 interface Props {
@@ -153,8 +154,11 @@ export default function IssueFilter({ issues, base }: Props) {
             <div style={{ fontSize: "0.875rem", fontWeight: 500, color: "#e4e4e7", lineHeight: 1.4 }}>
               {issue.title.length > 80 ? issue.title.slice(0, 77) + "..." : issue.title}
             </div>
-            <div style={{ marginTop: "0.5rem", fontSize: "0.75rem", color: "#71717a" }}>
-              {issue.owner}/{issue.repo}
+            <div style={{ marginTop: "0.5rem", fontSize: "0.75rem", color: "#71717a", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <span>{issue.owner}/{issue.repo}</span>
+              <span style={{ fontSize: "0.625rem", fontWeight: 600, color: issue.closed ? "#f87171" : "#4ade80" }}>
+                {issue.closed ? "\uD83D\uDD34 Closed" : "\uD83D\uDFE2 Open"}
+              </span>
             </div>
           </a>
         ))}

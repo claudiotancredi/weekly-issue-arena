@@ -4,6 +4,18 @@
     "issues": {
       "gfi": [
         {
+          "number": 561,
+          "title": "Debugging grammars by example",
+          "url": "https://github.com/guidance-ai/guidance/issues/561",
+          "owner": "guidance-ai",
+          "repo": "guidance",
+          "repo_url": "https://github.com/guidance-ai/guidance",
+          "created_at": "2023-06-14T00:00:00Z",
+          "updated_at": "2026-03-10T00:00:00Z",
+          "author": "Harsha-Nori",
+          "listed_at": "2026-03-13T17:29:06.751861+00:00"
+        },
+        {
           "number": 1328,
           "title": "Period(s) in repository \"name\" causes issues",
           "url": "https://github.com/python-poetry/poetry/issues/1328",
@@ -122,6 +134,18 @@
           "updated_at": "2026-03-13T03:47:35Z",
           "author": "jameslamb",
           "listed_at": "2026-03-13T17:29:06.751861+00:00"
+        },
+        {
+          "number": 18393,
+          "title": "Stream docker build to stdout",
+          "url": "https://github.com/PrefectHQ/prefect/issues/18393",
+          "owner": "PrefectHQ",
+          "repo": "prefect",
+          "repo_url": "https://github.com/PrefectHQ/prefect",
+          "created_at": "2025-12-01T00:00:00Z",
+          "updated_at": "2026-03-10T00:00:00Z",
+          "author": "zzstoatzz",
+          "listed_at": "2026-03-13T17:29:06.751861+00:00"
         }
       ],
       "bug": [
@@ -159,6 +183,18 @@
           "created_at": "2025-04-04T14:23:09Z",
           "updated_at": "2026-03-12T00:19:46Z",
           "author": "vidhan-rg",
+          "listed_at": "2026-03-13T17:29:06.751861+00:00"
+        },
+        {
+          "number": 11199,
+          "title": "Datasets concatenated along string dimension cannot write to zarr if NetCDF4 is installed",
+          "url": "https://github.com/pydata/xarray/issues/11199",
+          "owner": "pydata",
+          "repo": "xarray",
+          "repo_url": "https://github.com/pydata/xarray",
+          "created_at": "2025-01-15T00:00:00Z",
+          "updated_at": "2026-03-10T00:00:00Z",
+          "author": "kkollsga",
           "listed_at": "2026-03-13T17:29:06.751861+00:00"
         },
         {

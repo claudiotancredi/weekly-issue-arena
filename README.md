@@ -19,8 +19,8 @@ No registration. No sign-ups. Just open source.
 <!-- LEADERBOARD:START -->
 | Position | Contributor | Points | Rank |
 |----------|------------|--------|------|
-| 1 | <div align="center"><a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@LeviLong01](https://github.com/LeviLong01)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 2 | <div align="center"><a href="https://github.com/kkollsga"><img src="https://avatars.githubusercontent.com/u/58362424?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@kkollsga](https://github.com/kkollsga)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 1 | <div align="center"><a href="https://github.com/kkollsga"><img src="https://avatars.githubusercontent.com/u/58362424?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@kkollsga](https://github.com/kkollsga)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 2 | <div align="center"><a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@LeviLong01](https://github.com/LeviLong01)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 | 3 | <div align="center"><a href="https://github.com/biefan"><img src="https://avatars.githubusercontent.com/u/70761325?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@biefan](https://github.com/biefan)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 | 4 | <div align="center"><a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@zzstoatzz](https://github.com/zzstoatzz)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 <!-- LEADERBOARD:END -->
@@ -118,7 +118,7 @@ You don't need to register — contributions are detected automatically via GitH
 - Issues with a PR are tracked for up to **28 weeks** to allow maintainer review time
 - Issues with no PR after 7 days are dropped from tracking
 - If your PR closes the issue within the tracking window, you earn points
-- Your PR must reference the issue via a closing keyword (**fixes #N**, **closes #N**, **resolves #N**) or be linked through GitHub's sidebar — the automation detects both
+- Your PR must reference the issue via a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) or be linked through GitHub's sidebar — the automation detects both
 - If multiple PRs reference the same issue, **only the one that closes it** earns points
 
 | Issue Type         | Points |
@@ -139,7 +139,7 @@ You don't need to register — contributions are detected automatically via GitH
 <summary> 🙋 FAQ</summary>
 
 **Q: My PR was merged but I didn't get points.**
-Make sure your PR references the issue — either via a closing keyword (**fixes #N**, **closes #N**, **resolves #N**) in the PR body, or by linking the issue through GitHub's sidebar. The automation detects both. If you did link it, open a thread in [Discussions](https://github.com/claudiotancredi/weekly-issue-arena/discussions).
+Make sure your PR references the issue — either via a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) in the PR body, or by linking the issue through GitHub's sidebar. The automation detects both. If you did link it, open a thread in [Discussions](https://github.com/claudiotancredi/weekly-issue-arena/discussions).
 
 **Q: Can I request a specific repo to be added?**
 Yes! See [config/repos.yml](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml) and open a PR or Discussion.

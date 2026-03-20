@@ -382,7 +382,7 @@ def build_leaderboard_md(scores: dict) -> str:
 
     sorted_players = sorted(
         players.items(),
-        key=lambda x: (-x[1]["total_points"], x[0]),
+        key=lambda x: (-x[1]["total_points"], x[0].lower()),
     )
     lines = []
     for i, (username, data) in enumerate(sorted_players[:10], 1):
@@ -482,16 +482,6 @@ def main():
 
     save_scores(scores)
 
-    # Remove credited issues from state to keep issues.json clean
-    credited = set(scores.get("credited_issues", []))
-    for week_data in state.values():
-        for category in week_data["issues"]:
-            week_data["issues"][category] = [
-                issue
-                for issue in week_data["issues"][category]
-                if (f"{issue['owner']}/{issue['repo']}#{issue['number']}")
-                not in credited
-            ]
     save_state(state)
 
     # Update README

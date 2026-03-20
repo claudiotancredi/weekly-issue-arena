@@ -67,6 +67,7 @@ export interface LeaderboardEntry {
 export interface IssueWithCategory extends Issue {
   category: string;
   points: number;
+  closed: boolean;
 }
 
 // --- Loaders ---
@@ -108,12 +109,15 @@ export function getCurrentWeekIssues(): CategorizedIssues {
 
 export function getAllCurrentIssues(): IssueWithCategory[] {
   const issues = getCurrentWeekIssues();
+  const scores = getScores();
+  const creditedSet = new Set(scores.credited_issues);
   const result: IssueWithCategory[] = [];
 
   for (const [category, items] of Object.entries(issues)) {
     const points = category === "hard" ? 4 : category === "bug" ? 2 : 1;
     for (const issue of items) {
-      result.push({ ...issue, category, points });
+      const key = `${issue.owner}/${issue.repo}#${issue.number}`;
+      result.push({ ...issue, category, points, closed: creditedSet.has(key) });
     }
   }
 

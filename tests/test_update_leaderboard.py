@@ -3,7 +3,7 @@
 import json
 import sys
 from datetime import datetime, timedelta, timezone
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 sys.path.insert(0, "scripts")
 
@@ -11,6 +11,7 @@ from update_leaderboard import (  # noqa: E402, I001
     build_leaderboard_md,
     build_weekly_contributors_md,
     get_rank,
+    has_pending_pr,
     load_scores,
     load_state,
     process_week,
@@ -145,6 +146,283 @@ class TestSaveState:
         assert loaded == data
 
 
+# ── has_pending_pr ───────────────────────────────────────────
+
+
+class TestHasPendingPr:
+    """Tests for the has_pending_pr function."""
+
+    @patch("update_leaderboard.github_get")
+    def test_open_pr_within_deadline(self, mock_get):
+        """An open PR created before the deadline returns True."""
+        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "open",
+                        "pull_request": {"merged_at": None},
+                        "created_at": "2026-03-18T10:00:00Z",
+                    }
+                },
+            }
+        ]
+        resp.links = {}
+        assert has_pending_pr("org", "repo", 1, deadline) is True
+
+    @patch("update_leaderboard.github_get")
+    def test_pr_created_after_deadline(self, mock_get):
+        """A PR created after the deadline returns False."""
+        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "open",
+                        "pull_request": {"merged_at": None},
+                        "created_at": "2026-03-25T10:00:00Z",
+                    }
+                },
+            }
+        ]
+        resp.links = {}
+        assert has_pending_pr("org", "repo", 1, deadline) is False
+
+    @patch("update_leaderboard.github_get")
+    def test_closed_rejected_pr_ignored(self, mock_get):
+        """A PR closed without merge (rejected) is ignored."""
+        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "closed",
+                        "pull_request": {"merged_at": None},
+                        "created_at": "2026-03-18T10:00:00Z",
+                    }
+                },
+            }
+        ]
+        resp.links = {}
+        assert has_pending_pr("org", "repo", 1, deadline) is False
+
+    @patch("update_leaderboard.github_get")
+    def test_merged_pr_without_close_ignored(self, mock_get):
+        """A merged PR that didn't auto-close the issue is ignored."""
+        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "closed",
+                        "pull_request": {
+                            "merged_at": "2026-03-22T12:00:00Z",
+                        },
+                        "created_at": "2026-03-18T10:00:00Z",
+                    }
+                },
+            }
+        ]
+        resp.links = {}
+        assert has_pending_pr("org", "repo", 1, deadline) is False
+
+    @patch("update_leaderboard.github_get")
+    def test_non_pr_cross_reference_ignored(self, mock_get):
+        """A cross-reference to a plain issue (not a PR) is ignored."""
+        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "open",
+                        "created_at": "2026-03-18T10:00:00Z",
+                    }
+                },
+            }
+        ]
+        resp.links = {}
+        assert has_pending_pr("org", "repo", 1, deadline) is False
+
+    @patch("update_leaderboard.github_get")
+    def test_api_error_returns_false(self, mock_get):
+        """API failure returns False (safe default)."""
+        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
+        mock_get.side_effect = Exception("network error")
+        assert has_pending_pr("org", "repo", 1, deadline) is False
+
+    @patch("update_leaderboard.github_get")
+    def test_empty_timeline_returns_false(self, mock_get):
+        """Empty timeline (no events) returns False."""
+        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = []
+        resp.links = {}
+        assert has_pending_pr("org", "repo", 1, deadline) is False
+
+    @patch("update_leaderboard.github_get")
+    def test_pr_created_exactly_at_deadline(self, mock_get):
+        """PR created exactly at the deadline counts (boundary <=)."""
+        deadline = datetime(2026, 3, 20, 17, 0, 0, tzinfo=timezone.utc)
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "open",
+                        "pull_request": {"merged_at": None},
+                        "created_at": "2026-03-20T17:00:00Z",  # == deadline
+                    }
+                },
+            }
+        ]
+        resp.links = {}
+        assert has_pending_pr("org", "repo", 1, deadline) is True
+
+    @patch("update_leaderboard.github_get")
+    def test_pr_created_one_second_after_deadline(self, mock_get):
+        """PR created one second after the deadline does not count."""
+        deadline = datetime(2026, 3, 20, 17, 0, 0, tzinfo=timezone.utc)
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "open",
+                        "pull_request": {"merged_at": None},
+                        "created_at": "2026-03-20T17:00:01Z",  # 1s after
+                    }
+                },
+            }
+        ]
+        resp.links = {}
+        assert has_pending_pr("org", "repo", 1, deadline) is False
+
+    @patch("update_leaderboard.github_get")
+    def test_multiple_prs_one_valid_returns_true(self, mock_get):
+        """Multiple PRs — one rejected + one open within deadline → True."""
+        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "closed",  # rejected
+                        "pull_request": {"merged_at": None},
+                        "created_at": "2026-03-15T10:00:00Z",
+                    }
+                },
+            },
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "open",  # still open
+                        "pull_request": {"merged_at": None},
+                        "created_at": "2026-03-17T10:00:00Z",
+                    }
+                },
+            },
+        ]
+        resp.links = {}
+        assert has_pending_pr("org", "repo", 1, deadline) is True
+
+    @patch("update_leaderboard.github_get")
+    def test_multiple_prs_all_rejected_returns_false(self, mock_get):
+        """Multiple PRs all rejected (closed without merge) → False."""
+        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "closed",
+                        "pull_request": {"merged_at": None},
+                        "created_at": "2026-03-14T10:00:00Z",
+                    }
+                },
+            },
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "closed",
+                        "pull_request": {"merged_at": None},
+                        "created_at": "2026-03-16T10:00:00Z",
+                    }
+                },
+            },
+        ]
+        resp.links = {}
+        assert has_pending_pr("org", "repo", 1, deadline) is False
+
+    @patch("update_leaderboard.github_get")
+    def test_paginated_timeline_pr_on_second_page(self, mock_get):
+        """PR found on the second page of a paginated timeline → True."""
+        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
+
+        page1 = Mock()
+        page1.raise_for_status.return_value = None
+        page1.json.return_value = [{"event": "labeled"}]
+        page1.links = {"next": {"url": "https://api.github.com/page2"}}
+
+        page2 = Mock()
+        page2.raise_for_status.return_value = None
+        page2.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "open",
+                        "pull_request": {"merged_at": None},
+                        "created_at": "2026-03-18T10:00:00Z",
+                    }
+                },
+            }
+        ]
+        page2.links = {}
+
+        mock_get.side_effect = [page1, page2]
+        assert has_pending_pr("org", "repo", 1, deadline) is True
+
+    @patch("update_leaderboard.github_get")
+    def test_non_cross_referenced_events_ignored(self, mock_get):
+        """Non-cross-referenced events (labeled, assigned, etc.) ignored."""
+        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {"event": "labeled", "label": {"name": "bug"}},
+            {"event": "assigned", "assignee": {"login": "alice"}},
+            {"event": "commented", "body": "PR incoming!"},
+        ]
+        resp.links = {}
+        assert has_pending_pr("org", "repo", 1, deadline) is False
+
+
 # ── process_week ─────────────────────────────────────────────
 
 
@@ -250,19 +528,44 @@ class TestProcessWeek:
         mock_pr.assert_not_called()
 
     @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.has_pending_pr")
     @patch("update_leaderboard.check_issue_still_open")
-    def test_open_past_window_removed(self, mock_open, mock_pr):
-        """Open issue past 7-day window is removed, not blacklisted."""
+    def test_open_past_window_no_pr_removed(
+        self, mock_open, mock_pending, mock_pr
+    ):
+        """Open issue past 7-day window with no PR is removed."""
         listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
         week = _make_week_data({"gfi": [issue]})
         mock_open.return_value = True
+        mock_pending.return_value = False
 
         result = process_week("2026-W11", week, scores)
 
         assert result == []
         assert week["issues"]["gfi"] == []
+        assert "org/proj#1" not in scores["credited_issues"]
+        mock_pr.assert_not_called()
+
+    @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.has_pending_pr")
+    @patch("update_leaderboard.check_issue_still_open")
+    def test_open_past_window_with_pr_kept(
+        self, mock_open, mock_pending, mock_pr
+    ):
+        """Open issue past 7-day window with a pending PR is kept."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"gfi": [issue]})
+        mock_open.return_value = True
+        mock_pending.return_value = True
+
+        result = process_week("2026-W11", week, scores)
+
+        assert result == []
+        assert len(week["issues"]["gfi"]) == 1
         assert "org/proj#1" not in scores["credited_issues"]
         mock_pr.assert_not_called()
 
@@ -431,6 +734,175 @@ class TestProcessWeek:
 
         assert result[0]["pts"] == 1  # gfi
         assert result[1]["pts"] == 2  # bug
+
+    @patch("update_leaderboard.has_pending_pr")
+    @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.check_issue_still_open")
+    def test_has_pending_pr_not_called_within_window(
+        self, mock_open, mock_pr, mock_pending
+    ):
+        """has_pending_pr is not called when issue is within 7-day window."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"gfi": [issue]})
+        mock_open.return_value = True
+
+        process_week("2026-W11", week, scores)
+
+        mock_pending.assert_not_called()
+
+    @patch("update_leaderboard.has_pending_pr")
+    @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.check_issue_still_open")
+    def test_has_pending_pr_not_called_when_issue_closed(
+        self, mock_open, mock_pr, mock_pending
+    ):
+        """has_pending_pr is not called when the issue is already closed."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"gfi": [issue]})
+        mock_open.return_value = False
+        mock_pr.return_value = None
+
+        process_week("2026-W11", week, scores)
+
+        mock_pending.assert_not_called()
+
+    @patch("update_leaderboard.has_pending_pr")
+    @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.check_issue_still_open")
+    def test_open_past_window_merged_without_close_removed(
+        self, mock_open, mock_closing_pr, mock_pending
+    ):
+        """Open past window with merged-without-close PR is removed."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"gfi": [issue]})
+        mock_open.return_value = True
+        mock_pending.return_value = (
+            False  # has_pending_pr: merged PR doesn't count
+        )
+
+        process_week("2026-W11", week, scores)
+
+        assert week["issues"]["gfi"] == []
+        assert "org/proj#1" not in scores["credited_issues"]
+
+    @patch("update_leaderboard.arena_week_id")
+    @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.has_pending_pr")
+    @patch("update_leaderboard.check_issue_still_open")
+    def test_pending_pr_tracked_then_eventually_credited(
+        self, mock_open, mock_pending, mock_pr, mock_week_id
+    ):
+        """Issue kept via pending PR on run 1 is credited on run 2."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=20)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"bug": [issue]})
+        mock_week_id.return_value = "2026-W12"
+
+        # Run 1: issue open past window but has a pending PR — kept
+        mock_open.return_value = True
+        mock_pending.return_value = True
+
+        result1 = process_week("2026-W11", week, scores)
+
+        assert result1 == []
+        assert len(week["issues"]["bug"]) == 1  # still tracked
+
+        # Run 2: issue is now closed, PR was opened within window — credited
+        mock_open.return_value = False
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=18)
+        ).isoformat()  # within 7-day window from listing
+        mock_pr.return_value = _make_pr(author="hero", created_at=pr_created)
+
+        result2 = process_week("2026-W11", week, scores)
+
+        assert len(result2) == 1
+        assert result2[0]["author"] == "hero"
+        assert result2[0]["pts"] == 2
+        assert week["issues"]["bug"] == []
+        assert "org/proj#1" in scores["credited_issues"]
+
+    @patch("update_leaderboard.has_pending_pr")
+    @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.check_issue_still_open")
+    def test_missing_listed_at_falls_back_to_fetched_at(
+        self, mock_open, mock_pr, mock_pending
+    ):
+        """Issue without listed_at uses fetched_at to compute the deadline."""
+        # fetched_at is 10 days ago → deadline 3 days ago → past window
+        fetched_at = (
+            datetime.now(timezone.utc) - timedelta(days=10)
+        ).isoformat()
+        issue = {
+            "owner": "org",
+            "repo": "proj",
+            "number": 1,
+            # no listed_at
+        }
+        scores = _make_scores()
+        week = _make_week_data({"gfi": [issue]}, fetched_at=fetched_at)
+        mock_open.return_value = True
+        mock_pending.return_value = False
+
+        process_week("2026-W11", week, scores)
+
+        assert week["issues"]["gfi"] == []
+        mock_pending.assert_called_once()
+
+    @patch("update_leaderboard.has_pending_pr")
+    @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.check_issue_still_open")
+    def test_two_issues_one_with_pr_one_without(
+        self, mock_open, mock_pr, mock_pending
+    ):
+        """One issue with a pending PR is kept; one without is removed."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
+        issue_a = _make_issue(number=1, listed_at=listed)
+        issue_b = _make_issue(number=2, listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"gfi": [issue_a, issue_b]})
+        mock_open.return_value = True
+        mock_pending.side_effect = [
+            True,
+            False,
+        ]  # issue_a kept, issue_b removed
+
+        process_week("2026-W11", week, scores)
+
+        remaining = week["issues"]["gfi"]
+        assert len(remaining) == 1
+        assert remaining[0]["number"] == 1
+
+    @patch("update_leaderboard.has_pending_pr")
+    @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.check_issue_still_open")
+    def test_deadline_exactly_now_not_expired(
+        self, mock_open, mock_pr, mock_pending
+    ):
+        """Deadline in the future is not expired (strict > check)."""
+        # listed_at = now - 7 days + 1 min → deadline = now + 1 min
+        listed = (
+            datetime.now(timezone.utc)
+            - timedelta(days=7)
+            + timedelta(minutes=1)
+        ).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"gfi": [issue]})
+        mock_open.return_value = True
+
+        process_week("2026-W11", week, scores)
+
+        # has_pending_pr must NOT have been called — within window
+        mock_pending.assert_not_called()
+        assert len(week["issues"]["gfi"]) == 1
 
 
 # ── build_leaderboard_md ─────────────────────────────────────

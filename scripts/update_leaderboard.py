@@ -247,6 +247,51 @@ def get_closing_pr(owner: str, repo: str, issue_number: int) -> dict | None:
     }
 
 
+def has_pending_pr(
+    owner: str, repo: str, issue_number: int, deadline: datetime
+) -> bool:
+    """Check if a PR referencing this issue was opened before the deadline.
+
+    Uses the timeline API to find cross-referenced PRs.
+    Returns True if at least one PR was created before the deadline.
+    """
+    url = (
+        f"https://api.github.com/repos/{owner}/"
+        f"{repo}/issues/{issue_number}/timeline"
+    )
+    events = []
+    try:
+        while url:
+            resp = github_get(url)
+            resp.raise_for_status()
+            events.extend(resp.json())
+            url = resp.links.get("next", {}).get("url")
+    except Exception as e:
+        log.warning(
+            f"Timeline fetch failed for {owner}/{repo}#{issue_number}: {e}"
+        )
+        return False
+
+    for event in events:
+        if event.get("event") != "cross-referenced":
+            continue
+        source = event.get("source", {})
+        issue_data = source.get("issue", {})
+        if not issue_data.get("pull_request"):
+            continue
+        # Only open PRs count — merged-without-close means contributor
+        # didn't use "Fixes #N", so we can't confirm the fix was accepted
+        if issue_data.get("state") != "open":
+            continue
+        created_str = issue_data.get("created_at")
+        if not created_str:
+            continue
+        created_at = datetime.fromisoformat(created_str.replace("Z", "+00:00"))
+        if created_at <= deadline:
+            return True
+    return False
+
+
 def check_issue_still_open(owner: str, repo: str, issue_number: int) -> bool:
     """Return True if the issue is still open (or on API error)."""
     url = f"https://api.github.com/repos/{owner}/{repo}/issues/{issue_number}"
@@ -292,11 +337,23 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
                 issue["owner"], issue["repo"], issue["number"]
             ):
                 if now > deadline:
-                    log.info(
-                        f"Issue {issue_key} still open past "
-                        f"7-day window — removing from tracking"
-                    )
-                    to_remove.append(issue)
+                    # Keep tracking if a PR was opened within the window
+                    if has_pending_pr(
+                        issue["owner"],
+                        issue["repo"],
+                        issue["number"],
+                        deadline,
+                    ):
+                        log.info(
+                            f"Issue {issue_key} has a pending PR "
+                            f"— keeping in tracking"
+                        )
+                    else:
+                        log.info(
+                            f"Issue {issue_key} still open past "
+                            f"7-day window with no PR — removing"
+                        )
+                        to_remove.append(issue)
                 continue
 
             # Issue is closed — check if it was closed with a PR

@@ -137,7 +137,11 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
 
 
 def truncate_title(title: str, max_len: int = 60) -> str:
-    """Shorten a title with an ellipsis if it exceeds *max_len*."""
+    """Shorten a title with an ellipsis if it exceeds *max_len*.
+
+    Also escapes pipe characters so titles don't break Markdown tables.
+    """
+    title = title.replace("|", "\\|")
     return title if len(title) <= max_len else title[: max_len - 3] + "..."
 
 

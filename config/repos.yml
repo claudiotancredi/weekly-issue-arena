@@ -284,7 +284,7 @@ repos:
     tags: [python, visualization, interactive, web]
     # Interactive web-based visualizations.
 
-  - owner: altair-viz
+  - owner: vega
     repo: altair
     tags: [python, visualization, vega, declarative]
     # Declarative statistical visualization.
@@ -377,7 +377,7 @@ repos:
     tags: [python, mlops, pipelines, ml]
     # MLOps framework for reproducible pipelines.
 
-  - owner: iterative
+  - owner: treeverse
     repo: dvc
     tags: [python, version-control, mlops, data]
     # Data version control for ML projects.

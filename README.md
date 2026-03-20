@@ -8,6 +8,8 @@
 
 No registration. No sign-ups. Just open source.
 
+### [Browse Issues & Leaderboard on the Website &rarr;](https://claudiotancredi.github.io/weekly-issue-arena/)
+
 ---
 
 ## 🏆 Leaderboard
@@ -34,7 +36,8 @@ No registration. No sign-ups. Just open source.
 
 ---
 
-## 🙂 Good First Issues
+<details>
+<summary> 🙂 Good First Issues (12)</summary>
 
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
@@ -53,7 +56,10 @@ No registration. No sign-ups. Just open source.
 | 12 | [Stream docker build to stdout](https://github.com/PrefectHQ/prefect/issues/18393) | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
-## 🪲 Bug Fixes
+</details>
+
+<details>
+<summary> 🪲 Bug Fixes (8)</summary>
 
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
@@ -68,7 +74,10 @@ No registration. No sign-ups. Just open source.
 | 8 | [algorithm contours return 500: ufunc 'invert' not supported](https://github.com/developmentseed/titiler/issues/1326) | [developmentseed/titiler](https://github.com/developmentseed/titiler) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
-## 😓 Hard Issues
+</details>
+
+<details>
+<summary> 😓 Hard Issues (6)</summary>
 
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
@@ -81,9 +90,14 @@ No registration. No sign-ups. Just open source.
 | 6 | [Cannot recover DBSCAN from memory-overuse](https://github.com/scikit-learn/scikit-learn/issues/31407) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
+</details>
+
+*[Browse all issues on the website &rarr;](https://claudiotancredi.github.io/weekly-issue-arena/issues/)*
+
 ---
 
-## 💡 How It Works
+<details>
+<summary> 💡 How It Works</summary>
 
 Every **Friday at 17:00 UTC**, a GitHub Action automatically:
 1. Pulls fresh issues (labeled `good first issue`, `bug`, or `hard`) from a curated list of active repos
@@ -92,9 +106,10 @@ Every **Friday at 17:00 UTC**, a GitHub Action automatically:
 
 You don't need to register — contributions are detected automatically via GitHub's public metadata.
 
----
+</details>
 
-## 📖 Rules
+<details>
+<summary> 📖 Rules & Point System</summary>
 
 - You have **7 days** from when an issue is listed (Friday 17:00 UTC) to open a PR
 - Issues with a PR are tracked for up to **28 weeks** to allow maintainer review time
@@ -102,18 +117,12 @@ You don't need to register — contributions are detected automatically via GitH
 - If your PR closes the issue within the tracking window, you earn points
 - Your PR must reference the issue via a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) or be linked through GitHub's sidebar — the automation detects both
 - If multiple PRs reference the same issue, **only the one that closes it** earns points
-- All contributors to Arena-listed issues are treated as participants — open source, open battle ⚔️
-
-### 🎯 Point System
 
 | Issue Type         | Points |
 |--------------------|--------|
 | Good First Issue   | 1 pt   |
 | Bug Fix            | 2 pts  |
 | Hard Issue         | 4 pts  |
-
-<details>
-<summary> 🌟 Player Ranks</summary>
 
 | Rank | Badge | Points Required |
 |------|-------|----------------|
@@ -123,9 +132,8 @@ You don't need to register — contributions are detected automatically via GitH
 
 </details>
 
----
-
-## 🙋 FAQ
+<details>
+<summary> 🙋 FAQ</summary>
 
 **Q: My PR was merged but I didn't get points.**
 Make sure your PR references the issue — either via a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) in the PR body, or by linking the issue through GitHub's sidebar. The automation detects both. If you did link it, open a thread in [Discussions](https://github.com/claudiotancredi/weekly-issue-arena/discussions).
@@ -139,7 +147,7 @@ You're still counted — all contributors to Arena-listed issues are treated equ
 **Q: How is this automated?**
 Via GitHub Actions + GitHub REST API. See [`.github/workflows/`](https://github.com/claudiotancredi/weekly-issue-arena/tree/main/.github/workflows) for the full scripts.
 
----
+</details>
 
 <details>
 <summary>🔗 Resources for First-Time Contributors</summary>
@@ -150,8 +158,6 @@ Via GitHub Actions + GitHub REST API. See [`.github/workflows/`](https://github.
 
 </details>
 
----
-
 <details>
 <summary> 🗂️ Tracked Issue Pool </summary>
 
@@ -160,8 +166,6 @@ Want to see what repos we pull issues from, or suggest a new one?
 → Open an [issue](https://github.com/claudiotancredi/weekly-issue-arena/issues) or [discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions) to suggest additions
 
 </details>
-
----
 
 <details>
 <summary> 🫂 Contributing to the Arena </summary>

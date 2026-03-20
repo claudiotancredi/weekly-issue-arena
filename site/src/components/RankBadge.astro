@@ -20,7 +20,7 @@ const sizes: Record<string, string> = {
 
 <div class="flex items-center gap-2">
   <img
-    src={`${base}${rank.badge.slice(1)}`}
+    src={`${base}badges/${rank.badge.split("/").pop()}`}
     alt={rank.name}
     class={`${sizes[size]} rounded-md`}
   />

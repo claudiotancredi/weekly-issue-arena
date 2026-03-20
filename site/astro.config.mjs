@@ -4,7 +4,7 @@ import preact from "@astrojs/preact";
 
 export default defineConfig({
   site: "https://claudiotancredi.github.io",
-  base: "/weekly-issue-arena",
+  base: "/weekly-issue-arena/",
   integrations: [tailwind(), preact()],
   output: "static",
 });

@@ -12,14 +12,61 @@
           "credited_at": "2026-03-11T19:21:16.215205+00:00"
         }
       ]
+    },
+    "biefan": {
+      "total_points": 1,
+      "avatar_url": "https://avatars.githubusercontent.com/u/70761325?v=4",
+      "contributions": [
+        {
+          "issue": "guidance-ai/guidance#561",
+          "points": 1,
+          "pr_url": "https://github.com/guidance-ai/guidance/pull/1426",
+          "week": "2026-W10",
+          "credited_at": "2026-03-20T00:38:21.379687+00:00"
+        }
+      ]
+    },
+    "zzstoatzz": {
+      "total_points": 1,
+      "avatar_url": "https://avatars.githubusercontent.com/u/31014960?v=4",
+      "contributions": [
+        {
+          "issue": "PrefectHQ/prefect#18393",
+          "points": 1,
+          "pr_url": "https://github.com/PrefectHQ/prefect/pull/21175",
+          "week": "2026-W10",
+          "credited_at": "2026-03-20T00:38:25.234856+00:00"
+        }
+      ]
+    },
+    "kkollsga": {
+      "total_points": 2,
+      "avatar_url": "https://avatars.githubusercontent.com/u/58362424?v=4",
+      "contributions": [
+        {
+          "issue": "pydata/xarray#11199",
+          "points": 2,
+          "pr_url": "https://github.com/pydata/xarray/pull/11218",
+          "week": "2026-W10",
+          "credited_at": "2026-03-20T00:38:26.935942+00:00"
+        }
+      ]
     }
   },
   "credited_issues": [
-    "mlflow/mlflow#21487"
+    "mlflow/mlflow#21487",
+    "guidance-ai/guidance#561",
+    "PrefectHQ/prefect#18393",
+    "pydata/xarray#11199"
   ],
   "weekly": {
     "2026-W10": [
       "LeviLong01"
+    ],
+    "2026-W11": [
+      "biefan",
+      "zzstoatzz",
+      "kkollsga"
     ]
   }
 }

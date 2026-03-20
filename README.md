@@ -20,6 +20,9 @@ No registration. No sign-ups. Just open source.
 | Position | Contributor | Points | Rank |
 |----------|------------|--------|------|
 | 1 | <div align="center"><a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@LeviLong01](https://github.com/LeviLong01)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 2 | <div align="center"><a href="https://github.com/kkollsga"><img src="https://avatars.githubusercontent.com/u/58362424?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@kkollsga](https://github.com/kkollsga)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 3 | <div align="center"><a href="https://github.com/biefan"><img src="https://avatars.githubusercontent.com/u/70761325?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@biefan](https://github.com/biefan)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 4 | <div align="center"><a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@zzstoatzz](https://github.com/zzstoatzz)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 <!-- LEADERBOARD:END -->
 
 > In case of a tie, contributors are listed alphabetically by GitHub username.
@@ -31,7 +34,7 @@ No registration. No sign-ups. Just open source.
 *Everyone who earned points this week, regardless of leaderboard position.*
 
 <!-- WEEKLY:START -->
-<a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="48" height="48" style="border-radius:50%;" title="@LeviLong01"/></a>
+<a href="https://github.com/biefan"><img src="https://avatars.githubusercontent.com/u/70761325?v=4" width="48" height="48" style="border-radius:50%;" title="@biefan"/></a> <a href="https://github.com/kkollsga"><img src="https://avatars.githubusercontent.com/u/58362424?v=4" width="48" height="48" style="border-radius:50%;" title="@kkollsga"/></a> <a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="48" height="48" style="border-radius:50%;" title="@zzstoatzz"/></a>
 <!-- WEEKLY:END -->
 
 ---
@@ -42,7 +45,7 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Debugging grammars by example](https://github.com/guidance-ai/guidance/issues/561) | [guidance-ai/guidance](https://github.com/guidance-ai/guidance) | 🟢 Open |
+| 1 | [Debugging grammars by example](https://github.com/guidance-ai/guidance/issues/561) | [guidance-ai/guidance](https://github.com/guidance-ai/guidance) | 🔴 Closed |
 | 2 | [Period(s) in repository "name" causes issues](https://github.com/python-poetry/poetry/issues/1328) | [python-poetry/poetry](https://github.com/python-poetry/poetry) | 🟢 Open |
 | 3 | [Wishlist: doc examples wanted](https://github.com/plotly/plotly.py/issues/1965) | [plotly/plotly.py](https://github.com/plotly/plotly.py) | 🟢 Open |
 | 4 | [Time Series Support](https://github.com/torchgeo/torchgeo/issues/2382) | [torchgeo/torchgeo](https://github.com/torchgeo/torchgeo) | 🟢 Open |
@@ -53,7 +56,7 @@ No registration. No sign-ups. Just open source.
 | 9 | [Documentation says `grid_mapping` is in attrs but really ...](https://github.com/corteva/rioxarray/issues/815) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
 | 10 | [Return the name of the currently loaded file in the load_...](https://github.com/huggingface/datasets/issues/5806) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
 | 11 | [[c++] forcedsplits_filename pointing at a non-existent fi...](https://github.com/lightgbm-org/LightGBM/issues/6830) | [lightgbm-org/LightGBM](https://github.com/lightgbm-org/LightGBM) | 🟢 Open |
-| 12 | [Stream docker build to stdout](https://github.com/PrefectHQ/prefect/issues/18393) | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) | 🟢 Open |
+| 12 | [Stream docker build to stdout](https://github.com/PrefectHQ/prefect/issues/18393) | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) | 🔴 Closed |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -67,7 +70,7 @@ No registration. No sign-ups. Just open source.
 | 1 | [Bug on Running Files Dropdown Menu](https://github.com/jupyter/notebook/issues/7772) | [jupyter/notebook](https://github.com/jupyter/notebook) | 🟢 Open |
 | 2 | [Bedrock client failing to detect AWS region correctly can...](https://github.com/anthropics/anthropic-sdk-python/issues/892) | [anthropics/anthropic-sdk-python](https://github.com/anthropics/anthropic-sdk-python) | 🟢 Open |
 | 3 | [[Bug] NeptuneAnalyticsGraphStore' object has no attribute...](https://github.com/run-llama/llama_index/issues/18372) | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🟢 Open |
-| 4 | [Datasets concatenated along string dimension cannot write...](https://github.com/pydata/xarray/issues/11199) | [pydata/xarray](https://github.com/pydata/xarray) | 🟢 Open |
+| 4 | [Datasets concatenated along string dimension cannot write...](https://github.com/pydata/xarray/issues/11199) | [pydata/xarray](https://github.com/pydata/xarray) | 🔴 Closed |
 | 5 | [Reference optional composite dependencies by name](https://github.com/pytroll/satpy/issues/161) | [pytroll/satpy](https://github.com/pytroll/satpy) | 🟢 Open |
 | 6 | [Collections with many items saving time issue](https://github.com/stac-utils/pystac/issues/1207) | [stac-utils/pystac](https://github.com/stac-utils/pystac) | 🟢 Open |
 | 7 | [[Bug Report] Docs website is extremely slow](https://github.com/Farama-Foundation/Gymnasium/issues/1455) | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 🟢 Open |

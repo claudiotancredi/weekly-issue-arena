@@ -4,18 +4,6 @@
     "issues": {
       "gfi": [
         {
-          "number": 561,
-          "title": "Debugging grammars by example",
-          "url": "https://github.com/guidance-ai/guidance/issues/561",
-          "owner": "guidance-ai",
-          "repo": "guidance",
-          "repo_url": "https://github.com/guidance-ai/guidance",
-          "created_at": "2023-12-24T22:31:15Z",
-          "updated_at": "2024-03-22T12:11:06Z",
-          "author": "motaatmo",
-          "listed_at": "2026-03-13T17:29:06.751861+00:00"
-        },
-        {
           "number": 1328,
           "title": "Period(s) in repository \"name\" causes issues",
           "url": "https://github.com/python-poetry/poetry/issues/1328",
@@ -134,18 +122,6 @@
           "updated_at": "2026-03-13T03:47:35Z",
           "author": "jameslamb",
           "listed_at": "2026-03-13T17:29:06.751861+00:00"
-        },
-        {
-          "number": 18393,
-          "title": "Stream docker build to stdout",
-          "url": "https://github.com/PrefectHQ/prefect/issues/18393",
-          "owner": "PrefectHQ",
-          "repo": "prefect",
-          "repo_url": "https://github.com/PrefectHQ/prefect",
-          "created_at": "2025-06-29T21:09:38Z",
-          "updated_at": "2026-02-28T04:37:26Z",
-          "author": "MohammedNoureldin",
-          "listed_at": "2026-03-13T17:29:06.751861+00:00"
         }
       ],
       "bug": [
@@ -183,18 +159,6 @@
           "created_at": "2025-04-04T14:23:09Z",
           "updated_at": "2026-03-12T00:19:46Z",
           "author": "vidhan-rg",
-          "listed_at": "2026-03-13T17:29:06.751861+00:00"
-        },
-        {
-          "number": 11199,
-          "title": "Datasets concatenated along string dimension cannot write to netCDF",
-          "url": "https://github.com/pydata/xarray/issues/11199",
-          "owner": "pydata",
-          "repo": "xarray",
-          "repo_url": "https://github.com/pydata/xarray",
-          "created_at": "2026-02-23T18:19:35Z",
-          "updated_at": "2026-03-08T22:40:52Z",
-          "author": "digbyr",
           "listed_at": "2026-03-13T17:29:06.751861+00:00"
         },
         {

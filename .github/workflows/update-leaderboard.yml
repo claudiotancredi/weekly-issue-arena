@@ -73,8 +73,8 @@ jobs:
             --field discussionId="$DISCUSSION_ID" \
             --field "body=@/tmp/mention.txt" \
             -f query='
-            mutation(\$discussionId: ID!, \$body: String!) {
-              addDiscussionComment(input: {discussionId: \$discussionId, body: \$body}) {
+            mutation($discussionId: ID!, $body: String!) {
+              addDiscussionComment(input: {discussionId: $discussionId, body: $body}) {
                 comment { id }
               }
             }

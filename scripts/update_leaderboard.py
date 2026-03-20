@@ -263,22 +263,21 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
     """Check a week's issues for merged closing PRs.
 
     Returns a list of new credit events.
+    Resolved issues (credited or expired) are removed from week_data in-place
+    so issues.json stays lean.
     """
-    # Define list for new contributions of the given week
     new_credits = []
 
-    # Iterate over each issue category and their lists of issues
     for category, issue_list in week_data["issues"].items():
-        # Get the points associated to an issue from this category
         pts = POINTS[category]
-        # Iterate over the list of issues
+        to_remove = []
+
         for issue in issue_list:
-            # Define key for the issue
             issue_key = f"{issue['owner']}/{issue['repo']}#{issue['number']}"
-            # If the issue has already been credited, continue.
-            # This should not happen because we already clean state
-            # after crediting, but it's kept as a safety net
+
+            # Safety net: already credited — remove stale entry and skip
             if issue_key in scores.get("credited_issues", []):
+                to_remove.append(issue)
                 continue
 
             # Compute the 7-day PR deadline from listing date
@@ -288,17 +287,16 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
             deadline = listed_at + timedelta(days=7)
             now = datetime.now(timezone.utc)
 
-            # If the issue is still open, check if the PR window
-            # has expired — if so, mark ineligible and stop tracking
+            # If the issue is still open, check if the PR window has expired
             if check_issue_still_open(
                 issue["owner"], issue["repo"], issue["number"]
             ):
                 if now > deadline:
                     log.info(
                         f"Issue {issue_key} still open past "
-                        f"7-day window — marking ineligible"
+                        f"7-day window — removing from tracking"
                     )
-                    scores["credited_issues"].append(issue_key)
+                    to_remove.append(issue)
                 continue
 
             # Issue is closed — check if it was closed with a PR
@@ -310,8 +308,7 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
                 )
                 continue
 
-            # Enforce: PR must have been opened within 7 days of
-            # the issue being listed
+            # Enforce: PR must have been opened within 7 days of listing
             pr_created_at = datetime.fromisoformat(
                 pr["created_at"].replace("Z", "+00:00")
             )
@@ -320,7 +317,7 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
                     f"Skipping {issue_key}: PR opened too late "
                     f"({pr_created_at} > {deadline})"
                 )
-                scores["credited_issues"].append(issue_key)
+                to_remove.append(issue)
                 continue
 
             author = pr["author"]
@@ -345,7 +342,10 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
                     "credited_at": datetime.now(timezone.utc).isoformat(),
                 }
             )
+            # Keep in credited_issues as a safety net against re-crediting
+            # if the issue somehow reappears in a future fetch
             scores["credited_issues"].append(issue_key)
+            to_remove.append(issue)
 
             # Track weekly contributors
             current_week = arena_week_id()
@@ -362,6 +362,9 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
                     "week": week_id,
                 }
             )
+
+        for issue in to_remove:
+            issue_list.remove(issue)
 
     return new_credits
 
@@ -463,6 +466,9 @@ def main():
     for week_id, week_data in state.items():
         new = process_week(week_id, week_data, scores)
         all_new_credits.extend(new)
+
+    # Drop weeks whose issue lists are all empty
+    state = {k: v for k, v in state.items() if any(v["issues"].values())}
 
     if all_new_credits:
         log.info(

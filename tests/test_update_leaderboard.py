@@ -219,8 +219,8 @@ class TestProcessWeek:
 
     @patch("update_leaderboard.get_closing_pr")
     @patch("update_leaderboard.check_issue_still_open")
-    def test_already_credited_issue_skipped(self, mock_open, mock_pr):
-        """Already credited issues are skipped entirely."""
+    def test_already_credited_issue_removed(self, mock_open, mock_pr):
+        """Already credited issues are removed from the list without API calls."""  # noqa: E501
         issue = _make_issue()
         key = "org/proj#1"
         scores = _make_scores(credited=[key])
@@ -229,6 +229,7 @@ class TestProcessWeek:
         result = process_week("2026-W11", week, scores)
 
         assert result == []
+        assert week["issues"]["gfi"] == []
         mock_open.assert_not_called()
         mock_pr.assert_not_called()
 
@@ -250,8 +251,8 @@ class TestProcessWeek:
 
     @patch("update_leaderboard.get_closing_pr")
     @patch("update_leaderboard.check_issue_still_open")
-    def test_open_past_window_marked_ineligible(self, mock_open, mock_pr):
-        """Open issue past 7-day window is marked ineligible."""
+    def test_open_past_window_removed(self, mock_open, mock_pr):
+        """Open issue past 7-day window is removed, not blacklisted."""
         listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
@@ -261,7 +262,8 @@ class TestProcessWeek:
         result = process_week("2026-W11", week, scores)
 
         assert result == []
-        assert "org/proj#1" in scores["credited_issues"]
+        assert week["issues"]["gfi"] == []
+        assert "org/proj#1" not in scores["credited_issues"]
         mock_pr.assert_not_called()
 
     @patch("update_leaderboard.get_closing_pr")
@@ -282,7 +284,7 @@ class TestProcessWeek:
     @patch("update_leaderboard.get_closing_pr")
     @patch("update_leaderboard.check_issue_still_open")
     def test_closed_pr_opened_too_late(self, mock_open, mock_pr):
-        """PR opened after 7-day window marks ineligible."""
+        """PR opened after 7-day window removes issue without blacklisting."""
         listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
@@ -297,7 +299,8 @@ class TestProcessWeek:
         result = process_week("2026-W11", week, scores)
 
         assert result == []
-        assert "org/proj#1" in scores["credited_issues"]
+        assert week["issues"]["hard"] == []
+        assert "org/proj#1" not in scores["credited_issues"]
 
     @patch("update_leaderboard.arena_week_id")
     @patch("update_leaderboard.get_closing_pr")
@@ -338,6 +341,7 @@ class TestProcessWeek:
         assert contrib["points"] == 2
 
         assert "org/proj#1" in scores["credited_issues"]
+        assert week["issues"]["bug"] == []
         assert "hero" in scores["weekly"]["2026-W12"]
 
     @patch("update_leaderboard.arena_week_id")

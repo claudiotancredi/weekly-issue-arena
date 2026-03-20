@@ -47,6 +47,7 @@ def get_issues_for_repo(
 ) -> list[dict]:
     """Fetch open issues from a repo matching any of the given labels."""
     collected = []
+    seen_ids: set[int] = set()
     cutoff = datetime.now(timezone.utc) - timedelta(weeks=104)  # 2 years
     cutoff_str = cutoff.strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -66,9 +67,11 @@ def get_issues_for_repo(
             resp = github_get(url, params=params)
             resp.raise_for_status()
             issues = resp.json()
-            # Exclude pull requests (GitHub returns PRs in issues endpoint)
-            issues = [i for i in issues if "pull_request" not in i]
-            collected.extend(issues)
+            # Exclude pull requests and duplicates from other labels
+            for i in issues:
+                if "pull_request" not in i and i["id"] not in seen_ids:
+                    seen_ids.add(i["id"])
+                    collected.append(i)
             log.info(f"  {owner}/{repo} [{label}]: {len(issues)} issues")
         except Exception as e:
             log.warning(f"  Failed {owner}/{repo} [{label}]: {e}")
@@ -96,13 +99,14 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
     limits = config["limits"]
 
     results = {"gfi": [], "bug": [], "hard": []}
+    seen_globally: set[str] = set()  # dedup across categories
     listed_at = arena_week_start().isoformat()  # pinned to Friday 17:00:00 UTC
     for repo_cfg in repos:
         owner = repo_cfg["owner"]
         repo = repo_cfg["repo"]
         log.info(f"Fetching from {owner}/{repo}...")
 
-        for category in ["gfi", "bug", "hard"]:
+        for category in ["hard", "bug", "gfi"]:
             labels = label_mappings[category]
             issues = get_issues_for_repo(owner, repo, labels, limit=5)
             for issue in issues:
@@ -111,6 +115,10 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
                 )  # https://github.com/OWNER/REPO/issues/N
                 owner_actual = url_parts[3]
                 repo_actual = url_parts[4]
+                issue_key = f"{owner_actual}/{repo_actual}#{issue['number']}"
+                if issue_key in seen_globally:
+                    continue
+                seen_globally.add(issue_key)
                 results[category].append(
                     {
                         "number": issue["number"],

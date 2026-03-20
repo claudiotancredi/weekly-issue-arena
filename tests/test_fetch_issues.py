@@ -1,6 +1,7 @@
 """Tests for the fetch_issues module.
 
-Covers enforce_repo_diversity, truncate_title, build_issue_table,
+Covers get_issues_for_repo, fetch_all_issues,
+enforce_repo_diversity, truncate_title, build_issue_table,
 save_state, and save_current_issues.
 """
 
@@ -8,6 +9,7 @@ import json
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from unittest.mock import MagicMock, patch
 
 import pytest
 
@@ -52,6 +54,228 @@ def _issue(
         "repo": repo,
         "repo_url": repo_url,
     }
+
+
+# ── helpers for raw GitHub API responses ────────────────────────
+
+
+def _gh_issue(issue_id, number, owner="org", repo="proj", is_pr=False):
+    """Build a minimal GitHub API issue response."""
+    d = {
+        "id": issue_id,
+        "number": number,
+        "title": f"Issue #{number}",
+        "html_url": f"https://github.com/{owner}/{repo}/issues/{number}",
+        "created_at": "2026-01-01T00:00:00Z",
+        "updated_at": "2026-03-01T00:00:00Z",
+        "user": {"login": "author"},
+    }
+    if is_pr:
+        d["pull_request"] = {"url": "..."}
+    return d
+
+
+def _mock_github_get(responses):
+    """Return a side_effect function that yields responses in order.
+
+    Each entry in *responses* is a list of GitHub issue dicts
+    for one label query.
+    """
+    calls = iter(responses)
+
+    def _side_effect(url, **kwargs):
+        resp = MagicMock()
+        resp.raise_for_status = MagicMock()
+        resp.json.return_value = next(calls)
+        return resp
+
+    return _side_effect
+
+
+# ── get_issues_for_repo ────────────────────────────────────────
+
+
+class TestGetIssuesForRepo:
+    """Tests for get_issues_for_repo."""
+
+    @patch("fetch_issues.github_get")
+    def test_dedup_across_labels(self, mock_get):
+        """Same issue from two labels is returned only once."""
+        issue = _gh_issue(100, 1)
+        mock_get.side_effect = _mock_github_get(
+            [
+                [issue],  # label "good first issue"
+                [issue],  # label "beginner" — same issue
+            ]
+        )
+        result = fetch_issues.get_issues_for_repo(
+            "org", "proj", ["good first issue", "beginner"], limit=5
+        )
+        assert len(result) == 1
+        assert result[0]["id"] == 100
+
+    @patch("fetch_issues.github_get")
+    def test_different_issues_from_labels(self, mock_get):
+        """Different issues from different labels are all kept."""
+        mock_get.side_effect = _mock_github_get(
+            [
+                [_gh_issue(100, 1)],
+                [_gh_issue(200, 2)],
+            ]
+        )
+        result = fetch_issues.get_issues_for_repo(
+            "org", "proj", ["good first issue", "beginner"], limit=5
+        )
+        assert len(result) == 2
+
+    @patch("fetch_issues.github_get")
+    def test_prs_excluded_with_dedup(self, mock_get):
+        """Pull requests are excluded even with dedup logic."""
+        mock_get.side_effect = _mock_github_get(
+            [
+                [_gh_issue(100, 1), _gh_issue(200, 2, is_pr=True)],
+            ]
+        )
+        result = fetch_issues.get_issues_for_repo(
+            "org", "proj", ["bug"], limit=5
+        )
+        assert len(result) == 1
+        assert result[0]["number"] == 1
+
+    @patch("fetch_issues.github_get")
+    def test_respects_limit(self, mock_get):
+        """No more than *limit* issues are returned."""
+        issues = [_gh_issue(i, i) for i in range(10)]
+        mock_get.side_effect = _mock_github_get([issues])
+        result = fetch_issues.get_issues_for_repo(
+            "org", "proj", ["bug"], limit=3
+        )
+        assert len(result) == 3
+
+    @patch("fetch_issues.github_get")
+    def test_api_failure_returns_empty(self, mock_get):
+        """API failure is handled gracefully."""
+        mock_get.side_effect = Exception("rate limited")
+        result = fetch_issues.get_issues_for_repo(
+            "org", "proj", ["bug"], limit=5
+        )
+        assert result == []
+
+
+# ── fetch_all_issues (cross-category dedup) ────────────────────
+
+
+class TestFetchAllIssuesCrossCategory:
+    """Tests for cross-category dedup in fetch_all_issues."""
+
+    def _config(self, repos):
+        return {
+            "repos": repos,
+            "label_mappings": {
+                "gfi": ["good first issue"],
+                "bug": ["bug"],
+                "hard": ["hard"],
+            },
+            "limits": {"gfi": 20, "bug": 14, "hard": 10},
+        }
+
+    @patch("fetch_issues.get_issues_for_repo")
+    def test_multi_label_issue_lands_in_higher_category(self, mock_fetch):
+        """Issue with both hard and gfi labels goes to hard."""
+        # Same issue returned for all three categories
+        shared = _gh_issue(100, 1)
+        mock_fetch.return_value = [shared]
+
+        config = self._config([{"owner": "org", "repo": "proj"}])
+        result = fetch_issues.fetch_all_issues(config)
+
+        # Should appear in hard (highest value, checked first)
+        hard_nums = [i["number"] for i in result["hard"]]
+        bug_nums = [i["number"] for i in result["bug"]]
+        gfi_nums = [i["number"] for i in result["gfi"]]
+        assert 1 in hard_nums
+        assert 1 not in bug_nums
+        assert 1 not in gfi_nums
+
+    @patch("fetch_issues.get_issues_for_repo")
+    def test_multi_label_bug_and_gfi(self, mock_fetch):
+        """Issue with bug and gfi labels goes to bug (higher)."""
+        shared = _gh_issue(100, 1)
+
+        def side_effect(owner, repo, labels, limit):
+            if labels == ["hard"]:
+                return []
+            return [shared]
+
+        mock_fetch.side_effect = side_effect
+
+        config = self._config([{"owner": "org", "repo": "proj"}])
+        result = fetch_issues.fetch_all_issues(config)
+
+        assert len(result["bug"]) == 1
+        assert result["bug"][0]["number"] == 1
+        assert len(result["gfi"]) == 0
+
+    @patch("fetch_issues.get_issues_for_repo")
+    def test_distinct_issues_not_deduped(self, mock_fetch):
+        """Different issues in different categories all survive."""
+
+        def side_effect(owner, repo, labels, limit):
+            if labels == ["hard"]:
+                return [_gh_issue(300, 3)]
+            if labels == ["bug"]:
+                return [_gh_issue(200, 2)]
+            return [_gh_issue(100, 1)]
+
+        mock_fetch.side_effect = side_effect
+
+        config = self._config([{"owner": "org", "repo": "proj"}])
+        result = fetch_issues.fetch_all_issues(config)
+
+        assert len(result["hard"]) == 1
+        assert len(result["bug"]) == 1
+        assert len(result["gfi"]) == 1
+
+    @patch("fetch_issues.get_issues_for_repo")
+    def test_dedup_across_repos(self, mock_fetch):
+        """Same issue number in different repos is NOT deduped."""
+
+        def side_effect(owner, repo, labels, limit):
+            if labels == ["bug"]:
+                return [
+                    _gh_issue(
+                        100 if repo == "a" else 200, 1, owner=owner, repo=repo
+                    )
+                ]
+            return []
+
+        mock_fetch.side_effect = side_effect
+
+        config = self._config(
+            [
+                {"owner": "org", "repo": "a"},
+                {"owner": "org", "repo": "b"},
+            ]
+        )
+        result = fetch_issues.fetch_all_issues(config)
+
+        assert len(result["bug"]) == 2
+
+    @patch("fetch_issues.get_issues_for_repo")
+    def test_category_iteration_order(self, mock_fetch):
+        """Categories are checked hard -> bug -> gfi."""
+        call_labels = []
+
+        def side_effect(owner, repo, labels, limit):
+            call_labels.append(labels[0])
+            return []
+
+        mock_fetch.side_effect = side_effect
+
+        config = self._config([{"owner": "org", "repo": "proj"}])
+        fetch_issues.fetch_all_issues(config)
+
+        assert call_labels == ["hard", "bug", "good first issue"]
 
 
 # ── enforce_repo_diversity ──────────────────────────────────────

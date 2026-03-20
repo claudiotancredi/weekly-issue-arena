@@ -38,7 +38,7 @@ No registration. No sign-ups. Just open source.
 *Everyone who earned points this week, regardless of leaderboard position.*
 
 <!-- WEEKLY:START -->
-<a href="https://github.com/biefan"><img src="https://avatars.githubusercontent.com/u/70761325?v=4" width="48" height="48" style="border-radius:50%;" title="@biefan"/></a> <a href="https://github.com/kkollsga"><img src="https://avatars.githubusercontent.com/u/58362424?v=4" width="48" height="48" style="border-radius:50%;" title="@kkollsga"/></a> <a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="48" height="48" style="border-radius:50%;" title="@zzstoatzz"/></a>
+*No contributions tracked yet for this week.*
 <!-- WEEKLY:END -->
 
 ---

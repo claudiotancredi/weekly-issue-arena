@@ -49,18 +49,26 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Debugging grammars by example](https://github.com/guidance-ai/guidance/issues/561) | [guidance-ai/guidance](https://github.com/guidance-ai/guidance) | 🔴 Closed |
-| 2 | [Period(s) in repository "name" causes issues](https://github.com/python-poetry/poetry/issues/1328) | [python-poetry/poetry](https://github.com/python-poetry/poetry) | 🟢 Open |
-| 3 | [Wishlist: doc examples wanted](https://github.com/plotly/plotly.py/issues/1965) | [plotly/plotly.py](https://github.com/plotly/plotly.py) | 🟢 Open |
-| 4 | [Time Series Support](https://github.com/torchgeo/torchgeo/issues/2382) | [torchgeo/torchgeo](https://github.com/torchgeo/torchgeo) | 🟢 Open |
-| 5 | [Highlight new contributors better in release notes](https://github.com/sunpy/sunpy/issues/7675) | [sunpy/sunpy](https://github.com/sunpy/sunpy) | 🟢 Open |
-| 6 | [`.str.split` coerces `dtype` to `object`](https://github.com/dask/dask/issues/11884) | [dask/dask](https://github.com/dask/dask) | 🟢 Open |
-| 7 | [Implementation of scipy.integrate.simps](https://github.com/dask/dask/issues/2629) | [dask/dask](https://github.com/dask/dask) | 🟢 Open |
-| 8 | [Adding Zarr visualization to docs ](https://github.com/zarr-developers/zarr-python/issues/1238) | [zarr-developers/zarr-python](https://github.com/zarr-developers/zarr-python) | 🟢 Open |
-| 9 | [Documentation says `grid_mapping` is in attrs but really ...](https://github.com/corteva/rioxarray/issues/815) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
-| 10 | [Return the name of the currently loaded file in the load_...](https://github.com/huggingface/datasets/issues/5806) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
-| 11 | [[c++] forcedsplits_filename pointing at a non-existent fi...](https://github.com/lightgbm-org/LightGBM/issues/6830) | [lightgbm-org/LightGBM](https://github.com/lightgbm-org/LightGBM) | 🟢 Open |
-| 12 | [Stream docker build to stdout](https://github.com/PrefectHQ/prefect/issues/18393) | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) | 🔴 Closed |
+| 1 | [Add `widget_placeholder` to ChatInterface](https://github.com/holoviz/panel/issues/6357) | [holoviz/panel](https://github.com/holoviz/panel) | 🟢 Open |
+| 2 | [📎 Port `no-inline-styles` from `html-eslint`](https://github.com/biomejs/biome/issues/9062) | [biomejs/biome](https://github.com/biomejs/biome) | 🟢 Open |
+| 3 | [[ENH] add at least one usage example to docstrings of est...](https://github.com/sktime/sktime/issues/4264) | [sktime/sktime](https://github.com/sktime/sktime) | 🟢 Open |
+| 4 | [[Feature] Clear axis range selection by action in paralle...](https://github.com/apache/echarts/issues/18446) | [apache/echarts](https://github.com/apache/echarts) | 🟢 Open |
+| 5 | [Comparison of Different Fine-Tuning Techniques for Conver...](https://github.com/huggingface/peft/issues/2310) | [huggingface/peft](https://github.com/huggingface/peft) | 🟢 Open |
+| 6 | [Fix: Update "Kickstart your query" button behavior](https://github.com/grafana/grafana/issues/118375) | [grafana/grafana](https://github.com/grafana/grafana) | 🟢 Open |
+| 7 | [Delegate `delete` to JUnit](https://github.com/apache/iceberg/issues/13506) | [apache/iceberg](https://github.com/apache/iceberg) | 🟢 Open |
+| 8 | [docs: update troubleshooting guide with errors](https://github.com/hasura/graphql-engine/issues/2871) | [hasura/graphql-engine](https://github.com/hasura/graphql-engine) | 🟢 Open |
+| 9 | [Memory leak when programmatically changing 'source' prop ...](https://github.com/facebook/react-native/issues/12220) | [facebook/react-native](https://github.com/facebook/react-native) | 🟢 Open |
+| 10 | [OpenAI CLI Tools for Chat Fine-Tuning](https://github.com/openai/openai-python/issues/622) | [openai/openai-python](https://github.com/openai/openai-python) | 🟢 Open |
+| 11 | [[Example] Revamp notebooks](https://github.com/tracel-ai/burn/issues/2191) | [tracel-ai/burn](https://github.com/tracel-ai/burn) | 🟢 Open |
+| 12 | [E2E tests don't validate realtime composition performance...](https://github.com/crossplane/crossplane/issues/6788) | [crossplane/crossplane](https://github.com/crossplane/crossplane) | 🟢 Open |
+| 13 | [build-storybook watch mode not working](https://github.com/storybookjs/storybook/issues/15946) | [storybookjs/storybook](https://github.com/storybookjs/storybook) | 🟢 Open |
+| 14 | [TS2367: This condition will always return 'false' since t...](https://github.com/microsoft/TypeScript/issues/27910) | [microsoft/TypeScript](https://github.com/microsoft/TypeScript) | 🟢 Open |
+| 15 | [CrawlTestCase.test_start_requests_lazyness is flaky](https://github.com/scrapy/scrapy/issues/5703) | [scrapy/scrapy](https://github.com/scrapy/scrapy) | 🟢 Open |
+| 16 | [[BLD] add flake8 rule to ban relative imports](https://github.com/chroma-core/chroma/issues/2334) | [chroma-core/chroma](https://github.com/chroma-core/chroma) | 🟢 Open |
+| 17 | [WebDAV active checks](https://github.com/zaproxy/zaproxy/issues/129) | [zaproxy/zaproxy](https://github.com/zaproxy/zaproxy) | 🟢 Open |
+| 18 | [☂️ Port `a11y` rules to HTML](https://github.com/biomejs/biome/issues/8155) | [biomejs/biome](https://github.com/biomejs/biome) | 🟢 Open |
+| 19 | [docs: guide on using django migrations with hasura](https://github.com/hasura/graphql-engine/issues/1184) | [hasura/graphql-engine](https://github.com/hasura/graphql-engine) | 🟢 Open |
+| 20 | [Inconsistent Error Messaging / Handling in getStaticPaths](https://github.com/vercel/next.js/issues/41281) | [vercel/next.js](https://github.com/vercel/next.js) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -71,14 +79,20 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Bug on Running Files Dropdown Menu](https://github.com/jupyter/notebook/issues/7772) | [jupyter/notebook](https://github.com/jupyter/notebook) | 🟢 Open |
-| 2 | [Bedrock client failing to detect AWS region correctly can...](https://github.com/anthropics/anthropic-sdk-python/issues/892) | [anthropics/anthropic-sdk-python](https://github.com/anthropics/anthropic-sdk-python) | 🟢 Open |
-| 3 | [[Bug] NeptuneAnalyticsGraphStore' object has no attribute...](https://github.com/run-llama/llama_index/issues/18372) | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🟢 Open |
-| 4 | [Datasets concatenated along string dimension cannot write...](https://github.com/pydata/xarray/issues/11199) | [pydata/xarray](https://github.com/pydata/xarray) | 🔴 Closed |
-| 5 | [Reference optional composite dependencies by name](https://github.com/pytroll/satpy/issues/161) | [pytroll/satpy](https://github.com/pytroll/satpy) | 🟢 Open |
-| 6 | [Collections with many items saving time issue](https://github.com/stac-utils/pystac/issues/1207) | [stac-utils/pystac](https://github.com/stac-utils/pystac) | 🟢 Open |
-| 7 | [[Bug Report] Docs website is extremely slow](https://github.com/Farama-Foundation/Gymnasium/issues/1455) | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 🟢 Open |
-| 8 | [algorithm contours return 500: ufunc 'invert' not supported](https://github.com/developmentseed/titiler/issues/1326) | [developmentseed/titiler](https://github.com/developmentseed/titiler) | 🟢 Open |
+| 1 | [[Bug] small shifts in scatter scatter](https://github.com/apache/echarts/issues/19728) | [apache/echarts](https://github.com/apache/echarts) | 🟢 Open |
+| 2 | [AttributeError: type object 'Detections' has no attribute...](https://github.com/roboflow/supervision/issues/1958) | [roboflow/supervision](https://github.com/roboflow/supervision) | 🟢 Open |
+| 3 | [[Bug] python -c "import tvm; print(tvm.__file__)" fail，ve...](https://github.com/apache/tvm/issues/18713) | [apache/tvm](https://github.com/apache/tvm) | 🟢 Open |
+| 4 | [Bug: Can't enable "Use person properties from query time"...](https://github.com/PostHog/posthog/issues/51776) | [PostHog/posthog](https://github.com/PostHog/posthog) | 🟢 Open |
+| 5 | [New h5netcdf engine may create files which netCDF can't read](https://github.com/pydata/xarray/issues/10819) | [pydata/xarray](https://github.com/pydata/xarray) | 🟢 Open |
+| 6 | ["mkdocs serve" does not cleanup after a SIGTERM](https://github.com/mkdocs/mkdocs/issues/3905) | [mkdocs/mkdocs](https://github.com/mkdocs/mkdocs) | 🟢 Open |
+| 7 | [TELEA Inpainting Produces Incorrect Saturated Values in O...](https://github.com/opencv/opencv/issues/28648) | [opencv/opencv](https://github.com/opencv/opencv) | 🟢 Open |
+| 8 | [pywt.swt yields unexpected results](https://github.com/PyWavelets/pywt/issues/767) | [PyWavelets/pywt](https://github.com/PyWavelets/pywt) | 🟢 Open |
+| 9 | [Linkerd Viz web page does not show the gateways](https://github.com/linkerd/linkerd2/issues/14642) | [linkerd/linkerd2](https://github.com/linkerd/linkerd2) | 🟢 Open |
+| 10 | [Cannot git commit without python3.11](https://github.com/pyproj4/pyproj/issues/1528) | [pyproj4/pyproj](https://github.com/pyproj4/pyproj) | 🟢 Open |
+| 11 | [ClientPayloadError: 400, message: Can not decode content-...](https://github.com/aio-libs/aiohttp/issues/12234) | [aio-libs/aiohttp](https://github.com/aio-libs/aiohttp) | 🟢 Open |
+| 12 | [MeanVarianceNormalization without division by zero](https://github.com/onnx/onnx/issues/3947) | [onnx/onnx](https://github.com/onnx/onnx) | 🟢 Open |
+| 13 | [pip has the wrong exitcode when package-update is not pos...](https://github.com/pypa/pip/issues/13406) | [pypa/pip](https://github.com/pypa/pip) | 🟢 Open |
+| 14 | [AttributeError: module 'torchaudio' has no attribute 'lis...](https://github.com/speechbrain/speechbrain/issues/3012) | [speechbrain/speechbrain](https://github.com/speechbrain/speechbrain) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -89,12 +103,16 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Newlines should not be scaped when using setting usetex=True](https://github.com/matplotlib/matplotlib/issues/29628) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 2 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 1 | [Multiple tooltips with different trigger type](https://github.com/apache/echarts/issues/11115) | [apache/echarts](https://github.com/apache/echarts) | 🟢 Open |
+| 2 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 | 3 | [ENH: enable setitem dim2 test to work for EA with complex...](https://github.com/pandas-dev/pandas/issues/54445) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 4 | [Update ml_map.png](https://github.com/scikit-learn/scikit-learn/issues/7686) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 4 | [Improve tests by using global_random_seed fixture to make...](https://github.com/scikit-learn/scikit-learn/issues/22827) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
 | 5 | [Rewrite _reproject() to use GDALWarp](https://github.com/rasterio/rasterio/issues/1990) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
-| 6 | [Cannot recover DBSCAN from memory-overuse](https://github.com/scikit-learn/scikit-learn/issues/31407) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 6 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 7 | [Cannot recover DBSCAN from memory-overuse](https://github.com/scikit-learn/scikit-learn/issues/31407) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 8 | [Warnings in plot directive aren't treated as such by Sphinx](https://github.com/matplotlib/matplotlib/issues/15715) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 9 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 10 | [BUG: Incorrect results for pandas.Series.var](https://github.com/pandas-dev/pandas/issues/62421) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

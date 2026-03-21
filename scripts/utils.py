@@ -46,6 +46,34 @@ def github_get(url: str, **kwargs) -> requests.Response:
     return resp
 
 
+def has_linked_pr(owner: str, repo: str, number: int) -> bool:
+    """Check if an issue has any open PR linked to it.
+
+    Uses the timeline API to find cross-referenced pull requests.
+    Returns True if at least one open PR references this issue.
+    """
+    url = (
+        f"https://api.github.com/repos/{owner}/{repo}/issues/{number}/timeline"
+    )
+    try:
+        while url:
+            resp = github_get(url)
+            resp.raise_for_status()
+            for event in resp.json():
+                if event.get("event") != "cross-referenced":
+                    continue
+                source = event.get("source", {})
+                issue_data = source.get("issue", {})
+                if not issue_data.get("pull_request"):
+                    continue
+                if issue_data.get("state") == "open":
+                    return True
+            url = resp.links.get("next", {}).get("url")
+    except Exception as e:
+        log.warning(f"Timeline check failed for {owner}/{repo}#{number}: {e}")
+    return False
+
+
 def arena_week_id(dt: datetime | None = None) -> str:
     """Return the arena week identifier for a given datetime.
 

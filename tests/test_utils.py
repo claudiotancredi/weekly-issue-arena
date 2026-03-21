@@ -13,6 +13,7 @@ sys.path.insert(0, "scripts")
 from utils import (  # noqa: E402, I001
     arena_week_id,
     github_get,
+    has_linked_pr,
     update_readme_section,
 )
 
@@ -190,3 +191,157 @@ class TestGithubGet:
             github_get(API_URL)
         _, kwargs = mock_get.call_args
         assert kwargs["timeout"] == 15
+
+
+# ── has_linked_pr ─────────────────────────────────────────────
+
+
+class TestHasLinkedPr:
+    """Tests for the has_linked_pr function."""
+
+    @patch("utils.github_get")
+    def test_open_pr_returns_true(self, mock_get):
+        """An open PR cross-referencing the issue returns True."""
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "open",
+                        "pull_request": {"merged_at": None},
+                    }
+                },
+            }
+        ]
+        resp.links = {}
+        assert has_linked_pr("org", "repo", 1) is True
+
+    @patch("utils.github_get")
+    def test_closed_pr_returns_false(self, mock_get):
+        """A closed (rejected) PR does not count."""
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "closed",
+                        "pull_request": {"merged_at": None},
+                    }
+                },
+            }
+        ]
+        resp.links = {}
+        assert has_linked_pr("org", "repo", 1) is False
+
+    @patch("utils.github_get")
+    def test_merged_pr_returns_false(self, mock_get):
+        """A merged PR (state=closed with merged_at) is not open."""
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "closed",
+                        "pull_request": {
+                            "merged_at": "2026-03-01T00:00:00Z",
+                        },
+                    }
+                },
+            }
+        ]
+        resp.links = {}
+        assert has_linked_pr("org", "repo", 1) is False
+
+    @patch("utils.github_get")
+    def test_no_cross_references_returns_false(self, mock_get):
+        """Empty timeline returns False."""
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = []
+        resp.links = {}
+        assert has_linked_pr("org", "repo", 1) is False
+
+    @patch("utils.github_get")
+    def test_non_pr_cross_reference_ignored(self, mock_get):
+        """A cross-reference to a plain issue (not PR) is ignored."""
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "open",
+                        # no pull_request key
+                    }
+                },
+            }
+        ]
+        resp.links = {}
+        assert has_linked_pr("org", "repo", 1) is False
+
+    @patch("utils.github_get")
+    def test_api_error_returns_false(self, mock_get):
+        """API failure returns False (safe default)."""
+        mock_get.side_effect = Exception("timeout")
+        assert has_linked_pr("org", "repo", 1) is False
+
+    @patch("utils.github_get")
+    def test_pagination_finds_pr_on_second_page(self, mock_get):
+        """PR found on second page of paginated timeline."""
+        page1 = MagicMock()
+        page1.raise_for_status.return_value = None
+        page1.json.return_value = [{"event": "labeled"}]
+        page1.links = {"next": {"url": "https://api.github.com/page2"}}
+
+        page2 = MagicMock()
+        page2.raise_for_status.return_value = None
+        page2.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "open",
+                        "pull_request": {"merged_at": None},
+                    }
+                },
+            }
+        ]
+        page2.links = {}
+
+        mock_get.side_effect = [page1, page2]
+        assert has_linked_pr("org", "repo", 1) is True
+
+    @patch("utils.github_get")
+    def test_multiple_prs_one_open(self, mock_get):
+        """Multiple PRs: one closed, one open — returns True."""
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "closed",
+                        "pull_request": {"merged_at": None},
+                    }
+                },
+            },
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "open",
+                        "pull_request": {"merged_at": None},
+                    }
+                },
+            },
+        ]
+        resp.links = {}
+        assert has_linked_pr("org", "repo", 1) is True

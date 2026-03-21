@@ -21,6 +21,7 @@ from utils import (
     arena_week_id,
     arena_week_start,
     github_get,
+    has_linked_pr,
     update_readme_section,
 )
 
@@ -141,8 +142,18 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
     for category in results:
         random.shuffle(results[category])
         results[category] = results[category][
-            : limits[category] * 2
-        ]  # fetch extra buffer
+            : limits[category] * 3
+        ]  # extra buffer to compensate for linked-PR filtering
+
+        # Filter out issues that already have an open PR
+        results[category] = [
+            issue
+            for issue in results[category]
+            if not has_linked_pr(
+                issue["owner"], issue["repo"], issue["number"]
+            )
+        ]
+
         results[category] = enforce_repo_diversity(results[category])
         results[category] = results[category][: limits[category]]  # final cap
 

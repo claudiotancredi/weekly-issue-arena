@@ -179,8 +179,11 @@ class TestFetchAllIssuesCrossCategory:
             "limits": {"gfi": 20, "bug": 14, "hard": 10},
         }
 
+    @patch("fetch_issues.has_linked_pr", return_value=False)
     @patch("fetch_issues.get_issues_for_repo")
-    def test_multi_label_issue_lands_in_higher_category(self, mock_fetch):
+    def test_multi_label_issue_lands_in_higher_category(
+        self, mock_fetch, _mock_linked
+    ):
         """Issue with both hard and gfi labels goes to hard."""
         # Same issue returned for all three categories
         shared = _gh_issue(100, 1)
@@ -197,8 +200,9 @@ class TestFetchAllIssuesCrossCategory:
         assert 1 not in bug_nums
         assert 1 not in gfi_nums
 
+    @patch("fetch_issues.has_linked_pr", return_value=False)
     @patch("fetch_issues.get_issues_for_repo")
-    def test_multi_label_bug_and_gfi(self, mock_fetch):
+    def test_multi_label_bug_and_gfi(self, mock_fetch, _mock_linked):
         """Issue with bug and gfi labels goes to bug (higher)."""
         shared = _gh_issue(100, 1)
 
@@ -216,8 +220,9 @@ class TestFetchAllIssuesCrossCategory:
         assert result["bug"][0]["number"] == 1
         assert len(result["gfi"]) == 0
 
+    @patch("fetch_issues.has_linked_pr", return_value=False)
     @patch("fetch_issues.get_issues_for_repo")
-    def test_distinct_issues_not_deduped(self, mock_fetch):
+    def test_distinct_issues_not_deduped(self, mock_fetch, _mock_linked):
         """Different issues in different categories all survive."""
 
         def side_effect(owner, repo, labels, limit):
@@ -236,15 +241,19 @@ class TestFetchAllIssuesCrossCategory:
         assert len(result["bug"]) == 1
         assert len(result["gfi"]) == 1
 
+    @patch("fetch_issues.has_linked_pr", return_value=False)
     @patch("fetch_issues.get_issues_for_repo")
-    def test_dedup_across_repos(self, mock_fetch):
+    def test_dedup_across_repos(self, mock_fetch, _mock_linked):
         """Same issue number in different repos is NOT deduped."""
 
         def side_effect(owner, repo, labels, limit):
             if labels == ["bug"]:
                 return [
                     _gh_issue(
-                        100 if repo == "a" else 200, 1, owner=owner, repo=repo
+                        100 if repo == "a" else 200,
+                        1,
+                        owner=owner,
+                        repo=repo,
                     )
                 ]
             return []
@@ -261,8 +270,9 @@ class TestFetchAllIssuesCrossCategory:
 
         assert len(result["bug"]) == 2
 
+    @patch("fetch_issues.has_linked_pr", return_value=False)
     @patch("fetch_issues.get_issues_for_repo")
-    def test_category_iteration_order(self, mock_fetch):
+    def test_category_iteration_order(self, mock_fetch, _mock_linked):
         """Categories are checked hard -> bug -> gfi."""
         call_labels = []
 
@@ -276,6 +286,48 @@ class TestFetchAllIssuesCrossCategory:
         fetch_issues.fetch_all_issues(config)
 
         assert call_labels == ["hard", "bug", "good first issue"]
+
+    @patch("fetch_issues.has_linked_pr")
+    @patch("fetch_issues.get_issues_for_repo")
+    def test_issues_with_linked_pr_filtered_out(self, mock_fetch, mock_linked):
+        """Issues with an open linked PR are excluded."""
+
+        def side_effect(owner, repo, labels, limit):
+            if labels == ["bug"]:
+                return [
+                    _gh_issue(100, 1),
+                    _gh_issue(200, 2),
+                    _gh_issue(300, 3),
+                ]
+            return []
+
+        mock_fetch.side_effect = side_effect
+        # Issue #2 has a linked PR, others don't
+        mock_linked.side_effect = lambda o, r, n: n == 2
+
+        config = self._config([{"owner": "org", "repo": "proj"}])
+        result = fetch_issues.fetch_all_issues(config)
+
+        bug_nums = [i["number"] for i in result["bug"]]
+        assert 2 not in bug_nums
+        assert 1 in bug_nums
+        assert 3 in bug_nums
+
+    @patch("fetch_issues.has_linked_pr")
+    @patch("fetch_issues.get_issues_for_repo")
+    def test_all_issues_with_linked_pr_yields_empty(
+        self, mock_fetch, mock_linked
+    ):
+        """All candidates having linked PRs yields an empty list."""
+        mock_fetch.return_value = [_gh_issue(100, 1)]
+        mock_linked.return_value = True
+
+        config = self._config([{"owner": "org", "repo": "proj"}])
+        result = fetch_issues.fetch_all_issues(config)
+
+        assert result["hard"] == []
+        assert result["bug"] == []
+        assert result["gfi"] == []
 
 
 # ── enforce_repo_diversity ──────────────────────────────────────

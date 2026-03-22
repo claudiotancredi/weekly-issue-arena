@@ -51,13 +51,27 @@
           "credited_at": "2026-03-20T00:38:26.935942+00:00"
         }
       ]
+    },
+    "Netail": {
+      "total_points": 1,
+      "avatar_url": "https://avatars.githubusercontent.com/u/11695769?v=4",
+      "contributions": [
+        {
+          "issue": "biomejs/biome#9062",
+          "points": 1,
+          "pr_url": "https://github.com/biomejs/biome/pull/9534",
+          "week": "2026-W12",
+          "credited_at": "2026-03-22T22:33:35.754320+00:00"
+        }
+      ]
     }
   },
   "credited_issues": [
     "mlflow/mlflow#21487",
     "guidance-ai/guidance#561",
     "PrefectHQ/prefect#18393",
-    "pydata/xarray#11199"
+    "pydata/xarray#11199",
+    "biomejs/biome#9062"
   ],
   "weekly": {
     "2026-W10": [
@@ -67,6 +81,9 @@
       "biefan",
       "zzstoatzz",
       "kkollsga"
+    ],
+    "2026-W12": [
+      "Netail"
     ]
   }
 }

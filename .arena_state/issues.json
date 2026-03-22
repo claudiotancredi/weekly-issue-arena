@@ -16,18 +16,6 @@
           "listed_at": "2026-03-20T17:00:00+00:00"
         },
         {
-          "number": 9062,
-          "title": "\ud83d\udcce Port `no-inline-styles` from `html-eslint`",
-          "url": "https://github.com/biomejs/biome/issues/9062",
-          "owner": "biomejs",
-          "repo": "biome",
-          "repo_url": "https://github.com/biomejs/biome",
-          "created_at": "2026-02-14T02:23:49Z",
-          "updated_at": "2026-02-15T17:32:39Z",
-          "author": "mcmxcdev",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
           "number": 4264,
           "title": "[ENH] add at least one usage example to docstrings of estimators",
           "url": "https://github.com/sktime/sktime/issues/4264",

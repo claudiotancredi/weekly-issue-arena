@@ -26,7 +26,8 @@ No registration. No sign-ups. Just open source.
 | 1 | <div align="center"><a href="https://github.com/kkollsga"><img src="https://avatars.githubusercontent.com/u/58362424?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@kkollsga](https://github.com/kkollsga)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 | 2 | <div align="center"><a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@LeviLong01](https://github.com/LeviLong01)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 | 3 | <div align="center"><a href="https://github.com/biefan"><img src="https://avatars.githubusercontent.com/u/70761325?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@biefan](https://github.com/biefan)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 4 | <div align="center"><a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@zzstoatzz](https://github.com/zzstoatzz)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 4 | <div align="center"><a href="https://github.com/Netail"><img src="https://avatars.githubusercontent.com/u/11695769?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@Netail](https://github.com/Netail)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 5 | <div align="center"><a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@zzstoatzz](https://github.com/zzstoatzz)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 <!-- LEADERBOARD:END -->
 
 > In case of a tie, contributors are listed alphabetically by GitHub username.
@@ -38,7 +39,7 @@ No registration. No sign-ups. Just open source.
 *Everyone who earned points this week, regardless of leaderboard position.*
 
 <!-- WEEKLY:START -->
-*No contributions tracked yet for this week.*
+<a href="https://github.com/Netail"><img src="https://avatars.githubusercontent.com/u/11695769?v=4" width="48" height="48" style="border-radius:50%;" title="@Netail"/></a>
 <!-- WEEKLY:END -->
 
 ---
@@ -50,7 +51,7 @@ No registration. No sign-ups. Just open source.
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [Add `widget_placeholder` to ChatInterface](https://github.com/holoviz/panel/issues/6357) | [holoviz/panel](https://github.com/holoviz/panel) | 🟢 Open |
-| 2 | [📎 Port `no-inline-styles` from `html-eslint`](https://github.com/biomejs/biome/issues/9062) | [biomejs/biome](https://github.com/biomejs/biome) | 🟢 Open |
+| 2 | [📎 Port `no-inline-styles` from `html-eslint`](https://github.com/biomejs/biome/issues/9062) | [biomejs/biome](https://github.com/biomejs/biome) | 🔴 Closed |
 | 3 | [[ENH] add at least one usage example to docstrings of est...](https://github.com/sktime/sktime/issues/4264) | [sktime/sktime](https://github.com/sktime/sktime) | 🟢 Open |
 | 4 | [[Feature] Clear axis range selection by action in paralle...](https://github.com/apache/echarts/issues/18446) | [apache/echarts](https://github.com/apache/echarts) | 🟢 Open |
 | 5 | [Comparison of Different Fine-Tuning Techniques for Conver...](https://github.com/huggingface/peft/issues/2310) | [huggingface/peft](https://github.com/huggingface/peft) | 🟢 Open |

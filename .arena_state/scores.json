@@ -64,6 +64,19 @@
           "credited_at": "2026-03-22T22:33:35.754320+00:00"
         }
       ]
+    },
+    "Alvaro-Kothe": {
+      "total_points": 4,
+      "avatar_url": "https://avatars.githubusercontent.com/u/60141605?v=4",
+      "contributions": [
+        {
+          "issue": "pandas-dev/pandas#62421",
+          "points": 4,
+          "pr_url": "https://github.com/pandas-dev/pandas/pull/64886",
+          "week": "2026-W12",
+          "credited_at": "2026-03-26T23:39:12.521988+00:00"
+        }
+      ]
     }
   },
   "credited_issues": [
@@ -71,7 +84,8 @@
     "guidance-ai/guidance#561",
     "PrefectHQ/prefect#18393",
     "pydata/xarray#11199",
-    "biomejs/biome#9062"
+    "biomejs/biome#9062",
+    "pandas-dev/pandas#62421"
   ],
   "weekly": {
     "2026-W10": [
@@ -83,7 +97,8 @@
       "kkollsga"
     ],
     "2026-W12": [
-      "Netail"
+      "Netail",
+      "Alvaro-Kothe"
     ]
   }
 }

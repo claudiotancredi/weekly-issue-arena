@@ -23,11 +23,12 @@ No registration. No sign-ups. Just open source.
 <!-- LEADERBOARD:START -->
 | Position | Contributor | Points | Rank |
 |----------|------------|--------|------|
-| 1 | <div align="center"><a href="https://github.com/kkollsga"><img src="https://avatars.githubusercontent.com/u/58362424?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@kkollsga](https://github.com/kkollsga)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 2 | <div align="center"><a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@LeviLong01](https://github.com/LeviLong01)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 3 | <div align="center"><a href="https://github.com/biefan"><img src="https://avatars.githubusercontent.com/u/70761325?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@biefan](https://github.com/biefan)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 4 | <div align="center"><a href="https://github.com/Netail"><img src="https://avatars.githubusercontent.com/u/11695769?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@Netail](https://github.com/Netail)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 5 | <div align="center"><a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@zzstoatzz](https://github.com/zzstoatzz)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 1 | <div align="center"><a href="https://github.com/Alvaro-Kothe"><img src="https://avatars.githubusercontent.com/u/60141605?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@Alvaro-Kothe](https://github.com/Alvaro-Kothe)</div> | 4 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 2 | <div align="center"><a href="https://github.com/kkollsga"><img src="https://avatars.githubusercontent.com/u/58362424?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@kkollsga](https://github.com/kkollsga)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 3 | <div align="center"><a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@LeviLong01](https://github.com/LeviLong01)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 4 | <div align="center"><a href="https://github.com/biefan"><img src="https://avatars.githubusercontent.com/u/70761325?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@biefan](https://github.com/biefan)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 5 | <div align="center"><a href="https://github.com/Netail"><img src="https://avatars.githubusercontent.com/u/11695769?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@Netail](https://github.com/Netail)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 6 | <div align="center"><a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@zzstoatzz](https://github.com/zzstoatzz)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 <!-- LEADERBOARD:END -->
 
 > In case of a tie, contributors are listed alphabetically by GitHub username.
@@ -39,7 +40,7 @@ No registration. No sign-ups. Just open source.
 *Everyone who earned points this week, regardless of leaderboard position.*
 
 <!-- WEEKLY:START -->
-<a href="https://github.com/Netail"><img src="https://avatars.githubusercontent.com/u/11695769?v=4" width="48" height="48" style="border-radius:50%;" title="@Netail"/></a>
+<a href="https://github.com/Alvaro-Kothe"><img src="https://avatars.githubusercontent.com/u/60141605?v=4" width="48" height="48" style="border-radius:50%;" title="@Alvaro-Kothe"/></a> <a href="https://github.com/Netail"><img src="https://avatars.githubusercontent.com/u/11695769?v=4" width="48" height="48" style="border-radius:50%;" title="@Netail"/></a>
 <!-- WEEKLY:END -->
 
 ---
@@ -113,7 +114,7 @@ No registration. No sign-ups. Just open source.
 | 7 | [Cannot recover DBSCAN from memory-overuse](https://github.com/scikit-learn/scikit-learn/issues/31407) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
 | 8 | [Warnings in plot directive aren't treated as such by Sphinx](https://github.com/matplotlib/matplotlib/issues/15715) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 | 9 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 10 | [BUG: Incorrect results for pandas.Series.var](https://github.com/pandas-dev/pandas/issues/62421) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 10 | [BUG: Incorrect results for pandas.Series.var](https://github.com/pandas-dev/pandas/issues/62421) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🔴 Closed |
 <!-- ISSUES:HARD:END -->
 
 </details>

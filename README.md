@@ -80,7 +80,7 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [[Bug] small shifts in scatter scatter](https://github.com/apache/echarts/issues/19728) | [apache/echarts](https://github.com/apache/echarts) | 🟢 Open |
+| 1 | [[Bug] small shifts in scatter scatter](https://github.com/apache/echarts/issues/19728) | [apache/echarts](https://github.com/apache/echarts) | 🔴 Closed |
 | 2 | [AttributeError: type object 'Detections' has no attribute...](https://github.com/roboflow/supervision/issues/1958) | [roboflow/supervision](https://github.com/roboflow/supervision) | 🟢 Open |
 | 3 | [[Bug] python -c "import tvm; print(tvm.__file__)" fail，ve...](https://github.com/apache/tvm/issues/18713) | [apache/tvm](https://github.com/apache/tvm) | 🟢 Open |
 | 4 | [Bug: Can't enable "Use person properties from query time"...](https://github.com/PostHog/posthog/issues/51776) | [PostHog/posthog](https://github.com/PostHog/posthog) | 🟢 Open |

@@ -308,21 +308,22 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
     """Check a week's issues for merged closing PRs.
 
     Returns a list of new credit events.
-    Resolved issues (credited or expired) are removed from week_data in-place
-    so issues.json stays lean.
+    Resolved issues are marked with ``closed=True`` in-place so they remain
+    visible on the website during their week. A separate cleanup step in
+    ``main()`` removes them from old weeks once a new week has started.
+    Issues with a pending PR are left open and tracked for up to 28 weeks.
     """
     new_credits = []
 
     for category, issue_list in week_data["issues"].items():
         pts = POINTS[category]
-        to_remove = []
 
         for issue in issue_list:
             issue_key = f"{issue['owner']}/{issue['repo']}#{issue['number']}"
 
-            # Safety net: already credited — remove stale entry and skip
+            # Safety net: already credited — mark closed and skip
             if issue_key in scores.get("credited_issues", []):
-                to_remove.append(issue)
+                issue["closed"] = True
                 continue
 
             # Compute the 7-day PR deadline from listing date
@@ -351,9 +352,9 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
                     else:
                         log.info(
                             f"Issue {issue_key} still open past "
-                            f"7-day window with no PR — removing"
+                            f"7-day window with no PR — marking closed"
                         )
-                        to_remove.append(issue)
+                        issue["closed"] = True
                 continue
 
             # Issue is closed — check if it was closed with a PR
@@ -361,8 +362,9 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
             if not pr:
                 log.info(
                     f"No closing PR for closed issue "
-                    f"{issue_key} — skipping for now"
+                    f"{issue_key} — marking closed"
                 )
+                issue["closed"] = True
                 continue
 
             # Enforce: PR must have been opened within 7 days of listing
@@ -374,7 +376,7 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
                     f"Skipping {issue_key}: PR opened too late "
                     f"({pr_created_at} > {deadline})"
                 )
-                to_remove.append(issue)
+                issue["closed"] = True
                 continue
 
             author = pr["author"]
@@ -402,7 +404,7 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
             # Keep in credited_issues as a safety net against re-crediting
             # if the issue somehow reappears in a future fetch
             scores["credited_issues"].append(issue_key)
-            to_remove.append(issue)
+            issue["closed"] = True
 
             # Track weekly contributors
             current_week = arena_week_id()
@@ -419,9 +421,6 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
                     "week": week_id,
                 }
             )
-
-        for issue in to_remove:
-            issue_list.remove(issue)
 
     return new_credits
 
@@ -523,6 +522,15 @@ def main():
     for week_id, week_data in state.items():
         new = process_week(week_id, week_data, scores)
         all_new_credits.extend(new)
+
+    # Purge closed issues from weeks that are no longer the current week.
+    # Issues with a pending PR (no closed flag) survive and keep being tracked.
+    current_week = arena_week_id()
+    for week_id, week_data in state.items():
+        if week_id == current_week:
+            continue
+        for cat_issues in week_data["issues"].values():
+            cat_issues[:] = [i for i in cat_issues if not i.get("closed")]
 
     # Drop weeks whose issue lists are all empty
     state = {k: v for k, v in state.items() if any(v["issues"].values())}

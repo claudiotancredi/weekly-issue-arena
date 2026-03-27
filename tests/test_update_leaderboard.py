@@ -8,6 +8,7 @@ from unittest.mock import Mock, patch
 sys.path.insert(0, "scripts")
 
 from update_leaderboard import (  # noqa: E402, I001
+    arena_week_id,
     build_leaderboard_md,
     build_weekly_contributors_md,
     get_rank,
@@ -498,8 +499,8 @@ class TestProcessWeek:
 
     @patch("update_leaderboard.get_closing_pr")
     @patch("update_leaderboard.check_issue_still_open")
-    def test_already_credited_issue_removed(self, mock_open, mock_pr):
-        """Already credited issues are removed from the list without API calls."""  # noqa: E501
+    def test_already_credited_issue_gets_closed_flag(self, mock_open, mock_pr):
+        """Already credited issues are marked closed=True without API calls."""
         issue = _make_issue()
         key = "org/proj#1"
         scores = _make_scores(credited=[key])
@@ -508,7 +509,8 @@ class TestProcessWeek:
         result = process_week("2026-W11", week, scores)
 
         assert result == []
-        assert week["issues"]["gfi"] == []
+        assert len(week["issues"]["gfi"]) == 1
+        assert week["issues"]["gfi"][0]["closed"] is True
         mock_open.assert_not_called()
         mock_pr.assert_not_called()
 
@@ -531,10 +533,10 @@ class TestProcessWeek:
     @patch("update_leaderboard.get_closing_pr")
     @patch("update_leaderboard.has_pending_pr")
     @patch("update_leaderboard.check_issue_still_open")
-    def test_open_past_window_no_pr_removed(
+    def test_open_past_window_no_pr_gets_closed_flag(
         self, mock_open, mock_pending, mock_pr
     ):
-        """Open issue past 7-day window with no PR is removed."""
+        """Open issue past 7-day window with no PR is marked closed=True."""
         listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
@@ -545,7 +547,8 @@ class TestProcessWeek:
         result = process_week("2026-W11", week, scores)
 
         assert result == []
-        assert week["issues"]["gfi"] == []
+        assert len(week["issues"]["gfi"]) == 1
+        assert week["issues"]["gfi"][0].get("closed") is True
         assert "org/proj#1" not in scores["credited_issues"]
         mock_pr.assert_not_called()
 
@@ -572,8 +575,8 @@ class TestProcessWeek:
 
     @patch("update_leaderboard.get_closing_pr")
     @patch("update_leaderboard.check_issue_still_open")
-    def test_closed_no_pr_skipped(self, mock_open, mock_pr):
-        """Closed issue with no closing PR is skipped."""
+    def test_closed_no_pr_gets_closed_flag(self, mock_open, mock_pr):
+        """Closed issue with no closing PR is marked closed=True."""
         issue = _make_issue()
         scores = _make_scores()
         week = _make_week_data({"bug": [issue]})
@@ -584,11 +587,15 @@ class TestProcessWeek:
 
         assert result == []
         assert "org/proj#1" not in scores["credited_issues"]
+        assert len(week["issues"]["bug"]) == 1
+        assert week["issues"]["bug"][0].get("closed") is True
 
     @patch("update_leaderboard.get_closing_pr")
     @patch("update_leaderboard.check_issue_still_open")
-    def test_closed_pr_opened_too_late(self, mock_open, mock_pr):
-        """PR opened after 7-day window removes issue without blacklisting."""
+    def test_closed_pr_opened_too_late_gets_closed_flag(
+        self, mock_open, mock_pr
+    ):
+        """PR opened after 7-day window marks issue closed=True."""
         listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
@@ -603,7 +610,8 @@ class TestProcessWeek:
         result = process_week("2026-W11", week, scores)
 
         assert result == []
-        assert week["issues"]["hard"] == []
+        assert len(week["issues"]["hard"]) == 1
+        assert week["issues"]["hard"][0].get("closed") is True
         assert "org/proj#1" not in scores["credited_issues"]
 
     @patch("update_leaderboard.arena_week_id")
@@ -645,7 +653,8 @@ class TestProcessWeek:
         assert contrib["points"] == 2
 
         assert "org/proj#1" in scores["credited_issues"]
-        assert week["issues"]["bug"] == []
+        assert len(week["issues"]["bug"]) == 1
+        assert week["issues"]["bug"][0].get("closed") is True
         assert "hero" in scores["weekly"]["2026-W12"]
 
     @patch("update_leaderboard.arena_week_id")
@@ -774,10 +783,10 @@ class TestProcessWeek:
     @patch("update_leaderboard.has_pending_pr")
     @patch("update_leaderboard.get_closing_pr")
     @patch("update_leaderboard.check_issue_still_open")
-    def test_open_past_window_merged_without_close_removed(
+    def test_open_past_window_merged_without_close_gets_closed_flag(
         self, mock_open, mock_closing_pr, mock_pending
     ):
-        """Open past window with merged-without-close PR is removed."""
+        """Open past window with merged-without-close PR is marked closed."""
         listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
@@ -789,7 +798,8 @@ class TestProcessWeek:
 
         process_week("2026-W11", week, scores)
 
-        assert week["issues"]["gfi"] == []
+        assert len(week["issues"]["gfi"]) == 1
+        assert week["issues"]["gfi"][0].get("closed") is True
         assert "org/proj#1" not in scores["credited_issues"]
 
     @patch("update_leaderboard.arena_week_id")
@@ -827,7 +837,8 @@ class TestProcessWeek:
         assert len(result2) == 1
         assert result2[0]["author"] == "hero"
         assert result2[0]["pts"] == 2
-        assert week["issues"]["bug"] == []
+        assert len(week["issues"]["bug"]) == 1
+        assert week["issues"]["bug"][0].get("closed") is True
         assert "org/proj#1" in scores["credited_issues"]
 
     @patch("update_leaderboard.has_pending_pr")
@@ -854,7 +865,8 @@ class TestProcessWeek:
 
         process_week("2026-W11", week, scores)
 
-        assert week["issues"]["gfi"] == []
+        assert len(week["issues"]["gfi"]) == 1
+        assert week["issues"]["gfi"][0].get("closed") is True
         mock_pending.assert_called_once()
 
     @patch("update_leaderboard.has_pending_pr")
@@ -863,7 +875,7 @@ class TestProcessWeek:
     def test_two_issues_one_with_pr_one_without(
         self, mock_open, mock_pr, mock_pending
     ):
-        """One issue with a pending PR is kept; one without is removed."""
+        """Pending-PR issue stays open; issue without PR gets closed=True."""
         listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
         issue_a = _make_issue(number=1, listed_at=listed)
         issue_b = _make_issue(number=2, listed_at=listed)
@@ -873,13 +885,16 @@ class TestProcessWeek:
         mock_pending.side_effect = [
             True,
             False,
-        ]  # issue_a kept, issue_b removed
+        ]  # issue_a kept open, issue_b marked closed
 
         process_week("2026-W11", week, scores)
 
         remaining = week["issues"]["gfi"]
-        assert len(remaining) == 1
+        assert len(remaining) == 2
         assert remaining[0]["number"] == 1
+        assert not remaining[0].get("closed")
+        assert remaining[1]["number"] == 2
+        assert remaining[1].get("closed") is True
 
     @patch("update_leaderboard.has_pending_pr")
     @patch("update_leaderboard.get_closing_pr")
@@ -904,6 +919,123 @@ class TestProcessWeek:
         # has_pending_pr must NOT have been called — within window
         mock_pending.assert_not_called()
         assert len(week["issues"]["gfi"]) == 1
+
+    @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.has_pending_pr")
+    @patch("update_leaderboard.check_issue_still_open")
+    def test_expired_issue_gets_closed_flag(
+        self, mock_open, mock_pending, mock_pr
+    ):
+        """Open issue past 7-day window with no PR gets closed=True flag."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"gfi": [issue]})
+        mock_open.return_value = True
+        mock_pending.return_value = False
+
+        process_week("2026-W11", week, scores)
+
+        assert len(week["issues"]["gfi"]) == 1
+        assert week["issues"]["gfi"][0].get("closed") is True
+        assert "org/proj#1" not in scores["credited_issues"]
+
+    @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.check_issue_still_open")
+    def test_late_pr_issue_gets_closed_flag(self, mock_open, mock_pr):
+        """Issue with a PR opened after the 7-day window gets closed=True."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"bug": [issue]})
+        mock_open.return_value = False
+        late_created = (
+            datetime.now(timezone.utc) - timedelta(days=1)
+        ).isoformat()
+        mock_pr.return_value = _make_pr(created_at=late_created)
+
+        process_week("2026-W11", week, scores)
+
+        assert len(week["issues"]["bug"]) == 1
+        assert week["issues"]["bug"][0].get("closed") is True
+        assert "org/proj#1" not in scores["credited_issues"]
+
+    @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.check_issue_still_open")
+    def test_no_closing_pr_gets_closed_flag(self, mock_open, mock_pr):
+        """Issue closed on GitHub with no qualifying PR gets closed=True."""
+        issue = _make_issue()
+        scores = _make_scores()
+        week = _make_week_data({"hard": [issue]})
+        mock_open.return_value = False
+        mock_pr.return_value = None
+
+        process_week("2026-W11", week, scores)
+
+        assert len(week["issues"]["hard"]) == 1
+        assert week["issues"]["hard"][0].get("closed") is True
+        assert "org/proj#1" not in scores["credited_issues"]
+
+    @patch("update_leaderboard.arena_week_id")
+    def test_old_week_closed_issues_purged(self, mock_week_id):
+        """Cleanup step removes closed=True issues from non-current weeks."""
+        mock_week_id.return_value = "2026-W12"
+
+        # W11: one closed issue, one open (pending PR)
+        closed_issue = _make_issue(number=1)
+        closed_issue["closed"] = True
+        open_issue = _make_issue(number=2)
+
+        state = {
+            "2026-W11": {
+                "fetched_at": "2026-03-13T17:00:00+00:00",
+                "issues": {
+                    "gfi": [closed_issue, open_issue],
+                    "bug": [],
+                    "hard": [],
+                },
+            }
+        }
+
+        # Apply the same cleanup logic used in main()
+        current_week = arena_week_id()
+        for week_id, week_data in state.items():
+            if week_id == current_week:
+                continue
+            for cat_issues in week_data["issues"].values():
+                cat_issues[:] = [i for i in cat_issues if not i.get("closed")]
+
+        remaining = state["2026-W11"]["issues"]["gfi"]
+        assert len(remaining) == 1
+        assert remaining[0]["number"] == 2
+        assert not remaining[0].get("closed")
+
+    @patch("update_leaderboard.arena_week_id")
+    def test_current_week_closed_issues_not_purged(self, mock_week_id):
+        """Cleanup step keeps closed=True issues in the current week."""
+        mock_week_id.return_value = "2026-W12"
+
+        closed_issue = _make_issue(number=1)
+        closed_issue["closed"] = True
+
+        state = {
+            "2026-W12": {
+                "fetched_at": "2026-03-20T17:00:00+00:00",
+                "issues": {"gfi": [closed_issue], "bug": [], "hard": []},
+            }
+        }
+
+        # Apply the same cleanup logic used in main()
+        current_week = arena_week_id()
+        for week_id, week_data in state.items():
+            if week_id == current_week:
+                continue
+            for cat_issues in week_data["issues"].values():
+                cat_issues[:] = [i for i in cat_issues if not i.get("closed")]
+
+        remaining = state["2026-W12"]["issues"]["gfi"]
+        assert len(remaining) == 1
+        assert remaining[0].get("closed") is True
 
 
 # ── build_leaderboard_md ─────────────────────────────────────

@@ -22,6 +22,7 @@ export interface Issue {
   updated_at: string;
   author: string;
   listed_at: string;
+  closed?: boolean;
 }
 
 export interface CategorizedIssues {
@@ -117,7 +118,12 @@ export function getAllCurrentIssues(): IssueWithCategory[] {
     const points = category === "hard" ? 4 : category === "bug" ? 2 : 1;
     for (const issue of items) {
       const key = `${issue.owner}/${issue.repo}#${issue.number}`;
-      result.push({ ...issue, category, points, closed: creditedSet.has(key) });
+      result.push({
+        ...issue,
+        category,
+        points,
+        closed: creditedSet.has(key) || issue.closed === true,
+      });
     }
   }
 

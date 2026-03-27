@@ -243,7 +243,8 @@
           "created_at": "2024-03-18T11:45:03Z",
           "updated_at": "2026-03-18T21:14:44Z",
           "author": "kitee0325",
-          "listed_at": "2026-03-20T17:00:00+00:00"
+          "listed_at": "2026-03-20T17:00:00+00:00",
+          "closed": true
         },
         {
           "number": 1958,

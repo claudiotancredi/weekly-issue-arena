@@ -558,8 +558,11 @@ def main():
     readme = update_issue_statuses(readme)
     README_PATH.write_text(readme, encoding="utf-8")
     log.info("README leaderboard updated.")
-    if all_new_credits:
-        print("NEW_CREDITS:" + json.dumps(all_new_credits))
+    for c in all_new_credits:
+        log.info(
+            f"Credited: @{c['author']} +{c['pts']}pt(s) "
+            f"for {c['issue']} (listed {c['week']})"
+        )
 
 
 if __name__ == "__main__":

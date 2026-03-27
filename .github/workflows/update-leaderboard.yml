@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: write
-  discussions: write
 
 concurrency:
   group: arena-state-write
@@ -32,14 +31,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Update leaderboard
-        id: leaderboard
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          output=$(python scripts/update_leaderboard.py)
-          echo "$output"
-          credits=$(echo "$output" | grep "^NEW_CREDITS:" | sed 's/^NEW_CREDITS://')
-          echo "new_credits=$credits" >> $GITHUB_OUTPUT
+        run: python scripts/update_leaderboard.py
 
       - name: Commit and push changes
         run: |
@@ -49,38 +43,3 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: hourly leaderboard update [skip ci]"
           git pull --rebase origin main
           git push
-
-      - name: Post Discussion comment for new credits
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DISCUSSION_ID: "D_kwDONjXVVM4Akt8_"
-          NEW_CREDITS: ${{ steps.leaderboard.outputs.new_credits }}
-        run: |
-          if [ -z "$NEW_CREDITS" ]; then
-            echo "No new credits, skipping."
-            exit 0
-          fi
-          python -c "
-          import json, os
-          credits = json.loads(os.environ['NEW_CREDITS'])
-          lines = []
-          for c in credits:
-              issue_url = c['issue'].replace('#', '/issues/')
-              lines.append(
-                  f\"@{c['author']} earned **{c['pts']} pt(s)** \"
-                  f\"for closing [{c['issue']}]\"
-                  f\"(https://github.com/{issue_url})\"
-              )
-          with open('/tmp/mention.txt', 'w') as f:
-              f.write('\n'.join(lines))
-          "
-          gh api graphql \
-            --field discussionId="$DISCUSSION_ID" \
-            --field "body=@/tmp/mention.txt" \
-            -f query='
-            mutation($discussionId: ID!, $body: String!) {
-              addDiscussionComment(input: {discussionId: $discussionId, body: $body}) {
-                comment { id }
-              }
-            }
-          '

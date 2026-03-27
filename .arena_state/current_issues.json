@@ -1,50 +1,68 @@
 [
   {
-    "owner": "holoviz",
-    "repo": "panel",
-    "number": 6357,
+    "owner": "sunpy",
+    "repo": "sunpy",
+    "number": 2784,
     "category": "gfi"
   },
   {
-    "owner": "biomejs",
-    "repo": "biome",
-    "number": 9062,
+    "owner": "pylint-dev",
+    "repo": "pylint",
+    "number": 9317,
     "category": "gfi"
   },
   {
-    "owner": "sktime",
-    "repo": "sktime",
-    "number": 4264,
+    "owner": "nuxt",
+    "repo": "nuxt",
+    "number": 33678,
     "category": "gfi"
   },
   {
-    "owner": "apache",
-    "repo": "echarts",
-    "number": 18446,
+    "owner": "microsoft",
+    "repo": "TypeScript",
+    "number": 37782,
+    "category": "gfi"
+  },
+  {
+    "owner": "cypress-io",
+    "repo": "cypress",
+    "number": 32779,
+    "category": "gfi"
+  },
+  {
+    "owner": "qdrant",
+    "repo": "qdrant",
+    "number": 3140,
+    "category": "gfi"
+  },
+  {
+    "owner": "milvus-io",
+    "repo": "milvus",
+    "number": 21728,
+    "category": "gfi"
+  },
+  {
+    "owner": "microsoft",
+    "repo": "TypeScript",
+    "number": 20183,
+    "category": "gfi"
+  },
+  {
+    "owner": "pytroll",
+    "repo": "satpy",
+    "number": 3116,
     "category": "gfi"
   },
   {
     "owner": "huggingface",
-    "repo": "peft",
-    "number": 2310,
+    "repo": "accelerate",
+    "number": 3078,
     "category": "gfi"
   },
   {
-    "owner": "grafana",
-    "repo": "grafana",
-    "number": 118375,
-    "category": "gfi"
-  },
-  {
-    "owner": "apache",
-    "repo": "iceberg",
-    "number": 13506,
-    "category": "gfi"
-  },
-  {
-    "owner": "hasura",
-    "repo": "graphql-engine",
-    "number": 2871,
+    "owner": "gradio-app",
+    "repo": "gradio",
+    "number": 8826,
     "category": "gfi"
   },
   {
@@ -54,189 +72,141 @@
     "category": "gfi"
   },
   {
-    "owner": "openai",
-    "repo": "openai-python",
-    "number": 622,
+    "owner": "pre-commit",
+    "repo": "pre-commit",
+    "number": 2732,
     "category": "gfi"
   },
   {
-    "owner": "tracel-ai",
-    "repo": "burn",
-    "number": 2191,
+    "owner": "actix",
+    "repo": "actix-web",
+    "number": 3263,
     "category": "gfi"
   },
   {
-    "owner": "crossplane",
-    "repo": "crossplane",
-    "number": 6788,
+    "owner": "nuxt",
+    "repo": "nuxt",
+    "number": 29847,
     "category": "gfi"
   },
   {
-    "owner": "storybookjs",
-    "repo": "storybook",
-    "number": 15946,
+    "owner": "open-telemetry",
+    "repo": "opentelemetry-python",
+    "number": 2990,
     "category": "gfi"
   },
   {
-    "owner": "microsoft",
-    "repo": "TypeScript",
-    "number": 27910,
-    "category": "gfi"
-  },
-  {
-    "owner": "scrapy",
-    "repo": "scrapy",
-    "number": 5703,
-    "category": "gfi"
-  },
-  {
-    "owner": "chroma-core",
-    "repo": "chroma",
-    "number": 2334,
-    "category": "gfi"
-  },
-  {
-    "owner": "zaproxy",
-    "repo": "zaproxy",
-    "number": 129,
-    "category": "gfi"
-  },
-  {
-    "owner": "biomejs",
-    "repo": "biome",
-    "number": 8155,
+    "owner": "hashicorp",
+    "repo": "nomad",
+    "number": 27758,
     "category": "gfi"
   },
   {
     "owner": "hasura",
     "repo": "graphql-engine",
-    "number": 1184,
+    "number": 3469,
     "category": "gfi"
   },
   {
-    "owner": "vercel",
-    "repo": "next.js",
-    "number": 41281,
+    "owner": "geopandas",
+    "repo": "geopandas",
+    "number": 529,
     "category": "gfi"
   },
   {
-    "owner": "apache",
-    "repo": "echarts",
-    "number": 19728,
+    "owner": "feast-dev",
+    "repo": "feast",
+    "number": 6048,
+    "category": "gfi"
+  },
+  {
+    "owner": "getsentry",
+    "repo": "sentry",
+    "number": 111702,
     "category": "bug"
   },
   {
-    "owner": "roboflow",
-    "repo": "supervision",
-    "number": 1958,
+    "owner": "dask",
+    "repo": "dask",
+    "number": 11200,
     "category": "bug"
   },
   {
-    "owner": "apache",
-    "repo": "tvm",
-    "number": 18713,
+    "owner": "pytroll",
+    "repo": "pyresample",
+    "number": 689,
     "category": "bug"
   },
   {
-    "owner": "PostHog",
-    "repo": "posthog",
-    "number": 51776,
-    "category": "bug"
-  },
-  {
-    "owner": "pydata",
-    "repo": "xarray",
-    "number": 10819,
-    "category": "bug"
-  },
-  {
-    "owner": "mkdocs",
-    "repo": "mkdocs",
-    "number": 3905,
-    "category": "bug"
-  },
-  {
-    "owner": "opencv",
-    "repo": "opencv",
-    "number": 28648,
-    "category": "bug"
-  },
-  {
-    "owner": "PyWavelets",
-    "repo": "pywt",
-    "number": 767,
-    "category": "bug"
-  },
-  {
-    "owner": "linkerd",
-    "repo": "linkerd2",
-    "number": 14642,
-    "category": "bug"
-  },
-  {
-    "owner": "pyproj4",
-    "repo": "pyproj",
-    "number": 1528,
-    "category": "bug"
-  },
-  {
-    "owner": "aio-libs",
-    "repo": "aiohttp",
-    "number": 12234,
-    "category": "bug"
-  },
-  {
-    "owner": "onnx",
-    "repo": "onnx",
-    "number": 3947,
-    "category": "bug"
-  },
-  {
-    "owner": "pypa",
-    "repo": "pip",
-    "number": 13406,
+    "owner": "coqui-ai",
+    "repo": "TTS",
+    "number": 4410,
     "category": "bug"
   },
   {
     "owner": "speechbrain",
     "repo": "speechbrain",
-    "number": 3012,
+    "number": 3027,
+    "category": "bug"
+  },
+  {
+    "owner": "facebook",
+    "repo": "react-native",
+    "number": 20157,
+    "category": "bug"
+  },
+  {
+    "owner": "speechbrain",
+    "repo": "speechbrain",
+    "number": 2661,
+    "category": "bug"
+  },
+  {
+    "owner": "open-telemetry",
+    "repo": "opentelemetry-python",
+    "number": 4993,
+    "category": "bug"
+  },
+  {
+    "owner": "stac-utils",
+    "repo": "pystac-client",
+    "number": 855,
+    "category": "bug"
+  },
+  {
+    "owner": "coredns",
+    "repo": "coredns",
+    "number": 7956,
+    "category": "bug"
+  },
+  {
+    "owner": "dmlc",
+    "repo": "xgboost",
+    "number": 11854,
     "category": "bug"
   },
   {
     "owner": "apache",
     "repo": "echarts",
-    "number": 11115,
-    "category": "hard"
+    "number": 16743,
+    "category": "bug"
   },
   {
-    "owner": "matplotlib",
-    "repo": "matplotlib",
-    "number": 20243,
-    "category": "hard"
+    "owner": "Esri",
+    "repo": "arcgis-python-api",
+    "number": 2460,
+    "category": "bug"
   },
   {
-    "owner": "pandas-dev",
-    "repo": "pandas",
-    "number": 54445,
-    "category": "hard"
+    "owner": "supabase",
+    "repo": "supabase",
+    "number": 44242,
+    "category": "bug"
   },
   {
     "owner": "scikit-learn",
     "repo": "scikit-learn",
-    "number": 22827,
-    "category": "hard"
-  },
-  {
-    "owner": "rasterio",
-    "repo": "rasterio",
-    "number": 1990,
-    "category": "hard"
-  },
-  {
-    "owner": "huggingface",
-    "repo": "diffusers",
-    "number": 9508,
+    "number": 14437,
     "category": "hard"
   },
   {
@@ -246,9 +216,33 @@
     "category": "hard"
   },
   {
+    "owner": "rasterio",
+    "repo": "rasterio",
+    "number": 1990,
+    "category": "hard"
+  },
+  {
+    "owner": "pandas-dev",
+    "repo": "pandas",
+    "number": 9379,
+    "category": "hard"
+  },
+  {
     "owner": "matplotlib",
     "repo": "matplotlib",
-    "number": 15715,
+    "number": 29628,
+    "category": "hard"
+  },
+  {
+    "owner": "matplotlib",
+    "repo": "matplotlib",
+    "number": 20243,
+    "category": "hard"
+  },
+  {
+    "owner": "rasterio",
+    "repo": "rasterio",
+    "number": 1270,
     "category": "hard"
   },
   {
@@ -260,7 +254,13 @@
   {
     "owner": "pandas-dev",
     "repo": "pandas",
-    "number": 62421,
+    "number": 54445,
+    "category": "hard"
+  },
+  {
+    "owner": "apache",
+    "repo": "echarts",
+    "number": 11115,
     "category": "hard"
   }
 ]

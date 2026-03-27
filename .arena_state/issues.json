@@ -4,18 +4,6 @@
     "issues": {
       "gfi": [
         {
-          "number": 6357,
-          "title": "Add `widget_placeholder` to ChatInterface",
-          "url": "https://github.com/holoviz/panel/issues/6357",
-          "owner": "holoviz",
-          "repo": "panel",
-          "repo_url": "https://github.com/holoviz/panel",
-          "created_at": "2024-02-18T05:42:20Z",
-          "updated_at": "2026-02-25T09:35:22Z",
-          "author": "ahuang11",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
           "number": 4264,
           "title": "[ENH] add at least one usage example to docstrings of estimators",
           "url": "https://github.com/sktime/sktime/issues/4264",
@@ -25,30 +13,6 @@
           "created_at": "2023-02-23T09:02:29Z",
           "updated_at": "2026-03-19T17:57:00Z",
           "author": "fkiraly",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 18446,
-          "title": "[Feature] Clear axis range selection by action in parallel coordinates plot",
-          "url": "https://github.com/apache/echarts/issues/18446",
-          "owner": "apache",
-          "repo": "echarts",
-          "repo_url": "https://github.com/apache/echarts",
-          "created_at": "2023-03-29T11:39:11Z",
-          "updated_at": "2024-07-26T13:46:11Z",
-          "author": "rettrich",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 2310,
-          "title": "Comparison of Different Fine-Tuning Techniques for Conversational AI",
-          "url": "https://github.com/huggingface/peft/issues/2310",
-          "owner": "huggingface",
-          "repo": "peft",
-          "repo_url": "https://github.com/huggingface/peft",
-          "created_at": "2025-01-07T07:07:50Z",
-          "updated_at": "2025-12-15T09:58:10Z",
-          "author": "ImamaDev",
           "listed_at": "2026-03-20T17:00:00+00:00"
         },
         {
@@ -64,42 +28,6 @@
           "listed_at": "2026-03-20T17:00:00+00:00"
         },
         {
-          "number": 13506,
-          "title": "Delegate `delete` to JUnit",
-          "url": "https://github.com/apache/iceberg/issues/13506",
-          "owner": "apache",
-          "repo": "iceberg",
-          "repo_url": "https://github.com/apache/iceberg",
-          "created_at": "2025-07-09T22:28:48Z",
-          "updated_at": "2026-03-19T00:25:40Z",
-          "author": "Fokko",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 2871,
-          "title": "docs: update troubleshooting guide with errors",
-          "url": "https://github.com/hasura/graphql-engine/issues/2871",
-          "owner": "hasura",
-          "repo": "graphql-engine",
-          "repo_url": "https://github.com/hasura/graphql-engine",
-          "created_at": "2019-09-12T13:35:04Z",
-          "updated_at": "2024-04-03T06:38:22Z",
-          "author": "marionschleifer",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 12220,
-          "title": "Memory leak when programmatically changing 'source' prop of Image",
-          "url": "https://github.com/facebook/react-native/issues/12220",
-          "owner": "facebook",
-          "repo": "react-native",
-          "repo_url": "https://github.com/facebook/react-native",
-          "created_at": "2017-02-05T21:22:30Z",
-          "updated_at": "2025-11-20T22:10:35Z",
-          "author": "tomchambers2",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
           "number": 622,
           "title": "OpenAI CLI Tools for Chat Fine-Tuning",
           "url": "https://github.com/openai/openai-python/issues/622",
@@ -112,30 +40,6 @@
           "listed_at": "2026-03-20T17:00:00+00:00"
         },
         {
-          "number": 2191,
-          "title": "[Example] Revamp notebooks",
-          "url": "https://github.com/tracel-ai/burn/issues/2191",
-          "owner": "tracel-ai",
-          "repo": "burn",
-          "repo_url": "https://github.com/tracel-ai/burn",
-          "created_at": "2024-08-22T12:53:18Z",
-          "updated_at": "2026-02-10T00:55:33Z",
-          "author": "laggui",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 6788,
-          "title": "E2E tests don't validate realtime composition performance for namespaced XRs",
-          "url": "https://github.com/crossplane/crossplane/issues/6788",
-          "owner": "crossplane",
-          "repo": "crossplane",
-          "repo_url": "https://github.com/crossplane/crossplane",
-          "created_at": "2025-09-08T21:21:15Z",
-          "updated_at": "2026-02-18T01:56:00Z",
-          "author": "negz",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
           "number": 15946,
           "title": "build-storybook watch mode not working",
           "url": "https://github.com/storybookjs/storybook/issues/15946",
@@ -145,18 +49,6 @@
           "created_at": "2021-08-30T19:01:00Z",
           "updated_at": "2026-02-18T09:41:05Z",
           "author": "saulrobe",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 27910,
-          "title": "TS2367: This condition will always return 'false' since the types 'Constructor<T>' and 'typeof Child' have no overlap.",
-          "url": "https://github.com/microsoft/TypeScript/issues/27910",
-          "owner": "microsoft",
-          "repo": "TypeScript",
-          "repo_url": "https://github.com/microsoft/TypeScript",
-          "created_at": "2018-10-15T15:55:42Z",
-          "updated_at": "2026-03-17T16:22:57Z",
-          "author": "the-ress",
           "listed_at": "2026-03-20T17:00:00+00:00"
         },
         {
@@ -184,18 +76,6 @@
           "listed_at": "2026-03-20T17:00:00+00:00"
         },
         {
-          "number": 129,
-          "title": "WebDAV active checks",
-          "url": "https://github.com/zaproxy/zaproxy/issues/129",
-          "owner": "zaproxy",
-          "repo": "zaproxy",
-          "repo_url": "https://github.com/zaproxy/zaproxy",
-          "created_at": "2015-06-04T13:23:57Z",
-          "updated_at": "2025-02-27T23:35:03Z",
-          "author": "zapbot",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
           "number": 8155,
           "title": "\u2602\ufe0f Port `a11y` rules to HTML",
           "url": "https://github.com/biomejs/biome/issues/8155",
@@ -205,18 +85,6 @@
           "created_at": "2025-11-18T17:05:43Z",
           "updated_at": "2026-03-16T13:48:30Z",
           "author": "ematipico",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 1184,
-          "title": "docs: guide on using django migrations with hasura",
-          "url": "https://github.com/hasura/graphql-engine/issues/1184",
-          "owner": "hasura",
-          "repo": "graphql-engine",
-          "repo_url": "https://github.com/hasura/graphql-engine",
-          "created_at": "2018-12-11T11:52:21Z",
-          "updated_at": "2026-03-16T00:00:22Z",
-          "author": "tirumaraiselvan",
           "listed_at": "2026-03-20T17:00:00+00:00"
         },
         {
@@ -233,67 +101,6 @@
         }
       ],
       "bug": [
-        {
-          "number": 19728,
-          "title": "[Bug] small shifts in scatter scatter",
-          "url": "https://github.com/apache/echarts/issues/19728",
-          "owner": "apache",
-          "repo": "echarts",
-          "repo_url": "https://github.com/apache/echarts",
-          "created_at": "2024-03-18T11:45:03Z",
-          "updated_at": "2026-03-18T21:14:44Z",
-          "author": "kitee0325",
-          "listed_at": "2026-03-20T17:00:00+00:00",
-          "closed": true
-        },
-        {
-          "number": 1958,
-          "title": "AttributeError: type object 'Detections' has no attribute 'from_roboflow'. Did you mean: 'from_tensorflow'?",
-          "url": "https://github.com/roboflow/supervision/issues/1958",
-          "owner": "roboflow",
-          "repo": "supervision",
-          "repo_url": "https://github.com/roboflow/supervision",
-          "created_at": "2025-09-11T06:29:01Z",
-          "updated_at": "2025-10-02T18:48:00Z",
-          "author": "yjseok",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 18713,
-          "title": "[Bug] python -c \"import tvm; print(tvm.__file__)\" fail\uff0cversion:v0.23.0.rc0\u3002",
-          "url": "https://github.com/apache/tvm/issues/18713",
-          "owner": "apache",
-          "repo": "tvm",
-          "repo_url": "https://github.com/apache/tvm",
-          "created_at": "2026-02-05T06:57:37Z",
-          "updated_at": "2026-03-18T01:25:59Z",
-          "author": "tambax56",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 51776,
-          "title": "Bug: Can't enable \"Use person properties from query time\" from within a notebook",
-          "url": "https://github.com/PostHog/posthog/issues/51776",
-          "owner": "PostHog",
-          "repo": "posthog",
-          "repo_url": "https://github.com/PostHog/posthog",
-          "created_at": "2026-03-20T13:57:34Z",
-          "updated_at": "2026-03-20T15:37:33Z",
-          "author": "xljones",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 10819,
-          "title": "New h5netcdf engine may create files which netCDF can't read",
-          "url": "https://github.com/pydata/xarray/issues/10819",
-          "owner": "pydata",
-          "repo": "xarray",
-          "repo_url": "https://github.com/pydata/xarray",
-          "created_at": "2025-10-06T11:41:52Z",
-          "updated_at": "2026-03-13T17:55:17Z",
-          "author": "pp-mo",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
         {
           "number": 3905,
           "title": "\"mkdocs serve\" does not cleanup after a SIGTERM",
@@ -319,18 +126,6 @@
           "listed_at": "2026-03-20T17:00:00+00:00"
         },
         {
-          "number": 767,
-          "title": "pywt.swt yields unexpected results",
-          "url": "https://github.com/PyWavelets/pywt/issues/767",
-          "owner": "PyWavelets",
-          "repo": "pywt",
-          "repo_url": "https://github.com/PyWavelets/pywt",
-          "created_at": "2024-09-02T13:44:11Z",
-          "updated_at": "2024-09-04T16:29:20Z",
-          "author": "M3rano",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
           "number": 14642,
           "title": "Linkerd Viz web page does not show the gateways",
           "url": "https://github.com/linkerd/linkerd2/issues/14642",
@@ -340,18 +135,6 @@
           "created_at": "2025-10-21T11:49:33Z",
           "updated_at": "2026-03-19T04:45:58Z",
           "author": "manju-rn",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 1528,
-          "title": "Cannot git commit without python3.11",
-          "url": "https://github.com/pyproj4/pyproj/issues/1528",
-          "owner": "pyproj4",
-          "repo": "pyproj",
-          "repo_url": "https://github.com/pyproj4/pyproj",
-          "created_at": "2025-09-12T18:38:43Z",
-          "updated_at": "2025-09-13T17:26:27Z",
-          "author": "jjimenezshaw",
           "listed_at": "2026-03-20T17:00:00+00:00"
         },
         {
@@ -389,57 +172,9 @@
           "updated_at": "2026-03-15T15:55:22Z",
           "author": "anionDev",
           "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 3012,
-          "title": "AttributeError: module 'torchaudio' has no attribute 'list_audio_backends'",
-          "url": "https://github.com/speechbrain/speechbrain/issues/3012",
-          "owner": "speechbrain",
-          "repo": "speechbrain",
-          "repo_url": "https://github.com/speechbrain/speechbrain",
-          "created_at": "2025-12-03T16:00:33Z",
-          "updated_at": "2026-02-16T20:15:14Z",
-          "author": "matrn",
-          "listed_at": "2026-03-20T17:00:00+00:00"
         }
       ],
       "hard": [
-        {
-          "number": 11115,
-          "title": "Multiple tooltips with different trigger type",
-          "url": "https://github.com/apache/echarts/issues/11115",
-          "owner": "apache",
-          "repo": "echarts",
-          "repo_url": "https://github.com/apache/echarts",
-          "created_at": "2019-08-27T08:09:23Z",
-          "updated_at": "2024-06-21T11:28:12Z",
-          "author": "dileepyelleti",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 20243,
-          "title": "matplotlib eventplot not shows all the binary data for big number of events",
-          "url": "https://github.com/matplotlib/matplotlib/issues/20243",
-          "owner": "matplotlib",
-          "repo": "matplotlib",
-          "repo_url": "https://github.com/matplotlib/matplotlib",
-          "created_at": "2021-05-16T20:38:34Z",
-          "updated_at": "2026-03-10T19:43:07Z",
-          "author": "lorenzgutierrez",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 54445,
-          "title": "ENH: enable setitem dim2 test to work for EA with complex128 dtype",
-          "url": "https://github.com/pandas-dev/pandas/issues/54445",
-          "owner": "pandas-dev",
-          "repo": "pandas",
-          "repo_url": "https://github.com/pandas-dev/pandas",
-          "created_at": "2023-08-07T02:39:59Z",
-          "updated_at": "2024-07-17T22:23:25Z",
-          "author": "MichaelTiemannOSC",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
         {
           "number": 22827,
           "title": "Improve tests by using global_random_seed fixture to make them less seed-sensitive",
@@ -450,18 +185,6 @@
           "created_at": "2022-03-14T10:15:11Z",
           "updated_at": "2026-01-15T09:27:44Z",
           "author": "ogrisel",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 1990,
-          "title": "Rewrite _reproject() to use GDALWarp",
-          "url": "https://github.com/rasterio/rasterio/issues/1990",
-          "owner": "rasterio",
-          "repo": "rasterio",
-          "repo_url": "https://github.com/rasterio/rasterio",
-          "created_at": "2020-09-04T16:24:24Z",
-          "updated_at": "2024-10-02T15:32:50Z",
-          "author": "sgillies",
           "listed_at": "2026-03-20T17:00:00+00:00"
         },
         {
@@ -477,18 +200,6 @@
           "listed_at": "2026-03-20T17:00:00+00:00"
         },
         {
-          "number": 31407,
-          "title": "Cannot recover DBSCAN from memory-overuse",
-          "url": "https://github.com/scikit-learn/scikit-learn/issues/31407",
-          "owner": "scikit-learn",
-          "repo": "scikit-learn",
-          "repo_url": "https://github.com/scikit-learn/scikit-learn",
-          "created_at": "2025-05-21T11:38:43Z",
-          "updated_at": "2025-12-13T07:40:33Z",
-          "author": "hubernikus",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
           "number": 15715,
           "title": "Warnings in plot directive aren't treated as such by Sphinx",
           "url": "https://github.com/matplotlib/matplotlib/issues/15715",
@@ -498,18 +209,6 @@
           "created_at": "2019-11-18T18:02:22Z",
           "updated_at": "2026-01-04T09:07:54Z",
           "author": "astrofrog",
-          "listed_at": "2026-03-20T17:00:00+00:00"
-        },
-        {
-          "number": 12600,
-          "title": "Add KV Cache for Autoregressive Inference",
-          "url": "https://github.com/huggingface/diffusers/issues/12600",
-          "owner": "huggingface",
-          "repo": "diffusers",
-          "repo_url": "https://github.com/huggingface/diffusers",
-          "created_at": "2025-11-06T08:03:55Z",
-          "updated_at": "2026-02-03T15:16:19Z",
-          "author": "DN6",
           "listed_at": "2026-03-20T17:00:00+00:00"
         }
       ]

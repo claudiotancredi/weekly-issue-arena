@@ -40,7 +40,7 @@ No registration. No sign-ups. Just open source.
 *Everyone who earned points this week, regardless of leaderboard position.*
 
 <!-- WEEKLY:START -->
-<a href="https://github.com/Alvaro-Kothe"><img src="https://avatars.githubusercontent.com/u/60141605?v=4" width="48" height="48" style="border-radius:50%;" title="@Alvaro-Kothe"/></a> <a href="https://github.com/Netail"><img src="https://avatars.githubusercontent.com/u/11695769?v=4" width="48" height="48" style="border-radius:50%;" title="@Netail"/></a>
+*No contributions tracked yet for this week.*
 <!-- WEEKLY:END -->
 
 ---

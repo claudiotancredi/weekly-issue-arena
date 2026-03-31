@@ -88,7 +88,7 @@ No registration. No sign-ups. Just open source.
 | 5 | [DynamicItemDataset changes fields to string](https://github.com/speechbrain/speechbrain/issues/3027) | [speechbrain/speechbrain](https://github.com/speechbrain/speechbrain) | 🟢 Open |
 | 6 | [[InputAccessoryView] Can't specify keyboard-conditional b...](https://github.com/facebook/react-native/issues/20157) | [facebook/react-native](https://github.com/facebook/react-native) | 🟢 Open |
 | 7 | [SpeechBrain and ONNX](https://github.com/speechbrain/speechbrain/issues/2661) | [speechbrain/speechbrain](https://github.com/speechbrain/speechbrain) | 🟢 Open |
-| 8 | [Ensure OTel SDK backward compatibility with older API ver...](https://github.com/open-telemetry/opentelemetry-python/issues/4993) | [open-telemetry/opentelemetry-python](https://github.com/open-telemetry/opentelemetry-python) | 🟢 Open |
+| 8 | [Ensure OTel SDK backward compatibility with older API ver...](https://github.com/open-telemetry/opentelemetry-python/issues/4993) | [open-telemetry/opentelemetry-python](https://github.com/open-telemetry/opentelemetry-python) | 🔴 Closed |
 | 9 | [Error with using `max_items` and `sortby` parameters with...](https://github.com/stac-utils/pystac-client/issues/855) | [stac-utils/pystac-client](https://github.com/stac-utils/pystac-client) | 🟢 Open |
 | 10 | [Cache plugin: SERVFAIL in ncache can shadow valid positiv...](https://github.com/coredns/coredns/issues/7956) | [coredns/coredns](https://github.com/coredns/coredns) | 🟢 Open |
 | 11 | [Training a model with zero iterations](https://github.com/dmlc/xgboost/issues/11854) | [dmlc/xgboost](https://github.com/dmlc/xgboost) | 🟢 Open |

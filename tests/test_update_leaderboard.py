@@ -8,7 +8,6 @@ from unittest.mock import Mock, patch
 sys.path.insert(0, "scripts")
 
 from update_leaderboard import (  # noqa: E402, I001
-    arena_week_id,
     build_leaderboard_md,
     build_weekly_contributors_md,
     get_rank,
@@ -998,7 +997,7 @@ class TestProcessWeek:
         }
 
         # Apply the same cleanup logic used in main()
-        current_week = arena_week_id()
+        current_week = mock_week_id.return_value
         for week_id, week_data in state.items():
             if week_id == current_week:
                 continue
@@ -1026,7 +1025,7 @@ class TestProcessWeek:
         }
 
         # Apply the same cleanup logic used in main()
-        current_week = arena_week_id()
+        current_week = mock_week_id.return_value
         for week_id, week_data in state.items():
             if week_id == current_week:
                 continue

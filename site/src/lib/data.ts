@@ -204,3 +204,16 @@ export function getTotalIssuesThisWeek(): number {
   const issues = getCurrentWeekIssues();
   return issues.gfi.length + issues.bug.length + issues.hard.length;
 }
+
+export function getTotalPointsAwarded(): number {
+  const scores = getScores();
+  return Object.values(scores.players).reduce(
+    (total, player) => total + player.total_points,
+    0,
+  );
+}
+
+export function getTotalIssuesCredited(): number {
+  const scores = getScores();
+  return scores.credited_issues.length;
+}

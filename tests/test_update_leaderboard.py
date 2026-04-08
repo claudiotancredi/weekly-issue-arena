@@ -9,7 +9,7 @@ sys.path.insert(0, "scripts")
 
 from update_leaderboard import (  # noqa: E402, I001
     build_leaderboard_md,
-    build_weekly_contributors_md,
+    build_merged_this_week_md,
     get_rank,
     has_pending_pr,
     load_scores,
@@ -1143,27 +1143,27 @@ class TestBuildLeaderboardMd:
         assert "hwengineer.png" in md
 
 
-# ── build_weekly_contributors_md ─────────────────────────────
+# ── build_merged_this_week_md ─────────────────────────────
 
 
-class TestBuildWeeklyContributorsMd:
-    """Tests for build_weekly_contributors_md."""
+class TestBuildMergedThisWeekMd:
+    """Tests for build_merged_this_week_md."""
 
     @patch("update_leaderboard.arena_week_id")
     def test_no_contributors(self, mock_week_id):
         """No contributors yields fallback message."""
         mock_week_id.return_value = "2026-W12"
         scores = _make_scores()
-        md = build_weekly_contributors_md(scores)
-        assert "No contributions tracked" in md
+        md = build_merged_this_week_md(scores)
+        assert "No merged contributions" in md
 
     @patch("update_leaderboard.arena_week_id")
     def test_no_contributors_wrong_week(self, mock_week_id):
         """Contributors in other weeks are not shown."""
         mock_week_id.return_value = "2026-W12"
         scores = _make_scores(weekly={"2026-W10": ["alice"]})
-        md = build_weekly_contributors_md(scores)
-        assert "No contributions tracked" in md
+        md = build_merged_this_week_md(scores)
+        assert "No merged contributions" in md
 
     @patch("update_leaderboard.arena_week_id")
     def test_contributors_shown(self, mock_week_id):
@@ -1179,7 +1179,7 @@ class TestBuildWeeklyContributorsMd:
             },
             weekly={"2026-W12": ["alice"]},
         )
-        md = build_weekly_contributors_md(scores)
+        md = build_merged_this_week_md(scores)
         assert "@alice" in md
         assert "https://alice.png" in md
 
@@ -1202,7 +1202,7 @@ class TestBuildWeeklyContributorsMd:
             },
             weekly={"2026-W12": ["zara", "anna"]},
         )
-        md = build_weekly_contributors_md(scores)
+        md = build_merged_this_week_md(scores)
         anna_pos = md.index("@anna")
         zara_pos = md.index("@zara")
         assert anna_pos < zara_pos

@@ -39,13 +39,13 @@ No registration. No sign-ups. Just open source.
 
 ---
 
-## 🔥 This Week's Contributors
+## 🔥 Merged This Week
 
-*Everyone who earned points this week, regardless of leaderboard position.*
+*Contributors whose PRs were merged this week, regardless of leaderboard position.*
 
-<!-- WEEKLY:START -->
-*No contributions tracked yet for this week.*
-<!-- WEEKLY:END -->
+<!-- MERGED-THIS-WEEK:START -->
+*No merged contributions yet this week.*
+<!-- MERGED-THIS-WEEK:END -->
 
 ---
 

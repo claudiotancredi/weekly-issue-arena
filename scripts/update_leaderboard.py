@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check tracked issues for merged PRs and update the leaderboard.
 
-Awards points and updates the leaderboard + weekly contributors
+Awards points and updates the leaderboard + merged-this-week section
 sections in README.
 
 Usage::
@@ -406,7 +406,7 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
             scores["credited_issues"].append(issue_key)
             issue["closed"] = True
 
-            # Track weekly contributors
+            # Track merges for the current arena week
             current_week = arena_week_id()
             if current_week not in scores["weekly"]:
                 scores["weekly"][current_week] = []
@@ -466,12 +466,12 @@ def build_leaderboard_md(scores: dict) -> str:
     return header + "\n".join(lines) + "\n"
 
 
-def build_weekly_contributors_md(scores: dict) -> str:
-    """Render small avatar chips for this week's contributors."""
+def build_merged_this_week_md(scores: dict) -> str:
+    """Render avatar chips for contributors whose PRs merged this week."""
     current_week = arena_week_id()
     week_contribs = scores.get("weekly", {}).get(current_week, [])
     if not week_contribs:
-        return "*No contributions tracked yet for this week.*\n"
+        return "*No merged contributions yet this week.*\n"
 
     players = scores.get("players", {})
     avatars = []
@@ -561,7 +561,7 @@ def main():
         readme, "LEADERBOARD", build_leaderboard_md(scores)
     )
     readme = update_readme_section(
-        readme, "WEEKLY", build_weekly_contributors_md(scores)
+        readme, "MERGED-THIS-WEEK", build_merged_this_week_md(scores)
     )
     readme = update_issue_statuses(readme)
     README_PATH.write_text(readme, encoding="utf-8")

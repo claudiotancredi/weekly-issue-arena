@@ -8,10 +8,6 @@
 
 > A weekly-refreshed hub of open-source issues, with a leaderboard for contributors who close them.
 
-<p align="center">
-  <img src="assets/screenshot.png" alt="Weekly Issue Arena — leaderboard and issue browser" width="100%" />
-</p>
-
 **Find an issue. Submit a PR. Earn points. Climb the leaderboard.**
 
 No registration. No sign-ups. Just open source.

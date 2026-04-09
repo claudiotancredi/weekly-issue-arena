@@ -77,6 +77,19 @@
           "credited_at": "2026-03-26T23:39:12.521988+00:00"
         }
       ]
+    },
+    "mvanhorn": {
+      "total_points": 1,
+      "avatar_url": "https://avatars.githubusercontent.com/u/455140?v=4",
+      "contributions": [
+        {
+          "issue": "hashicorp/nomad#27758",
+          "points": 1,
+          "pr_url": "https://github.com/hashicorp/nomad/pull/27774",
+          "week": "2026-W13",
+          "credited_at": "2026-04-09T15:47:27.819876+00:00"
+        }
+      ]
     }
   },
   "credited_issues": [
@@ -85,7 +98,8 @@
     "PrefectHQ/prefect#18393",
     "pydata/xarray#11199",
     "biomejs/biome#9062",
-    "pandas-dev/pandas#62421"
+    "pandas-dev/pandas#62421",
+    "hashicorp/nomad#27758"
   ],
   "weekly": {
     "2026-W10": [
@@ -99,6 +113,9 @@
     "2026-W12": [
       "Netail",
       "Alvaro-Kothe"
+    ],
+    "2026-W14": [
+      "mvanhorn"
     ]
   }
 }

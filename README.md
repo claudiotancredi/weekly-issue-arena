@@ -31,8 +31,9 @@ No registration. No sign-ups. Just open source.
 | 2 | <div align="center"><a href="https://github.com/kkollsga"><img src="https://avatars.githubusercontent.com/u/58362424?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@kkollsga](https://github.com/kkollsga)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 | 3 | <div align="center"><a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@LeviLong01](https://github.com/LeviLong01)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 | 4 | <div align="center"><a href="https://github.com/biefan"><img src="https://avatars.githubusercontent.com/u/70761325?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@biefan](https://github.com/biefan)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 5 | <div align="center"><a href="https://github.com/Netail"><img src="https://avatars.githubusercontent.com/u/11695769?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@Netail](https://github.com/Netail)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 6 | <div align="center"><a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@zzstoatzz](https://github.com/zzstoatzz)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 5 | <div align="center"><a href="https://github.com/mvanhorn"><img src="https://avatars.githubusercontent.com/u/455140?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@mvanhorn](https://github.com/mvanhorn)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 6 | <div align="center"><a href="https://github.com/Netail"><img src="https://avatars.githubusercontent.com/u/11695769?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@Netail](https://github.com/Netail)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 7 | <div align="center"><a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@zzstoatzz](https://github.com/zzstoatzz)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 <!-- LEADERBOARD:END -->
 
 > In case of a tie, contributors are listed alphabetically by GitHub username.
@@ -44,7 +45,7 @@ No registration. No sign-ups. Just open source.
 *Contributors whose PRs were merged this week, regardless of leaderboard position.*
 
 <!-- MERGED-THIS-WEEK:START -->
-*No merged contributions yet this week.*
+<a href="https://github.com/mvanhorn"><img src="https://avatars.githubusercontent.com/u/455140?v=4" width="48" height="48" style="border-radius:50%;" title="@mvanhorn"/></a>
 <!-- MERGED-THIS-WEEK:END -->
 
 ---

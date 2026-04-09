@@ -81,11 +81,6 @@ repos:
     # Python interface to PROJ for cartographic projections.
 
   - owner: opendatacube
-    repo: odc-stac
-    tags: [python, stac, satellite, xarray]
-    # Load STAC items into xarray DataArrays. Pangeo ecosystem.
-
-  - owner: opendatacube
     repo: datacube-core
     tags: [python, satellite, earth-observation, analysis-ready-data]
     # Open Data Cube: analysis-ready satellite data platform.
@@ -100,30 +95,10 @@ repos:
     tags: [python, raster, cog, mosaic]
     # Create mosaics from Cloud Optimized GeoTIFFs.
 
-  - owner: sentinel-hub
-    repo: eo-learn
-    tags: [python, satellite, machine-learning, earth-observation]
-    # Earth observation processing framework in Python.
-
-  - owner: microsoft
-    repo: planetary-computer-sdk-for-python
-    tags: [python, stac, satellite, azure]
-    # Microsoft Planetary Computer Python SDK.
-
   - owner: sertit
     repo: eoreader
     tags: [python, satellite, sar, optical, earth-observation]
     # Multi-satellite reader for optical and SAR sensors (Sentinel, Landsat, etc.).
-
-  - owner: CosmiQ
-    repo: solaris
-    tags: [python, satellite, geospatial, ml, object-detection]
-    # Geospatial machine learning toolkit for satellite imagery.
-
-  - owner: dymaxionlabs
-    repo: satproc
-    tags: [python, satellite, processing, geospatial]
-    # Tools for processing satellite imagery for ML pipelines.
 
   - owner: Esri
     repo: arcgis-python-api
@@ -144,11 +119,6 @@ repos:
     repo: gdal
     tags: [python, c, raster, vector, geospatial]
     # GDAL — the backbone of geospatial data I/O.
-
-  - owner: ESA-PhiLab
-    repo: OpenSarToolkit
-    tags: [python, sar, sentinel-1, satellite]
-    # ESA PhiLab's SAR processing toolkit for Sentinel-1.
 
   # ---------------------------------------------------------------------------
   # 🤖  MACHINE LEARNING CORE
@@ -199,11 +169,6 @@ repos:
     tags: [python, distributed, parallel, arrays]
     # Parallel computing with task scheduling. Core Pangeo tool.
 
-  - owner: dask
-    repo: dask-ml
-    tags: [python, distributed, ml, sklearn]
-    # Scalable ML with Dask and scikit-learn.
-
   - owner: pyg-team
     repo: pytorch_geometric
     tags: [python, graph-neural-networks, pytorch, gnn]
@@ -213,11 +178,6 @@ repos:
     repo: statsmodels
     tags: [python, statistics, econometrics, ml]
     # Statistical models and tests in Python.
-
-  - owner: joblib
-    repo: joblib
-    tags: [python, parallel, caching, scientific]
-    # Lightweight pipelining and caching for Python.
 
   - owner: Farama-Foundation
     repo: Gymnasium
@@ -455,11 +415,6 @@ repos:
     tags: [python, http, async, networking]
     # Async HTTP client. Common in ML data fetching pipelines.
 
-  - owner: tqdm
-    repo: tqdm
-    tags: [python, progress-bar, cli, utilities]
-    # Progress bars for Python. Used in nearly every ML codebase.
-
   - owner: psf
     repo: requests
     tags: [python, http, networking]
@@ -568,11 +523,6 @@ repos:
     repo: werkzeug
     tags: [python, wsgi, http, utilities]
     # Comprehensive WSGI web application library.
-
-  - owner: pallets
-    repo: jinja
-    tags: [python, templates, web]
-    # Fast, expressive template engine.
 
   - owner: celery
     repo: celery
@@ -875,16 +825,6 @@ repos:
     repo: nats-server
     tags: [go, messaging, cloud-native, pubsub]
     # High-performance cloud-native messaging system.
-
-  - owner: go-chi
-    repo: chi
-    tags: [go, http, router, middleware]
-    # Lightweight, composable HTTP router.
-
-  - owner: spf13
-    repo: cobra
-    tags: [go, cli, framework, commands]
-    # CLI framework for Go applications.
 
   - owner: stretchr
     repo: testify

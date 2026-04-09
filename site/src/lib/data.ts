@@ -48,6 +48,7 @@ export interface PlayerData {
   total_points: number;
   avatar_url: string;
   contributions: Contribution[];
+  discussion_node_id?: string;
 }
 
 interface ScoresData {

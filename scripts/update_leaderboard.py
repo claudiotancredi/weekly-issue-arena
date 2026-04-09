@@ -553,6 +553,16 @@ def main():
 
     save_scores(scores)
 
+    # Notify contributors via GitHub Discussions
+    if all_new_credits:
+        try:
+            from discussions import notify_contributors
+
+            scores = notify_contributors(all_new_credits, scores)
+            save_scores(scores)  # re-save with discussion_node_ids
+        except Exception as exc:
+            log.warning(f"Discussion notifications failed: {exc}")
+
     save_state(state)
 
     # Update README

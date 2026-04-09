@@ -46,6 +46,42 @@ def github_get(url: str, **kwargs) -> requests.Response:
     return resp
 
 
+def github_graphql(query: str, variables: dict | None = None) -> dict:
+    """Execute a GitHub GraphQL query or mutation.
+
+    Returns the ``data`` portion of the response.
+    Raises ``RuntimeError`` on GraphQL errors and ``SystemExit``
+    when the rate limit is exhausted.
+    """
+    resp = requests.post(
+        "https://api.github.com/graphql",
+        headers=HEADERS,
+        json={"query": query, "variables": variables or {}},
+        timeout=15,
+    )
+
+    remaining = resp.headers.get("X-RateLimit-Remaining")
+    if remaining is not None:
+        remaining = int(remaining)
+        if remaining < 100:
+            reset_ts = int(resp.headers.get("X-RateLimit-Reset", 0))
+            reset_at = datetime.fromtimestamp(
+                reset_ts, tz=timezone.utc
+            ).isoformat()
+            log.warning(
+                f"GitHub GraphQL rate limit low: "
+                f"{remaining} remaining. Resets at {reset_at}"
+            )
+        if resp.status_code == 403 and remaining == 0:
+            log.error("GitHub GraphQL rate limit exhausted.")
+            raise SystemExit(1)
+
+    body = resp.json()
+    if "errors" in body:
+        raise RuntimeError(f"GraphQL errors: {body['errors']}")
+    return body["data"]
+
+
 def has_linked_pr(owner: str, repo: str, number: int) -> bool:
     """Check if an issue has any open PR linked to it.
 

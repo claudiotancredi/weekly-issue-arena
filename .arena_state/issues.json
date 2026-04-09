@@ -2,7 +2,20 @@
   "2026-W13": {
     "fetched_at": "2026-03-27T17:00:00+00:00",
     "issues": {
-      "gfi": [],
+      "gfi": [
+        {
+          "number": 27758,
+          "title": "nomad ui command doesn't filter namespace",
+          "url": "https://github.com/hashicorp/nomad/issues/27758",
+          "owner": "hashicorp",
+          "repo": "nomad",
+          "repo_url": "https://github.com/hashicorp/nomad",
+          "created_at": "2026-03-25T08:43:13Z",
+          "updated_at": "2026-03-26T15:34:06Z",
+          "author": "next-jesusmanuelnavarro",
+          "listed_at": "2026-03-27T17:00:00+00:00"
+        }
+      ],
       "bug": [
         {
           "number": 3027,

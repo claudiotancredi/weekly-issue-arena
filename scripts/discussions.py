@@ -85,21 +85,22 @@ def _welcome_body(
     badge = _badge_url(username)
     profile = _profile_url(username)
     return (
-        f"# Welcome to the Arena, @{username}!\n\n"
+        f"# \u2694\ufe0f Welcome to the Arena, @{username}!\n\n"
         f"You just earned **{points} point(s)** for closing "
-        f"[{issue_key}]({pr_url})!\n\n"
-        f"**Current rank:** {rank_name} | "
+        f"[{issue_key}]({pr_url})! \U0001f389\n\n"
+        f"\U0001f3c5 **Current rank:** {rank_name} | "
         f"**Total points:** {points}\n\n"
-        f"## Your Arena Badge\n\n"
+        f"## \U0001f4e3 Your Arena Badge\n\n"
         f"Add this to your GitHub profile README:\n\n"
         f"```markdown\n"
         f"[![Weekly Issue Arena]({badge})]({profile})\n"
         f"```\n\n"
-        f"[View your full profile \u2192]({profile})\n\n"
+        f"[\U0001f449 View your full profile]({profile})\n\n"
         f"---\n\n"
-        f"*This is a one-time welcome message. GitHub will notify "
-        f"you of future updates to this discussion. To stop, click "
-        f'"Unsubscribe" in the sidebar.*'
+        f"*\U0001f916 When you earn more points, an update will be "
+        f"posted here automatically by the arena bot. GitHub will "
+        f"notify you of each update. To stop receiving notifications, "
+        f'click "Unsubscribe" in the sidebar.*'
     )
 
 
@@ -112,8 +113,9 @@ def _update_body(
     pr_url: str,
 ) -> str:
     return (
-        f"**+{points} point(s)** for [{issue_key}]({pr_url})\n\n"
-        f"New total: **{new_total} pts** | "
+        f"\U0001f4e5 **+{points} point(s)** for "
+        f"[{issue_key}]({pr_url})\n\n"
+        f"\U0001f3c5 New total: **{new_total} pts** | "
         f"Rank: **{rank_name}**"
     )
 

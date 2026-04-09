@@ -22,7 +22,7 @@ export function renderBadgeSVG({
   points: number;
   rankName: string;
 }): string {
-  const leftText = `Arena: ${rankName}`;
+  const leftText = `Weekly Issue Arena: ${rankName}`;
   const rightText = `${points} pts`;
 
   const leftWidth = textWidth(leftText);

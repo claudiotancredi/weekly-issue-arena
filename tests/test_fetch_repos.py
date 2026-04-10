@@ -434,3 +434,130 @@ def test_build_queries_count():
     """build_queries returns exactly 12 queries."""
     queries = fetch_repos.build_queries("2026-03-10", "2025-10-10")
     assert len(queries) == 12  # GFI(6) + help-wanted(5) + trending(1)
+
+
+def test_build_queries_bucket_assignment():
+    """The trending newcomers query is tagged trending; others dynamic."""
+    queries = fetch_repos.build_queries("2026-03-10", "2025-10-10")
+    trending = [q for q in queries if q["bucket"] == "trending"]
+    dynamic = [q for q in queries if q["bucket"] == "dynamic"]
+    assert len(trending) == 1
+    assert len(dynamic) == 11
+    # Sanity: the trending query is the one keyed on "created:>="
+    assert "created:>=" in trending[0]["q"]
+
+
+# ── buckets end-to-end ──────────────────────────────────────
+
+
+def test_fetch_dynamic_candidates_tracks_buckets_per_repo():
+    """A repo matched by both a dynamic and the trending query has both."""
+    queries = [
+        {"q": "q-dyn", "sort": "stars", "bucket": "dynamic"},
+        {"q": "q-trend", "sort": "stars", "bucket": "trending"},
+    ]
+    with patch(
+        "fetch_repos.search_repos",
+        side_effect=[
+            [_norm_repo(owner="voxel51", name="fiftyone")],
+            [_norm_repo(owner="voxel51", name="fiftyone")],
+        ],
+    ):
+        candidates = fetch_repos.fetch_dynamic_candidates(queries)
+    buckets = candidates["voxel51/fiftyone"]["buckets"]
+    assert buckets == {"dynamic", "trending"}
+
+
+def test_fetch_dynamic_candidates_bucket_defaults_to_dynamic():
+    """Queries without a bucket key fall back to dynamic."""
+    queries = [{"q": "q1", "sort": "stars"}]  # no bucket
+    with patch(
+        "fetch_repos.search_repos",
+        return_value=[_norm_repo(owner="pytorch", name="pytorch")],
+    ):
+        candidates = fetch_repos.fetch_dynamic_candidates(queries)
+    assert candidates["pytorch/pytorch"]["buckets"] == {"dynamic"}
+
+
+def test_build_pool_emits_trending_source():
+    """A candidate with 'trending' in its buckets gets source=trending."""
+    anchor = []
+    dynamic = [
+        {
+            "owner": "voxel51",
+            "repo": "fiftyone",
+            "stars": 10000,
+            "query_matches": 2,
+            "buckets": {"dynamic", "trending"},
+        }
+    ]
+    pool = fetch_repos.build_pool(anchor, dynamic)
+    assert pool["repos"][0]["source"] == "trending"
+    assert pool["trending_count"] == 1
+    assert pool["dynamic_count"] == 0
+
+
+def test_build_pool_dynamic_only_candidate():
+    """A candidate matched only by dynamic queries stays source=dynamic."""
+    anchor = []
+    dynamic = [
+        {
+            "owner": "pytorch",
+            "repo": "pytorch",
+            "stars": 99000,
+            "query_matches": 3,
+            "buckets": {"dynamic"},
+        }
+    ]
+    pool = fetch_repos.build_pool(anchor, dynamic)
+    assert pool["repos"][0]["source"] == "dynamic"
+    assert pool["trending_count"] == 0
+    assert pool["dynamic_count"] == 1
+
+
+def test_build_pool_anchor_overrides_trending_via_rank():
+    """An anchor repo is removed from dynamic candidates by rank_dynamic.
+
+    Guarantees the pool never double-counts or mis-tags an anchor repo
+    that happened to also surface from the trending query.
+    """
+    candidates = {
+        "pytorch/pytorch": {
+            "owner": "pytorch",
+            "repo": "pytorch",
+            "stars": 99000,
+            "query_matches": 2,
+            "buckets": {"trending"},
+        },
+    }
+    ranked = fetch_repos.rank_dynamic(candidates, {"pytorch/pytorch"})
+    assert ranked == []
+
+    pool = fetch_repos.build_pool(
+        [{"owner": "pytorch", "repo": "pytorch"}], ranked
+    )
+    assert len(pool["repos"]) == 1
+    assert pool["repos"][0]["source"] == "anchor"
+    assert pool["trending_count"] == 0
+
+
+def test_build_pool_missing_buckets_key_defaults_to_dynamic():
+    """A legacy candidate dict without 'buckets' gets source=dynamic."""
+    anchor = []
+    dynamic = [
+        {
+            "owner": "legacy",
+            "repo": "repo",
+            "stars": 500,
+            "query_matches": 1,
+        }
+    ]
+    pool = fetch_repos.build_pool(anchor, dynamic)
+    assert pool["repos"][0]["source"] == "dynamic"
+
+
+def test_build_pool_has_trending_count_field():
+    """Pool output always exposes trending_count key."""
+    pool = fetch_repos.build_pool([{"owner": "a", "repo": "b"}], [])
+    assert "trending_count" in pool
+    assert pool["trending_count"] == 0

@@ -799,6 +799,9 @@ class TestLoadConfiguredRepos:
             result = fetch_issues.load_configured_repos()
         assert len(result["repos"]) == 2
         assert result["repos"][0]["owner"] == "torchgeo"
+        # Fallback entries must be tagged anchor so bucket-aware selection
+        # downstream knows where they came from.
+        assert all(r["source"] == "anchor" for r in result["repos"])
         assert any("anchor" in r.message.lower() for r in caplog.records)
 
     def test_no_source_returns_empty_list(self, tmp_path, monkeypatch, caplog):
@@ -860,3 +863,362 @@ class TestLoadConfiguredRepos:
         )
         with pytest.raises(FileNotFoundError):
             fetch_issues.load_configured_repos()
+
+
+# ── build_bucket_map ─────────────────────────────────────────
+
+
+class TestBuildBucketMap:
+    """Tests for the owner/repo → bucket name mapping."""
+
+    def test_assigns_source_when_present(self):
+        """Each repo's explicit source field lands in the output map."""
+        repos = [
+            {"owner": "torchgeo", "repo": "torchgeo", "source": "anchor"},
+            {
+                "owner": "voxel51",
+                "repo": "fiftyone",
+                "source": "trending",
+            },
+            {"owner": "pytorch", "repo": "pytorch", "source": "dynamic"},
+        ]
+        m = fetch_issues.build_bucket_map(repos)
+        assert m["torchgeo/torchgeo"] == "anchor"
+        assert m["voxel51/fiftyone"] == "trending"
+        assert m["pytorch/pytorch"] == "dynamic"
+
+    def test_defaults_to_dynamic_when_missing(self):
+        """A repo without an explicit source defaults to 'dynamic'."""
+        repos = [{"owner": "legacy", "repo": "repo"}]
+        m = fetch_issues.build_bucket_map(repos)
+        assert m["legacy/repo"] == "dynamic"
+
+
+# ── select_category_issues ───────────────────────────────────
+
+
+def _mk_issue(owner="acme", repo="proj", number=1, bucket="dynamic"):
+    """Build a minimal issue dict with a bucket tag."""
+    return {
+        "number": number,
+        "title": f"Issue #{number}",
+        "url": f"https://github.com/{owner}/{repo}/issues/{number}",
+        "owner": owner,
+        "repo": repo,
+        "repo_bucket": bucket,
+    }
+
+
+class TestSelectCategoryIssues:
+    """Tests for bucket-aware selection with floors + random fill."""
+
+    def test_anchor_floor_respected(self):
+        """The anchor floor is honored when anchor has enough issues."""
+        issues = [
+            _mk_issue(owner="a", repo="r1", number=1, bucket="anchor"),
+            _mk_issue(owner="a", repo="r2", number=2, bucket="anchor"),
+            _mk_issue(owner="a", repo="r3", number=3, bucket="anchor"),
+            _mk_issue(owner="d", repo="r1", number=4, bucket="dynamic"),
+            _mk_issue(owner="d", repo="r2", number=5, bucket="dynamic"),
+            _mk_issue(owner="d", repo="r3", number=6, bucket="dynamic"),
+        ]
+        import random
+
+        rng = random.Random(42)
+        with patch("fetch_issues.has_linked_pr", return_value=False):
+            out = fetch_issues.select_category_issues(
+                issues, limit=5, quotas={"anchor": 3}, rng=rng
+            )
+        anchors = [i for i in out if i["repo_bucket"] == "anchor"]
+        assert len(anchors) >= 3
+        assert len(out) == 5
+
+    def test_trending_floor_respected(self):
+        """The trending floor is honored independently of anchor."""
+        issues = [
+            _mk_issue(owner="a", repo="r1", number=1, bucket="anchor"),
+            _mk_issue(owner="t", repo="r1", number=2, bucket="trending"),
+            _mk_issue(owner="t", repo="r2", number=3, bucket="trending"),
+            _mk_issue(owner="d", repo="r1", number=4, bucket="dynamic"),
+            _mk_issue(owner="d", repo="r2", number=5, bucket="dynamic"),
+        ]
+        import random
+
+        rng = random.Random(42)
+        with patch("fetch_issues.has_linked_pr", return_value=False):
+            out = fetch_issues.select_category_issues(
+                issues,
+                limit=4,
+                quotas={"anchor": 1, "trending": 2},
+                rng=rng,
+            )
+        anchors = [i for i in out if i["repo_bucket"] == "anchor"]
+        trending = [i for i in out if i["repo_bucket"] == "trending"]
+        assert len(anchors) >= 1
+        assert len(trending) >= 2
+        assert len(out) == 4
+
+    def test_empty_bucket_floor_drops_silently(self):
+        """If a bucket is empty, its floor is effectively 0, no crash."""
+        issues = [
+            _mk_issue(owner="d", repo="r1", number=1, bucket="dynamic"),
+            _mk_issue(owner="d", repo="r2", number=2, bucket="dynamic"),
+            _mk_issue(owner="d", repo="r3", number=3, bucket="dynamic"),
+        ]
+        import random
+
+        rng = random.Random(42)
+        with patch("fetch_issues.has_linked_pr", return_value=False):
+            out = fetch_issues.select_category_issues(
+                issues,
+                limit=3,
+                quotas={"anchor": 5, "trending": 5},
+                rng=rng,
+            )
+        # No anchor/trending issues existed, so free fill took over.
+        assert len(out) == 3
+        assert all(i["repo_bucket"] == "dynamic" for i in out)
+
+    def test_diversity_cap_enforced(self):
+        """At most 2 issues from any single repo, even with many candidates."""
+        issues = [
+            _mk_issue(owner="acme", repo="proj", number=i, bucket="anchor")
+            for i in range(10)
+        ]
+        import random
+
+        rng = random.Random(42)
+        with patch("fetch_issues.has_linked_pr", return_value=False):
+            out = fetch_issues.select_category_issues(
+                issues, limit=10, quotas={"anchor": 10}, rng=rng
+            )
+        assert len(out) == 2  # cap hits, bucket exhausted
+
+    def test_skips_linked_pr(self):
+        """Issues with a linked PR are skipped during selection."""
+        issues = [
+            _mk_issue(owner="a", repo="r1", number=1, bucket="anchor"),
+            _mk_issue(owner="a", repo="r2", number=2, bucket="anchor"),
+            _mk_issue(owner="a", repo="r3", number=3, bucket="anchor"),
+        ]
+        import random
+
+        rng = random.Random(42)
+
+        # Issue #2 always reports "has linked PR" → must never appear in
+        # the output, regardless of how many times has_linked_pr is queried
+        # across phase A and phase B.
+        def fake_linked(owner, repo, number):
+            return number == 2
+
+        with patch("fetch_issues.has_linked_pr", side_effect=fake_linked):
+            out = fetch_issues.select_category_issues(
+                issues, limit=5, quotas={"anchor": 3}, rng=rng
+            )
+        assert len(out) == 2
+        assert 2 not in [i["number"] for i in out]
+
+    def test_seeded_rng_is_reproducible(self):
+        """Same rng seed → same selection output."""
+        issues = [
+            _mk_issue(owner="o", repo=f"r{i}", number=i, bucket="dynamic")
+            for i in range(20)
+        ]
+        import random
+
+        with patch("fetch_issues.has_linked_pr", return_value=False):
+            out_a = fetch_issues.select_category_issues(
+                issues, limit=5, quotas={}, rng=random.Random(123)
+            )
+            out_b = fetch_issues.select_category_issues(
+                issues, limit=5, quotas={}, rng=random.Random(123)
+            )
+        assert [i["number"] for i in out_a] == [i["number"] for i in out_b]
+
+    def test_different_seed_differs(self):
+        """Different rng seeds produce different orderings (almost surely)."""
+        issues = [
+            _mk_issue(owner="o", repo=f"r{i}", number=i, bucket="dynamic")
+            for i in range(20)
+        ]
+        import random
+
+        with patch("fetch_issues.has_linked_pr", return_value=False):
+            out_a = fetch_issues.select_category_issues(
+                issues, limit=5, quotas={}, rng=random.Random(1)
+            )
+            out_b = fetch_issues.select_category_issues(
+                issues, limit=5, quotas={}, rng=random.Random(9999)
+            )
+        # Orderings should differ; extremely unlikely to collide with 20 inputs
+        assert [i["number"] for i in out_a] != [i["number"] for i in out_b]
+
+    def test_missing_quotas_pure_random_fill(self):
+        """Empty quotas dict → phase A skipped, pure free fill."""
+        issues = [
+            _mk_issue(owner="a", repo="r1", number=1, bucket="anchor"),
+            _mk_issue(owner="t", repo="r1", number=2, bucket="trending"),
+            _mk_issue(owner="d", repo="r1", number=3, bucket="dynamic"),
+            _mk_issue(owner="d", repo="r2", number=4, bucket="dynamic"),
+        ]
+        import random
+
+        rng = random.Random(42)
+        with patch("fetch_issues.has_linked_pr", return_value=False):
+            out = fetch_issues.select_category_issues(
+                issues, limit=3, quotas={}, rng=rng
+            )
+        assert len(out) == 3
+
+    def test_unknown_bucket_defaults_to_dynamic(self):
+        """An issue with an unknown repo_bucket is treated as dynamic."""
+        issues = [
+            _mk_issue(owner="o", repo="r1", number=1, bucket="weirdbucket"),
+            _mk_issue(owner="o", repo="r2", number=2, bucket="dynamic"),
+        ]
+        import random
+
+        rng = random.Random(42)
+        with patch("fetch_issues.has_linked_pr", return_value=False):
+            out = fetch_issues.select_category_issues(
+                issues, limit=2, quotas={}, rng=rng
+            )
+        assert len(out) == 2
+
+    def test_limit_caps_output(self):
+        """Never returns more than `limit` issues."""
+        issues = [
+            _mk_issue(owner="o", repo=f"r{i}", number=i, bucket="dynamic")
+            for i in range(50)
+        ]
+        import random
+
+        rng = random.Random(42)
+        with patch("fetch_issues.has_linked_pr", return_value=False):
+            out = fetch_issues.select_category_issues(
+                issues, limit=10, quotas={}, rng=rng
+            )
+        assert len(out) == 10
+
+    def test_floor_exceeding_limit_is_truncated(self):
+        """If anchor floor alone exceeds limit, selection stops at limit."""
+        issues = [
+            _mk_issue(owner="o", repo=f"r{i}", number=i, bucket="anchor")
+            for i in range(10)
+        ]
+        import random
+
+        rng = random.Random(42)
+        with patch("fetch_issues.has_linked_pr", return_value=False):
+            out = fetch_issues.select_category_issues(
+                issues, limit=3, quotas={"anchor": 10}, rng=rng
+            )
+        assert len(out) == 3
+
+
+# ── fetch_all_issues bucket-aware integration ────────────────
+
+
+class TestFetchAllIssuesBuckets:
+    """fetch_all_issues must attach repo_bucket and honor quotas."""
+
+    @staticmethod
+    def _config(quotas=None) -> dict:
+        return {
+            "repos": [
+                {"owner": "a", "repo": "r1", "source": "anchor"},
+                {"owner": "t", "repo": "r1", "source": "trending"},
+                {"owner": "d", "repo": "r1", "source": "dynamic"},
+            ],
+            "label_mappings": {
+                "gfi": ["good first issue"],
+                "bug": ["bug"],
+                "hard": ["hard"],
+            },
+            "limits": {"gfi": 3, "bug": 3, "hard": 3},
+            "bucket_quotas": quotas or {},
+        }
+
+    def test_attaches_repo_bucket_from_pool(self, monkeypatch):
+        """Each fetched issue gets its repo_bucket assigned from the map."""
+        per_call = {
+            ("a", "r1"): [
+                {
+                    "number": 1,
+                    "title": "A1",
+                    "html_url": "https://github.com/a/r1/issues/1",
+                    "created_at": "2026-01-01T00:00:00Z",
+                    "updated_at": "2026-01-02T00:00:00Z",
+                    "user": {"login": "u"},
+                }
+            ],
+            ("t", "r1"): [
+                {
+                    "number": 2,
+                    "title": "T1",
+                    "html_url": "https://github.com/t/r1/issues/2",
+                    "created_at": "2026-01-01T00:00:00Z",
+                    "updated_at": "2026-01-02T00:00:00Z",
+                    "user": {"login": "u"},
+                }
+            ],
+            ("d", "r1"): [
+                {
+                    "number": 3,
+                    "title": "D1",
+                    "html_url": "https://github.com/d/r1/issues/3",
+                    "created_at": "2026-01-01T00:00:00Z",
+                    "updated_at": "2026-01-02T00:00:00Z",
+                    "user": {"login": "u"},
+                }
+            ],
+        }
+
+        def fake_get(owner, repo, labels, limit):
+            # Only return issues on the first category call to avoid dupes
+            if labels == ["hard"]:
+                return per_call.get((owner, repo), [])
+            return []
+
+        monkeypatch.setattr(fetch_issues, "get_issues_for_repo", fake_get)
+        with patch("fetch_issues.has_linked_pr", return_value=False):
+            result = fetch_issues.fetch_all_issues(self._config())
+        hard = result["hard"]
+        by_key = {(i["owner"], i["repo"]): i["repo_bucket"] for i in hard}
+        assert by_key[("a", "r1")] == "anchor"
+        assert by_key[("t", "r1")] == "trending"
+        assert by_key[("d", "r1")] == "dynamic"
+
+    def test_quotas_guarantee_floors_in_output(self, monkeypatch):
+        """fetch_all_issues → select enforces the configured floors."""
+
+        # Produce enough per-bucket candidates that floors can be met.
+        def fake_get(owner, repo, labels, limit):
+            if labels != ["good first issue"]:
+                return []
+            # 3 issues per repo
+            return [
+                {
+                    "number": 100 * ord(owner[0]) + i,
+                    "title": f"{owner}-{i}",
+                    "html_url": (
+                        f"https://github.com/{owner}/{repo}/issues/"
+                        f"{100 * ord(owner[0]) + i}"
+                    ),
+                    "created_at": "2026-01-01T00:00:00Z",
+                    "updated_at": "2026-01-02T00:00:00Z",
+                    "user": {"login": "u"},
+                }
+                for i in range(3)
+            ]
+
+        quotas = {"gfi": {"anchor": 2, "trending": 1}}
+        monkeypatch.setattr(fetch_issues, "get_issues_for_repo", fake_get)
+        with patch("fetch_issues.has_linked_pr", return_value=False):
+            result = fetch_issues.fetch_all_issues(self._config(quotas))
+        gfi = result["gfi"]
+        assert len(gfi) == 3
+        anchors = [i for i in gfi if i["repo_bucket"] == "anchor"]
+        trending = [i for i in gfi if i["repo_bucket"] == "trending"]
+        assert len(anchors) >= 2
+        assert len(trending) >= 1

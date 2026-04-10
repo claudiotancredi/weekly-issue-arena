@@ -49,7 +49,13 @@ SEARCH_API_URL = "https://api.github.com/search/repositories"
 
 
 def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
-    """Return the 12 search queries with date placeholders filled in."""
+    """Return the 12 search queries with date placeholders filled in.
+
+    Each query is tagged with a ``bucket`` name used downstream to
+    partition the pool into 'trending' vs 'dynamic' repos. The trending
+    newcomers query is the only source of the 'trending' bucket; all
+    other queries contribute to 'dynamic'.
+    """
     return [
         # GFI-focused (gfi category)
         {
@@ -58,6 +64,7 @@ def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
                 f"stars:>1000 archived:false"
             ),
             "sort": "stars",
+            "bucket": "dynamic",
         },
         {
             "q": (
@@ -65,6 +72,7 @@ def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
                 f"pushed:>={month_ago} stars:>100 archived:false"
             ),
             "sort": "updated",
+            "bucket": "dynamic",
         },
         {
             "q": (
@@ -72,6 +80,7 @@ def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
                 f"pushed:>={month_ago} stars:>200 archived:false"
             ),
             "sort": "updated",
+            "bucket": "dynamic",
         },
         {
             "q": (
@@ -79,6 +88,7 @@ def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
                 f"pushed:>={month_ago} stars:>200 archived:false"
             ),
             "sort": "updated",
+            "bucket": "dynamic",
         },
         {
             "q": (
@@ -86,6 +96,7 @@ def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
                 f"pushed:>={month_ago} stars:>50 archived:false"
             ),
             "sort": "updated",
+            "bucket": "dynamic",
         },
         {
             "q": (
@@ -93,6 +104,7 @@ def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
                 f"pushed:>={month_ago} stars:>500 archived:false"
             ),
             "sort": "updated",
+            "bucket": "dynamic",
         },
         # Help-wanted-focused (bug + hard categories)
         {
@@ -101,6 +113,7 @@ def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
                 f"stars:>2000 archived:false"
             ),
             "sort": "updated",
+            "bucket": "dynamic",
         },
         {
             "q": (
@@ -108,6 +121,7 @@ def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
                 f"pushed:>={month_ago} stars:>500 archived:false"
             ),
             "sort": "stars",
+            "bucket": "dynamic",
         },
         {
             "q": (
@@ -115,6 +129,7 @@ def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
                 f"pushed:>={month_ago} stars:>500 archived:false"
             ),
             "sort": "stars",
+            "bucket": "dynamic",
         },
         {
             "q": (
@@ -122,6 +137,7 @@ def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
                 f"pushed:>={month_ago} stars:>200 archived:false"
             ),
             "sort": "updated",
+            "bucket": "dynamic",
         },
         {
             "q": (
@@ -129,6 +145,7 @@ def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
                 f"pushed:>={month_ago} stars:>200 archived:false"
             ),
             "sort": "updated",
+            "bucket": "dynamic",
         },
         # Trending newcomers (catches openclaw-style explosions)
         {
@@ -137,6 +154,7 @@ def build_queries(month_ago: str, six_months_ago: str) -> list[dict]:
                 f"archived:false fork:false"
             ),
             "sort": "stars",
+            "bucket": "trending",
         },
     ]
 
@@ -286,8 +304,10 @@ def search_repos(
 def fetch_dynamic_candidates(queries: list[dict]) -> dict[str, dict]:
     """Run all queries, dedupe, count query matches, filter noise.
 
-    Returns a dict keyed by 'owner/repo' with merged repo info plus
-    a query_matches counter.
+    Returns a dict keyed by 'owner/repo' with merged repo info plus:
+      - ``query_matches``: number of queries the repo appeared in
+      - ``buckets``: set of query-bucket names the repo matched
+        (e.g. {"dynamic"} or {"dynamic", "trending"})
     """
     candidates: dict[str, dict] = {}
     for i, q in enumerate(queries, 1):
@@ -295,15 +315,18 @@ def fetch_dynamic_candidates(queries: list[dict]) -> dict[str, dict]:
         results = search_repos(q["q"], q["sort"])
         log.info(f"  → {len(results)} results")
 
+        bucket = q.get("bucket", "dynamic")
         for repo in results:
             if is_noise(repo):
                 continue
             key = f"{repo['owner']}/{repo['repo']}"
             if key in candidates:
                 candidates[key]["query_matches"] += 1
+                candidates[key]["buckets"].add(bucket)
             else:
                 entry = dict(repo)
                 entry["query_matches"] = 1
+                entry["buckets"] = {bucket}
                 candidates[key] = entry
     return candidates
 
@@ -320,8 +343,27 @@ def rank_dynamic(
     return filtered
 
 
+def _resolve_bucket(candidate: dict) -> str:
+    """Resolve a dynamic candidate's final bucket name.
+
+    Priority: ``trending`` if the repo matched the trending-newcomers
+    query, otherwise ``dynamic``. Anchor repos are handled separately
+    in ``build_pool`` and always take precedence over both.
+    """
+    buckets = candidate.get("buckets") or set()
+    if "trending" in buckets:
+        return "trending"
+    return "dynamic"
+
+
 def build_pool(anchor: list[dict], dynamic_ranked: list[dict]) -> dict:
-    """Combine anchor + top dynamic to reach POOL_TARGET total."""
+    """Combine anchor + top dynamic to reach POOL_TARGET total.
+
+    Each repo entry is tagged with ``source`` (one of
+    ``anchor``/``trending``/``dynamic``). Anchor always wins when a
+    repo could be classified multiple ways. The returned dict exposes
+    per-bucket counts to simplify downstream consumption.
+    """
     anchor_entries = [
         {"owner": r["owner"], "repo": r["repo"], "source": "anchor"}
         for r in anchor
@@ -334,7 +376,7 @@ def build_pool(anchor: list[dict], dynamic_ranked: list[dict]) -> dict:
         {
             "owner": r["owner"],
             "repo": r["repo"],
-            "source": "dynamic",
+            "source": _resolve_bucket(r),
             "stars": r["stars"],
             "query_matches": r["query_matches"],
         }
@@ -349,10 +391,16 @@ def build_pool(anchor: list[dict], dynamic_ranked: list[dict]) -> dict:
             f"wanted {slots_for_dynamic}. Total pool: {len(repos)}."
         )
 
+    trending_count = sum(
+        1 for r in dynamic_entries if r["source"] == "trending"
+    )
+    dynamic_only_count = len(dynamic_entries) - trending_count
+
     return {
         "fetched_at": datetime.now(timezone.utc).isoformat(),
         "anchor_count": len(anchor_entries),
-        "dynamic_count": len(dynamic_entries),
+        "trending_count": trending_count,
+        "dynamic_count": dynamic_only_count,
         "total_count": len(repos),
         "repos": repos,
     }
@@ -396,6 +444,7 @@ def main():
     log.info(
         f"Pool built: {pool['total_count']} repos "
         f"({pool['anchor_count']} anchor + "
+        f"{pool['trending_count']} trending + "
         f"{pool['dynamic_count']} dynamic)"
     )
 
@@ -404,6 +453,14 @@ def main():
         print("\n=== ANCHOR (first 10) ===")
         for r in pool["repos"][:10]:
             print(f"  [{r['source']}] {r['owner']}/{r['repo']}")
+        print("\n=== TRENDING ===")
+        trending = [r for r in pool["repos"] if r["source"] == "trending"]
+        for r in trending:
+            print(
+                f"  [{r['source']}] {r['owner']}/{r['repo']} "
+                f"★{r.get('stars', 0)} "
+                f"matches={r.get('query_matches', 0)}"
+            )
         print("\n=== TOP DYNAMIC (first 20) ===")
         dyn = [r for r in pool["repos"] if r["source"] == "dynamic"]
         for r in dyn[:20]:
@@ -412,7 +469,12 @@ def main():
                 f"★{r.get('stars', 0)} "
                 f"matches={r.get('query_matches', 0)}"
             )
-        print(f"\n=== TOTAL: {pool['total_count']} ===")
+        print(
+            f"\n=== TOTAL: {pool['total_count']} "
+            f"(anchor={pool['anchor_count']}, "
+            f"trending={pool['trending_count']}, "
+            f"dynamic={pool['dynamic_count']}) ==="
+        )
         return
 
     save_repo_pool(pool)

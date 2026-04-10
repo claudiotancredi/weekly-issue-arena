@@ -42,3 +42,26 @@ limits:
   gfi: 20
   bug: 14
   hard: 10
+
+# ---------------------------------------------------------------------------
+# Bucket-aware floor quotas per category
+#
+# Floors (not exact shares): at least N issues from each listed bucket are
+# reserved before the remaining slots are filled randomly from the combined
+# pool. Floors that can't be met (because a bucket had fewer eligible
+# issues) are silently dropped into the free fill, so no slot is ever left
+# empty.
+#
+# Leaving a category unset, or omitting this whole block, falls back to
+# pure weekly-seeded random selection across all buckets.
+# ---------------------------------------------------------------------------
+bucket_quotas:
+  gfi:
+    anchor: 8
+    trending: 2
+  bug:
+    anchor: 6
+    trending: 2
+  hard:
+    anchor: 4
+    trending: 1

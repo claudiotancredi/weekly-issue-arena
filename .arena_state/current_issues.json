@@ -1,207 +1,249 @@
 [
   {
-    "owner": "ipython",
-    "repo": "ipython",
-    "number": 2281,
+    "owner": "geopandas",
+    "repo": "geopandas",
+    "number": 529,
     "category": "gfi"
   },
   {
-    "owner": "microsoft",
-    "repo": "TypeScript",
-    "number": 10285,
-    "category": "gfi"
-  },
-  {
-    "owner": "zarr-developers",
-    "repo": "zarr-python",
-    "number": 1238,
-    "category": "gfi"
-  },
-  {
-    "owner": "3b1b",
-    "repo": "manim",
-    "number": 1243,
-    "category": "gfi"
-  },
-  {
-    "owner": "kivy",
-    "repo": "kivy",
-    "number": 6995,
-    "category": "gfi"
-  },
-  {
-    "owner": "etcd-io",
-    "repo": "etcd",
-    "number": 20342,
-    "category": "gfi"
-  },
-  {
-    "owner": "qdrant",
-    "repo": "qdrant",
-    "number": 3140,
-    "category": "gfi"
-  },
-  {
-    "owner": "pypa",
-    "repo": "hatch",
-    "number": 2156,
-    "category": "gfi"
-  },
-  {
-    "owner": "actix",
-    "repo": "actix-web",
-    "number": 3263,
+    "owner": "gradio-app",
+    "repo": "gradio",
+    "number": 8826,
     "category": "gfi"
   },
   {
     "owner": "apache",
     "repo": "arrow",
-    "number": 20314,
+    "number": 40096,
     "category": "gfi"
   },
   {
-    "owner": "hashicorp",
-    "repo": "consul",
-    "number": 18523,
+    "owner": "huggingface",
+    "repo": "diffusers",
+    "number": 2180,
     "category": "gfi"
   },
   {
-    "owner": "conda",
-    "repo": "conda",
-    "number": 15122,
+    "owner": "pytorch",
+    "repo": "pytorch",
+    "number": 133443,
     "category": "gfi"
   },
   {
-    "owner": "flutter",
-    "repo": "flutter",
-    "number": 183936,
+    "owner": "ray-project",
+    "repo": "ray",
+    "number": 61443,
     "category": "gfi"
+  },
+  {
+    "owner": "corteva",
+    "repo": "rioxarray",
+    "number": 815,
+    "category": "gfi"
+  },
+  {
+    "owner": "Lightning-AI",
+    "repo": "pytorch-lightning",
+    "number": 7650,
+    "category": "gfi"
+  },
+  {
+    "owner": "HKUDS",
+    "repo": "nanobot",
+    "number": 2493,
+    "category": "gfi"
+  },
+  {
+    "owner": "siddharthvaddem",
+    "repo": "openscreen",
+    "number": 238,
+    "category": "gfi"
+  },
+  {
+    "owner": "Eventual-Inc",
+    "repo": "Daft",
+    "number": 2504,
+    "category": "gfi"
+  },
+  {
+    "owner": "mayocream",
+    "repo": "koharu",
+    "number": 307,
+    "category": "gfi"
+  },
+  {
+    "owner": "PriorLabs",
+    "repo": "tabpfn-extensions",
+    "number": 54,
+    "category": "gfi"
+  },
+  {
+    "owner": "pytorch",
+    "repo": "rl",
+    "number": 509,
+    "category": "gfi"
+  },
+  {
+    "owner": "ggml-org",
+    "repo": "ggml",
+    "number": 295,
+    "category": "gfi"
+  },
+  {
+    "owner": "pymc-labs",
+    "repo": "pymc-marketing",
+    "number": 2157,
+    "category": "gfi"
+  },
+  {
+    "owner": "PriorLabs",
+    "repo": "TabPFN",
+    "number": 158,
+    "category": "gfi"
+  },
+  {
+    "owner": "siddharthvaddem",
+    "repo": "openscreen",
+    "number": 251,
+    "category": "gfi"
+  },
+  {
+    "owner": "qubvel-org",
+    "repo": "segmentation_models.pytorch",
+    "number": 1024,
+    "category": "gfi"
+  },
+  {
+    "owner": "pytroll",
+    "repo": "satpy",
+    "number": 3116,
+    "category": "gfi"
+  },
+  {
+    "owner": "microsoft",
+    "repo": "vscode",
+    "number": 309076,
+    "category": "bug"
+  },
+  {
+    "owner": "corteva",
+    "repo": "rioxarray",
+    "number": 848,
+    "category": "bug"
+  },
+  {
+    "owner": "ray-project",
+    "repo": "ray",
+    "number": 62427,
+    "category": "bug"
+  },
+  {
+    "owner": "dask",
+    "repo": "dask",
+    "number": 10628,
+    "category": "bug"
+  },
+  {
+    "owner": "microsoft",
+    "repo": "vscode",
+    "number": 167401,
+    "category": "bug"
+  },
+  {
+    "owner": "pola-rs",
+    "repo": "polars",
+    "number": 27265,
+    "category": "bug"
+  },
+  {
+    "owner": "siddharthvaddem",
+    "repo": "openscreen",
+    "number": 411,
+    "category": "bug"
+  },
+  {
+    "owner": "HKUDS",
+    "repo": "nanobot",
+    "number": 2957,
+    "category": "bug"
+  },
+  {
+    "owner": "pytorch",
+    "repo": "vision",
+    "number": 9203,
+    "category": "bug"
+  },
+  {
+    "owner": "commaai",
+    "repo": "openpilot",
+    "number": 37774,
+    "category": "bug"
   },
   {
     "owner": "lightgbm-org",
     "repo": "LightGBM",
-    "number": 6231,
-    "category": "gfi"
-  },
-  {
-    "owner": "astral-sh",
-    "repo": "uv",
-    "number": 5388,
-    "category": "gfi"
-  },
-  {
-    "owner": "diesel-rs",
-    "repo": "diesel",
-    "number": 2555,
-    "category": "gfi"
-  },
-  {
-    "owner": "hasura",
-    "repo": "graphql-engine",
-    "number": 4972,
-    "category": "gfi"
-  },
-  {
-    "owner": "tracel-ai",
-    "repo": "burn",
-    "number": 2191,
-    "category": "gfi"
-  },
-  {
-    "owner": "tracel-ai",
-    "repo": "burn",
-    "number": 1244,
-    "category": "gfi"
-  },
-  {
-    "owner": "huggingface",
-    "repo": "peft",
-    "number": 2310,
-    "category": "gfi"
-  },
-  {
-    "owner": "BerriAI",
-    "repo": "litellm",
-    "number": 23709,
+    "number": 7194,
     "category": "bug"
   },
   {
-    "owner": "pytroll",
-    "repo": "pyresample",
-    "number": 632,
+    "owner": "siddharthvaddem",
+    "repo": "openscreen",
+    "number": 408,
+    "category": "bug"
+  },
+  {
+    "owner": "unionai-oss",
+    "repo": "pandera",
+    "number": 2147,
     "category": "bug"
   },
   {
     "owner": "huggingface",
-    "repo": "tokenizers",
-    "number": 1663,
+    "repo": "datasets",
+    "number": 2547,
     "category": "bug"
   },
   {
-    "owner": "sunpy",
-    "repo": "sunpy",
-    "number": 7655,
-    "category": "bug"
+    "owner": "scikit-learn",
+    "repo": "scikit-learn",
+    "number": 31542,
+    "category": "hard"
   },
   {
-    "owner": "jax-ml",
-    "repo": "jax",
-    "number": 36490,
-    "category": "bug"
+    "owner": "scikit-learn",
+    "repo": "scikit-learn",
+    "number": 33594,
+    "category": "hard"
   },
   {
-    "owner": "pypa",
-    "repo": "hatch",
-    "number": 1785,
-    "category": "bug"
+    "owner": "rasterio",
+    "repo": "rasterio",
+    "number": 1990,
+    "category": "hard"
   },
   {
-    "owner": "Esri",
-    "repo": "arcgis-python-api",
-    "number": 2470,
-    "category": "bug"
+    "owner": "pandas-dev",
+    "repo": "pandas",
+    "number": 9379,
+    "category": "hard"
   },
   {
-    "owner": "geopandas",
-    "repo": "geopandas",
-    "number": 1906,
-    "category": "bug"
+    "owner": "matplotlib",
+    "repo": "matplotlib",
+    "number": 29628,
+    "category": "hard"
   },
   {
-    "owner": "serde-rs",
-    "repo": "serde",
-    "number": 1374,
-    "category": "bug"
+    "owner": "pandas-dev",
+    "repo": "pandas",
+    "number": 43770,
+    "category": "hard"
   },
   {
-    "owner": "astropy",
-    "repo": "astropy",
-    "number": 19433,
-    "category": "bug"
-  },
-  {
-    "owner": "great-expectations",
-    "repo": "great_expectations",
-    "number": 10849,
-    "category": "bug"
-  },
-  {
-    "owner": "deepspeedai",
-    "repo": "DeepSpeed",
-    "number": 7922,
-    "category": "bug"
-  },
-  {
-    "owner": "ultralytics",
-    "repo": "ultralytics",
-    "number": 23591,
-    "category": "bug"
-  },
-  {
-    "owner": "hashicorp",
-    "repo": "vault",
-    "number": 31852,
-    "category": "bug"
+    "owner": "JuliaLang",
+    "repo": "julia",
+    "number": 15523,
+    "category": "hard"
   },
   {
     "owner": "rasterio",
@@ -216,51 +258,9 @@
     "category": "hard"
   },
   {
-    "owner": "pandas-dev",
-    "repo": "pandas",
-    "number": 9379,
-    "category": "hard"
-  },
-  {
-    "owner": "matplotlib",
-    "repo": "matplotlib",
-    "number": 20243,
-    "category": "hard"
-  },
-  {
-    "owner": "pandas-dev",
-    "repo": "pandas",
-    "number": 54445,
-    "category": "hard"
-  },
-  {
-    "owner": "huggingface",
-    "repo": "diffusers",
-    "number": 12600,
-    "category": "hard"
-  },
-  {
-    "owner": "scikit-learn",
-    "repo": "scikit-learn",
-    "number": 33594,
-    "category": "hard"
-  },
-  {
-    "owner": "apache",
-    "repo": "echarts",
-    "number": 11115,
-    "category": "hard"
-  },
-  {
-    "owner": "scikit-learn",
-    "repo": "scikit-learn",
-    "number": 31407,
-    "category": "hard"
-  },
-  {
-    "owner": "rasterio",
-    "repo": "rasterio",
-    "number": 1990,
+    "owner": "JuliaLang",
+    "repo": "julia",
+    "number": 59462,
     "category": "hard"
   }
 ]

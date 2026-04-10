@@ -1,0 +1,1659 @@
+{
+  "fetched_at": "2026-04-10T22:15:33.706850+00:00",
+  "anchor_count": 50,
+  "trending_count": 4,
+  "dynamic_count": 196,
+  "total_count": 250,
+  "repos": [
+    {
+      "owner": "torchgeo",
+      "repo": "torchgeo",
+      "source": "anchor"
+    },
+    {
+      "owner": "stac-utils",
+      "repo": "pystac",
+      "source": "anchor"
+    },
+    {
+      "owner": "giswqs",
+      "repo": "geemap",
+      "source": "anchor"
+    },
+    {
+      "owner": "rasterio",
+      "repo": "rasterio",
+      "source": "anchor"
+    },
+    {
+      "owner": "corteva",
+      "repo": "rioxarray",
+      "source": "anchor"
+    },
+    {
+      "owner": "geopandas",
+      "repo": "geopandas",
+      "source": "anchor"
+    },
+    {
+      "owner": "pydata",
+      "repo": "xarray",
+      "source": "anchor"
+    },
+    {
+      "owner": "pytroll",
+      "repo": "satpy",
+      "source": "anchor"
+    },
+    {
+      "owner": "OSGeo",
+      "repo": "gdal",
+      "source": "anchor"
+    },
+    {
+      "owner": "scikit-image",
+      "repo": "scikit-image",
+      "source": "anchor"
+    },
+    {
+      "owner": "scikit-learn",
+      "repo": "scikit-learn",
+      "source": "anchor"
+    },
+    {
+      "owner": "pytorch",
+      "repo": "pytorch",
+      "source": "anchor"
+    },
+    {
+      "owner": "Lightning-AI",
+      "repo": "pytorch-lightning",
+      "source": "anchor"
+    },
+    {
+      "owner": "huggingface",
+      "repo": "transformers",
+      "source": "anchor"
+    },
+    {
+      "owner": "huggingface",
+      "repo": "datasets",
+      "source": "anchor"
+    },
+    {
+      "owner": "mlflow",
+      "repo": "mlflow",
+      "source": "anchor"
+    },
+    {
+      "owner": "ray-project",
+      "repo": "ray",
+      "source": "anchor"
+    },
+    {
+      "owner": "dask",
+      "repo": "dask",
+      "source": "anchor"
+    },
+    {
+      "owner": "dmlc",
+      "repo": "xgboost",
+      "source": "anchor"
+    },
+    {
+      "owner": "pola-rs",
+      "repo": "polars",
+      "source": "anchor"
+    },
+    {
+      "owner": "pandas-dev",
+      "repo": "pandas",
+      "source": "anchor"
+    },
+    {
+      "owner": "numpy",
+      "repo": "numpy",
+      "source": "anchor"
+    },
+    {
+      "owner": "scipy",
+      "repo": "scipy",
+      "source": "anchor"
+    },
+    {
+      "owner": "matplotlib",
+      "repo": "matplotlib",
+      "source": "anchor"
+    },
+    {
+      "owner": "astropy",
+      "repo": "astropy",
+      "source": "anchor"
+    },
+    {
+      "owner": "langchain-ai",
+      "repo": "langchain",
+      "source": "anchor"
+    },
+    {
+      "owner": "run-llama",
+      "repo": "llama_index",
+      "source": "anchor"
+    },
+    {
+      "owner": "vllm-project",
+      "repo": "vllm",
+      "source": "anchor"
+    },
+    {
+      "owner": "ollama",
+      "repo": "ollama",
+      "source": "anchor"
+    },
+    {
+      "owner": "huggingface",
+      "repo": "diffusers",
+      "source": "anchor"
+    },
+    {
+      "owner": "microsoft",
+      "repo": "autogen",
+      "source": "anchor"
+    },
+    {
+      "owner": "ggerganov",
+      "repo": "llama.cpp",
+      "source": "anchor"
+    },
+    {
+      "owner": "apache",
+      "repo": "airflow",
+      "source": "anchor"
+    },
+    {
+      "owner": "PrefectHQ",
+      "repo": "prefect",
+      "source": "anchor"
+    },
+    {
+      "owner": "dagster-io",
+      "repo": "dagster",
+      "source": "anchor"
+    },
+    {
+      "owner": "apache",
+      "repo": "arrow",
+      "source": "anchor"
+    },
+    {
+      "owner": "optuna",
+      "repo": "optuna",
+      "source": "anchor"
+    },
+    {
+      "owner": "tiangolo",
+      "repo": "fastapi",
+      "source": "anchor"
+    },
+    {
+      "owner": "django",
+      "repo": "django",
+      "source": "anchor"
+    },
+    {
+      "owner": "pallets",
+      "repo": "flask",
+      "source": "anchor"
+    },
+    {
+      "owner": "python",
+      "repo": "cpython",
+      "source": "anchor"
+    },
+    {
+      "owner": "astral-sh",
+      "repo": "ruff",
+      "source": "anchor"
+    },
+    {
+      "owner": "streamlit",
+      "repo": "streamlit",
+      "source": "anchor"
+    },
+    {
+      "owner": "gradio-app",
+      "repo": "gradio",
+      "source": "anchor"
+    },
+    {
+      "owner": "plotly",
+      "repo": "plotly.py",
+      "source": "anchor"
+    },
+    {
+      "owner": "microsoft",
+      "repo": "vscode",
+      "source": "anchor"
+    },
+    {
+      "owner": "kubernetes",
+      "repo": "kubernetes",
+      "source": "anchor"
+    },
+    {
+      "owner": "home-assistant",
+      "repo": "core",
+      "source": "anchor"
+    },
+    {
+      "owner": "getsentry",
+      "repo": "sentry",
+      "source": "anchor"
+    },
+    {
+      "owner": "astral-sh",
+      "repo": "uv",
+      "source": "anchor"
+    },
+    {
+      "owner": "voxel51",
+      "repo": "fiftyone",
+      "source": "dynamic",
+      "stars": 10563,
+      "query_matches": 6
+    },
+    {
+      "owner": "lance-format",
+      "repo": "lance",
+      "source": "dynamic",
+      "stars": 6299,
+      "query_matches": 6
+    },
+    {
+      "owner": "shap",
+      "repo": "shap",
+      "source": "dynamic",
+      "stars": 25281,
+      "query_matches": 5
+    },
+    {
+      "owner": "marimo-team",
+      "repo": "marimo",
+      "source": "dynamic",
+      "stars": 20291,
+      "query_matches": 5
+    },
+    {
+      "owner": "yzhao062",
+      "repo": "pyod",
+      "source": "dynamic",
+      "stars": 9778,
+      "query_matches": 5
+    },
+    {
+      "owner": "aimhubio",
+      "repo": "aim",
+      "source": "dynamic",
+      "stars": 6083,
+      "query_matches": 5
+    },
+    {
+      "owner": "Lightning-AI",
+      "repo": "torchmetrics",
+      "source": "dynamic",
+      "stars": 2426,
+      "query_matches": 5
+    },
+    {
+      "owner": "open-webui",
+      "repo": "open-webui",
+      "source": "dynamic",
+      "stars": 131154,
+      "query_matches": 4
+    },
+    {
+      "owner": "unslothai",
+      "repo": "unsloth",
+      "source": "dynamic",
+      "stars": 60912,
+      "query_matches": 4
+    },
+    {
+      "owner": "JuliaLang",
+      "repo": "julia",
+      "source": "dynamic",
+      "stars": 48565,
+      "query_matches": 4
+    },
+    {
+      "owner": "modular",
+      "repo": "modular",
+      "source": "dynamic",
+      "stars": 25858,
+      "query_matches": 4
+    },
+    {
+      "owner": "sgl-project",
+      "repo": "sglang",
+      "source": "dynamic",
+      "stars": 25627,
+      "query_matches": 4
+    },
+    {
+      "owner": "kornia",
+      "repo": "kornia",
+      "source": "dynamic",
+      "stars": 11163,
+      "query_matches": 4
+    },
+    {
+      "owner": "unit8co",
+      "repo": "darts",
+      "source": "dynamic",
+      "stars": 9316,
+      "query_matches": 4
+    },
+    {
+      "owner": "flyteorg",
+      "repo": "flyte",
+      "source": "dynamic",
+      "stars": 6930,
+      "query_matches": 4
+    },
+    {
+      "owner": "microsoft",
+      "repo": "SynapseML",
+      "source": "dynamic",
+      "stars": 5221,
+      "query_matches": 4
+    },
+    {
+      "owner": "awslabs",
+      "repo": "gluonts",
+      "source": "dynamic",
+      "stars": 5160,
+      "query_matches": 4
+    },
+    {
+      "owner": "FluxML",
+      "repo": "Flux.jl",
+      "source": "dynamic",
+      "stars": 4720,
+      "query_matches": 4
+    },
+    {
+      "owner": "tensorflow",
+      "repo": "probability",
+      "source": "dynamic",
+      "stars": 4414,
+      "query_matches": 4
+    },
+    {
+      "owner": "microsoft",
+      "repo": "FLAML",
+      "source": "dynamic",
+      "stars": 4325,
+      "query_matches": 4
+    },
+    {
+      "owner": "kubeflow",
+      "repo": "pipelines",
+      "source": "dynamic",
+      "stars": 4119,
+      "query_matches": 4
+    },
+    {
+      "owner": "polyaxon",
+      "repo": "polyaxon",
+      "source": "dynamic",
+      "stars": 3701,
+      "query_matches": 4
+    },
+    {
+      "owner": "hitsz-ids",
+      "repo": "synthetic-data-generator",
+      "source": "dynamic",
+      "stars": 2414,
+      "query_matches": 4
+    },
+    {
+      "owner": "scverse",
+      "repo": "scanpy",
+      "source": "dynamic",
+      "stars": 2409,
+      "query_matches": 4
+    },
+    {
+      "owner": "OSGeo",
+      "repo": "grass",
+      "source": "dynamic",
+      "stars": 1096,
+      "query_matches": 4
+    },
+    {
+      "owner": "kornia",
+      "repo": "kornia-rs",
+      "source": "dynamic",
+      "stars": 629,
+      "query_matches": 4
+    },
+    {
+      "owner": "HKUDS",
+      "repo": "nanobot",
+      "source": "trending",
+      "stars": 38959,
+      "query_matches": 3
+    },
+    {
+      "owner": "qdrant",
+      "repo": "qdrant",
+      "source": "dynamic",
+      "stars": 30226,
+      "query_matches": 3
+    },
+    {
+      "owner": "onnx",
+      "repo": "onnx",
+      "source": "dynamic",
+      "stars": 20633,
+      "query_matches": 3
+    },
+    {
+      "owner": "AI4Finance-Foundation",
+      "repo": "FinGPT",
+      "source": "dynamic",
+      "stars": 19045,
+      "query_matches": 3
+    },
+    {
+      "owner": "google",
+      "repo": "adk-python",
+      "source": "dynamic",
+      "stars": 18855,
+      "query_matches": 3
+    },
+    {
+      "owner": "arc53",
+      "repo": "DocsGPT",
+      "source": "dynamic",
+      "stars": 17820,
+      "query_matches": 3
+    },
+    {
+      "owner": "tracel-ai",
+      "repo": "burn",
+      "source": "dynamic",
+      "stars": 14838,
+      "query_matches": 3
+    },
+    {
+      "owner": "skypilot-org",
+      "repo": "skypilot",
+      "source": "dynamic",
+      "stars": 9806,
+      "query_matches": 3
+    },
+    {
+      "owner": "replicate",
+      "repo": "cog",
+      "source": "dynamic",
+      "stars": 9377,
+      "query_matches": 3
+    },
+    {
+      "owner": "vaexio",
+      "repo": "vaex",
+      "source": "dynamic",
+      "stars": 8502,
+      "query_matches": 3
+    },
+    {
+      "owner": "py-why",
+      "repo": "dowhy",
+      "source": "dynamic",
+      "stars": 8053,
+      "query_matches": 3
+    },
+    {
+      "owner": "evidentlyai",
+      "repo": "evidently",
+      "source": "dynamic",
+      "stars": 7380,
+      "query_matches": 3
+    },
+    {
+      "owner": "feast-dev",
+      "repo": "feast",
+      "source": "dynamic",
+      "stars": 6940,
+      "query_matches": 3
+    },
+    {
+      "owner": "PriorLabs",
+      "repo": "TabPFN",
+      "source": "dynamic",
+      "stars": 6038,
+      "query_matches": 3
+    },
+    {
+      "owner": "online-ml",
+      "repo": "river",
+      "source": "dynamic",
+      "stars": 5786,
+      "query_matches": 3
+    },
+    {
+      "owner": "NVIDIA",
+      "repo": "DALI",
+      "source": "dynamic",
+      "stars": 5666,
+      "query_matches": 3
+    },
+    {
+      "owner": "Eventual-Inc",
+      "repo": "Daft",
+      "source": "dynamic",
+      "stars": 5406,
+      "query_matches": 3
+    },
+    {
+      "owner": "sktime",
+      "repo": "pytorch-forecasting",
+      "source": "dynamic",
+      "stars": 4861,
+      "query_matches": 3
+    },
+    {
+      "owner": "pytorch",
+      "repo": "executorch",
+      "source": "dynamic",
+      "stars": 4496,
+      "query_matches": 3
+    },
+    {
+      "owner": "SylphAI-Inc",
+      "repo": "AdalFlow",
+      "source": "dynamic",
+      "stars": 4097,
+      "query_matches": 3
+    },
+    {
+      "owner": "lightly-ai",
+      "repo": "lightly",
+      "source": "dynamic",
+      "stars": 3717,
+      "query_matches": 3
+    },
+    {
+      "owner": "iree-org",
+      "repo": "iree",
+      "source": "dynamic",
+      "stars": 3702,
+      "query_matches": 3
+    },
+    {
+      "owner": "rio-labs",
+      "repo": "rio",
+      "source": "dynamic",
+      "stars": 3370,
+      "query_matches": 3
+    },
+    {
+      "owner": "mljar",
+      "repo": "mljar-supervised",
+      "source": "dynamic",
+      "stars": 3250,
+      "query_matches": 3
+    },
+    {
+      "owner": "PennyLaneAI",
+      "repo": "pennylane",
+      "source": "dynamic",
+      "stars": 3145,
+      "query_matches": 3
+    },
+    {
+      "owner": "bghira",
+      "repo": "SimpleTuner",
+      "source": "dynamic",
+      "stars": 2805,
+      "query_matches": 3
+    },
+    {
+      "owner": "apache",
+      "repo": "hamilton",
+      "source": "dynamic",
+      "stars": 2448,
+      "query_matches": 3
+    },
+    {
+      "owner": "RubixML",
+      "repo": "ML",
+      "source": "dynamic",
+      "stars": 2193,
+      "query_matches": 3
+    },
+    {
+      "owner": "kubeflow",
+      "repo": "trainer",
+      "source": "dynamic",
+      "stars": 2080,
+      "query_matches": 3
+    },
+    {
+      "owner": "fastmachinelearning",
+      "repo": "hls4ml",
+      "source": "dynamic",
+      "stars": 1936,
+      "query_matches": 3
+    },
+    {
+      "owner": "kubeflow",
+      "repo": "katib",
+      "source": "dynamic",
+      "stars": 1676,
+      "query_matches": 3
+    },
+    {
+      "owner": "pytorch-tabular",
+      "repo": "pytorch_tabular",
+      "source": "dynamic",
+      "stars": 1651,
+      "query_matches": 3
+    },
+    {
+      "owner": "pixeltable",
+      "repo": "pixeltable",
+      "source": "dynamic",
+      "stars": 1621,
+      "query_matches": 3
+    },
+    {
+      "owner": "skrub-data",
+      "repo": "skrub",
+      "source": "dynamic",
+      "stars": 1591,
+      "query_matches": 3
+    },
+    {
+      "owner": "geomstats",
+      "repo": "geomstats",
+      "source": "dynamic",
+      "stars": 1477,
+      "query_matches": 3
+    },
+    {
+      "owner": "uxlfoundation",
+      "repo": "scikit-learn-intelex",
+      "source": "dynamic",
+      "stars": 1336,
+      "query_matches": 3
+    },
+    {
+      "owner": "PrunaAI",
+      "repo": "pruna",
+      "source": "dynamic",
+      "stars": 1155,
+      "query_matches": 3
+    },
+    {
+      "owner": "AgnostiqHQ",
+      "repo": "covalent",
+      "source": "dynamic",
+      "stars": 859,
+      "query_matches": 3
+    },
+    {
+      "owner": "scverse",
+      "repo": "anndata",
+      "source": "dynamic",
+      "stars": 729,
+      "query_matches": 3
+    },
+    {
+      "owner": "uxlfoundation",
+      "repo": "oneDAL",
+      "source": "dynamic",
+      "stars": 645,
+      "query_matches": 3
+    },
+    {
+      "owner": "Significant-Gravitas",
+      "repo": "AutoGPT",
+      "source": "dynamic",
+      "stars": 183301,
+      "query_matches": 2
+    },
+    {
+      "owner": "microsoft",
+      "repo": "PowerToys",
+      "source": "dynamic",
+      "stars": 131515,
+      "query_matches": 2
+    },
+    {
+      "owner": "nodejs",
+      "repo": "node",
+      "source": "dynamic",
+      "stars": 116666,
+      "query_matches": 2
+    },
+    {
+      "owner": "denoland",
+      "repo": "deno",
+      "source": "dynamic",
+      "stars": 106433,
+      "query_matches": 2
+    },
+    {
+      "owner": "ggml-org",
+      "repo": "llama.cpp",
+      "source": "dynamic",
+      "stars": 102980,
+      "query_matches": 2
+    },
+    {
+      "owner": "microsoft",
+      "repo": "terminal",
+      "source": "dynamic",
+      "stars": 102629,
+      "query_matches": 2
+    },
+    {
+      "owner": "storybookjs",
+      "repo": "storybook",
+      "source": "dynamic",
+      "stars": 89676,
+      "query_matches": 2
+    },
+    {
+      "owner": "elastic",
+      "repo": "elasticsearch",
+      "source": "dynamic",
+      "stars": 76493,
+      "query_matches": 2
+    },
+    {
+      "owner": "grafana",
+      "repo": "grafana",
+      "source": "dynamic",
+      "stars": 73136,
+      "query_matches": 2
+    },
+    {
+      "owner": "apache",
+      "repo": "superset",
+      "source": "dynamic",
+      "stars": 72332,
+      "query_matches": 2
+    },
+    {
+      "owner": "caddyserver",
+      "repo": "caddy",
+      "source": "dynamic",
+      "stars": 71436,
+      "query_matches": 2
+    },
+    {
+      "owner": "OpenHands",
+      "repo": "OpenHands",
+      "source": "dynamic",
+      "stars": 70985,
+      "query_matches": 2
+    },
+    {
+      "owner": "keras-team",
+      "repo": "keras",
+      "source": "dynamic",
+      "stars": 63953,
+      "query_matches": 2
+    },
+    {
+      "owner": "commaai",
+      "repo": "openpilot",
+      "source": "dynamic",
+      "stars": 60562,
+      "query_matches": 2
+    },
+    {
+      "owner": "cline",
+      "repo": "cline",
+      "source": "dynamic",
+      "stars": 60139,
+      "query_matches": 2
+    },
+    {
+      "owner": "docling-project",
+      "repo": "docling",
+      "source": "dynamic",
+      "stars": 57545,
+      "query_matches": 2
+    },
+    {
+      "owner": "rclone",
+      "repo": "rclone",
+      "source": "dynamic",
+      "stars": 56570,
+      "query_matches": 2
+    },
+    {
+      "owner": "FlowiseAI",
+      "repo": "Flowise",
+      "source": "dynamic",
+      "stars": 51753,
+      "query_matches": 2
+    },
+    {
+      "owner": "dbeaver",
+      "repo": "dbeaver",
+      "source": "dynamic",
+      "stars": 49523,
+      "query_matches": 2
+    },
+    {
+      "owner": "jingyaogong",
+      "repo": "minimind",
+      "source": "dynamic",
+      "stars": 46431,
+      "query_matches": 2
+    },
+    {
+      "owner": "Leaflet",
+      "repo": "Leaflet",
+      "source": "dynamic",
+      "stars": 44812,
+      "query_matches": 2
+    },
+    {
+      "owner": "milvus-io",
+      "repo": "milvus",
+      "source": "dynamic",
+      "stars": 43719,
+      "query_matches": 2
+    },
+    {
+      "owner": "juspay",
+      "repo": "hyperswitch",
+      "source": "dynamic",
+      "stars": 42431,
+      "query_matches": 2
+    },
+    {
+      "owner": "dotnet",
+      "repo": "aspnetcore",
+      "source": "dynamic",
+      "stars": 37821,
+      "query_matches": 2
+    },
+    {
+      "owner": "llvm",
+      "repo": "llvm-project",
+      "source": "dynamic",
+      "stars": 37799,
+      "query_matches": 2
+    },
+    {
+      "owner": "mattermost",
+      "repo": "mattermost",
+      "source": "dynamic",
+      "stars": 36151,
+      "query_matches": 2
+    },
+    {
+      "owner": "jax-ml",
+      "repo": "jax",
+      "source": "dynamic",
+      "stars": 35358,
+      "query_matches": 2
+    },
+    {
+      "owner": "directus",
+      "repo": "directus",
+      "source": "dynamic",
+      "stars": 34760,
+      "query_matches": 2
+    },
+    {
+      "owner": "nextcloud",
+      "repo": "server",
+      "source": "dynamic",
+      "stars": 34583,
+      "query_matches": 2
+    },
+    {
+      "owner": "keycloak",
+      "repo": "keycloak",
+      "source": "dynamic",
+      "stars": 33822,
+      "query_matches": 2
+    },
+    {
+      "owner": "explosion",
+      "repo": "spaCy",
+      "source": "dynamic",
+      "stars": 33434,
+      "query_matches": 2
+    },
+    {
+      "owner": "PostHog",
+      "repo": "posthog",
+      "source": "dynamic",
+      "stars": 32536,
+      "query_matches": 2
+    },
+    {
+      "owner": "kubernetes",
+      "repo": "minikube",
+      "source": "dynamic",
+      "stars": 31681,
+      "query_matches": 2
+    },
+    {
+      "owner": "symfony",
+      "repo": "symfony",
+      "source": "dynamic",
+      "stars": 30989,
+      "query_matches": 2
+    },
+    {
+      "owner": "grafana",
+      "repo": "k6",
+      "source": "dynamic",
+      "stars": 30322,
+      "query_matches": 2
+    },
+    {
+      "owner": "FreeCAD",
+      "repo": "FreeCAD",
+      "source": "dynamic",
+      "stars": 30232,
+      "query_matches": 2
+    },
+    {
+      "owner": "CopilotKit",
+      "repo": "CopilotKit",
+      "source": "dynamic",
+      "stars": 30130,
+      "query_matches": 2
+    },
+    {
+      "owner": "openssl",
+      "repo": "openssl",
+      "source": "dynamic",
+      "stars": 29904,
+      "query_matches": 2
+    },
+    {
+      "owner": "helm",
+      "repo": "helm",
+      "source": "dynamic",
+      "stars": 29679,
+      "query_matches": 2
+    },
+    {
+      "owner": "langchain-ai",
+      "repo": "langgraph",
+      "source": "dynamic",
+      "stars": 28909,
+      "query_matches": 2
+    },
+    {
+      "owner": "grafana",
+      "repo": "loki",
+      "source": "dynamic",
+      "stars": 27950,
+      "query_matches": 2
+    },
+    {
+      "owner": "siddharthvaddem",
+      "repo": "openscreen",
+      "source": "trending",
+      "stars": 27553,
+      "query_matches": 2
+    },
+    {
+      "owner": "actualbudget",
+      "repo": "actual",
+      "source": "dynamic",
+      "stars": 25880,
+      "query_matches": 2
+    },
+    {
+      "owner": "Infisical",
+      "repo": "infisical",
+      "source": "dynamic",
+      "stars": 25802,
+      "query_matches": 2
+    },
+    {
+      "owner": "bazelbuild",
+      "repo": "bazel",
+      "source": "dynamic",
+      "stars": 25305,
+      "query_matches": 2
+    },
+    {
+      "owner": "PaddlePaddle",
+      "repo": "Paddle",
+      "source": "dynamic",
+      "stars": 23809,
+      "query_matches": 2
+    },
+    {
+      "owner": "rtk-ai",
+      "repo": "rtk",
+      "source": "trending",
+      "stars": 22736,
+      "query_matches": 2
+    },
+    {
+      "owner": "lightgbm-org",
+      "repo": "LightGBM",
+      "source": "dynamic",
+      "stars": 18230,
+      "query_matches": 2
+    },
+    {
+      "owner": "pytorch",
+      "repo": "vision",
+      "source": "dynamic",
+      "stars": 17625,
+      "query_matches": 2
+    },
+    {
+      "owner": "UFund-Me",
+      "repo": "Qbot",
+      "source": "dynamic",
+      "stars": 16901,
+      "query_matches": 2
+    },
+    {
+      "owner": "ipython",
+      "repo": "ipython",
+      "source": "dynamic",
+      "stars": 16690,
+      "query_matches": 2
+    },
+    {
+      "owner": "camel-ai",
+      "repo": "camel",
+      "source": "dynamic",
+      "stars": 16650,
+      "query_matches": 2
+    },
+    {
+      "owner": "cvat-ai",
+      "repo": "cvat",
+      "source": "dynamic",
+      "stars": 15619,
+      "query_matches": 2
+    },
+    {
+      "owner": "ansible",
+      "repo": "awx",
+      "source": "dynamic",
+      "stars": 15358,
+      "query_matches": 2
+    },
+    {
+      "owner": "nltk",
+      "repo": "nltk",
+      "source": "dynamic",
+      "stars": 14584,
+      "query_matches": 2
+    },
+    {
+      "owner": "ggml-org",
+      "repo": "ggml",
+      "source": "dynamic",
+      "stars": 14399,
+      "query_matches": 2
+    },
+    {
+      "owner": "davisking",
+      "repo": "dlib",
+      "source": "dynamic",
+      "stars": 14358,
+      "query_matches": 2
+    },
+    {
+      "owner": "isl-org",
+      "repo": "Open3D",
+      "source": "dynamic",
+      "stars": 13473,
+      "query_matches": 2
+    },
+    {
+      "owner": "Lightning-AI",
+      "repo": "litgpt",
+      "source": "dynamic",
+      "stars": 13292,
+      "query_matches": 2
+    },
+    {
+      "owner": "OpenRefine",
+      "repo": "OpenRefine",
+      "source": "dynamic",
+      "stars": 11799,
+      "query_matches": 2
+    },
+    {
+      "owner": "qubvel-org",
+      "repo": "segmentation_models.pytorch",
+      "source": "dynamic",
+      "stars": 11464,
+      "query_matches": 2
+    },
+    {
+      "owner": "autogluon",
+      "repo": "autogluon",
+      "source": "dynamic",
+      "stars": 10215,
+      "query_matches": 2
+    },
+    {
+      "owner": "Netflix",
+      "repo": "metaflow",
+      "source": "dynamic",
+      "stars": 10027,
+      "query_matches": 2
+    },
+    {
+      "owner": "sktime",
+      "repo": "sktime",
+      "source": "dynamic",
+      "stars": 9724,
+      "query_matches": 2
+    },
+    {
+      "owner": "superset-sh",
+      "repo": "superset",
+      "source": "trending",
+      "stars": 9294,
+      "query_matches": 2
+    },
+    {
+      "owner": "infinitered",
+      "repo": "nsfwjs",
+      "source": "dynamic",
+      "stars": 8838,
+      "query_matches": 2
+    },
+    {
+      "owner": "Project-MONAI",
+      "repo": "MONAI",
+      "source": "dynamic",
+      "stars": 8060,
+      "query_matches": 2
+    },
+    {
+      "owner": "openedx",
+      "repo": "openedx-platform",
+      "source": "dynamic",
+      "stars": 8058,
+      "query_matches": 2
+    },
+    {
+      "owner": "Qiskit",
+      "repo": "qiskit",
+      "source": "dynamic",
+      "stars": 7232,
+      "query_matches": 2
+    },
+    {
+      "owner": "guess-js",
+      "repo": "guess",
+      "source": "dynamic",
+      "stars": 7122,
+      "query_matches": 2
+    },
+    {
+      "owner": "flwrlabs",
+      "repo": "flower",
+      "source": "dynamic",
+      "stars": 6806,
+      "query_matches": 2
+    },
+    {
+      "owner": "kyegomez",
+      "repo": "swarms",
+      "source": "dynamic",
+      "stars": 6209,
+      "query_matches": 2
+    },
+    {
+      "owner": "pbek",
+      "repo": "QOwnNotes",
+      "source": "dynamic",
+      "stars": 5690,
+      "query_matches": 2
+    },
+    {
+      "owner": "volcano-sh",
+      "repo": "volcano",
+      "source": "dynamic",
+      "stars": 5438,
+      "query_matches": 2
+    },
+    {
+      "owner": "kserve",
+      "repo": "kserve",
+      "source": "dynamic",
+      "stars": 5320,
+      "query_matches": 2
+    },
+    {
+      "owner": "Giskard-AI",
+      "repo": "giskard-oss",
+      "source": "dynamic",
+      "stars": 5227,
+      "query_matches": 2
+    },
+    {
+      "owner": "marqo-ai",
+      "repo": "marqo",
+      "source": "dynamic",
+      "stars": 5022,
+      "query_matches": 2
+    },
+    {
+      "owner": "deepjavalibrary",
+      "repo": "djl",
+      "source": "dynamic",
+      "stars": 4795,
+      "query_matches": 2
+    },
+    {
+      "owner": "pytorch",
+      "repo": "ignite",
+      "source": "dynamic",
+      "stars": 4752,
+      "query_matches": 2
+    },
+    {
+      "owner": "rust-ml",
+      "repo": "linfa",
+      "source": "dynamic",
+      "stars": 4608,
+      "query_matches": 2
+    },
+    {
+      "owner": "unionai-oss",
+      "repo": "pandera",
+      "source": "dynamic",
+      "stars": 4292,
+      "query_matches": 2
+    },
+    {
+      "owner": "vllm-project",
+      "repo": "vllm-omni",
+      "source": "dynamic",
+      "stars": 4212,
+      "query_matches": 2
+    },
+    {
+      "owner": "camel-ai",
+      "repo": "oasis",
+      "source": "dynamic",
+      "stars": 4205,
+      "query_matches": 2
+    },
+    {
+      "owner": "vllm-project",
+      "repo": "semantic-router",
+      "source": "dynamic",
+      "stars": 3683,
+      "query_matches": 2
+    },
+    {
+      "owner": "microsoft",
+      "repo": "PyRIT",
+      "source": "dynamic",
+      "stars": 3675,
+      "query_matches": 2
+    },
+    {
+      "owner": "microsoft",
+      "repo": "tensorwatch",
+      "source": "dynamic",
+      "stars": 3469,
+      "query_matches": 2
+    },
+    {
+      "owner": "pytorch",
+      "repo": "rl",
+      "source": "dynamic",
+      "stars": 3383,
+      "query_matches": 2
+    },
+    {
+      "owner": "root-project",
+      "repo": "root",
+      "source": "dynamic",
+      "stars": 3165,
+      "query_matches": 2
+    },
+    {
+      "owner": "tslearn-team",
+      "repo": "tslearn",
+      "source": "dynamic",
+      "stars": 3135,
+      "query_matches": 2
+    },
+    {
+      "owner": "spiceai",
+      "repo": "spiceai",
+      "source": "dynamic",
+      "stars": 2867,
+      "query_matches": 2
+    },
+    {
+      "owner": "pytorch",
+      "repo": "audio",
+      "source": "dynamic",
+      "stars": 2862,
+      "query_matches": 2
+    },
+    {
+      "owner": "TeamHG-Memex",
+      "repo": "eli5",
+      "source": "dynamic",
+      "stars": 2777,
+      "query_matches": 2
+    },
+    {
+      "owner": "KomputeProject",
+      "repo": "kompute",
+      "source": "dynamic",
+      "stars": 2489,
+      "query_matches": 2
+    },
+    {
+      "owner": "mayocream",
+      "repo": "koharu",
+      "source": "dynamic",
+      "stars": 2433,
+      "query_matches": 2
+    },
+    {
+      "owner": "open-telemetry",
+      "repo": "opentelemetry-python",
+      "source": "dynamic",
+      "stars": 2389,
+      "query_matches": 2
+    },
+    {
+      "owner": "huggingface",
+      "repo": "huggingface.js",
+      "source": "dynamic",
+      "stars": 2385,
+      "query_matches": 2
+    },
+    {
+      "owner": "TorchIO-project",
+      "repo": "torchio",
+      "source": "dynamic",
+      "stars": 2382,
+      "query_matches": 2
+    },
+    {
+      "owner": "feature-engine",
+      "repo": "feature_engine",
+      "source": "dynamic",
+      "stars": 2223,
+      "query_matches": 2
+    },
+    {
+      "owner": "evennia",
+      "repo": "evennia",
+      "source": "dynamic",
+      "stars": 2028,
+      "query_matches": 2
+    },
+    {
+      "owner": "elastic",
+      "repo": "rally",
+      "source": "dynamic",
+      "stars": 2026,
+      "query_matches": 2
+    },
+    {
+      "owner": "elyra-ai",
+      "repo": "elyra",
+      "source": "dynamic",
+      "stars": 1991,
+      "query_matches": 2
+    },
+    {
+      "owner": "meta-pytorch",
+      "repo": "opacus",
+      "source": "dynamic",
+      "stars": 1918,
+      "query_matches": 2
+    },
+    {
+      "owner": "Comfy-Org",
+      "repo": "ComfyUI_frontend",
+      "source": "dynamic",
+      "stars": 1742,
+      "query_matches": 2
+    },
+    {
+      "owner": "bespokelabsai",
+      "repo": "curator",
+      "source": "dynamic",
+      "stars": 1662,
+      "query_matches": 2
+    },
+    {
+      "owner": "EnzymeAD",
+      "repo": "Enzyme",
+      "source": "dynamic",
+      "stars": 1578,
+      "query_matches": 2
+    },
+    {
+      "owner": "FluxML",
+      "repo": "Zygote.jl",
+      "source": "dynamic",
+      "stars": 1563,
+      "query_matches": 2
+    },
+    {
+      "owner": "capitalone",
+      "repo": "DataProfiler",
+      "source": "dynamic",
+      "stars": 1551,
+      "query_matches": 2
+    },
+    {
+      "owner": "nilearn",
+      "repo": "nilearn",
+      "source": "dynamic",
+      "stars": 1386,
+      "query_matches": 2
+    },
+    {
+      "owner": "aeon-toolkit",
+      "repo": "aeon",
+      "source": "dynamic",
+      "stars": 1368,
+      "query_matches": 2
+    },
+    {
+      "owner": "lakehq",
+      "repo": "sail",
+      "source": "dynamic",
+      "stars": 1284,
+      "query_matches": 2
+    },
+    {
+      "owner": "shivammehta25",
+      "repo": "Matcha-TTS",
+      "source": "dynamic",
+      "stars": 1279,
+      "query_matches": 2
+    },
+    {
+      "owner": "lhotse-speech",
+      "repo": "lhotse",
+      "source": "dynamic",
+      "stars": 1123,
+      "query_matches": 2
+    },
+    {
+      "owner": "pymc-labs",
+      "repo": "pymc-marketing",
+      "source": "dynamic",
+      "stars": 1112,
+      "query_matches": 2
+    },
+    {
+      "owner": "NannyML",
+      "repo": "The-Little-Book-of-ML-Metrics",
+      "source": "dynamic",
+      "stars": 997,
+      "query_matches": 2
+    },
+    {
+      "owner": "smartcorelib",
+      "repo": "smartcore",
+      "source": "dynamic",
+      "stars": 902,
+      "query_matches": 2
+    },
+    {
+      "owner": "asreview",
+      "repo": "asreview",
+      "source": "dynamic",
+      "stars": 870,
+      "query_matches": 2
+    },
+    {
+      "owner": "mmschlk",
+      "repo": "shapiq",
+      "source": "dynamic",
+      "stars": 711,
+      "query_matches": 2
+    },
+    {
+      "owner": "10up",
+      "repo": "classifai",
+      "source": "dynamic",
+      "stars": 699,
+      "query_matches": 2
+    },
+    {
+      "owner": "LuxDL",
+      "repo": "Lux.jl",
+      "source": "dynamic",
+      "stars": 697,
+      "query_matches": 2
+    },
+    {
+      "owner": "ZigRazor",
+      "repo": "CXXGraph",
+      "source": "dynamic",
+      "stars": 695,
+      "query_matches": 2
+    },
+    {
+      "owner": "elastic",
+      "repo": "eland",
+      "source": "dynamic",
+      "stars": 692,
+      "query_matches": 2
+    },
+    {
+      "owner": "netket",
+      "repo": "netket",
+      "source": "dynamic",
+      "stars": 669,
+      "query_matches": 2
+    },
+    {
+      "owner": "bayesflow-org",
+      "repo": "bayesflow",
+      "source": "dynamic",
+      "stars": 653,
+      "query_matches": 2
+    },
+    {
+      "owner": "probabl-ai",
+      "repo": "skore",
+      "source": "dynamic",
+      "stars": 627,
+      "query_matches": 2
+    },
+    {
+      "owner": "EnzymeAD",
+      "repo": "Enzyme.jl",
+      "source": "dynamic",
+      "stars": 556,
+      "query_matches": 2
+    },
+    {
+      "owner": "MTSWebServices",
+      "repo": "RecTools",
+      "source": "dynamic",
+      "stars": 437,
+      "query_matches": 2
+    },
+    {
+      "owner": "sktime",
+      "repo": "skpro",
+      "source": "dynamic",
+      "stars": 321,
+      "query_matches": 2
+    },
+    {
+      "owner": "drivendataorg",
+      "repo": "deon",
+      "source": "dynamic",
+      "stars": 306,
+      "query_matches": 2
+    },
+    {
+      "owner": "albumentations-team",
+      "repo": "AlbumentationsX",
+      "source": "dynamic",
+      "stars": 301,
+      "query_matches": 2
+    },
+    {
+      "owner": "JuliaGraphs",
+      "repo": "GraphNeuralNetworks.jl",
+      "source": "dynamic",
+      "stars": 296,
+      "query_matches": 2
+    },
+    {
+      "owner": "PriorLabs",
+      "repo": "tabpfn-extensions",
+      "source": "dynamic",
+      "stars": 277,
+      "query_matches": 2
+    },
+    {
+      "owner": "FluxML",
+      "repo": "NNlib.jl",
+      "source": "dynamic",
+      "stars": 248,
+      "query_matches": 2
+    },
+    {
+      "owner": "RumbleDB",
+      "repo": "rumble",
+      "source": "dynamic",
+      "stars": 239,
+      "query_matches": 2
+    },
+    {
+      "owner": "neo4j",
+      "repo": "graph-data-science-client",
+      "source": "dynamic",
+      "stars": 238,
+      "query_matches": 2
+    }
+  ]
+}

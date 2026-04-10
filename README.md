@@ -128,9 +128,10 @@ No registration. No sign-ups. Just open source.
 <summary> 💡 How It Works</summary>
 
 Every **Friday at 17:00 UTC**, a GitHub Action automatically:
-1. Pulls fresh issues (labeled `good first issue`, `bug`, or `hard`) from a curated list of active repos
-2. Updates this README with the new weekly batch
-3. Archives the previous week's issues for contribution tracking
+1. Rebuilds a fresh pool of 250 active repos (50 hand-curated anchors + ~200 dynamically discovered via the GitHub Search API)
+2. Pulls new issues (labeled `good first issue`, `bug`, or `hard`) from that pool
+3. Updates this README with the new weekly batch
+4. Archives the previous week's issues for contribution tracking
 
 You don't need to register — contributions are detected automatically via GitHub's public metadata.
 
@@ -167,7 +168,7 @@ You don't need to register — contributions are detected automatically via GitH
 Make sure your PR references the issue — either via a closing keyword (`fixes #N`, `closes #N`, `resolves #N`) in the PR body, or by linking the issue through GitHub's sidebar. The automation detects both. If you did link it, open a thread in [Discussions](https://github.com/claudiotancredi/weekly-issue-arena/discussions).
 
 **Q: Can I request a specific repo to be added?**
-Yes! See [config/repos.yml](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml) and open a PR or Discussion.
+The pool is rebuilt automatically each week from the GitHub Search API, so any actively maintained repo with `good first issue` or `help wanted` labels is likely to appear on its own. For a guaranteed spot, edit [config/anchor_repos.yml](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/anchor_repos.yml) and open a PR.
 
 **Q: What if I contributed without knowing about the Arena?**
 You're still counted — all contributors to Arena-listed issues are treated equally.
@@ -189,9 +190,11 @@ Via GitHub Actions + GitHub REST API. See [`.github/workflows/`](https://github.
 <details>
 <summary> 🗂️ Tracked Issue Pool </summary>
 
-Want to see what repos we pull issues from, or suggest a new one?
-→ See [`config/repos.yml`](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml)
-→ Open an [issue](https://github.com/claudiotancredi/weekly-issue-arena/issues) or [discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions) to suggest additions
+The weekly pool of 250 repos is built fresh every Friday by [`scripts/fetch_repos.py`](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/scripts/fetch_repos.py):
+- 50 always-included anchor repos: see [`config/anchor_repos.yml`](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/anchor_repos.yml)
+- ~200 dynamically discovered repos via GitHub Search API (topic-aware queries + trending newcomers)
+
+To suggest a guaranteed-included anchor repo, open a PR editing `config/anchor_repos.yml`. Any other actively maintained repo will likely be picked up automatically.
 
 </details>
 
@@ -200,7 +203,7 @@ Want to see what repos we pull issues from, or suggest a new one?
 
 - 💬 [Start a Discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions) — ideas, questions, edge cases
 - 🪲 [File an Issue](https://github.com/claudiotancredi/weekly-issue-arena/issues) — bugs in the automation, rule suggestions
-- 📦 [Open a PR](https://github.com/claudiotancredi/weekly-issue-arena/pulls) — fix something, add a repo to the pool, improve the scripts
+- 📦 [Open a PR](https://github.com/claudiotancredi/weekly-issue-arena/pulls) — fix something, add an anchor repo, improve the scripts
 
 </details>
 

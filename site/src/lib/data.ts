@@ -7,7 +7,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "../../..");
 const ISSUES_PATH = path.join(ROOT, ".arena_state/issues.json");
 const SCORES_PATH = path.join(ROOT, ".arena_state/scores.json");
-const REPOS_PATH = path.join(ROOT, "config/repos.yml");
+const REPO_POOL_PATH = path.join(ROOT, ".arena_state/repo_pool.json");
+const ANCHOR_REPOS_PATH = path.join(ROOT, "config/anchor_repos.yml");
 
 // --- Types ---
 
@@ -171,8 +172,18 @@ export function getWeeklyContributors(): string[] {
 }
 
 export function getRepoCount(): number {
+  // Prefer the dynamic weekly pool (always 250 when healthy).
   try {
-    const raw = fs.readFileSync(REPOS_PATH, "utf-8");
+    const raw = fs.readFileSync(REPO_POOL_PATH, "utf-8");
+    const pool = JSON.parse(raw);
+    return pool.total_count ?? pool.repos?.length ?? 0;
+  } catch {
+    /* fall through to anchor list */
+  }
+
+  // Fallback: count anchor repos from the curated YAML.
+  try {
+    const raw = fs.readFileSync(ANCHOR_REPOS_PATH, "utf-8");
     return (raw.match(/- owner:/g) || []).length;
   } catch {
     return 0;

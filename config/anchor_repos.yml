@@ -1,0 +1,132 @@
+# Anchor repos — always included in the weekly arena pool.
+#
+# These 50 repos provide the arena's domain identity (satellite, ML, AI,
+# data, Python ecosystem) and a guaranteed baseline. They are always
+# included regardless of the dynamic discovery results.
+#
+# The remaining ~200 slots in the weekly pool are filled dynamically by
+# scripts/fetch_repos.py from GitHub Search API queries.
+#
+# To suggest a new anchor repo: edit this file and open a PR.
+# Selection criteria for anchors:
+#   - Active maintenance with regular issue throughput
+#   - Strong fit for one of the arena's core domains
+#   - Welcomes external contributions
+
+repos:
+
+  # 🛰️  Satellite & geospatial
+  - owner: torchgeo
+    repo: torchgeo
+  - owner: stac-utils
+    repo: pystac
+  - owner: giswqs
+    repo: geemap
+  - owner: rasterio
+    repo: rasterio
+  - owner: corteva
+    repo: rioxarray
+  - owner: geopandas
+    repo: geopandas
+  - owner: pydata
+    repo: xarray
+  - owner: pytroll
+    repo: satpy
+  - owner: OSGeo
+    repo: gdal
+  - owner: scikit-image
+    repo: scikit-image
+
+  # 🤖  Machine learning core
+  - owner: scikit-learn
+    repo: scikit-learn
+  - owner: pytorch
+    repo: pytorch
+  - owner: Lightning-AI
+    repo: pytorch-lightning
+  - owner: huggingface
+    repo: transformers
+  - owner: huggingface
+    repo: datasets
+  - owner: mlflow
+    repo: mlflow
+  - owner: ray-project
+    repo: ray
+  - owner: dask
+    repo: dask
+  - owner: dmlc
+    repo: xgboost
+  - owner: pola-rs
+    repo: polars
+
+  # 🔬  Scientific computing & data
+  - owner: pandas-dev
+    repo: pandas
+  - owner: numpy
+    repo: numpy
+  - owner: scipy
+    repo: scipy
+  - owner: matplotlib
+    repo: matplotlib
+  - owner: astropy
+    repo: astropy
+
+  # 🧠  AI / LLM / GenAI
+  - owner: langchain-ai
+    repo: langchain
+  - owner: run-llama
+    repo: llama_index
+  - owner: vllm-project
+    repo: vllm
+  - owner: ollama
+    repo: ollama
+  - owner: huggingface
+    repo: diffusers
+  - owner: microsoft
+    repo: autogen
+  - owner: ggerganov
+    repo: llama.cpp
+
+  # 📊  MLOps & data engineering
+  - owner: apache
+    repo: airflow
+  - owner: PrefectHQ
+    repo: prefect
+  - owner: dagster-io
+    repo: dagster
+  - owner: apache
+    repo: arrow
+  - owner: optuna
+    repo: optuna
+
+  # 🐍  Python ecosystem & web frameworks
+  - owner: tiangolo
+    repo: fastapi
+  - owner: django
+    repo: django
+  - owner: pallets
+    repo: flask
+  - owner: python
+    repo: cpython
+  - owner: astral-sh
+    repo: ruff
+
+  # 📊  Data apps & visualization
+  - owner: streamlit
+    repo: streamlit
+  - owner: gradio-app
+    repo: gradio
+  - owner: plotly
+    repo: plotly.py
+
+  # 🔧  Popular general OSS (high contribution throughput)
+  - owner: microsoft
+    repo: vscode
+  - owner: kubernetes
+    repo: kubernetes
+  - owner: home-assistant
+    repo: core
+  - owner: getsentry
+    repo: sentry
+  - owner: astral-sh
+    repo: uv

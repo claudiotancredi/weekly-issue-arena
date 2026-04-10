@@ -14,7 +14,7 @@ on:
       - "site/**"
       - ".arena_state/**"
       - "assets/**"
-      - "config/repos.yml"
+      - "config/anchor_repos.yml"
 
   workflow_dispatch:
 

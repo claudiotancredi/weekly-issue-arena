@@ -30,6 +30,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Fetch weekly repo pool
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/fetch_repos.py
+
       - name: Fetch new issues
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

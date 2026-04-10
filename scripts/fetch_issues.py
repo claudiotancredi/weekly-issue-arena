@@ -29,18 +29,51 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 log = logging.getLogger(__name__)
 
 CONFIG_PATH = Path("config/repos.yml")
+ANCHOR_PATH = Path("config/anchor_repos.yml")
+POOL_PATH = Path(".arena_state/repo_pool.json")
 README_PATH = Path("README.md")
 STATE_PATH = Path(".arena_state/issues.json")
 
 
 def load_configured_repos() -> dict:
-    """Loads the info about the configured repos for the Arena issues.
+    """Load label_mappings/limits plus the weekly repo list.
+
+    Three-level fallback chain for the repo list:
+      1. ``.arena_state/repo_pool.json`` (weekly dynamic pool, preferred)
+      2. ``config/anchor_repos.yml`` (curated anchor list, fallback)
+      3. empty list (logged as error)
+
+    ``label_mappings`` and ``limits`` always come from
+    ``config/repos.yml``.
 
     Returns:
-        dict: Information about the configured repos.
+        dict: Configuration with ``repos``, ``label_mappings``, ``limits``.
     """
     with open(CONFIG_PATH, encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        config = yaml.safe_load(f)
+
+    if POOL_PATH.exists():
+        with open(POOL_PATH, encoding="utf-8") as f:
+            pool = json.load(f)
+        config["repos"] = pool["repos"]
+        log.info(
+            f"Loaded {pool['total_count']} repos from pool "
+            f"({pool['anchor_count']} anchor + "
+            f"{pool['dynamic_count']} dynamic)."
+        )
+    elif ANCHOR_PATH.exists():
+        with open(ANCHOR_PATH, encoding="utf-8") as f:
+            anchor = yaml.safe_load(f)
+        config["repos"] = anchor.get("repos", [])
+        log.warning(
+            f"No dynamic pool found — falling back to anchor repos "
+            f"({len(config['repos'])})."
+        )
+    else:
+        log.error("No repo source available — pool is empty.")
+        config["repos"] = []
+
+    return config
 
 
 def get_issues_for_repo(

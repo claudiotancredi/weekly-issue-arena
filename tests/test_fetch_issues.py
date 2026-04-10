@@ -713,12 +713,19 @@ class TestSaveCurrentIssues:
 
 
 class TestLoadConfiguredRepos:
-    """Tests for the load_configured_repos function."""
+    """Tests for the load_configured_repos function.
 
-    def test_loads_valid_yaml(self, tmp_path, monkeypatch):
-        """A valid repos.yml is parsed and returned as a dict."""
+    The function loads label_mappings + limits from ``config/repos.yml``
+    and the repo list from a three-level fallback chain:
+    pool → anchor → empty.
+    """
+
+    @staticmethod
+    def _write_main_config(tmp_path) -> Path:
+        """Write a minimal config/repos.yml with no repos: list."""
+        import yaml
+
         config = {
-            "repos": [{"owner": "org", "repo": "proj"}],
             "label_mappings": {
                 "gfi": ["good first issue"],
                 "bug": ["bug"],
@@ -727,33 +734,127 @@ class TestLoadConfiguredRepos:
             "limits": {"gfi": 5, "bug": 3, "hard": 2},
         }
         f = tmp_path / "repos.yml"
-        import yaml
-
         f.write_text(yaml.dump(config), encoding="utf-8")
-        monkeypatch.setattr("fetch_issues.CONFIG_PATH", f)
+        return f
+
+    def test_loads_repos_from_pool(self, tmp_path, monkeypatch):
+        """When the pool file exists, repos come from it."""
+        cfg = self._write_main_config(tmp_path)
+        pool = tmp_path / "repo_pool.json"
+        pool.write_text(
+            json.dumps(
+                {
+                    "anchor_count": 1,
+                    "dynamic_count": 1,
+                    "total_count": 2,
+                    "repos": [
+                        {
+                            "owner": "torchgeo",
+                            "repo": "torchgeo",
+                            "source": "anchor",
+                        },
+                        {
+                            "owner": "vllm-project",
+                            "repo": "vllm",
+                            "source": "dynamic",
+                        },
+                    ],
+                }
+            ),
+            encoding="utf-8",
+        )
+        monkeypatch.setattr("fetch_issues.CONFIG_PATH", cfg)
+        monkeypatch.setattr("fetch_issues.POOL_PATH", pool)
+        monkeypatch.setattr(
+            "fetch_issues.ANCHOR_PATH", tmp_path / "missing.yml"
+        )
         result = fetch_issues.load_configured_repos()
-        assert result["repos"][0]["owner"] == "org"
+        assert len(result["repos"]) == 2
+        assert result["repos"][0]["owner"] == "torchgeo"
+        # label_mappings/limits still come from config/repos.yml
         assert result["limits"]["gfi"] == 5
 
-    def test_has_required_keys(self, tmp_path, monkeypatch):
-        """Loaded config contains repos, label_mappings, and limits."""
-        config = {
-            "repos": [],
-            "label_mappings": {"gfi": [], "bug": [], "hard": []},
-            "limits": {"gfi": 0, "bug": 0, "hard": 0},
-        }
-        f = tmp_path / "repos.yml"
-        import yaml
+    def test_falls_back_to_anchor_when_no_pool(
+        self, tmp_path, monkeypatch, caplog
+    ):
+        """No pool but anchor exists → loads anchor and warns."""
+        import logging
 
-        f.write_text(yaml.dump(config), encoding="utf-8")
-        monkeypatch.setattr("fetch_issues.CONFIG_PATH", f)
+        cfg = self._write_main_config(tmp_path)
+        anchor = tmp_path / "anchor_repos.yml"
+        anchor.write_text(
+            "repos:\n"
+            "  - owner: torchgeo\n"
+            "    repo: torchgeo\n"
+            "  - owner: pytorch\n"
+            "    repo: pytorch\n",
+            encoding="utf-8",
+        )
+        monkeypatch.setattr("fetch_issues.CONFIG_PATH", cfg)
+        monkeypatch.setattr(
+            "fetch_issues.POOL_PATH", tmp_path / "missing.json"
+        )
+        monkeypatch.setattr("fetch_issues.ANCHOR_PATH", anchor)
+        with caplog.at_level(logging.WARNING):
+            result = fetch_issues.load_configured_repos()
+        assert len(result["repos"]) == 2
+        assert result["repos"][0]["owner"] == "torchgeo"
+        assert any("anchor" in r.message.lower() for r in caplog.records)
+
+    def test_no_source_returns_empty_list(self, tmp_path, monkeypatch, caplog):
+        """Neither pool nor anchor → empty repos list, error logged."""
+        import logging
+
+        cfg = self._write_main_config(tmp_path)
+        monkeypatch.setattr("fetch_issues.CONFIG_PATH", cfg)
+        monkeypatch.setattr(
+            "fetch_issues.POOL_PATH", tmp_path / "missing.json"
+        )
+        monkeypatch.setattr(
+            "fetch_issues.ANCHOR_PATH", tmp_path / "missing.yml"
+        )
+        with caplog.at_level(logging.ERROR):
+            result = fetch_issues.load_configured_repos()
+        assert result["repos"] == []
+        assert any(
+            "no repo source" in r.message.lower() for r in caplog.records
+        )
+
+    def test_label_mappings_always_from_config(self, tmp_path, monkeypatch):
+        """label_mappings/limits come from config/repos.yml.
+
+        This holds even when the pool is the source of repos.
+        """
+        cfg = self._write_main_config(tmp_path)
+        pool = tmp_path / "repo_pool.json"
+        pool.write_text(
+            json.dumps(
+                {
+                    "anchor_count": 0,
+                    "dynamic_count": 1,
+                    "total_count": 1,
+                    "repos": [
+                        {
+                            "owner": "a",
+                            "repo": "b",
+                            "source": "dynamic",
+                        }
+                    ],
+                }
+            ),
+            encoding="utf-8",
+        )
+        monkeypatch.setattr("fetch_issues.CONFIG_PATH", cfg)
+        monkeypatch.setattr("fetch_issues.POOL_PATH", pool)
+        monkeypatch.setattr(
+            "fetch_issues.ANCHOR_PATH", tmp_path / "missing.yml"
+        )
         result = fetch_issues.load_configured_repos()
-        assert "repos" in result
-        assert "label_mappings" in result
-        assert "limits" in result
+        assert result["label_mappings"]["gfi"] == ["good first issue"]
+        assert result["limits"]["bug"] == 3
 
-    def test_missing_file_raises(self, tmp_path, monkeypatch):
-        """Missing repos.yml raises FileNotFoundError."""
+    def test_missing_main_config_raises(self, tmp_path, monkeypatch):
+        """Missing config/repos.yml raises FileNotFoundError."""
         monkeypatch.setattr(
             "fetch_issues.CONFIG_PATH", tmp_path / "missing.yml"
         )

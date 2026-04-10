@@ -39,15 +39,21 @@ All tests use mocked HTTP responses — no GitHub token or network access requir
 Both scripts support `--dry-run` to preview changes without writing files:
 
 ```bash
+python scripts/fetch_repos.py --dry-run     # Build the weekly repo pool, log output, skip writes
 python scripts/fetch_issues.py --dry-run    # Fetch issues, log output, skip file writes
 python scripts/update_leaderboard.py --dry-run  # Check credits, skip file writes
 ```
 
 ### Suggest a new repo
 
-Edit [`config/repos.yml`](config/repos.yml) and open a PR. Good candidates:
-- Actively maintained (recent commits)
-- Uses standard GitHub labels (`good first issue`, `bug`, etc.)
+The weekly pool of 250 repos is rebuilt every Friday by [`scripts/fetch_repos.py`](scripts/fetch_repos.py). It combines:
+
+- **50 anchor repos** from [`config/anchor_repos.yml`](config/anchor_repos.yml) — always included, hand-curated for the arena's domain identity
+- **~200 dynamic repos** discovered via the GitHub Search API (topic-aware queries + trending newcomers), filtered for noise (awesome-lists, tutorials, skill packs)
+
+Most actively maintained repos with `good first issue` or `help wanted` labels will be picked up automatically. For a guaranteed spot, edit [`config/anchor_repos.yml`](config/anchor_repos.yml) and open a PR. Good anchor candidates:
+- Actively maintained (recent commits, regular issue throughput)
+- Strong fit for one of the arena's core domains (ML, AI, satellite/geospatial, data, Python ecosystem)
 - Welcomes external contributions
 
 ### Fix a bug or improve the scripts

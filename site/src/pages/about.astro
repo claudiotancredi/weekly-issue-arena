@@ -18,8 +18,8 @@ const repoCount = getRepoCount();
       <div class="space-y-3 text-sm text-zinc-400">
         <p>
           Every <strong class="text-white">Friday at 17:00 UTC</strong>, a GitHub Action automatically
-          pulls fresh issues from a curated pool of {repoCount}+ open-source repositories. Issues are
-          labeled as Good First Issues, Bugs, or Hard Issues.
+          rebuilds a fresh pool of {repoCount} active open-source repositories and pulls new issues
+          from them. Issues are labeled as Good First Issues, Bugs, or Hard Issues.
         </p>
         <p>
           Every <strong class="text-white">hour</strong>, another action checks whether any listed
@@ -109,9 +109,12 @@ const repoCount = getRepoCount();
         <div>
           <h3 class="text-sm font-semibold text-white">Can I request a specific repo to be added?</h3>
           <p class="mt-1 text-sm text-zinc-400">
-            Yes! See
-            <a href="https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">config/repos.yml</a>
-            and open a PR or Discussion.
+            The pool is rebuilt automatically each week from the GitHub Search API, so any actively
+            maintained repo with <code class="text-white">good first issue</code> or
+            <code class="text-white">help wanted</code> labels is likely to appear on its own.
+            For a guaranteed spot, edit
+            <a href="https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/anchor_repos.yml" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">config/anchor_repos.yml</a>
+            and open a PR.
           </p>
         </div>
         <div>
@@ -135,12 +138,13 @@ const repoCount = getRepoCount();
     <section class="mb-12">
       <h2 class="text-xl font-bold text-white mb-4">Tracked Repos</h2>
       <p class="text-sm text-zinc-400">
-        Issues are pulled from <strong class="text-white">{repoCount}+</strong> curated repositories
-        spanning ML, AI, data science, geospatial, dev tools, and more.
+        Each week the Arena rebuilds a pool of <strong class="text-white">{repoCount}</strong>
+        repositories: 50 hand-curated anchors covering ML, AI, satellite, data science and dev tools,
+        plus ~200 freshly discovered repos that match active issue signals.
       </p>
       <p class="mt-2 text-sm text-zinc-400">
-        <a href="https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/repos.yml" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
-          View the full repo list &rarr;
+        <a href="https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/anchor_repos.yml" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
+          View the anchor list &rarr;
         </a>
       </p>
     </section>

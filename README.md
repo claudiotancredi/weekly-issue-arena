@@ -41,7 +41,7 @@ No registration. No sign-ups. Just open source.
 *Contributors whose PRs were merged this week, regardless of leaderboard position.*
 
 <!-- MERGED-THIS-WEEK:START -->
-*No merged contributions yet this week.*
+<a href="https://github.com/mvanhorn"><img src="https://avatars.githubusercontent.com/u/455140?v=4" width="48" height="48" style="border-radius:50%;" title="@mvanhorn"/></a>
 <!-- MERGED-THIS-WEEK:END -->
 
 ---
@@ -52,26 +52,26 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [DOC: add additional gallery examples](https://github.com/geopandas/geopandas/issues/529) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
-| 2 | [Model3D pointcloud data format support  (not display mode)](https://github.com/gradio-app/gradio/issues/8826) | [gradio-app/gradio](https://github.com/gradio-app/gradio) | 🟢 Open |
-| 3 | [[C++][Parquet] Expand ParquetVersion enum values](https://github.com/apache/arrow/issues/40096) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
-| 4 | [Make `FlaxLMSDiscreteScheduler` jittable](https://github.com/huggingface/diffusers/issues/2180) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 5 | [[BE] Deduplicate auto_functionalized and triton_kernel_wr...](https://github.com/pytorch/pytorch/issues/133443) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🟢 Open |
-| 6 | [[serve] Add tracing support for windows](https://github.com/ray-project/ray/issues/61443) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
-| 7 | [Documentation says `grid_mapping` is in attrs but really ...](https://github.com/corteva/rioxarray/issues/815) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
-| 8 | [Make lazy initialization in plugins more robust](https://github.com/Lightning-AI/pytorch-lightning/issues/7650) | [Lightning-AI/pytorch-lightning](https://github.com/Lightning-AI/pytorch-lightning) | 🟢 Open |
-| 9 | [LANGSMITH is not working (anymore) after latest update](https://github.com/HKUDS/nanobot/issues/2493) | [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | 🟢 Open |
-| 10 | [[Feature]: sticky timeline](https://github.com/siddharthvaddem/openscreen/issues/238) | [siddharthvaddem/openscreen](https://github.com/siddharthvaddem/openscreen) | 🟢 Open |
-| 11 | [Support for Arrow PyCapsule Interface](https://github.com/Eventual-Inc/Daft/issues/2504) | [Eventual-Inc/Daft](https://github.com/Eventual-Inc/Daft) | 🟢 Open |
-| 12 | [[Feature Request]: Add the ability to rotate the text.](https://github.com/mayocream/koharu/issues/307) | [mayocream/koharu](https://github.com/mayocream/koharu) | 🟢 Open |
-| 13 | [When running first time select backend: client or offline](https://github.com/PriorLabs/tabpfn-extensions/issues/54) | [PriorLabs/tabpfn-extensions](https://github.com/PriorLabs/tabpfn-extensions) | 🟢 Open |
-| 14 | [[DO NOT CLOSE] Call for contributions](https://github.com/pytorch/rl/issues/509) | [pytorch/rl](https://github.com/pytorch/rl) | 🟢 Open |
-| 15 | [ggml : improve CI + add more tests](https://github.com/ggml-org/ggml/issues/295) | [ggml-org/ggml](https://github.com/ggml-org/ggml) | 🟢 Open |
-| 16 | [Deprecate `ShiftedBetaGeoModelIndividual`](https://github.com/pymc-labs/pymc-marketing/issues/2157) | [pymc-labs/pymc-marketing](https://github.com/pymc-labs/pymc-marketing) | 🟢 Open |
-| 17 | [[docs] Add supported operating systems, CPU vs GPU install](https://github.com/PriorLabs/TabPFN/issues/158) | [PriorLabs/TabPFN](https://github.com/PriorLabs/TabPFN) | 🟢 Open |
-| 18 | [[Feature]: Add Pause/Resume Recording Functionality (like...](https://github.com/siddharthvaddem/openscreen/issues/251) | [siddharthvaddem/openscreen](https://github.com/siddharthvaddem/openscreen) | 🟢 Open |
-| 19 | [Add Beit segmentation model](https://github.com/qubvel-org/segmentation_models.pytorch/issues/1024) | [qubvel-org/segmentation_models.pytorch](https://github.com/qubvel-org/segmentation_models.pytorch) | 🟢 Open |
-| 20 | [Add additional dependencies to `show_versions` and `check...](https://github.com/pytroll/satpy/issues/3116) | [pytroll/satpy](https://github.com/pytroll/satpy) | 🟢 Open |
+| 1 | [Robust default color scheme](https://github.com/ipython/ipython/issues/2281) | [ipython/ipython](https://github.com/ipython/ipython) | 🟢 Open |
+| 2 | [Scope of this is lost when passing a member function to s...](https://github.com/microsoft/TypeScript/issues/10285) | [microsoft/TypeScript](https://github.com/microsoft/TypeScript) | 🟢 Open |
+| 3 | [Adding Zarr visualization to docs ](https://github.com/zarr-developers/zarr-python/issues/1238) | [zarr-developers/zarr-python](https://github.com/zarr-developers/zarr-python) | 🟢 Open |
+| 4 | [Manim current status and contribution guidelines](https://github.com/3b1b/manim/issues/1243) | [3b1b/manim](https://github.com/3b1b/manim) | 🟢 Open |
+| 5 | [Update the camera example to include asking permissions f...](https://github.com/kivy/kivy/issues/6995) | [kivy/kivy](https://github.com/kivy/kivy) | 🟢 Open |
+| 6 | [--watch-progress-notify-interval doesn't work through JSO...](https://github.com/etcd-io/etcd/issues/20342) | [etcd-io/etcd](https://github.com/etcd-io/etcd) | 🟢 Open |
+| 7 | [Stoppable segment loading](https://github.com/qdrant/qdrant/issues/3140) | [qdrant/qdrant](https://github.com/qdrant/qdrant) | 🟢 Open |
+| 8 | [Introduce a configuration key to require a minimum hatch ...](https://github.com/pypa/hatch/issues/2156) | [pypa/hatch](https://github.com/pypa/hatch) | 🟢 Open |
+| 9 | [Add macro for route handler accepting all HTTP methods](https://github.com/actix/actix-web/issues/3263) | [actix/actix-web](https://github.com/actix/actix-web) | 🟢 Open |
+| 10 | [[C++] Add GCS connection pool size option](https://github.com/apache/arrow/issues/20314) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
+| 11 | [[documentation] Client node configured as server](https://github.com/hashicorp/consul/issues/18523) | [hashicorp/consul](https://github.com/hashicorp/consul) | 🟢 Open |
+| 12 | [Differences between the pdf and the website version of th...](https://github.com/conda/conda/issues/15122) | [conda/conda](https://github.com/conda/conda) | 🟢 Open |
+| 13 | [[mustache_template] No example app](https://github.com/flutter/flutter/issues/183936) | [flutter/flutter](https://github.com/flutter/flutter) | 🟢 Open |
+| 14 | [[ci] use a suppression file with valgrind checks](https://github.com/lightgbm-org/LightGBM/issues/6231) | [lightgbm-org/LightGBM](https://github.com/lightgbm-org/LightGBM) | 🟢 Open |
+| 15 | [Consider adding workspace members as sources in `uv init`](https://github.com/astral-sh/uv/issues/5388) | [astral-sh/uv](https://github.com/astral-sh/uv) | 🟢 Open |
+| 16 | [Experiment with generate `allow_columns_to_appear_in_same...](https://github.com/diesel-rs/diesel/issues/2555) | [diesel-rs/diesel](https://github.com/diesel-rs/diesel) | 🟢 Open |
+| 17 | [Event triggers Advanced settings - Unselect all columns o...](https://github.com/hasura/graphql-engine/issues/4972) | [hasura/graphql-engine](https://github.com/hasura/graphql-engine) | 🟢 Open |
+| 18 | [[Example] Revamp notebooks](https://github.com/tracel-ai/burn/issues/2191) | [tracel-ai/burn](https://github.com/tracel-ai/burn) | 🟢 Open |
+| 19 | [Add `source` button in Docs ](https://github.com/tracel-ai/burn/issues/1244) | [tracel-ai/burn](https://github.com/tracel-ai/burn) | 🟢 Open |
+| 20 | [Comparison of Different Fine-Tuning Techniques for Conver...](https://github.com/huggingface/peft/issues/2310) | [huggingface/peft](https://github.com/huggingface/peft) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -82,20 +82,20 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Agents App: Screen reader mode should come in but does not](https://github.com/microsoft/vscode/issues/309076) | [microsoft/vscode](https://github.com/microsoft/vscode) | 🟢 Open |
-| 2 | [reprojecting xarray dataset: TypeError: only length-1 arr...](https://github.com/corteva/rioxarray/issues/848) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
-| 3 | [[Bug] MutableObjectManager::OpenSemaphores crashes with "...](https://github.com/ray-project/ray/issues/62427) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
-| 4 | [DataFrame.apply(meta=(None, 'object')) converts to pyarro...](https://github.com/dask/dask/issues/10628) | [dask/dask](https://github.com/dask/dask) | 🟢 Open |
-| 5 | [Alt+Space behavior disruptive and inconsistent](https://github.com/microsoft/vscode/issues/167401) | [microsoft/vscode](https://github.com/microsoft/vscode) | 🟢 Open |
-| 6 | [fill_null "forward"/"backward" does nothing](https://github.com/pola-rs/polars/issues/27265) | [pola-rs/polars](https://github.com/pola-rs/polars) | 🟢 Open |
-| 7 | [[Bug]: force closing and not starting](https://github.com/siddharthvaddem/openscreen/issues/411) | [siddharthvaddem/openscreen](https://github.com/siddharthvaddem/openscreen) | 🟢 Open |
-| 8 | [huge bug dream overwriting MEMORY.md](https://github.com/HKUDS/nanobot/issues/2957) | [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | 🟢 Open |
-| 9 | [torchvision.ops.nms doesn't work with cuda12.9](https://github.com/pytorch/vision/issues/9203) | [pytorch/vision](https://github.com/pytorch/vision) | 🟢 Open |
-| 10 | [comma four: green screen effect](https://github.com/commaai/openpilot/issues/37774) | [commaai/openpilot](https://github.com/commaai/openpilot) | 🟢 Open |
-| 11 | [Incorrect delta for huber objective](https://github.com/lightgbm-org/LightGBM/issues/7194) | [lightgbm-org/LightGBM](https://github.com/lightgbm-org/LightGBM) | 🟢 Open |
-| 12 | [[Bug]: Dropdown menus (Node-RED) are invisible when recor...](https://github.com/siddharthvaddem/openscreen/issues/408) | [siddharthvaddem/openscreen](https://github.com/siddharthvaddem/openscreen) | 🟢 Open |
-| 13 | [pandera-geopandas downgrades geopandas to version 0.9 whe...](https://github.com/unionai-oss/pandera/issues/2147) | [unionai-oss/pandera](https://github.com/unionai-oss/pandera) | 🟢 Open |
-| 14 | [Dataset load_from_disk is too slow](https://github.com/huggingface/datasets/issues/2547) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
+| 1 | [[Bug]: gpt-image-1.5 route err ,higher than 1.82](https://github.com/BerriAI/litellm/issues/23709) | [BerriAI/litellm](https://github.com/BerriAI/litellm) | 🟢 Open |
+| 2 | [Documentation - ImageContainer is deprecated and should n...](https://github.com/pytroll/pyresample/issues/632) | [pytroll/pyresample](https://github.com/pytroll/pyresample) | 🟢 Open |
+| 3 | [Inconsistent behaviour of `PreTrainedTokenizerFast`s on d...](https://github.com/huggingface/tokenizers/issues/1663) | [huggingface/tokenizers](https://github.com/huggingface/tokenizers) | 🟢 Open |
+| 4 | [Using  path with JSOC keywords does work with Fido.fetch](https://github.com/sunpy/sunpy/issues/7655) | [sunpy/sunpy](https://github.com/sunpy/sunpy) | 🟢 Open |
+| 5 | [JIT segfault: conv + reshape + matmul backward on gfx1100...](https://github.com/jax-ml/jax/issues/36490) | [jax-ml/jax](https://github.com/jax-ml/jax) | 🟢 Open |
+| 6 | [Failure to find Python binary on MacOS GitHub runner](https://github.com/pypa/hatch/issues/1785) | [pypa/hatch](https://github.com/pypa/hatch) | 🟢 Open |
+| 7 | [arcgis.gis.admin.LilcenseManager fails to retrieve list o...](https://github.com/Esri/arcgis-python-api/issues/2470) | [Esri/arcgis-python-api](https://github.com/Esri/arcgis-python-api) | 🟢 Open |
+| 8 | [BUG: datatetime and additional geometry not serializable ...](https://github.com/geopandas/geopandas/issues/1906) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
+| 9 | [Unexpected results from flattened untagged enum with empt...](https://github.com/serde-rs/serde/issues/1374) | [serde-rs/serde](https://github.com/serde-rs/serde) | 🟢 Open |
+| 10 | [BUG: addition of longitude and latitude should (probably)...](https://github.com/astropy/astropy/issues/19433) | [astropy/astropy](https://github.com/astropy/astropy) | 🟢 Open |
+| 11 | [Incorrect validation_result["results"]["exception_info"] ...](https://github.com/great-expectations/great_expectations/issues/10849) | [great-expectations/great_expectations](https://github.com/great-expectations/great_expectations) | 🟢 Open |
+| 12 | [[BUG] crashed training gpt model using 3d parallelization](https://github.com/deepspeedai/DeepSpeed/issues/7922) | [deepspeedai/DeepSpeed](https://github.com/deepspeedai/DeepSpeed) | 🟢 Open |
+| 13 | [Yolov8 Model Compilation for DLA using Jetpack 5.1.2](https://github.com/ultralytics/ultralytics/issues/23591) | [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics) | 🟢 Open |
+| 14 | [Scrolling does not work after deleting some object in lon...](https://github.com/hashicorp/vault/issues/31852) | [hashicorp/vault](https://github.com/hashicorp/vault) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -106,16 +106,16 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Huber Loss for HistGradientBoostingRegressor](https://github.com/scikit-learn/scikit-learn/issues/31542) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 2 | [RFC Improving guidance for common CI failures for new con...](https://github.com/scikit-learn/scikit-learn/issues/33594) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 3 | [Rewrite _reproject() to use GDALWarp](https://github.com/rasterio/rasterio/issues/1990) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
-| 4 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 5 | [Newlines should not be scaped when using setting usetex=True](https://github.com/matplotlib/matplotlib/issues/29628) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 6 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 7 | [Unconsistent result when using sum or mean function on Co...](https://github.com/JuliaLang/julia/issues/15523) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |
-| 8 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
-| 9 | [[Bug]: Gouraud shading for `plt.tripcolor` is slightly off](https://github.com/matplotlib/matplotlib/issues/28769) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 10 | [`complex` errors on nested arrays](https://github.com/JuliaLang/julia/issues/59462) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |
+| 1 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 2 | [[Bug]: Gouraud shading for `plt.tripcolor` is slightly off](https://github.com/matplotlib/matplotlib/issues/28769) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 3 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 4 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 5 | [ENH: enable setitem dim2 test to work for EA with complex...](https://github.com/pandas-dev/pandas/issues/54445) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 6 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 7 | [RFC Improving guidance for common CI failures for new con...](https://github.com/scikit-learn/scikit-learn/issues/33594) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 8 | [Multiple tooltips with different trigger type](https://github.com/apache/echarts/issues/11115) | [apache/echarts](https://github.com/apache/echarts) | 🟢 Open |
+| 9 | [Cannot recover DBSCAN from memory-overuse](https://github.com/scikit-learn/scikit-learn/issues/31407) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 10 | [Rewrite _reproject() to use GDALWarp](https://github.com/rasterio/rasterio/issues/1990) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

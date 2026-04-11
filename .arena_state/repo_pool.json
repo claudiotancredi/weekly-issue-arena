@@ -1,0 +1,1259 @@
+{
+  "fetched_at": "2026-04-11T05:20:29.872843+00:00",
+  "anchor_count": 50,
+  "trending_count": 29,
+  "dynamic_count": 171,
+  "total_count": 250,
+  "repos": [
+    {
+      "owner": "torchgeo",
+      "repo": "torchgeo",
+      "source": "anchor"
+    },
+    {
+      "owner": "stac-utils",
+      "repo": "pystac",
+      "source": "anchor"
+    },
+    {
+      "owner": "giswqs",
+      "repo": "geemap",
+      "source": "anchor"
+    },
+    {
+      "owner": "rasterio",
+      "repo": "rasterio",
+      "source": "anchor"
+    },
+    {
+      "owner": "corteva",
+      "repo": "rioxarray",
+      "source": "anchor"
+    },
+    {
+      "owner": "geopandas",
+      "repo": "geopandas",
+      "source": "anchor"
+    },
+    {
+      "owner": "pydata",
+      "repo": "xarray",
+      "source": "anchor"
+    },
+    {
+      "owner": "pytroll",
+      "repo": "satpy",
+      "source": "anchor"
+    },
+    {
+      "owner": "OSGeo",
+      "repo": "gdal",
+      "source": "anchor"
+    },
+    {
+      "owner": "scikit-image",
+      "repo": "scikit-image",
+      "source": "anchor"
+    },
+    {
+      "owner": "scikit-learn",
+      "repo": "scikit-learn",
+      "source": "anchor"
+    },
+    {
+      "owner": "pytorch",
+      "repo": "pytorch",
+      "source": "anchor"
+    },
+    {
+      "owner": "Lightning-AI",
+      "repo": "pytorch-lightning",
+      "source": "anchor"
+    },
+    {
+      "owner": "huggingface",
+      "repo": "transformers",
+      "source": "anchor"
+    },
+    {
+      "owner": "huggingface",
+      "repo": "datasets",
+      "source": "anchor"
+    },
+    {
+      "owner": "mlflow",
+      "repo": "mlflow",
+      "source": "anchor"
+    },
+    {
+      "owner": "ray-project",
+      "repo": "ray",
+      "source": "anchor"
+    },
+    {
+      "owner": "dask",
+      "repo": "dask",
+      "source": "anchor"
+    },
+    {
+      "owner": "dmlc",
+      "repo": "xgboost",
+      "source": "anchor"
+    },
+    {
+      "owner": "pola-rs",
+      "repo": "polars",
+      "source": "anchor"
+    },
+    {
+      "owner": "pandas-dev",
+      "repo": "pandas",
+      "source": "anchor"
+    },
+    {
+      "owner": "numpy",
+      "repo": "numpy",
+      "source": "anchor"
+    },
+    {
+      "owner": "scipy",
+      "repo": "scipy",
+      "source": "anchor"
+    },
+    {
+      "owner": "matplotlib",
+      "repo": "matplotlib",
+      "source": "anchor"
+    },
+    {
+      "owner": "astropy",
+      "repo": "astropy",
+      "source": "anchor"
+    },
+    {
+      "owner": "langchain-ai",
+      "repo": "langchain",
+      "source": "anchor"
+    },
+    {
+      "owner": "run-llama",
+      "repo": "llama_index",
+      "source": "anchor"
+    },
+    {
+      "owner": "vllm-project",
+      "repo": "vllm",
+      "source": "anchor"
+    },
+    {
+      "owner": "ollama",
+      "repo": "ollama",
+      "source": "anchor"
+    },
+    {
+      "owner": "huggingface",
+      "repo": "diffusers",
+      "source": "anchor"
+    },
+    {
+      "owner": "microsoft",
+      "repo": "autogen",
+      "source": "anchor"
+    },
+    {
+      "owner": "ggerganov",
+      "repo": "llama.cpp",
+      "source": "anchor"
+    },
+    {
+      "owner": "apache",
+      "repo": "airflow",
+      "source": "anchor"
+    },
+    {
+      "owner": "PrefectHQ",
+      "repo": "prefect",
+      "source": "anchor"
+    },
+    {
+      "owner": "dagster-io",
+      "repo": "dagster",
+      "source": "anchor"
+    },
+    {
+      "owner": "apache",
+      "repo": "arrow",
+      "source": "anchor"
+    },
+    {
+      "owner": "optuna",
+      "repo": "optuna",
+      "source": "anchor"
+    },
+    {
+      "owner": "tiangolo",
+      "repo": "fastapi",
+      "source": "anchor"
+    },
+    {
+      "owner": "django",
+      "repo": "django",
+      "source": "anchor"
+    },
+    {
+      "owner": "pallets",
+      "repo": "flask",
+      "source": "anchor"
+    },
+    {
+      "owner": "python",
+      "repo": "cpython",
+      "source": "anchor"
+    },
+    {
+      "owner": "astral-sh",
+      "repo": "ruff",
+      "source": "anchor"
+    },
+    {
+      "owner": "streamlit",
+      "repo": "streamlit",
+      "source": "anchor"
+    },
+    {
+      "owner": "gradio-app",
+      "repo": "gradio",
+      "source": "anchor"
+    },
+    {
+      "owner": "plotly",
+      "repo": "plotly.py",
+      "source": "anchor"
+    },
+    {
+      "owner": "microsoft",
+      "repo": "vscode",
+      "source": "anchor"
+    },
+    {
+      "owner": "kubernetes",
+      "repo": "kubernetes",
+      "source": "anchor"
+    },
+    {
+      "owner": "home-assistant",
+      "repo": "core",
+      "source": "anchor"
+    },
+    {
+      "owner": "getsentry",
+      "repo": "sentry",
+      "source": "anchor"
+    },
+    {
+      "owner": "astral-sh",
+      "repo": "uv",
+      "source": "anchor"
+    },
+    {
+      "owner": "chenglou",
+      "repo": "pretext",
+      "source": "trending"
+    },
+    {
+      "owner": "pbek",
+      "repo": "QOwnNotes",
+      "source": "dynamic"
+    },
+    {
+      "owner": "roflcoopter",
+      "repo": "viseron",
+      "source": "dynamic"
+    },
+    {
+      "owner": "data-dot-all",
+      "repo": "dataall",
+      "source": "dynamic"
+    },
+    {
+      "owner": "pytorch",
+      "repo": "ignite",
+      "source": "dynamic"
+    },
+    {
+      "owner": "open-edge-platform",
+      "repo": "datumaro",
+      "source": "dynamic"
+    },
+    {
+      "owner": "aramis-lab",
+      "repo": "clinica",
+      "source": "dynamic"
+    },
+    {
+      "owner": "anthropics",
+      "repo": "financial-services-plugins",
+      "source": "trending"
+    },
+    {
+      "owner": "OpenRefine",
+      "repo": "OpenRefine",
+      "source": "dynamic"
+    },
+    {
+      "owner": "capitalone",
+      "repo": "DataProfiler",
+      "source": "dynamic"
+    },
+    {
+      "owner": "cocotb",
+      "repo": "cocotb",
+      "source": "dynamic"
+    },
+    {
+      "owner": "KomputeProject",
+      "repo": "kompute",
+      "source": "dynamic"
+    },
+    {
+      "owner": "actualbudget",
+      "repo": "actual",
+      "source": "dynamic"
+    },
+    {
+      "owner": "CelestiaProject",
+      "repo": "Celestia",
+      "source": "dynamic"
+    },
+    {
+      "owner": "meltano",
+      "repo": "meltano",
+      "source": "dynamic"
+    },
+    {
+      "owner": "Comfy-Org",
+      "repo": "ComfyUI_frontend",
+      "source": "dynamic"
+    },
+    {
+      "owner": "azerothcore",
+      "repo": "azerothcore-wotlk",
+      "source": "dynamic"
+    },
+    {
+      "owner": "selkies-project",
+      "repo": "selkies",
+      "source": "dynamic"
+    },
+    {
+      "owner": "stac-utils",
+      "repo": "pystac-client",
+      "source": "dynamic"
+    },
+    {
+      "owner": "RaspberryPiFoundation",
+      "repo": "blockly",
+      "source": "dynamic"
+    },
+    {
+      "owner": "jelmer",
+      "repo": "dulwich",
+      "source": "dynamic"
+    },
+    {
+      "owner": "linera-io",
+      "repo": "linera-protocol",
+      "source": "dynamic"
+    },
+    {
+      "owner": "fastplotlib",
+      "repo": "fastplotlib",
+      "source": "dynamic"
+    },
+    {
+      "owner": "elastic",
+      "repo": "elasticsearch",
+      "source": "dynamic"
+    },
+    {
+      "owner": "photoprism",
+      "repo": "photoprism",
+      "source": "dynamic"
+    },
+    {
+      "owner": "freemocap",
+      "repo": "freemocap",
+      "source": "dynamic"
+    },
+    {
+      "owner": "WenjieDu",
+      "repo": "PyPOTS",
+      "source": "dynamic"
+    },
+    {
+      "owner": "microsoft",
+      "repo": "garnet",
+      "source": "dynamic"
+    },
+    {
+      "owner": "Leaflet",
+      "repo": "Leaflet",
+      "source": "dynamic"
+    },
+    {
+      "owner": "helm",
+      "repo": "helm",
+      "source": "dynamic"
+    },
+    {
+      "owner": "apache",
+      "repo": "pinot",
+      "source": "dynamic"
+    },
+    {
+      "owner": "elastic",
+      "repo": "rally",
+      "source": "dynamic"
+    },
+    {
+      "owner": "mindee",
+      "repo": "doctr",
+      "source": "dynamic"
+    },
+    {
+      "owner": "Kotlin",
+      "repo": "kandy",
+      "source": "dynamic"
+    },
+    {
+      "owner": "pysal",
+      "repo": "segregation",
+      "source": "dynamic"
+    },
+    {
+      "owner": "github",
+      "repo": "copilot-sdk",
+      "source": "trending"
+    },
+    {
+      "owner": "developmentseed",
+      "repo": "lonboard",
+      "source": "dynamic"
+    },
+    {
+      "owner": "runatlantis",
+      "repo": "atlantis",
+      "source": "dynamic"
+    },
+    {
+      "owner": "volcano-sh",
+      "repo": "volcano",
+      "source": "dynamic"
+    },
+    {
+      "owner": "sktime",
+      "repo": "skpro",
+      "source": "dynamic"
+    },
+    {
+      "owner": "buddy-compiler",
+      "repo": "buddy-mlir",
+      "source": "dynamic"
+    },
+    {
+      "owner": "FluxML",
+      "repo": "Flux.jl",
+      "source": "dynamic"
+    },
+    {
+      "owner": "seisbench",
+      "repo": "seisbench",
+      "source": "dynamic"
+    },
+    {
+      "owner": "alibaba",
+      "repo": "OpenSandbox",
+      "source": "trending"
+    },
+    {
+      "owner": "langgenius",
+      "repo": "dify",
+      "source": "dynamic"
+    },
+    {
+      "owner": "servo",
+      "repo": "servo",
+      "source": "dynamic"
+    },
+    {
+      "owner": "cline",
+      "repo": "cline",
+      "source": "dynamic"
+    },
+    {
+      "owner": "JuliaGraphs",
+      "repo": "GraphNeuralNetworks.jl",
+      "source": "dynamic"
+    },
+    {
+      "owner": "dotnet",
+      "repo": "wpf",
+      "source": "dynamic"
+    },
+    {
+      "owner": "envoyproxy",
+      "repo": "envoy",
+      "source": "dynamic"
+    },
+    {
+      "owner": "hasura",
+      "repo": "graphql-engine",
+      "source": "dynamic"
+    },
+    {
+      "owner": "lukilabs",
+      "repo": "beautiful-mermaid",
+      "source": "trending"
+    },
+    {
+      "owner": "google",
+      "repo": "magika",
+      "source": "dynamic"
+    },
+    {
+      "owner": "TorchIO-project",
+      "repo": "torchio",
+      "source": "dynamic"
+    },
+    {
+      "owner": "adobe",
+      "repo": "react-spectrum",
+      "source": "dynamic"
+    },
+    {
+      "owner": "the-turing-way",
+      "repo": "the-turing-way",
+      "source": "dynamic"
+    },
+    {
+      "owner": "talmolab",
+      "repo": "sleap",
+      "source": "dynamic"
+    },
+    {
+      "owner": "microsoft",
+      "repo": "agent-governance-toolkit",
+      "source": "dynamic"
+    },
+    {
+      "owner": "mahmoodlab",
+      "repo": "TRIDENT",
+      "source": "dynamic"
+    },
+    {
+      "owner": "open-telemetry",
+      "repo": "opentelemetry-python",
+      "source": "dynamic"
+    },
+    {
+      "owner": "Gitlawb",
+      "repo": "openclaude",
+      "source": "trending"
+    },
+    {
+      "owner": "GoogleCloudPlatform",
+      "repo": "PerfKitBenchmarker",
+      "source": "dynamic"
+    },
+    {
+      "owner": "saturndec",
+      "repo": "waoowaoo",
+      "source": "trending"
+    },
+    {
+      "owner": "refined-github",
+      "repo": "refined-github",
+      "source": "dynamic"
+    },
+    {
+      "owner": "prefix-dev",
+      "repo": "pixi",
+      "source": "dynamic"
+    },
+    {
+      "owner": "jellyfin",
+      "repo": "jellyfin",
+      "source": "dynamic"
+    },
+    {
+      "owner": "stratosphereips",
+      "repo": "StratosphereLinuxIPS",
+      "source": "dynamic"
+    },
+    {
+      "owner": "marqo-ai",
+      "repo": "marqo",
+      "source": "dynamic"
+    },
+    {
+      "owner": "nextai-translator",
+      "repo": "nextai-translator",
+      "source": "dynamic"
+    },
+    {
+      "owner": "numman-ali",
+      "repo": "openskills",
+      "source": "trending"
+    },
+    {
+      "owner": "microsoft",
+      "repo": "FLAML",
+      "source": "dynamic"
+    },
+    {
+      "owner": "Unstructured-IO",
+      "repo": "unstructured",
+      "source": "dynamic"
+    },
+    {
+      "owner": "pingdotgg",
+      "repo": "t3code",
+      "source": "trending"
+    },
+    {
+      "owner": "growthbook",
+      "repo": "growthbook",
+      "source": "dynamic"
+    },
+    {
+      "owner": "nlohmann",
+      "repo": "json",
+      "source": "dynamic"
+    },
+    {
+      "owner": "denoland",
+      "repo": "deno",
+      "source": "dynamic"
+    },
+    {
+      "owner": "kornia",
+      "repo": "kornia",
+      "source": "dynamic"
+    },
+    {
+      "owner": "litestar-org",
+      "repo": "litestar",
+      "source": "dynamic"
+    },
+    {
+      "owner": "OpenHands",
+      "repo": "OpenHands",
+      "source": "dynamic"
+    },
+    {
+      "owner": "detekt",
+      "repo": "detekt",
+      "source": "dynamic"
+    },
+    {
+      "owner": "saleor",
+      "repo": "saleor",
+      "source": "dynamic"
+    },
+    {
+      "owner": "skyportal",
+      "repo": "skyportal",
+      "source": "dynamic"
+    },
+    {
+      "owner": "oracle",
+      "repo": "graalpython",
+      "source": "dynamic"
+    },
+    {
+      "owner": "pytorch-tabular",
+      "repo": "pytorch_tabular",
+      "source": "dynamic"
+    },
+    {
+      "owner": "beekeeper-studio",
+      "repo": "beekeeper-studio",
+      "source": "dynamic"
+    },
+    {
+      "owner": "SciML",
+      "repo": "NeuralPDE.jl",
+      "source": "dynamic"
+    },
+    {
+      "owner": "chatwoot",
+      "repo": "chatwoot",
+      "source": "dynamic"
+    },
+    {
+      "owner": "alibaba",
+      "repo": "zvec",
+      "source": "trending"
+    },
+    {
+      "owner": "MoonshotAI",
+      "repo": "kimi-cli",
+      "source": "trending"
+    },
+    {
+      "owner": "kubernetes",
+      "repo": "minikube",
+      "source": "dynamic"
+    },
+    {
+      "owner": "ant-design",
+      "repo": "ant-design",
+      "source": "dynamic"
+    },
+    {
+      "owner": "recursionpharma",
+      "repo": "gflownet",
+      "source": "dynamic"
+    },
+    {
+      "owner": "michaelfeil",
+      "repo": "infinity",
+      "source": "dynamic"
+    },
+    {
+      "owner": "DLR-RM",
+      "repo": "stable-baselines3",
+      "source": "dynamic"
+    },
+    {
+      "owner": "trufflesecurity",
+      "repo": "trufflehog",
+      "source": "dynamic"
+    },
+    {
+      "owner": "tirth8205",
+      "repo": "code-review-graph",
+      "source": "trending"
+    },
+    {
+      "owner": "spack",
+      "repo": "spack",
+      "source": "dynamic"
+    },
+    {
+      "owner": "aeon-toolkit",
+      "repo": "aeon",
+      "source": "dynamic"
+    },
+    {
+      "owner": "sbi-dev",
+      "repo": "sbi",
+      "source": "dynamic"
+    },
+    {
+      "owner": "webpack",
+      "repo": "webpack",
+      "source": "dynamic"
+    },
+    {
+      "owner": "copier-org",
+      "repo": "copier",
+      "source": "dynamic"
+    },
+    {
+      "owner": "bosun-ai",
+      "repo": "swiftide",
+      "source": "dynamic"
+    },
+    {
+      "owner": "steipete",
+      "repo": "CodexBar",
+      "source": "trending"
+    },
+    {
+      "owner": "tracel-ai",
+      "repo": "burn",
+      "source": "dynamic"
+    },
+    {
+      "owner": "py-why",
+      "repo": "dowhy",
+      "source": "dynamic"
+    },
+    {
+      "owner": "delta-io",
+      "repo": "delta-rs",
+      "source": "dynamic"
+    },
+    {
+      "owner": "zellij-org",
+      "repo": "zellij",
+      "source": "dynamic"
+    },
+    {
+      "owner": "withastro",
+      "repo": "astro",
+      "source": "dynamic"
+    },
+    {
+      "owner": "pyg-team",
+      "repo": "pyg-lib",
+      "source": "dynamic"
+    },
+    {
+      "owner": "uber",
+      "repo": "h3",
+      "source": "dynamic"
+    },
+    {
+      "owner": "argoproj",
+      "repo": "argo-workflows",
+      "source": "dynamic"
+    },
+    {
+      "owner": "graphhopper",
+      "repo": "graphhopper",
+      "source": "dynamic"
+    },
+    {
+      "owner": "arogozhnikov",
+      "repo": "einops",
+      "source": "dynamic"
+    },
+    {
+      "owner": "PriorLabs",
+      "repo": "tabpfn-extensions",
+      "source": "dynamic"
+    },
+    {
+      "owner": "cube-js",
+      "repo": "cube",
+      "source": "dynamic"
+    },
+    {
+      "owner": "enkidevs",
+      "repo": "curriculum",
+      "source": "dynamic"
+    },
+    {
+      "owner": "badges",
+      "repo": "shields",
+      "source": "dynamic"
+    },
+    {
+      "owner": "eclipse-theia",
+      "repo": "theia",
+      "source": "dynamic"
+    },
+    {
+      "owner": "marketcalls",
+      "repo": "openalgo",
+      "source": "dynamic"
+    },
+    {
+      "owner": "nexmoe",
+      "repo": "VidBee",
+      "source": "trending"
+    },
+    {
+      "owner": "AcademySoftwareFoundation",
+      "repo": "OpenImageIO",
+      "source": "dynamic"
+    },
+    {
+      "owner": "ampache",
+      "repo": "ampache",
+      "source": "dynamic"
+    },
+    {
+      "owner": "SciML",
+      "repo": "ReservoirComputing.jl",
+      "source": "dynamic"
+    },
+    {
+      "owner": "Expensify",
+      "repo": "App",
+      "source": "dynamic"
+    },
+    {
+      "owner": "Data-Centric-AI-Community",
+      "repo": "ydata-profiling",
+      "source": "dynamic"
+    },
+    {
+      "owner": "microsoft",
+      "repo": "SynapseML",
+      "source": "dynamic"
+    },
+    {
+      "owner": "pascalorg",
+      "repo": "editor",
+      "source": "trending"
+    },
+    {
+      "owner": "Significant-Gravitas",
+      "repo": "AutoGPT",
+      "source": "dynamic"
+    },
+    {
+      "owner": "HKUDS",
+      "repo": "CLI-Anything",
+      "source": "trending"
+    },
+    {
+      "owner": "andikleen",
+      "repo": "pmu-tools",
+      "source": "dynamic"
+    },
+    {
+      "owner": "gastownhall",
+      "repo": "gastown",
+      "source": "trending"
+    },
+    {
+      "owner": "MiniMax-AI",
+      "repo": "skills",
+      "source": "trending"
+    },
+    {
+      "owner": "SylphAI-Inc",
+      "repo": "AdalFlow",
+      "source": "dynamic"
+    },
+    {
+      "owner": "gitkraken",
+      "repo": "vscode-gitlens",
+      "source": "dynamic"
+    },
+    {
+      "owner": "augurlabs",
+      "repo": "augur",
+      "source": "dynamic"
+    },
+    {
+      "owner": "mermaid-js",
+      "repo": "mermaid",
+      "source": "dynamic"
+    },
+    {
+      "owner": "bacalhau-project",
+      "repo": "bacalhau",
+      "source": "dynamic"
+    },
+    {
+      "owner": "QwenLM",
+      "repo": "Qwen3-TTS",
+      "source": "trending"
+    },
+    {
+      "owner": "golang",
+      "repo": "go",
+      "source": "dynamic"
+    },
+    {
+      "owner": "unit8co",
+      "repo": "darts",
+      "source": "dynamic"
+    },
+    {
+      "owner": "histolab",
+      "repo": "histolab",
+      "source": "dynamic"
+    },
+    {
+      "owner": "EnzymeAD",
+      "repo": "Enzyme",
+      "source": "dynamic"
+    },
+    {
+      "owner": "lucasgelfond",
+      "repo": "zerobrew",
+      "source": "trending"
+    },
+    {
+      "owner": "openvinotoolkit",
+      "repo": "openvino",
+      "source": "dynamic"
+    },
+    {
+      "owner": "msitarzewski",
+      "repo": "agency-agents",
+      "source": "trending"
+    },
+    {
+      "owner": "microsoft",
+      "repo": "PowerToys",
+      "source": "dynamic"
+    },
+    {
+      "owner": "spiffe",
+      "repo": "spire",
+      "source": "dynamic"
+    },
+    {
+      "owner": "protocolbuffers",
+      "repo": "protobuf",
+      "source": "dynamic"
+    },
+    {
+      "owner": "qubvel-org",
+      "repo": "segmentation_models.pytorch",
+      "source": "dynamic"
+    },
+    {
+      "owner": "open-telemetry",
+      "repo": "opentelemetry-python-contrib",
+      "source": "dynamic"
+    },
+    {
+      "owner": "elyra-ai",
+      "repo": "elyra",
+      "source": "dynamic"
+    },
+    {
+      "owner": "koala73",
+      "repo": "worldmonitor",
+      "source": "trending"
+    },
+    {
+      "owner": "omegaml",
+      "repo": "omegaml",
+      "source": "dynamic"
+    },
+    {
+      "owner": "rust-lang",
+      "repo": "rustup",
+      "source": "dynamic"
+    },
+    {
+      "owner": "biomejs",
+      "repo": "biome",
+      "source": "dynamic"
+    },
+    {
+      "owner": "oven-sh",
+      "repo": "bun",
+      "source": "dynamic"
+    },
+    {
+      "owner": "carla-simulator",
+      "repo": "carla",
+      "source": "dynamic"
+    },
+    {
+      "owner": "ublue-os",
+      "repo": "bluefin",
+      "source": "dynamic"
+    },
+    {
+      "owner": "SciSharp",
+      "repo": "NumSharp",
+      "source": "dynamic"
+    },
+    {
+      "owner": "scverse",
+      "repo": "scanpy",
+      "source": "dynamic"
+    },
+    {
+      "owner": "appsmithorg",
+      "repo": "appsmith",
+      "source": "dynamic"
+    },
+    {
+      "owner": "Panniantong",
+      "repo": "Agent-Reach",
+      "source": "trending"
+    },
+    {
+      "owner": "opendatadiscovery",
+      "repo": "odd-platform",
+      "source": "dynamic"
+    },
+    {
+      "owner": "PostHog",
+      "repo": "posthog",
+      "source": "dynamic"
+    },
+    {
+      "owner": "MCLCE",
+      "repo": "MinecraftConsoles",
+      "source": "trending"
+    },
+    {
+      "owner": "fastify",
+      "repo": "fastify",
+      "source": "dynamic"
+    },
+    {
+      "owner": "koordinates",
+      "repo": "kart",
+      "source": "dynamic"
+    },
+    {
+      "owner": "CTFd",
+      "repo": "CTFd",
+      "source": "dynamic"
+    },
+    {
+      "owner": "openai",
+      "repo": "skills",
+      "source": "trending"
+    },
+    {
+      "owner": "yarnpkg",
+      "repo": "yarn",
+      "source": "dynamic"
+    },
+    {
+      "owner": "matomo-org",
+      "repo": "matomo",
+      "source": "dynamic"
+    },
+    {
+      "owner": "ag-ui-protocol",
+      "repo": "ag-ui",
+      "source": "dynamic"
+    },
+    {
+      "owner": "aimhubio",
+      "repo": "aim",
+      "source": "dynamic"
+    },
+    {
+      "owner": "usebruno",
+      "repo": "bruno",
+      "source": "dynamic"
+    },
+    {
+      "owner": "PDFMathTranslate",
+      "repo": "PDFMathTranslate",
+      "source": "dynamic"
+    },
+    {
+      "owner": "pytorch",
+      "repo": "executorch",
+      "source": "dynamic"
+    },
+    {
+      "owner": "ZhuLinsen",
+      "repo": "daily_stock_analysis",
+      "source": "trending"
+    },
+    {
+      "owner": "python-poetry",
+      "repo": "poetry",
+      "source": "dynamic"
+    },
+    {
+      "owner": "StanfordVL",
+      "repo": "BEHAVIOR-1K",
+      "source": "dynamic"
+    },
+    {
+      "owner": "IvanMurzak",
+      "repo": "Unity-MCP",
+      "source": "dynamic"
+    },
+    {
+      "owner": "lapce",
+      "repo": "lapce",
+      "source": "dynamic"
+    },
+    {
+      "owner": "thelounge",
+      "repo": "thelounge",
+      "source": "dynamic"
+    },
+    {
+      "owner": "dragonflydb",
+      "repo": "dragonfly",
+      "source": "dynamic"
+    },
+    {
+      "owner": "MODSetter",
+      "repo": "SurfSense",
+      "source": "dynamic"
+    },
+    {
+      "owner": "wemake-services",
+      "repo": "django-modern-rest",
+      "source": "dynamic"
+    },
+    {
+      "owner": "smartcorelib",
+      "repo": "smartcore",
+      "source": "dynamic"
+    },
+    {
+      "owner": "arc53",
+      "repo": "DocsGPT",
+      "source": "dynamic"
+    },
+    {
+      "owner": "taichi-dev",
+      "repo": "taichi",
+      "source": "dynamic"
+    },
+    {
+      "owner": "vectorize-io",
+      "repo": "hindsight",
+      "source": "trending"
+    },
+    {
+      "owner": "recharts",
+      "repo": "recharts",
+      "source": "dynamic"
+    },
+    {
+      "owner": "fluxerapp",
+      "repo": "fluxer",
+      "source": "trending"
+    },
+    {
+      "owner": "FuelLabs",
+      "repo": "sway",
+      "source": "dynamic"
+    },
+    {
+      "owner": "stanfordmlgroup",
+      "repo": "ngboost",
+      "source": "dynamic"
+    },
+    {
+      "owner": "jank-lang",
+      "repo": "jank",
+      "source": "dynamic"
+    },
+    {
+      "owner": "jquery",
+      "repo": "jquery",
+      "source": "dynamic"
+    },
+    {
+      "owner": "kubeflow",
+      "repo": "katib",
+      "source": "dynamic"
+    },
+    {
+      "owner": "vercel-labs",
+      "repo": "agent-browser",
+      "source": "trending"
+    },
+    {
+      "owner": "emscripten-core",
+      "repo": "emscripten",
+      "source": "dynamic"
+    },
+    {
+      "owner": "lingdojo",
+      "repo": "kana-dojo",
+      "source": "dynamic"
+    },
+    {
+      "owner": "apache",
+      "repo": "sedona-db",
+      "source": "dynamic"
+    }
+  ]
+}

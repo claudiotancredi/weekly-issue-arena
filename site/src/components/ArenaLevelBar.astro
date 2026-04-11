@@ -1,0 +1,83 @@
+---
+import { getArenaProgress } from "../lib/levels";
+
+interface Props {
+  arenaPoints: number;
+  level: number;
+}
+
+const { arenaPoints } = Astro.props;
+const progress = getArenaProgress(arenaPoints);
+
+const fillPercent = Math.round(progress.progress * 100);
+const issueDelta =
+  progress.totalIssuesAtNext !== null
+    ? progress.totalIssuesAtNext - progress.totalIssuesAtCurrent
+    : 0;
+---
+
+<section class="mx-auto max-w-6xl px-4 pt-12 pb-2">
+  <div class="rounded-2xl border border-border bg-surface-card p-6 sm:p-8 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-30" aria-hidden="true">
+      <div class="absolute inset-0 hero-gradient-animated"></div>
+    </div>
+
+    <div class="relative">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-baseline gap-3">
+          <span class="text-xs uppercase tracking-widest text-zinc-500 font-semibold">
+            Arena Level
+          </span>
+          <span class="text-4xl sm:text-5xl font-extrabold text-accent leading-none">
+            {progress.current.level}
+          </span>
+        </div>
+        <div class="text-right">
+          <div class="text-2xl sm:text-3xl font-bold text-white leading-none">
+            {progress.totalIssuesAtCurrent}
+          </div>
+          <div class="text-[10px] uppercase tracking-widest text-zinc-500 mt-1">
+            Issues this week
+          </div>
+        </div>
+      </div>
+
+      <div class="relative h-3 rounded-full bg-surface-elevated overflow-hidden">
+        <div
+          class="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-accent to-accent-hover transition-all"
+          style={`width: ${fillPercent}%;`}
+        ></div>
+      </div>
+
+      <div class="mt-3 flex items-center justify-between text-xs">
+        <span class="text-zinc-400">
+          {progress.isMaxLevel ? (
+            <>
+              <span class="font-semibold text-white">{progress.arenaPoints} pts</span>
+              <span class="text-zinc-500"> &middot; </span>
+              <span class="text-accent font-semibold">Max level reached</span>
+            </>
+          ) : (
+            <>
+              <span class="font-semibold text-white">{progress.arenaPoints}</span>
+              <span class="text-zinc-500"> / {progress.next!.threshold} pts</span>
+              <span class="text-zinc-500"> to </span>
+              <span class="text-white font-semibold">Level {progress.next!.level}</span>
+            </>
+          )}
+        </span>
+        <span class="text-accent font-semibold">
+          {progress.isMaxLevel
+            ? `${progress.totalIssuesAtCurrent} issues / week`
+            : `+${issueDelta} issues at Level ${progress.next!.level}`}
+        </span>
+      </div>
+
+      <p class="mt-5 text-xs text-zinc-500 leading-relaxed max-w-2xl">
+        Every contribution adds to a shared pool. When the pool crosses a threshold,
+        the arena levels up and <span class="text-zinc-300">more issues unlock for everyone</span>,
+        every week. We're all building this together.
+      </p>
+    </div>
+  </div>
+</section>

@@ -9,8 +9,10 @@ log = logging.getLogger(__name__)
 REPO_OWNER = "claudiotancredi"
 REPO_NAME = "weekly-issue-arena"
 DISCUSSION_CATEGORY_NAME = "Contributor Spotlights"
+ARENA_MILESTONES_CATEGORY = "Arena Milestones"
 
 SITE_BASE = "https://claudiotancredi.github.io/weekly-issue-arena"
+ARENA_LEVEL_DISCUSSION_TITLE = "🏛️ Arena Level Tracker"
 
 # ── GraphQL queries / mutations ──────────────────────────────
 
@@ -45,8 +47,10 @@ mutation($input: AddDiscussionCommentInput!) {
 # ── Helpers ──────────────────────────────────────────────────
 
 
-def get_repo_and_category_id() -> tuple[str, str]:
-    """Fetch the repository and Contributor Spotlights category IDs.
+def get_repo_and_named_category_id(
+    category_name: str,
+) -> tuple[str, str]:
+    """Fetch the repository ID and the ID of the named discussion category.
 
     Raises ``RuntimeError`` if the category does not exist.
     """
@@ -58,13 +62,23 @@ def get_repo_and_category_id() -> tuple[str, str]:
     repo_id = repo["id"]
 
     for cat in repo["discussionCategories"]["nodes"]:
-        if cat["name"] == DISCUSSION_CATEGORY_NAME:
+        if cat["name"] == category_name:
             return repo_id, cat["id"]
 
     raise RuntimeError(
-        f"Discussion category '{DISCUSSION_CATEGORY_NAME}' not found. "
+        f"Discussion category '{category_name}' not found. "
         f"Create it in the repository settings first."
     )
+
+
+def get_repo_and_category_id() -> tuple[str, str]:
+    """Fetch the repository and Contributor Spotlights category IDs."""
+    return get_repo_and_named_category_id(DISCUSSION_CATEGORY_NAME)
+
+
+def get_arena_milestones_category_id() -> tuple[str, str]:
+    """Fetch the repository and Arena Milestones category IDs."""
+    return get_repo_and_named_category_id(ARENA_MILESTONES_CATEGORY)
 
 
 def _badge_url(username: str) -> str:
@@ -174,6 +188,174 @@ def add_contribution_comment(
         {"input": {"discussionId": discussion_id, "body": body}},
     )
     log.info(f"Posted update comment for @{username} on {discussion_id}")
+
+
+def _arena_level_thread_body(
+    level: int,
+    arena_points: int,
+    next_threshold: int | None,
+    total_issues: int,
+) -> str:
+    """Body for the persistent Arena Level Tracker thread (first level-up)."""
+    next_line = (
+        f"**Next level at:** {next_threshold} arena points\n"
+        if next_threshold is not None
+        else "**Status:** Max level reached. 🏔️\n"
+    )
+    return (
+        f"# 🏛️ Arena Level Tracker\n\n"
+        f"This thread tracks every arena-wide milestone. Every contribution "
+        f"adds to a shared pool of points — when the pool crosses a "
+        f"threshold, the arena levels up and **more issues get unlocked "
+        f"for everyone**.\n\n"
+        f"## 🎉 The arena just reached **Level {level}**!\n\n"
+        f"**Total arena points:** {arena_points}\n"
+        f"{next_line}"
+        f"**Issues unlocked this week:** {total_issues}\n\n"
+        f"Thank you to every contributor who got us here. "
+        f"[View the live arena →]({SITE_BASE}/)\n\n"
+        f"---\n\n"
+        f"*🤖 New milestones will appear as comments below. Subscribe to "
+        f"this thread to get notified when the arena levels up.*"
+    )
+
+
+def _arena_level_comment_body(
+    from_level: int,
+    to_level: int,
+    arena_points: int,
+    next_threshold: int | None,
+    total_issues: int,
+    total_issues_prev: int,
+) -> str:
+    """Body for a level-up comment on the Arena Level Tracker thread."""
+    delta = total_issues - total_issues_prev
+    if to_level - from_level > 1:
+        title = (
+            f"## 🚀 Arena leapt from Level {from_level} to Level {to_level}!"
+        )
+    else:
+        title = f"## 🎉 Arena reached Level {to_level}!"
+
+    next_line = (
+        f"**Next level at:** {next_threshold} arena points  \n"
+        if next_threshold is not None
+        else "**Status:** Max level reached. 🏔️  \n"
+    )
+    return (
+        f"{title}\n\n"
+        f"**Total arena points:** {arena_points}  \n"
+        f"{next_line}"
+        f"**Issues this week:** {total_issues} "
+        f"(up from {total_issues_prev}, **+{delta}**)\n\n"
+        f"The collective effort of every contributor just unlocked "
+        f"more issues for everyone. Keep going. 💪\n\n"
+        f"[View the live arena →]({SITE_BASE}/)"
+    )
+
+
+def create_arena_level_discussion(
+    repo_id: str,
+    category_id: str,
+    level: int,
+    arena_points: int,
+    next_threshold: int | None,
+    total_issues: int,
+) -> str:
+    """Create the persistent Arena Level Tracker discussion thread."""
+    body = _arena_level_thread_body(
+        level, arena_points, next_threshold, total_issues
+    )
+    data = github_graphql(
+        _CREATE_DISCUSSION,
+        {
+            "input": {
+                "repositoryId": repo_id,
+                "categoryId": category_id,
+                "title": ARENA_LEVEL_DISCUSSION_TITLE,
+                "body": body,
+            }
+        },
+    )
+    discussion = data["createDiscussion"]["discussion"]
+    log.info(
+        f"Created Arena Level Tracker discussion #{discussion['number']}: "
+        f"{discussion['url']}"
+    )
+    return discussion["id"]
+
+
+def add_arena_level_comment(
+    discussion_id: str,
+    from_level: int,
+    to_level: int,
+    arena_points: int,
+    next_threshold: int | None,
+    total_issues: int,
+    total_issues_prev: int,
+) -> None:
+    """Append a level-up comment to the Arena Level Tracker thread."""
+    body = _arena_level_comment_body(
+        from_level,
+        to_level,
+        arena_points,
+        next_threshold,
+        total_issues,
+        total_issues_prev,
+    )
+    github_graphql(
+        _ADD_COMMENT,
+        {"input": {"discussionId": discussion_id, "body": body}},
+    )
+    log.info(
+        f"Posted arena level-up comment ({from_level} → {to_level}) "
+        f"on discussion {discussion_id}"
+    )
+
+
+def announce_arena_level_up(
+    milestones: dict,
+    from_level: int,
+    to_level: int,
+    arena_points: int,
+    next_threshold: int | None,
+    total_issues: int,
+    total_issues_prev: int,
+) -> dict:
+    """Create the tracker thread on first level-up, otherwise comment.
+
+    Returns the (possibly updated) ``milestones`` dict with
+    ``discussion_node_id`` populated after thread creation.
+    """
+    try:
+        repo_id, category_id = get_arena_milestones_category_id()
+    except RuntimeError as exc:
+        log.warning(f"Skipping arena level-up announcement: {exc}")
+        return milestones
+
+    discussion_id = milestones.get("discussion_node_id")
+    if not discussion_id:
+        discussion_id = create_arena_level_discussion(
+            repo_id,
+            category_id,
+            level=to_level,
+            arena_points=arena_points,
+            next_threshold=next_threshold,
+            total_issues=total_issues,
+        )
+        milestones["discussion_node_id"] = discussion_id
+    else:
+        add_arena_level_comment(
+            discussion_id,
+            from_level=from_level,
+            to_level=to_level,
+            arena_points=arena_points,
+            next_threshold=next_threshold,
+            total_issues=total_issues,
+            total_issues_prev=total_issues_prev,
+        )
+
+    return milestones
 
 
 def notify_contributors(new_credits: list[dict], scores: dict) -> dict:

@@ -715,14 +715,16 @@ class TestSaveCurrentIssues:
 class TestLoadConfiguredRepos:
     """Tests for the load_configured_repos function.
 
-    The function loads label_mappings + limits from ``config/repos.yml``
-    and the repo list from a three-level fallback chain:
+    The function loads label_mappings from ``config/repos.yml``, derives
+    per-category limits from the current arena level
+    (``config/arena_levels.json`` + ``.arena_state/milestones.json``), and
+    pulls the repo list from a three-level fallback chain:
     pool → anchor → empty.
     """
 
     @staticmethod
     def _write_main_config(tmp_path) -> Path:
-        """Write a minimal config/repos.yml with no repos: list."""
+        """Write a minimal config/repos.yml with label_mappings only."""
         import yaml
 
         config = {
@@ -731,15 +733,42 @@ class TestLoadConfiguredRepos:
                 "bug": ["bug"],
                 "hard": ["hard"],
             },
-            "limits": {"gfi": 5, "bug": 3, "hard": 2},
         }
         f = tmp_path / "repos.yml"
         f.write_text(yaml.dump(config), encoding="utf-8")
         return f
 
+    @staticmethod
+    def _stub_levels(monkeypatch, level=0, baseline=None):
+        """Stub the level helpers fetch_issues imports.
+
+        Returns limits = baseline + level (per category) so tests can
+        assert arena-level-aware behavior without touching real state.
+        """
+        if baseline is None:
+            baseline = {"gfi": 5, "bug": 3, "hard": 2}
+        config = {
+            "version": 1,
+            "baseline": baseline,
+            "levels": [
+                {
+                    "level": lv,
+                    "threshold": lv * 10,
+                    "bonus": {"gfi": lv, "bug": lv, "hard": lv},
+                }
+                for lv in range(level + 1)
+            ],
+        }
+        monkeypatch.setattr("fetch_issues.load_levels_config", lambda: config)
+        monkeypatch.setattr(
+            "fetch_issues.current_level_from_state", lambda: level
+        )
+        return config
+
     def test_loads_repos_from_pool(self, tmp_path, monkeypatch):
         """When the pool file exists, repos come from it."""
         cfg = self._write_main_config(tmp_path)
+        self._stub_levels(monkeypatch, level=0)
         pool = tmp_path / "repo_pool.json"
         pool.write_text(
             json.dumps(
@@ -771,8 +800,9 @@ class TestLoadConfiguredRepos:
         result = fetch_issues.load_configured_repos()
         assert len(result["repos"]) == 2
         assert result["repos"][0]["owner"] == "torchgeo"
-        # label_mappings/limits still come from config/repos.yml
+        # Level-0 baseline limits are injected from arena_levels config.
         assert result["limits"]["gfi"] == 5
+        assert result["arena_level"] == 0
 
     def test_falls_back_to_anchor_when_no_pool(
         self, tmp_path, monkeypatch, caplog
@@ -820,12 +850,18 @@ class TestLoadConfiguredRepos:
             "no repo source" in r.message.lower() for r in caplog.records
         )
 
-    def test_label_mappings_always_from_config(self, tmp_path, monkeypatch):
-        """label_mappings/limits come from config/repos.yml.
+    def test_label_mappings_from_config_limits_from_arena_level(
+        self, tmp_path, monkeypatch
+    ):
+        """label_mappings come from config/repos.yml.
 
-        This holds even when the pool is the source of repos.
+        Per-category limits come from the arena level helpers and
+        scale with the current arena level.
         """
         cfg = self._write_main_config(tmp_path)
+        # Level 2 → baseline + 2 per category = (7, 5, 4) given the
+        # baseline used by _stub_levels.
+        self._stub_levels(monkeypatch, level=2)
         pool = tmp_path / "repo_pool.json"
         pool.write_text(
             json.dumps(
@@ -851,7 +887,42 @@ class TestLoadConfiguredRepos:
         )
         result = fetch_issues.load_configured_repos()
         assert result["label_mappings"]["gfi"] == ["good first issue"]
-        assert result["limits"]["bug"] == 3
+        assert result["arena_level"] == 2
+        assert result["limits"] == {"gfi": 7, "bug": 5, "hard": 4}
+
+    def test_arena_level_test_extra_levels_unlock_more_issues(
+        self, tmp_path, monkeypatch
+    ):
+        """Higher arena level → strictly more issues per category."""
+        cfg = self._write_main_config(tmp_path)
+        pool = tmp_path / "repo_pool.json"
+        pool.write_text(
+            json.dumps(
+                {
+                    "anchor_count": 0,
+                    "dynamic_count": 0,
+                    "total_count": 0,
+                    "repos": [],
+                }
+            ),
+            encoding="utf-8",
+        )
+        monkeypatch.setattr("fetch_issues.CONFIG_PATH", cfg)
+        monkeypatch.setattr("fetch_issues.POOL_PATH", pool)
+        monkeypatch.setattr(
+            "fetch_issues.ANCHOR_PATH", tmp_path / "missing.yml"
+        )
+
+        self._stub_levels(monkeypatch, level=0)
+        baseline_result = fetch_issues.load_configured_repos()
+
+        self._stub_levels(monkeypatch, level=3)
+        leveled_result = fetch_issues.load_configured_repos()
+
+        for cat in ("gfi", "bug", "hard"):
+            assert (
+                leveled_result["limits"][cat] > baseline_result["limits"][cat]
+            )
 
     def test_missing_main_config_raises(self, tmp_path, monkeypatch):
         """Missing config/repos.yml raises FileNotFoundError."""

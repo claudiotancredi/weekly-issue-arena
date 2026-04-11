@@ -17,6 +17,11 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import yaml
+from arena_level import (
+    current_level_from_state,
+    effective_limits,
+    load_levels_config,
+)
 from utils import (
     arena_week_id,
     arena_week_start,
@@ -36,21 +41,35 @@ STATE_PATH = Path(".arena_state/issues.json")
 
 
 def load_configured_repos() -> dict:
-    """Load label_mappings/limits plus the weekly repo list.
+    """Load label_mappings, level-derived limits, and the weekly repo list.
 
     Three-level fallback chain for the repo list:
       1. ``.arena_state/repo_pool.json`` (weekly dynamic pool, preferred)
       2. ``config/anchor_repos.yml`` (curated anchor list, fallback)
       3. empty list (logged as error)
 
-    ``label_mappings`` and ``limits`` always come from
-    ``config/repos.yml``.
+    ``label_mappings`` comes from ``config/repos.yml``. ``limits`` is
+    computed from the current arena level (``config/arena_levels.json``
+    plus ``.arena_state/milestones.json``) so collective progress unlocks
+    more issues per category over time.
 
     Returns:
-        dict: Configuration with ``repos``, ``label_mappings``, ``limits``.
+        dict: Configuration with ``repos``, ``label_mappings``, ``limits``,
+        and ``arena_level``.
     """
     with open(CONFIG_PATH, encoding="utf-8") as f:
         config = yaml.safe_load(f)
+
+    levels_cfg = load_levels_config()
+    level = current_level_from_state()
+    config["limits"] = effective_limits(level, levels_cfg)
+    config["arena_level"] = level
+    log.info(
+        f"Arena level {level} → limits: "
+        f"gfi={config['limits']['gfi']}, "
+        f"bug={config['limits']['bug']}, "
+        f"hard={config['limits']['hard']}"
+    )
 
     if POOL_PATH.exists():
         with open(POOL_PATH, encoding="utf-8") as f:

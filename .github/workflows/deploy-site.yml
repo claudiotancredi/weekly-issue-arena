@@ -15,6 +15,7 @@ on:
       - ".arena_state/**"
       - "assets/**"
       - "config/anchor_repos.yml"
+      - "config/arena_levels.json"
 
   workflow_dispatch:
 

@@ -17,8 +17,10 @@ from update_leaderboard import (  # noqa: E402, I001
     process_week,
     save_scores,
     save_state,
+    update_arena_level,
     update_issue_statuses,
 )
+import arena_level  # noqa: E402, I001
 
 
 # ── get_rank ─────────────────────────────────────────────────
@@ -1302,3 +1304,140 @@ class TestUpdateIssueStatuses:
 
         assert f"[T1]({url1}) | r | 🔴 Closed" in result
         assert f"[T2]({url2}) | r | 🟢 Open" in result
+
+
+# ── update_arena_level ────────────────────────────────────────
+
+
+class TestUpdateArenaLevel:
+    """Tests for level detection and milestones write-back."""
+
+    @staticmethod
+    def _stub_config_and_milestones(monkeypatch, tmp_path, milestones=None):
+        """Point arena_level helpers at a tmp milestones file + stub config."""
+        config = {
+            "version": 1,
+            "baseline": {"gfi": 20, "bug": 14, "hard": 10},
+            "levels": [
+                {
+                    "level": 0,
+                    "threshold": 0,
+                    "bonus": {"gfi": 0, "bug": 0, "hard": 0},
+                },
+                {
+                    "level": 1,
+                    "threshold": 25,
+                    "bonus": {"gfi": 1, "bug": 1, "hard": 1},
+                },
+                {
+                    "level": 2,
+                    "threshold": 75,
+                    "bonus": {"gfi": 2, "bug": 2, "hard": 2},
+                },
+                {
+                    "level": 3,
+                    "threshold": 150,
+                    "bonus": {"gfi": 3, "bug": 3, "hard": 3},
+                },
+            ],
+        }
+        path = tmp_path / "milestones.json"
+        if milestones is not None:
+            path.write_text(json.dumps(milestones), encoding="utf-8")
+
+        def _load_milestones():
+            return arena_level.load_milestones(path)
+
+        monkeypatch.setattr(
+            "update_leaderboard.load_milestones", _load_milestones
+        )
+        monkeypatch.setattr(
+            "update_leaderboard.load_levels_config", lambda: config
+        )
+        return path
+
+    def test_no_level_up_when_below_threshold(self, tmp_path, monkeypatch):
+        """Below the next threshold leaves the level untouched."""
+        path = self._stub_config_and_milestones(
+            monkeypatch,
+            tmp_path,
+            milestones={
+                "current_level": 0,
+                "current_arena_points": 10,
+                "history": [],
+            },
+        )
+        scores = {"players": {"alice": {"total_points": 24}}}
+        milestones, _, level_ups = update_arena_level(scores)
+        assert milestones["current_level"] == 0
+        assert milestones["current_arena_points"] == 24
+        assert level_ups == []
+        # File untouched until save_milestones is called explicitly.
+        assert path.exists()
+
+    def test_single_level_up_appends_history(self, tmp_path, monkeypatch):
+        """Crossing one threshold appends a single history entry."""
+        self._stub_config_and_milestones(
+            monkeypatch,
+            tmp_path,
+            milestones={
+                "current_level": 0,
+                "current_arena_points": 24,
+                "history": [],
+            },
+        )
+        scores = {
+            "players": {
+                "alice": {"total_points": 12},
+                "bob": {"total_points": 13},
+            }
+        }
+        milestones, _, level_ups = update_arena_level(scores)
+        assert milestones["current_level"] == 1
+        assert milestones["current_arena_points"] == 25
+        assert len(level_ups) == 1
+        assert level_ups[0]["level"] == 1
+        assert level_ups[0]["threshold"] == 25
+        assert level_ups[0]["announced"] is False
+        assert milestones["history"][-1]["level"] == 1
+
+    def test_multi_level_jump_records_each(self, tmp_path, monkeypatch):
+        """Crossing multiple thresholds in one run records all of them."""
+        self._stub_config_and_milestones(
+            monkeypatch,
+            tmp_path,
+            milestones={
+                "current_level": 0,
+                "current_arena_points": 0,
+                "history": [],
+            },
+        )
+        scores = {"players": {"alice": {"total_points": 160}}}
+        milestones, _, level_ups = update_arena_level(scores)
+        assert milestones["current_level"] == 3
+        assert [lu["level"] for lu in level_ups] == [1, 2, 3]
+        assert len(milestones["history"]) == 3
+
+    def test_no_level_up_at_max(self, tmp_path, monkeypatch):
+        """Already at max level → no new history entries."""
+        self._stub_config_and_milestones(
+            monkeypatch,
+            tmp_path,
+            milestones={
+                "current_level": 3,
+                "current_arena_points": 200,
+                "history": [],
+            },
+        )
+        scores = {"players": {"alice": {"total_points": 500}}}
+        milestones, _, level_ups = update_arena_level(scores)
+        assert milestones["current_level"] == 3
+        assert level_ups == []
+
+    def test_first_run_with_no_milestones_file(self, tmp_path, monkeypatch):
+        """No milestones.json on disk → starts at level 0 then climbs."""
+        self._stub_config_and_milestones(monkeypatch, tmp_path)
+        scores = {"players": {"alice": {"total_points": 80}}}
+        milestones, _, level_ups = update_arena_level(scores)
+        assert milestones["current_level"] == 2
+        assert [lu["level"] for lu in level_ups] == [1, 2]

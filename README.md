@@ -14,6 +14,16 @@ No registration. No sign-ups. Just open source.
 
 ### [Browse Issues & Leaderboard on the Website &rarr;](https://claudiotancredi.github.io/weekly-issue-arena/)
 
+<!-- ARENA-LEVEL:START -->
+<p align="center">
+  <a href="https://claudiotancredi.github.io/weekly-issue-arena/">
+    <img src="assets/arena_level.svg" alt="Arena Level Progress" width="640">
+  </a>
+</p>
+
+> **The arena levels up.** Every contribution adds to a shared pool of points. When the pool crosses a threshold, **more issues unlock for everyone**, every week. We're all building this together.
+<!-- ARENA-LEVEL:END -->
+
 ---
 
 ## 🏆 Leaderboard
@@ -129,9 +139,11 @@ No registration. No sign-ups. Just open source.
 
 Every **Friday at 17:00 UTC**, a GitHub Action automatically:
 1. Rebuilds a fresh pool of 250 active repos (50 hand-curated anchors + ~200 dynamically discovered via the GitHub Search API)
-2. Pulls new issues (labeled `good first issue`, `bug`, or `hard`) from that pool
+2. Pulls new issues (labeled `good first issue`, `bug`, or `hard`) from that pool — the **per-category quotas grow with the arena level**, so a higher-level arena unlocks more issues every week
 3. Updates this README with the new weekly batch
 4. Archives the previous week's issues for contribution tracking
+
+Every hour, a second job recomputes the leaderboard, awards points for newly merged PRs, refreshes the arena level SVG above, and announces level-ups in the [Arena Milestones discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions/categories/arena-milestones).
 
 You don't need to register — contributions are detected automatically via GitHub's public metadata.
 
@@ -152,6 +164,8 @@ You don't need to register — contributions are detected automatically via GitH
 | Good First Issue   | 1 pt   |
 | Bug Fix            | 2 pts  |
 | Hard Issue         | 4 pts  |
+
+**Points feed two meters at once.** Each point grows your personal rank *and* the shared **Arena Level**. The arena starts at Level 0 with 44 issues per week (20 GFI + 14 bug + 10 hard). Every level adds **+1 issue per category** (so Level 1 = 47, Level 10 = 74). Thresholds live in [config/arena_levels.json](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/arena_levels.json) and the current state is the SVG bar at the top of this README.
 
 | Rank | Badge | Points Required |
 |------|-------|----------------|

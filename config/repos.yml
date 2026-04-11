@@ -6,9 +6,9 @@
 #   - 50 anchor repos from config/anchor_repos.yml (always included)
 #   - ~200 dynamic repos from GitHub Search API queries
 #
-# This file now only configures HOW issues are fetched from each repo:
-#   - label_mappings: which issue labels map to each arena category
-#   - limits:        how many issues to surface per category each week
+# This file now only configures the label-to-category mapping. Per-category
+# issue limits live in config/arena_levels.json (baseline + arena-level
+# bonuses), so collective progress can unlock more issues over time.
 #
 # To suggest a guaranteed-included repo: edit config/anchor_repos.yml.
 
@@ -34,15 +34,3 @@ label_mappings:
     - "complex"
     - "advanced"
     - "difficulty: hard"
-
-# ---------------------------------------------------------------------------
-# Weekly issue pool limits per category
-#
-# Issue selection within each category is pure weekly-seeded random across
-# the whole fetched set, with a per-repo diversity cap (max 2 issues per
-# repo) and a linked-PR skip. No bucket/quota weighting.
-# ---------------------------------------------------------------------------
-limits:
-  gfi: 20
-  bug: 14
-  hard: 10

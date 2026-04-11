@@ -3,8 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import StatCard from "../components/StatCard.astro";
 import IssueCard from "../components/IssueCard.astro";
 import PlayerCard from "../components/PlayerCard.astro";
+import ArenaLevelBar from "../components/ArenaLevelBar.astro";
 import {
   getAllCurrentIssues,
+  getArenaLevelState,
   getLeaderboard,
   getRepoCount,
   getTotalContributors,
@@ -22,6 +24,7 @@ const totalIssues = getTotalIssuesThisWeek();
 const totalPoints = getTotalPointsAwarded();
 const totalCredited = getTotalIssuesCredited();
 const weekId = getLatestWeekId();
+const arenaLevelState = getArenaLevelState();
 const base = import.meta.env.BASE_URL;
 
 // Pick one issue per category for featured section
@@ -73,8 +76,14 @@ const featured = ["gfi", "bug", "hard"]
     </div>
   </section>
 
+  <!-- Arena Level Bar -->
+  <ArenaLevelBar
+    arenaPoints={arenaLevelState.arenaPoints}
+    level={arenaLevelState.level}
+  />
+
   <!-- Stats -->
-  <section class="mx-auto max-w-6xl px-4 -mt-6">
+  <section class="mx-auto max-w-6xl px-4 pt-6">
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
       <StatCard value={totalIssues} label="Issues this week" />
       <StatCard value={totalContributors} label="Contributors" />
@@ -149,7 +158,7 @@ const featured = ["gfi", "bug", "hard"]
         <div class="text-center">
           <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent text-xl font-bold">3</div>
           <h3 class="text-sm font-semibold text-white">Earn Points</h3>
-          <p class="mt-1 text-xs text-zinc-400">When your PR closes the issue, you earn points and climb the leaderboard. Automatically.</p>
+          <p class="mt-1 text-xs text-zinc-400">When your PR closes the issue, you earn points, climb the leaderboard, and grow the shared Arena Level — unlocking more issues for everyone.</p>
         </div>
       </div>
       <div class="mt-10 text-center">

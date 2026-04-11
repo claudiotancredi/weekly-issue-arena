@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "baseline": { "gfi": 20, "bug": 14, "hard": 10 },
+  "levels": [
+    { "level": 0,  "threshold": 0,    "bonus": { "gfi": 0,  "bug": 0,  "hard": 0  } },
+    { "level": 1,  "threshold": 25,   "bonus": { "gfi": 1,  "bug": 1,  "hard": 1  } },
+    { "level": 2,  "threshold": 75,   "bonus": { "gfi": 2,  "bug": 2,  "hard": 2  } },
+    { "level": 3,  "threshold": 150,  "bonus": { "gfi": 3,  "bug": 3,  "hard": 3  } },
+    { "level": 4,  "threshold": 275,  "bonus": { "gfi": 4,  "bug": 4,  "hard": 4  } },
+    { "level": 5,  "threshold": 450,  "bonus": { "gfi": 5,  "bug": 5,  "hard": 5  } },
+    { "level": 6,  "threshold": 700,  "bonus": { "gfi": 6,  "bug": 6,  "hard": 6  } },
+    { "level": 7,  "threshold": 1050, "bonus": { "gfi": 7,  "bug": 7,  "hard": 7  } },
+    { "level": 8,  "threshold": 1500, "bonus": { "gfi": 8,  "bug": 8,  "hard": 8  } },
+    { "level": 9,  "threshold": 2100, "bonus": { "gfi": 9,  "bug": 9,  "hard": 9  } },
+    { "level": 10, "threshold": 3000, "bonus": { "gfi": 10, "bug": 10, "hard": 10 } }
+  ]
+}

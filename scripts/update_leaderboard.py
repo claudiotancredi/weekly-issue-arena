@@ -19,6 +19,16 @@ import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from arena_level import (
+    compute_arena_level,
+    compute_arena_points,
+    get_level_entry,
+    get_next_level_entry,
+    load_levels_config,
+    load_milestones,
+    save_milestones,
+    total_issues_at_level,
+)
 from utils import (
     arena_week_id,
     github_get,
@@ -487,6 +497,64 @@ def build_merged_this_week_md(scores: dict) -> str:
     return " ".join(avatars) + "\n"
 
 
+LEVEL_UP_RATE_LIMIT_HOURS = 6
+
+
+def _last_announcement_time(milestones: dict) -> datetime | None:
+    """Return the timestamp of the most recently announced level-up."""
+    history = milestones.get("history", [])
+    announced = [h for h in history if h.get("announced")]
+    if not announced:
+        return None
+    last = max(announced, key=lambda h: h.get("reached_at", ""))
+    try:
+        return datetime.fromisoformat(
+            last["reached_at"].replace("Z", "+00:00")
+        )
+    except (KeyError, ValueError):
+        return None
+
+
+def update_arena_level(scores: dict) -> tuple[dict, dict, list[dict]]:
+    """Recompute arena level, persist milestones, return level-up events.
+
+    Returns:
+        (milestones, levels_config, new_level_ups)
+        ``new_level_ups`` is the list of history entries that crossed
+        a threshold during this run.
+    """
+    levels_cfg = load_levels_config()
+    milestones = load_milestones()
+
+    arena_points = compute_arena_points(scores)
+    new_level = compute_arena_level(arena_points, levels_cfg)
+    old_level = int(milestones.get("current_level", 0))
+
+    new_level_ups: list[dict] = []
+    if new_level > old_level:
+        for lv in range(old_level + 1, new_level + 1):
+            entry = get_level_entry(lv, levels_cfg)
+            new_level_ups.append(
+                {
+                    "level": lv,
+                    "reached_at": datetime.now(timezone.utc).isoformat(),
+                    "arena_points_at_reach": arena_points,
+                    "threshold": entry["threshold"],
+                    "announced": False,
+                }
+            )
+        milestones.setdefault("history", []).extend(new_level_ups)
+        log.info(
+            f"Arena leveled up: {old_level} → {new_level} "
+            f"({len(new_level_ups)} threshold(s) crossed)"
+        )
+
+    milestones["current_level"] = new_level
+    milestones["current_arena_points"] = arena_points
+
+    return milestones, levels_cfg, new_level_ups
+
+
 def main():
     """Main function for updating the leaderboard."""
     parser = argparse.ArgumentParser()
@@ -553,6 +621,10 @@ def main():
 
     save_scores(scores)
 
+    # Recompute arena level + persist milestones (before notifications so
+    # the announcement sees up-to-date state).
+    milestones, levels_cfg, new_level_ups = update_arena_level(scores)
+
     # Notify contributors via GitHub Discussions
     if all_new_credits:
         try:
@@ -562,6 +634,58 @@ def main():
             save_scores(scores)  # re-save with discussion_node_ids
         except Exception as exc:
             log.warning(f"Discussion notifications failed: {exc}")
+
+    # Announce arena level-ups in the dedicated Arena Milestones discussion.
+    if new_level_ups:
+        last_announced = _last_announcement_time(milestones)
+        now = datetime.now(timezone.utc)
+        rate_gated = last_announced is not None and (
+            now - last_announced
+        ) < timedelta(hours=LEVEL_UP_RATE_LIMIT_HOURS)
+        if rate_gated:
+            log.info(
+                f"Skipping level-up announcement: last fired at "
+                f"{last_announced.isoformat()} (rate gate "
+                f"{LEVEL_UP_RATE_LIMIT_HOURS}h)."
+            )
+        else:
+            try:
+                from discussions import announce_arena_level_up
+
+                top_level = max(lv["level"] for lv in new_level_ups)
+                from_level = min(lv["level"] for lv in new_level_ups) - 1
+                next_entry = get_next_level_entry(top_level, levels_cfg)
+                milestones = announce_arena_level_up(
+                    milestones=milestones,
+                    from_level=from_level,
+                    to_level=top_level,
+                    arena_points=milestones["current_arena_points"],
+                    next_threshold=(
+                        next_entry["threshold"] if next_entry else None
+                    ),
+                    total_issues=total_issues_at_level(top_level, levels_cfg),
+                    total_issues_prev=total_issues_at_level(
+                        from_level, levels_cfg
+                    ),
+                )
+                # Mark every newly crossed level as announced.
+                for entry in milestones.get("history", []):
+                    if entry.get("level") in {
+                        lv["level"] for lv in new_level_ups
+                    }:
+                        entry["announced"] = True
+            except Exception as exc:
+                log.warning(f"Arena level-up announcement failed: {exc}")
+
+    save_milestones(milestones)
+
+    # Render the README arena-level SVG from the freshest state.
+    try:
+        from render_arena_svg import render_arena_svg
+
+        render_arena_svg(milestones, levels_cfg)
+    except Exception as exc:
+        log.warning(f"Arena SVG render failed: {exc}")
 
     save_state(state)
 

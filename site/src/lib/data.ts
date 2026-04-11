@@ -9,6 +9,7 @@ const ISSUES_PATH = path.join(ROOT, ".arena_state/issues.json");
 const SCORES_PATH = path.join(ROOT, ".arena_state/scores.json");
 const REPO_POOL_PATH = path.join(ROOT, ".arena_state/repo_pool.json");
 const ANCHOR_REPOS_PATH = path.join(ROOT, "config/anchor_repos.yml");
+const MILESTONES_PATH = path.join(ROOT, ".arena_state/milestones.json");
 
 // --- Types ---
 
@@ -228,4 +229,36 @@ export function getTotalPointsAwarded(): number {
 export function getTotalIssuesCredited(): number {
   const scores = getScores();
   return scores.credited_issues.length;
+}
+
+interface ArenaMilestonesState {
+  current_level: number;
+  current_arena_points: number;
+  discussion_node_id?: string | null;
+  history?: Array<{
+    level: number;
+    reached_at: string;
+    arena_points_at_reach: number;
+    threshold?: number;
+    announced?: boolean;
+  }>;
+}
+
+export interface ArenaLevelState {
+  level: number;
+  arenaPoints: number;
+}
+
+export function getArenaLevelState(): ArenaLevelState {
+  const liveTotal = getTotalPointsAwarded();
+  const state = readJSON<ArenaMilestonesState>(MILESTONES_PATH);
+  if (!state) {
+    return { level: 0, arenaPoints: liveTotal };
+  }
+  return {
+    level: state.current_level ?? 0,
+    // Prefer the live sum from scores.json so the bar reflects the
+    // freshest leaderboard tick even if milestones.json is one cron behind.
+    arenaPoints: Math.max(state.current_arena_points ?? 0, liveTotal),
+  };
 }

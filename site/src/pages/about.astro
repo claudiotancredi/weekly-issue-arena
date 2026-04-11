@@ -3,8 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CategoryBadge from "../components/CategoryBadge.astro";
 import RankBadge from "../components/RankBadge.astro";
 import { getRepoCount } from "../lib/data";
+import {
+  getLevels,
+  effectiveLimits,
+  totalIssuesAtLevel,
+} from "../lib/levels";
 
 const repoCount = getRepoCount();
+const levels = getLevels();
+const baselineTotal = totalIssuesAtLevel(levels[0].level);
+const maxLevel = levels[levels.length - 1];
+const maxTotal = totalIssuesAtLevel(maxLevel.level);
 ---
 
 <BaseLayout title="About | Weekly Issue Arena" description="Learn how the Weekly Issue Arena works — rules, point system, ranks, and FAQ.">
@@ -19,12 +28,14 @@ const repoCount = getRepoCount();
         <p>
           Every <strong class="text-white">Friday at 17:00 UTC</strong>, a GitHub Action automatically
           rebuilds a fresh pool of {repoCount} active open-source repositories and pulls new issues
-          from them. Issues are labeled as Good First Issues, Bugs, or Hard Issues.
+          from them. Issues are labeled as Good First Issues, Bugs, or Hard Issues. The number of
+          issues pulled per category grows with the <a href="#arena-level" class="text-accent hover:underline">Arena Level</a>,
+          so collective progress unlocks more weekly issues for everyone.
         </p>
         <p>
           Every <strong class="text-white">hour</strong>, another action checks whether any listed
           issues have been closed by a pull request. If your PR closes an Arena issue, you automatically
-          earn points.
+          earn points &mdash; which feed both your personal rank and the shared Arena Level.
         </p>
         <p>
           No registration required. Contributions are detected via GitHub's public metadata.
@@ -92,6 +103,59 @@ const repoCount = getRepoCount();
       </div>
     </section>
 
+    <!-- Arena Level -->
+    <section id="arena-level" class="mb-12 scroll-mt-20">
+      <h2 class="text-xl font-bold text-white mb-4">Arena Level</h2>
+      <div class="space-y-3 text-sm text-zinc-400">
+        <p>
+          Every point earned by every contributor adds to a shared pool. When the pool crosses a
+          threshold, the <strong class="text-white">arena levels up</strong> and the weekly issue
+          quota grows by <strong class="text-white">+1 issue per category</strong>. The arena starts
+          at <strong class="text-white">Level 0</strong> with <strong class="text-white">{baselineTotal} issues</strong>
+          per week and reaches <strong class="text-white">Level {maxLevel.level}</strong> at
+          <strong class="text-white">{maxTotal} issues</strong> per week.
+        </p>
+        <p>
+          The current state is shown live on the <a href="/" class="text-accent hover:underline">home page</a>
+          and as a static SVG bar in the
+          <a href="https://github.com/claudiotancredi/weekly-issue-arena#readme" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">README</a>.
+          Level-ups are announced in the
+          <a href="https://github.com/claudiotancredi/weekly-issue-arena/discussions/categories/arena-milestones" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Arena Milestones discussion</a>.
+        </p>
+      </div>
+
+      <div class="mt-6 overflow-x-auto rounded-lg border border-border bg-surface-card">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-surface-elevated text-xs uppercase tracking-wider text-zinc-500">
+            <tr>
+              <th class="px-4 py-3 font-semibold">Level</th>
+              <th class="px-4 py-3 font-semibold">Threshold</th>
+              <th class="px-4 py-3 font-semibold text-center">GFI</th>
+              <th class="px-4 py-3 font-semibold text-center">Bug</th>
+              <th class="px-4 py-3 font-semibold text-center">Hard</th>
+              <th class="px-4 py-3 font-semibold text-center">Total</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            {levels.map((lv) => {
+              const limits = effectiveLimits(lv.level);
+              const total = limits.gfi + limits.bug + limits.hard;
+              return (
+                <tr class="text-zinc-400">
+                  <td class="px-4 py-2 font-bold text-accent">{lv.level}</td>
+                  <td class="px-4 py-2">{lv.threshold} pts</td>
+                  <td class="px-4 py-2 text-center">{limits.gfi}</td>
+                  <td class="px-4 py-2 text-center">{limits.bug}</td>
+                  <td class="px-4 py-2 text-center">{limits.hard}</td>
+                  <td class="px-4 py-2 text-center font-semibold text-white">{total}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="mb-12">
       <h2 class="text-xl font-bold text-white mb-4">FAQ</h2>
@@ -115,6 +179,16 @@ const repoCount = getRepoCount();
             For a guaranteed spot, edit
             <a href="https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/anchor_repos.yml" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">config/anchor_repos.yml</a>
             and open a PR.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-white">What is the Arena Level and how does it grow?</h3>
+          <p class="mt-1 text-sm text-zinc-400">
+            Every point earned by every contributor adds to a shared pool. When the pool crosses
+            a threshold, the arena levels up and the weekly issue quota grows by one issue per
+            category &mdash; so each level unlocks more opportunities for everyone. See the
+            <a href="#arena-level" class="text-accent hover:underline">Arena Level</a> section above
+            for the full level table.
           </p>
         </div>
         <div>

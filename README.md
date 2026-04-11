@@ -44,6 +44,8 @@ No registration. No sign-ups. Just open source.
 
 > In case of a tie, contributors are listed alphabetically by GitHub username.
 
+*[View the full leaderboard on the website &rarr;](https://claudiotancredi.github.io/weekly-issue-arena/leaderboard/)*
+
 ---
 
 ## 🔥 Merged This Week

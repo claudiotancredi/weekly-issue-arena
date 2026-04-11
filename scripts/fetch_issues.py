@@ -66,10 +66,8 @@ def load_configured_repos() -> dict:
     elif ANCHOR_PATH.exists():
         with open(ANCHOR_PATH, encoding="utf-8") as f:
             anchor = yaml.safe_load(f)
-        # Tag every fallback entry as anchor so bucket-aware selection
-        # still works even without a weekly pool file.
         config["repos"] = [
-            {"owner": r["owner"], "repo": r["repo"], "source": "anchor"}
+            {"owner": r["owner"], "repo": r["repo"]}
             for r in anchor.get("repos", [])
         ]
         log.warning(
@@ -133,106 +131,44 @@ def enforce_repo_diversity(
     return result
 
 
-def build_bucket_map(repos: list[dict]) -> dict[str, str]:
-    """Map 'owner/repo' → bucket name (anchor/trending/dynamic).
-
-    A repo without an explicit ``source`` field defaults to ``dynamic``
-    so older pool files and anchor-fallback entries keep working.
-    """
-    out: dict[str, str] = {}
-    for r in repos:
-        key = f"{r['owner']}/{r['repo']}"
-        out[key] = r.get("source", "dynamic")
-    return out
-
-
 def select_category_issues(
     issues: list[dict],
     limit: int,
-    quotas: dict[str, int],
     rng: random.Random,
     max_per_repo: int = 2,
 ) -> list[dict]:
-    """Select up to ``limit`` issues for one category.
+    """Select up to ``limit`` issues for one category at random.
 
-    Applies floor quotas per bucket first (anchor, then trending), then
-    fills remaining slots from a shuffled combination of what's left in
-    every bucket. The two shuffles are driven by ``rng`` so runs with
-    the same seed are reproducible.
-
-    Constraints enforced during selection:
+    The shuffle is driven by ``rng`` so runs with the same seed are
+    reproducible within a week. Constraints enforced during selection:
       - At most ``max_per_repo`` issues from any single repo.
       - Issues with an already-linked PR are skipped (lazy API check).
     """
-    buckets: dict[str, list[dict]] = {
-        "anchor": [],
-        "trending": [],
-        "dynamic": [],
-    }
-    for issue in issues:
-        b = issue.get("repo_bucket", "dynamic")
-        if b not in buckets:
-            b = "dynamic"
-        buckets[b].append(issue)
-
-    for bucket_list in buckets.values():
-        rng.shuffle(bucket_list)
+    pool = list(issues)
+    rng.shuffle(pool)
 
     selected: list[dict] = []
     repo_counts: dict[str, int] = {}
 
-    def try_add(issue: dict) -> bool:
-        key = f"{issue['owner']}/{issue['repo']}"
-        if repo_counts.get(key, 0) >= max_per_repo:
-            return False
-        if has_linked_pr(issue["owner"], issue["repo"], issue["number"]):
-            return False
-        selected.append(issue)
-        repo_counts[key] = repo_counts.get(key, 0) + 1
-        return True
-
-    # Phase A — honor floor quotas from anchor then trending
-    for bucket_name in ("anchor", "trending"):
-        floor = quotas.get(bucket_name, 0)
-        if floor <= 0:
-            continue
-        taken = 0
-        remaining = buckets[bucket_name]
-        leftover: list[dict] = []
-        while remaining and taken < floor and len(selected) < limit:
-            issue = remaining.pop(0)
-            if try_add(issue):
-                taken += 1
-            else:
-                leftover.append(issue)
-        # Stash un-picked + untried issues back for phase B
-        buckets[bucket_name] = leftover + remaining
-        if len(selected) >= limit:
-            return selected
-
-    # Phase B — free fill from everything left in any bucket
-    remainder = buckets["anchor"] + buckets["trending"] + buckets["dynamic"]
-    rng.shuffle(remainder)
-    for issue in remainder:
+    for issue in pool:
         if len(selected) >= limit:
             break
-        try_add(issue)
+        key = f"{issue['owner']}/{issue['repo']}"
+        if repo_counts.get(key, 0) >= max_per_repo:
+            continue
+        if has_linked_pr(issue["owner"], issue["repo"], issue["number"]):
+            continue
+        selected.append(issue)
+        repo_counts[key] = repo_counts.get(key, 0) + 1
 
     return selected
 
 
 def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
-    """Fetch GFI, bug, and hard issues from all configured repos.
-
-    Each fetched issue is tagged with ``repo_bucket`` so downstream
-    selection can honor per-bucket floor quotas defined in
-    ``config['bucket_quotas']``.
-    """
+    """Fetch GFI, bug, and hard issues from all configured repos."""
     repos = config["repos"]
     label_mappings = config["label_mappings"]
     limits = config["limits"]
-    bucket_quotas = config.get("bucket_quotas", {}) or {}
-    bucket_map = build_bucket_map(repos)
 
     results: dict[str, list[dict]] = {"gfi": [], "bug": [], "hard": []}
     seen_globally: set[str] = set()  # dedup across categories
@@ -240,8 +176,7 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
     for repo_cfg in repos:
         owner = repo_cfg["owner"]
         repo = repo_cfg["repo"]
-        bucket = bucket_map.get(f"{owner}/{repo}", "dynamic")
-        log.info(f"Fetching from {owner}/{repo} [{bucket}]...")
+        log.info(f"Fetching from {owner}/{repo}...")
 
         for category in ["hard", "bug", "gfi"]:
             labels = label_mappings[category]
@@ -256,9 +191,6 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
                 if issue_key in seen_globally:
                     continue
                 seen_globally.add(issue_key)
-                actual_bucket = bucket_map.get(
-                    f"{owner_actual}/{repo_actual}", bucket
-                )
                 results[category].append(
                     {
                         "number": issue["number"],
@@ -271,7 +203,6 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
                         "updated_at": issue["updated_at"],
                         "author": issue["user"]["login"],
                         "listed_at": listed_at,
-                        "repo_bucket": actual_bucket,
                     }
                 )
 
@@ -281,15 +212,9 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
     selected: dict[str, list[dict]] = {}
     for category in results:
         cat_limit = limits[category]
-        cat_quotas = bucket_quotas.get(category, {}) or {}
-        picked = select_category_issues(
-            results[category], cat_limit, cat_quotas, rng
-        )
+        picked = select_category_issues(results[category], cat_limit, rng)
         selected[category] = picked
-        log.info(
-            f"{category}: selected {len(picked)}/{cat_limit} "
-            f"(quotas={cat_quotas or 'none'})"
-        )
+        log.info(f"{category}: selected {len(picked)}/{cat_limit}")
 
     return selected
 

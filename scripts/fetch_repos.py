@@ -23,12 +23,13 @@ Environment variables:
 import argparse
 import json
 import logging
+import random
 import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import yaml
-from utils import github_get
+from utils import arena_week_id, github_get
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 log = logging.getLogger(__name__)
@@ -331,15 +332,19 @@ def fetch_dynamic_candidates(queries: list[dict]) -> dict[str, dict]:
     return candidates
 
 
-def rank_dynamic(
-    candidates: dict[str, dict], anchor_keys: set[str]
+def sample_dynamic(
+    candidates: dict[str, dict],
+    anchor_keys: set[str],
+    rng: random.Random,
 ) -> list[dict]:
-    """Remove anchor repos from candidates and sort by signal strength.
+    """Remove anchor repos from candidates and shuffle uniformly.
 
-    Sort key: (query_matches desc, stars desc).
+    The caller decides how many to take from the front. The shuffle is
+    driven by ``rng`` so runs with the same seed are reproducible and
+    different seeds produce different week-to-week rotations.
     """
     filtered = [c for k, c in candidates.items() if k not in anchor_keys]
-    filtered.sort(key=lambda r: (-r["query_matches"], -r["stars"]))
+    rng.shuffle(filtered)
     return filtered
 
 
@@ -356,8 +361,8 @@ def _resolve_bucket(candidate: dict) -> str:
     return "dynamic"
 
 
-def build_pool(anchor: list[dict], dynamic_ranked: list[dict]) -> dict:
-    """Combine anchor + top dynamic to reach POOL_TARGET total.
+def build_pool(anchor: list[dict], dynamic_sampled: list[dict]) -> dict:
+    """Combine anchor + sampled dynamic to reach POOL_TARGET total.
 
     Each repo entry is tagged with ``source`` (one of
     ``anchor``/``trending``/``dynamic``). Anchor always wins when a
@@ -370,15 +375,13 @@ def build_pool(anchor: list[dict], dynamic_ranked: list[dict]) -> dict:
     ]
 
     slots_for_dynamic = POOL_TARGET - len(anchor_entries)
-    selected_dynamic = dynamic_ranked[:slots_for_dynamic]
+    selected_dynamic = dynamic_sampled[:slots_for_dynamic]
 
     dynamic_entries = [
         {
             "owner": r["owner"],
             "repo": r["repo"],
             "source": _resolve_bucket(r),
-            "stars": r["stars"],
-            "query_matches": r["query_matches"],
         }
         for r in selected_dynamic
     ]
@@ -437,10 +440,11 @@ def main():
     candidates = fetch_dynamic_candidates(queries)
     log.info(f"  → {len(candidates)} unique non-noise candidates")
 
-    dynamic_ranked = rank_dynamic(candidates, anchor_keys)
-    log.info(f"  → {len(dynamic_ranked)} candidates after removing anchors")
+    rng = random.Random(arena_week_id())
+    dynamic_sampled = sample_dynamic(candidates, anchor_keys, rng)
+    log.info(f"  → {len(dynamic_sampled)} candidates after removing anchors")
 
-    pool = build_pool(anchor, dynamic_ranked)
+    pool = build_pool(anchor, dynamic_sampled)
     log.info(
         f"Pool built: {pool['total_count']} repos "
         f"({pool['anchor_count']} anchor + "
@@ -456,19 +460,11 @@ def main():
         print("\n=== TRENDING ===")
         trending = [r for r in pool["repos"] if r["source"] == "trending"]
         for r in trending:
-            print(
-                f"  [{r['source']}] {r['owner']}/{r['repo']} "
-                f"★{r.get('stars', 0)} "
-                f"matches={r.get('query_matches', 0)}"
-            )
-        print("\n=== TOP DYNAMIC (first 20) ===")
+            print(f"  [{r['source']}] {r['owner']}/{r['repo']}")
+        print("\n=== DYNAMIC (first 20) ===")
         dyn = [r for r in pool["repos"] if r["source"] == "dynamic"]
         for r in dyn[:20]:
-            print(
-                f"  [{r['source']}] {r['owner']}/{r['repo']} "
-                f"★{r.get('stars', 0)} "
-                f"matches={r.get('query_matches', 0)}"
-            )
+            print(f"  [{r['source']}] {r['owner']}/{r['repo']}")
         print(
             f"\n=== TOTAL: {pool['total_count']} "
             f"(anchor={pool['anchor_count']}, "

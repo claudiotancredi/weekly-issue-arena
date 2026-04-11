@@ -225,54 +225,55 @@ def test_fetch_dynamic_candidates_filters_noise():
 # ── rank_dynamic ─────────────────────────────────────────────
 
 
-def test_rank_dynamic_excludes_anchor():
-    """Repos in the anchor key set are removed from the dynamic ranking."""
+def test_sample_dynamic_excludes_anchor():
+    """Repos in the anchor key set are removed from the sample."""
+    import random
+
     candidates = {
-        "pytorch/pytorch": {
-            "owner": "pytorch",
-            "repo": "pytorch",
-            "stars": 99000,
-            "query_matches": 3,
-        },
-        "vllm-project/vllm": {
-            "owner": "vllm-project",
-            "repo": "vllm",
-            "stars": 75000,
-            "query_matches": 2,
-        },
+        "pytorch/pytorch": {"owner": "pytorch", "repo": "pytorch"},
+        "vllm-project/vllm": {"owner": "vllm-project", "repo": "vllm"},
     }
-    ranked = fetch_repos.rank_dynamic(candidates, {"pytorch/pytorch"})
-    assert len(ranked) == 1
-    assert ranked[0]["repo"] == "vllm"
+    sampled = fetch_repos.sample_dynamic(
+        candidates, {"pytorch/pytorch"}, random.Random(42)
+    )
+    assert len(sampled) == 1
+    assert sampled[0]["repo"] == "vllm"
 
 
-def test_rank_dynamic_orders_by_matches_then_stars():
-    """Sort key is (query_matches desc, stars desc)."""
+def test_sample_dynamic_seeded_reproducible():
+    """Same rng seed produces the same sample order."""
+    import random
+
     candidates = {
-        "a/low": {
-            "owner": "a",
-            "repo": "low",
-            "stars": 50000,
-            "query_matches": 1,
-        },
-        "b/high": {
-            "owner": "b",
-            "repo": "high",
-            "stars": 1000,
-            "query_matches": 3,
-        },
-        "c/mid": {
-            "owner": "c",
-            "repo": "mid",
-            "stars": 90000,
-            "query_matches": 1,
-        },
+        f"o{i}/r{i}": {"owner": f"o{i}", "repo": f"r{i}"} for i in range(30)
     }
-    ranked = fetch_repos.rank_dynamic(candidates, set())
-    # higher query_matches first, then higher stars within same matches
-    assert ranked[0]["repo"] == "high"
-    assert ranked[1]["repo"] == "mid"
-    assert ranked[2]["repo"] == "low"
+    out_a = fetch_repos.sample_dynamic(candidates, set(), random.Random(123))
+    out_b = fetch_repos.sample_dynamic(candidates, set(), random.Random(123))
+    assert [r["repo"] for r in out_a] == [r["repo"] for r in out_b]
+
+
+def test_sample_dynamic_different_seeds_differ():
+    """Different seeds produce different orderings (almost surely)."""
+    import random
+
+    candidates = {
+        f"o{i}/r{i}": {"owner": f"o{i}", "repo": f"r{i}"} for i in range(50)
+    }
+    out_a = fetch_repos.sample_dynamic(candidates, set(), random.Random(1))
+    out_b = fetch_repos.sample_dynamic(candidates, set(), random.Random(9999))
+    assert [r["repo"] for r in out_a] != [r["repo"] for r in out_b]
+
+
+def test_sample_dynamic_returns_all_non_anchor():
+    """Sample contains every non-anchor candidate exactly once."""
+    import random
+
+    candidates = {
+        f"o{i}/r{i}": {"owner": f"o{i}", "repo": f"r{i}"} for i in range(10)
+    }
+    sampled = fetch_repos.sample_dynamic(candidates, set(), random.Random(0))
+    assert len(sampled) == 10
+    assert {r["repo"] for r in sampled} == {f"r{i}" for i in range(10)}
 
 
 # ── build_pool ───────────────────────────────────────────────
@@ -281,15 +282,7 @@ def test_rank_dynamic_orders_by_matches_then_stars():
 def test_build_pool_hits_target_250():
     """50 anchor + 200 dynamic produces a 250-repo pool."""
     anchor = [{"owner": f"a{i}", "repo": "r"} for i in range(50)]
-    dynamic = [
-        {
-            "owner": f"d{i}",
-            "repo": "r",
-            "stars": 1000,
-            "query_matches": 1,
-        }
-        for i in range(300)
-    ]
+    dynamic = [{"owner": f"d{i}", "repo": "r"} for i in range(300)]
     pool = fetch_repos.build_pool(anchor, dynamic)
     assert pool["total_count"] == 250
     assert pool["anchor_count"] == 50
@@ -302,12 +295,7 @@ def test_build_pool_short_dynamic_warns(caplog):
 
     anchor = [{"owner": f"a{i}", "repo": "r"} for i in range(50)]
     dynamic = [
-        {
-            "owner": f"d{i}",
-            "repo": "r",
-            "stars": 1000,
-            "query_matches": 1,
-        }
+        {"owner": f"d{i}", "repo": "r"}
         for i in range(100)  # only 100, not 200
     ]
     with caplog.at_level(logging.WARNING):
@@ -324,20 +312,15 @@ def test_build_pool_anchor_entries_marked():
     assert pool["repos"][0]["source"] == "anchor"
 
 
-def test_build_pool_dynamic_entries_marked():
-    """Dynamic repos in the pool carry source='dynamic' and stars."""
+def test_build_pool_dynamic_entries_minimal():
+    """Dynamic pool entries contain only owner/repo/source."""
     anchor = []
-    dynamic = [
-        {
-            "owner": "vllm-project",
-            "repo": "vllm",
-            "stars": 75000,
-            "query_matches": 3,
-        }
-    ]
+    dynamic = [{"owner": "vllm-project", "repo": "vllm"}]
     pool = fetch_repos.build_pool(anchor, dynamic)
-    assert pool["repos"][0]["source"] == "dynamic"
-    assert pool["repos"][0]["stars"] == 75000
+    entry = pool["repos"][0]
+    assert entry["source"] == "dynamic"
+    assert "stars" not in entry
+    assert "query_matches" not in entry
 
 
 # ── save / load ──────────────────────────────────────────────
@@ -486,8 +469,6 @@ def test_build_pool_emits_trending_source():
         {
             "owner": "voxel51",
             "repo": "fiftyone",
-            "stars": 10000,
-            "query_matches": 2,
             "buckets": {"dynamic", "trending"},
         }
     ]
@@ -500,41 +481,35 @@ def test_build_pool_emits_trending_source():
 def test_build_pool_dynamic_only_candidate():
     """A candidate matched only by dynamic queries stays source=dynamic."""
     anchor = []
-    dynamic = [
-        {
-            "owner": "pytorch",
-            "repo": "pytorch",
-            "stars": 99000,
-            "query_matches": 3,
-            "buckets": {"dynamic"},
-        }
-    ]
+    dynamic = [{"owner": "pytorch", "repo": "pytorch", "buckets": {"dynamic"}}]
     pool = fetch_repos.build_pool(anchor, dynamic)
     assert pool["repos"][0]["source"] == "dynamic"
     assert pool["trending_count"] == 0
     assert pool["dynamic_count"] == 1
 
 
-def test_build_pool_anchor_overrides_trending_via_rank():
-    """An anchor repo is removed from dynamic candidates by rank_dynamic.
+def test_sample_dynamic_anchor_overrides_trending():
+    """An anchor repo is removed from dynamic candidates by sample_dynamic.
 
     Guarantees the pool never double-counts or mis-tags an anchor repo
     that happened to also surface from the trending query.
     """
+    import random
+
     candidates = {
         "pytorch/pytorch": {
             "owner": "pytorch",
             "repo": "pytorch",
-            "stars": 99000,
-            "query_matches": 2,
             "buckets": {"trending"},
         },
     }
-    ranked = fetch_repos.rank_dynamic(candidates, {"pytorch/pytorch"})
-    assert ranked == []
+    sampled = fetch_repos.sample_dynamic(
+        candidates, {"pytorch/pytorch"}, random.Random(0)
+    )
+    assert sampled == []
 
     pool = fetch_repos.build_pool(
-        [{"owner": "pytorch", "repo": "pytorch"}], ranked
+        [{"owner": "pytorch", "repo": "pytorch"}], sampled
     )
     assert len(pool["repos"]) == 1
     assert pool["repos"][0]["source"] == "anchor"
@@ -544,14 +519,7 @@ def test_build_pool_anchor_overrides_trending_via_rank():
 def test_build_pool_missing_buckets_key_defaults_to_dynamic():
     """A legacy candidate dict without 'buckets' gets source=dynamic."""
     anchor = []
-    dynamic = [
-        {
-            "owner": "legacy",
-            "repo": "repo",
-            "stars": 500,
-            "query_matches": 1,
-        }
-    ]
+    dynamic = [{"owner": "legacy", "repo": "repo"}]
     pool = fetch_repos.build_pool(anchor, dynamic)
     assert pool["repos"][0]["source"] == "dynamic"
 

@@ -150,6 +150,21 @@ def test_is_noise_name_skills_suffix():
     assert fetch_repos.is_noise(_norm_repo(name="some-tool-skills"))
 
 
+def test_is_noise_name_bare_skills():
+    """A bare 'skills' repo name is noise even without a separator."""
+    assert fetch_repos.is_noise(_norm_repo(name="skills"))
+
+
+def test_is_noise_name_bare_skill():
+    """A bare 'skill' repo name is noise."""
+    assert fetch_repos.is_noise(_norm_repo(name="skill"))
+
+
+def test_is_noise_name_openskills():
+    """A concatenated name ending in 'skills' (e.g. openskills) is noise."""
+    assert fetch_repos.is_noise(_norm_repo(name="openskills"))
+
+
 def test_is_noise_low_issue_count():
     """A repo with too few open issues is noise."""
     assert fetch_repos.is_noise(_norm_repo(open_issues_count=5))

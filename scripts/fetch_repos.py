@@ -200,7 +200,7 @@ NOISE_NAME_PATTERNS = [
     r"[-_]books?$",
     r"[-_]examples?$",
     r"[-_]resources?$",
-    r"[-_]skills?$",
+    r"skills?$",  # matches "skills", "openskills", "foo-skills", etc.
     r"^oh[-_]my[-_]",
     r"[-_]lists?$",
     r"^learn[-_]",

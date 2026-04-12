@@ -54,6 +54,11 @@ const maxTotal = totalIssuesAtLevel(maxLevel.level);
         <li class="flex gap-2"><span class="text-accent">&bull;</span> If multiple PRs reference the same issue, <strong class="text-white">only the one that closes it</strong> earns points</li>
         <li class="flex gap-2"><span class="text-accent">&bull;</span> All contributors to Arena-listed issues are treated as participants</li>
       </ul>
+      <div class="mt-4 flex flex-wrap gap-4 text-xs text-zinc-400">
+        <span>🟢 <strong class="text-green-400">Open</strong> — no PRs yet</span>
+        <span>🟡 <strong class="text-yellow-400">PR Proposed</strong> — an open PR references this issue</span>
+        <span>🔴 <strong class="text-red-400">Closed</strong> — resolved or expired</span>
+      </div>
     </section>
 
     <!-- Point System -->

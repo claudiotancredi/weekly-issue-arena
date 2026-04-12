@@ -32,6 +32,7 @@ from arena_level import (
 from utils import (
     arena_week_id,
     github_get,
+    has_linked_pr,
     update_readme_section,
 )
 
@@ -58,16 +59,23 @@ RANK_IMAGES = {
 }
 
 
-def check_issue_status(owner: str, repo: str, number: int) -> str:
+def check_issue_status(
+    owner: str,
+    repo: str,
+    number: int,
+    has_pr: bool = False,
+) -> str:
     """Return a status emoji string for the given issue."""
     url = f"https://api.github.com/repos/{owner}/{repo}/issues/{number}"
     try:
         resp = github_get(url, timeout=10)
         resp.raise_for_status()
         state = resp.json().get("state")
-        return "🟢 Open" if state == "open" else "🔴 Closed"
+        if state != "open":
+            return "🔴 Closed"
+        return "🟡 PR Proposed" if has_pr else "🟢 Open"
     except Exception:
-        return "🟢 Open"  # assume open on error
+        return "🟢 Open"
 
 
 def update_issue_statuses(readme: str) -> str:
@@ -80,15 +88,18 @@ def update_issue_statuses(readme: str) -> str:
 
     for issue in current:
         status = check_issue_status(
-            issue["owner"], issue["repo"], issue["number"]
+            issue["owner"],
+            issue["repo"],
+            issue["number"],
+            has_pr=issue.get("has_pr", False),
         )
         issue_url = (
             f"https://github.com/{issue['owner']}/"
             + f"{issue['repo']}/issues/{issue['number']}"
         )
-        # Replace whichever status emoji is currently next to this issue URL
         readme = re.sub(
-            rf"(\[.*?\]\({re.escape(issue_url)}\).*?\| )(?:🟢 Open|🔴 Closed)",
+            rf"(\[.*?\]\({re.escape(issue_url)}\).*?\| )"
+            rf"(?:🟢 Open|🟡 PR Proposed|🔴 Closed)",
             rf"\g<1>{status}",
             readme,
         )
@@ -348,7 +359,6 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
                 issue["owner"], issue["repo"], issue["number"]
             ):
                 if now > deadline:
-                    # Keep tracking if a PR was opened within the window
                     if has_pending_pr(
                         issue["owner"],
                         issue["repo"],
@@ -359,12 +369,19 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
                             f"Issue {issue_key} has a pending PR "
                             f"— keeping in tracking"
                         )
+                        issue["has_pr"] = True
                     else:
                         log.info(
                             f"Issue {issue_key} still open past "
                             f"7-day window with no PR — marking closed"
                         )
                         issue["closed"] = True
+                else:
+                    issue["has_pr"] = has_linked_pr(
+                        issue["owner"],
+                        issue["repo"],
+                        issue["number"],
+                    )
                 continue
 
             # Issue is closed — check if it was closed with a PR
@@ -688,6 +705,25 @@ def main():
         log.warning(f"Arena SVG render failed: {exc}")
 
     save_state(state)
+
+    # Rebuild current_issues.json with has_pr flags from process_week.
+    current_week = arena_week_id()
+    if current_week in state:
+        refreshed = []
+        for cat, items in state[current_week]["issues"].items():
+            for iss in items:
+                refreshed.append(
+                    {
+                        "owner": iss["owner"],
+                        "repo": iss["repo"],
+                        "number": iss["number"],
+                        "category": cat,
+                        "has_pr": iss.get("has_pr", False),
+                    }
+                )
+        CURRENT_ISSUES_PATH.write_text(
+            json.dumps(refreshed, indent=2), encoding="utf-8"
+        )
 
     # Update README
     readme = README_PATH.read_text(encoding="utf-8")

@@ -9,6 +9,7 @@ interface Issue {
   category: string;
   points: number;
   closed: boolean;
+  has_pr: boolean;
 }
 
 interface Props {
@@ -31,6 +32,7 @@ const CATEGORY_COLORS: Record<string, string> = {
 const STATUS_LABELS: Record<string, string> = {
   all: "All",
   open: "Open",
+  pr_proposed: "PR Proposed",
   closed: "Closed",
 };
 
@@ -40,7 +42,8 @@ export default function IssueFilter({ issues, base }: Props) {
   const [search, setSearch] = useState("");
 
   const counts = useMemo(() => {
-    const pool = activeStatus === "open" ? issues.filter((i) => !i.closed)
+    const pool = activeStatus === "open" ? issues.filter((i) => !i.closed && !i.has_pr)
+      : activeStatus === "pr_proposed" ? issues.filter((i) => !i.closed && i.has_pr)
       : activeStatus === "closed" ? issues.filter((i) => i.closed)
       : issues;
     const c: Record<string, number> = { all: pool.length };
@@ -54,9 +57,10 @@ export default function IssueFilter({ issues, base }: Props) {
     const pool = activeCategory !== "all"
       ? issues.filter((i) => i.category === activeCategory)
       : issues;
-    const open = pool.filter((i) => !i.closed).length;
+    const open = pool.filter((i) => !i.closed && !i.has_pr).length;
+    const pr_proposed = pool.filter((i) => !i.closed && i.has_pr).length;
     const closed = pool.filter((i) => i.closed).length;
-    return { all: pool.length, open, closed };
+    return { all: pool.length, open, pr_proposed, closed };
   }, [issues, activeCategory]);
 
   const filtered = useMemo(() => {
@@ -65,7 +69,9 @@ export default function IssueFilter({ issues, base }: Props) {
       result = result.filter((i) => i.category === activeCategory);
     }
     if (activeStatus === "open") {
-      result = result.filter((i) => !i.closed);
+      result = result.filter((i) => !i.closed && !i.has_pr);
+    } else if (activeStatus === "pr_proposed") {
+      result = result.filter((i) => !i.closed && i.has_pr);
     } else if (activeStatus === "closed") {
       result = result.filter((i) => i.closed);
     }
@@ -81,7 +87,7 @@ export default function IssueFilter({ issues, base }: Props) {
   }, [issues, activeCategory, activeStatus, search]);
 
   const categories = ["all", "gfi", "bug", "hard"];
-  const statuses = ["all", "open", "closed"];
+  const statuses = ["all", "open", "pr_proposed", "closed"];
 
   const tabStyle = (active: boolean) => ({
     padding: "0.375rem 0.75rem",
@@ -190,8 +196,8 @@ export default function IssueFilter({ issues, base }: Props) {
               <span style={{ fontSize: "0.625rem", color: "#71717a", fontWeight: 600 }}>
                 +{issue.points} pt{issue.points !== 1 ? "s" : ""}
               </span>
-              <span style={{ marginLeft: "auto", fontSize: "0.625rem", fontWeight: 600, color: issue.closed ? "#f87171" : "#4ade80" }}>
-                {issue.closed ? "\uD83D\uDD34 Closed" : "\uD83D\uDFE2 Open"}
+              <span style={{ marginLeft: "auto", fontSize: "0.625rem", fontWeight: 600, color: issue.closed ? "#f87171" : issue.has_pr ? "#facc15" : "#4ade80" }}>
+                {issue.closed ? "\uD83D\uDD34 Closed" : issue.has_pr ? "\uD83D\uDFE1 PR Proposed" : "\uD83D\uDFE2 Open"}
               </span>
             </div>
             <div style={{ fontSize: "0.875rem", fontWeight: 500, color: "#e4e4e7", lineHeight: 1.4 }}>

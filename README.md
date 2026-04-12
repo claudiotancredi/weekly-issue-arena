@@ -163,6 +163,8 @@ No registration required. Contributions are detected via GitHub's public metadat
 | Bug Fix            | 2 pts  |
 | Hard Issue         | 4 pts  |
 
+**Status indicators:** 🟢 Open — no PRs yet · 🟡 PR Proposed — an open PR references this issue · 🔴 Closed — resolved or expired
+
 Each point grows your personal rank **and** the shared Arena Level — see the dedicated section below.
 
 | Rank | Badge | Points Required |

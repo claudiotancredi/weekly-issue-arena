@@ -25,6 +25,7 @@ export interface Issue {
   author: string;
   listed_at: string;
   closed?: boolean;
+  has_pr?: boolean;
 }
 
 export interface CategorizedIssues {
@@ -72,6 +73,7 @@ export interface IssueWithCategory extends Issue {
   category: string;
   points: number;
   closed: boolean;
+  has_pr: boolean;
 }
 
 // --- Loaders ---
@@ -126,11 +128,14 @@ export function getAllCurrentIssues(): IssueWithCategory[] {
         category,
         points,
         closed: creditedSet.has(key) || issue.closed === true,
+        has_pr: issue.has_pr === true,
       });
     }
   }
 
-  result.sort((a, b) => Number(a.closed) - Number(b.closed));
+  const statusOrder = (i: IssueWithCategory) =>
+    i.closed ? 2 : i.has_pr ? 1 : 0;
+  result.sort((a, b) => statusOrder(a) - statusOrder(b));
   return result;
 }
 

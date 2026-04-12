@@ -10,6 +10,7 @@ sys.path.insert(0, "scripts")
 from update_leaderboard import (  # noqa: E402, I001
     build_leaderboard_md,
     build_merged_this_week_md,
+    check_issue_status,
     get_rank,
     has_pending_pr,
     load_scores,
@@ -1304,6 +1305,78 @@ class TestUpdateIssueStatuses:
 
         assert f"[T1]({url1}) | r | 🔴 Closed" in result
         assert f"[T2]({url2}) | r | 🟢 Open" in result
+
+    @patch("update_leaderboard.check_issue_status")
+    def test_has_pr_passed_to_check_issue_status(
+        self, mock_status, tmp_path, monkeypatch
+    ):
+        """The has_pr field is forwarded to check_issue_status."""
+        current = [
+            {"owner": "org", "repo": "proj", "number": 5, "has_pr": True},
+        ]
+        f = tmp_path / "current_issues.json"
+        f.write_text(json.dumps(current), encoding="utf-8")
+        monkeypatch.setattr("update_leaderboard.CURRENT_ISSUES_PATH", f)
+        mock_status.return_value = "🟡 PR Proposed"
+
+        url = "https://github.com/org/proj/issues/5"
+        readme = f"| [Title]({url}) | repo | 🟢 Open |"
+        result = update_issue_statuses(readme)
+
+        mock_status.assert_called_once_with("org", "proj", 5, has_pr=True)
+        assert "🟡 PR Proposed" in result
+        assert "🟢 Open" not in result
+
+    @patch("update_leaderboard.check_issue_status")
+    def test_pr_proposed_replaced_with_closed(
+        self, mock_status, tmp_path, monkeypatch
+    ):
+        """PR Proposed status is replaced when issue is closed."""
+        current = [
+            {"owner": "org", "repo": "proj", "number": 6, "has_pr": True},
+        ]
+        f = tmp_path / "current_issues.json"
+        f.write_text(json.dumps(current), encoding="utf-8")
+        monkeypatch.setattr("update_leaderboard.CURRENT_ISSUES_PATH", f)
+        mock_status.return_value = "🔴 Closed"
+
+        url = "https://github.com/org/proj/issues/6"
+        readme = f"| [Title]({url}) | repo | 🟡 PR Proposed |"
+        result = update_issue_statuses(readme)
+
+        assert "🔴 Closed" in result
+        assert "🟡 PR Proposed" not in result
+
+
+# ── check_issue_status PR Proposed ───────────────────────────
+
+
+class TestCheckIssueStatusPrProposed:
+    """Tests for the has_pr parameter of check_issue_status."""
+
+    @patch("update_leaderboard.github_get")
+    def test_open_with_has_pr_returns_pr_proposed(self, mock_get):
+        """Open issue with has_pr=True returns PR Proposed."""
+        mock_get.return_value.json.return_value = {"state": "open"}
+        mock_get.return_value.raise_for_status = lambda: None
+        result = check_issue_status("o", "r", 1, has_pr=True)
+        assert result == "🟡 PR Proposed"
+
+    @patch("update_leaderboard.github_get")
+    def test_closed_overrides_has_pr(self, mock_get):
+        """Closed issue returns Closed even with has_pr=True."""
+        mock_get.return_value.json.return_value = {"state": "closed"}
+        mock_get.return_value.raise_for_status = lambda: None
+        result = check_issue_status("o", "r", 1, has_pr=True)
+        assert result == "🔴 Closed"
+
+    @patch("update_leaderboard.github_get")
+    def test_open_without_has_pr_returns_open(self, mock_get):
+        """Open issue without has_pr returns Open."""
+        mock_get.return_value.json.return_value = {"state": "open"}
+        mock_get.return_value.raise_for_status = lambda: None
+        result = check_issue_status("o", "r", 1, has_pr=False)
+        assert result == "🟢 Open"
 
 
 # ── update_arena_level ────────────────────────────────────────

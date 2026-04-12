@@ -53,7 +53,7 @@
     "repo": "opentelemetry-python",
     "number": 2549,
     "category": "gfi",
-    "has_pr": false
+    "has_pr": true
   },
   {
     "owner": "servo",

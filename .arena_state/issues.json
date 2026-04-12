@@ -14,7 +14,8 @@
           "created_at": "2026-02-05T20:13:09Z",
           "updated_at": "2026-02-05T20:14:33Z",
           "author": "minniekabra",
-          "listed_at": "2026-03-27T17:00:00+00:00"
+          "listed_at": "2026-03-27T17:00:00+00:00",
+          "has_pr": true
         },
         {
           "number": 7956,
@@ -26,7 +27,8 @@
           "created_at": "2026-03-23T22:05:36Z",
           "updated_at": "2026-03-24T18:01:15Z",
           "author": "netmanyys",
-          "listed_at": "2026-03-27T17:00:00+00:00"
+          "listed_at": "2026-03-27T17:00:00+00:00",
+          "has_pr": true
         }
       ],
       "hard": []
@@ -46,7 +48,8 @@
           "created_at": "2026-03-20T16:18:29Z",
           "updated_at": "2026-04-01T14:00:57Z",
           "author": "stuartmorgan-g",
-          "listed_at": "2026-04-03T17:00:00+00:00"
+          "listed_at": "2026-04-03T17:00:00+00:00",
+          "has_pr": true
         }
       ],
       "bug": [],
@@ -67,7 +70,8 @@
           "created_at": "2024-07-30T12:53:57Z",
           "updated_at": "2025-01-31T13:09:32Z",
           "author": "AndreiKingsley",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 2028,
@@ -79,7 +83,8 @@
           "created_at": "2026-03-20T09:36:39Z",
           "updated_at": "2026-03-26T00:07:38Z",
           "author": "cgokmen",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 10271,
@@ -91,7 +96,8 @@
           "created_at": "2025-01-13T11:11:15Z",
           "updated_at": "2025-03-13T12:50:15Z",
           "author": "harshit7962",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 5472,
@@ -103,7 +109,8 @@
           "created_at": "2026-04-02T22:40:56Z",
           "updated_at": "2026-04-03T13:19:48Z",
           "author": "ktbarrett",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 1825,
@@ -115,7 +122,8 @@
           "created_at": "2025-08-23T16:22:02Z",
           "updated_at": "2025-10-09T10:21:13Z",
           "author": "jelmer",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 672,
@@ -127,7 +135,8 @@
           "created_at": "2025-02-22T20:41:44Z",
           "updated_at": "2025-04-22T11:43:58Z",
           "author": "awwaawwa",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 266,
@@ -139,7 +148,8 @@
           "created_at": "2025-10-01T05:12:17Z",
           "updated_at": "2026-02-09T20:36:02Z",
           "author": "IvanMurzak",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 2549,
@@ -151,7 +161,8 @@
           "created_at": "2022-03-24T13:45:21Z",
           "updated_at": "2025-11-17T10:09:08Z",
           "author": "Etienne-Carriere",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 40756,
@@ -163,7 +174,8 @@
           "created_at": "2025-11-20T07:16:29Z",
           "updated_at": "2025-12-05T10:16:21Z",
           "author": "sagudev",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 26573,
@@ -175,7 +187,8 @@
           "created_at": "2024-09-12T20:00:04Z",
           "updated_at": "2026-04-10T17:19:37Z",
           "author": "rkazants",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 843,
@@ -187,7 +200,8 @@
           "created_at": "2024-08-21T22:14:21Z",
           "updated_at": "2026-03-26T00:02:36Z",
           "author": "cgokmen",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 1398,
@@ -199,7 +213,8 @@
           "created_at": "2022-09-29T10:29:10Z",
           "updated_at": "2024-06-25T16:32:17Z",
           "author": "snoopdouglas",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 10917,
@@ -211,7 +226,8 @@
           "created_at": "2025-05-15T18:26:48Z",
           "updated_at": "2025-12-16T02:48:42Z",
           "author": "metascroy",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 34,
@@ -223,7 +239,8 @@
           "created_at": "2019-02-27T12:46:20Z",
           "updated_at": "2025-06-19T11:23:18Z",
           "author": "paveltiunov",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 200,
@@ -235,7 +252,8 @@
           "created_at": "2025-10-09T05:45:49Z",
           "updated_at": "2025-10-31T03:59:53Z",
           "author": "petern48",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 22859,
@@ -247,7 +265,8 @@
           "created_at": "2022-08-26T11:59:13Z",
           "updated_at": "2026-01-09T20:55:40Z",
           "author": "leosarra",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 31059,
@@ -259,7 +278,8 @@
           "created_at": "2024-02-12T10:11:13Z",
           "updated_at": "2025-11-27T05:05:30Z",
           "author": "sneha122",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 912,
@@ -271,7 +291,8 @@
           "created_at": "2024-08-23T17:39:10Z",
           "updated_at": "2024-08-23T17:39:10Z",
           "author": "qubvel",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 3649,
@@ -283,7 +304,8 @@
           "created_at": "2025-04-26T18:03:58Z",
           "updated_at": "2025-06-12T18:20:53Z",
           "author": "christian-byrne",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 665,
@@ -295,7 +317,8 @@
           "created_at": "2023-09-09T03:45:58Z",
           "updated_at": "2026-01-08T14:11:15Z",
           "author": "vvzz",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         }
       ],
       "bug": [
@@ -309,7 +332,8 @@
           "created_at": "2026-02-26T04:43:05Z",
           "updated_at": "2026-02-26T05:26:05Z",
           "author": "hhyeon0306",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 11093,
@@ -321,7 +345,8 @@
           "created_at": "2025-10-06T10:05:11Z",
           "updated_at": "2026-03-17T08:55:12Z",
           "author": "linear[bot]",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 2429,
@@ -333,7 +358,8 @@
           "created_at": "2025-12-16T14:47:02Z",
           "updated_at": "2026-04-08T12:00:40Z",
           "author": "Silvanoc",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 1654,
@@ -345,7 +371,8 @@
           "created_at": "2026-03-13T13:39:19Z",
           "updated_at": "2026-03-13T13:39:27Z",
           "author": "AliceJoubert",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 5802,
@@ -357,7 +384,8 @@
           "created_at": "2026-03-25T15:43:16Z",
           "updated_at": "2026-03-25T15:43:16Z",
           "author": "afck",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 245,
@@ -369,7 +397,8 @@
           "created_at": "2026-02-17T11:44:10Z",
           "updated_at": "2026-02-23T02:30:40Z",
           "author": "s0me1newithhand7s",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 9136,
@@ -381,7 +410,8 @@
           "created_at": "2026-03-10T00:12:38Z",
           "updated_at": "2026-04-11T02:17:43Z",
           "author": "tyler-berrett",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 49704,
@@ -393,7 +423,8 @@
           "created_at": "2026-04-10T15:07:14Z",
           "updated_at": "2026-04-10T15:07:24Z",
           "author": "paleolimbot",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 19560,
@@ -405,7 +436,8 @@
           "created_at": "2026-04-10T22:14:18Z",
           "updated_at": "2026-04-10T22:14:18Z",
           "author": "kyleaoman",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 869,
@@ -417,7 +449,8 @@
           "created_at": "2025-10-19T17:21:49Z",
           "updated_at": "2025-10-24T15:22:49Z",
           "author": "avalentino",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 2383,
@@ -429,7 +462,8 @@
           "created_at": "2024-02-27T08:17:59Z",
           "updated_at": "2025-04-19T15:28:05Z",
           "author": "cirobr",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 135,
@@ -441,7 +475,8 @@
           "created_at": "2025-07-27T21:50:15Z",
           "updated_at": "2025-07-28T19:24:19Z",
           "author": "Lyce24",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 5517,
@@ -453,7 +488,8 @@
           "created_at": "2026-04-07T16:39:54Z",
           "updated_at": "2026-04-08T04:56:09Z",
           "author": "nirajbhatt7",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 12155,
@@ -465,7 +501,8 @@
           "created_at": "2025-11-13T15:14:54Z",
           "updated_at": "2026-04-01T06:15:17Z",
           "author": "astrofrog",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         }
       ],
       "hard": [
@@ -479,7 +516,8 @@
           "created_at": "2020-09-04T16:24:24Z",
           "updated_at": "2024-10-02T15:32:50Z",
           "author": "sgillies",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 28769,
@@ -491,7 +529,8 @@
           "created_at": "2024-08-30T06:04:52Z",
           "updated_at": "2025-09-10T22:56:48Z",
           "author": "spanag",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 43770,
@@ -503,7 +542,8 @@
           "created_at": "2021-09-27T19:27:06Z",
           "updated_at": "2025-09-07T17:24:28Z",
           "author": "debnathshoham",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 1270,
@@ -515,7 +555,8 @@
           "created_at": "2018-02-06T06:34:05Z",
           "updated_at": "2025-12-20T05:29:44Z",
           "author": "geowurster",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 31407,
@@ -527,7 +568,8 @@
           "created_at": "2025-05-21T11:38:43Z",
           "updated_at": "2025-12-13T07:40:33Z",
           "author": "hubernikus",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 9379,
@@ -539,7 +581,8 @@
           "created_at": "2015-01-30T18:31:55Z",
           "updated_at": "2025-10-08T16:15:19Z",
           "author": "jason-s",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 20243,
@@ -551,7 +594,8 @@
           "created_at": "2021-05-16T20:38:34Z",
           "updated_at": "2026-03-10T19:43:07Z",
           "author": "lorenzgutierrez",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 12600,
@@ -563,7 +607,8 @@
           "created_at": "2025-11-06T08:03:55Z",
           "updated_at": "2026-02-03T15:16:19Z",
           "author": "DN6",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 31542,
@@ -575,7 +620,8 @@
           "created_at": "2025-06-13T13:24:16Z",
           "updated_at": "2026-02-15T22:03:19Z",
           "author": "AndrewYRoyal",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         },
         {
           "number": 3270,
@@ -587,7 +633,8 @@
           "created_at": "2021-10-26T02:20:44Z",
           "updated_at": "2024-12-30T03:26:13Z",
           "author": "MierDa007",
-          "listed_at": "2026-04-10T17:00:00+00:00"
+          "listed_at": "2026-04-10T17:00:00+00:00",
+          "has_pr": false
         }
       ]
     }

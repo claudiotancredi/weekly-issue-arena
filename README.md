@@ -139,15 +139,11 @@ No registration. No sign-ups. Just open source.
 <details>
 <summary> 💡 How It Works</summary>
 
-Every **Friday at 17:00 UTC**, a GitHub Action automatically:
-1. Rebuilds a fresh pool of 250 active repos (50 hand-curated anchors + ~200 dynamically discovered via the GitHub Search API)
-2. Pulls new issues (labeled `good first issue`, `bug`, or `hard`) from that pool — the **per-category quotas grow with the arena level**, so a higher-level arena unlocks more issues every week
-3. Updates this README with the new weekly batch
-4. Archives the previous week's issues for contribution tracking
+Every **Friday at 17:00 UTC**, a GitHub Action automatically rebuilds a fresh pool of 250 active open-source repositories and pulls new issues from them. Issues are labeled as Good First Issues, Bugs, or Hard Issues. The number of issues pulled per category grows with the [Arena Level](#-arena-level), so collective progress unlocks more weekly issues for everyone.
 
-Every hour, a second job recomputes the leaderboard, awards points for newly merged PRs, refreshes the arena level SVG above, and announces level-ups in the [Arena Milestones discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions/categories/arena-milestones).
+Every **hour**, another action checks whether any listed issues have been closed by a pull request. If your PR closes an Arena issue, you automatically earn points — which feed both your personal rank and the shared Arena Level. Level-ups are announced in the [Arena Milestones discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions/categories/arena-milestones).
 
-You don't need to register — contributions are detected automatically via GitHub's public metadata.
+No registration required. Contributions are detected via GitHub's public metadata.
 
 </details>
 
@@ -167,13 +163,38 @@ You don't need to register — contributions are detected automatically via GitH
 | Bug Fix            | 2 pts  |
 | Hard Issue         | 4 pts  |
 
-**Points feed two meters at once.** Each point grows your personal rank *and* the shared **Arena Level**. The arena starts at Level 0 with 44 issues per week (20 GFI + 14 bug + 10 hard). Every level adds **+1 issue per category** (so Level 1 = 47, Level 10 = 74). Thresholds live in [config/arena_levels.json](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/arena_levels.json) and the current state is the SVG bar at the top of this README.
+Each point grows your personal rank **and** the shared Arena Level — see the dedicated section below.
 
 | Rank | Badge | Points Required |
 |------|-------|----------------|
 | Hello World Engineer | <img src="assets/hwengineer.png" width="88" height="88" /> | 0–99 pts |
 | Bug Slayer | <img src="assets/bugslayer.png" width="88" height="88" /> | 100–499 pts |
 | Mr. Robot | <img src="assets/mrrobot.png" width="88" height="88" /> | 500+ pts |
+
+</details>
+
+<details>
+<summary> 🏛️ Arena Level</summary>
+
+Every point earned by every contributor adds to a shared pool. When the pool crosses a threshold, the **arena levels up** and the weekly issue quota grows by **+1 issue per category**. The arena starts at **Level 0** with **44 issues** per week and reaches **Level 10** at **74 issues** per week.
+
+The current state is shown live on the [home page](https://claudiotancredi.github.io/weekly-issue-arena/) and as the static SVG bar at the top of this README. Level-ups are announced in the [Arena Milestones discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions/categories/arena-milestones).
+
+| Level | Threshold | GFI | Bug | Hard | Total |
+|-------|-----------|-----|-----|------|-------|
+| 0     | 0 pts     | 20  | 14  | 10   | **44** |
+| 1     | 25 pts    | 21  | 15  | 11   | **47** |
+| 2     | 75 pts    | 22  | 16  | 12   | **50** |
+| 3     | 150 pts   | 23  | 17  | 13   | **53** |
+| 4     | 275 pts   | 24  | 18  | 14   | **56** |
+| 5     | 450 pts   | 25  | 19  | 15   | **59** |
+| 6     | 700 pts   | 26  | 20  | 16   | **62** |
+| 7     | 1050 pts  | 27  | 21  | 17   | **65** |
+| 8     | 1500 pts  | 28  | 22  | 18   | **68** |
+| 9     | 2100 pts  | 29  | 23  | 19   | **71** |
+| 10    | 3000 pts  | 30  | 24  | 20   | **74** |
+
+Thresholds and bonuses live in [config/arena_levels.json](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/arena_levels.json).
 
 </details>
 
@@ -185,6 +206,9 @@ Make sure your PR references the issue — either via a closing keyword (`fixes 
 
 **Q: Can I request a specific repo to be added?**
 The pool is rebuilt automatically each week from the GitHub Search API, so any actively maintained repo with `good first issue` or `help wanted` labels is likely to appear on its own. For a guaranteed spot, edit [config/anchor_repos.yml](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/config/anchor_repos.yml) and open a PR.
+
+**Q: What is the Arena Level and how does it grow?**
+Every point earned by every contributor adds to a shared pool. When the pool crosses a threshold, the arena levels up and the weekly issue quota grows by one issue per category — so each level unlocks more opportunities for everyone. See the [Arena Level](#-arena-level) section above for the full level table.
 
 **Q: What if I contributed without knowing about the Arena?**
 You're still counted — all contributors to Arena-listed issues are treated equally.

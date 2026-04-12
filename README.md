@@ -139,7 +139,7 @@ No registration. No sign-ups. Just open source.
 <details>
 <summary> 💡 How It Works</summary>
 
-Every **Friday at 17:00 UTC**, a GitHub Action automatically rebuilds a fresh pool of 250 active open-source repositories and pulls new issues from them. Issues are labeled as Good First Issues, Bugs, or Hard Issues. The number of issues pulled per category grows with the [Arena Level](#-arena-level), so collective progress unlocks more weekly issues for everyone.
+Every **Friday at 17:00 UTC**, a GitHub Action automatically rebuilds a fresh pool of ~250 active open-source repositories and pulls new issues from them. Issues are labeled as Good First Issues, Bugs, or Hard Issues. The number of issues pulled per category grows with the [Arena Level](#-arena-level), so collective progress unlocks more weekly issues for everyone.
 
 Every **hour**, another action checks whether any listed issues have been closed by a pull request. If your PR closes an Arena issue, you automatically earn points — which feed both your personal rank and the shared Arena Level. Level-ups are announced in the [Arena Milestones discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions/categories/arena-milestones).
 

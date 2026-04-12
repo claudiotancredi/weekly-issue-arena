@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { getRank } from "./ranks";
+import { POINTS, getRank } from "./ranks";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "../../..");
@@ -118,7 +118,7 @@ export function getAllCurrentIssues(): IssueWithCategory[] {
   const result: IssueWithCategory[] = [];
 
   for (const [category, items] of Object.entries(issues)) {
-    const points = category === "hard" ? 4 : category === "bug" ? 2 : 1;
+    const points = POINTS[category] ?? 1;
     for (const issue of items) {
       const key = `${issue.owner}/${issue.repo}#${issue.number}`;
       result.push({

@@ -178,6 +178,7 @@ class TestNotifyContributors:
                 "pts": 2,
                 "issue": "org/repo#1",
                 "week": "2026-W14",
+                "pr_url": "https://github.com/org/repo/pull/10",
             }
         ]
 
@@ -207,6 +208,7 @@ class TestNotifyContributors:
                 "pts": 2,
                 "issue": "org/repo#3",
                 "week": "2026-W14",
+                "pr_url": "https://github.com/org/repo/pull/11",
             }
         ]
 
@@ -226,6 +228,7 @@ class TestNotifyContributors:
                 "pts": 1,
                 "issue": "org/repo#1",
                 "week": "2026-W14",
+                "pr_url": "https://github.com/org/repo/pull/10",
             }
         ]
         result = notify_contributors(credits, scores)
@@ -253,12 +256,14 @@ class TestNotifyContributors:
                 "pts": 1,
                 "issue": "org/repo#1",
                 "week": "2026-W14",
+                "pr_url": "https://github.com/org/repo/pull/10",
             },
             {
                 "author": "bob",
                 "pts": 2,
                 "issue": "org/repo#2",
                 "week": "2026-W14",
+                "pr_url": "https://github.com/org/repo/pull/11",
             },
         ]
 

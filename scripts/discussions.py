@@ -380,7 +380,7 @@ def notify_contributors(new_credits: list[dict], scores: dict) -> dict:
         author = credit["author"]
         pts = credit["pts"]
         issue_key = credit["issue"]
-        pr_url = scores["players"][author]["contributions"][-1]["pr_url"]
+        pr_url = credit["pr_url"]
         total = scores["players"][author]["total_points"]
         rank_name = get_rank(total)
         discussion_id = scores["players"][author].get("discussion_node_id")

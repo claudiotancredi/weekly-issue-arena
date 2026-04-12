@@ -446,6 +446,7 @@ def process_week(week_id: str, week_data: dict, scores: dict) -> list[dict]:
                     "pts": pts,
                     "issue": issue_key,
                     "week": week_id,
+                    "pr_url": pr["pr_url"],
                 }
             )
 

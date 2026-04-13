@@ -289,6 +289,7 @@ def search_repos(
                     "topics": item.get("topics", []) or [],
                     "has_issues": item.get("has_issues", True),
                     "open_issues_count": item.get("open_issues_count", 0),
+                    "language": item.get("language"),
                 }
             )
 
@@ -382,6 +383,7 @@ def build_pool(anchor: list[dict], dynamic_sampled: list[dict]) -> dict:
             "owner": r["owner"],
             "repo": r["repo"],
             "source": _resolve_bucket(r),
+            "language": r.get("language"),
         }
         for r in selected_dynamic
     ]

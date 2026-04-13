@@ -38,6 +38,7 @@ ANCHOR_PATH = Path("config/anchor_repos.yml")
 POOL_PATH = Path(".arena_state/repo_pool.json")
 README_PATH = Path("README.md")
 STATE_PATH = Path(".arena_state/issues.json")
+LANGUAGES_PATH = Path(".arena_state/repo_languages.json")
 
 
 def load_configured_repos() -> dict:
@@ -98,6 +99,67 @@ def load_configured_repos() -> dict:
         config["repos"] = []
 
     return config
+
+
+def load_language_cache() -> dict[str, str | None]:
+    """Load the persistent owner/repo → language cache (may be empty)."""
+    if not LANGUAGES_PATH.exists():
+        return {}
+    try:
+        with open(LANGUAGES_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
+def save_language_cache(cache: dict[str, str | None]) -> None:
+    """Persist the language cache."""
+    LANGUAGES_PATH.parent.mkdir(exist_ok=True)
+    with open(LANGUAGES_PATH, "w", encoding="utf-8") as f:
+        json.dump(cache, f, indent=2, sort_keys=True)
+
+
+def fetch_repo_language(owner: str, repo: str) -> str | None:
+    """Fetch the dominant language of a repo via GitHub REST."""
+    url = f"https://api.github.com/repos/{owner}/{repo}"
+    try:
+        resp = github_get(url)
+        resp.raise_for_status()
+        return resp.json().get("language")
+    except Exception as exc:
+        log.warning(f"  Language fetch failed for {owner}/{repo}: {exc}")
+        return None
+
+
+def build_language_map(repos: list[dict]) -> dict[str, str | None]:
+    """Return a {owner/repo: language} map for all repos.
+
+    Uses ``language`` from pool entries when present, falls back to a
+    persistent on-disk cache, and only hits GitHub for repos that have
+    never been resolved before.
+    """
+    cache = load_language_cache()
+    result: dict[str, str | None] = {}
+    cache_dirty = False
+    for r in repos:
+        key = f"{r['owner']}/{r['repo']}"
+        lang = r.get("language")
+        if lang:
+            result[key] = lang
+            if cache.get(key) != lang:
+                cache[key] = lang
+                cache_dirty = True
+            continue
+        if key in cache:
+            result[key] = cache[key]
+            continue
+        lang = fetch_repo_language(r["owner"], r["repo"])
+        result[key] = lang
+        cache[key] = lang
+        cache_dirty = True
+    if cache_dirty:
+        save_language_cache(cache)
+    return result
 
 
 def get_issues_for_repo(
@@ -192,6 +254,7 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
     results: dict[str, list[dict]] = {"gfi": [], "bug": [], "hard": []}
     seen_globally: set[str] = set()  # dedup across categories
     listed_at = arena_week_start().isoformat()  # pinned to Friday 17:00:00 UTC
+    language_map = build_language_map(repos)
     for repo_cfg in repos:
         owner = repo_cfg["owner"]
         repo = repo_cfg["repo"]
@@ -222,6 +285,9 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
                         "updated_at": issue["updated_at"],
                         "author": issue["user"]["login"],
                         "listed_at": listed_at,
+                        "language": language_map.get(
+                            f"{owner_actual}/{repo_actual}"
+                        ),
                     }
                 )
 
@@ -305,6 +371,7 @@ def save_current_issues(issues: dict[str, list[dict]]) -> None:
                     "repo": issue["repo"],
                     "number": issue["number"],
                     "category": category,
+                    "language": issue.get("language"),
                 }
             )
     path = Path(".arena_state/current_issues.json")

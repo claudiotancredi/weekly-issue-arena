@@ -14,6 +14,8 @@ No registration. No sign-ups. Just open source.
 
 ### [Browse Issues & Leaderboard on the Website &rarr;](https://claudiotancredi.github.io/weekly-issue-arena/)
 
+> **New here?** The homepage now matches you with one unclaimed issue in your favorite language in 2 clicks, plus a 4-step PR walkthrough. [Try it &rarr;](https://claudiotancredi.github.io/weekly-issue-arena/)
+
 <!-- ARENA-LEVEL:START -->
 <p align="center">
   <a href="https://claudiotancredi.github.io/weekly-issue-arena/">

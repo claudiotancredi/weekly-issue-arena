@@ -15,7 +15,8 @@
           "updated_at": "2026-02-05T20:14:33Z",
           "author": "minniekabra",
           "listed_at": "2026-03-27T17:00:00+00:00",
-          "has_pr": true
+          "has_pr": true,
+          "language": "Python"
         },
         {
           "number": 7956,
@@ -28,7 +29,8 @@
           "updated_at": "2026-03-24T18:01:15Z",
           "author": "netmanyys",
           "listed_at": "2026-03-27T17:00:00+00:00",
-          "has_pr": true
+          "has_pr": true,
+          "language": "Go"
         }
       ],
       "hard": []
@@ -49,7 +51,8 @@
           "updated_at": "2026-04-01T14:00:57Z",
           "author": "stuartmorgan-g",
           "listed_at": "2026-04-03T17:00:00+00:00",
-          "has_pr": true
+          "has_pr": true,
+          "language": "Dart"
         }
       ],
       "bug": [],
@@ -71,7 +74,8 @@
           "updated_at": "2025-01-31T13:09:32Z",
           "author": "AndreiKingsley",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Kotlin"
         },
         {
           "number": 2028,
@@ -84,7 +88,8 @@
           "updated_at": "2026-03-26T00:07:38Z",
           "author": "cgokmen",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 10271,
@@ -97,7 +102,8 @@
           "updated_at": "2025-03-13T12:50:15Z",
           "author": "harshit7962",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "C#"
         },
         {
           "number": 5472,
@@ -110,7 +116,8 @@
           "updated_at": "2026-04-03T13:19:48Z",
           "author": "ktbarrett",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 1825,
@@ -123,7 +130,8 @@
           "updated_at": "2025-10-09T10:21:13Z",
           "author": "jelmer",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 672,
@@ -136,7 +144,8 @@
           "updated_at": "2025-04-22T11:43:58Z",
           "author": "awwaawwa",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 266,
@@ -149,7 +158,8 @@
           "updated_at": "2026-02-09T20:36:02Z",
           "author": "IvanMurzak",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "C#"
         },
         {
           "number": 2549,
@@ -162,7 +172,8 @@
           "updated_at": "2025-11-17T10:09:08Z",
           "author": "Etienne-Carriere",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": true
+          "has_pr": true,
+          "language": "Python"
         },
         {
           "number": 40756,
@@ -175,7 +186,8 @@
           "updated_at": "2025-12-05T10:16:21Z",
           "author": "sagudev",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Rust"
         },
         {
           "number": 26573,
@@ -188,7 +200,8 @@
           "updated_at": "2026-04-10T17:19:37Z",
           "author": "rkazants",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "C++"
         },
         {
           "number": 843,
@@ -201,7 +214,8 @@
           "updated_at": "2026-03-26T00:02:36Z",
           "author": "cgokmen",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 1398,
@@ -214,7 +228,8 @@
           "updated_at": "2024-06-25T16:32:17Z",
           "author": "snoopdouglas",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Rust"
         },
         {
           "number": 10917,
@@ -227,7 +242,8 @@
           "updated_at": "2025-12-16T02:48:42Z",
           "author": "metascroy",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 34,
@@ -240,7 +256,8 @@
           "updated_at": "2025-06-19T11:23:18Z",
           "author": "paveltiunov",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Rust"
         },
         {
           "number": 200,
@@ -253,7 +270,8 @@
           "updated_at": "2025-10-31T03:59:53Z",
           "author": "petern48",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Rust"
         },
         {
           "number": 22859,
@@ -266,7 +284,8 @@
           "updated_at": "2026-01-09T20:55:40Z",
           "author": "leosarra",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "C++"
         },
         {
           "number": 31059,
@@ -279,7 +298,8 @@
           "updated_at": "2025-11-27T05:05:30Z",
           "author": "sneha122",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "TypeScript"
         },
         {
           "number": 912,
@@ -292,7 +312,8 @@
           "updated_at": "2024-08-23T17:39:10Z",
           "author": "qubvel",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 3649,
@@ -305,7 +326,8 @@
           "updated_at": "2025-06-12T18:20:53Z",
           "author": "christian-byrne",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "TypeScript"
         },
         {
           "number": 665,
@@ -318,7 +340,8 @@
           "updated_at": "2026-01-08T14:11:15Z",
           "author": "vvzz",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         }
       ],
       "bug": [
@@ -333,7 +356,8 @@
           "updated_at": "2026-02-26T05:26:05Z",
           "author": "hhyeon0306",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "C#"
         },
         {
           "number": 11093,
@@ -346,7 +370,8 @@
           "updated_at": "2026-03-17T08:55:12Z",
           "author": "linear[bot]",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 2429,
@@ -359,7 +384,8 @@
           "updated_at": "2026-04-08T12:00:40Z",
           "author": "Silvanoc",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 1654,
@@ -372,7 +398,8 @@
           "updated_at": "2026-03-13T13:39:27Z",
           "author": "AliceJoubert",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 5802,
@@ -385,7 +412,8 @@
           "updated_at": "2026-03-25T15:43:16Z",
           "author": "afck",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Rust"
         },
         {
           "number": 245,
@@ -398,7 +426,8 @@
           "updated_at": "2026-02-23T02:30:40Z",
           "author": "s0me1newithhand7s",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Rust"
         },
         {
           "number": 9136,
@@ -411,7 +440,8 @@
           "updated_at": "2026-04-11T02:17:43Z",
           "author": "tyler-berrett",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Kotlin"
         },
         {
           "number": 49704,
@@ -424,7 +454,8 @@
           "updated_at": "2026-04-10T15:07:24Z",
           "author": "paleolimbot",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "C++"
         },
         {
           "number": 19560,
@@ -437,7 +468,8 @@
           "updated_at": "2026-04-10T22:14:18Z",
           "author": "kyleaoman",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 869,
@@ -450,7 +482,8 @@
           "updated_at": "2025-10-24T15:22:49Z",
           "author": "avalentino",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 2383,
@@ -463,7 +496,8 @@
           "updated_at": "2025-04-19T15:28:05Z",
           "author": "cirobr",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Julia"
         },
         {
           "number": 135,
@@ -476,7 +510,8 @@
           "updated_at": "2025-07-28T19:24:19Z",
           "author": "Lyce24",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 5517,
@@ -489,7 +524,8 @@
           "updated_at": "2026-04-08T04:56:09Z",
           "author": "nirajbhatt7",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Go"
         },
         {
           "number": 12155,
@@ -502,7 +538,8 @@
           "updated_at": "2026-04-01T06:15:17Z",
           "author": "astrofrog",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         }
       ],
       "hard": [
@@ -517,7 +554,8 @@
           "updated_at": "2024-10-02T15:32:50Z",
           "author": "sgillies",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 28769,
@@ -530,7 +568,8 @@
           "updated_at": "2025-09-10T22:56:48Z",
           "author": "spanag",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 43770,
@@ -543,7 +582,8 @@
           "updated_at": "2025-09-07T17:24:28Z",
           "author": "debnathshoham",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 1270,
@@ -556,7 +596,8 @@
           "updated_at": "2025-12-20T05:29:44Z",
           "author": "geowurster",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 31407,
@@ -569,7 +610,8 @@
           "updated_at": "2025-12-13T07:40:33Z",
           "author": "hubernikus",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 9379,
@@ -582,7 +624,8 @@
           "updated_at": "2025-10-08T16:15:19Z",
           "author": "jason-s",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 20243,
@@ -595,7 +638,8 @@
           "updated_at": "2026-03-10T19:43:07Z",
           "author": "lorenzgutierrez",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 12600,
@@ -608,7 +652,8 @@
           "updated_at": "2026-02-03T15:16:19Z",
           "author": "DN6",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 31542,
@@ -621,7 +666,8 @@
           "updated_at": "2026-02-15T22:03:19Z",
           "author": "AndrewYRoyal",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "Python"
         },
         {
           "number": 3270,
@@ -634,7 +680,8 @@
           "updated_at": "2024-12-30T03:26:13Z",
           "author": "MierDa007",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": false
+          "has_pr": false,
+          "language": "C++"
         }
       ]
     }

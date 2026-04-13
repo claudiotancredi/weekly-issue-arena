@@ -26,6 +26,7 @@ export interface Issue {
   listed_at: string;
   closed?: boolean;
   has_pr?: boolean;
+  language?: string | null;
 }
 
 export interface CategorizedIssues {
@@ -74,6 +75,7 @@ export interface IssueWithCategory extends Issue {
   points: number;
   closed: boolean;
   has_pr: boolean;
+  language: string | null;
 }
 
 // --- Loaders ---
@@ -129,6 +131,7 @@ export function getAllCurrentIssues(): IssueWithCategory[] {
         points,
         closed: creditedSet.has(key) || issue.closed === true,
         has_pr: issue.has_pr === true,
+        language: issue.language ?? null,
       });
     }
   }
@@ -137,6 +140,39 @@ export function getAllCurrentIssues(): IssueWithCategory[] {
     i.closed ? 2 : i.has_pr ? 1 : 0;
   result.sort((a, b) => statusOrder(a) - statusOrder(b));
   return result;
+}
+
+export function getAvailableLanguages(): { language: string; count: number }[] {
+  const counts = new Map<string, number>();
+  for (const issue of getAllCurrentIssues()) {
+    if (issue.closed || issue.has_pr) continue;
+    if (!issue.language) continue;
+    counts.set(issue.language, (counts.get(issue.language) ?? 0) + 1);
+  }
+  return Array.from(counts.entries())
+    .map(([language, count]) => ({ language, count }))
+    .sort((a, b) => {
+      if (b.count !== a.count) return b.count - a.count;
+      return a.language.localeCompare(b.language);
+    });
+}
+
+export function getMatchableIssuesByLanguage(): Record<string, IssueWithCategory[]> {
+  const categoryRank: Record<string, number> = { gfi: 0, bug: 1, hard: 2 };
+  const map: Record<string, IssueWithCategory[]> = {};
+  for (const issue of getAllCurrentIssues()) {
+    if (issue.closed || issue.has_pr) continue;
+    if (!issue.language) continue;
+    (map[issue.language] ??= []).push(issue);
+  }
+  for (const lang of Object.keys(map)) {
+    map[lang].sort((a, b) => {
+      const cr = (categoryRank[a.category] ?? 9) - (categoryRank[b.category] ?? 9);
+      if (cr !== 0) return cr;
+      return b.created_at.localeCompare(a.created_at);
+    });
+  }
+  return map;
 }
 
 export function getLeaderboard(): LeaderboardEntry[] {

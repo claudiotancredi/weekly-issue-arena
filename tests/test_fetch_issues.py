@@ -697,7 +697,7 @@ class TestSaveCurrentIssues:
         assert isinstance(parsed, list)
 
     def test_no_extra_fields(self):
-        """Only the four required fields are written."""
+        """Only the documented fields are written."""
         issues = {"hard": [_issue("x", "y", 7)]}
         fetch_issues.save_current_issues(issues)
         data = json.loads(self.out_file.read_text())
@@ -706,6 +706,7 @@ class TestSaveCurrentIssues:
             "repo",
             "number",
             "category",
+            "language",
         }
 
 

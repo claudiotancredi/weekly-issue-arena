@@ -720,6 +720,7 @@ def main():
                         "number": iss["number"],
                         "category": cat,
                         "has_pr": iss.get("has_pr", False),
+                        "language": iss.get("language"),
                     }
                 )
         CURRENT_ISSUES_PATH.write_text(

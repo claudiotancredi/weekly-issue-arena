@@ -38,7 +38,6 @@ ANCHOR_PATH = Path("config/anchor_repos.yml")
 POOL_PATH = Path(".arena_state/repo_pool.json")
 README_PATH = Path("README.md")
 STATE_PATH = Path(".arena_state/issues.json")
-LANGUAGES_PATH = Path(".arena_state/repo_languages.json")
 
 
 def load_configured_repos() -> dict:
@@ -101,24 +100,6 @@ def load_configured_repos() -> dict:
     return config
 
 
-def load_language_cache() -> dict[str, str | None]:
-    """Load the persistent owner/repo → language cache (may be empty)."""
-    if not LANGUAGES_PATH.exists():
-        return {}
-    try:
-        with open(LANGUAGES_PATH, encoding="utf-8") as f:
-            return json.load(f)
-    except (OSError, json.JSONDecodeError):
-        return {}
-
-
-def save_language_cache(cache: dict[str, str | None]) -> None:
-    """Persist the language cache."""
-    LANGUAGES_PATH.parent.mkdir(exist_ok=True)
-    with open(LANGUAGES_PATH, "w", encoding="utf-8") as f:
-        json.dump(cache, f, indent=2, sort_keys=True)
-
-
 def fetch_repo_language(owner: str, repo: str) -> str | None:
     """Fetch the dominant language of a repo via GitHub REST."""
     url = f"https://api.github.com/repos/{owner}/{repo}"
@@ -134,31 +115,18 @@ def fetch_repo_language(owner: str, repo: str) -> str | None:
 def build_language_map(repos: list[dict]) -> dict[str, str | None]:
     """Return a {owner/repo: language} map for all repos.
 
-    Uses ``language`` from pool entries when present, falls back to a
-    persistent on-disk cache, and only hits GitHub for repos that have
-    never been resolved before.
+    Uses ``language`` from pool entries when present, otherwise hits
+    GitHub once per repo. No on-disk cache — kept simple at the cost
+    of ~250 extra API calls per weekly run.
     """
-    cache = load_language_cache()
     result: dict[str, str | None] = {}
-    cache_dirty = False
     for r in repos:
         key = f"{r['owner']}/{r['repo']}"
         lang = r.get("language")
         if lang:
             result[key] = lang
-            if cache.get(key) != lang:
-                cache[key] = lang
-                cache_dirty = True
-            continue
-        if key in cache:
-            result[key] = cache[key]
-            continue
-        lang = fetch_repo_language(r["owner"], r["repo"])
-        result[key] = lang
-        cache[key] = lang
-        cache_dirty = True
-    if cache_dirty:
-        save_language_cache(cache)
+        else:
+            result[key] = fetch_repo_language(r["owner"], r["repo"])
     return result
 
 

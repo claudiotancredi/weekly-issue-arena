@@ -136,7 +136,7 @@ def get_issues_for_repo(
     """Fetch open issues from a repo matching any of the given labels."""
     collected = []
     seen_ids: set[int] = set()
-    cutoff = datetime.now(timezone.utc) - timedelta(weeks=104)  # 2 years
+    cutoff = datetime.now(timezone.utc) - timedelta(weeks=40)  # ~9 months
     cutoff_str = cutoff.strftime("%Y-%m-%dT%H:%M:%SZ")
 
     for label in labels:

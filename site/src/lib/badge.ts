@@ -125,7 +125,7 @@ export function renderCardSVG({
     // Progress label
     `<text x="24" y="104" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="9" fill="#71717a">${progressLabel}</text>`,
     // Arena branding
-    `<text x="${W - 16}" y="${H - 12}" text-anchor="end" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="9" fill="#3f3f50">Weekly Issue Arena</text>`,
+    `<text x="${W - 16}" y="${H - 12}" text-anchor="end" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="9" fill="#ffffff">Weekly Issue Arena</text>`,
     `</svg>`,
   ].join("\n");
 }

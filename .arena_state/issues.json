@@ -186,7 +186,7 @@
           "updated_at": "2025-12-05T10:16:21Z",
           "author": "sagudev",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": true,
+          "has_pr": false,
           "language": "Rust"
         },
         {

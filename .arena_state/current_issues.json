@@ -60,7 +60,7 @@
     "repo": "opentelemetry-python",
     "number": 2549,
     "category": "gfi",
-    "has_pr": true,
+    "has_pr": false,
     "language": "Python"
   },
   {

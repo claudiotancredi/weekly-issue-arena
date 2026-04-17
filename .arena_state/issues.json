@@ -172,7 +172,7 @@
           "updated_at": "2025-11-17T10:09:08Z",
           "author": "Etienne-Carriere",
           "listed_at": "2026-04-10T17:00:00+00:00",
-          "has_pr": true,
+          "has_pr": false,
           "language": "Python"
         },
         {

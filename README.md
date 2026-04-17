@@ -73,7 +73,7 @@ No registration. No sign-ups. Just open source.
 | 5 | [Add support for git imap-send](https://github.com/jelmer/dulwich/issues/1825) | [jelmer/dulwich](https://github.com/jelmer/dulwich) | 🟢 Open |
 | 6 | [docs: Update the translated version of README](https://github.com/PDFMathTranslate/PDFMathTranslate/issues/672) | [PDFMathTranslate/PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) | 🟢 Open |
 | 7 | [Add Unity-MCP to Docker Hub MCP registry](https://github.com/IvanMurzak/Unity-MCP/issues/266) | [IvanMurzak/Unity-MCP](https://github.com/IvanMurzak/Unity-MCP) | 🟢 Open |
-| 8 | [In Opentracing Shim, set the Kind attribute](https://github.com/open-telemetry/opentelemetry-python/issues/2549) | [open-telemetry/opentelemetry-python](https://github.com/open-telemetry/opentelemetry-python) | 🟡 PR Proposed |
+| 8 | [In Opentracing Shim, set the Kind attribute](https://github.com/open-telemetry/opentelemetry-python/issues/2549) | [open-telemetry/opentelemetry-python](https://github.com/open-telemetry/opentelemetry-python) | 🟢 Open |
 | 9 | [Provide actual messages in JS errors](https://github.com/servo/servo/issues/40756) | [servo/servo](https://github.com/servo/servo) | 🟢 Open |
 | 10 | [[Good First Issue][JAX FE]: Support jax.lax.scatter opera...](https://github.com/openvinotoolkit/openvino/issues/26573) | [openvinotoolkit/openvino](https://github.com/openvinotoolkit/openvino) | 🟢 Open |
 | 11 | [Assert robot in correct state at behavior task start](https://github.com/StanfordVL/BEHAVIOR-1K/issues/843) | [StanfordVL/BEHAVIOR-1K](https://github.com/StanfordVL/BEHAVIOR-1K) | 🟢 Open |

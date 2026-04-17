@@ -82,11 +82,61 @@ def github_graphql(query: str, variables: dict | None = None) -> dict:
     return body["data"]
 
 
-def has_linked_pr(owner: str, repo: str, number: int) -> bool:
-    """Check if an issue has any open PR linked to it.
+_CLOSING_KEYWORDS = (
+    "close",
+    "closes",
+    "closed",
+    "fix",
+    "fixes",
+    "fixed",
+    "resolve",
+    "resolves",
+    "resolved",
+)
 
-    Uses the timeline API to find cross-referenced pull requests.
-    Returns True if at least one open PR references this issue.
+# Matches keyword + #N, owner/repo#N, or full GitHub issue URL.
+_CLOSING_PATTERN: re.Pattern | None = None
+
+
+def _closing_pattern(owner: str, repo: str, number: int) -> re.Pattern:
+    """Build a regex that matches GitHub closing keywords for an issue.
+
+    Accepted forms per GitHub docs:
+      - ``keyword #N``
+      - ``keyword owner/repo#N``
+      - ``keyword https://github.com/owner/repo/issues/N``
+    """
+    kw = "|".join(_CLOSING_KEYWORDS)
+    num = re.escape(str(number))
+    o = re.escape(owner)
+    r = re.escape(repo)
+    return re.compile(
+        rf"(?:^|[\s,;])(?:{kw})"
+        rf"\s+"
+        rf"(?:"
+        rf"(?:{o}/{r})?#?{num}"
+        rf"|https?://github\.com/{o}/{r}/issues/{num}"
+        rf")"
+        rf"(?:\s|[.,;!?)}}\]]|$)",
+        re.IGNORECASE,
+    )
+
+
+def pr_has_closing_keyword(
+    body: str | None, owner: str, repo: str, number: int
+) -> bool:
+    """Check whether *body* has a GitHub closing keyword for the issue."""
+    if not body:
+        return False
+    return bool(_closing_pattern(owner, repo, number).search(body))
+
+
+def has_linked_pr(owner: str, repo: str, number: int) -> bool:
+    """Check if an issue has any open PR with a closing keyword for it.
+
+    Uses the timeline API to find cross-referenced pull requests,
+    then verifies the PR body contains a GitHub closing keyword
+    (``fixes #N``, ``closes #N``, ``resolves #N``, etc.).
     """
     url = (
         f"https://api.github.com/repos/{owner}/{repo}/issues/{number}/timeline"
@@ -102,7 +152,11 @@ def has_linked_pr(owner: str, repo: str, number: int) -> bool:
                 issue_data = source.get("issue", {})
                 if not issue_data.get("pull_request"):
                     continue
-                if issue_data.get("state") == "open":
+                if issue_data.get("state") != "open":
+                    continue
+                if pr_has_closing_keyword(
+                    issue_data.get("body"), owner, repo, number
+                ):
                     return True
             url = resp.links.get("next", {}).get("url")
     except Exception as e:

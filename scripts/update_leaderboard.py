@@ -33,6 +33,7 @@ from utils import (
     arena_week_id,
     github_get,
     has_linked_pr,
+    pr_has_closing_keyword,
     update_readme_section,
 )
 
@@ -303,6 +304,10 @@ def has_pending_pr(
         # Only open PRs count — merged-without-close means contributor
         # didn't use "Fixes #N", so we can't confirm the fix was accepted
         if issue_data.get("state") != "open":
+            continue
+        if not pr_has_closing_keyword(
+            issue_data.get("body"), owner, repo, issue_number
+        ):
             continue
         created_str = issue_data.get("created_at")
         if not created_str:

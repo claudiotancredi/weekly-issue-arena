@@ -14,6 +14,7 @@ from utils import (  # noqa: E402, I001
     arena_week_id,
     github_get,
     has_linked_pr,
+    pr_has_closing_keyword,
     update_readme_section,
 )
 
@@ -200,8 +201,8 @@ class TestHasLinkedPr:
     """Tests for the has_linked_pr function."""
 
     @patch("utils.github_get")
-    def test_open_pr_returns_true(self, mock_get):
-        """An open PR cross-referencing the issue returns True."""
+    def test_open_pr_with_closing_keyword_returns_true(self, mock_get):
+        """An open PR with a closing keyword returns True."""
         resp = mock_get.return_value
         resp.raise_for_status.return_value = None
         resp.json.return_value = [
@@ -210,6 +211,7 @@ class TestHasLinkedPr:
                 "source": {
                     "issue": {
                         "state": "open",
+                        "body": "Fixes #1",
                         "pull_request": {"merged_at": None},
                     }
                 },
@@ -217,6 +219,26 @@ class TestHasLinkedPr:
         ]
         resp.links = {}
         assert has_linked_pr("org", "repo", 1) is True
+
+    @patch("utils.github_get")
+    def test_open_pr_without_closing_keyword_returns_false(self, mock_get):
+        """An open PR that only mentions the issue without closing keyword."""
+        resp = mock_get.return_value
+        resp.raise_for_status.return_value = None
+        resp.json.return_value = [
+            {
+                "event": "cross-referenced",
+                "source": {
+                    "issue": {
+                        "state": "open",
+                        "body": "fixes: partially #1",
+                        "pull_request": {"merged_at": None},
+                    }
+                },
+            }
+        ]
+        resp.links = {}
+        assert has_linked_pr("org", "repo", 1) is False
 
     @patch("utils.github_get")
     def test_closed_pr_returns_false(self, mock_get):
@@ -308,6 +330,7 @@ class TestHasLinkedPr:
                 "source": {
                     "issue": {
                         "state": "open",
+                        "body": "Closes #1",
                         "pull_request": {"merged_at": None},
                     }
                 },
@@ -319,8 +342,8 @@ class TestHasLinkedPr:
         assert has_linked_pr("org", "repo", 1) is True
 
     @patch("utils.github_get")
-    def test_multiple_prs_one_open(self, mock_get):
-        """Multiple PRs: one closed, one open — returns True."""
+    def test_multiple_prs_one_open_with_keyword(self, mock_get):
+        """Multiple PRs: one closed, one open with keyword �� returns True."""
         resp = mock_get.return_value
         resp.raise_for_status.return_value = None
         resp.json.return_value = [
@@ -329,6 +352,7 @@ class TestHasLinkedPr:
                 "source": {
                     "issue": {
                         "state": "closed",
+                        "body": "Fixes #1",
                         "pull_request": {"merged_at": None},
                     }
                 },
@@ -338,6 +362,7 @@ class TestHasLinkedPr:
                 "source": {
                     "issue": {
                         "state": "open",
+                        "body": "Resolves #1",
                         "pull_request": {"merged_at": None},
                     }
                 },
@@ -345,3 +370,54 @@ class TestHasLinkedPr:
         ]
         resp.links = {}
         assert has_linked_pr("org", "repo", 1) is True
+
+
+# ── pr_has_closing_keyword ────────────────────────────────────
+
+
+class TestPrHasClosingKeyword:
+    """Tests for the closing-keyword regex matching."""
+
+    @pytest.mark.parametrize(
+        "body",
+        [
+            "Fixes #42",
+            "fixes #42",
+            "FIXES #42",
+            "Closes #42",
+            "closes #42",
+            "Resolves #42",
+            "Fixed #42",
+            "closed #42",
+            "resolved #42",
+            "This PR fixes #42",
+            "fixes org/repo#42",
+            "closes https://github.com/org/repo/issues/42",
+            "Some context.\n\nFixes #42",
+            "fix #42",
+            "close #42",
+            "resolve #42",
+        ],
+    )
+    def test_valid_closing_keywords(self, body):
+        """Keyword + issue ref should be detected as closing."""
+        assert pr_has_closing_keyword(body, "org", "repo", 42) is True
+
+    @pytest.mark.parametrize(
+        "body",
+        [
+            "fixes: partially #42",
+            "mentions #42",
+            "related to #42",
+            "#42",
+            "see #42",
+            "fixes #99",
+            "prefixes #42",
+            "",
+            None,
+            "fixes#42",
+        ],
+    )
+    def test_non_closing_references(self, body):
+        """Mentions without a proper closing keyword should not match."""
+        assert pr_has_closing_keyword(body, "org", "repo", 42) is False

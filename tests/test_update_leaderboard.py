@@ -168,6 +168,7 @@ class TestHasPendingPr:
                 "source": {
                     "issue": {
                         "state": "open",
+                        "body": "Fixes #1",
                         "pull_request": {"merged_at": None},
                         "created_at": "2026-03-18T10:00:00Z",
                     }
@@ -291,6 +292,7 @@ class TestHasPendingPr:
                 "source": {
                     "issue": {
                         "state": "open",
+                        "body": "Closes #1",
                         "pull_request": {"merged_at": None},
                         "created_at": "2026-03-20T17:00:00Z",  # == deadline
                     }
@@ -343,6 +345,7 @@ class TestHasPendingPr:
                 "source": {
                     "issue": {
                         "state": "open",  # still open
+                        "body": "Resolves #1",
                         "pull_request": {"merged_at": None},
                         "created_at": "2026-03-17T10:00:00Z",
                     }
@@ -401,6 +404,7 @@ class TestHasPendingPr:
                 "source": {
                     "issue": {
                         "state": "open",
+                        "body": "Fixes #1",
                         "pull_request": {"merged_at": None},
                         "created_at": "2026-03-18T10:00:00Z",
                     }

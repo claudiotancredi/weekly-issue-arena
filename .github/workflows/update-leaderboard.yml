@@ -5,6 +5,9 @@ on:
     # Every hour
     - cron: "0 * * * *"
   workflow_dispatch:
+  workflow_run:
+    workflows: ["🔄 Weekly Issue Refresh"]
+    types: [completed]
 
 permissions:
   contents: write
@@ -23,20 +26,42 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Check if waiting for issue refresh
+        if: github.event_name == 'schedule'
+        id: skip-check
+        run: |
+          day=$(date -u +%u)
+          hour=$(date -u +%H)
+          if [ "$day" = "5" ] && [ "$hour" -ge 17 ]; then
+            today=$(date -u +%Y-%m-%d)
+            if git log --since="$today" --oneline --grep="weekly issue refresh" | grep -q .; then
+              echo "skip=false" >> "$GITHUB_OUTPUT"
+            else
+              echo "Friday 17+, no refresh yet — skipping"
+              echo "skip=true" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Set up Python
+        if: steps.skip-check.outputs.skip != 'true'
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
       - name: Install dependencies
+        if: steps.skip-check.outputs.skip != 'true'
         run: pip install -r requirements.txt
 
       - name: Update leaderboard
+        if: steps.skip-check.outputs.skip != 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/update_leaderboard.py
 
       - name: Commit and push changes
+        if: steps.skip-check.outputs.skip != 'true'
         run: |
           git config --global user.name "arena-bot[bot]"
           git config --global user.email "arena-bot@users.noreply.github.com"

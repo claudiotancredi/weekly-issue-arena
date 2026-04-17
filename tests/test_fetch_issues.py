@@ -206,7 +206,7 @@ class TestFetchAllIssuesCrossCategory:
         """Issue with bug and gfi labels goes to bug (higher)."""
         shared = _gh_issue(100, 1)
 
-        def side_effect(owner, repo, labels, limit):
+        def side_effect(owner, repo, labels, limit, **kwargs):
             if labels == ["hard"]:
                 return []
             return [shared]
@@ -225,7 +225,7 @@ class TestFetchAllIssuesCrossCategory:
     def test_distinct_issues_not_deduped(self, mock_fetch, _mock_linked):
         """Different issues in different categories all survive."""
 
-        def side_effect(owner, repo, labels, limit):
+        def side_effect(owner, repo, labels, limit, **kwargs):
             if labels == ["hard"]:
                 return [_gh_issue(300, 3)]
             if labels == ["bug"]:
@@ -246,7 +246,7 @@ class TestFetchAllIssuesCrossCategory:
     def test_dedup_across_repos(self, mock_fetch, _mock_linked):
         """Same issue number in different repos is NOT deduped."""
 
-        def side_effect(owner, repo, labels, limit):
+        def side_effect(owner, repo, labels, limit, **kwargs):
             if labels == ["bug"]:
                 return [
                     _gh_issue(
@@ -276,7 +276,7 @@ class TestFetchAllIssuesCrossCategory:
         """Categories are checked hard -> bug -> gfi."""
         call_labels = []
 
-        def side_effect(owner, repo, labels, limit):
+        def side_effect(owner, repo, labels, limit, **kwargs):
             call_labels.append(labels[0])
             return []
 
@@ -292,7 +292,7 @@ class TestFetchAllIssuesCrossCategory:
     def test_issues_with_linked_pr_filtered_out(self, mock_fetch, mock_linked):
         """Issues with an open linked PR are excluded."""
 
-        def side_effect(owner, repo, labels, limit):
+        def side_effect(owner, repo, labels, limit, **kwargs):
             if labels == ["bug"]:
                 return [
                     _gh_issue(100, 1),
@@ -1065,7 +1065,7 @@ class TestFetchAllIssuesIntegration:
     def test_returns_issues_without_repo_bucket(self, monkeypatch):
         """Fetched issues carry the expected keys and no repo_bucket tag."""
 
-        def fake_get(owner, repo, labels, limit):
+        def fake_get(owner, repo, labels, limit, **kwargs):
             if labels != ["hard"]:
                 return []
             return [

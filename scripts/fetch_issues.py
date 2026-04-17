@@ -131,12 +131,16 @@ def build_language_map(repos: list[dict]) -> dict[str, str | None]:
 
 
 def get_issues_for_repo(
-    owner: str, repo: str, labels: list[str], limit: int
+    owner: str,
+    repo: str,
+    labels: list[str],
+    limit: int,
+    cutoff_weeks: int = 40,
 ) -> list[dict]:
     """Fetch open issues from a repo matching any of the given labels."""
     collected = []
     seen_ids: set[int] = set()
-    cutoff = datetime.now(timezone.utc) - timedelta(weeks=40)  # ~9 months
+    cutoff = datetime.now(timezone.utc) - timedelta(weeks=cutoff_weeks)
     cutoff_str = cutoff.strftime("%Y-%m-%dT%H:%M:%SZ")
 
     for label in labels:
@@ -230,7 +234,14 @@ def fetch_all_issues(config: dict) -> dict[str, list[dict]]:
 
         for category in ["hard", "bug", "gfi"]:
             labels = label_mappings[category]
-            issues = get_issues_for_repo(owner, repo, labels, limit=5)
+            cutoff = 80 if category == "hard" else 40
+            issues = get_issues_for_repo(
+                owner,
+                repo,
+                labels,
+                limit=5,
+                cutoff_weeks=cutoff,
+            )
             for issue in issues:
                 url_parts = issue["html_url"].split(
                     "/"

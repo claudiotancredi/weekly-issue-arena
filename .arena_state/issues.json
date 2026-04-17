@@ -173,7 +173,8 @@
           "author": "Etienne-Carriere",
           "listed_at": "2026-04-10T17:00:00+00:00",
           "has_pr": false,
-          "language": "Python"
+          "language": "Python",
+          "closed": true
         },
         {
           "number": 40756,

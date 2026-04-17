@@ -42,14 +42,7 @@ const matchableForIsland: Record<string, Array<{
 }>> = {};
 for (const [lang, list] of Object.entries(issuesByLanguage)) {
   matchableForIsland[lang] = list.map((i) => ({
-    number: i.number,
-    title: i.title,
-    url: i.url,
-    owner: i.owner,
-    repo: i.repo,
-    category: i.category,
-    points: i.points,
-    created_at: i.created_at,
+    ...i,
   }));
 }
 const base = import.meta.env.BASE_URL;

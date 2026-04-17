@@ -127,9 +127,10 @@ const maxTotal = totalIssuesAtLevel(maxLevel.level);
           Every point earned by every contributor adds to a shared pool. When the pool crosses a
           threshold, the <strong class="text-white">arena levels up</strong> and the weekly issue
           quota grows by <strong class="text-white">+1 issue per category</strong>. The arena starts
-          at <strong class="text-white">Level 0</strong> with <strong class="text-white">{baselineTotal} issues</strong>
+          at <strong class="text-white">Level 0</strong> with up to <strong class="text-white">{baselineTotal} issues</strong>
           per week and reaches <strong class="text-white">Level {maxLevel.level}</strong> at
-          <strong class="text-white">{maxTotal} issues</strong> per week.
+          up to <strong class="text-white">{maxTotal} issues</strong> per week.
+          Actual counts may be lower if not enough matching issues are found across the tracked repos.
         </p>
         <p>
           The current state is shown live on the <a href="/" class="text-accent hover:underline">home page</a>

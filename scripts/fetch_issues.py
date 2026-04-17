@@ -13,6 +13,7 @@ import argparse
 import json
 import logging
 import random
+import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -311,6 +312,23 @@ def build_issue_table(issues: list[dict]) -> str:
     return header + "\n".join(lines) + "\n"
 
 
+SUMMARY_PATTERNS = {
+    "gfi": re.compile(
+        r"(<summary>\s*🙂 Good First Issues )\(\d+\)(</summary>)"
+    ),
+    "bug": re.compile(r"(<summary>\s*🪲 Bug Fixes )\(\d+\)(</summary>)"),
+    "hard": re.compile(r"(<summary>\s*😓 Hard Issues )\(\d+\)(</summary>)"),
+}
+
+
+def update_summary_counts(readme: str, issues: dict[str, list[dict]]) -> str:
+    """Rewrite the collapsible-section counts to match actual issue totals."""
+    for category, pattern in SUMMARY_PATTERNS.items():
+        count = len(issues.get(category, []))
+        readme = pattern.sub(rf"\g<1>({count})\2", readme)
+    return readme
+
+
 def save_state(issues: dict[str, list[dict]], week_id: str) -> None:
     """Persist fetched issues so the leaderboard script can track PRs."""
     STATE_PATH.parent.mkdir(exist_ok=True)
@@ -408,6 +426,7 @@ def main():
     readme = update_readme_section(
         readme, "ISSUES:HARD", build_issue_table(issues["hard"])
     )
+    readme = update_summary_counts(readme, issues)
     README_PATH.write_text(readme)
     log.info("README updated.")
 

@@ -525,7 +525,8 @@
           "author": "nirajbhatt7",
           "listed_at": "2026-04-10T17:00:00+00:00",
           "has_pr": false,
-          "language": "Go"
+          "language": "Go",
+          "closed": true
         },
         {
           "number": 12155,

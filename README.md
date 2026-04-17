@@ -108,7 +108,7 @@ No registration. No sign-ups. Just open source.
 | 10 | [Segmentation fault on Debian / sid](https://github.com/corteva/rioxarray/issues/869) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
 | 11 | [Hard error using dice loss](https://github.com/FluxML/Flux.jl/issues/2383) | [FluxML/Flux.jl](https://github.com/FluxML/Flux.jl) | 🟢 Open |
 | 12 | [[Bug] Incorrect units used for `xres`/`yres` in `_save_tiff`](https://github.com/mahmoodlab/TRIDENT/issues/135) | [mahmoodlab/TRIDENT](https://github.com/mahmoodlab/TRIDENT) | 🟢 Open |
-| 13 | [Category: Private - Photos marked as private are still sh...](https://github.com/photoprism/photoprism/issues/5517) | [photoprism/photoprism](https://github.com/photoprism/photoprism) | 🟢 Open |
+| 13 | [Category: Private - Photos marked as private are still sh...](https://github.com/photoprism/photoprism/issues/5517) | [photoprism/photoprism](https://github.com/photoprism/photoprism) | 🔴 Closed |
 | 14 | [Large memory usage when trying to add a dimension to an a...](https://github.com/dask/dask/issues/12155) | [dask/dask](https://github.com/dask/dask) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 

@@ -9,6 +9,7 @@ interface MatchableIssue {
   category: string;
   points: number;
   created_at: string;
+  updated_at: string;
 }
 
 interface Props {
@@ -34,11 +35,11 @@ function daysAgo(iso: string): number {
 }
 
 function whyThisOne(issue: MatchableIssue): string {
-  const age = daysAgo(issue.created_at);
+  const time_from_last_update_before_listing = daysAgo(issue.updated_at);
   const cat = CATEGORY_LABELS[issue.category] ?? issue.category;
-  const ageLabel =
-    age === 0 ? "opened today" : age === 1 ? "opened yesterday" : `opened ${age} days ago`;
-  return `${cat} · ${ageLabel} · unclaimed`;
+  const lastUpdated =
+    time_from_last_update_before_listing === 0 ? "last update before entering arena: today" : time_from_last_update_before_listing === 1 ? "last update before entering arena: yesterday" : `last update before entering arena: ${time_from_last_update_before_listing} days ago`;
+  return `${cat} · ${lastUpdated} · unclaimed`;
 }
 
 export default function MatchMeFlow({ languages, issuesByLanguage }: Props) {

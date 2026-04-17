@@ -169,7 +169,7 @@ export function getMatchableIssuesByLanguage(): Record<string, IssueWithCategory
     map[lang].sort((a, b) => {
       const cr = (categoryRank[a.category] ?? 9) - (categoryRank[b.category] ?? 9);
       if (cr !== 0) return cr;
-      return b.created_at.localeCompare(a.created_at);
+      return b.updated_at.localeCompare(a.updated_at);
     });
   }
   return map;

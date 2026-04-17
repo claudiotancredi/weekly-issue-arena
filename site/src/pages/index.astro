@@ -30,16 +30,7 @@ const weekId = getLatestWeekId();
 const arenaLevelState = getArenaLevelState();
 const availableLanguages = getAvailableLanguages();
 const issuesByLanguage = getMatchableIssuesByLanguage();
-const matchableForIsland: Record<string, Array<{
-  number: number;
-  title: string;
-  url: string;
-  owner: string;
-  repo: string;
-  category: string;
-  points: number;
-  created_at: string;
-}>> = {};
+const matchableForIsland: Record<string, IssueWithCategory[]> = {};
 for (const [lang, list] of Object.entries(issuesByLanguage)) {
   matchableForIsland[lang] = list.map((i) => ({
     ...i,

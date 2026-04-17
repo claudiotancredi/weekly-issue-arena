@@ -33,8 +33,8 @@ jobs:
           day=$(date -u +%u)
           hour=$(date -u +%H)
           if [ "$day" = "5" ] && [ "$hour" -ge 17 ]; then
-            today=$(date -u +%Y-%m-%d)
-            if git log --since="$today" --oneline --grep="weekly issue refresh" | grep -q .; then
+            week=$(date -u +%G-W%V)
+            if python3 -c "import json,sys; d=json.load(open('.arena_state/issues.json')); sys.exit(0 if '$week' in d else 1)" 2>/dev/null; then
               echo "skip=false" >> "$GITHUB_OUTPUT"
             else
               echo "Friday 17+, no refresh yet — skipping"

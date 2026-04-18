@@ -151,6 +151,7 @@ site/node_modules/
 site/dist/
 site/.astro/
 site/public/badges/*.png
+site/public/og-card.svg
 !site/src/lib/
 
 # mypy

@@ -3,6 +3,9 @@ name: 🧪 Dry Run
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   dry-run:
     runs-on: ubuntu-latest

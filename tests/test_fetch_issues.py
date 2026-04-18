@@ -165,6 +165,7 @@ class TestGetIssuesForRepo:
 # ── fetch_all_issues (cross-category dedup) ────────────────────
 
 
+@patch("fetch_issues.build_language_map", return_value={})
 class TestFetchAllIssuesCrossCategory:
     """Tests for cross-category dedup in fetch_all_issues."""
 
@@ -182,7 +183,7 @@ class TestFetchAllIssuesCrossCategory:
     @patch("fetch_issues.has_linked_pr", return_value=False)
     @patch("fetch_issues.get_issues_for_repo")
     def test_multi_label_issue_lands_in_higher_category(
-        self, mock_fetch, _mock_linked
+        self, mock_fetch, _mock_linked, _mock_lang
     ):
         """Issue with both hard and gfi labels goes to hard."""
         # Same issue returned for all three categories
@@ -202,7 +203,7 @@ class TestFetchAllIssuesCrossCategory:
 
     @patch("fetch_issues.has_linked_pr", return_value=False)
     @patch("fetch_issues.get_issues_for_repo")
-    def test_multi_label_bug_and_gfi(self, mock_fetch, _mock_linked):
+    def test_multi_label_bug_and_gfi(self, mock_fetch, _mock_linked, _ml):
         """Issue with bug and gfi labels goes to bug (higher)."""
         shared = _gh_issue(100, 1)
 
@@ -222,7 +223,7 @@ class TestFetchAllIssuesCrossCategory:
 
     @patch("fetch_issues.has_linked_pr", return_value=False)
     @patch("fetch_issues.get_issues_for_repo")
-    def test_distinct_issues_not_deduped(self, mock_fetch, _mock_linked):
+    def test_distinct_issues_not_deduped(self, mock_fetch, _mock_linked, _ml):
         """Different issues in different categories all survive."""
 
         def side_effect(owner, repo, labels, limit, cutoff_weeks=40):
@@ -243,7 +244,7 @@ class TestFetchAllIssuesCrossCategory:
 
     @patch("fetch_issues.has_linked_pr", return_value=False)
     @patch("fetch_issues.get_issues_for_repo")
-    def test_dedup_across_repos(self, mock_fetch, _mock_linked):
+    def test_dedup_across_repos(self, mock_fetch, _mock_linked, _ml):
         """Same issue number in different repos is NOT deduped."""
 
         def side_effect(owner, repo, labels, limit, cutoff_weeks=40):
@@ -272,7 +273,7 @@ class TestFetchAllIssuesCrossCategory:
 
     @patch("fetch_issues.has_linked_pr", return_value=False)
     @patch("fetch_issues.get_issues_for_repo")
-    def test_category_iteration_order(self, mock_fetch, _mock_linked):
+    def test_category_iteration_order(self, mock_fetch, _mock_linked, _ml):
         """Categories are checked hard -> bug -> gfi."""
         call_labels = []
 
@@ -289,7 +290,9 @@ class TestFetchAllIssuesCrossCategory:
 
     @patch("fetch_issues.has_linked_pr")
     @patch("fetch_issues.get_issues_for_repo")
-    def test_issues_with_linked_pr_filtered_out(self, mock_fetch, mock_linked):
+    def test_issues_with_linked_pr_filtered_out(
+        self, mock_fetch, mock_linked, _ml
+    ):
         """Issues with an open linked PR are excluded."""
 
         def side_effect(owner, repo, labels, limit, cutoff_weeks=40):
@@ -316,7 +319,7 @@ class TestFetchAllIssuesCrossCategory:
     @patch("fetch_issues.has_linked_pr")
     @patch("fetch_issues.get_issues_for_repo")
     def test_all_issues_with_linked_pr_yields_empty(
-        self, mock_fetch, mock_linked
+        self, mock_fetch, mock_linked, _mock_lang
     ):
         """All candidates having linked PRs yields an empty list."""
         mock_fetch.return_value = [_gh_issue(100, 1)]
@@ -1083,6 +1086,9 @@ class TestFetchAllIssuesIntegration:
             ]
 
         monkeypatch.setattr(fetch_issues, "get_issues_for_repo", fake_get)
+        monkeypatch.setattr(
+            fetch_issues, "build_language_map", lambda repos: {}
+        )
         with patch("fetch_issues.has_linked_pr", return_value=False):
             result = fetch_issues.fetch_all_issues(self._config())
         hard = result["hard"]

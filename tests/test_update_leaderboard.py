@@ -520,9 +520,10 @@ class TestProcessWeek:
         mock_open.assert_not_called()
         mock_pr.assert_not_called()
 
+    @patch("update_leaderboard.has_linked_pr", return_value=False)
     @patch("update_leaderboard.get_closing_pr")
     @patch("update_leaderboard.check_issue_still_open")
-    def test_open_within_window_skipped(self, mock_open, mock_pr):
+    def test_open_within_window_skipped(self, mock_open, mock_pr, _mock_lpr):
         """Open issue within 7-day window is skipped."""
         listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
         issue = _make_issue(listed_at=listed)
@@ -752,10 +753,11 @@ class TestProcessWeek:
         assert result[1]["pts"] == 2  # bug
 
     @patch("update_leaderboard.has_pending_pr")
+    @patch("update_leaderboard.has_linked_pr", return_value=False)
     @patch("update_leaderboard.get_closing_pr")
     @patch("update_leaderboard.check_issue_still_open")
     def test_has_pending_pr_not_called_within_window(
-        self, mock_open, mock_pr, mock_pending
+        self, mock_open, _mock_pr, _mock_lpr, mock_pending
     ):
         """has_pending_pr is not called when issue is within 7-day window."""
         listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
@@ -902,11 +904,12 @@ class TestProcessWeek:
         assert remaining[1]["number"] == 2
         assert remaining[1].get("closed") is True
 
+    @patch("update_leaderboard.has_linked_pr", return_value=False)
     @patch("update_leaderboard.has_pending_pr")
     @patch("update_leaderboard.get_closing_pr")
     @patch("update_leaderboard.check_issue_still_open")
     def test_deadline_exactly_now_not_expired(
-        self, mock_open, mock_pr, mock_pending
+        self, mock_open, mock_pr, mock_pending, _mock_lpr
     ):
         """Deadline in the future is not expired (strict > check)."""
         # listed_at = now - 7 days + 1 min → deadline = now + 1 min

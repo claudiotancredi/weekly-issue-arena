@@ -245,7 +245,7 @@ To suggest a guaranteed-included anchor repo, open a PR editing `config/anchor_r
 <summary> 🫂 Contributing to the Arena </summary>
 
 - 💬 [Start a Discussion](https://github.com/claudiotancredi/weekly-issue-arena/discussions) — ideas, questions, edge cases
-- 🪲 [File an Issue](https://github.com/claudiotancredi/weekly-issue-arena/issues) — bugs in the automation, rule suggestions
+- 🪲 [File an Issue](https://github.com/claudiotancredi/weekly-issue-arena/issues) — bugs in the automation, feature requests, rule suggestions
 - 📦 [Open a PR](https://github.com/claudiotancredi/weekly-issue-arena/pulls) — fix something, add an anchor repo, improve the scripts
 
 </details>

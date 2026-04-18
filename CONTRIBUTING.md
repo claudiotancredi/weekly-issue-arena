@@ -64,12 +64,11 @@ Most actively maintained repos with `good first issue` or `help wanted` labels w
 - Run `ruff check scripts/` and `ruff format --check scripts/` before submitting
 - Make sure `pytest tests/ -v` passes
 
-### Report issues
+### Report issues or suggest features
 
-Open a GitHub Issue in this repo. Include:
-- What you expected
-- What happened instead
-- Any relevant logs or screenshots
+Open a GitHub Issue in this repo. Use the appropriate template:
+- **Bug report** — what you expected, what happened instead, relevant logs or screenshots
+- **Feature request** — what you'd like to see and why it would be useful
 
 ### Discuss ideas
 

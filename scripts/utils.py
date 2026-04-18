@@ -204,6 +204,21 @@ def arena_week_start(dt: datetime | None = None) -> datetime:
     return friday_start.replace(hour=17, minute=0, second=0, microsecond=0)
 
 
+RANKS = [
+    (500, "Mr. Robot"),
+    (100, "Bug Slayer"),
+    (0, "Hello World Engineer"),
+]
+
+
+def get_rank(points: int) -> str:
+    """Return the rank name for the given point total."""
+    for threshold, name in RANKS:
+        if points >= threshold:
+            return name
+    return "Hello World Engineer"
+
+
 def update_readme_section(content: str, tag: str, new_body: str) -> str:
     """Replace content between matching START/END markers."""
     pattern = rf"(<!-- {tag}:START -->).*?(<!-- {tag}:END -->)"

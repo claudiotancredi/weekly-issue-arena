@@ -31,6 +31,7 @@ from arena_level import (
 )
 from utils import (
     arena_week_id,
+    get_rank,
     github_get,
     has_linked_pr,
     pr_has_closing_keyword,
@@ -46,12 +47,6 @@ STATE_PATH = Path(".arena_state/issues.json")
 CURRENT_ISSUES_PATH = Path(".arena_state/current_issues.json")
 
 POINTS = {"gfi": 1, "bug": 2, "hard": 4}
-
-RANKS = [
-    (500, "Mr. Robot"),
-    (100, "Bug Slayer"),
-    (0, "Hello World Engineer"),
-]
 
 RANK_IMAGES = {
     "Mr. Robot": "assets/mrrobot.png",
@@ -106,14 +101,6 @@ def update_issue_statuses(readme: str) -> str:
         )
 
     return readme
-
-
-def get_rank(points: int) -> str:
-    """Return the rank name for the given point total."""
-    for threshold, name in RANKS:
-        if points >= threshold:
-            return name
-    return "Hello World Engineer"
 
 
 def load_state() -> dict:

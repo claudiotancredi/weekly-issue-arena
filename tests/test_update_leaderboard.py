@@ -7,11 +7,11 @@ from unittest.mock import Mock, patch
 
 sys.path.insert(0, "scripts")
 
+from utils import get_rank  # noqa: E402, I001
 from update_leaderboard import (  # noqa: E402, I001
     build_leaderboard_md,
     build_merged_this_week_md,
     check_issue_status,
-    get_rank,
     has_pending_pr,
     load_scores,
     load_state,

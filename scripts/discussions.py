@@ -2,7 +2,7 @@
 
 import logging
 
-from utils import github_graphql
+from utils import get_rank, github_graphql
 
 log = logging.getLogger(__name__)
 
@@ -374,9 +374,6 @@ def notify_contributors(new_credits: list[dict], scores: dict) -> dict:
     except RuntimeError as exc:
         log.warning(f"Skipping Discussion notifications: {exc}")
         return scores
-
-    # Import here to avoid circular dependency
-    from update_leaderboard import get_rank
 
     for credit in new_credits:
         author = credit["author"]

@@ -115,7 +115,7 @@ No registration. No sign-ups. Just open source.
 </details>
 
 <details>
-<summary> 😓 Hard Issues (10)</summary>
+<summary> 😓 Hard Issues (9)</summary>
 
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |

@@ -67,7 +67,7 @@ No registration. No sign-ups. Just open source.
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [Include TLS information into INFO command output](https://github.com/dragonflydb/dragonfly/issues/3292) | [dragonflydb/dragonfly](https://github.com/dragonflydb/dragonfly) | 🟢 Open |
-| 2 | [documentation: remove marimo navigation from notebooks](https://github.com/xdslproject/xdsl/issues/5634) | [xdslproject/xdsl](https://github.com/xdslproject/xdsl) | 🟢 Open |
+| 2 | [documentation: remove marimo navigation from notebooks](https://github.com/xdslproject/xdsl/issues/5634) | [xdslproject/xdsl](https://github.com/xdslproject/xdsl) | 🟡 PR Proposed |
 | 3 | [[Bug]: App is not truly portable](https://github.com/pear-devs/pear-desktop/issues/4132) | [pear-devs/pear-desktop](https://github.com/pear-devs/pear-desktop) | 🟢 Open |
 | 4 | [Prompt to confirm document cancel in PWA.](https://github.com/frappe/hrms/issues/2199) | [frappe/hrms](https://github.com/frappe/hrms) | 🟢 Open |
 | 5 | [Address TODO/FIXME: S3 blob store operations need retry l...](https://github.com/trustgraph-ai/trustgraph/issues/788) | [trustgraph-ai/trustgraph](https://github.com/trustgraph-ai/trustgraph) | 🟢 Open |

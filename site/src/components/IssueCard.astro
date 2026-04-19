@@ -28,8 +28,9 @@ const { issue } = Astro.props;
       <h3 class="text-sm font-medium text-white group-hover:text-accent transition-colors leading-snug">
         {truncateTitle(issue.title)}
       </h3>
-      <div class="mt-2 text-xs text-zinc-500">
-        {issue.owner}/{issue.repo}
+      <div class="mt-2 flex items-center gap-2 text-xs text-zinc-500">
+        <span>{issue.owner}/{issue.repo}</span>
+        {issue.language && <span class="rounded bg-surface-elevated px-1.5 py-0.5 text-[10px] text-zinc-400">{issue.language}</span>}
       </div>
     </div>
     <svg class="mt-1 w-4 h-4 flex-shrink-0 text-zinc-500 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">

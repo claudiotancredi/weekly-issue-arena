@@ -18,6 +18,7 @@ const issueProps = issues.map((i) => ({
   points: i.points,
   closed: i.closed,
   has_pr: i.has_pr,
+  language: i.language ?? null,
 }));
 ---
 

@@ -10,6 +10,7 @@ interface Issue {
   points: number;
   closed: boolean;
   has_pr: boolean;
+  language: string | null;
 }
 
 interface Props {
@@ -203,8 +204,13 @@ export default function IssueFilter({ issues, base }: Props) {
             <div style={{ fontSize: "0.875rem", fontWeight: 500, color: "#e4e4e7", lineHeight: 1.4 }}>
               {issue.title.length > 80 ? issue.title.slice(0, 77) + "..." : issue.title}
             </div>
-            <div style={{ marginTop: "0.5rem", fontSize: "0.75rem", color: "#71717a" }}>
-              {issue.owner}/{issue.repo}
+            <div style={{ marginTop: "0.5rem", fontSize: "0.75rem", color: "#71717a", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <span>{issue.owner}/{issue.repo}</span>
+              {issue.language && (
+                <span style={{ padding: "0.1rem 0.375rem", borderRadius: "0.25rem", background: "#1a1a2e", fontSize: "0.625rem", color: "#a1a1aa" }}>
+                  {issue.language}
+                </span>
+              )}
             </div>
           </a>
         ))}

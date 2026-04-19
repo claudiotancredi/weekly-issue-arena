@@ -1,6 +1,7 @@
 # ⚔️ Weekly Issue Arena
 
 [![Lint & Test](https://github.com/claudiotancredi/weekly-issue-arena/actions/workflows/lint.yml/badge.svg)](https://github.com/claudiotancredi/weekly-issue-arena/actions/workflows/lint.yml)
+[![CodeQL](https://github.com/claudiotancredi/weekly-issue-arena/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/claudiotancredi/weekly-issue-arena/security/code-scanning)
 [![GitHub stars](https://img.shields.io/github/stars/claudiotancredi/weekly-issue-arena?style=flat&logo=github)](https://github.com/claudiotancredi/weekly-issue-arena/stargazers)
 [![GitHub contributors](https://img.shields.io/github/contributors/claudiotancredi/weekly-issue-arena?style=flat&logo=github)](https://github.com/claudiotancredi/weekly-issue-arena/graphs/contributors)
 [![Last commit](https://img.shields.io/github/last-commit/claudiotancredi/weekly-issue-arena?style=flat&logo=github)](https://github.com/claudiotancredi/weekly-issue-arena/commits/main)

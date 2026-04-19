@@ -169,6 +169,14 @@ No registration required. Contributions are detected via GitHub's public metadat
 
 Each point grows your personal rank **and** the shared Arena Level — see the dedicated section below.
 
+**Spread the word:** if you'd like to help the arena grow, feel free to add this at the end of your PR description:
+
+```
+I found this issue through [Weekly Issue Arena](https://github.com/claudiotancredi/weekly-issue-arena), a gamified hub that publishes open-source issues weekly.
+```
+
+Completely optional — your contribution speaks for itself either way.
+
 | Rank | Badge | Points Required |
 |------|-------|----------------|
 | Hello World Engineer | <img src="assets/hwengineer.png" width="88" height="88" /> | 0–99 pts |

@@ -7,6 +7,14 @@ Thanks for your interest! There are two ways to contribute:
 Just pick an issue from the README and open a PR in that repo. No registration needed.
 Points are tracked automatically.
 
+If you'd like to help spread the word, feel free to add a short note at the end of your PR description:
+
+```
+I found this issue through [Weekly Issue Arena](https://github.com/claudiotancredi/weekly-issue-arena), a gamified hub that publishes open-source issues weekly.
+```
+
+This is completely optional — your contribution speaks for itself either way.
+
 ## 2. Improve the Arena itself
 
 ### Development setup

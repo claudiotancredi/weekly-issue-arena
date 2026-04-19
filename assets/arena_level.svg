@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="180" viewBox="0 0 720 180" role="img" aria-label="Arena Level 0 — 12 arena points">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="180" viewBox="0 0 720 180" role="img" aria-label="Arena Level 0 — 13 arena points">
   <defs>
     <linearGradient id="barGrad" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#6366f1"/>
@@ -24,8 +24,8 @@
   <text x="106" y="74" class="level-tag" font-size="14" fill="#a1a1aa">LEVEL</text>
   <text x="106" y="94" class="stat" font-size="16" fill="#e4e4e7">Weekly Issue Arena</text>
   <rect x="28" y="116" width="664" height="14" rx="7" ry="7" fill="#1f1f2e"/>
-  <rect x="28" y="116" width="318" height="14" rx="7" ry="7" fill="url(#barGrad)"/>
+  <rect x="28" y="116" width="345" height="14" rx="7" ry="7" fill="url(#barGrad)"/>
   <rect x="690" y="113" width="2" height="20" rx="1" fill="#8b5cf6"/>
-  <text x="28" y="158" class="progress" font-size="12" fill="#a1a1aa">12 / 25 pts → Level 1</text>
+  <text x="28" y="158" class="progress" font-size="12" fill="#a1a1aa">13 / 25 pts → Level 1</text>
   <text x="692" y="158" text-anchor="end" class="delta" font-size="12" fill="#6366f1">+3 issues at Level 1</text>
 </svg>

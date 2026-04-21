@@ -178,6 +178,7 @@ export function getMatchableIssuesByLanguage(): Record<string, IssueWithCategory
 export function getLeaderboard(): LeaderboardEntry[] {
   const scores = getScores();
   const entries = Object.entries(scores.players)
+    .filter(([, data]) => data.total_points > 0)
     .map(([username, data]) => ({
       username,
       total_points: data.total_points,

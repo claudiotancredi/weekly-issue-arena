@@ -892,7 +892,8 @@ def build_leaderboard_md(scores: dict) -> str:
         "|----------|------------|--------|------|\n"
     )
     players = scores.get("players", {})
-    if not players:
+    ranked = {u: d for u, d in players.items() if d.get("total_points", 0) > 0}
+    if not ranked:
         return (
             header
             + "| — | *No contributions yet — be the first!*"
@@ -900,7 +901,7 @@ def build_leaderboard_md(scores: dict) -> str:
         )
 
     sorted_players = sorted(
-        players.items(),
+        ranked.items(),
         key=lambda x: (-x[1]["total_points"], x[0].lower()),
     )
     lines = []

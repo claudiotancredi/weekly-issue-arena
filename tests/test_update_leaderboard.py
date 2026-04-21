@@ -1268,6 +1268,43 @@ class TestBuildLeaderboardMd:
         md = build_leaderboard_md(scores)
         assert "hwengineer.png" in md
 
+    def test_zero_point_players_excluded(self):
+        """Welcome-only (0-point) players don't appear on leaderboard."""
+        scores = _make_scores(
+            players={
+                "alice": {
+                    "total_points": 5,
+                    "avatar_url": "https://a.png",
+                    "contributions": [],
+                },
+                "welcomed_only": {
+                    "total_points": 0,
+                    "avatar_url": "https://w.png",
+                    "contributions": [],
+                    "discussion_node_id": "D_abc",
+                },
+            }
+        )
+        md = build_leaderboard_md(scores)
+        assert "@alice" in md
+        assert "@welcomed_only" not in md
+
+    def test_all_zero_point_players_shows_placeholder(self):
+        """Only 0-point players → placeholder row, not blank leaderboard."""
+        scores = _make_scores(
+            players={
+                "welcomed_only": {
+                    "total_points": 0,
+                    "avatar_url": "https://w.png",
+                    "contributions": [],
+                    "discussion_node_id": "D_abc",
+                },
+            }
+        )
+        md = build_leaderboard_md(scores)
+        assert "No contributions yet" in md
+        assert "@welcomed_only" not in md
+
 
 # ── build_merged_this_week_md ─────────────────────────────
 

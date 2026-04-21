@@ -235,9 +235,9 @@ export default function MatchMeFlow({ languages, issuesByLanguage }: Props) {
               <li>Fork the repo and create a branch.</li>
               <li>Implement your fix locally.</li>
               <li>
-                Open a PR with <code style={{ background: "#1a1a2e", padding: "0 0.25rem", borderRadius: "0.25rem", color: "#e4e4e7" }}>Closes #{issue.number}</code> in the description.
+                Open a PR with <code style={{ background: "#1a1a2e", padding: "0 0.25rem", borderRadius: "0.25rem", color: "#e4e4e7" }}>Closes #{issue.number}</code> in the description. The arena welcomes you in a Discussion within ~1 hour.
               </li>
-              <li>When the PR merges, the arena credits you within ~1 hour and posts a welcome Discussion.</li>
+              <li>When the PR merges, points land on your profile automatically.</li>
             </ol>
           </div>
         </div>

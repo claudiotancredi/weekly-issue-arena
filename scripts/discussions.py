@@ -143,7 +143,7 @@ def _first_merge_body(
     badge = _badge_url(username)
     profile = _profile_url(username)
     return (
-        f"# \U0001f3c6 Arena Card unlocked, @{username}!\n\n"
+        f"# \U0001f3c6 Arena Card unlocked!\n\n"
         f"Your PR merged and closed [{issue_key}]({pr_url}). "
         f"**+{points} point(s)** awarded \U0001f389\n\n"
         f"\U0001f396\ufe0f **Current rank:** {rank_name} | "
@@ -176,10 +176,10 @@ def _additional_merge_body(
     )
 
 
-def _rank_up_body(username: str, new_rank: str, new_total: int) -> str:
+def _rank_up_body(new_rank: str, new_total: int) -> str:
     """Rank-up body: congrats when crossing a rank threshold."""
     return (
-        f"## \U0001f31f Rank up, @{username}!\n\n"
+        f"## \U0001f31f Rank up!\n\n"
         f"You just crossed a threshold — new rank: "
         f"**{new_rank}** ({new_total} pts).\n\n"
         f"Your Arena Card reflects the new rank automatically. "
@@ -303,7 +303,7 @@ def add_rank_up_comment(
     new_total: int,
 ) -> None:
     """Post a rank-up congratulations comment."""
-    body = _rank_up_body(username, new_rank, new_total)
+    body = _rank_up_body(new_rank, new_total)
     github_graphql(
         _ADD_COMMENT,
         {"input": {"discussionId": discussion_id, "body": body}},

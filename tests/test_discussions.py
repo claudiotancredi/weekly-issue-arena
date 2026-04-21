@@ -157,11 +157,22 @@ class TestBodyTemplates:
         assert "org/repo#5" in body
 
     def test_rank_up_body_mentions_new_rank(self):
-        """Rank-up body includes the new rank and new total."""
-        body = _rank_up_body("bob", "Bug Slayer", 100)
-        assert "@bob" in body
+        """Rank-up body includes the new rank and new total, no @mention."""
+        body = _rank_up_body("Bug Slayer", 100)
         assert "Bug Slayer" in body
         assert "100 pts" in body
+        assert "@" not in body
+
+    def test_first_merge_body_no_mention_in_heading(self):
+        """First-merge heading should not @mention — avoids resubscribing."""
+        body = _first_merge_body(
+            "alice",
+            2,
+            "Hello World Engineer",
+            "org/repo#1",
+            "https://github.com/org/repo/pull/10",
+        )
+        assert "@alice" not in body
 
     def test_pr_closed_body_has_issue_and_pr(self):
         """PR-closed body references issue key and PR URL."""

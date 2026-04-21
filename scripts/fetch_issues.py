@@ -26,6 +26,8 @@ from arena_level import (
 from utils import (
     arena_week_id,
     arena_week_start,
+    atomic_write_json,
+    atomic_write_text,
     github_get,
     has_linked_pr,
     update_readme_section,
@@ -331,8 +333,6 @@ def update_summary_counts(readme: str, issues: dict[str, list[dict]]) -> str:
 
 def save_state(issues: dict[str, list[dict]], week_id: str) -> None:
     """Persist fetched issues so the leaderboard script can track PRs."""
-    STATE_PATH.parent.mkdir(exist_ok=True)
-
     # Load existing state or create new
     state = {}
     if STATE_PATH.exists():
@@ -352,8 +352,7 @@ def save_state(issues: dict[str, list[dict]], week_id: str) -> None:
         if datetime.fromisoformat(v["fetched_at"]) >= cutoff
     }
 
-    with open(STATE_PATH, "w", encoding="utf-8") as f:
-        json.dump(state, f, indent=2)
+    atomic_write_json(STATE_PATH, state)
     log.info(f"State saved to {STATE_PATH}")
 
 
@@ -372,8 +371,7 @@ def save_current_issues(issues: dict[str, list[dict]]) -> None:
                 }
             )
     path = Path(".arena_state/current_issues.json")
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(current, f, indent=2)
+    atomic_write_json(path, current)
 
 
 def main():
@@ -427,7 +425,7 @@ def main():
         readme, "ISSUES:HARD", build_issue_table(issues["hard"])
     )
     readme = update_summary_counts(readme, issues)
-    README_PATH.write_text(readme)
+    atomic_write_text(README_PATH, readme)
     log.info("README updated.")
 
     week_id = arena_week_id()

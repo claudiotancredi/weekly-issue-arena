@@ -11,6 +11,8 @@ import json
 import logging
 from pathlib import Path
 
+from utils import atomic_write_json
+
 log = logging.getLogger(__name__)
 
 CONFIG_PATH = Path("config/arena_levels.json")
@@ -112,10 +114,8 @@ def load_milestones(path: Path = MILESTONES_PATH) -> dict:
 
 
 def save_milestones(milestones: dict, path: Path = MILESTONES_PATH) -> None:
-    """Persist milestones state."""
-    path.parent.mkdir(exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(milestones, f, indent=2)
+    """Persist milestones state atomically."""
+    atomic_write_json(path, milestones)
 
 
 def current_level_from_state() -> int:

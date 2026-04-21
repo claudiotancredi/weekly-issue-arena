@@ -3,7 +3,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import RankBadge from "../../components/RankBadge.astro";
 import ContributionItem from "../../components/ContributionItem.astro";
 import { getAllPlayerUsernames, getPlayer, getLeaderboard, getPlayerWeeklyActivity } from "../../lib/data";
-import { getRank, getProgressToNextRank } from "../../lib/ranks";
+import { getRank, getProgressToNextRank, POINTS } from "../../lib/ranks";
+
+// Inverse of POINTS so we can label each contribution by its category
+// without hardcoding the per-category scores again.
+const CATEGORY_BY_POINTS: Record<number, string> = Object.fromEntries(
+  Object.entries(POINTS).map(([cat, pts]) => [pts, cat]),
+);
 
 export function getStaticPaths() {
   const usernames = getAllPlayerUsernames();
@@ -38,7 +44,7 @@ const weeklyActivity = getPlayerWeeklyActivity(player.contributions);
 // Category breakdown
 const categoryBreakdown = player.contributions.reduce(
   (acc, c) => {
-    const cat = c.points === 4 ? "hard" : c.points === 2 ? "bug" : "gfi";
+    const cat = CATEGORY_BY_POINTS[c.points] ?? "gfi";
     acc[cat] = (acc[cat] || 0) + 1;
     return acc;
   },

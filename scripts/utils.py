@@ -1,9 +1,12 @@
 """Shared utilities for Weekly Issue Arena scripts."""
 
+import json
 import logging
 import os
 import re
+import tempfile
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 import requests
 
@@ -217,6 +220,38 @@ def get_rank(points: int) -> str:
         if points >= threshold:
             return name
     return "Hello World Engineer"
+
+
+def atomic_write_text(
+    path: Path, content: str, encoding: str = "utf-8"
+) -> None:
+    """Write *content* to *path* atomically via a same-dir temp file.
+
+    Uses ``os.replace`` so a crash or power loss mid-write cannot leave a
+    truncated file — readers see either the old contents or the full new
+    contents. Must stay on the same filesystem as *path* so ``os.replace``
+    is atomic (guaranteed on POSIX, documented on Windows since Py 3.3).
+    """
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(
+        prefix=path.name + ".", suffix=".tmp", dir=path.parent
+    )
+    try:
+        with os.fdopen(fd, "w", encoding=encoding, newline="") as f:
+            f.write(content)
+        os.replace(tmp, path)
+    except Exception:
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+        raise
+
+
+def atomic_write_json(path: Path, data, indent: int = 2) -> None:
+    """Atomically write *data* as JSON to *path*."""
+    atomic_write_text(path, json.dumps(data, indent=indent))
 
 
 def update_readme_section(content: str, tag: str, new_body: str) -> str:

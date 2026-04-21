@@ -17,6 +17,7 @@ from arena_level import (
     load_milestones,
     total_issues_at_level,
 )
+from utils import atomic_write_text
 
 log = logging.getLogger(__name__)
 
@@ -209,7 +210,7 @@ def render_arena_svg(
     )
 
     out_path.parent.mkdir(exist_ok=True)
-    out_path.write_text(svg, encoding="utf-8")
+    atomic_write_text(out_path, svg)
     log.info(
         f"Rendered {out_path} (level={level}, "
         f"points={arena_points}, issues={total_issues})"

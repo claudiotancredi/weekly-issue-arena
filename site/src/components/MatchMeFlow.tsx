@@ -1,6 +1,6 @@
 import { useMemo, useState } from "preact/hooks";
 
-interface MatchableIssue {
+export interface MatchableIssueForIsland {
   number: number;
   title: string;
   url: string;
@@ -8,12 +8,12 @@ interface MatchableIssue {
   repo: string;
   category: string;
   points: number;
-  updated_at: string;
+  whyThisOne: string;
 }
 
 interface Props {
   languages: { language: string; count: number }[];
-  issuesByLanguage: Record<string, MatchableIssue[]>;
+  issuesByLanguage: Record<string, MatchableIssueForIsland[]>;
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -27,19 +27,6 @@ const CATEGORY_COLORS: Record<string, string> = {
   bug: "#f59e0b",
   hard: "#ef4444",
 };
-
-function daysAgo(iso: string): number {
-  const ms = Date.now() - new Date(iso).getTime();
-  return Math.max(0, Math.floor(ms / 86_400_000));
-}
-
-function whyThisOne(issue: MatchableIssue): string {
-  const time_from_last_update_before_listing = daysAgo(issue.updated_at);
-  const cat = CATEGORY_LABELS[issue.category] ?? issue.category;
-  const lastUpdated =
-    time_from_last_update_before_listing === 0 ? "last update before entering arena: today" : time_from_last_update_before_listing === 1 ? "last update before entering arena: yesterday" : `last update before entering arena: ${time_from_last_update_before_listing} days ago`;
-  return `${cat} · ${lastUpdated} · unclaimed`;
-}
 
 export default function MatchMeFlow({ languages, issuesByLanguage }: Props) {
   const [language, setLanguage] = useState<string | null>(null);
@@ -184,7 +171,7 @@ export default function MatchMeFlow({ languages, issuesByLanguage }: Props) {
               {issue.owner}/{issue.repo}
             </div>
             <div style={{ fontSize: "0.75rem", color: "#a1a1aa", fontStyle: "italic", marginBottom: "0.875rem" }}>
-              Why this one: {whyThisOne(issue)}
+              Why this one: {issue.whyThisOne}
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
               <a

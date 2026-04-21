@@ -17,8 +17,8 @@ import {
   getTotalIssuesCredited,
   getLatestWeekId,
 } from "../lib/data";
-import type { IssueWithCategory } from "../lib/data";
 import MatchMeFlow from "../components/MatchMeFlow";
+import type { MatchableIssueForIsland } from "../components/MatchMeFlow";
 
 const issues = getAllCurrentIssues();
 const leaderboard = getLeaderboard();
@@ -31,10 +31,40 @@ const weekId = getLatestWeekId();
 const arenaLevelState = getArenaLevelState();
 const availableLanguages = getAvailableLanguages();
 const issuesByLanguage = getMatchableIssuesByLanguage();
-const matchableForIsland: Record<string, IssueWithCategory[]> = {};
+
+// Precompute the "Why this one" blurb at build time so the component
+// renders deterministically regardless of when the visitor loads the page.
+const CATEGORY_LABELS: Record<string, string> = {
+  gfi: "Good First Issue",
+  bug: "Bug Fix",
+  hard: "Hard Issue",
+};
+const now = Date.now();
+function whyThisOne(category: string, updatedAt: string): string {
+  const days = Math.max(
+    0,
+    Math.floor((now - new Date(updatedAt).getTime()) / 86_400_000),
+  );
+  const cat = CATEGORY_LABELS[category] ?? category;
+  const when =
+    days === 0
+      ? "last update before entering arena: today"
+      : days === 1
+        ? "last update before entering arena: yesterday"
+        : `last update before entering arena: ${days} days ago`;
+  return `${cat} · ${when} · unclaimed`;
+}
+const matchableForIsland: Record<string, MatchableIssueForIsland[]> = {};
 for (const [lang, list] of Object.entries(issuesByLanguage)) {
   matchableForIsland[lang] = list.map((i) => ({
-    ...i,
+    number: i.number,
+    title: i.title,
+    url: i.url,
+    owner: i.owner,
+    repo: i.repo,
+    category: i.category,
+    points: i.points,
+    whyThisOne: whyThisOne(i.category, i.updated_at),
   }));
 }
 const base = import.meta.env.BASE_URL;

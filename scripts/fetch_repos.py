@@ -21,15 +21,15 @@ Environment variables:
 """
 
 import argparse
-import json
 import logging
 import random
 import re
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import yaml
-from utils import arena_week_id, github_get
+from utils import arena_week_id, atomic_write_json, github_get
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 log = logging.getLogger(__name__)
@@ -42,6 +42,11 @@ ANCHOR_TARGET = 50
 DYNAMIC_TARGET = POOL_TARGET - ANCHOR_TARGET  # 200
 PAGES_PER_QUERY = 2  # 100 results per page → 200 max per query
 PER_PAGE = 100
+
+# Search API is capped at 30 req/min for authenticated requests. We issue
+# up to 12 queries × 2 pages = 24 calls, so a ~1.2s pause between calls
+# keeps us comfortably under the cap without leaning on retry-after.
+SEARCH_PACE_SECONDS = 1.2
 
 SEARCH_API_URL = "https://api.github.com/search/repositories"
 
@@ -236,10 +241,8 @@ def load_anchor_repos() -> list[dict]:
 
 
 def save_repo_pool(pool: dict) -> None:
-    """Write pool to .arena_state/repo_pool.json."""
-    POOL_PATH.parent.mkdir(exist_ok=True)
-    with open(POOL_PATH, "w", encoding="utf-8") as f:
-        json.dump(pool, f, indent=2)
+    """Write pool to .arena_state/repo_pool.json atomically."""
+    atomic_write_json(POOL_PATH, pool)
     log.info(f"Pool saved to {POOL_PATH}")
 
 
@@ -257,6 +260,8 @@ def search_repos(
     """
     results = []
     for page in range(1, max_pages + 1):
+        if page > 1:
+            time.sleep(SEARCH_PACE_SECONDS)
         params = {
             "q": query,
             "sort": sort,
@@ -313,6 +318,8 @@ def fetch_dynamic_candidates(queries: list[dict]) -> dict[str, dict]:
     """
     candidates: dict[str, dict] = {}
     for i, q in enumerate(queries, 1):
+        if i > 1:
+            time.sleep(SEARCH_PACE_SECONDS)
         log.info(f"Query {i}/{len(queries)}: {q['q'][:80]}...")
         results = search_repos(q["q"], q["sort"])
         log.info(f"  → {len(results)} results")

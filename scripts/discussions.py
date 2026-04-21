@@ -2,7 +2,7 @@
 
 import logging
 
-from utils import get_rank, github_graphql
+from utils import github_graphql
 
 log = logging.getLogger(__name__)
 
@@ -89,70 +89,158 @@ def _profile_url(username: str) -> str:
     return f"{SITE_BASE}/player/{username}/"
 
 
-def _welcome_body(
+# ── Body templates ───────────────────────────────────────────
+
+
+def _welcome_body(username: str, issue_key: str, pr_url: str) -> str:
+    """Welcome body posted when a qualifying first PR is opened."""
+    return (
+        f"# \U0001f44b Welcome to the Weekly Issue Arena, @{username}!\n\n"
+        f"We just spotted your PR [{issue_key}]({pr_url}). "
+        f"Thanks for jumping in! \U0001f680\n\n"
+        f"## \U0001f6e0\ufe0f How it works from here\n\n"
+        f"1. The arena bot watches this PR. **When it merges and closes "
+        f"the issue**, you get credited with points automatically "
+        f"(usually within ~1 hour).\n"
+        f"2. **You unlock your Arena Card on your first ever merged "
+        f"contribution** — whether it's this issue or another arena "
+        f"issue you tackle in the future. The card shows your rank and "
+        f"updates every time you earn more points.\n"
+        f"3. Keep an eye on this thread: every future merge, rank-up, "
+        f"or status change will appear here as a comment. "
+        f"GitHub will notify you automatically.\n\n"
+        f"## \U0001f4cc A few things to know\n\n"
+        f"- You have **7 days** from the issue's listing to open a PR "
+        f"that references it with a closing keyword "
+        f"(`Fixes #N`, `Closes #N`, `Resolves #N`).\n"
+        f"- After that, you have up to **28 weeks** for the PR to "
+        f"merge. If it doesn't merge in that window, the issue stops "
+        f"being tracked.\n"
+        f"- If the issue gets closed without your PR winning (another "
+        f"PR merged first, or the maintainers closed it), don't "
+        f"worry — you can pick up any other arena issue and still "
+        f"unlock your card there.\n\n"
+        f"## \U0001f3af Once you unlock your Arena Card\n\n"
+        f"You'll get a comment here with a ready-to-paste markdown "
+        f"snippet. **Embed it in your GitHub profile README** "
+        f"(`github.com/{username}/{username}`) so visitors see your "
+        f"arena rank and points right on your profile.\n\n"
+        f"---\n\n"
+        f"*\U0001f916 Automatic updates will be posted here as "
+        f"comments. To stop receiving notifications, click "
+        f'"Unsubscribe" in the sidebar.*'
+    )
+
+
+def _first_merge_body(
     username: str,
     points: int,
     rank_name: str,
     issue_key: str,
     pr_url: str,
 ) -> str:
+    """First-merge body: unlocks the Arena Card."""
     badge = _badge_url(username)
     profile = _profile_url(username)
     return (
-        f"# \u2694\ufe0f Welcome to the Arena, @{username}!\n\n"
-        f"You just earned **{points} point(s)** for closing "
-        f"[{issue_key}]({pr_url})! \U0001f389\n\n"
-        f"\U0001f3c5 **Current rank:** {rank_name} | "
+        f"# \U0001f3c6 Arena Card unlocked, @{username}!\n\n"
+        f"Your PR merged and closed [{issue_key}]({pr_url}). "
+        f"**+{points} point(s)** awarded \U0001f389\n\n"
+        f"\U0001f396\ufe0f **Current rank:** {rank_name} | "
         f"**Total points:** {points}\n\n"
-        f"## \U0001f4e3 Your Arena Card\n\n"
-        f"Add this to your GitHub profile README to show off "
-        f"your rank and progress:\n\n"
+        f"## \U0001f4e3 Embed your Arena Card\n\n"
+        f"Paste this into your GitHub profile README "
+        f"(`github.com/{username}/{username}`) so your rank and "
+        f"points are visible from your profile:\n\n"
         f"```markdown\n"
         f"[![Weekly Issue Arena]({badge})]({profile})\n"
         f"```\n\n"
-        f"It updates automatically as you earn more points!\n\n"
-        f"[\U0001f449 View your full profile]({profile})\n\n"
-        f"---\n\n"
-        f"*\U0001f916 When you earn more points, an update will be "
-        f"posted here automatically by the arena bot. GitHub will "
-        f"notify you of each update. To stop receiving notifications, "
-        f'click "Unsubscribe" in the sidebar.*'
+        f"The card updates automatically as you earn more points.\n\n"
+        f"[\U0001f449 View your full profile]({profile})"
     )
 
 
-def _update_body(
-    username: str,
+def _additional_merge_body(
     points: int,
     new_total: int,
     rank_name: str,
     issue_key: str,
     pr_url: str,
 ) -> str:
+    """Subsequent-merge body: plain point update."""
     return (
         f"\U0001f4e5 **+{points} point(s)** for "
         f"[{issue_key}]({pr_url})\n\n"
-        f"\U0001f3c5 New total: **{new_total} pts** | "
+        f"\U0001f396\ufe0f New total: **{new_total} pts** | "
         f"Rank: **{rank_name}**"
+    )
+
+
+def _rank_up_body(username: str, new_rank: str, new_total: int) -> str:
+    """Rank-up body: congrats when crossing a rank threshold."""
+    return (
+        f"## \U0001f31f Rank up, @{username}!\n\n"
+        f"You just crossed a threshold — new rank: "
+        f"**{new_rank}** ({new_total} pts).\n\n"
+        f"Your Arena Card reflects the new rank automatically. "
+        f"Keep going. \U0001f4aa"
+    )
+
+
+def _pr_closed_body(issue_key: str, pr_url: str) -> str:
+    """PR-closed-unmerged body: encouragement to keep going."""
+    return (
+        f"## \U0001f494 PR closed without merging\n\n"
+        f"Your PR for [{issue_key}]({pr_url}) was closed without "
+        f"being merged. It happens — scope changes, or the "
+        f"maintainers going in a different direction.\n\n"
+        f"If you're still within the 7-day PR-opening window and "
+        f"the issue is still being tracked, you can try again with "
+        f"a new PR on the same issue. Otherwise, pick any other "
+        f"arena issue and go again — every attempt sharpens your "
+        f"instincts. \U0001f4aa"
+    )
+
+
+def _issue_closed_body(issue_key: str) -> str:
+    """Issue-closed body: issue is fixed (by someone else or just closed)."""
+    return (
+        f"## \U0001f3c1 {issue_key} closed\n\n"
+        f"The issue is fixed — so your PR for it won't be the one "
+        f"that counts this round. No points this time, but the "
+        f"effort is real and the practice sticks.\n\n"
+        f"Jump on another arena issue whenever you're ready. "
+        f"\U0001f680"
+    )
+
+
+def _expired_body(issue_key: str) -> str:
+    """28-week expiry body: tracking window closed."""
+    return (
+        f"## \U0001f570\ufe0f Tracking window closed for {issue_key}\n\n"
+        f"The 28-week window for this issue has elapsed and it's no "
+        f"longer tracked by the arena. If your PR still merges later, "
+        f"congrats on the upstream contribution — it just won't be "
+        f"credited here.\n\n"
+        f"Plenty of fresh arena issues are waiting. \U0001f3af"
     )
 
 
 # ── Public API ───────────────────────────────────────────────
 
 
-def create_contributor_discussion(
+def create_welcome_discussion(
     repo_id: str,
     category_id: str,
     username: str,
-    points: int,
-    rank_name: str,
     issue_key: str,
     pr_url: str,
 ) -> str:
-    """Create a welcome Discussion for a first-time contributor.
+    """Create a welcome Discussion when a contributor's first PR opens.
 
     Returns the Discussion node ID.
     """
-    body = _welcome_body(username, points, rank_name, issue_key, pr_url)
+    body = _welcome_body(username, issue_key, pr_url)
     data = github_graphql(
         _CREATE_DISCUSSION,
         {
@@ -166,30 +254,107 @@ def create_contributor_discussion(
     )
     discussion = data["createDiscussion"]["discussion"]
     log.info(
-        f"Created Discussion #{discussion['number']} "
+        f"Created welcome Discussion #{discussion['number']} "
         f"for @{username}: {discussion['url']}"
     )
     return discussion["id"]
 
 
-def add_contribution_comment(
+def add_first_merge_comment(
     discussion_id: str,
     username: str,
+    points: int,
+    rank_name: str,
+    issue_key: str,
+    pr_url: str,
+) -> None:
+    """Post the first-merge Arena Card unlock comment."""
+    body = _first_merge_body(username, points, rank_name, issue_key, pr_url)
+    github_graphql(
+        _ADD_COMMENT,
+        {"input": {"discussionId": discussion_id, "body": body}},
+    )
+    log.info(f"Posted first-merge comment for @{username} on {discussion_id}")
+
+
+def add_additional_merge_comment(
+    discussion_id: str,
     points: int,
     new_total: int,
     rank_name: str,
     issue_key: str,
     pr_url: str,
 ) -> None:
-    """Post an update comment on an existing contributor Discussion."""
-    body = _update_body(
-        username, points, new_total, rank_name, issue_key, pr_url
+    """Post a plain points update on an existing contributor Discussion."""
+    body = _additional_merge_body(
+        points, new_total, rank_name, issue_key, pr_url
     )
     github_graphql(
         _ADD_COMMENT,
         {"input": {"discussionId": discussion_id, "body": body}},
     )
-    log.info(f"Posted update comment for @{username} on {discussion_id}")
+    log.info(f"Posted additional-merge comment on {discussion_id}")
+
+
+def add_rank_up_comment(
+    discussion_id: str,
+    username: str,
+    new_rank: str,
+    new_total: int,
+) -> None:
+    """Post a rank-up congratulations comment."""
+    body = _rank_up_body(username, new_rank, new_total)
+    github_graphql(
+        _ADD_COMMENT,
+        {"input": {"discussionId": discussion_id, "body": body}},
+    )
+    log.info(
+        f"Posted rank-up comment for @{username} "
+        f"(→ {new_rank}) on {discussion_id}"
+    )
+
+
+def add_pr_closed_comment(
+    discussion_id: str,
+    issue_key: str,
+    pr_url: str,
+) -> None:
+    """Post the PR-closed-without-merging encouragement comment."""
+    body = _pr_closed_body(issue_key, pr_url)
+    github_graphql(
+        _ADD_COMMENT,
+        {"input": {"discussionId": discussion_id, "body": body}},
+    )
+    log.info(f"Posted pr-closed comment on {discussion_id} for {issue_key}")
+
+
+def add_issue_closed_comment(
+    discussion_id: str,
+    issue_key: str,
+) -> None:
+    """Post the issue-closed-without-winning comment."""
+    body = _issue_closed_body(issue_key)
+    github_graphql(
+        _ADD_COMMENT,
+        {"input": {"discussionId": discussion_id, "body": body}},
+    )
+    log.info(f"Posted issue-closed comment on {discussion_id} for {issue_key}")
+
+
+def add_expired_comment(
+    discussion_id: str,
+    issue_key: str,
+) -> None:
+    """Post the 28-week expiry comment."""
+    body = _expired_body(issue_key)
+    github_graphql(
+        _ADD_COMMENT,
+        {"input": {"discussionId": discussion_id, "body": body}},
+    )
+    log.info(f"Posted expired comment on {discussion_id} for {issue_key}")
+
+
+# ── Arena Level Tracker (unchanged) ──────────────────────────
 
 
 def _arena_level_thread_body(
@@ -315,6 +480,205 @@ def add_arena_level_comment(
     )
 
 
+def _notified_bucket(scores: dict, username: str, key: str) -> list:
+    """Return the persisted per-player dedup list, creating it if needed."""
+    player = scores["players"].setdefault(username, {})
+    return player.setdefault("notified", {}).setdefault(key, [])
+
+
+def _is_already_notified(scores: dict, event: dict) -> bool:
+    """Return True if this event type + target was already dispatched."""
+    etype = event["type"]
+    username = event["username"]
+    player = scores["players"].get(username) or {}
+    notified = player.get("notified", {})
+
+    if etype == "first_merge":
+        return bool(notified.get("first_merge"))
+    if etype == "rank_up":
+        return event["new_rank"] in notified.get("ranks_crossed", [])
+    if etype == "pr_closed":
+        return event["pr_url"] in notified.get("pr_closed", [])
+    if etype == "issue_closed":
+        return event["issue_key"] in notified.get("issue_closed", [])
+    if etype == "expired":
+        return event["issue_key"] in notified.get("expired", [])
+    # welcome, additional_merge: handled by other means
+    return False
+
+
+def _mark_notified(scores: dict, event: dict) -> None:
+    """Persist the fact that this event was successfully dispatched."""
+    etype = event["type"]
+    username = event["username"]
+
+    if etype == "first_merge":
+        scores["players"][username].setdefault("notified", {})[
+            "first_merge"
+        ] = True
+    elif etype == "rank_up":
+        bucket = _notified_bucket(scores, username, "ranks_crossed")
+        if event["new_rank"] not in bucket:
+            bucket.append(event["new_rank"])
+    elif etype == "pr_closed":
+        bucket = _notified_bucket(scores, username, "pr_closed")
+        if event["pr_url"] not in bucket:
+            bucket.append(event["pr_url"])
+        # Used by issue_closed collector to suppress a later duplicate.
+        issues_bucket = _notified_bucket(scores, username, "pr_closed_issues")
+        if event["issue_key"] not in issues_bucket:
+            issues_bucket.append(event["issue_key"])
+    elif etype == "issue_closed":
+        bucket = _notified_bucket(scores, username, "issue_closed")
+        if event["issue_key"] not in bucket:
+            bucket.append(event["issue_key"])
+    elif etype == "expired":
+        bucket = _notified_bucket(scores, username, "expired")
+        if event["issue_key"] not in bucket:
+            bucket.append(event["issue_key"])
+
+
+def process_notification_events(events: list[dict], scores: dict) -> dict:
+    """Dispatch a list of notification events to Discussion API calls.
+
+    Each event is a dict with a ``type`` plus type-specific fields.
+    Supported types:
+      - ``welcome``: username, issue_key, pr_url, author_avatar
+      - ``first_merge``: username, points, rank_name, issue_key, pr_url
+      - ``additional_merge``: username, points, new_total, rank_name,
+        issue_key, pr_url
+      - ``rank_up``: username, new_rank, new_total
+      - ``pr_closed``: username, issue_key, pr_url
+      - ``issue_closed``: username, issue_key
+      - ``expired``: username, issue_key
+
+    Dedup state under ``scores['players'][u]['notified']`` is updated
+    ONLY after the Discussion API call succeeds — a failed event will
+    be retried on the next run. Caller persists ``scores``. Returns it.
+    """
+    if not events:
+        return scores
+
+    # Welcome events must run before any comment events for the same user,
+    # since the discussion_node_id is only populated by the welcome call.
+    events = sorted(
+        events, key=lambda e: 0 if e.get("type") == "welcome" else 1
+    )
+
+    try:
+        repo_id, category_id = get_repo_and_category_id()
+    except RuntimeError as exc:
+        log.warning(f"Skipping Discussion notifications: {exc}")
+        return scores
+
+    dispatched_in_run: set = set()
+
+    for event in events:
+        etype = event.get("type")
+        username = event["username"]
+
+        if _is_already_notified(scores, event):
+            continue
+
+        # Intra-run dedup: skip if an identical event already fired this
+        # run (can happen if the same issue appears in multiple weeks).
+        run_key = (
+            etype,
+            username,
+            event.get("pr_url")
+            or event.get("issue_key")
+            or event.get("new_rank"),
+        )
+        if run_key in dispatched_in_run:
+            continue
+
+        player = scores["players"].get(username)
+
+        try:
+            if etype == "welcome":
+                node_id = create_welcome_discussion(
+                    repo_id,
+                    category_id,
+                    username,
+                    event["issue_key"],
+                    event["pr_url"],
+                )
+                # Initialise the full player entry so build_leaderboard_md
+                # and other readers don't hit KeyError on total_points for
+                # a welcome-only user.
+                entry = scores["players"].setdefault(
+                    username,
+                    {
+                        "total_points": 0,
+                        "avatar_url": event.get("author_avatar", ""),
+                        "contributions": [],
+                    },
+                )
+                entry.setdefault("total_points", 0)
+                entry.setdefault("contributions", [])
+                if not entry.get("avatar_url"):
+                    entry["avatar_url"] = event.get("author_avatar", "")
+                entry["discussion_node_id"] = node_id
+                dispatched_in_run.add(run_key)
+                continue
+
+            discussion_id = (
+                player.get("discussion_node_id") if player else None
+            )
+            if not discussion_id:
+                log.warning(
+                    f"Cannot post {etype} for @{username}: "
+                    f"no discussion_node_id"
+                )
+                continue
+
+            if etype == "first_merge":
+                add_first_merge_comment(
+                    discussion_id,
+                    username,
+                    event["points"],
+                    event["rank_name"],
+                    event["issue_key"],
+                    event["pr_url"],
+                )
+            elif etype == "additional_merge":
+                add_additional_merge_comment(
+                    discussion_id,
+                    event["points"],
+                    event["new_total"],
+                    event["rank_name"],
+                    event["issue_key"],
+                    event["pr_url"],
+                )
+            elif etype == "rank_up":
+                add_rank_up_comment(
+                    discussion_id,
+                    username,
+                    event["new_rank"],
+                    event["new_total"],
+                )
+            elif etype == "pr_closed":
+                add_pr_closed_comment(
+                    discussion_id, event["issue_key"], event["pr_url"]
+                )
+            elif etype == "issue_closed":
+                add_issue_closed_comment(discussion_id, event["issue_key"])
+            elif etype == "expired":
+                add_expired_comment(discussion_id, event["issue_key"])
+            else:
+                log.warning(f"Unknown event type {etype!r} — skipping")
+                continue
+
+            _mark_notified(scores, event)
+            dispatched_in_run.add(run_key)
+        except Exception as exc:
+            log.warning(
+                f"Discussion event {etype} failed for @{username}: {exc}"
+            )
+
+    return scores
+
+
 def announce_arena_level_up(
     milestones: dict,
     from_level: int,
@@ -358,55 +722,3 @@ def announce_arena_level_up(
         )
 
     return milestones
-
-
-def notify_contributors(new_credits: list[dict], scores: dict) -> dict:
-    """Create or update Discussions for all newly credited contributors.
-
-    *new_credits* is the list returned by ``process_week()``, each
-    dict containing ``author``, ``pts``, ``issue``, and ``week``.
-
-    Returns the (possibly updated) *scores* dict with
-    ``discussion_node_id`` fields populated for new contributors.
-    """
-    try:
-        repo_id, category_id = get_repo_and_category_id()
-    except RuntimeError as exc:
-        log.warning(f"Skipping Discussion notifications: {exc}")
-        return scores
-
-    for credit in new_credits:
-        author = credit["author"]
-        pts = credit["pts"]
-        issue_key = credit["issue"]
-        pr_url = credit["pr_url"]
-        total = scores["players"][author]["total_points"]
-        rank_name = get_rank(total)
-        discussion_id = scores["players"][author].get("discussion_node_id")
-
-        try:
-            if not discussion_id:
-                node_id = create_contributor_discussion(
-                    repo_id,
-                    category_id,
-                    author,
-                    pts,
-                    rank_name,
-                    issue_key,
-                    pr_url,
-                )
-                scores["players"][author]["discussion_node_id"] = node_id
-            else:
-                add_contribution_comment(
-                    discussion_id,
-                    author,
-                    pts,
-                    total,
-                    rank_name,
-                    issue_key,
-                    pr_url,
-                )
-        except Exception as exc:
-            log.warning(f"Discussion notification failed for @{author}: {exc}")
-
-    return scores

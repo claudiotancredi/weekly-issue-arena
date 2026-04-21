@@ -3,7 +3,7 @@
 import json
 import sys
 from datetime import datetime, timedelta, timezone
-from unittest.mock import Mock, patch
+from unittest.mock import patch
 
 sys.path.insert(0, "scripts")
 
@@ -12,7 +12,6 @@ from update_leaderboard import (  # noqa: E402, I001
     build_leaderboard_md,
     build_merged_this_week_md,
     check_issue_status,
-    has_pending_pr,
     load_scores,
     load_state,
     process_week,
@@ -150,287 +149,6 @@ class TestSaveState:
         assert loaded == data
 
 
-# ── has_pending_pr ───────────────────────────────────────────
-
-
-class TestHasPendingPr:
-    """Tests for the has_pending_pr function."""
-
-    @patch("update_leaderboard.github_get")
-    def test_open_pr_within_deadline(self, mock_get):
-        """An open PR created before the deadline returns True."""
-        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
-        resp = mock_get.return_value
-        resp.raise_for_status.return_value = None
-        resp.json.return_value = [
-            {
-                "event": "cross-referenced",
-                "source": {
-                    "issue": {
-                        "state": "open",
-                        "body": "Fixes #1",
-                        "pull_request": {"merged_at": None},
-                        "created_at": "2026-03-18T10:00:00Z",
-                    }
-                },
-            }
-        ]
-        resp.links = {}
-        assert has_pending_pr("org", "repo", 1, deadline) is True
-
-    @patch("update_leaderboard.github_get")
-    def test_pr_created_after_deadline(self, mock_get):
-        """A PR created after the deadline returns False."""
-        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
-        resp = mock_get.return_value
-        resp.raise_for_status.return_value = None
-        resp.json.return_value = [
-            {
-                "event": "cross-referenced",
-                "source": {
-                    "issue": {
-                        "state": "open",
-                        "pull_request": {"merged_at": None},
-                        "created_at": "2026-03-25T10:00:00Z",
-                    }
-                },
-            }
-        ]
-        resp.links = {}
-        assert has_pending_pr("org", "repo", 1, deadline) is False
-
-    @patch("update_leaderboard.github_get")
-    def test_closed_rejected_pr_ignored(self, mock_get):
-        """A PR closed without merge (rejected) is ignored."""
-        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
-        resp = mock_get.return_value
-        resp.raise_for_status.return_value = None
-        resp.json.return_value = [
-            {
-                "event": "cross-referenced",
-                "source": {
-                    "issue": {
-                        "state": "closed",
-                        "pull_request": {"merged_at": None},
-                        "created_at": "2026-03-18T10:00:00Z",
-                    }
-                },
-            }
-        ]
-        resp.links = {}
-        assert has_pending_pr("org", "repo", 1, deadline) is False
-
-    @patch("update_leaderboard.github_get")
-    def test_merged_pr_without_close_ignored(self, mock_get):
-        """A merged PR that didn't auto-close the issue is ignored."""
-        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
-        resp = mock_get.return_value
-        resp.raise_for_status.return_value = None
-        resp.json.return_value = [
-            {
-                "event": "cross-referenced",
-                "source": {
-                    "issue": {
-                        "state": "closed",
-                        "pull_request": {
-                            "merged_at": "2026-03-22T12:00:00Z",
-                        },
-                        "created_at": "2026-03-18T10:00:00Z",
-                    }
-                },
-            }
-        ]
-        resp.links = {}
-        assert has_pending_pr("org", "repo", 1, deadline) is False
-
-    @patch("update_leaderboard.github_get")
-    def test_non_pr_cross_reference_ignored(self, mock_get):
-        """A cross-reference to a plain issue (not a PR) is ignored."""
-        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
-        resp = mock_get.return_value
-        resp.raise_for_status.return_value = None
-        resp.json.return_value = [
-            {
-                "event": "cross-referenced",
-                "source": {
-                    "issue": {
-                        "state": "open",
-                        "created_at": "2026-03-18T10:00:00Z",
-                    }
-                },
-            }
-        ]
-        resp.links = {}
-        assert has_pending_pr("org", "repo", 1, deadline) is False
-
-    @patch("update_leaderboard.github_get")
-    def test_api_error_returns_false(self, mock_get):
-        """API failure returns False (safe default)."""
-        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
-        mock_get.side_effect = Exception("network error")
-        assert has_pending_pr("org", "repo", 1, deadline) is False
-
-    @patch("update_leaderboard.github_get")
-    def test_empty_timeline_returns_false(self, mock_get):
-        """Empty timeline (no events) returns False."""
-        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
-        resp = mock_get.return_value
-        resp.raise_for_status.return_value = None
-        resp.json.return_value = []
-        resp.links = {}
-        assert has_pending_pr("org", "repo", 1, deadline) is False
-
-    @patch("update_leaderboard.github_get")
-    def test_pr_created_exactly_at_deadline(self, mock_get):
-        """PR created exactly at the deadline counts (boundary <=)."""
-        deadline = datetime(2026, 3, 20, 17, 0, 0, tzinfo=timezone.utc)
-        resp = mock_get.return_value
-        resp.raise_for_status.return_value = None
-        resp.json.return_value = [
-            {
-                "event": "cross-referenced",
-                "source": {
-                    "issue": {
-                        "state": "open",
-                        "body": "Closes #1",
-                        "pull_request": {"merged_at": None},
-                        "created_at": "2026-03-20T17:00:00Z",  # == deadline
-                    }
-                },
-            }
-        ]
-        resp.links = {}
-        assert has_pending_pr("org", "repo", 1, deadline) is True
-
-    @patch("update_leaderboard.github_get")
-    def test_pr_created_one_second_after_deadline(self, mock_get):
-        """PR created one second after the deadline does not count."""
-        deadline = datetime(2026, 3, 20, 17, 0, 0, tzinfo=timezone.utc)
-        resp = mock_get.return_value
-        resp.raise_for_status.return_value = None
-        resp.json.return_value = [
-            {
-                "event": "cross-referenced",
-                "source": {
-                    "issue": {
-                        "state": "open",
-                        "pull_request": {"merged_at": None},
-                        "created_at": "2026-03-20T17:00:01Z",  # 1s after
-                    }
-                },
-            }
-        ]
-        resp.links = {}
-        assert has_pending_pr("org", "repo", 1, deadline) is False
-
-    @patch("update_leaderboard.github_get")
-    def test_multiple_prs_one_valid_returns_true(self, mock_get):
-        """Multiple PRs — one rejected + one open within deadline → True."""
-        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
-        resp = mock_get.return_value
-        resp.raise_for_status.return_value = None
-        resp.json.return_value = [
-            {
-                "event": "cross-referenced",
-                "source": {
-                    "issue": {
-                        "state": "closed",  # rejected
-                        "pull_request": {"merged_at": None},
-                        "created_at": "2026-03-15T10:00:00Z",
-                    }
-                },
-            },
-            {
-                "event": "cross-referenced",
-                "source": {
-                    "issue": {
-                        "state": "open",  # still open
-                        "body": "Resolves #1",
-                        "pull_request": {"merged_at": None},
-                        "created_at": "2026-03-17T10:00:00Z",
-                    }
-                },
-            },
-        ]
-        resp.links = {}
-        assert has_pending_pr("org", "repo", 1, deadline) is True
-
-    @patch("update_leaderboard.github_get")
-    def test_multiple_prs_all_rejected_returns_false(self, mock_get):
-        """Multiple PRs all rejected (closed without merge) → False."""
-        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
-        resp = mock_get.return_value
-        resp.raise_for_status.return_value = None
-        resp.json.return_value = [
-            {
-                "event": "cross-referenced",
-                "source": {
-                    "issue": {
-                        "state": "closed",
-                        "pull_request": {"merged_at": None},
-                        "created_at": "2026-03-14T10:00:00Z",
-                    }
-                },
-            },
-            {
-                "event": "cross-referenced",
-                "source": {
-                    "issue": {
-                        "state": "closed",
-                        "pull_request": {"merged_at": None},
-                        "created_at": "2026-03-16T10:00:00Z",
-                    }
-                },
-            },
-        ]
-        resp.links = {}
-        assert has_pending_pr("org", "repo", 1, deadline) is False
-
-    @patch("update_leaderboard.github_get")
-    def test_paginated_timeline_pr_on_second_page(self, mock_get):
-        """PR found on the second page of a paginated timeline → True."""
-        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
-
-        page1 = Mock()
-        page1.raise_for_status.return_value = None
-        page1.json.return_value = [{"event": "labeled"}]
-        page1.links = {"next": {"url": "https://api.github.com/page2"}}
-
-        page2 = Mock()
-        page2.raise_for_status.return_value = None
-        page2.json.return_value = [
-            {
-                "event": "cross-referenced",
-                "source": {
-                    "issue": {
-                        "state": "open",
-                        "body": "Fixes #1",
-                        "pull_request": {"merged_at": None},
-                        "created_at": "2026-03-18T10:00:00Z",
-                    }
-                },
-            }
-        ]
-        page2.links = {}
-
-        mock_get.side_effect = [page1, page2]
-        assert has_pending_pr("org", "repo", 1, deadline) is True
-
-    @patch("update_leaderboard.github_get")
-    def test_non_cross_referenced_events_ignored(self, mock_get):
-        """Non-cross-referenced events (labeled, assigned, etc.) ignored."""
-        deadline = datetime(2026, 3, 20, 17, 0, tzinfo=timezone.utc)
-        resp = mock_get.return_value
-        resp.raise_for_status.return_value = None
-        resp.json.return_value = [
-            {"event": "labeled", "label": {"name": "bug"}},
-            {"event": "assigned", "assignee": {"login": "alice"}},
-            {"event": "commented", "body": "PR incoming!"},
-        ]
-        resp.links = {}
-        assert has_pending_pr("org", "repo", 1, deadline) is False
-
-
 # ── process_week ─────────────────────────────────────────────
 
 
@@ -500,152 +218,198 @@ def _make_pr(
     }
 
 
-class TestProcessWeek:
-    """Tests for the process_week function."""
+def _bundle(prs=None, state="open", closing_commit=None):
+    """Build the dict ``gather_issue_prs`` returns in the new architecture."""
+    return {
+        "prs": prs or [],
+        "state": state,
+        "closing_commit": closing_commit,
+    }
 
-    @patch("update_leaderboard.get_closing_pr")
+
+def _make_gathered_pr(
+    author="contributor",
+    author_avatar="https://avatar.example.com/a.png",
+    pr_url="https://github.com/org/proj/pull/10",
+    state="open",
+    merged=False,
+    merged_at=None,
+    created_at=None,
+    has_closing_keyword=True,
+    within_deadline=True,
+    merge_commit_sha=None,
+    number=10,
+):
+    """Build a PR dict matching gather_issue_prs output."""
+    now = datetime.now(timezone.utc)
+    if created_at is None:
+        created_at = (now - timedelta(hours=2)).isoformat()
+    return {
+        "number": number,
+        "author": author,
+        "author_avatar": author_avatar,
+        "pr_url": pr_url,
+        "state": state,
+        "merged": merged,
+        "merged_at": merged_at,
+        "created_at": created_at,
+        "merge_commit_sha": merge_commit_sha,
+        "has_closing_keyword": has_closing_keyword,
+        "within_deadline": within_deadline,
+        "body": "Closes #1" if has_closing_keyword else "",
+    }
+
+
+class TestProcessWeek:
+    """Tests for the process_week function (new architecture)."""
+
+    @patch("update_leaderboard.gather_issue_prs")
     @patch("update_leaderboard.check_issue_still_open")
-    def test_already_credited_issue_gets_closed_flag(self, mock_open, mock_pr):
-        """Already credited issues are marked closed=True without API calls."""
+    def test_already_credited_issue_gets_closed_flag(
+        self, mock_open, mock_gather
+    ):
+        """Already credited issues are marked closed without API calls."""
         issue = _make_issue()
         key = "org/proj#1"
         scores = _make_scores(credited=[key])
         week = _make_week_data({"gfi": [issue]})
 
-        result = process_week("2026-W11", week, scores)
+        credits, events, _ = process_week("2026-W11", week, scores)
 
-        assert result == []
-        assert len(week["issues"]["gfi"]) == 1
+        assert credits == []
+        assert events == []
         assert week["issues"]["gfi"][0]["closed"] is True
         mock_open.assert_not_called()
-        mock_pr.assert_not_called()
+        mock_gather.assert_not_called()
 
-    @patch("update_leaderboard.has_linked_pr", return_value=False)
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_open_within_window_skipped(self, mock_open, mock_pr, _mock_lpr):
-        """Open issue within 7-day window is skipped."""
+    @patch("update_leaderboard.gather_issue_prs", return_value=_bundle())
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
+    def test_open_within_window_skipped(self, mock_open, mock_gather):
+        """Open issue within 7-day window is skipped (no credit)."""
         listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
         week = _make_week_data({"gfi": [issue]})
-        mock_open.return_value = True
 
-        result = process_week("2026-W11", week, scores)
+        credits, events, _ = process_week("2026-W11", week, scores)
 
-        assert result == []
+        assert credits == []
         assert "org/proj#1" not in scores["credited_issues"]
-        mock_pr.assert_not_called()
 
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.has_pending_pr")
-    @patch("update_leaderboard.check_issue_still_open")
+    @patch("update_leaderboard.gather_issue_prs", return_value=_bundle())
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
     def test_open_past_window_no_pr_gets_closed_flag(
-        self, mock_open, mock_pending, mock_pr
+        self, mock_open, mock_gather
     ):
-        """Open issue past 7-day window with no PR is marked closed=True."""
+        """Open issue past 7-day window with no PR is marked closed."""
         listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
         week = _make_week_data({"gfi": [issue]})
-        mock_open.return_value = True
-        mock_pending.return_value = False
 
-        result = process_week("2026-W11", week, scores)
+        credits, events, _ = process_week("2026-W11", week, scores)
 
-        assert result == []
-        assert len(week["issues"]["gfi"]) == 1
+        assert credits == []
         assert week["issues"]["gfi"][0].get("closed") is True
         assert "org/proj#1" not in scores["credited_issues"]
-        mock_pr.assert_not_called()
 
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.has_pending_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_open_past_window_with_pr_kept(
-        self, mock_open, mock_pending, mock_pr
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
+    def test_open_past_window_with_pending_pr_kept(
+        self, mock_open, mock_gather
     ):
-        """Open issue past 7-day window with a pending PR is kept."""
+        """Open issue past window with a qualifying pending PR is kept."""
         listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
         week = _make_week_data({"gfi": [issue]})
-        mock_open.return_value = True
-        mock_pending.return_value = True
+        mock_gather.return_value = [
+            _make_gathered_pr(state="open", merged=False)
+        ]
 
-        result = process_week("2026-W11", week, scores)
+        credits, events, _ = process_week("2026-W11", week, scores)
 
-        assert result == []
-        assert len(week["issues"]["gfi"]) == 1
-        assert "org/proj#1" not in scores["credited_issues"]
-        mock_pr.assert_not_called()
+        assert credits == []
+        assert issue.get("has_pr") is True
+        assert not issue.get("closed")
 
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_closed_no_pr_gets_closed_flag(self, mock_open, mock_pr):
-        """Closed issue with no closing PR is marked closed=True."""
+    @patch(
+        "update_leaderboard.gather_issue_prs",
+        return_value=_bundle(state="closed"),
+    )
+    @patch("update_leaderboard.check_issue_still_open", return_value=False)
+    def test_closed_no_pr_gets_closed_flag(self, mock_open, mock_gather):
+        """Closed issue with no qualifying PR is marked closed."""
         issue = _make_issue()
         scores = _make_scores()
         week = _make_week_data({"bug": [issue]})
-        mock_open.return_value = False
-        mock_pr.return_value = None
 
-        result = process_week("2026-W11", week, scores)
+        credits, events, _ = process_week("2026-W11", week, scores)
 
-        assert result == []
+        assert credits == []
+        assert issue.get("closed") is True
         assert "org/proj#1" not in scores["credited_issues"]
-        assert len(week["issues"]["bug"]) == 1
-        assert week["issues"]["bug"][0].get("closed") is True
 
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=False)
     def test_closed_pr_opened_too_late_gets_closed_flag(
-        self, mock_open, mock_pr
+        self, mock_open, mock_gather
     ):
-        """PR opened after 7-day window marks issue closed=True."""
+        """PR opened after the 7-day window does not credit."""
         listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
         week = _make_week_data({"hard": [issue]})
-        mock_open.return_value = False
 
         late_created = (
             datetime.now(timezone.utc) - timedelta(days=1)
         ).isoformat()
-        mock_pr.return_value = _make_pr(created_at=late_created)
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                state="closed",
+                merged=True,
+                merged_at=datetime.now(timezone.utc).isoformat(),
+                created_at=late_created,
+                within_deadline=False,
+            )
+        ]
 
-        result = process_week("2026-W11", week, scores)
+        credits, events, _ = process_week("2026-W11", week, scores)
 
-        assert result == []
-        assert len(week["issues"]["hard"]) == 1
-        assert week["issues"]["hard"][0].get("closed") is True
+        assert credits == []
+        assert issue.get("closed") is True
         assert "org/proj#1" not in scores["credited_issues"]
 
-    @patch("update_leaderboard.arena_week_id")
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_valid_pr_awards_points(self, mock_open, mock_pr, mock_week_id):
-        """Valid PR awards points and creates player entry."""
+    @patch("update_leaderboard.arena_week_id", return_value="2026-W12")
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=False)
+    def test_valid_pr_awards_points(
+        self, mock_open, mock_gather, mock_week_id
+    ):
+        """Valid merged PR credits author and creates player entry."""
         listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
         week = _make_week_data({"bug": [issue]})
-        mock_open.return_value = False
 
         pr_created = (
             datetime.now(timezone.utc) - timedelta(days=2)
         ).isoformat()
-        mock_pr.return_value = _make_pr(
-            author="hero",
-            avatar="https://avatar.example.com/hero.png",
-            created_at=pr_created,
-        )
-        mock_week_id.return_value = "2026-W12"
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="hero",
+                author_avatar="https://avatar.example.com/hero.png",
+                state="closed",
+                merged=True,
+                merged_at=datetime.now(timezone.utc).isoformat(),
+                created_at=pr_created,
+            )
+        ]
 
-        result = process_week("2026-W11", week, scores)
+        credits, events, _ = process_week("2026-W11", week, scores)
 
-        assert len(result) == 1
-        credit = result[0]
+        assert len(credits) == 1
+        credit = credits[0]
         assert credit["author"] == "hero"
         assert credit["pts"] == 2
         assert credit["issue"] == "org/proj#1"
@@ -653,24 +417,21 @@ class TestProcessWeek:
 
         player = scores["players"]["hero"]
         assert player["total_points"] == 2
-        assert player["avatar_url"] == ("https://avatar.example.com/hero.png")
         assert len(player["contributions"]) == 1
-        contrib = player["contributions"][0]
-        assert contrib["week"] == "2026-W11"
-        assert contrib["points"] == 2
-
         assert "org/proj#1" in scores["credited_issues"]
-        assert len(week["issues"]["bug"]) == 1
-        assert week["issues"]["bug"][0].get("closed") is True
+        assert issue.get("closed") is True
         assert "hero" in scores["weekly"]["2026-W12"]
 
-    @patch("update_leaderboard.arena_week_id")
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_valid_pr_updates_existing_player(
-        self, mock_open, mock_pr, mock_week_id
+        event_types = [e["type"] for e in events]
+        assert "first_merge" in event_types
+
+    @patch("update_leaderboard.arena_week_id", return_value="2026-W12")
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=False)
+    def test_additional_merge_event_for_returning_contributor(
+        self, mock_open, mock_gather, mock_week_id
     ):
-        """Valid PR updates an existing player's points."""
+        """Returning contributor (already flagged) gets additional_merge."""
         listed = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
         issue = _make_issue(number=5, listed_at=listed)
         existing_player = {
@@ -685,34 +446,39 @@ class TestProcessWeek:
                     "credited_at": "ts",
                 }
             ],
+            "discussion_node_id": "D_existing",
+            "notified": {"first_merge": True},
         }
         scores = _make_scores(players={"hero": existing_player})
         week = _make_week_data({"hard": [issue]})
-        mock_open.return_value = False
-
         pr_created = (
             datetime.now(timezone.utc) - timedelta(days=1)
         ).isoformat()
-        mock_pr.return_value = _make_pr(
-            author="hero",
-            avatar="https://new.png",
-            created_at=pr_created,
-        )
-        mock_week_id.return_value = "2026-W12"
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="hero",
+                author_avatar="https://new.png",
+                state="closed",
+                merged=True,
+                merged_at=datetime.now(timezone.utc).isoformat(),
+                created_at=pr_created,
+            )
+        ]
 
-        result = process_week("2026-W11", week, scores)
+        credits, events, _ = process_week("2026-W11", week, scores)
 
-        assert len(result) == 1
+        assert len(credits) == 1
         player = scores["players"]["hero"]
         assert player["total_points"] == 7
-        assert player["avatar_url"] == "https://new.png"
-        assert len(player["contributions"]) == 2
+        event_types = [e["type"] for e in events]
+        assert "additional_merge" in event_types
+        assert "first_merge" not in event_types
 
-    @patch("update_leaderboard.arena_week_id")
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
+    @patch("update_leaderboard.arena_week_id", return_value="2026-W12")
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=False)
     def test_multiple_categories_processed(
-        self, mock_open, mock_pr, mock_week_id
+        self, mock_open, mock_gather, mock_week_id
     ):
         """Issues from multiple categories are all processed."""
         listed = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
@@ -726,137 +492,88 @@ class TestProcessWeek:
                 "hard": [],
             }
         )
-        mock_open.return_value = False
-
         pr_created = (
             datetime.now(timezone.utc) - timedelta(days=1)
         ).isoformat()
-        mock_pr.side_effect = [
-            _make_pr(
-                author="alice",
-                created_at=pr_created,
-            ),
-            _make_pr(
-                author="bob",
-                created_at=pr_created,
-            ),
+        now_iso = datetime.now(timezone.utc).isoformat()
+        mock_gather.side_effect = [
+            [
+                _make_gathered_pr(
+                    author="alice",
+                    state="closed",
+                    merged=True,
+                    created_at=pr_created,
+                    merged_at=now_iso,
+                )
+            ],
+            [
+                _make_gathered_pr(
+                    author="bob",
+                    state="closed",
+                    merged=True,
+                    created_at=pr_created,
+                    merged_at=now_iso,
+                )
+            ],
         ]
-        mock_week_id.return_value = "2026-W12"
 
-        result = process_week("2026-W11", week, scores)
+        credits, events, _ = process_week("2026-W11", week, scores)
 
-        assert len(result) == 2
-        authors = {c["author"] for c in result}
+        assert len(credits) == 2
+        authors = {c["author"] for c in credits}
         assert authors == {"alice", "bob"}
+        pts_by_author = {c["author"]: c["pts"] for c in credits}
+        assert pts_by_author == {"alice": 1, "bob": 2}
 
-        assert result[0]["pts"] == 1  # gfi
-        assert result[1]["pts"] == 2  # bug
-
-    @patch("update_leaderboard.has_pending_pr")
-    @patch("update_leaderboard.has_linked_pr", return_value=False)
-    @patch("update_leaderboard.get_closing_pr")
+    @patch("update_leaderboard.arena_week_id", return_value="2026-W12")
+    @patch("update_leaderboard.gather_issue_prs")
     @patch("update_leaderboard.check_issue_still_open")
-    def test_has_pending_pr_not_called_within_window(
-        self, mock_open, _mock_pr, _mock_lpr, mock_pending
-    ):
-        """has_pending_pr is not called when issue is within 7-day window."""
-        listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
-        issue = _make_issue(listed_at=listed)
-        scores = _make_scores()
-        week = _make_week_data({"gfi": [issue]})
-        mock_open.return_value = True
-
-        process_week("2026-W11", week, scores)
-
-        mock_pending.assert_not_called()
-
-    @patch("update_leaderboard.has_pending_pr")
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_has_pending_pr_not_called_when_issue_closed(
-        self, mock_open, mock_pr, mock_pending
-    ):
-        """has_pending_pr is not called when the issue is already closed."""
-        listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
-        issue = _make_issue(listed_at=listed)
-        scores = _make_scores()
-        week = _make_week_data({"gfi": [issue]})
-        mock_open.return_value = False
-        mock_pr.return_value = None
-
-        process_week("2026-W11", week, scores)
-
-        mock_pending.assert_not_called()
-
-    @patch("update_leaderboard.has_pending_pr")
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_open_past_window_merged_without_close_gets_closed_flag(
-        self, mock_open, mock_closing_pr, mock_pending
-    ):
-        """Open past window with merged-without-close PR is marked closed."""
-        listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
-        issue = _make_issue(listed_at=listed)
-        scores = _make_scores()
-        week = _make_week_data({"gfi": [issue]})
-        mock_open.return_value = True
-        mock_pending.return_value = (
-            False  # has_pending_pr: merged PR doesn't count
-        )
-
-        process_week("2026-W11", week, scores)
-
-        assert len(week["issues"]["gfi"]) == 1
-        assert week["issues"]["gfi"][0].get("closed") is True
-        assert "org/proj#1" not in scores["credited_issues"]
-
-    @patch("update_leaderboard.arena_week_id")
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.has_pending_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_pending_pr_tracked_then_eventually_credited(
-        self, mock_open, mock_pending, mock_pr, mock_week_id
+    def test_pending_pr_tracked_then_credited(
+        self, mock_open, mock_gather, mock_week_id
     ):
         """Issue kept via pending PR on run 1 is credited on run 2."""
         listed = (datetime.now(timezone.utc) - timedelta(days=20)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
         week = _make_week_data({"bug": [issue]})
-        mock_week_id.return_value = "2026-W12"
 
-        # Run 1: issue open past window but has a pending PR — kept
         mock_open.return_value = True
-        mock_pending.return_value = True
-
-        result1 = process_week("2026-W11", week, scores)
-
-        assert result1 == []
-        assert len(week["issues"]["bug"]) == 1  # still tracked
-
-        # Run 2: issue is now closed, PR was opened within window — credited
-        mock_open.return_value = False
         pr_created = (
             datetime.now(timezone.utc) - timedelta(days=18)
-        ).isoformat()  # within 7-day window from listing
-        mock_pr.return_value = _make_pr(author="hero", created_at=pr_created)
+        ).isoformat()
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="hero",
+                state="open",
+                merged=False,
+                created_at=pr_created,
+            )
+        ]
+        credits1, _, _ = process_week("2026-W11", week, scores)
+        assert credits1 == []
 
-        result2 = process_week("2026-W11", week, scores)
-
-        assert len(result2) == 1
-        assert result2[0]["author"] == "hero"
-        assert result2[0]["pts"] == 2
-        assert len(week["issues"]["bug"]) == 1
-        assert week["issues"]["bug"][0].get("closed") is True
+        mock_open.return_value = False
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="hero",
+                state="closed",
+                merged=True,
+                merged_at=datetime.now(timezone.utc).isoformat(),
+                created_at=pr_created,
+            )
+        ]
+        credits2, events2, _ = process_week("2026-W11", week, scores)
+        assert len(credits2) == 1
+        assert credits2[0]["author"] == "hero"
+        assert credits2[0]["pts"] == 2
         assert "org/proj#1" in scores["credited_issues"]
 
-    @patch("update_leaderboard.has_pending_pr")
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
+    @patch("update_leaderboard.gather_issue_prs", return_value=_bundle())
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
     def test_missing_listed_at_falls_back_to_fetched_at(
-        self, mock_open, mock_pr, mock_pending
+        self, mock_open, mock_gather
     ):
-        """Issue without listed_at uses fetched_at to compute the deadline."""
-        # fetched_at is 10 days ago → deadline 3 days ago → past window
+        """Issue without listed_at uses fetched_at to compute deadline."""
         fetched_at = (
             datetime.now(timezone.utc) - timedelta(days=10)
         ).isoformat()
@@ -864,55 +581,45 @@ class TestProcessWeek:
             "owner": "org",
             "repo": "proj",
             "number": 1,
-            # no listed_at
         }
         scores = _make_scores()
         week = _make_week_data({"gfi": [issue]}, fetched_at=fetched_at)
-        mock_open.return_value = True
-        mock_pending.return_value = False
 
         process_week("2026-W11", week, scores)
 
-        assert len(week["issues"]["gfi"]) == 1
-        assert week["issues"]["gfi"][0].get("closed") is True
-        mock_pending.assert_called_once()
+        assert issue.get("closed") is True
 
-    @patch("update_leaderboard.has_pending_pr")
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_two_issues_one_with_pr_one_without(
-        self, mock_open, mock_pr, mock_pending
-    ):
-        """Pending-PR issue stays open; issue without PR gets closed=True."""
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
+    def test_two_issues_one_with_pr_one_without(self, mock_open, mock_gather):
+        """Pending-PR issue stays open; issue without PR gets closed."""
         listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
         issue_a = _make_issue(number=1, listed_at=listed)
         issue_b = _make_issue(number=2, listed_at=listed)
         scores = _make_scores()
         week = _make_week_data({"gfi": [issue_a, issue_b]})
-        mock_open.return_value = True
-        mock_pending.side_effect = [
-            True,
-            False,
-        ]  # issue_a kept open, issue_b marked closed
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=9)
+        ).isoformat()
+        mock_gather.side_effect = [
+            [
+                _make_gathered_pr(
+                    state="open", merged=False, created_at=pr_created
+                )
+            ],
+            [],
+        ]
 
         process_week("2026-W11", week, scores)
 
-        remaining = week["issues"]["gfi"]
-        assert len(remaining) == 2
-        assert remaining[0]["number"] == 1
-        assert not remaining[0].get("closed")
-        assert remaining[1]["number"] == 2
-        assert remaining[1].get("closed") is True
+        assert issue_a.get("has_pr") is True
+        assert not issue_a.get("closed")
+        assert issue_b.get("closed") is True
 
-    @patch("update_leaderboard.has_linked_pr", return_value=False)
-    @patch("update_leaderboard.has_pending_pr")
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_deadline_exactly_now_not_expired(
-        self, mock_open, mock_pr, mock_pending, _mock_lpr
-    ):
-        """Deadline in the future is not expired (strict > check)."""
-        # listed_at = now - 7 days + 1 min → deadline = now + 1 min
+    @patch("update_leaderboard.gather_issue_prs", return_value=_bundle())
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
+    def test_deadline_exactly_now_not_expired(self, mock_open, mock_gather):
+        """Deadline still in the future is not expired."""
         listed = (
             datetime.now(timezone.utc)
             - timedelta(days=7)
@@ -921,130 +628,539 @@ class TestProcessWeek:
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
         week = _make_week_data({"gfi": [issue]})
-        mock_open.return_value = True
 
         process_week("2026-W11", week, scores)
 
-        # has_pending_pr must NOT have been called — within window
-        mock_pending.assert_not_called()
-        assert len(week["issues"]["gfi"]) == 1
+        assert not issue.get("closed")
 
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.has_pending_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_expired_issue_gets_closed_flag(
-        self, mock_open, mock_pending, mock_pr
+    @patch("update_leaderboard.arena_week_id", return_value="2026-W12")
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=False)
+    def test_rank_up_event_emitted(self, mock_open, mock_gather, mock_week_id):
+        """Crossing a rank threshold emits a rank_up event."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores(
+            players={
+                "hero": {
+                    "total_points": 99,
+                    "avatar_url": "https://h.png",
+                    "contributions": [],
+                    "discussion_node_id": "D_1",
+                    "notified": {"first_merge": True},
+                }
+            }
+        )
+        week = _make_week_data({"bug": [issue]})
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=2)
+        ).isoformat()
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="hero",
+                state="closed",
+                merged=True,
+                merged_at=datetime.now(timezone.utc).isoformat(),
+                created_at=pr_created,
+            )
+        ]
+
+        credits, events, _ = process_week("2026-W11", week, scores)
+
+        assert len(credits) == 1
+        rank_up = [e for e in events if e["type"] == "rank_up"]
+        assert len(rank_up) == 1
+        assert rank_up[0]["new_rank"] == "Bug Slayer"
+
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
+    def test_welcome_event_for_new_pr_author(self, mock_open, mock_gather):
+        """First qualifying PR by new author produces a welcome event."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"gfi": [issue]})
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=1)
+        ).isoformat()
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="newcomer",
+                state="open",
+                merged=False,
+                created_at=pr_created,
+            )
+        ]
+
+        credits, events, _ = process_week("2026-W11", week, scores)
+
+        welcomes = [e for e in events if e["type"] == "welcome"]
+        assert len(welcomes) == 1
+        assert welcomes[0]["username"] == "newcomer"
+
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
+    def test_no_welcome_if_already_welcomed(self, mock_open, mock_gather):
+        """Existing welcomed user does not get a duplicate welcome."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores(
+            players={
+                "veteran": {
+                    "total_points": 1,
+                    "avatar_url": "https://v.png",
+                    "contributions": [],
+                    "discussion_node_id": "D_known",
+                }
+            }
+        )
+        week = _make_week_data({"gfi": [issue]})
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=1)
+        ).isoformat()
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="veteran",
+                state="open",
+                merged=False,
+                created_at=pr_created,
+            )
+        ]
+
+        credits, events, _ = process_week("2026-W11", week, scores)
+
+        welcomes = [e for e in events if e["type"] == "welcome"]
+        assert welcomes == []
+
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
+    def test_pr_closed_event_for_welcomed_user(self, mock_open, mock_gather):
+        """Closed-unmerged PR by welcomed user emits pr_closed event."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores(
+            players={
+                "alice": {
+                    "total_points": 1,
+                    "avatar_url": "https://a.png",
+                    "contributions": [],
+                    "discussion_node_id": "D_a",
+                }
+            }
+        )
+        week = _make_week_data({"gfi": [issue]})
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=1)
+        ).isoformat()
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="alice",
+                state="closed",
+                merged=False,
+                created_at=pr_created,
+            )
+        ]
+
+        credits, events, _ = process_week("2026-W11", week, scores)
+
+        closed = [e for e in events if e["type"] == "pr_closed"]
+        assert len(closed) == 1
+        assert closed[0]["username"] == "alice"
+
+        # Simulate dispatcher marking the event notified on success.
+        scores["players"]["alice"].setdefault("notified", {}).setdefault(
+            "pr_closed", []
+        ).append(closed[0]["pr_url"])
+
+        credits2, events2, _ = process_week("2026-W11", week, scores)
+        assert [e for e in events2 if e["type"] == "pr_closed"] == []
+
+    @patch("update_leaderboard.arena_week_id", return_value="2026-W12")
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=False)
+    def test_issue_closed_event_for_losing_welcomed_user(
+        self, mock_open, mock_gather, mock_week_id
     ):
-        """Open issue past 7-day window with no PR gets closed=True flag."""
+        """Losing PR author (with welcome thread) gets issue_closed event."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores(
+            players={
+                "loser": {
+                    "total_points": 1,
+                    "avatar_url": "https://l.png",
+                    "contributions": [],
+                    "discussion_node_id": "D_l",
+                }
+            }
+        )
+        week = _make_week_data({"bug": [issue]})
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=2)
+        ).isoformat()
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="winner",
+                state="closed",
+                merged=True,
+                merged_at=datetime.now(timezone.utc).isoformat(),
+                created_at=pr_created,
+            ),
+            _make_gathered_pr(
+                author="loser",
+                state="open",
+                merged=False,
+                pr_url="https://github.com/org/proj/pull/11",
+                created_at=pr_created,
+            ),
+        ]
+
+        credits, events, _ = process_week("2026-W11", week, scores)
+
+        assert len(credits) == 1
+        assert credits[0]["author"] == "winner"
+        closed_evs = [e for e in events if e["type"] == "issue_closed"]
+        assert len(closed_evs) == 1
+        assert closed_evs[0]["username"] == "loser"
+
+    @patch("update_leaderboard.arena_week_id", return_value="2026-W12")
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open")
+    def test_issue_closed_suppressed_if_pr_closed_already_sent(
+        self, mock_open, mock_gather, mock_week_id
+    ):
+        """User who already got pr_closed for an issue skips issue_closed."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores(
+            players={
+                "loser": {
+                    "total_points": 1,
+                    "avatar_url": "https://l.png",
+                    "contributions": [],
+                    "discussion_node_id": "D_l",
+                }
+            }
+        )
+        week = _make_week_data({"bug": [issue]})
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=2)
+        ).isoformat()
+
+        # Run 1: loser's PR is closed-unmerged while issue still open
+        mock_open.return_value = True
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="loser",
+                state="closed",
+                merged=False,
+                pr_url="https://github.com/org/proj/pull/11",
+                created_at=pr_created,
+            )
+        ]
+        _, events1, _ = process_week("2026-W11", week, scores)
+        assert any(
+            e["type"] == "pr_closed" and e["username"] == "loser"
+            for e in events1
+        )
+        # Simulate dispatcher marking pr_closed + pr_closed_issues on success.
+        loser_notified = scores["players"]["loser"].setdefault("notified", {})
+        loser_notified.setdefault("pr_closed", []).append(
+            "https://github.com/org/proj/pull/11"
+        )
+        loser_notified.setdefault("pr_closed_issues", []).append("org/proj#1")
+
+        # Run 2: a winning PR merges and closes the issue
+        mock_open.return_value = False
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="winner",
+                state="closed",
+                merged=True,
+                merged_at=datetime.now(timezone.utc).isoformat(),
+                pr_url="https://github.com/org/proj/pull/10",
+                created_at=pr_created,
+            ),
+            _make_gathered_pr(
+                author="loser",
+                state="closed",
+                merged=False,
+                pr_url="https://github.com/org/proj/pull/11",
+                created_at=pr_created,
+            ),
+        ]
+        issue["closed"] = False  # reset from run 1
+        _, events2, _ = process_week("2026-W11", week, scores)
+
+        closed_evs = [
+            e
+            for e in events2
+            if e["type"] == "issue_closed" and e["username"] == "loser"
+        ]
+        assert closed_evs == []
+
+    @patch("update_leaderboard.arena_week_id", return_value="2026-W12")
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=False)
+    def test_merged_pr_without_keyword_gets_no_credit(
+        self, mock_open, mock_gather, mock_week_id
+    ):
+        """Merged PR lacking a closing keyword does not award points."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"bug": [issue]})
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=2)
+        ).isoformat()
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="drive-by",
+                state="closed",
+                merged=True,
+                merged_at=datetime.now(timezone.utc).isoformat(),
+                created_at=pr_created,
+                has_closing_keyword=False,
+            )
+        ]
+
+        credits, events, _ = process_week("2026-W11", week, scores)
+
+        assert credits == []
+        assert "org/proj#1" not in scores["credited_issues"]
+        assert issue.get("closed") is True
+        assert [e for e in events if e["type"] == "first_merge"] == []
+
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
+    def test_closed_unmerged_pr_does_not_welcome(self, mock_open, mock_gather):
+        """A closed-unmerged PR must not retro-welcome its author."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"gfi": [issue]})
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=1)
+        ).isoformat()
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="driveby",
+                state="closed",
+                merged=False,
+                created_at=pr_created,
+            )
+        ]
+
+        credits, events, _ = process_week("2026-W11", week, scores)
+
+        welcomes = [e for e in events if e["type"] == "welcome"]
+        assert welcomes == []
+        # Also no pr_closed (no prior welcome thread to comment on)
+        assert [e for e in events if e["type"] == "pr_closed"] == []
+
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
+    def test_shared_welcomed_in_run_prevents_duplicate_across_weeks(
+        self, mock_open, mock_gather
+    ):
+        """welcomed_in_run shared across weeks dedupes same-user welcome."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
+        issue_a = _make_issue(number=1, listed_at=listed)
+        issue_b = _make_issue(number=2, listed_at=listed)
+        scores = _make_scores()
+        week_a = _make_week_data({"gfi": [issue_a]})
+        week_b = _make_week_data({"gfi": [issue_b]})
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=1)
+        ).isoformat()
+        mock_gather.side_effect = [
+            [
+                _make_gathered_pr(
+                    author="newcomer",
+                    state="open",
+                    merged=False,
+                    pr_url="https://github.com/org/proj/pull/10",
+                    created_at=pr_created,
+                )
+            ],
+            [
+                _make_gathered_pr(
+                    author="newcomer",
+                    state="open",
+                    merged=False,
+                    pr_url="https://github.com/org/proj/pull/11",
+                    created_at=pr_created,
+                )
+            ],
+        ]
+        shared: set = set()
+        _, ev_a, _ = process_week("2026-W10", week_a, scores, shared)
+        _, ev_b, _ = process_week("2026-W11", week_b, scores, shared)
+
+        welcomes = [
+            e
+            for e in (ev_a + ev_b)
+            if e["type"] == "welcome" and e["username"] == "newcomer"
+        ]
+        assert len(welcomes) == 1
+
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
+    def test_same_run_welcome_allows_pr_closed(self, mock_open, mock_gather):
+        """A user welcomed this run still receives pr_closed in same run."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
+        issue_a = _make_issue(number=1, listed_at=listed)
+        issue_b = _make_issue(number=2, listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"gfi": [issue_a, issue_b]})
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=1)
+        ).isoformat()
+        # Issue A: user opens a fresh PR (welcome).
+        # Issue B: user already has a closed-unmerged PR (pr_closed).
+        mock_gather.side_effect = [
+            [
+                _make_gathered_pr(
+                    author="user",
+                    state="open",
+                    merged=False,
+                    pr_url="https://github.com/org/proj/pull/10",
+                    created_at=pr_created,
+                )
+            ],
+            [
+                _make_gathered_pr(
+                    author="user",
+                    state="closed",
+                    merged=False,
+                    pr_url="https://github.com/org/proj/pull/11",
+                    created_at=pr_created,
+                )
+            ],
+        ]
+
+        _, events, _ = process_week("2026-W11", week, scores)
+
+        types = [e["type"] for e in events]
+        assert "welcome" in types
+        assert "pr_closed" in types
+
+    @patch("update_leaderboard.arena_week_id", return_value="2026-W12")
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=False)
+    def test_ambiguous_multiple_merged_prs_no_credit(
+        self, mock_open, mock_gather, mock_week_id
+    ):
+        """Multiple merged PRs with no commit-id match → no credit."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"bug": [issue]})
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=2)
+        ).isoformat()
+        now_iso = datetime.now(timezone.utc).isoformat()
+        # Two merged PRs, neither matching a closing commit — find_closing_pr
+        # returns None to avoid misattribution.
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="a",
+                state="closed",
+                merged=True,
+                merged_at=now_iso,
+                pr_url="https://github.com/org/proj/pull/10",
+                created_at=pr_created,
+                merge_commit_sha="deadbeef",
+            ),
+            _make_gathered_pr(
+                author="b",
+                state="closed",
+                merged=True,
+                merged_at=now_iso,
+                pr_url="https://github.com/org/proj/pull/11",
+                created_at=pr_created,
+                merge_commit_sha="cafebabe",
+            ),
+        ]
+
+        with patch("update_leaderboard.github_get") as mock_github_get:
+            # timeline returns no closed event with commit_id → None
+            resp = type("R", (), {})()
+            resp.json = lambda: []
+            resp.raise_for_status = lambda: None
+            resp.links = {}
+            mock_github_get.return_value = resp
+
+            credits, events, _ = process_week("2026-W11", week, scores)
+
+        assert credits == []
+        assert "org/proj#1" not in scores["credited_issues"]
+        assert issue.get("closed") is True
+
+    @patch("update_leaderboard.arena_week_id", return_value="2026-W12")
+    @patch("update_leaderboard.gather_issue_prs")
+    @patch("update_leaderboard.check_issue_still_open", return_value=False)
+    def test_auto_welcome_when_merged_without_prior_welcome(
+        self, mock_open, mock_gather, mock_week_id
+    ):
+        """Merged PR from a user never seen open → auto-welcome emitted."""
+        listed = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
+        issue = _make_issue(listed_at=listed)
+        scores = _make_scores()
+        week = _make_week_data({"bug": [issue]})
+        pr_created = (
+            datetime.now(timezone.utc) - timedelta(days=2)
+        ).isoformat()
+        mock_gather.return_value = [
+            _make_gathered_pr(
+                author="speedy",
+                state="closed",
+                merged=True,
+                merged_at=datetime.now(timezone.utc).isoformat(),
+                created_at=pr_created,
+            )
+        ]
+
+        credits, events, _ = process_week("2026-W11", week, scores)
+
+        types = [e["type"] for e in events]
+        assert "welcome" in types
+        assert "first_merge" in types
+        # Welcome must come before first_merge in the emitted order for
+        # the same user so the dispatcher creates the thread first.
+        w_idx = next(
+            i
+            for i, e in enumerate(events)
+            if e["type"] == "welcome" and e["username"] == "speedy"
+        )
+        m_idx = next(
+            i
+            for i, e in enumerate(events)
+            if e["type"] == "first_merge" and e["username"] == "speedy"
+        )
+        assert w_idx < m_idx
+        welcome_ev = events[w_idx]
+        assert welcome_ev["pr_url"] == ("https://github.com/org/proj/pull/10")
+        assert welcome_ev["issue_key"] == "org/proj#1"
+
+    @patch("update_leaderboard.gather_issue_prs", return_value=None)
+    @patch("update_leaderboard.check_issue_still_open", return_value=True)
+    def test_timeline_fetch_failure_preserves_state(
+        self, mock_open, mock_gather
+    ):
+        """gather_issue_prs returning None → process_week skips the issue."""
         listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
         issue = _make_issue(listed_at=listed)
         scores = _make_scores()
         week = _make_week_data({"gfi": [issue]})
-        mock_open.return_value = True
-        mock_pending.return_value = False
 
-        process_week("2026-W11", week, scores)
+        credits, events, _ = process_week("2026-W11", week, scores)
 
-        assert len(week["issues"]["gfi"]) == 1
-        assert week["issues"]["gfi"][0].get("closed") is True
-        assert "org/proj#1" not in scores["credited_issues"]
-
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_late_pr_issue_gets_closed_flag(self, mock_open, mock_pr):
-        """Issue with a PR opened after the 7-day window gets closed=True."""
-        listed = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
-        issue = _make_issue(listed_at=listed)
-        scores = _make_scores()
-        week = _make_week_data({"bug": [issue]})
-        mock_open.return_value = False
-        late_created = (
-            datetime.now(timezone.utc) - timedelta(days=1)
-        ).isoformat()
-        mock_pr.return_value = _make_pr(created_at=late_created)
-
-        process_week("2026-W11", week, scores)
-
-        assert len(week["issues"]["bug"]) == 1
-        assert week["issues"]["bug"][0].get("closed") is True
-        assert "org/proj#1" not in scores["credited_issues"]
-
-    @patch("update_leaderboard.get_closing_pr")
-    @patch("update_leaderboard.check_issue_still_open")
-    def test_no_closing_pr_gets_closed_flag(self, mock_open, mock_pr):
-        """Issue closed on GitHub with no qualifying PR gets closed=True."""
-        issue = _make_issue()
-        scores = _make_scores()
-        week = _make_week_data({"hard": [issue]})
-        mock_open.return_value = False
-        mock_pr.return_value = None
-
-        process_week("2026-W11", week, scores)
-
-        assert len(week["issues"]["hard"]) == 1
-        assert week["issues"]["hard"][0].get("closed") is True
-        assert "org/proj#1" not in scores["credited_issues"]
-
-    @patch("update_leaderboard.arena_week_id")
-    def test_old_week_closed_issues_purged(self, mock_week_id):
-        """Cleanup step removes closed=True issues from non-current weeks."""
-        mock_week_id.return_value = "2026-W12"
-
-        # W11: one closed issue, one open (pending PR)
-        closed_issue = _make_issue(number=1)
-        closed_issue["closed"] = True
-        open_issue = _make_issue(number=2)
-
-        state = {
-            "2026-W11": {
-                "fetched_at": "2026-03-13T17:00:00+00:00",
-                "issues": {
-                    "gfi": [closed_issue, open_issue],
-                    "bug": [],
-                    "hard": [],
-                },
-            }
-        }
-
-        # Apply the same cleanup logic used in main()
-        current_week = mock_week_id.return_value
-        for week_id, week_data in state.items():
-            if week_id == current_week:
-                continue
-            for cat_issues in week_data["issues"].values():
-                cat_issues[:] = [i for i in cat_issues if not i.get("closed")]
-
-        remaining = state["2026-W11"]["issues"]["gfi"]
-        assert len(remaining) == 1
-        assert remaining[0]["number"] == 2
-        assert not remaining[0].get("closed")
-
-    @patch("update_leaderboard.arena_week_id")
-    def test_current_week_closed_issues_not_purged(self, mock_week_id):
-        """Cleanup step keeps closed=True issues in the current week."""
-        mock_week_id.return_value = "2026-W12"
-
-        closed_issue = _make_issue(number=1)
-        closed_issue["closed"] = True
-
-        state = {
-            "2026-W12": {
-                "fetched_at": "2026-03-20T17:00:00+00:00",
-                "issues": {"gfi": [closed_issue], "bug": [], "hard": []},
-            }
-        }
-
-        # Apply the same cleanup logic used in main()
-        current_week = mock_week_id.return_value
-        for week_id, week_data in state.items():
-            if week_id == current_week:
-                continue
-            for cat_issues in week_data["issues"].values():
-                cat_issues[:] = [i for i in cat_issues if not i.get("closed")]
-
-        remaining = state["2026-W12"]["issues"]["gfi"]
-        assert len(remaining) == 1
-        assert remaining[0].get("closed") is True
+        assert credits == []
+        assert events == []
+        # Must not mark closed on a timeline glitch.
+        assert not issue.get("closed")
+        assert not issue.get("has_pr")
 
 
 # ── build_leaderboard_md ─────────────────────────────────────

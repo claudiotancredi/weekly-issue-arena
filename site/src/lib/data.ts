@@ -204,7 +204,9 @@ export function getPlayer(username: string): PlayerData | null {
 
 export function getAllPlayerUsernames(): string[] {
   const scores = getScores();
-  return Object.keys(scores.players);
+  return Object.entries(scores.players)
+    .filter(([, data]) => data.total_points > 0)
+    .map(([username]) => username);
 }
 
 export function getWeeklyContributors(): string[] {
@@ -235,7 +237,9 @@ export function getRepoCount(): number {
 
 export function getTotalContributors(): number {
   const scores = getScores();
-  return Object.keys(scores.players).length;
+  return Object.values(scores.players).filter(
+    (p) => p.total_points > 0,
+  ).length;
 }
 
 export function getPlayerWeeklyActivity(

@@ -108,7 +108,7 @@ No registration. No sign-ups. Just open source.
 | 8 | [[Bug] No Asset is shown on UI](https://github.com/astronomer/astronomer-cosmos/issues/2417) | [astronomer/astronomer-cosmos](https://github.com/astronomer/astronomer-cosmos) | 🟢 Open |
 | 9 | [Deno.exit terminates entire process when using run --watch](https://github.com/denoland/deno/issues/7590) | [denoland/deno](https://github.com/denoland/deno) | 🟢 Open |
 | 10 | [dns: abnormal DNS resolve retry behaviour](https://github.com/envoyproxy/envoy/issues/44469) | [envoyproxy/envoy](https://github.com/envoyproxy/envoy) | 🟢 Open |
-| 11 | [Bug: BodyPartReader.filename and read() leak bytearray in...](https://github.com/aio-libs/aiohttp/issues/12404) | [aio-libs/aiohttp](https://github.com/aio-libs/aiohttp) | 🟢 Open |
+| 11 | [Bug: BodyPartReader.filename and read() leak bytearray in...](https://github.com/aio-libs/aiohttp/issues/12404) | [aio-libs/aiohttp](https://github.com/aio-libs/aiohttp) | 🟡 PR Proposed |
 | 12 | [Should de-duplicate -isystem flags just like -I flags](https://github.com/mesonbuild/meson/issues/2155) | [mesonbuild/meson](https://github.com/mesonbuild/meson) | 🟢 Open |
 | 13 | [Invalid cached file leads to EOFError](https://github.com/numba/numba/issues/10434) | [numba/numba](https://github.com/numba/numba) | 🟢 Open |
 | 14 | [`test_softmax.py` does not test `argmax` and `latency` im...](https://github.com/fastmachinelearning/hls4ml/issues/1443) | [fastmachinelearning/hls4ml](https://github.com/fastmachinelearning/hls4ml) | 🟢 Open |

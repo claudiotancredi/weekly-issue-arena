@@ -57,7 +57,7 @@ No registration. No sign-ups. Just open source.
 *Contributors whose PRs were merged this week, regardless of leaderboard position.*
 
 <!-- MERGED-THIS-WEEK:START -->
-<a href="https://github.com/claudiotancredi"><img src="https://avatars.githubusercontent.com/u/64598512?v=4" width="48" height="48" style="border-radius:50%;" title="@claudiotancredi"/></a>
+*No merged contributions yet this week.*
 <!-- MERGED-THIS-WEEK:END -->
 
 ---

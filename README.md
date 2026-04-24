@@ -76,7 +76,7 @@ No registration. No sign-ups. Just open source.
 | 6 | [BENCH: fix disabled (broken) benchmarks](https://github.com/scipy/scipy/issues/19389) | [scipy/scipy](https://github.com/scipy/scipy) | 🟢 Open |
 | 7 | [Add `ElementHandle.isInViewport()`](https://github.com/grafana/k6/issues/4423) | [grafana/k6](https://github.com/grafana/k6) | 🟢 Open |
 | 8 | [Feature request: Support EKS Pod Identity / ECS container...](https://github.com/GreptimeTeam/greptimedb/issues/7755) | [GreptimeTeam/greptimedb](https://github.com/GreptimeTeam/greptimedb) | 🟢 Open |
-| 9 | [Agent Compaction](https://github.com/dimensionalOS/dimos/issues/1899) | [dimensionalOS/dimos](https://github.com/dimensionalOS/dimos) | 🟢 Open |
+| 9 | [Agent Compaction](https://github.com/dimensionalOS/dimos/issues/1899) | [dimensionalOS/dimos](https://github.com/dimensionalOS/dimos) | 🟡 PR Proposed |
 | 10 | [Add() should not add ignored files by default](https://github.com/go-git/go-git/issues/1679) | [go-git/go-git](https://github.com/go-git/go-git) | 🟢 Open |
 | 11 | [Update goupnp dependency](https://github.com/tailscale/tailscale/issues/7436) | [tailscale/tailscale](https://github.com/tailscale/tailscale) | 🟢 Open |
 | 12 | [[Feature] Overlap Spec Support](https://github.com/sgl-project/sglang/issues/11762) | [sgl-project/sglang](https://github.com/sgl-project/sglang) | 🟢 Open |

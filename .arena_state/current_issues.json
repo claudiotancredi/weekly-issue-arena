@@ -204,7 +204,7 @@
     "repo": "llama_index",
     "number": 20071,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {

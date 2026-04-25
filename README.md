@@ -101,7 +101,7 @@ No registration. No sign-ups. Just open source.
 | 1 | [Poor performance of table vectorizer at serving time](https://github.com/skrub-data/skrub/issues/1372) | [skrub-data/skrub](https://github.com/skrub-data/skrub) | 🟢 Open |
 | 2 | [[Bug]: INA219 detected as SHT21, fails to initialize.](https://github.com/meshtastic/firmware/issues/10110) | [meshtastic/firmware](https://github.com/meshtastic/firmware) | 🟢 Open |
 | 3 | [Native resampler fails for (some) GEO readers due to redu...](https://github.com/pytroll/satpy/issues/2476) | [pytroll/satpy](https://github.com/pytroll/satpy) | 🟢 Open |
-| 4 | [Post-merge test failure on main (cd4d776)](https://github.com/opensearch-project/OpenSearch-Dashboards/issues/11821) | [opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards) | 🟢 Open |
+| 4 | [Post-merge test failure on main (cd4d776)](https://github.com/opensearch-project/OpenSearch-Dashboards/issues/11821) | [opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards) | 🔴 Closed |
 | 5 | [CLI shows ctrl characters for up/down/left/right keys](https://github.com/nullclaw/nullclaw/issues/865) | [nullclaw/nullclaw](https://github.com/nullclaw/nullclaw) | 🟢 Open |
 | 6 | [[Bug]: AgentOutput tool_calls is list of tool call result...](https://github.com/run-llama/llama_index/issues/20071) | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🟡 PR Proposed |
 | 7 | [There is no gap between CTA button `Join now/Start now` o...](https://github.com/brave/brave-browser/issues/37465) | [brave/brave-browser](https://github.com/brave/brave-browser) | 🟢 Open |

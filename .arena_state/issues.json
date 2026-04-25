@@ -399,7 +399,8 @@
           "author": "github-actions[bot]",
           "listed_at": "2026-04-24T17:00:00+00:00",
           "language": "TypeScript",
-          "has_pr": false
+          "has_pr": false,
+          "closed": true
         },
         {
           "number": 865,

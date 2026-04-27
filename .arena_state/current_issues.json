@@ -244,7 +244,7 @@
     "repo": "aiohttp",
     "number": 12404,
     "category": "bug",
-    "has_pr": true,
+    "has_pr": false,
     "language": "Python"
   },
   {

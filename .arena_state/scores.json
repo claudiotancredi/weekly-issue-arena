@@ -126,7 +126,15 @@
       "total_points": 0,
       "avatar_url": "https://avatars.githubusercontent.com/u/213856599?v=4",
       "contributions": [],
-      "discussion_node_id": "D_kwDONjXVVM4Al8C-"
+      "discussion_node_id": "D_kwDONjXVVM4Al8C-",
+      "notified": {
+        "pr_closed": [
+          "https://github.com/aio-libs/aiohttp/pull/12424"
+        ],
+        "pr_closed_issues": [
+          "aio-libs/aiohttp#12404"
+        ]
+      }
     },
     "iamMihirT": {
       "total_points": 0,

@@ -20,7 +20,7 @@
     "repo": "posthog",
     "number": 18673,
     "category": "gfi",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {

@@ -70,7 +70,7 @@ No registration. No sign-ups. Just open source.
 |---|-------|------------|--------|
 | 1 | [PINNs Lorenz param estim : kink in the output path of the...](https://github.com/SciML/NeuralPDE.jl/issues/284) | [SciML/NeuralPDE.jl](https://github.com/SciML/NeuralPDE.jl) | 🟢 Open |
 | 2 | [[Feature] Unsloth/ Whisper/Large-v3 - S3 Bucket connection](https://github.com/unslothai/unsloth/issues/4539) | [unslothai/unsloth](https://github.com/unslothai/unsloth) | 🟢 Open |
-| 3 | [OpenAPI spec doesn't match implementation](https://github.com/PostHog/posthog/issues/18673) | [PostHog/posthog](https://github.com/PostHog/posthog) | 🟢 Open |
+| 3 | [OpenAPI spec doesn't match implementation](https://github.com/PostHog/posthog/issues/18673) | [PostHog/posthog](https://github.com/PostHog/posthog) | 🟡 PR Proposed |
 | 4 | [[FEATURE] Integrate LLM Compresor](https://github.com/PrunaAI/pruna/issues/367) | [PrunaAI/pruna](https://github.com/PrunaAI/pruna) | 🟢 Open |
 | 5 | [Open location of synce document](https://github.com/nextcloud/desktop/issues/8970) | [nextcloud/desktop](https://github.com/nextcloud/desktop) | 🟢 Open |
 | 6 | [BENCH: fix disabled (broken) benchmarks](https://github.com/scipy/scipy/issues/19389) | [scipy/scipy](https://github.com/scipy/scipy) | 🟢 Open |

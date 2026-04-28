@@ -129,7 +129,8 @@
       "discussion_node_id": "D_kwDONjXVVM4Al8C-",
       "notified": {
         "pr_closed": [
-          "https://github.com/aio-libs/aiohttp/pull/12424"
+          "https://github.com/aio-libs/aiohttp/pull/12424",
+          "https://github.com/aio-libs/aiohttp/pull/12434"
         ],
         "pr_closed_issues": [
           "aio-libs/aiohttp#12404"

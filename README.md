@@ -86,7 +86,7 @@ No registration. No sign-ups. Just open source.
 | 16 | [[BE] Deduplicate auto_functionalized and triton_kernel_wr...](https://github.com/pytorch/pytorch/issues/133443) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🟢 Open |
 | 17 | [NuGet package is missing README](https://github.com/lightgbm-org/LightGBM/issues/6827) | [lightgbm-org/LightGBM](https://github.com/lightgbm-org/LightGBM) | 🟢 Open |
 | 18 | [Bergamot-based machine translation](https://github.com/WeblateOrg/weblate/issues/13106) | [WeblateOrg/weblate](https://github.com/WeblateOrg/weblate) | 🟢 Open |
-| 19 | ["zero-trust" security / networking for training jobs](https://github.com/kubeflow/trainer/issues/2341) | [kubeflow/trainer](https://github.com/kubeflow/trainer) | 🟢 Open |
+| 19 | ["zero-trust" security / networking for training jobs](https://github.com/kubeflow/trainer/issues/2341) | [kubeflow/trainer](https://github.com/kubeflow/trainer) | 🔴 Closed |
 | 20 | [Enhancement Suggestion: Qwen2.5-VL Support in vLLM 0.7.2](https://github.com/bytedance/UI-TARS-desktop/issues/86) | [bytedance/UI-TARS-desktop](https://github.com/bytedance/UI-TARS-desktop) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 

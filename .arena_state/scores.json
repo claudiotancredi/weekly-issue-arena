@@ -150,10 +150,21 @@
       "discussion_node_id": "D_kwDONjXVVM4Al85r"
     },
     "webjunkie": {
-      "total_points": 0,
+      "total_points": 1,
       "avatar_url": "https://avatars.githubusercontent.com/u/59713?v=4",
-      "contributions": [],
-      "discussion_node_id": "D_kwDONjXVVM4Al-za"
+      "contributions": [
+        {
+          "issue": "PostHog/posthog#18673",
+          "points": 1,
+          "pr_url": "https://github.com/PostHog/posthog/pull/56432",
+          "week": "2026-W17",
+          "credited_at": "2026-04-29T07:58:00.977485+00:00"
+        }
+      ],
+      "discussion_node_id": "D_kwDONjXVVM4Al-za",
+      "notified": {
+        "first_merge": true
+      }
     },
     "jeevanbhatta": {
       "total_points": 0,
@@ -170,7 +181,8 @@
     "biomejs/biome#9062",
     "pandas-dev/pandas#62421",
     "hashicorp/nomad#27758",
-    "xdslproject/xdsl#5634"
+    "xdslproject/xdsl#5634",
+    "PostHog/posthog#18673"
   ],
   "weekly": {
     "2026-W10": [
@@ -190,6 +202,9 @@
     ],
     "2026-W16": [
       "claudiotancredi"
+    ],
+    "2026-W17": [
+      "webjunkie"
     ]
   }
 }

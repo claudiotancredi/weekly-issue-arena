@@ -43,7 +43,8 @@ No registration. No sign-ups. Just open source.
 | 5 | <div align="center"><a href="https://github.com/claudiotancredi"><img src="https://avatars.githubusercontent.com/u/64598512?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@claudiotancredi](https://github.com/claudiotancredi)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 | 6 | <div align="center"><a href="https://github.com/mvanhorn"><img src="https://avatars.githubusercontent.com/u/455140?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@mvanhorn](https://github.com/mvanhorn)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 | 7 | <div align="center"><a href="https://github.com/Netail"><img src="https://avatars.githubusercontent.com/u/11695769?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@Netail](https://github.com/Netail)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 8 | <div align="center"><a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@zzstoatzz](https://github.com/zzstoatzz)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 8 | <div align="center"><a href="https://github.com/webjunkie"><img src="https://avatars.githubusercontent.com/u/59713?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@webjunkie](https://github.com/webjunkie)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 9 | <div align="center"><a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@zzstoatzz](https://github.com/zzstoatzz)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 <!-- LEADERBOARD:END -->
 
 > In case of a tie, contributors are listed alphabetically by GitHub username.
@@ -57,7 +58,7 @@ No registration. No sign-ups. Just open source.
 *Contributors whose PRs were merged this week, regardless of leaderboard position.*
 
 <!-- MERGED-THIS-WEEK:START -->
-*No merged contributions yet this week.*
+<a href="https://github.com/webjunkie"><img src="https://avatars.githubusercontent.com/u/59713?v=4" width="48" height="48" style="border-radius:50%;" title="@webjunkie"/></a>
 <!-- MERGED-THIS-WEEK:END -->
 
 ---
@@ -70,7 +71,7 @@ No registration. No sign-ups. Just open source.
 |---|-------|------------|--------|
 | 1 | [PINNs Lorenz param estim : kink in the output path of the...](https://github.com/SciML/NeuralPDE.jl/issues/284) | [SciML/NeuralPDE.jl](https://github.com/SciML/NeuralPDE.jl) | 🟢 Open |
 | 2 | [[Feature] Unsloth/ Whisper/Large-v3 - S3 Bucket connection](https://github.com/unslothai/unsloth/issues/4539) | [unslothai/unsloth](https://github.com/unslothai/unsloth) | 🟢 Open |
-| 3 | [OpenAPI spec doesn't match implementation](https://github.com/PostHog/posthog/issues/18673) | [PostHog/posthog](https://github.com/PostHog/posthog) | 🟡 PR Proposed |
+| 3 | [OpenAPI spec doesn't match implementation](https://github.com/PostHog/posthog/issues/18673) | [PostHog/posthog](https://github.com/PostHog/posthog) | 🔴 Closed |
 | 4 | [[FEATURE] Integrate LLM Compresor](https://github.com/PrunaAI/pruna/issues/367) | [PrunaAI/pruna](https://github.com/PrunaAI/pruna) | 🟢 Open |
 | 5 | [Open location of synce document](https://github.com/nextcloud/desktop/issues/8970) | [nextcloud/desktop](https://github.com/nextcloud/desktop) | 🟢 Open |
 | 6 | [BENCH: fix disabled (broken) benchmarks](https://github.com/scipy/scipy/issues/19389) | [scipy/scipy](https://github.com/scipy/scipy) | 🟢 Open |

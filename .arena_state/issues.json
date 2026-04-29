@@ -103,7 +103,8 @@
           "author": "mdj-goathamster",
           "listed_at": "2026-04-24T17:00:00+00:00",
           "language": "Python",
-          "has_pr": true
+          "has_pr": true,
+          "closed": true
         },
         {
           "number": 367,

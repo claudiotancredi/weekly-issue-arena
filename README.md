@@ -104,7 +104,7 @@ No registration. No sign-ups. Just open source.
 | 3 | [Native resampler fails for (some) GEO readers due to redu...](https://github.com/pytroll/satpy/issues/2476) | [pytroll/satpy](https://github.com/pytroll/satpy) | 🟢 Open |
 | 4 | [Post-merge test failure on main (cd4d776)](https://github.com/opensearch-project/OpenSearch-Dashboards/issues/11821) | [opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards) | 🔴 Closed |
 | 5 | [CLI shows ctrl characters for up/down/left/right keys](https://github.com/nullclaw/nullclaw/issues/865) | [nullclaw/nullclaw](https://github.com/nullclaw/nullclaw) | 🟢 Open |
-| 6 | [[Bug]: AgentOutput tool_calls is list of tool call result...](https://github.com/run-llama/llama_index/issues/20071) | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🟡 PR Proposed |
+| 6 | [[Bug]: AgentOutput tool_calls is list of tool call result...](https://github.com/run-llama/llama_index/issues/20071) | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🔴 Closed |
 | 7 | [There is no gap between CTA button `Join now/Start now` o...](https://github.com/brave/brave-browser/issues/37465) | [brave/brave-browser](https://github.com/brave/brave-browser) | 🟢 Open |
 | 8 | [[Bug] No Asset is shown on UI](https://github.com/astronomer/astronomer-cosmos/issues/2417) | [astronomer/astronomer-cosmos](https://github.com/astronomer/astronomer-cosmos) | 🟢 Open |
 | 9 | [Deno.exit terminates entire process when using run --watch](https://github.com/denoland/deno/issues/7590) | [denoland/deno](https://github.com/denoland/deno) | 🟢 Open |

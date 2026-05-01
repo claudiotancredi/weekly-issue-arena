@@ -69,26 +69,26 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [PINNs Lorenz param estim : kink in the output path of the...](https://github.com/SciML/NeuralPDE.jl/issues/284) | [SciML/NeuralPDE.jl](https://github.com/SciML/NeuralPDE.jl) | 🟢 Open |
-| 2 | [[Feature] Unsloth/ Whisper/Large-v3 - S3 Bucket connection](https://github.com/unslothai/unsloth/issues/4539) | [unslothai/unsloth](https://github.com/unslothai/unsloth) | 🟢 Open |
-| 3 | [OpenAPI spec doesn't match implementation](https://github.com/PostHog/posthog/issues/18673) | [PostHog/posthog](https://github.com/PostHog/posthog) | 🔴 Closed |
-| 4 | [[FEATURE] Integrate LLM Compresor](https://github.com/PrunaAI/pruna/issues/367) | [PrunaAI/pruna](https://github.com/PrunaAI/pruna) | 🟢 Open |
-| 5 | [Open location of synce document](https://github.com/nextcloud/desktop/issues/8970) | [nextcloud/desktop](https://github.com/nextcloud/desktop) | 🟢 Open |
-| 6 | [BENCH: fix disabled (broken) benchmarks](https://github.com/scipy/scipy/issues/19389) | [scipy/scipy](https://github.com/scipy/scipy) | 🟢 Open |
-| 7 | [Add `ElementHandle.isInViewport()`](https://github.com/grafana/k6/issues/4423) | [grafana/k6](https://github.com/grafana/k6) | 🟢 Open |
-| 8 | [Feature request: Support EKS Pod Identity / ECS container...](https://github.com/GreptimeTeam/greptimedb/issues/7755) | [GreptimeTeam/greptimedb](https://github.com/GreptimeTeam/greptimedb) | 🟢 Open |
-| 9 | [Agent Compaction](https://github.com/dimensionalOS/dimos/issues/1899) | [dimensionalOS/dimos](https://github.com/dimensionalOS/dimos) | 🟡 PR Proposed |
-| 10 | [Add() should not add ignored files by default](https://github.com/go-git/go-git/issues/1679) | [go-git/go-git](https://github.com/go-git/go-git) | 🟢 Open |
-| 11 | [Update goupnp dependency](https://github.com/tailscale/tailscale/issues/7436) | [tailscale/tailscale](https://github.com/tailscale/tailscale) | 🟢 Open |
-| 12 | [[Feature] Overlap Spec Support](https://github.com/sgl-project/sglang/issues/11762) | [sgl-project/sglang](https://github.com/sgl-project/sglang) | 🟢 Open |
-| 13 | [Position in Collection not supported by SectionList ](https://github.com/facebook/react-native/issues/30974) | [facebook/react-native](https://github.com/facebook/react-native) | 🟢 Open |
-| 14 | [[OTHER] chmod-calculator enhancement](https://github.com/CorentinTh/it-tools/issues/522) | [CorentinTh/it-tools](https://github.com/CorentinTh/it-tools) | 🟢 Open |
-| 15 | [AttributeError on detail view of Markdown custom field wi...](https://github.com/nautobot/nautobot/issues/6327) | [nautobot/nautobot](https://github.com/nautobot/nautobot) | 🟢 Open |
-| 16 | [[BE] Deduplicate auto_functionalized and triton_kernel_wr...](https://github.com/pytorch/pytorch/issues/133443) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🟢 Open |
-| 17 | [NuGet package is missing README](https://github.com/lightgbm-org/LightGBM/issues/6827) | [lightgbm-org/LightGBM](https://github.com/lightgbm-org/LightGBM) | 🟢 Open |
-| 18 | [Bergamot-based machine translation](https://github.com/WeblateOrg/weblate/issues/13106) | [WeblateOrg/weblate](https://github.com/WeblateOrg/weblate) | 🟢 Open |
-| 19 | ["zero-trust" security / networking for training jobs](https://github.com/kubeflow/trainer/issues/2341) | [kubeflow/trainer](https://github.com/kubeflow/trainer) | 🔴 Closed |
-| 20 | [Enhancement Suggestion: Qwen2.5-VL Support in vLLM 0.7.2](https://github.com/bytedance/UI-TARS-desktop/issues/86) | [bytedance/UI-TARS-desktop](https://github.com/bytedance/UI-TARS-desktop) | 🟢 Open |
+| 1 | [Feature Request to add chatwoot directly install in plesk...](https://github.com/chatwoot/chatwoot/issues/6911) | [chatwoot/chatwoot](https://github.com/chatwoot/chatwoot) | 🟢 Open |
+| 2 | [OGCSOS Harvester doesn't support SOS 2.0](https://github.com/geonetwork/core-geonetwork/issues/2686) | [geonetwork/core-geonetwork](https://github.com/geonetwork/core-geonetwork) | 🟢 Open |
+| 3 | [【API超频】使用官方最新代码（4.9.3.2）在 Vercel 部署时，构建阶段大量触发 Notion API ...](https://github.com/tangly1024/NotionNext/issues/3890) | [tangly1024/NotionNext](https://github.com/tangly1024/NotionNext) | 🟢 Open |
+| 4 | [meson init -l d --type library creates invalid dub.json file](https://github.com/mesonbuild/meson/issues/15726) | [mesonbuild/meson](https://github.com/mesonbuild/meson) | 🟢 Open |
+| 5 | [I think it's time to add Moldova to your validator](https://github.com/validatorjs/validator.js/issues/1915) | [validatorjs/validator.js](https://github.com/validatorjs/validator.js) | 🟢 Open |
+| 6 | [Distrib: Build xonsh shell binary using Nuitka](https://github.com/xonsh/xonsh/issues/2895) | [xonsh/xonsh](https://github.com/xonsh/xonsh) | 🟢 Open |
+| 7 | [Sparse reservoir topologies](https://github.com/SciML/ReservoirComputing.jl/issues/268) | [SciML/ReservoirComputing.jl](https://github.com/SciML/ReservoirComputing.jl) | 🟢 Open |
+| 8 | [Provide warning when app's `minSdk` version is less than ...](https://github.com/flutter/flutter/issues/185278) | [flutter/flutter](https://github.com/flutter/flutter) | 🟢 Open |
+| 9 | [Deprecate `assert_isclose` and `assert_allclose`](https://github.com/Cambridge-ICCS/FTorch/issues/517) | [Cambridge-ICCS/FTorch](https://github.com/Cambridge-ICCS/FTorch) | 🟢 Open |
+| 10 | [Add view support to the Rest Catalog](https://github.com/apache/iceberg-python/issues/818) | [apache/iceberg-python](https://github.com/apache/iceberg-python) | 🟢 Open |
+| 11 | [Clone from Github doesn't rank org repos highly](https://github.com/microsoft/vscode/issues/141754) | [microsoft/vscode](https://github.com/microsoft/vscode) | 🟢 Open |
+| 12 | [Deprecate `ShiftedBetaGeoModelIndividual`](https://github.com/pymc-labs/pymc-marketing/issues/2157) | [pymc-labs/pymc-marketing](https://github.com/pymc-labs/pymc-marketing) | 🟢 Open |
+| 13 | [Add "Stop after current song ends" playback option](https://github.com/TeamNewPipe/NewPipe/issues/12726) | [TeamNewPipe/NewPipe](https://github.com/TeamNewPipe/NewPipe) | 🟢 Open |
+| 14 | [Parent: LLM Vulnerability Scanner Feature Parity with Gar...](https://github.com/microsoft/PyRIT/issues/511) | [microsoft/PyRIT](https://github.com/microsoft/PyRIT) | 🟢 Open |
+| 15 | [[FEATURE]Include the Chinese LLM spark ai (xun fei xing huo)](https://github.com/FlowiseAI/Flowise/issues/1348) | [FlowiseAI/Flowise](https://github.com/FlowiseAI/Flowise) | 🟢 Open |
+| 16 | [As a User, I would like to be able to run the Docker cont...](https://github.com/spotDL/spotify-downloader/issues/1729) | [spotDL/spotify-downloader](https://github.com/spotDL/spotify-downloader) | 🟢 Open |
+| 17 | [Align the bulk and single execution actions for both Repl...](https://github.com/kestra-io/kestra/issues/8337) | [kestra-io/kestra](https://github.com/kestra-io/kestra) | 🟢 Open |
+| 18 | [[feat][graph_workflow][parallel branch execution]](https://github.com/kyegomez/swarms/issues/1559) | [kyegomez/swarms](https://github.com/kyegomez/swarms) | 🟢 Open |
+| 19 | [Document classes implementing the `GeometryFactory` inter...](https://github.com/CesiumGS/cesium/issues/12827) | [CesiumGS/cesium](https://github.com/CesiumGS/cesium) | 🟢 Open |
+| 20 | [Add Flower Baseline: TraceFL](https://github.com/flwrlabs/flower/issues/5245) | [flwrlabs/flower](https://github.com/flwrlabs/flower) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -99,20 +99,20 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Poor performance of table vectorizer at serving time](https://github.com/skrub-data/skrub/issues/1372) | [skrub-data/skrub](https://github.com/skrub-data/skrub) | 🟢 Open |
-| 2 | [[Bug]: INA219 detected as SHT21, fails to initialize.](https://github.com/meshtastic/firmware/issues/10110) | [meshtastic/firmware](https://github.com/meshtastic/firmware) | 🟢 Open |
-| 3 | [Native resampler fails for (some) GEO readers due to redu...](https://github.com/pytroll/satpy/issues/2476) | [pytroll/satpy](https://github.com/pytroll/satpy) | 🟢 Open |
-| 4 | [Post-merge test failure on main (cd4d776)](https://github.com/opensearch-project/OpenSearch-Dashboards/issues/11821) | [opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards) | 🔴 Closed |
-| 5 | [CLI shows ctrl characters for up/down/left/right keys](https://github.com/nullclaw/nullclaw/issues/865) | [nullclaw/nullclaw](https://github.com/nullclaw/nullclaw) | 🟢 Open |
-| 6 | [[Bug]: AgentOutput tool_calls is list of tool call result...](https://github.com/run-llama/llama_index/issues/20071) | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🔴 Closed |
-| 7 | [There is no gap between CTA button `Join now/Start now` o...](https://github.com/brave/brave-browser/issues/37465) | [brave/brave-browser](https://github.com/brave/brave-browser) | 🟢 Open |
-| 8 | [[Bug] No Asset is shown on UI](https://github.com/astronomer/astronomer-cosmos/issues/2417) | [astronomer/astronomer-cosmos](https://github.com/astronomer/astronomer-cosmos) | 🟢 Open |
-| 9 | [Deno.exit terminates entire process when using run --watch](https://github.com/denoland/deno/issues/7590) | [denoland/deno](https://github.com/denoland/deno) | 🟢 Open |
-| 10 | [dns: abnormal DNS resolve retry behaviour](https://github.com/envoyproxy/envoy/issues/44469) | [envoyproxy/envoy](https://github.com/envoyproxy/envoy) | 🟢 Open |
-| 11 | [Bug: BodyPartReader.filename and read() leak bytearray in...](https://github.com/aio-libs/aiohttp/issues/12404) | [aio-libs/aiohttp](https://github.com/aio-libs/aiohttp) | 🟢 Open |
-| 12 | [Should de-duplicate -isystem flags just like -I flags](https://github.com/mesonbuild/meson/issues/2155) | [mesonbuild/meson](https://github.com/mesonbuild/meson) | 🟢 Open |
-| 13 | [Invalid cached file leads to EOFError](https://github.com/numba/numba/issues/10434) | [numba/numba](https://github.com/numba/numba) | 🟢 Open |
-| 14 | [`test_softmax.py` does not test `argmax` and `latency` im...](https://github.com/fastmachinelearning/hls4ml/issues/1443) | [fastmachinelearning/hls4ml](https://github.com/fastmachinelearning/hls4ml) | 🟢 Open |
+| 1 | [[BUG] OAuth Authentication Errors](https://github.com/sipeed/picoclaw/issues/2602) | [sipeed/picoclaw](https://github.com/sipeed/picoclaw) | 🟢 Open |
+| 2 | [sometimes slips throws exception on Ctrl+c instead fo shu...](https://github.com/stratosphereips/StratosphereLinuxIPS/issues/1847) | [stratosphereips/StratosphereLinuxIPS](https://github.com/stratosphereips/StratosphereLinuxIPS) | 🟢 Open |
+| 3 | [Reviewer role does not grant visibility without publish/v...](https://github.com/geonetwork/core-geonetwork/issues/9251) | [geonetwork/core-geonetwork](https://github.com/geonetwork/core-geonetwork) | 🟢 Open |
+| 4 | [[Bug]:StudioManager在关闭的时候，未关闭所有资源](https://github.com/agentscope-ai/agentscope-java/issues/828) | [agentscope-ai/agentscope-java](https://github.com/agentscope-ai/agentscope-java) | 🟢 Open |
+| 5 | [[Bug]: model with GGUF quant type failed to run](https://github.com/vllm-project/vllm/issues/41475) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟢 Open |
+| 6 | [[BUG] Struggling to reproduce GSM8K GRPO Training on B200...](https://github.com/pytorch/rl/issues/3141) | [pytorch/rl](https://github.com/pytorch/rl) | 🟢 Open |
+| 7 | [exception in the https anomaly detector module](https://github.com/stratosphereips/StratosphereLinuxIPS/issues/1873) | [stratosphereips/StratosphereLinuxIPS](https://github.com/stratosphereips/StratosphereLinuxIPS) | 🟢 Open |
+| 8 | [QuantVGG classifier: incorrect in_features (512*7*7) afte...](https://github.com/Xilinx/brevitas/issues/1500) | [Xilinx/brevitas](https://github.com/Xilinx/brevitas) | 🟢 Open |
+| 9 | [Pruning callback causes GPU memory leak when used iterati...](https://github.com/Lightning-AI/pytorch-lightning/issues/8542) | [Lightning-AI/pytorch-lightning](https://github.com/Lightning-AI/pytorch-lightning) | 🟢 Open |
+| 10 | [Why do other words come out when using search?](https://github.com/meilisearch/meilisearch/issues/5811) | [meilisearch/meilisearch](https://github.com/meilisearch/meilisearch) | 🟢 Open |
+| 11 | [MudMenu no longer shows automatic scrollbar when items ov...](https://github.com/MudBlazor/MudBlazor/issues/13141) | [MudBlazor/MudBlazor](https://github.com/MudBlazor/MudBlazor) | 🟢 Open |
+| 12 | [ibis validation fails checks if column all nulls](https://github.com/unionai-oss/pandera/issues/2294) | [unionai-oss/pandera](https://github.com/unionai-oss/pandera) | 🟢 Open |
+| 13 | [Avoid connecting to FTP server on import](https://github.com/AlertaDengue/PySUS/issues/242) | [AlertaDengue/PySUS](https://github.com/AlertaDengue/PySUS) | 🟢 Open |
+| 14 | [Message and Event dead link handling (`dev branch`)](https://github.com/augurlabs/augur/issues/2899) | [augurlabs/augur](https://github.com/augurlabs/augur) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -123,16 +123,16 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Huber Loss for HistGradientBoostingRegressor](https://github.com/scikit-learn/scikit-learn/issues/31542) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 1 | [[Bug]: Gouraud shading for `plt.tripcolor` is slightly off](https://github.com/matplotlib/matplotlib/issues/28769) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 | 2 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 3 | [RFC Improving guidance for common CI failures for new con...](https://github.com/scikit-learn/scikit-learn/issues/33594) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 4 | [Proposal: Add `cisd` function for argument in degrees](https://github.com/JuliaLang/julia/issues/60445) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |
-| 5 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 6 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 7 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 8 | [Unconsistent result when using sum or mean function on Co...](https://github.com/JuliaLang/julia/issues/15523) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |
+| 3 | [Unconsistent result when using sum or mean function on Co...](https://github.com/JuliaLang/julia/issues/15523) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |
+| 4 | [Improve tests by using global_random_seed fixture to make...](https://github.com/scikit-learn/scikit-learn/issues/22827) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 5 | [Cannot recover DBSCAN from memory-overuse](https://github.com/scikit-learn/scikit-learn/issues/31407) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 6 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 7 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 8 | [`complex` errors on nested arrays](https://github.com/JuliaLang/julia/issues/59462) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |
 | 9 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
-| 10 | [dynamic Node to support List-pop-like method and support ...](https://github.com/taichi-dev/taichi/issues/3270) | [taichi-dev/taichi](https://github.com/taichi-dev/taichi) | 🟢 Open |
+| 10 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

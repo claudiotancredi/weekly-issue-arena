@@ -58,7 +58,7 @@ No registration. No sign-ups. Just open source.
 *Contributors whose PRs were merged this week, regardless of leaderboard position.*
 
 <!-- MERGED-THIS-WEEK:START -->
-<a href="https://github.com/webjunkie"><img src="https://avatars.githubusercontent.com/u/59713?v=4" width="48" height="48" style="border-radius:50%;" title="@webjunkie"/></a>
+*No merged contributions yet this week.*
 <!-- MERGED-THIS-WEEK:END -->
 
 ---

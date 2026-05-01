@@ -109,7 +109,7 @@ No registration. No sign-ups. Just open source.
 | 8 | [QuantVGG classifier: incorrect in_features (512*7*7) afte...](https://github.com/Xilinx/brevitas/issues/1500) | [Xilinx/brevitas](https://github.com/Xilinx/brevitas) | 🟢 Open |
 | 9 | [Pruning callback causes GPU memory leak when used iterati...](https://github.com/Lightning-AI/pytorch-lightning/issues/8542) | [Lightning-AI/pytorch-lightning](https://github.com/Lightning-AI/pytorch-lightning) | 🟢 Open |
 | 10 | [Why do other words come out when using search?](https://github.com/meilisearch/meilisearch/issues/5811) | [meilisearch/meilisearch](https://github.com/meilisearch/meilisearch) | 🟢 Open |
-| 11 | [MudMenu no longer shows automatic scrollbar when items ov...](https://github.com/MudBlazor/MudBlazor/issues/13141) | [MudBlazor/MudBlazor](https://github.com/MudBlazor/MudBlazor) | 🟢 Open |
+| 11 | [MudMenu no longer shows automatic scrollbar when items ov...](https://github.com/MudBlazor/MudBlazor/issues/13141) | [MudBlazor/MudBlazor](https://github.com/MudBlazor/MudBlazor) | 🟡 PR Proposed |
 | 12 | [ibis validation fails checks if column all nulls](https://github.com/unionai-oss/pandera/issues/2294) | [unionai-oss/pandera](https://github.com/unionai-oss/pandera) | 🟢 Open |
 | 13 | [Avoid connecting to FTP server on import](https://github.com/AlertaDengue/PySUS/issues/242) | [AlertaDengue/PySUS](https://github.com/AlertaDengue/PySUS) | 🟢 Open |
 | 14 | [Message and Event dead link handling (`dev branch`)](https://github.com/augurlabs/augur/issues/2899) | [augurlabs/augur](https://github.com/augurlabs/augur) | 🟢 Open |

@@ -84,7 +84,7 @@
     "repo": "vscode",
     "number": 141754,
     "category": "gfi",
-    "has_pr": false,
+    "has_pr": true,
     "language": "TypeScript"
   },
   {
@@ -196,7 +196,7 @@
     "repo": "vllm",
     "number": 41475,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {

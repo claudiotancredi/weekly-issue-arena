@@ -103,7 +103,7 @@ No registration. No sign-ups. Just open source.
 | 2 | [sometimes slips throws exception on Ctrl+c instead fo shu...](https://github.com/stratosphereips/StratosphereLinuxIPS/issues/1847) | [stratosphereips/StratosphereLinuxIPS](https://github.com/stratosphereips/StratosphereLinuxIPS) | 🟢 Open |
 | 3 | [Reviewer role does not grant visibility without publish/v...](https://github.com/geonetwork/core-geonetwork/issues/9251) | [geonetwork/core-geonetwork](https://github.com/geonetwork/core-geonetwork) | 🟢 Open |
 | 4 | [[Bug]:StudioManager在关闭的时候，未关闭所有资源](https://github.com/agentscope-ai/agentscope-java/issues/828) | [agentscope-ai/agentscope-java](https://github.com/agentscope-ai/agentscope-java) | 🟢 Open |
-| 5 | [[Bug]: model with GGUF quant type failed to run](https://github.com/vllm-project/vllm/issues/41475) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟡 PR Proposed |
+| 5 | [[Bug]: model with GGUF quant type failed to run](https://github.com/vllm-project/vllm/issues/41475) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟢 Open |
 | 6 | [[BUG] Struggling to reproduce GSM8K GRPO Training on B200...](https://github.com/pytorch/rl/issues/3141) | [pytorch/rl](https://github.com/pytorch/rl) | 🟢 Open |
 | 7 | [exception in the https anomaly detector module](https://github.com/stratosphereips/StratosphereLinuxIPS/issues/1873) | [stratosphereips/StratosphereLinuxIPS](https://github.com/stratosphereips/StratosphereLinuxIPS) | 🟢 Open |
 | 8 | [QuantVGG classifier: incorrect in_features (512*7*7) afte...](https://github.com/Xilinx/brevitas/issues/1500) | [Xilinx/brevitas](https://github.com/Xilinx/brevitas) | 🟢 Open |

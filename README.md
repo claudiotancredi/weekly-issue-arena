@@ -72,7 +72,7 @@ No registration. No sign-ups. Just open source.
 | 1 | [Feature Request to add chatwoot directly install in plesk...](https://github.com/chatwoot/chatwoot/issues/6911) | [chatwoot/chatwoot](https://github.com/chatwoot/chatwoot) | 🟢 Open |
 | 2 | [OGCSOS Harvester doesn't support SOS 2.0](https://github.com/geonetwork/core-geonetwork/issues/2686) | [geonetwork/core-geonetwork](https://github.com/geonetwork/core-geonetwork) | 🟢 Open |
 | 3 | [【API超频】使用官方最新代码（4.9.3.2）在 Vercel 部署时，构建阶段大量触发 Notion API ...](https://github.com/tangly1024/NotionNext/issues/3890) | [tangly1024/NotionNext](https://github.com/tangly1024/NotionNext) | 🟢 Open |
-| 4 | [meson init -l d --type library creates invalid dub.json file](https://github.com/mesonbuild/meson/issues/15726) | [mesonbuild/meson](https://github.com/mesonbuild/meson) | 🟢 Open |
+| 4 | [meson init -l d --type library creates invalid dub.json file](https://github.com/mesonbuild/meson/issues/15726) | [mesonbuild/meson](https://github.com/mesonbuild/meson) | 🔴 Closed |
 | 5 | [I think it's time to add Moldova to your validator](https://github.com/validatorjs/validator.js/issues/1915) | [validatorjs/validator.js](https://github.com/validatorjs/validator.js) | 🟢 Open |
 | 6 | [Distrib: Build xonsh shell binary using Nuitka](https://github.com/xonsh/xonsh/issues/2895) | [xonsh/xonsh](https://github.com/xonsh/xonsh) | 🔴 Closed |
 | 7 | [Sparse reservoir topologies](https://github.com/SciML/ReservoirComputing.jl/issues/268) | [SciML/ReservoirComputing.jl](https://github.com/SciML/ReservoirComputing.jl) | 🟢 Open |

@@ -112,7 +112,7 @@ No registration. No sign-ups. Just open source.
 | 11 | [Blocks unload event delayed significantly (~30 min) in Ku...](https://github.com/gradio-app/gradio/issues/13347) | [gradio-app/gradio](https://github.com/gradio-app/gradio) | 🟢 Open |
 | 12 | [Multi-element schematic symbol cannot be placed on differ...](https://github.com/LibrePCB/LibrePCB/issues/827) | [LibrePCB/LibrePCB](https://github.com/LibrePCB/LibrePCB) | 🟢 Open |
 | 13 | [rocm multi-gpu defaults to single largest VRAM device](https://github.com/containers/ramalama/issues/2552) | [containers/ramalama](https://github.com/containers/ramalama) | 🟢 Open |
-| 14 | [[Translation] `ProviderInterface::read` is missing a PHPDoc](https://github.com/symfony/symfony/issues/64155) | [symfony/symfony](https://github.com/symfony/symfony) | 🟢 Open |
+| 14 | [[Translation] `ProviderInterface::read` is missing a PHPDoc](https://github.com/symfony/symfony/issues/64155) | [symfony/symfony](https://github.com/symfony/symfony) | 🟡 PR Proposed |
 <!-- ISSUES:BUGS:END -->
 
 </details>

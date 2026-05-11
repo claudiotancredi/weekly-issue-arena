@@ -615,7 +615,7 @@
           "author": "MatTheCat",
           "listed_at": "2026-05-08T17:00:00+00:00",
           "language": "PHP",
-          "has_pr": false
+          "has_pr": true
         }
       ],
       "hard": [

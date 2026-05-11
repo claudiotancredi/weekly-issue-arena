@@ -81,7 +81,7 @@ No registration. No sign-ups. Just open source.
 | 10 | [model_repository_manager.cc:1186] failed to load 'bert' v...](https://github.com/triton-inference-server/server/issues/7497) | [triton-inference-server/server](https://github.com/triton-inference-server/server) | 🟢 Open |
 | 11 | [Missing translations for Burmese (my)](https://github.com/symfony/symfony/issues/51897) | [symfony/symfony](https://github.com/symfony/symfony) | 🟢 Open |
 | 12 | [[feature]: Checking of HTML-Based Test Validation](https://github.com/keploy/keploy/issues/2528) | [keploy/keploy](https://github.com/keploy/keploy) | 🟢 Open |
-| 13 | [`text_search` error incorrectly reported as DataFusion error](https://github.com/spiceai/spiceai/issues/6880) | [spiceai/spiceai](https://github.com/spiceai/spiceai) | 🟢 Open |
+| 13 | [`text_search` error incorrectly reported as DataFusion error](https://github.com/spiceai/spiceai/issues/6880) | [spiceai/spiceai](https://github.com/spiceai/spiceai) | 🔴 Closed |
 | 14 | [[NEW TOOL] Markdown table generator](https://github.com/CorentinTh/it-tools/issues/542) | [CorentinTh/it-tools](https://github.com/CorentinTh/it-tools) | 🟢 Open |
 | 15 | [Kubernetes monitors should use the relabel component inte...](https://github.com/grafana/alloy/issues/888) | [grafana/alloy](https://github.com/grafana/alloy) | 🟢 Open |
 | 16 | [Position in Collection not supported by SectionList ](https://github.com/facebook/react-native/issues/30974) | [facebook/react-native](https://github.com/facebook/react-native) | 🟢 Open |

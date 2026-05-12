@@ -199,7 +199,15 @@
       "total_points": 0,
       "avatar_url": "https://avatars.githubusercontent.com/u/2910651?v=4",
       "contributions": [],
-      "discussion_node_id": "D_kwDONjXVVM4AmUUL"
+      "discussion_node_id": "D_kwDONjXVVM4AmUUL",
+      "notified": {
+        "pr_closed": [
+          "https://github.com/ousamabenyounes/symfony/pull/5"
+        ],
+        "pr_closed_issues": [
+          "symfony/symfony#64155"
+        ]
+      }
     }
   },
   "credited_issues": [

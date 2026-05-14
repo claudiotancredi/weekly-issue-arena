@@ -213,7 +213,15 @@
       "total_points": 0,
       "avatar_url": "https://avatars.githubusercontent.com/u/88168630?v=4",
       "contributions": [],
-      "discussion_node_id": "D_kwDONjXVVM4AmYmq"
+      "discussion_node_id": "D_kwDONjXVVM4AmYmq",
+      "notified": {
+        "pr_closed": [
+          "https://github.com/pytorch/pytorch/pull/183660"
+        ],
+        "pr_closed_issues": [
+          "pytorch/pytorch#182831"
+        ]
+      }
     }
   },
   "credited_issues": [

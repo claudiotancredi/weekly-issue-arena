@@ -284,7 +284,7 @@
     "repo": "pytorch",
     "number": 182831,
     "category": "hard",
-    "has_pr": true,
+    "has_pr": false,
     "language": "Python"
   },
   {

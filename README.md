@@ -124,7 +124,7 @@ No registration. No sign-ups. Just open source.
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [Feature Request:  Ability to get raw sql query](https://github.com/sequelize/sequelize/issues/2325) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |
-| 2 | [[Docathon] Document undocumented functions in `signal.md`...](https://github.com/pytorch/pytorch/issues/182831) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🟡 PR Proposed |
+| 2 | [[Docathon] Document undocumented functions in `signal.md`...](https://github.com/pytorch/pytorch/issues/182831) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🟢 Open |
 | 3 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 | 4 | [[Bug]: Gouraud shading for `plt.tripcolor` is slightly off](https://github.com/matplotlib/matplotlib/issues/28769) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 | 5 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |

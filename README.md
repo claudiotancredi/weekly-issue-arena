@@ -69,26 +69,26 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Improve documentation section on units](https://github.com/FlexMeasures/flexmeasures/issues/1676) | [FlexMeasures/flexmeasures](https://github.com/FlexMeasures/flexmeasures) | 🟢 Open |
-| 2 | [Time Series Support](https://github.com/torchgeo/torchgeo/issues/2382) | [torchgeo/torchgeo](https://github.com/torchgeo/torchgeo) | 🟢 Open |
-| 3 | [Support multiple control nets in the `StableDiffusionCont...](https://github.com/huggingface/diffusers/issues/8434) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 4 | [[BUG] <title>Incorrect data caclulation on status page](https://github.com/apache/hertzbeat/issues/3076) | [apache/hertzbeat](https://github.com/apache/hertzbeat) | 🟢 Open |
-| 5 | [NPCs don't attack when silenced, they stand still](https://github.com/azerothcore/azerothcore-wotlk/issues/4091) | [azerothcore/azerothcore-wotlk](https://github.com/azerothcore/azerothcore-wotlk) | 🟢 Open |
-| 6 | [hide command prompt when using subprocess.Popen with shel...](https://github.com/python/cpython/issues/74268) | [python/cpython](https://github.com/python/cpython) | 🟢 Open |
-| 7 | [[Help wanted] Add more examples for Rust API](https://github.com/k2-fsa/sherpa-onnx/issues/3210) | [k2-fsa/sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) | 🟢 Open |
-| 8 | [[cpp] Document vcpkg port](https://github.com/rerun-io/rerun/issues/11269) | [rerun-io/rerun](https://github.com/rerun-io/rerun) | 🟢 Open |
-| 9 | [Add valgrind stateless test for check memory leak](https://github.com/databendlabs/databend/issues/5039) | [databendlabs/databend](https://github.com/databendlabs/databend) | 🟢 Open |
-| 10 | [model_repository_manager.cc:1186] failed to load 'bert' v...](https://github.com/triton-inference-server/server/issues/7497) | [triton-inference-server/server](https://github.com/triton-inference-server/server) | 🟢 Open |
-| 11 | [Missing translations for Burmese (my)](https://github.com/symfony/symfony/issues/51897) | [symfony/symfony](https://github.com/symfony/symfony) | 🟢 Open |
-| 12 | [[feature]: Checking of HTML-Based Test Validation](https://github.com/keploy/keploy/issues/2528) | [keploy/keploy](https://github.com/keploy/keploy) | 🟢 Open |
-| 13 | [`text_search` error incorrectly reported as DataFusion error](https://github.com/spiceai/spiceai/issues/6880) | [spiceai/spiceai](https://github.com/spiceai/spiceai) | 🔴 Closed |
-| 14 | [[NEW TOOL] Markdown table generator](https://github.com/CorentinTh/it-tools/issues/542) | [CorentinTh/it-tools](https://github.com/CorentinTh/it-tools) | 🟢 Open |
-| 15 | [Kubernetes monitors should use the relabel component inte...](https://github.com/grafana/alloy/issues/888) | [grafana/alloy](https://github.com/grafana/alloy) | 🟢 Open |
-| 16 | [Position in Collection not supported by SectionList ](https://github.com/facebook/react-native/issues/30974) | [facebook/react-native](https://github.com/facebook/react-native) | 🟢 Open |
-| 17 | [LayerGroup support](https://github.com/python-visualization/folium/issues/1034) | [python-visualization/folium](https://github.com/python-visualization/folium) | 🟢 Open |
-| 18 | [[DOCS]: Add BeeAI framework client integration (Python an...](https://github.com/IBM/mcp-context-forge/issues/22) | [IBM/mcp-context-forge](https://github.com/IBM/mcp-context-forge) | 🟢 Open |
-| 19 | [[CYPRESS] Add e2e test for card payment for Cybersource C...](https://github.com/juspay/hyperswitch/issues/6077) | [juspay/hyperswitch](https://github.com/juspay/hyperswitch) | 🟢 Open |
-| 20 | [Add confirmation before verifying game files from menu bar](https://github.com/RimSort/RimSort/issues/1735) | [RimSort/RimSort](https://github.com/RimSort/RimSort) | 🟢 Open |
+| 1 | [Run depsplorer on edx-platform](https://github.com/openedx/openedx-platform/issues/32604) | [openedx/openedx-platform](https://github.com/openedx/openedx-platform) | 🟢 Open |
+| 2 | [Cypress operations "copy", "move" does not work for attri...](https://github.com/ytsaurus/ytsaurus/issues/1401) | [ytsaurus/ytsaurus](https://github.com/ytsaurus/ytsaurus) | 🟢 Open |
+| 3 | [[C++] Use C++17's nested namespaces](https://github.com/apache/arrow/issues/36620) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
+| 4 | [Ability to update fission env variables through fission CLI](https://github.com/fission/fission/issues/1721) | [fission/fission](https://github.com/fission/fission) | 🟢 Open |
+| 5 | [[Feature][Connector] Add connectors for these datasources](https://github.com/apache/seatunnel/issues/10443) | [apache/seatunnel](https://github.com/apache/seatunnel) | 🟢 Open |
+| 6 | [& not rendering in name of database tab](https://github.com/keepassxreboot/keepassxc/issues/12037) | [keepassxreboot/keepassxc](https://github.com/keepassxreboot/keepassxc) | 🟢 Open |
+| 7 | [Autokey absorbs all keyboard input](https://github.com/autokey/autokey/issues/1066) | [autokey/autokey](https://github.com/autokey/autokey) | 🟢 Open |
+| 8 | [Add tests for command-line interface](https://github.com/python/cpython/issues/131178) | [python/cpython](https://github.com/python/cpython) | 🟢 Open |
+| 9 | [e2e tests: Replace curl pod with native Go code](https://github.com/kgateway-dev/kgateway/issues/13053) | [kgateway-dev/kgateway](https://github.com/kgateway-dev/kgateway) | 🟢 Open |
+| 10 | [Add more tests to parse GeoTIFFs with custom CRSes](https://github.com/developmentseed/async-geotiff/issues/17) | [developmentseed/async-geotiff](https://github.com/developmentseed/async-geotiff) | 🟢 Open |
+| 11 | [Contribute: Add more locale](https://github.com/validatorjs/validator.js/issues/1068) | [validatorjs/validator.js](https://github.com/validatorjs/validator.js) | 🟢 Open |
+| 12 | [Support inclusionAI/Ling-mini/flash/1T-2.0](https://github.com/NVIDIA-NeMo/Automodel/issues/2242) | [NVIDIA-NeMo/Automodel](https://github.com/NVIDIA-NeMo/Automodel) | 🟢 Open |
+| 13 | [Docs: current Codex local llama.cpp guide does not work a...](https://github.com/unslothai/unsloth/issues/5141) | [unslothai/unsloth](https://github.com/unslothai/unsloth) | 🟢 Open |
+| 14 | [Add Comprehensive VPA Documentation to Kubernetes Website](https://github.com/kubernetes/autoscaler/issues/8839) | [kubernetes/autoscaler](https://github.com/kubernetes/autoscaler) | 🟢 Open |
+| 15 | [Window title bar on macOS doesn't offer a path browser an...](https://github.com/keepassxreboot/keepassxc/issues/12189) | [keepassxreboot/keepassxc](https://github.com/keepassxreboot/keepassxc) | 🟢 Open |
+| 16 | [Enhancement: Rate Limit Config](https://github.com/litestar-org/litestar/issues/1262) | [litestar-org/litestar](https://github.com/litestar-org/litestar) | 🟢 Open |
+| 17 | [Add developer applications management to frontend](https://github.com/the-momentum/open-wearables/issues/434) | [the-momentum/open-wearables](https://github.com/the-momentum/open-wearables) | 🟢 Open |
+| 18 | [Feature Request to add chatwoot directly install in plesk...](https://github.com/chatwoot/chatwoot/issues/6911) | [chatwoot/chatwoot](https://github.com/chatwoot/chatwoot) | 🟢 Open |
+| 19 | [Integrate EIA 923 Stocks Data](https://github.com/catalyst-cooperative/pudl/issues/5081) | [catalyst-cooperative/pudl](https://github.com/catalyst-cooperative/pudl) | 🟢 Open |
+| 20 | [[internal/aws] migrate to AWS v2 SDK](https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/37728) | [open-telemetry/opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -99,20 +99,20 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Deno.exit terminates entire process when using run --watch](https://github.com/denoland/deno/issues/7590) | [denoland/deno](https://github.com/denoland/deno) | 🟢 Open |
-| 2 | [[Dagster UI] A client-side exception has occured - front-...](https://github.com/dagster-io/dagster/issues/29748) | [dagster-io/dagster](https://github.com/dagster-io/dagster) | 🟢 Open |
-| 3 | [rioxarray.write_transform() not changing transform](https://github.com/corteva/rioxarray/issues/698) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
-| 4 | [Flaky `arrow_table_all_data_types`: decimal column has un...](https://github.com/dlt-hub/dlt/issues/3918) | [dlt-hub/dlt](https://github.com/dlt-hub/dlt) | 🟢 Open |
-| 5 | [PY API - Return values that are dicts: instance methods u...](https://github.com/dimensionalOS/dimos/issues/1966) | [dimensionalOS/dimos](https://github.com/dimensionalOS/dimos) | 🟢 Open |
-| 6 | [Using  path with JSOC keywords does work with Fido.fetch](https://github.com/sunpy/sunpy/issues/7655) | [sunpy/sunpy](https://github.com/sunpy/sunpy) | 🟢 Open |
-| 7 | [full screen feature flaky in Firefox](https://github.com/openstreetmap/iD/issues/8872) | [openstreetmap/iD](https://github.com/openstreetmap/iD) | 🟢 Open |
-| 8 | [SpectralAngleMapper metric nan when any pixel is zero](https://github.com/deepinv/deepinv/issues/1047) | [deepinv/deepinv](https://github.com/deepinv/deepinv) | 🟢 Open |
-| 9 | [[BUG] Android TTS 安装matcha Apk 会在armeabi-v7a的设备上初始化闪退](https://github.com/k2-fsa/sherpa-onnx/issues/3534) | [k2-fsa/sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) | 🟢 Open |
-| 10 | [dg check defs can't resolve](https://github.com/dagster-io/dagster/issues/29817) | [dagster-io/dagster](https://github.com/dagster-io/dagster) | 🟢 Open |
-| 11 | [Blocks unload event delayed significantly (~30 min) in Ku...](https://github.com/gradio-app/gradio/issues/13347) | [gradio-app/gradio](https://github.com/gradio-app/gradio) | 🟢 Open |
-| 12 | [Multi-element schematic symbol cannot be placed on differ...](https://github.com/LibrePCB/LibrePCB/issues/827) | [LibrePCB/LibrePCB](https://github.com/LibrePCB/LibrePCB) | 🟢 Open |
-| 13 | [rocm multi-gpu defaults to single largest VRAM device](https://github.com/containers/ramalama/issues/2552) | [containers/ramalama](https://github.com/containers/ramalama) | 🟢 Open |
-| 14 | [[Translation] `ProviderInterface::read` is missing a PHPDoc](https://github.com/symfony/symfony/issues/64155) | [symfony/symfony](https://github.com/symfony/symfony) | 🟡 PR Proposed |
+| 1 | [[Bug] [seatunnel-connectors] Mysql custom_sql can't work](https://github.com/apache/seatunnel/issues/10726) | [apache/seatunnel](https://github.com/apache/seatunnel) | 🟢 Open |
+| 2 | [da.quantile with weights fails](https://github.com/dask/dask/issues/12322) | [dask/dask](https://github.com/dask/dask) | 🟢 Open |
+| 3 | [bundlewatch stopped working](https://github.com/isomorphic-git/isomorphic-git/issues/2208) | [isomorphic-git/isomorphic-git](https://github.com/isomorphic-git/isomorphic-git) | 🟢 Open |
+| 4 | [Google.com](https://github.com/GoogleChrome/lighthouse/issues/17010) | [GoogleChrome/lighthouse](https://github.com/GoogleChrome/lighthouse) | 🟢 Open |
+| 5 | [Stop Translating max_program size on regex](https://github.com/kgateway-dev/kgateway/issues/8833) | [kgateway-dev/kgateway](https://github.com/kgateway-dev/kgateway) | 🟢 Open |
+| 6 | [[BUG] comparing files ignoring number differences fails](https://github.com/WinMerge/winmerge/issues/3367) | [WinMerge/winmerge](https://github.com/WinMerge/winmerge) | 🟢 Open |
+| 7 | [YQL agents update with enabled DQ requires manual abortin...](https://github.com/ytsaurus/ytsaurus/issues/1394) | [ytsaurus/ytsaurus](https://github.com/ytsaurus/ytsaurus) | 🟢 Open |
+| 8 | [[Bug]: Download of images is not possible](https://github.com/run-llama/llama_index/issues/21606) | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🟢 Open |
+| 9 | [Semantic highlight flashes after editing with clangd](https://github.com/emacs-lsp/lsp-mode/issues/5018) | [emacs-lsp/lsp-mode](https://github.com/emacs-lsp/lsp-mode) | 🟢 Open |
+| 10 | [Tauri AppImages can't be installed via AppManager](https://github.com/tauri-apps/tauri/issues/15374) | [tauri-apps/tauri](https://github.com/tauri-apps/tauri) | 🟢 Open |
+| 11 | [Qwen3_5 goes into infinite loop for a specific image](https://github.com/huggingface/transformers/issues/45753) | [huggingface/transformers](https://github.com/huggingface/transformers) | 🟢 Open |
+| 12 | [[BUG] Reasoning agents going into never-ending death spirals](https://github.com/kyegomez/swarms/issues/1261) | [kyegomez/swarms](https://github.com/kyegomez/swarms) | 🟢 Open |
+| 13 | [`on_selection` callback seems to not get fired](https://github.com/plotly/plotly.py/issues/3910) | [plotly/plotly.py](https://github.com/plotly/plotly.py) | 🟢 Open |
+| 14 | [Dataset load_from_disk is too slow](https://github.com/huggingface/datasets/issues/2547) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -123,16 +123,16 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Feature Request:  Ability to get raw sql query](https://github.com/sequelize/sequelize/issues/2325) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |
-| 2 | [[Docathon] Document undocumented functions in `signal.md`...](https://github.com/pytorch/pytorch/issues/182831) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🟢 Open |
-| 3 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 4 | [[Bug]: Gouraud shading for `plt.tripcolor` is slightly off](https://github.com/matplotlib/matplotlib/issues/28769) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 5 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 6 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
-| 7 | [how to set findall include model limit?](https://github.com/sequelize/sequelize/issues/1897) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |
-| 8 | [Improve tests by using global_random_seed fixture to make...](https://github.com/scikit-learn/scikit-learn/issues/22827) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 9 | [`isSibling` and `isAncestor` checks](https://github.com/CadQuery/cadquery/issues/1801) | [CadQuery/cadquery](https://github.com/CadQuery/cadquery) | 🟢 Open |
-| 10 | [Huber Loss for HistGradientBoostingRegressor](https://github.com/scikit-learn/scikit-learn/issues/31542) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 1 | [Composite foreign keys](https://github.com/sequelize/sequelize/issues/311) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |
+| 2 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 3 | [Feature Request:  Ability to get raw sql query](https://github.com/sequelize/sequelize/issues/2325) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |
+| 4 | [RFC Improving guidance for common CI failures for new con...](https://github.com/scikit-learn/scikit-learn/issues/33594) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 5 | [Huber Loss for HistGradientBoostingRegressor](https://github.com/scikit-learn/scikit-learn/issues/31542) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 6 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 7 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 8 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 9 | [[Docathon] Document undocumented functions in `signal.md`...](https://github.com/pytorch/pytorch/issues/182831) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🟢 Open |
+| 10 | [[Bug]: Gouraud shading for `plt.tripcolor` is slightly off](https://github.com/matplotlib/matplotlib/issues/28769) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

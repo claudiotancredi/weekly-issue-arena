@@ -765,7 +765,8 @@
           "author": "sekyondaMeta",
           "listed_at": "2026-05-15T17:00:00+00:00",
           "language": "Python",
-          "has_pr": false
+          "has_pr": false,
+          "closed": true
         },
         {
           "number": 28769,

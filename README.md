@@ -131,7 +131,7 @@ No registration. No sign-ups. Just open source.
 | 6 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 | 7 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
 | 8 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 9 | [[Docathon] Document undocumented functions in `signal.md`...](https://github.com/pytorch/pytorch/issues/182831) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🟢 Open |
+| 9 | [[Docathon] Document undocumented functions in `signal.md`...](https://github.com/pytorch/pytorch/issues/182831) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🔴 Closed |
 | 10 | [[Bug]: Gouraud shading for `plt.tripcolor` is slightly off](https://github.com/matplotlib/matplotlib/issues/28769) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 

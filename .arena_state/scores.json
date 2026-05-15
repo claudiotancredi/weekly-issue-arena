@@ -175,7 +175,15 @@
       "total_points": 0,
       "avatar_url": "https://avatars.githubusercontent.com/u/83622253?v=4",
       "contributions": [],
-      "discussion_node_id": "D_kwDONjXVVM4AmAu8"
+      "discussion_node_id": "D_kwDONjXVVM4AmAu8",
+      "notified": {
+        "pr_closed": [
+          "https://github.com/dimensionalOS/dimos/pull/1923"
+        ],
+        "pr_closed_issues": [
+          "dimensionalOS/dimos#1899"
+        ]
+      }
     },
     "danielchalmers": {
       "total_points": 0,

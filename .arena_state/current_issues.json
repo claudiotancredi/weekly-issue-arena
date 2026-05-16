@@ -244,7 +244,7 @@
     "repo": "transformers",
     "number": 45753,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {

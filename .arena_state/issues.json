@@ -581,7 +581,7 @@
           "author": "xmha97",
           "listed_at": "2026-05-15T17:00:00+00:00",
           "language": "Rust",
-          "has_pr": false
+          "has_pr": true
         },
         {
           "number": 45753,

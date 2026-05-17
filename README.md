@@ -108,7 +108,7 @@ No registration. No sign-ups. Just open source.
 | 7 | [YQL agents update with enabled DQ requires manual abortin...](https://github.com/ytsaurus/ytsaurus/issues/1394) | [ytsaurus/ytsaurus](https://github.com/ytsaurus/ytsaurus) | 🟢 Open |
 | 8 | [[Bug]: Download of images is not possible](https://github.com/run-llama/llama_index/issues/21606) | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🟢 Open |
 | 9 | [Semantic highlight flashes after editing with clangd](https://github.com/emacs-lsp/lsp-mode/issues/5018) | [emacs-lsp/lsp-mode](https://github.com/emacs-lsp/lsp-mode) | 🟢 Open |
-| 10 | [Tauri AppImages can't be installed via AppManager](https://github.com/tauri-apps/tauri/issues/15374) | [tauri-apps/tauri](https://github.com/tauri-apps/tauri) | 🟢 Open |
+| 10 | [Tauri AppImages can't be installed via AppManager](https://github.com/tauri-apps/tauri/issues/15374) | [tauri-apps/tauri](https://github.com/tauri-apps/tauri) | 🟡 PR Proposed |
 | 11 | [Qwen3_5 goes into infinite loop for a specific image](https://github.com/huggingface/transformers/issues/45753) | [huggingface/transformers](https://github.com/huggingface/transformers) | 🟡 PR Proposed |
 | 12 | [[BUG] Reasoning agents going into never-ending death spirals](https://github.com/kyegomez/swarms/issues/1261) | [kyegomez/swarms](https://github.com/kyegomez/swarms) | 🟢 Open |
 | 13 | [`on_selection` callback seems to not get fired](https://github.com/plotly/plotly.py/issues/3910) | [plotly/plotly.py](https://github.com/plotly/plotly.py) | 🟢 Open |

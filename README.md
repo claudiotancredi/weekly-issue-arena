@@ -80,7 +80,7 @@ No registration. No sign-ups. Just open source.
 | 9 | [e2e tests: Replace curl pod with native Go code](https://github.com/kgateway-dev/kgateway/issues/13053) | [kgateway-dev/kgateway](https://github.com/kgateway-dev/kgateway) | 🟢 Open |
 | 10 | [Add more tests to parse GeoTIFFs with custom CRSes](https://github.com/developmentseed/async-geotiff/issues/17) | [developmentseed/async-geotiff](https://github.com/developmentseed/async-geotiff) | 🟢 Open |
 | 11 | [Contribute: Add more locale](https://github.com/validatorjs/validator.js/issues/1068) | [validatorjs/validator.js](https://github.com/validatorjs/validator.js) | 🟢 Open |
-| 12 | [Support inclusionAI/Ling-mini/flash/1T-2.0](https://github.com/NVIDIA-NeMo/Automodel/issues/2242) | [NVIDIA-NeMo/Automodel](https://github.com/NVIDIA-NeMo/Automodel) | 🟢 Open |
+| 12 | [Support inclusionAI/Ling-mini/flash/1T-2.0](https://github.com/NVIDIA-NeMo/Automodel/issues/2242) | [NVIDIA-NeMo/Automodel](https://github.com/NVIDIA-NeMo/Automodel) | 🟡 PR Proposed |
 | 13 | [Docs: current Codex local llama.cpp guide does not work a...](https://github.com/unslothai/unsloth/issues/5141) | [unslothai/unsloth](https://github.com/unslothai/unsloth) | 🟢 Open |
 | 14 | [Add Comprehensive VPA Documentation to Kubernetes Website](https://github.com/kubernetes/autoscaler/issues/8839) | [kubernetes/autoscaler](https://github.com/kubernetes/autoscaler) | 🟢 Open |
 | 15 | [Window title bar on macOS doesn't offer a path browser an...](https://github.com/keepassxreboot/keepassxc/issues/12189) | [keepassxreboot/keepassxc](https://github.com/keepassxreboot/keepassxc) | 🟢 Open |

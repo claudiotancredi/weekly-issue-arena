@@ -246,10 +246,21 @@
       }
     },
     "Hayden727": {
-      "total_points": 0,
+      "total_points": 1,
       "avatar_url": "https://avatars.githubusercontent.com/u/76396533?v=4",
-      "contributions": [],
-      "discussion_node_id": "D_kwDONjXVVM4Amcql"
+      "contributions": [
+        {
+          "issue": "NVIDIA-NeMo/Automodel#2242",
+          "points": 1,
+          "pr_url": "https://github.com/NVIDIA-NeMo/Automodel/pull/2255",
+          "week": "2026-W20",
+          "credited_at": "2026-05-19T20:12:41.764516+00:00"
+        }
+      ],
+      "discussion_node_id": "D_kwDONjXVVM4Amcql",
+      "notified": {
+        "first_merge": true
+      }
     },
     "Sean-Kenneth-Doherty": {
       "total_points": 0,
@@ -267,7 +278,8 @@
     "pandas-dev/pandas#62421",
     "hashicorp/nomad#27758",
     "xdslproject/xdsl#5634",
-    "PostHog/posthog#18673"
+    "PostHog/posthog#18673",
+    "NVIDIA-NeMo/Automodel#2242"
   ],
   "weekly": {
     "2026-W10": [
@@ -290,6 +302,9 @@
     ],
     "2026-W17": [
       "webjunkie"
+    ],
+    "2026-W20": [
+      "Hayden727"
     ]
   }
 }

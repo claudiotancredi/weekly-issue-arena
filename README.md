@@ -41,10 +41,11 @@ No registration. No sign-ups. Just open source.
 | 3 | <div align="center"><a href="https://github.com/LeviLong01"><img src="https://avatars.githubusercontent.com/u/7453310?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@LeviLong01](https://github.com/LeviLong01)</div> | 2 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 | 4 | <div align="center"><a href="https://github.com/biefan"><img src="https://avatars.githubusercontent.com/u/70761325?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@biefan](https://github.com/biefan)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 | 5 | <div align="center"><a href="https://github.com/claudiotancredi"><img src="https://avatars.githubusercontent.com/u/64598512?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@claudiotancredi](https://github.com/claudiotancredi)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 6 | <div align="center"><a href="https://github.com/mvanhorn"><img src="https://avatars.githubusercontent.com/u/455140?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@mvanhorn](https://github.com/mvanhorn)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 7 | <div align="center"><a href="https://github.com/Netail"><img src="https://avatars.githubusercontent.com/u/11695769?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@Netail](https://github.com/Netail)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 8 | <div align="center"><a href="https://github.com/webjunkie"><img src="https://avatars.githubusercontent.com/u/59713?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@webjunkie](https://github.com/webjunkie)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
-| 9 | <div align="center"><a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@zzstoatzz](https://github.com/zzstoatzz)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 6 | <div align="center"><a href="https://github.com/Hayden727"><img src="https://avatars.githubusercontent.com/u/76396533?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@Hayden727](https://github.com/Hayden727)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 7 | <div align="center"><a href="https://github.com/mvanhorn"><img src="https://avatars.githubusercontent.com/u/455140?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@mvanhorn](https://github.com/mvanhorn)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 8 | <div align="center"><a href="https://github.com/Netail"><img src="https://avatars.githubusercontent.com/u/11695769?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@Netail](https://github.com/Netail)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 9 | <div align="center"><a href="https://github.com/webjunkie"><img src="https://avatars.githubusercontent.com/u/59713?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@webjunkie](https://github.com/webjunkie)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
+| 10 | <div align="center"><a href="https://github.com/zzstoatzz"><img src="https://avatars.githubusercontent.com/u/31014960?v=4" width="64" height="64" style="border-radius:50%;"/></a><br/>[@zzstoatzz](https://github.com/zzstoatzz)</div> | 1 | <div align="center"><img src="assets/hwengineer.png" width="64" height="64"/></div> |
 <!-- LEADERBOARD:END -->
 
 > In case of a tie, contributors are listed alphabetically by GitHub username.
@@ -58,7 +59,7 @@ No registration. No sign-ups. Just open source.
 *Contributors whose PRs were merged this week, regardless of leaderboard position.*
 
 <!-- MERGED-THIS-WEEK:START -->
-*No merged contributions yet this week.*
+<a href="https://github.com/Hayden727"><img src="https://avatars.githubusercontent.com/u/76396533?v=4" width="48" height="48" style="border-radius:50%;" title="@Hayden727"/></a>
 <!-- MERGED-THIS-WEEK:END -->
 
 ---
@@ -80,7 +81,7 @@ No registration. No sign-ups. Just open source.
 | 9 | [e2e tests: Replace curl pod with native Go code](https://github.com/kgateway-dev/kgateway/issues/13053) | [kgateway-dev/kgateway](https://github.com/kgateway-dev/kgateway) | 🟢 Open |
 | 10 | [Add more tests to parse GeoTIFFs with custom CRSes](https://github.com/developmentseed/async-geotiff/issues/17) | [developmentseed/async-geotiff](https://github.com/developmentseed/async-geotiff) | 🟢 Open |
 | 11 | [Contribute: Add more locale](https://github.com/validatorjs/validator.js/issues/1068) | [validatorjs/validator.js](https://github.com/validatorjs/validator.js) | 🟢 Open |
-| 12 | [Support inclusionAI/Ling-mini/flash/1T-2.0](https://github.com/NVIDIA-NeMo/Automodel/issues/2242) | [NVIDIA-NeMo/Automodel](https://github.com/NVIDIA-NeMo/Automodel) | 🟡 PR Proposed |
+| 12 | [Support inclusionAI/Ling-mini/flash/1T-2.0](https://github.com/NVIDIA-NeMo/Automodel/issues/2242) | [NVIDIA-NeMo/Automodel](https://github.com/NVIDIA-NeMo/Automodel) | 🔴 Closed |
 | 13 | [Docs: current Codex local llama.cpp guide does not work a...](https://github.com/unslothai/unsloth/issues/5141) | [unslothai/unsloth](https://github.com/unslothai/unsloth) | 🟢 Open |
 | 14 | [Add Comprehensive VPA Documentation to Kubernetes Website](https://github.com/kubernetes/autoscaler/issues/8839) | [kubernetes/autoscaler](https://github.com/kubernetes/autoscaler) | 🟢 Open |
 | 15 | [Window title bar on macOS doesn't offer a path browser an...](https://github.com/keepassxreboot/keepassxc/issues/12189) | [keepassxreboot/keepassxc](https://github.com/keepassxreboot/keepassxc) | 🟢 Open |

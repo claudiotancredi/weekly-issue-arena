@@ -17,20 +17,6 @@
           "listed_at": "2026-03-27T17:00:00+00:00",
           "has_pr": true,
           "language": "Python"
-        },
-        {
-          "number": 7956,
-          "title": "Cache plugin: SERVFAIL in ncache can shadow valid positive responses and delay recovery (interaction with serve_stale)",
-          "url": "https://github.com/coredns/coredns/issues/7956",
-          "owner": "coredns",
-          "repo": "coredns",
-          "repo_url": "https://github.com/coredns/coredns",
-          "created_at": "2026-03-23T22:05:36Z",
-          "updated_at": "2026-03-24T18:01:15Z",
-          "author": "netmanyys",
-          "listed_at": "2026-03-27T17:00:00+00:00",
-          "has_pr": true,
-          "language": "Go"
         }
       ],
       "hard": []

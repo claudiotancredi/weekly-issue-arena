@@ -111,10 +111,21 @@
       "discussion_node_id": "D_kwDONjXVVM4Al2qj"
     },
     "umut-polat": {
-      "total_points": 0,
+      "total_points": 2,
       "avatar_url": "https://avatars.githubusercontent.com/u/52835619?v=4",
-      "contributions": [],
-      "discussion_node_id": "D_kwDONjXVVM4Al2qk"
+      "contributions": [
+        {
+          "issue": "coredns/coredns#7956",
+          "points": 2,
+          "pr_url": "https://github.com/coredns/coredns/pull/8003",
+          "week": "2026-W13",
+          "credited_at": "2026-05-20T04:43:48.025409+00:00"
+        }
+      ],
+      "discussion_node_id": "D_kwDONjXVVM4Al2qk",
+      "notified": {
+        "first_merge": true
+      }
     },
     "HibaChamkhi": {
       "total_points": 0,
@@ -279,7 +290,8 @@
     "hashicorp/nomad#27758",
     "xdslproject/xdsl#5634",
     "PostHog/posthog#18673",
-    "NVIDIA-NeMo/Automodel#2242"
+    "NVIDIA-NeMo/Automodel#2242",
+    "coredns/coredns#7956"
   ],
   "weekly": {
     "2026-W10": [
@@ -304,7 +316,8 @@
       "webjunkie"
     ],
     "2026-W20": [
-      "Hayden727"
+      "Hayden727",
+      "umut-polat"
     ]
   }
 }

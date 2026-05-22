@@ -59,7 +59,7 @@ No registration. No sign-ups. Just open source.
 *Contributors whose PRs were merged this week, regardless of leaderboard position.*
 
 <!-- MERGED-THIS-WEEK:START -->
-<a href="https://github.com/Hayden727"><img src="https://avatars.githubusercontent.com/u/76396533?v=4" width="48" height="48" style="border-radius:50%;" title="@Hayden727"/></a> <a href="https://github.com/umut-polat"><img src="https://avatars.githubusercontent.com/u/52835619?v=4" width="48" height="48" style="border-radius:50%;" title="@umut-polat"/></a>
+*No merged contributions yet this week.*
 <!-- MERGED-THIS-WEEK:END -->
 
 ---

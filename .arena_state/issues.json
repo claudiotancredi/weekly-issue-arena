@@ -149,20 +149,6 @@
       "gfi": [],
       "bug": [
         {
-          "number": 15374,
-          "title": "Tauri AppImages can't be installed via AppManager",
-          "url": "https://github.com/tauri-apps/tauri/issues/15374",
-          "owner": "tauri-apps",
-          "repo": "tauri",
-          "repo_url": "https://github.com/tauri-apps/tauri",
-          "created_at": "2026-05-14T11:03:59Z",
-          "updated_at": "2026-05-14T21:35:23Z",
-          "author": "xmha97",
-          "listed_at": "2026-05-15T17:00:00+00:00",
-          "language": "Rust",
-          "has_pr": true
-        },
-        {
           "number": 45753,
           "title": "Qwen3_5 goes into infinite loop for a specific image",
           "url": "https://github.com/huggingface/transformers/issues/45753",

@@ -108,7 +108,7 @@ No registration. No sign-ups. Just open source.
 | 6 | [Keyspace notifcations from heartbeat deletion suspend in ...](https://github.com/dragonflydb/dragonfly/issues/7052) | [dragonflydb/dragonfly](https://github.com/dragonflydb/dragonfly) | 🟢 Open |
 | 7 | [uv-build includes empty directories in bdist/sdist](https://github.com/astral-sh/uv/issues/19404) | [astral-sh/uv](https://github.com/astral-sh/uv) | 🟢 Open |
 | 8 | [The border disappears after adding zorder.](https://github.com/plotly/plotly.py/issues/5248) | [plotly/plotly.py](https://github.com/plotly/plotly.py) | 🟢 Open |
-| 9 | [q4-imatrix weights fail to load: "expected IQ2_XXS expert...](https://github.com/antirez/ds4/issues/114) | [antirez/ds4](https://github.com/antirez/ds4) | 🟢 Open |
+| 9 | [q4-imatrix weights fail to load: "expected IQ2_XXS expert...](https://github.com/antirez/ds4/issues/114) | [antirez/ds4](https://github.com/antirez/ds4) | 🔴 Closed |
 | 10 | [Bug: Cannot open image in card](https://github.com/mattermost-community/focalboard/issues/4987) | [mattermost-community/focalboard](https://github.com/mattermost-community/focalboard) | 🟢 Open |
 | 11 | [Failed to find pytorch-native-cu128 from maven repo](https://github.com/deepjavalibrary/djl/issues/3784) | [deepjavalibrary/djl](https://github.com/deepjavalibrary/djl) | 🟢 Open |
 | 12 | [[Bug] ](https://github.com/calesthio/Crucix/issues/79) | [calesthio/Crucix](https://github.com/calesthio/Crucix) | 🟢 Open |

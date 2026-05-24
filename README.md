@@ -104,7 +104,7 @@ No registration. No sign-ups. Just open source.
 | 2 | [[bug]  v2.6.0版本使用Web控制台管理的客户端不在线](https://github.com/EasyTier/EasyTier/issues/2104) | [EasyTier/EasyTier](https://github.com/EasyTier/EasyTier) | 🟢 Open |
 | 3 | [[BUG] <title>hb promsql预览显示不全](https://github.com/apache/hertzbeat/issues/3976) | [apache/hertzbeat](https://github.com/apache/hertzbeat) | 🟢 Open |
 | 4 | [Potential ANR / main-thread blocking risk: `openOutputStr...](https://github.com/shadowsocks/shadowsocks-android/issues/3239) | [shadowsocks/shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android) | 🟢 Open |
-| 5 | [[Bug] Windows Native GGUF Inference: GPU/CUDA Hang on Can...](https://github.com/unslothai/unsloth/issues/5692) | [unslothai/unsloth](https://github.com/unslothai/unsloth) | 🟢 Open |
+| 5 | [[Bug] Windows Native GGUF Inference: GPU/CUDA Hang on Can...](https://github.com/unslothai/unsloth/issues/5692) | [unslothai/unsloth](https://github.com/unslothai/unsloth) | 🟡 PR Proposed |
 | 6 | [Keyspace notifcations from heartbeat deletion suspend in ...](https://github.com/dragonflydb/dragonfly/issues/7052) | [dragonflydb/dragonfly](https://github.com/dragonflydb/dragonfly) | 🟢 Open |
 | 7 | [uv-build includes empty directories in bdist/sdist](https://github.com/astral-sh/uv/issues/19404) | [astral-sh/uv](https://github.com/astral-sh/uv) | 🟢 Open |
 | 8 | [The border disappears after adding zorder.](https://github.com/plotly/plotly.py/issues/5248) | [plotly/plotly.py](https://github.com/plotly/plotly.py) | 🟢 Open |

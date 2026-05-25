@@ -82,7 +82,7 @@ No registration. No sign-ups. Just open source.
 | 10 | [Add full support for JSONPath](https://github.com/simdjson/simdjson/issues/2070) | [simdjson/simdjson](https://github.com/simdjson/simdjson) | 🟢 Open |
 | 11 | [搭建多节点集群，体验使用 Kuscia 节点转发能力，整理使用意见](https://github.com/secretflow/kuscia/issues/524) | [secretflow/kuscia](https://github.com/secretflow/kuscia) | 🟢 Open |
 | 12 | [Invalid fix-it on unused optional binding when multiple c...](https://github.com/swiftlang/swift/issues/89131) | [swiftlang/swift](https://github.com/swiftlang/swift) | 🟢 Open |
-| 13 | [There's two shortcuts for New Blank window in settings](https://github.com/zen-browser/desktop/issues/13437) | [zen-browser/desktop](https://github.com/zen-browser/desktop) | 🟢 Open |
+| 13 | [There's two shortcuts for New Blank window in settings](https://github.com/zen-browser/desktop/issues/13437) | [zen-browser/desktop](https://github.com/zen-browser/desktop) | 🔴 Closed |
 | 14 | [MLocationBody 'Expand map' z-index stacks over message co...](https://github.com/element-hq/element-web/issues/21619) | [element-hq/element-web](https://github.com/element-hq/element-web) | 🟢 Open |
 | 15 | [ASP.NET Core add Tag Helpers to replace HTML Helpers such...](https://github.com/dotnet/aspnetcore/issues/3956) | [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore) | 🟢 Open |
 | 16 | [Handle request timeouts or 500 errors for getFilteredSpan...](https://github.com/SigNoz/signoz/issues/919) | [SigNoz/signoz](https://github.com/SigNoz/signoz) | 🟢 Open |

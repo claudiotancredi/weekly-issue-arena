@@ -88,7 +88,7 @@ No registration. No sign-ups. Just open source.
 | 16 | [Handle request timeouts or 500 errors for getFilteredSpan...](https://github.com/SigNoz/signoz/issues/919) | [SigNoz/signoz](https://github.com/SigNoz/signoz) | 🟢 Open |
 | 17 | [Parse and save granular sleep stages from Ultrahuman slee...](https://github.com/the-momentum/open-wearables/issues/665) | [the-momentum/open-wearables](https://github.com/the-momentum/open-wearables) | 🟢 Open |
 | 18 | [Mobile: Slight horizontal indent difference after first line](https://github.com/mattermost/mattermost/issues/27377) | [mattermost/mattermost](https://github.com/mattermost/mattermost) | 🟢 Open |
-| 19 | [[Feature] Centralize Conversation DB access behind Conver...](https://github.com/potpie-ai/potpie/issues/637) | [potpie-ai/potpie](https://github.com/potpie-ai/potpie) | 🟢 Open |
+| 19 | [[Feature] Centralize Conversation DB access behind Conver...](https://github.com/potpie-ai/potpie/issues/637) | [potpie-ai/potpie](https://github.com/potpie-ai/potpie) | 🔴 Closed |
 | 20 | [Data Connector: Airtable](https://github.com/spiceai/spiceai/issues/1936) | [spiceai/spiceai](https://github.com/spiceai/spiceai) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 

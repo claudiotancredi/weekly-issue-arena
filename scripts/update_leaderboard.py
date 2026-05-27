@@ -250,8 +250,12 @@ def gather_issue_prs(
             pr_resp = github_get(api_url, timeout=10)
             pr_resp.raise_for_status()
             pr = pr_resp.json()
-        except Exception:
-            continue
+        except Exception as e:
+            log.warning(
+                f"PR fetch failed for {owner}/{repo}#{issue_number} "
+                f"({api_url}): {e}"
+            )
+            return None
 
         created_at_str = pr.get("created_at")
         if not created_at_str:

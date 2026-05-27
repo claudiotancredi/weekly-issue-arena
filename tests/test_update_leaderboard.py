@@ -12,6 +12,7 @@ from update_leaderboard import (  # noqa: E402, I001
     build_leaderboard_md,
     build_merged_this_week_md,
     check_issue_status,
+    gather_issue_prs,
     load_scores,
     load_state,
     process_week,
@@ -127,6 +128,50 @@ class TestSaveScores:
         save_scores(data)
         loaded = json.loads(fake.read_text(encoding="utf-8"))
         assert loaded == data
+
+
+class TestGatherIssuePrs:
+    """Tests for gather_issue_prs network-failure handling."""
+
+    @patch("update_leaderboard.github_get")
+    def test_pr_fetch_failure_returns_none(self, mock_get):
+        """PR sub-fetch failure bails (returns None).
+
+        Otherwise the issue's qualifying PR is invisible to the rest of
+        the run and the issue may be false-closed past its 7-day window.
+        """
+        timeline_response = type(
+            "R",
+            (),
+            {
+                "raise_for_status": lambda self: None,
+                "json": lambda self: [
+                    {
+                        "event": "cross-referenced",
+                        "source": {
+                            "issue": {
+                                "pull_request": {
+                                    "url": (
+                                        "https://api.github.com/repos/"
+                                        "org/proj/pulls/10"
+                                    ),
+                                }
+                            }
+                        },
+                    }
+                ],
+                "links": {},
+            },
+        )()
+
+        def side_effect(url, **kwargs):
+            if "timeline" in url:
+                return timeline_response
+            raise RuntimeError("simulated PR fetch failure")
+
+        mock_get.side_effect = side_effect
+        deadline = datetime.now(timezone.utc) + timedelta(days=7)
+        assert gather_issue_prs("org", "proj", 1, deadline) is None
 
 
 class TestSaveState:

@@ -89,6 +89,20 @@
       ],
       "bug": [
         {
+          "number": 41475,
+          "title": "[Bug]: model with GGUF quant type failed to run",
+          "url": "https://github.com/vllm-project/vllm/issues/41475",
+          "owner": "vllm-project",
+          "repo": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "created_at": "2026-05-01T19:15:09Z",
+          "updated_at": "2026-05-01T19:16:31Z",
+          "author": "junnikokuki",
+          "listed_at": "2026-05-01T17:00:00+00:00",
+          "language": "Python",
+          "has_pr": true
+        },
+        {
           "number": 13141,
           "title": "MudMenu no longer shows automatic scrollbar when items overflow the screen (regression from v8)",
           "url": "https://github.com/MudBlazor/MudBlazor/issues/13141",
@@ -134,6 +148,20 @@
     "issues": {
       "gfi": [],
       "bug": [
+        {
+          "number": 15374,
+          "title": "Tauri AppImages can't be installed via AppManager",
+          "url": "https://github.com/tauri-apps/tauri/issues/15374",
+          "owner": "tauri-apps",
+          "repo": "tauri",
+          "repo_url": "https://github.com/tauri-apps/tauri",
+          "created_at": "2026-05-14T11:03:59Z",
+          "updated_at": "2026-05-14T21:35:23Z",
+          "author": "xmha97",
+          "listed_at": "2026-05-15T17:00:00+00:00",
+          "language": "Rust",
+          "has_pr": true
+        },
         {
           "number": 45753,
           "title": "Qwen3_5 goes into infinite loop for a specific image",

@@ -70,26 +70,26 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Model3D pointcloud data format support  (not display mode)](https://github.com/gradio-app/gradio/issues/8826) | [gradio-app/gradio](https://github.com/gradio-app/gradio) | 🟢 Open |
-| 2 | [Config option to turn off pixel size warning (formerly: w...](https://github.com/ilastik/ilastik/issues/3138) | [ilastik/ilastik](https://github.com/ilastik/ilastik) | 🟢 Open |
-| 3 | [Implementation of scipy.integrate.simps](https://github.com/dask/dask/issues/2629) | [dask/dask](https://github.com/dask/dask) | 🟢 Open |
-| 4 | [[R] Rename read_ipc_file to read_arrow_file & highlight a...](https://github.com/apache/arrow/issues/20472) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
-| 5 | [[SR-8252] Consolidate and Fix -debug-crash-* Flags](https://github.com/swiftlang/swift/issues/50784) | [swiftlang/swift](https://github.com/swiftlang/swift) | 🟢 Open |
-| 6 | [Allow the user to set the minimum window size](https://github.com/microsoft/terminal/issues/6820) | [microsoft/terminal](https://github.com/microsoft/terminal) | 🟢 Open |
-| 7 | [App Packaging 📦](https://github.com/GyulyVGC/sniffnet/issues/252) | [GyulyVGC/sniffnet](https://github.com/GyulyVGC/sniffnet) | 🟢 Open |
-| 8 | [check compatibility with Mooncake](https://github.com/JuliaGraphs/GraphNeuralNetworks.jl/issues/640) | [JuliaGraphs/GraphNeuralNetworks.jl](https://github.com/JuliaGraphs/GraphNeuralNetworks.jl) | 🟢 Open |
-| 9 | [[Feature Request] v-slider tick-labels above and below th...](https://github.com/vuetifyjs/vuetify/issues/14569) | [vuetifyjs/vuetify](https://github.com/vuetifyjs/vuetify) | 🟢 Open |
-| 10 | [Add full support for JSONPath](https://github.com/simdjson/simdjson/issues/2070) | [simdjson/simdjson](https://github.com/simdjson/simdjson) | 🟢 Open |
-| 11 | [搭建多节点集群，体验使用 Kuscia 节点转发能力，整理使用意见](https://github.com/secretflow/kuscia/issues/524) | [secretflow/kuscia](https://github.com/secretflow/kuscia) | 🟢 Open |
-| 12 | [Invalid fix-it on unused optional binding when multiple c...](https://github.com/swiftlang/swift/issues/89131) | [swiftlang/swift](https://github.com/swiftlang/swift) | 🟢 Open |
-| 13 | [There's two shortcuts for New Blank window in settings](https://github.com/zen-browser/desktop/issues/13437) | [zen-browser/desktop](https://github.com/zen-browser/desktop) | 🔴 Closed |
-| 14 | [MLocationBody 'Expand map' z-index stacks over message co...](https://github.com/element-hq/element-web/issues/21619) | [element-hq/element-web](https://github.com/element-hq/element-web) | 🟢 Open |
-| 15 | [ASP.NET Core add Tag Helpers to replace HTML Helpers such...](https://github.com/dotnet/aspnetcore/issues/3956) | [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore) | 🟢 Open |
-| 16 | [Handle request timeouts or 500 errors for getFilteredSpan...](https://github.com/SigNoz/signoz/issues/919) | [SigNoz/signoz](https://github.com/SigNoz/signoz) | 🟢 Open |
-| 17 | [Parse and save granular sleep stages from Ultrahuman slee...](https://github.com/the-momentum/open-wearables/issues/665) | [the-momentum/open-wearables](https://github.com/the-momentum/open-wearables) | 🟢 Open |
-| 18 | [Mobile: Slight horizontal indent difference after first line](https://github.com/mattermost/mattermost/issues/27377) | [mattermost/mattermost](https://github.com/mattermost/mattermost) | 🟢 Open |
-| 19 | [[Feature] Centralize Conversation DB access behind Conver...](https://github.com/potpie-ai/potpie/issues/637) | [potpie-ai/potpie](https://github.com/potpie-ai/potpie) | 🔴 Closed |
-| 20 | [Data Connector: Airtable](https://github.com/spiceai/spiceai/issues/1936) | [spiceai/spiceai](https://github.com/spiceai/spiceai) | 🟢 Open |
+| 1 | [[FR] Rotated box CVAT integration](https://github.com/voxel51/fiftyone/issues/6033) | [voxel51/fiftyone](https://github.com/voxel51/fiftyone) | 🟢 Open |
+| 2 | [[backend] Add the ability to specify driver labels/annota...](https://github.com/kubeflow/pipelines/issues/12015) | [kubeflow/pipelines](https://github.com/kubeflow/pipelines) | 🟢 Open |
+| 3 | [lldb - "Unsupported architecture: powerpc64le" error](https://github.com/pwndbg/pwndbg/issues/3775) | [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) | 🟢 Open |
+| 4 | [Introduction of Thread._handle: _thread._ThreadHandle in ...](https://github.com/python/cpython/issues/132578) | [python/cpython](https://github.com/python/cpython) | 🟢 Open |
+| 5 | [Add Argo CD dashboard back to the demo Grafana instance](https://github.com/argoproj/argo-cd/issues/17922) | [argoproj/argo-cd](https://github.com/argoproj/argo-cd) | 🟢 Open |
+| 6 | [[Feature]: Fused Kernel for GPT-OSS Router](https://github.com/vllm-project/vllm/issues/28986) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟢 Open |
+| 7 | [Make all tutorials multi-language](https://github.com/dmlc/xgboost/issues/11413) | [dmlc/xgboost](https://github.com/dmlc/xgboost) | 🟢 Open |
+| 8 | [ToList Usage](https://github.com/jellyfin/jellyfin/issues/5355) | [jellyfin/jellyfin](https://github.com/jellyfin/jellyfin) | 🟢 Open |
+| 9 | [server: avoid full prompt eval when 'prompt >= ctx'](https://github.com/ggml-org/llama.cpp/issues/6855) | [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 🟢 Open |
+| 10 | [Sort long API reference sections](https://github.com/skrub-data/skrub/issues/2064) | [skrub-data/skrub](https://github.com/skrub-data/skrub) | 🟢 Open |
+| 11 | [`chartPivot` and `tablePivot` methods of `ResultSet` don'...](https://github.com/cube-js/cube/issues/8050) | [cube-js/cube](https://github.com/cube-js/cube) | 🟢 Open |
+| 12 | [[MATLAB] Consider lowering the minimum CMake version requ...](https://github.com/apache/arrow/issues/35221) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
+| 13 | [Replace / remove deprecated / obsolete methods](https://github.com/Leaflet/Leaflet/issues/9710) | [Leaflet/Leaflet](https://github.com/Leaflet/Leaflet) | 🟢 Open |
+| 14 | [Collab Notebook: Incremental ingestion using Job Properties](https://github.com/vmware/versatile-data-kit/issues/3060) | [vmware/versatile-data-kit](https://github.com/vmware/versatile-data-kit) | 🟢 Open |
+| 15 | [Enum keys not accepted as computed properties if their na...](https://github.com/microsoft/TypeScript/issues/25083) | [microsoft/TypeScript](https://github.com/microsoft/TypeScript) | 🟢 Open |
+| 16 | [Option to specify where the temp files are saved for unfi...](https://github.com/syncthing/syncthing/issues/2208) | [syncthing/syncthing](https://github.com/syncthing/syncthing) | 🟢 Open |
+| 17 | [expand documentation of pre-commit in contributing.md](https://github.com/linkml/linkml/issues/3047) | [linkml/linkml](https://github.com/linkml/linkml) | 🟢 Open |
+| 18 | [Inference: Add ListenerSets Support](https://github.com/kgateway-dev/kgateway/issues/11719) | [kgateway-dev/kgateway](https://github.com/kgateway-dev/kgateway) | 🟢 Open |
+| 19 | [Rework Credentials template url layout in Settings: Repos...](https://github.com/argoproj/argo-cd/issues/12273) | [argoproj/argo-cd](https://github.com/argoproj/argo-cd) | 🟢 Open |
+| 20 | [include cursor in screenshot](https://github.com/flameshot-org/flameshot/issues/604) | [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -100,20 +100,20 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [missing data with persistent queues enabled during networ...](https://github.com/open-telemetry/opentelemetry-collector/issues/15324) | [open-telemetry/opentelemetry-collector](https://github.com/open-telemetry/opentelemetry-collector) | 🟢 Open |
-| 2 | [[bug]  v2.6.0版本使用Web控制台管理的客户端不在线](https://github.com/EasyTier/EasyTier/issues/2104) | [EasyTier/EasyTier](https://github.com/EasyTier/EasyTier) | 🟢 Open |
-| 3 | [[BUG] <title>hb promsql预览显示不全](https://github.com/apache/hertzbeat/issues/3976) | [apache/hertzbeat](https://github.com/apache/hertzbeat) | 🟢 Open |
-| 4 | [Potential ANR / main-thread blocking risk: `openOutputStr...](https://github.com/shadowsocks/shadowsocks-android/issues/3239) | [shadowsocks/shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android) | 🟢 Open |
-| 5 | [[Bug] Windows Native GGUF Inference: GPU/CUDA Hang on Can...](https://github.com/unslothai/unsloth/issues/5692) | [unslothai/unsloth](https://github.com/unslothai/unsloth) | 🟡 PR Proposed |
-| 6 | [Keyspace notifcations from heartbeat deletion suspend in ...](https://github.com/dragonflydb/dragonfly/issues/7052) | [dragonflydb/dragonfly](https://github.com/dragonflydb/dragonfly) | 🟢 Open |
-| 7 | [uv-build includes empty directories in bdist/sdist](https://github.com/astral-sh/uv/issues/19404) | [astral-sh/uv](https://github.com/astral-sh/uv) | 🟢 Open |
-| 8 | [The border disappears after adding zorder.](https://github.com/plotly/plotly.py/issues/5248) | [plotly/plotly.py](https://github.com/plotly/plotly.py) | 🟢 Open |
-| 9 | [q4-imatrix weights fail to load: "expected IQ2_XXS expert...](https://github.com/antirez/ds4/issues/114) | [antirez/ds4](https://github.com/antirez/ds4) | 🔴 Closed |
-| 10 | [Bug: Cannot open image in card](https://github.com/mattermost-community/focalboard/issues/4987) | [mattermost-community/focalboard](https://github.com/mattermost-community/focalboard) | 🟢 Open |
-| 11 | [Failed to find pytorch-native-cu128 from maven repo](https://github.com/deepjavalibrary/djl/issues/3784) | [deepjavalibrary/djl](https://github.com/deepjavalibrary/djl) | 🟢 Open |
-| 12 | [[Bug] ](https://github.com/calesthio/Crucix/issues/79) | [calesthio/Crucix](https://github.com/calesthio/Crucix) | 🟢 Open |
-| 13 | [[Bug]: 语音合成失败（非default）](https://github.com/THU-MAIC/OpenMAIC/issues/587) | [THU-MAIC/OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) | 🟢 Open |
-| 14 | [Doesn't Open](https://github.com/ronitsingh10/FineTune/issues/88) | [ronitsingh10/FineTune](https://github.com/ronitsingh10/FineTune) | 🟢 Open |
+| 1 | [lockFileURL fails at resolving from the underlying frozen...](https://github.com/pyodide/pyodide/issues/5135) | [pyodide/pyodide](https://github.com/pyodide/pyodide) | 🟢 Open |
+| 2 | [Ridge and RidgeCV has different result even if alpha is t...](https://github.com/scikit-learn/scikit-learn/issues/26848) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 3 | [Error: `CS_OPT_SYNTAX_NO_ALIAS_TEXT_COMPRESSED` is undefined](https://github.com/pwndbg/pwndbg/issues/3926) | [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) | 🟢 Open |
+| 4 | [github download badges invalid](https://github.com/badges/shields/issues/11216) | [badges/shields](https://github.com/badges/shields) | 🟢 Open |
+| 5 | [Multi-disk albums are grouped incorrectly](https://github.com/Taiko2k/Tauon/issues/1063) | [Taiko2k/Tauon](https://github.com/Taiko2k/Tauon) | 🟢 Open |
+| 6 | [Sagemaker Local-Mode permission errors](https://github.com/aws/sagemaker-python-sdk/issues/4764) | [aws/sagemaker-python-sdk](https://github.com/aws/sagemaker-python-sdk) | 🟢 Open |
+| 7 | [Implement stricter parsing to avoid skipping invalid lines](https://github.com/thesysdev/openui/issues/582) | [thesysdev/openui](https://github.com/thesysdev/openui) | 🟢 Open |
+| 8 | [Copilot is not able to make changes within VS Code](https://github.com/microsoft/vscode-jupyter/issues/17405) | [microsoft/vscode-jupyter](https://github.com/microsoft/vscode-jupyter) | 🟢 Open |
+| 9 | [pythongen iidentifier-wrapper generation fails when wrapp...](https://github.com/linkml/linkml/issues/3595) | [linkml/linkml](https://github.com/linkml/linkml) | 🟢 Open |
+| 10 | [When a user only has access to the 2nd+ music library, th...](https://github.com/jellyfin/jellyfin/issues/16019) | [jellyfin/jellyfin](https://github.com/jellyfin/jellyfin) | 🟢 Open |
+| 11 | [New LightGBM v4.6.0 breaks classifier training with old p...](https://github.com/nubank/fklearn/issues/244) | [nubank/fklearn](https://github.com/nubank/fklearn) | 🟢 Open |
+| 12 | [Cropping RSS native format data does not work.](https://github.com/pytroll/satpy/issues/2515) | [pytroll/satpy](https://github.com/pytroll/satpy) | 🟢 Open |
+| 13 | [Deeper defaults have precedence over parent elements' def...](https://github.com/rjsf-team/react-jsonschema-form/issues/5089) | [rjsf-team/react-jsonschema-form](https://github.com/rjsf-team/react-jsonschema-form) | 🟢 Open |
+| 14 | [llama-cli: model params not propagated](https://github.com/ggml-org/llama.cpp/issues/23847) | [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -124,16 +124,16 @@ No registration. No sign-ups. Just open source.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Migrate away from gogoprotobuf to protobuf v2 API + vtpro...](https://github.com/thanos-io/thanos/issues/4557) | [thanos-io/thanos](https://github.com/thanos-io/thanos) | 🟢 Open |
-| 2 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 3 | [Create a distributed and single device example](https://github.com/pytorch/xla/issues/7183) | [pytorch/xla](https://github.com/pytorch/xla) | 🟢 Open |
-| 4 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
-| 5 | [compact: Redesign compaction planning process for cost ef...](https://github.com/thanos-io/thanos/issues/3405) | [thanos-io/thanos](https://github.com/thanos-io/thanos) | 🟢 Open |
-| 6 | [[Bug]: Gouraud shading for `plt.tripcolor` is slightly off](https://github.com/matplotlib/matplotlib/issues/28769) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 7 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 8 | [Improve tests by using global_random_seed fixture to make...](https://github.com/scikit-learn/scikit-learn/issues/22827) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 9 | [Newlines should not be scaped when using setting usetex=True](https://github.com/matplotlib/matplotlib/issues/29628) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 10 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 1 | [Dashboard individualization](https://github.com/taranis-ai/taranis-ai/issues/27) | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | 🟢 Open |
+| 2 | [Automatically propagate changes from Taranis AI to MISP](https://github.com/taranis-ai/taranis-ai/issues/631) | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | 🟢 Open |
+| 3 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 4 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 5 | [Huber Loss for HistGradientBoostingRegressor](https://github.com/scikit-learn/scikit-learn/issues/31542) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 6 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 7 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 8 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 9 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 10 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

@@ -109,7 +109,7 @@ No registration. No sign-ups. Just open source.
 | 7 | [Implement stricter parsing to avoid skipping invalid lines](https://github.com/thesysdev/openui/issues/582) | [thesysdev/openui](https://github.com/thesysdev/openui) | 🟢 Open |
 | 8 | [Copilot is not able to make changes within VS Code](https://github.com/microsoft/vscode-jupyter/issues/17405) | [microsoft/vscode-jupyter](https://github.com/microsoft/vscode-jupyter) | 🟢 Open |
 | 9 | [pythongen iidentifier-wrapper generation fails when wrapp...](https://github.com/linkml/linkml/issues/3595) | [linkml/linkml](https://github.com/linkml/linkml) | 🟢 Open |
-| 10 | [When a user only has access to the 2nd+ music library, th...](https://github.com/jellyfin/jellyfin/issues/16019) | [jellyfin/jellyfin](https://github.com/jellyfin/jellyfin) | 🟢 Open |
+| 10 | [When a user only has access to the 2nd+ music library, th...](https://github.com/jellyfin/jellyfin/issues/16019) | [jellyfin/jellyfin](https://github.com/jellyfin/jellyfin) | 🔴 Closed |
 | 11 | [New LightGBM v4.6.0 breaks classifier training with old p...](https://github.com/nubank/fklearn/issues/244) | [nubank/fklearn](https://github.com/nubank/fklearn) | 🟢 Open |
 | 12 | [Cropping RSS native format data does not work.](https://github.com/pytroll/satpy/issues/2515) | [pytroll/satpy](https://github.com/pytroll/satpy) | 🟢 Open |
 | 13 | [Deeper defaults have precedence over parent elements' def...](https://github.com/rjsf-team/react-jsonschema-form/issues/5089) | [rjsf-team/react-jsonschema-form](https://github.com/rjsf-team/react-jsonschema-form) | 🟢 Open |

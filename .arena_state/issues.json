@@ -627,7 +627,8 @@
           "author": "quinn0823",
           "listed_at": "2026-05-29T17:00:00+00:00",
           "language": "C#",
-          "has_pr": false
+          "has_pr": false,
+          "closed": true
         },
         {
           "number": 244,

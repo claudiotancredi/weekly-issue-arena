@@ -101,7 +101,7 @@ No registration. No sign-ups. Just open source.
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [lockFileURL fails at resolving from the underlying frozen...](https://github.com/pyodide/pyodide/issues/5135) | [pyodide/pyodide](https://github.com/pyodide/pyodide) | 🟢 Open |
-| 2 | [Ridge and RidgeCV has different result even if alpha is t...](https://github.com/scikit-learn/scikit-learn/issues/26848) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 2 | [Ridge and RidgeCV has different result even if alpha is t...](https://github.com/scikit-learn/scikit-learn/issues/26848) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🔴 Closed |
 | 3 | [Error: `CS_OPT_SYNTAX_NO_ALIAS_TEXT_COMPRESSED` is undefined](https://github.com/pwndbg/pwndbg/issues/3926) | [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) | 🟢 Open |
 | 4 | [github download badges invalid](https://github.com/badges/shields/issues/11216) | [badges/shields](https://github.com/badges/shields) | 🟢 Open |
 | 5 | [Multi-disk albums are grouped incorrectly](https://github.com/Taiko2k/Tauon/issues/1063) | [Taiko2k/Tauon](https://github.com/Taiko2k/Tauon) | 🟢 Open |

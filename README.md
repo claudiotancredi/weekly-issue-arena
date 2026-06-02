@@ -84,7 +84,7 @@ No registration. No sign-ups. Just open source.
 | 12 | [[MATLAB] Consider lowering the minimum CMake version requ...](https://github.com/apache/arrow/issues/35221) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
 | 13 | [Replace / remove deprecated / obsolete methods](https://github.com/Leaflet/Leaflet/issues/9710) | [Leaflet/Leaflet](https://github.com/Leaflet/Leaflet) | 🟢 Open |
 | 14 | [Collab Notebook: Incremental ingestion using Job Properties](https://github.com/vmware/versatile-data-kit/issues/3060) | [vmware/versatile-data-kit](https://github.com/vmware/versatile-data-kit) | 🟢 Open |
-| 15 | [Enum keys not accepted as computed properties if their na...](https://github.com/microsoft/TypeScript/issues/25083) | [microsoft/TypeScript](https://github.com/microsoft/TypeScript) | 🟡 PR Proposed |
+| 15 | [Enum keys not accepted as computed properties if their na...](https://github.com/microsoft/TypeScript/issues/25083) | [microsoft/TypeScript](https://github.com/microsoft/TypeScript) | 🟢 Open |
 | 16 | [Option to specify where the temp files are saved for unfi...](https://github.com/syncthing/syncthing/issues/2208) | [syncthing/syncthing](https://github.com/syncthing/syncthing) | 🟢 Open |
 | 17 | [expand documentation of pre-commit in contributing.md](https://github.com/linkml/linkml/issues/3047) | [linkml/linkml](https://github.com/linkml/linkml) | 🟢 Open |
 | 18 | [Inference: Add ListenerSets Support](https://github.com/kgateway-dev/kgateway/issues/11719) | [kgateway-dev/kgateway](https://github.com/kgateway-dev/kgateway) | 🟢 Open |

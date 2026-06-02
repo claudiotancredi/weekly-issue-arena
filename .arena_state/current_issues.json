@@ -260,7 +260,7 @@
     "repo": "react-jsonschema-form",
     "number": 5089,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "TypeScript"
   },
   {

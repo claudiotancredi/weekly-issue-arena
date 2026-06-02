@@ -112,7 +112,7 @@ No registration. No sign-ups. Just open source.
 | 10 | [When a user only has access to the 2nd+ music library, th...](https://github.com/jellyfin/jellyfin/issues/16019) | [jellyfin/jellyfin](https://github.com/jellyfin/jellyfin) | 🔴 Closed |
 | 11 | [New LightGBM v4.6.0 breaks classifier training with old p...](https://github.com/nubank/fklearn/issues/244) | [nubank/fklearn](https://github.com/nubank/fklearn) | 🟢 Open |
 | 12 | [Cropping RSS native format data does not work.](https://github.com/pytroll/satpy/issues/2515) | [pytroll/satpy](https://github.com/pytroll/satpy) | 🟢 Open |
-| 13 | [Deeper defaults have precedence over parent elements' def...](https://github.com/rjsf-team/react-jsonschema-form/issues/5089) | [rjsf-team/react-jsonschema-form](https://github.com/rjsf-team/react-jsonschema-form) | 🟢 Open |
+| 13 | [Deeper defaults have precedence over parent elements' def...](https://github.com/rjsf-team/react-jsonschema-form/issues/5089) | [rjsf-team/react-jsonschema-form](https://github.com/rjsf-team/react-jsonschema-form) | 🟡 PR Proposed |
 | 14 | [llama-cli: model params not propagated](https://github.com/ggml-org/llama.cpp/issues/23847) | [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 🟡 PR Proposed |
 <!-- ISSUES:BUGS:END -->
 

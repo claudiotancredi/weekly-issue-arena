@@ -58,34 +58,75 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 ---
 
 <details>
-<summary> 🙂 Good First Issues (0)</summary>
+<summary> 🙂 Good First Issues (20)</summary>
 
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| — | *No issues found this week* | — | — |
+| 1 | [Rabbit Batch Subscriber approach ](https://github.com/ag2ai/faststream/issues/1975) | [ag2ai/faststream](https://github.com/ag2ai/faststream) | 🟢 Open |
+| 2 | [[Feature]: MCP Task Support](https://github.com/agentscope-ai/agentscope-java/issues/217) | [agentscope-ai/agentscope-java](https://github.com/agentscope-ai/agentscope-java) | 🟢 Open |
+| 3 | [Remove redundant use of catch2](https://github.com/microsoft/ebpf-for-windows/issues/3954) | [microsoft/ebpf-for-windows](https://github.com/microsoft/ebpf-for-windows) | 🟢 Open |
+| 4 | [Add DANRA tutorial notebook with pytest-nbmake](https://github.com/mllam/neural-lam/issues/69) | [mllam/neural-lam](https://github.com/mllam/neural-lam) | 🟢 Open |
+| 5 | [Feature: Broker event handlers](https://github.com/ag2ai/faststream/issues/1545) | [ag2ai/faststream](https://github.com/ag2ai/faststream) | 🟢 Open |
+| 6 | [GRPO (RL) 训练交流群](https://github.com/modelscope/ms-swift/issues/3076) | [modelscope/ms-swift](https://github.com/modelscope/ms-swift) | 🟢 Open |
+| 7 | [Feature Request: Efficient Poisson Binomial PMF/CDF in tfp](https://github.com/tensorflow/probability/issues/1453) | [tensorflow/probability](https://github.com/tensorflow/probability) | 🟢 Open |
+| 8 | [Labeling Hebrew text causes words to mix](https://github.com/HumanSignal/label-studio/issues/1888) | [HumanSignal/label-studio](https://github.com/HumanSignal/label-studio) | 🟢 Open |
+| 9 | [[tx] Reactivate type checking with `ty`](https://github.com/NovaSky-AI/SkyRL/issues/673) | [NovaSky-AI/SkyRL](https://github.com/NovaSky-AI/SkyRL) | 🟢 Open |
+| 10 | [Supporting syntax highlighting for TOML-formatted values ...](https://github.com/hashicorp/consul/issues/12668) | [hashicorp/consul](https://github.com/hashicorp/consul) | 🟢 Open |
+| 11 | [sc.pl.paga: TypeError: paga() got an unexpected keyword a...](https://github.com/scverse/scanpy/issues/1203) | [scverse/scanpy](https://github.com/scverse/scanpy) | 🟢 Open |
+| 12 | [OpenSSL doesn't validate version field when parsing RSA P...](https://github.com/openssl/openssl/issues/26467) | [openssl/openssl](https://github.com/openssl/openssl) | 🟢 Open |
+| 13 | [Add a new Healthcare domain for medical patient support i...](https://github.com/sierra-research/tau2-bench/issues/127) | [sierra-research/tau2-bench](https://github.com/sierra-research/tau2-bench) | 🟢 Open |
+| 14 | [Inconsistent error messages when returning the wrong type...](https://github.com/python/cpython/issues/130821) | [python/cpython](https://github.com/python/cpython) | 🟢 Open |
+| 15 | [Handle CA2227 appropriately](https://github.com/microsoft/PowerToys/issues/11646) | [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | 🟢 Open |
+| 16 | [Functions to implement from GEOS ](https://github.com/shapely/shapely/issues/1570) | [shapely/shapely](https://github.com/shapely/shapely) | 🟢 Open |
+| 17 | [Docs for old supported versions should indicate that a ne...](https://github.com/django/djangoproject.com/issues/1122) | [django/djangoproject.com](https://github.com/django/djangoproject.com) | 🟢 Open |
+| 18 | [Show selection bounding box width/height in the X/Y rulers](https://github.com/GraphiteEditor/Graphite/issues/1969) | [GraphiteEditor/Graphite](https://github.com/GraphiteEditor/Graphite) | 🟢 Open |
+| 19 | [providing sample weights to glm.fit() and glm.fit.sparse()](https://github.com/tensorflow/probability/issues/252) | [tensorflow/probability](https://github.com/tensorflow/probability) | 🟢 Open |
+| 20 | [ENH: Improvements to new ARIMA-type estimators](https://github.com/statsmodels/statsmodels/issues/6159) | [statsmodels/statsmodels](https://github.com/statsmodels/statsmodels) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
 
 <details>
-<summary> 🪲 Bug Fixes (0)</summary>
+<summary> 🪲 Bug Fixes (14)</summary>
 
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| — | *No issues found this week* | — | — |
+| 1 | [CodeLens References not shown](https://github.com/dotnet/roslyn/issues/39615) | [dotnet/roslyn](https://github.com/dotnet/roslyn) | 🟢 Open |
+| 2 | [[SETUP-BUG] Installing and configuring mlflow-openclaw](https://github.com/mlflow/mlflow/issues/23137) | [mlflow/mlflow](https://github.com/mlflow/mlflow) | 🟢 Open |
+| 3 | [Kana translation incorrect: should be いく](https://github.com/lingdojo/kana-dojo/issues/27187) | [lingdojo/kana-dojo](https://github.com/lingdojo/kana-dojo) | 🟢 Open |
+| 4 | [[Dependency]: Bump torchvision to a release containing th...](https://github.com/vllm-project/vllm/issues/51192) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟢 Open |
+| 5 | [Worker container error when publishing (TimeLimitExceeded)](https://github.com/taranis-ai/taranis-ai/issues/613) | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | 🟢 Open |
+| 6 | [Doc: `:option:` directives link to incorrect pages](https://github.com/OSGeo/gdal/issues/14670) | [OSGeo/gdal](https://github.com/OSGeo/gdal) | 🟢 Open |
+| 7 | [bug(core): `atrace_as_chain_group` leaves runs pending on...](https://github.com/langchain-ai/langchain/issues/39163) | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 🟢 Open |
+| 8 | [deepeyes fixed](https://github.com/verl-project/verl/issues/5358) | [verl-project/verl](https://github.com/verl-project/verl) | 🟢 Open |
+| 9 | [[bug]: Still Crashing when i "Invoke" ROCm 7.1](https://github.com/invoke-ai/InvokeAI/issues/9374) | [invoke-ai/InvokeAI](https://github.com/invoke-ai/InvokeAI) | 🟢 Open |
+| 10 | [[Bug]: augmentations.rs: dict_get panics on missing key i...](https://github.com/kornia/kornia-rs/issues/1058) | [kornia/kornia-rs](https://github.com/kornia/kornia-rs) | 🟢 Open |
+| 11 | [bug: ripgrep preinstall 安装失败无提示](https://github.com/claude-code-best/claude-code/issues/1318) | [claude-code-best/claude-code](https://github.com/claude-code-best/claude-code) | 🟢 Open |
+| 12 | [[BUG] Refresh Data Selector button not working](https://github.com/opensearch-project/OpenSearch-Dashboards/issues/10986) | [opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards) | 🟢 Open |
+| 13 | [GPU AD failing](https://github.com/SciML/NeuralPDE.jl/issues/1052) | [SciML/NeuralPDE.jl](https://github.com/SciML/NeuralPDE.jl) | 🟢 Open |
+| 14 | [[BUG] ICE when compiling kernel converting `Float32` to `...](https://github.com/NVIDIA/cutlass/issues/3429) | [NVIDIA/cutlass](https://github.com/NVIDIA/cutlass) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
 
 <details>
-<summary> 😓 Hard Issues (0)</summary>
+<summary> 😓 Hard Issues (10)</summary>
 
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| — | *No issues found this week* | — | — |
+| 1 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 2 | [Link photos from NextCloud](https://github.com/LibrePhotos/librephotos/issues/55) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
+| 3 | [Automatically propagate changes from Taranis AI to MISP](https://github.com/taranis-ai/taranis-ai/issues/631) | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | 🟢 Open |
+| 4 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 5 | [Share places, people and things when sharing the picture(...](https://github.com/LibrePhotos/librephotos/issues/166) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
+| 6 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 7 | [Preserving dtype for float32 / float64 in transformers](https://github.com/scikit-learn/scikit-learn/issues/11000) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 8 | [Proper distributed tests](https://github.com/lightly-ai/lightly/issues/1982) | [lightly-ai/lightly](https://github.com/lightly-ai/lightly) | 🟢 Open |
+| 9 | [Conflit View: NewsItem and Story conflicts improvements](https://github.com/taranis-ai/taranis-ai/issues/591) | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | 🟢 Open |
+| 10 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

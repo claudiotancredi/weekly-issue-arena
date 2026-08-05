@@ -1,1 +1,310 @@
-[]
+[
+  {
+    "owner": "ag2ai",
+    "repo": "faststream",
+    "number": 1975,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "agentscope-ai",
+    "repo": "agentscope-java",
+    "number": 217,
+    "category": "gfi",
+    "language": "Java"
+  },
+  {
+    "owner": "microsoft",
+    "repo": "ebpf-for-windows",
+    "number": 3954,
+    "category": "gfi",
+    "language": "C"
+  },
+  {
+    "owner": "mllam",
+    "repo": "neural-lam",
+    "number": 69,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "ag2ai",
+    "repo": "faststream",
+    "number": 1545,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "modelscope",
+    "repo": "ms-swift",
+    "number": 3076,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "tensorflow",
+    "repo": "probability",
+    "number": 1453,
+    "category": "gfi",
+    "language": "Jupyter Notebook"
+  },
+  {
+    "owner": "HumanSignal",
+    "repo": "label-studio",
+    "number": 1888,
+    "category": "gfi",
+    "language": "TypeScript"
+  },
+  {
+    "owner": "NovaSky-AI",
+    "repo": "SkyRL",
+    "number": 673,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "hashicorp",
+    "repo": "consul",
+    "number": 12668,
+    "category": "gfi",
+    "language": "Go"
+  },
+  {
+    "owner": "scverse",
+    "repo": "scanpy",
+    "number": 1203,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "openssl",
+    "repo": "openssl",
+    "number": 26467,
+    "category": "gfi",
+    "language": "C"
+  },
+  {
+    "owner": "sierra-research",
+    "repo": "tau2-bench",
+    "number": 127,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "python",
+    "repo": "cpython",
+    "number": 130821,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "microsoft",
+    "repo": "PowerToys",
+    "number": 11646,
+    "category": "gfi",
+    "language": "C"
+  },
+  {
+    "owner": "shapely",
+    "repo": "shapely",
+    "number": 1570,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "django",
+    "repo": "djangoproject.com",
+    "number": 1122,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "GraphiteEditor",
+    "repo": "Graphite",
+    "number": 1969,
+    "category": "gfi",
+    "language": "Rust"
+  },
+  {
+    "owner": "tensorflow",
+    "repo": "probability",
+    "number": 252,
+    "category": "gfi",
+    "language": "Jupyter Notebook"
+  },
+  {
+    "owner": "statsmodels",
+    "repo": "statsmodels",
+    "number": 6159,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "dotnet",
+    "repo": "roslyn",
+    "number": 39615,
+    "category": "bug",
+    "language": "C#"
+  },
+  {
+    "owner": "mlflow",
+    "repo": "mlflow",
+    "number": 23137,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "lingdojo",
+    "repo": "kana-dojo",
+    "number": 27187,
+    "category": "bug",
+    "language": "TypeScript"
+  },
+  {
+    "owner": "vllm-project",
+    "repo": "vllm",
+    "number": 51192,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "taranis-ai",
+    "repo": "taranis-ai",
+    "number": 613,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "OSGeo",
+    "repo": "gdal",
+    "number": 14670,
+    "category": "bug",
+    "language": "C++"
+  },
+  {
+    "owner": "langchain-ai",
+    "repo": "langchain",
+    "number": 39163,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "verl-project",
+    "repo": "verl",
+    "number": 5358,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "invoke-ai",
+    "repo": "InvokeAI",
+    "number": 9374,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "kornia",
+    "repo": "kornia-rs",
+    "number": 1058,
+    "category": "bug",
+    "language": "Rust"
+  },
+  {
+    "owner": "claude-code-best",
+    "repo": "claude-code",
+    "number": 1318,
+    "category": "bug",
+    "language": "TypeScript"
+  },
+  {
+    "owner": "opensearch-project",
+    "repo": "OpenSearch-Dashboards",
+    "number": 10986,
+    "category": "bug",
+    "language": "TypeScript"
+  },
+  {
+    "owner": "SciML",
+    "repo": "NeuralPDE.jl",
+    "number": 1052,
+    "category": "bug",
+    "language": "Julia"
+  },
+  {
+    "owner": "NVIDIA",
+    "repo": "cutlass",
+    "number": 3429,
+    "category": "bug",
+    "language": "C++"
+  },
+  {
+    "owner": "scikit-learn",
+    "repo": "scikit-learn",
+    "number": 33965,
+    "category": "hard",
+    "language": "Python"
+  },
+  {
+    "owner": "LibrePhotos",
+    "repo": "librephotos",
+    "number": 55,
+    "category": "hard",
+    "language": "Python"
+  },
+  {
+    "owner": "taranis-ai",
+    "repo": "taranis-ai",
+    "number": 631,
+    "category": "hard",
+    "language": "Python"
+  },
+  {
+    "owner": "matplotlib",
+    "repo": "matplotlib",
+    "number": 31597,
+    "category": "hard",
+    "language": "Python"
+  },
+  {
+    "owner": "LibrePhotos",
+    "repo": "librephotos",
+    "number": 166,
+    "category": "hard",
+    "language": "Python"
+  },
+  {
+    "owner": "matplotlib",
+    "repo": "matplotlib",
+    "number": 20243,
+    "category": "hard",
+    "language": "Python"
+  },
+  {
+    "owner": "scikit-learn",
+    "repo": "scikit-learn",
+    "number": 11000,
+    "category": "hard",
+    "language": "Python"
+  },
+  {
+    "owner": "lightly-ai",
+    "repo": "lightly",
+    "number": 1982,
+    "category": "hard",
+    "language": "Python"
+  },
+  {
+    "owner": "taranis-ai",
+    "repo": "taranis-ai",
+    "number": 591,
+    "category": "hard",
+    "language": "Python"
+  },
+  {
+    "owner": "rasterio",
+    "repo": "rasterio",
+    "number": 1270,
+    "category": "hard",
+    "language": "Python"
+  }
+]

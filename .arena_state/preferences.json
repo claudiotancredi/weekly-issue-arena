@@ -1,17 +1,9 @@
 {
   "version": 1,
-  "users": {
-    "claudiotancredi": {
-      "leaderboard": true,
-      "discussion": true,
-      "notifications_ack": true,
-      "joined_at": "2026-08-05T20:23:40.532442+00:00",
-      "updated_at": "2026-08-05T20:23:40.532442+00:00",
-      "source_issue": 30
-    }
-  },
+  "users": {},
   "processed_issues": [
-    30
+    30,
+    31
   ],
-  "updated_at": "2026-08-05T20:23:41.635381+00:00"
+  "updated_at": "2026-08-05T20:25:35.721078+00:00"
 }

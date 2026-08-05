@@ -1,7 +1,13 @@
-"""GitHub Discussion notifications for new and returning contributors."""
+"""GitHub Discussion notifications for new and returning contributors.
+
+Every call in here is gated on consent: a Discussion is only ever created
+or commented on for a user who opted in via the *Join the Arena* issue
+form **and** ticked the personal-discussion box. See ``preferences``.
+"""
 
 import logging
 
+from preferences import load_preferences, wants_discussion
 from utils import github_graphql
 
 log = logging.getLogger(__name__)
@@ -13,6 +19,10 @@ ARENA_MILESTONES_CATEGORY = "Arena Milestones"
 
 SITE_BASE = "https://claudiotancredi.github.io/weekly-issue-arena"
 ARENA_LEVEL_DISCUSSION_TITLE = "🏛️ Arena Level Tracker"
+
+REPO_URL = f"https://github.com/{REPO_OWNER}/{REPO_NAME}"
+JOIN_FORM_URL = f"{REPO_URL}/issues/new?template=join_the_arena.yml"
+LEAVE_FORM_URL = f"{REPO_URL}/issues/new?template=leave_the_arena.yml"
 
 # ── GraphQL queries / mutations ──────────────────────────────
 
@@ -39,6 +49,14 @@ _ADD_COMMENT = """
 mutation($input: AddDiscussionCommentInput!) {
   addDiscussionComment(input: $input) {
     comment { id }
+  }
+}
+"""
+
+_DELETE_DISCUSSION = """
+mutation($input: DeleteDiscussionInput!) {
+  deleteDiscussion(input: $input) {
+    clientMutationId
   }
 }
 """
@@ -96,7 +114,8 @@ def _welcome_body(username: str, issue_key: str, pr_url: str) -> str:
     """Welcome body posted when a qualifying first PR is opened."""
     return (
         f"# \U0001f44b Welcome to the Weekly Issue Arena, @{username}!\n\n"
-        f"We just spotted your PR [{issue_key}]({pr_url}). "
+        f"You joined the arena and asked for this thread, and we just "
+        f"spotted your first PR: [{issue_key}]({pr_url}). "
         f"Thanks for jumping in! \U0001f680\n\n"
         f"## \U0001f6e0\ufe0f How it works from here\n\n"
         f"1. The arena bot watches this PR. **When it merges and closes "
@@ -126,9 +145,11 @@ def _welcome_body(username: str, issue_key: str, pr_url: str) -> str:
         f"(`github.com/{username}/{username}`) so visitors see your "
         f"arena rank and points right on your profile.\n\n"
         f"---\n\n"
-        f"*\U0001f916 Automatic updates will be posted here as "
-        f"comments. To stop receiving notifications, click "
-        f'"Unsubscribe" in the sidebar.*'
+        f"*\U0001f916 Automatic updates will be posted here as comments. "
+        f'To stop the notifications, click "Unsubscribe" in the sidebar. '
+        f"To have this thread deleted and leave the arena entirely, open a "
+        f"[Leave the Arena]({LEAVE_FORM_URL}) issue — no explanation "
+        f"needed.*"
     )
 
 
@@ -354,6 +375,20 @@ def add_expired_comment(
     log.info(f"Posted expired comment on {discussion_id} for {issue_key}")
 
 
+def delete_discussion(discussion_id: str) -> None:
+    """Delete a Discussion thread by node ID.
+
+    Used when consent is withdrawn — either the user left the arena or
+    unticked the personal-discussion box. Leaving the thread up would keep
+    a public @mention of someone who asked to be removed.
+    """
+    github_graphql(
+        _DELETE_DISCUSSION,
+        {"input": {"id": discussion_id}},
+    )
+    log.info(f"Deleted discussion {discussion_id}")
+
+
 # ── Arena Level Tracker (unchanged) ──────────────────────────
 
 
@@ -538,7 +573,11 @@ def _mark_notified(scores: dict, event: dict) -> None:
             bucket.append(event["issue_key"])
 
 
-def process_notification_events(events: list[dict], scores: dict) -> dict:
+def process_notification_events(
+    events: list[dict],
+    scores: dict,
+    prefs: dict | None = None,
+) -> dict:
     """Dispatch a list of notification events to Discussion API calls.
 
     Each event is a dict with a ``type`` plus type-specific fields.
@@ -552,12 +591,21 @@ def process_notification_events(events: list[dict], scores: dict) -> dict:
       - ``issue_closed``: username, issue_key
       - ``expired``: username, issue_key
 
+    This is the last gate before anything user-visible is published, so
+    consent is re-checked here even though collectors already filter:
+    every event for a user who is not an arena member, or who did not ask
+    for a personal thread, is dropped. ``prefs`` defaults to the on-disk
+    preferences file.
+
     Dedup state under ``scores['players'][u]['notified']`` is updated
     ONLY after the Discussion API call succeeds — a failed event will
     be retried on the next run. Caller persists ``scores``. Returns it.
     """
     if not events:
         return scores
+
+    if prefs is None:
+        prefs = load_preferences()
 
     # Welcome events must run before any comment events for the same user,
     # since the discussion_node_id is only populated by the welcome call.
@@ -576,6 +624,13 @@ def process_notification_events(events: list[dict], scores: dict) -> dict:
     for event in events:
         etype = event.get("type")
         username = event["username"]
+
+        if not wants_discussion(prefs, username):
+            log.info(
+                f"Skipping {etype} for @{username}: "
+                f"no discussion consent on record"
+            )
+            continue
 
         if _is_already_notified(scores, event):
             continue

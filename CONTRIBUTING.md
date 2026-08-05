@@ -4,8 +4,18 @@ Thanks for your interest! There are two ways to contribute:
 
 ## 1. Play the Arena (contribute to listed issues)
 
-Just pick an issue from the README and open a PR in that repo. No registration needed.
-Points are tracked automatically.
+First, [join the arena](https://github.com/claudiotancredi/weekly-issue-arena/issues/new?template=join_the_arena.yml).
+Participation is opt-in: until you submit that form, your pull requests are
+ignored, your username never appears on the leaderboard, and no Discussion
+mentions you. The form is the whole sign-up — a bot stores your answers and
+closes the issue.
+
+Then pick an issue from the README and open a PR in that repo. Points are
+tracked automatically from there.
+
+To update your choices, submit the join form again. To be removed along with
+your points, history and Discussion thread, submit
+[Leave the Arena](https://github.com/claudiotancredi/weekly-issue-arena/issues/new?template=leave_the_arena.yml).
 
 If you'd like to help spread the word, feel free to add a short note at the end of your PR description:
 
@@ -50,6 +60,7 @@ Both scripts support `--dry-run` to preview changes without writing files:
 python scripts/fetch_repos.py --dry-run     # Build the weekly repo pool, log output, skip writes
 python scripts/fetch_issues.py --dry-run    # Fetch issues, log output, skip file writes
 python scripts/update_leaderboard.py --dry-run  # Check credits, skip file writes
+python scripts/sync_preferences.py --dry-run    # Read consent forms, skip writes and issue closes
 ```
 
 ### Suggest a new repo
@@ -75,6 +86,8 @@ Most actively maintained repos with `good first issue` or `help wanted` labels w
 ### Report issues or suggest features
 
 Open a GitHub Issue in this repo. Use the appropriate template:
+- **Join the Arena** — opt in so your PRs are tracked (auto-processed and closed by a bot)
+- **Leave the Arena** — opt out and have your data erased (auto-processed and closed by a bot)
 - **Bug report** — what you expected, what happened instead, relevant logs or screenshots
 - **Feature request** — what you'd like to see and why it would be useful
 

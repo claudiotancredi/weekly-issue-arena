@@ -10,6 +10,7 @@ const SCORES_PATH = path.join(ROOT, ".arena_state/scores.json");
 const REPO_POOL_PATH = path.join(ROOT, ".arena_state/repo_pool.json");
 const ANCHOR_REPOS_PATH = path.join(ROOT, "config/anchor_repos.yml");
 const MILESTONES_PATH = path.join(ROOT, ".arena_state/milestones.json");
+const PREFERENCES_PATH = path.join(ROOT, ".arena_state/preferences.json");
 
 // --- Types ---
 
@@ -61,6 +62,21 @@ interface ScoresData {
   weekly: Record<string, string[]>;
 }
 
+export interface UserPreference {
+  leaderboard: boolean;
+  discussion: boolean;
+  notifications_ack?: boolean;
+  joined_at?: string;
+  updated_at?: string;
+  source_issue?: number;
+}
+
+interface PreferencesData {
+  version?: number;
+  users: Record<string, UserPreference>;
+  processed_issues?: number[];
+}
+
 export interface LeaderboardEntry {
   username: string;
   total_points: number;
@@ -101,6 +117,34 @@ function getScores(): ScoresData {
       weekly: {},
     }
   );
+}
+
+function getPreferences(): PreferencesData {
+  const raw = readJSON<PreferencesData>(PREFERENCES_PATH);
+  return { users: raw?.users ?? {}, processed_issues: raw?.processed_issues };
+}
+
+/**
+ * Consent gate for anything that puts a username on the page.
+ *
+ * The pipeline only ever scores people who opted in, so this is a
+ * backstop: it keeps a departed contributor off the site immediately,
+ * even in the window before their row is purged from scores.json.
+ * GitHub logins are case-insensitive, so the lookup is too.
+ */
+function isPubliclyListed(username: string): boolean {
+  const target = username.trim().toLowerCase();
+  const users = getPreferences().users;
+  for (const [key, entry] of Object.entries(users)) {
+    if (key.trim().toLowerCase() === target) return entry?.leaderboard === true;
+  }
+  return false;
+}
+
+export function getArenaMemberCount(): number {
+  return Object.values(getPreferences().users).filter(
+    (entry) => entry?.leaderboard === true,
+  ).length;
 }
 
 export function getLatestWeekId(): string | null {
@@ -178,7 +222,10 @@ export function getMatchableIssuesByLanguage(): Record<string, IssueWithCategory
 export function getLeaderboard(): LeaderboardEntry[] {
   const scores = getScores();
   const entries = Object.entries(scores.players)
-    .filter(([, data]) => data.total_points > 0)
+    .filter(
+      ([username, data]) =>
+        data.total_points > 0 && isPubliclyListed(username),
+    )
     .map(([username, data]) => ({
       username,
       total_points: data.total_points,
@@ -198,6 +245,7 @@ export function getLeaderboard(): LeaderboardEntry[] {
 }
 
 export function getPlayer(username: string): PlayerData | null {
+  if (!isPubliclyListed(username)) return null;
   const scores = getScores();
   return scores.players[username] ?? null;
 }
@@ -205,7 +253,10 @@ export function getPlayer(username: string): PlayerData | null {
 export function getAllPlayerUsernames(): string[] {
   const scores = getScores();
   return Object.entries(scores.players)
-    .filter(([, data]) => data.total_points > 0)
+    .filter(
+      ([username, data]) =>
+        data.total_points > 0 && isPubliclyListed(username),
+    )
     .map(([username]) => username);
 }
 
@@ -213,7 +264,7 @@ export function getWeeklyContributors(): string[] {
   const scores = getScores();
   const weekId = getLatestWeekId();
   if (!weekId) return [];
-  return scores.weekly[weekId] ?? [];
+  return (scores.weekly[weekId] ?? []).filter(isPubliclyListed);
 }
 
 export function getRepoCount(): number {
@@ -237,8 +288,8 @@ export function getRepoCount(): number {
 
 export function getTotalContributors(): number {
   const scores = getScores();
-  return Object.values(scores.players).filter(
-    (p) => p.total_points > 0,
+  return Object.entries(scores.players).filter(
+    ([username, p]) => p.total_points > 0 && isPubliclyListed(username),
   ).length;
 }
 

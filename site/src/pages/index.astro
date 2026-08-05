@@ -19,6 +19,7 @@ import {
 } from "../lib/data";
 import MatchMeFlow from "../components/MatchMeFlow";
 import type { MatchableIssueForIsland } from "../components/MatchMeFlow";
+import { JOIN_ARENA_URL } from "../lib/links";
 
 const issues = getAllCurrentIssues();
 const leaderboard = getLeaderboard();
@@ -88,12 +89,20 @@ const featured = ["gfi", "bug", "hard"]
         Find an issue. Submit a PR. Earn points. Climb the leaderboard.
       </p>
       <p class="mt-2 text-sm text-zinc-500">
-        No registration. No sign-ups. Just open source.
+        Opt in once, with one form. Nothing is tracked until you do.
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a
-          href={`${base}issues/`}
+          href={JOIN_ARENA_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           class="rounded-lg bg-accent px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
+        >
+          Join the Arena
+        </a>
+        <a
+          href={`${base}issues/`}
+          class="rounded-lg border border-border bg-surface-card px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-surface-elevated"
         >
           Browse Issues
         </a>
@@ -202,19 +211,24 @@ const featured = ["gfi", "bug", "hard"]
   <section class="border-t border-border bg-surface-card">
     <div class="mx-auto max-w-6xl px-4 py-16">
       <h2 class="text-xl font-bold text-white text-center mb-10">How It Works</h2>
-      <div class="grid gap-8 sm:grid-cols-3">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div class="text-center">
           <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent text-xl font-bold">1</div>
+          <h3 class="text-sm font-semibold text-white">Join the Arena</h3>
+          <p class="mt-1 text-xs text-zinc-400">Submit one <a href={JOIN_ARENA_URL} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">consent form</a>. Until you do, your pull requests are invisible to the arena.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent text-xl font-bold">2</div>
           <h3 class="text-sm font-semibold text-white">Pick an Issue</h3>
           <p class="mt-1 text-xs text-zinc-400">Browse curated issues from {repoCount} open-source repos, refreshed every Friday.</p>
         </div>
         <div class="text-center">
-          <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent text-xl font-bold">2</div>
+          <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent text-xl font-bold">3</div>
           <h3 class="text-sm font-semibold text-white">Open a PR</h3>
           <p class="mt-1 text-xs text-zinc-400">Submit a pull request within 7 days. Reference the issue with a closing keyword.</p>
         </div>
         <div class="text-center">
-          <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent text-xl font-bold">3</div>
+          <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent text-xl font-bold">4</div>
           <h3 class="text-sm font-semibold text-white">Earn Points</h3>
           <p class="mt-1 text-xs text-zinc-400">When your PR closes the issue, you earn points, climb the leaderboard, and grow the shared Arena Level — unlocking more issues for everyone.</p>
         </div>

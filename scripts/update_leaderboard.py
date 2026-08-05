@@ -4,6 +4,12 @@
 Awards points and updates the leaderboard + merged-this-week section
 sections in README.
 
+Participation is opt-in. Only contributors listed in
+``.arena_state/preferences.json`` — people who submitted the *Join the
+Arena* form — are fetched, credited, listed or mentioned. A pull request
+from anyone else affects nothing beyond the public status emoji of the
+issue it claims.
+
 Usage::
 
     python scripts/update_leaderboard.py
@@ -28,6 +34,12 @@ from arena_level import (
     load_milestones,
     save_milestones,
     total_issues_at_level,
+)
+from preferences import (
+    load_preferences,
+    member_usernames,
+    wants_discussion,
+    wants_leaderboard,
 )
 from utils import (
     arena_week_id,
@@ -175,22 +187,65 @@ def save_state(state: dict) -> None:
     atomic_write_json(STATE_PATH, state)
 
 
+def _stub_qualifies(
+    stub: dict,
+    owner: str,
+    repo: str,
+    issue_number: int,
+    deadline: datetime,
+) -> bool:
+    """Does a timeline PR payload look like a live claim on the issue?
+
+    Uses only fields the timeline already gave us — no extra request.
+    Mirrors the open + closing-keyword + within-deadline test applied to
+    fully fetched PRs, so an issue claimed by a non-participant still
+    shows as "PR Proposed" instead of luring someone into duplicate work.
+    """
+    if stub.get("state") != "open":
+        return False
+    created_at_str = stub.get("created_at")
+    if not created_at_str:
+        return False
+    try:
+        created_at = datetime.fromisoformat(
+            created_at_str.replace("Z", "+00:00")
+        )
+    except ValueError:
+        return False
+    if created_at > deadline:
+        return False
+    text = f"{stub.get('title') or ''}\n{stub.get('body') or ''}"
+    return pr_has_closing_keyword(text, owner, repo, issue_number)
+
+
 def gather_issue_prs(
-    owner: str, repo: str, issue_number: int, deadline: datetime
+    owner: str,
+    repo: str,
+    issue_number: int,
+    deadline: datetime,
+    members: set[str] | None = None,
 ) -> dict | None:
     """Scan the timeline once and return everything we need for an issue.
 
+    ``members`` is the set of lower-cased logins that opted into the arena.
+    A PR from anyone else is never fetched, never credited and never
+    mentioned — the arena spends neither an API request nor a byte of
+    state on people who did not ask to take part. Passing ``None``
+    disables the filter entirely and is only meant for local inspection.
+
     Returns a dict with:
-      * ``prs`` — list of PR dicts, each containing ``number``, ``author``,
-        ``author_avatar``, ``pr_url``, ``state``, ``merged``, ``merged_at``,
-        ``created_at``, ``merge_commit_sha``, ``has_closing_keyword``,
-        ``within_deadline``, ``body``.
+      * ``prs`` — list of PR dicts for participants only, each containing
+        ``number``, ``author``, ``author_avatar``, ``pr_url``, ``state``,
+        ``merged``, ``merged_at``, ``created_at``, ``merge_commit_sha``,
+        ``has_closing_keyword``, ``within_deadline``, ``body``.
       * ``state`` — ``"open"`` or ``"closed"``, derived from the latest
         ``closed``/``reopened`` event in the timeline. Avoids a separate
         ``GET /issues/{n}`` round-trip per issue per run.
       * ``closing_commit`` — the ``commit_id`` from the first ``closed``
         event with one, or ``None``. Lets ``find_closing_pr`` disambiguate
         multi-merged-PR issues without refetching the timeline.
+      * ``external_pending`` — True when a non-participant has an open,
+        qualifying PR. Drives the issue's public status and nothing else.
 
     Returns ``None`` on network/API errors so callers can distinguish
     "no data" (None) from "nothing to report" and avoid false-closing an
@@ -232,7 +287,7 @@ def gather_issue_prs(
         ):
             closing_commit = event["commit_id"]
 
-    pr_api_urls: dict[str, str] = {}
+    pr_stubs: dict[str, dict] = {}
     for event in events:
         if event.get("event") != "cross-referenced":
             continue
@@ -242,10 +297,20 @@ def gather_issue_prs(
             continue
         api_url = issue_data.get("pull_request", {}).get("url")
         if api_url:
-            pr_api_urls[api_url] = api_url
+            pr_stubs[api_url] = issue_data
 
     prs: list[dict] = []
-    for api_url in pr_api_urls:
+    external_pending = False
+    for api_url, stub in pr_stubs.items():
+        stub_author = ((stub.get("user") or {}).get("login")) or ""
+        if members is not None and stub_author.lower() not in members:
+            # Not a participant: stop here. The timeline payload already
+            # tells us whether the issue is effectively claimed, and that
+            # boolean is the only thing the arena is allowed to learn
+            # about someone who never opted in.
+            if _stub_qualifies(stub, owner, repo, issue_number, deadline):
+                external_pending = True
+            continue
         try:
             pr_resp = github_get(api_url, timeout=10)
             pr_resp.raise_for_status()
@@ -288,7 +353,12 @@ def gather_issue_prs(
         )
 
     prs.sort(key=lambda p: p["created_at"])
-    return {"prs": prs, "state": state, "closing_commit": closing_commit}
+    return {
+        "prs": prs,
+        "state": state,
+        "closing_commit": closing_commit,
+        "external_pending": external_pending,
+    }
 
 
 def find_closing_pr(
@@ -395,6 +465,7 @@ def _collect_welcome_events(
     scores: dict,
     issue_key: str,
     welcomed_in_run: set,
+    prefs: dict | None = None,
 ) -> list[dict]:
     """Qualifying first-PR-open events deduped within this run.
 
@@ -404,6 +475,10 @@ def _collect_welcome_events(
     fallback from the credit path instead. Closed-unmerged PRs are out.
     Deduped by ``welcomed_in_run`` (shared across the full run) and by
     ``discussion_node_id`` from prior runs.
+
+    A participant who did not tick the personal-discussion box gets no
+    welcome thread — and therefore no comments on any later event, since
+    every one of them requires a thread to post into.
     """
     events = []
     for pr in prs:
@@ -412,6 +487,8 @@ def _collect_welcome_events(
         if pr["state"] != "open" or pr["merged"]:
             continue
         author = pr["author"]
+        if prefs is not None and not wants_discussion(prefs, author):
+            continue
         if _player_has_welcome(scores, author, welcomed_in_run):
             continue
         welcomed_in_run.add(author)
@@ -504,6 +581,8 @@ def process_week(
     week_data: dict,
     scores: dict,
     welcomed_in_run: set | None = None,
+    prefs: dict | None = None,
+    members: set[str] | None = None,
 ) -> tuple[list[dict], list[dict], dict]:
     """Check a week's issues for merged closing PRs.
 
@@ -521,6 +600,10 @@ def process_week(
     run. Pass the same set across every ``process_week`` call and through
     ``_collect_expiry_events`` so that a user welcomed in one week doesn't
     get silently re-welcomed from another week.
+
+    ``prefs`` is the loaded consent document and ``members`` the derived
+    set of lower-cased participant logins. Together they keep everyone who
+    never opted in out of the credits, the events and the API budget.
     """
     new_credits: list[dict] = []
     new_events: list[dict] = []
@@ -548,7 +631,11 @@ def process_week(
             now = datetime.now(timezone.utc)
 
             bundle = gather_issue_prs(
-                issue["owner"], issue["repo"], issue["number"], deadline
+                issue["owner"],
+                issue["repo"],
+                issue["number"],
+                deadline,
+                members,
             )
             if bundle is None:
                 # Timeline fetch failed for this issue: preserve state and
@@ -572,15 +659,17 @@ def process_week(
                     else "closed"
                 )
                 closing_commit = None
+                external_pending = False
             else:
                 prs = bundle["prs"]
                 issue_state = bundle["state"]
                 closing_commit = bundle["closing_commit"]
+                external_pending = bundle.get("external_pending", False)
 
             # Welcome any new qualifying PR author
             new_events.extend(
                 _collect_welcome_events(
-                    prs, scores, issue_key, welcomed_in_run
+                    prs, scores, issue_key, welcomed_in_run, prefs
                 )
             )
             # Don't-give-up comments for closed-unmerged PRs
@@ -592,7 +681,7 @@ def process_week(
 
             # If the issue is still open, check if the PR window has expired
             if issue_state == "open":
-                qualifying_pending = any(
+                qualifying_pending = external_pending or any(
                     pr["state"] == "open"
                     and pr["has_closing_keyword"]
                     and pr["within_deadline"]
@@ -696,7 +785,12 @@ def process_week(
             # the open state (e.g. opened + merged between hourly runs),
             # no welcome event was emitted. Emit one now so the dispatcher
             # creates the Discussion thread before the first_merge comment.
-            if not _player_has_welcome(scores, author, welcomed_in_run):
+            # Skipped for participants who declined the thread — they are
+            # credited silently.
+            wants_thread = prefs is None or wants_discussion(prefs, author)
+            if wants_thread and not _player_has_welcome(
+                scores, author, welcomed_in_run
+            ):
                 welcomed_in_run.add(author)
                 new_events.append(
                     {
@@ -821,6 +915,7 @@ def _collect_expiry_events(
     state: dict,
     scores: dict,
     welcomed_in_run: set | None = None,
+    members: set[str] | None = None,
 ) -> list[dict]:
     """Emit expired events for pending-PR contributors on weeks being dropped.
 
@@ -828,6 +923,9 @@ def _collect_expiry_events(
     than the 28-week cutoff. Any issue in that week still flagged
     ``has_pr=True`` and not ``closed`` represents a pending PR whose author
     will hear nothing more from the arena about this issue.
+
+    ``members`` is forwarded to :func:`gather_issue_prs` so expiring weeks
+    do not spend requests re-reading PRs from non-participants either.
     """
     cutoff = datetime.now(timezone.utc) - timedelta(weeks=28)
     events: list[dict] = []
@@ -854,6 +952,7 @@ def _collect_expiry_events(
                     issue["repo"],
                     issue["number"],
                     deadline,
+                    members,
                 )
                 if bundle is None:
                     continue
@@ -889,14 +988,24 @@ def _collect_expiry_events(
     return events
 
 
-def build_leaderboard_md(scores: dict) -> str:
-    """Render the top-10 all-time leaderboard as Markdown."""
+def build_leaderboard_md(scores: dict, prefs: dict | None = None) -> str:
+    """Render the top-10 all-time leaderboard as Markdown.
+
+    Only participants who consented to public listing are shown. Nobody
+    should be scoreable without that consent, so the filter is a backstop
+    for the window between someone leaving and the next state write.
+    """
     header = (
         "| Position | Contributor | Points | Rank |\n"
         "|----------|------------|--------|------|\n"
     )
     players = scores.get("players", {})
-    ranked = {u: d for u, d in players.items() if d.get("total_points", 0) > 0}
+    ranked = {
+        u: d
+        for u, d in players.items()
+        if d.get("total_points", 0) > 0
+        and (prefs is None or wants_leaderboard(prefs, u))
+    }
     if not ranked:
         return (
             header
@@ -931,10 +1040,14 @@ def build_leaderboard_md(scores: dict) -> str:
     return header + "\n".join(lines) + "\n"
 
 
-def build_merged_this_week_md(scores: dict) -> str:
+def build_merged_this_week_md(scores: dict, prefs: dict | None = None) -> str:
     """Render avatar chips for contributors whose PRs merged this week."""
     current_week = arena_week_id()
     week_contribs = scores.get("weekly", {}).get(current_week, [])
+    if prefs is not None:
+        week_contribs = [
+            u for u in week_contribs if wants_leaderboard(prefs, u)
+        ]
     if not week_contribs:
         return "*No merged contributions yet this week.*\n"
 
@@ -982,8 +1095,12 @@ def update_arena_level(scores: dict) -> tuple[dict, dict, list[dict]]:
     milestones = load_milestones()
 
     arena_points = compute_arena_points(scores)
-    new_level = compute_arena_level(arena_points, levels_cfg)
     old_level = int(milestones.get("current_level", 0))
+    # The arena level ratchets. Points can now leave the pool — a
+    # participant who opts out has their history erased — and a level-down
+    # would silently take back issues the community already unlocked for
+    # everyone. Levels are earned collectively and are never revoked.
+    new_level = max(compute_arena_level(arena_points, levels_cfg), old_level)
 
     new_level_ups: list[dict] = []
     if new_level > old_level:
@@ -1024,6 +1141,11 @@ def main():
     state = load_state()
     # Load players scores
     scores = load_scores()
+    # Load consent. Everything downstream — which PRs are fetched, who is
+    # credited, who is mentioned, who is listed — is filtered through it.
+    prefs = load_preferences()
+    members = {u.lower() for u in member_usernames(prefs)}
+    log.info(f"{len(members)} participant(s) opted into the arena.")
 
     # Single welcome-dedup set shared across expiry + every week so a
     # user welcomed in one week isn't silently re-welcomed in another.
@@ -1032,7 +1154,9 @@ def main():
     # Collect expiry events BEFORE pruning
     expiry_events: list[dict] = []
     if state:
-        expiry_events = _collect_expiry_events(state, scores, welcomed_in_run)
+        expiry_events = _collect_expiry_events(
+            state, scores, welcomed_in_run, members
+        )
         cutoff_date = datetime.now(timezone.utc) - timedelta(weeks=28)
         state = {
             k: v
@@ -1052,7 +1176,7 @@ def main():
     all_status: dict[str, dict] = {}
     for week_id, week_data in state.items():
         credits, events, status = process_week(
-            week_id, week_data, scores, welcomed_in_run
+            week_id, week_data, scores, welcomed_in_run, prefs, members
         )
         all_new_credits.extend(credits)
         all_new_events.extend(events)
@@ -1099,7 +1223,7 @@ def main():
         try:
             from discussions import process_notification_events
 
-            scores = process_notification_events(all_new_events, scores)
+            scores = process_notification_events(all_new_events, scores, prefs)
         except Exception as exc:
             log.warning(f"Discussion notifications failed: {exc}")
 
@@ -1184,10 +1308,10 @@ def main():
     # Update README
     readme = README_PATH.read_text(encoding="utf-8")
     readme = update_readme_section(
-        readme, "LEADERBOARD", build_leaderboard_md(scores)
+        readme, "LEADERBOARD", build_leaderboard_md(scores, prefs)
     )
     readme = update_readme_section(
-        readme, "MERGED-THIS-WEEK", build_merged_this_week_md(scores)
+        readme, "MERGED-THIS-WEEK", build_merged_this_week_md(scores, prefs)
     )
     readme = update_issue_statuses(readme, all_status)
     atomic_write_text(README_PATH, readme)

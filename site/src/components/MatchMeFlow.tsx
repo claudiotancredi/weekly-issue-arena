@@ -1,4 +1,5 @@
 import { useMemo, useState } from "preact/hooks";
+import { JOIN_ARENA_URL } from "../lib/links";
 
 export interface MatchableIssueForIsland {
   number: number;
@@ -229,13 +230,16 @@ export default function MatchMeFlow({ languages, issuesByLanguage }: Props) {
 
           <div style={{ marginTop: "1.25rem" }}>
             <div style={{ fontSize: "0.75rem", color: "#71717a", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "0.625rem" }}>
-              From here, in 4 steps
+              From here, in 5 steps
             </div>
             <ol style={{ margin: 0, paddingLeft: "1.25rem", color: "#a1a1aa", fontSize: "0.8125rem", lineHeight: 1.6 }}>
+              <li>
+                <a href={JOIN_ARENA_URL} target="_blank" rel="noopener noreferrer" style={{ color: "#6366f1" }}>Join the arena</a> once — nothing counts until you do.
+              </li>
               <li>Fork the repo and create a branch.</li>
               <li>Implement your fix locally.</li>
               <li>
-                Open a PR with <code style={{ background: "#1a1a2e", padding: "0 0.25rem", borderRadius: "0.25rem", color: "#e4e4e7" }}>Closes #{issue.number}</code> in the description. The arena welcomes you in a Discussion within ~1 hour.
+                Open a PR with <code style={{ background: "#1a1a2e", padding: "0 0.25rem", borderRadius: "0.25rem", color: "#e4e4e7" }}>Closes #{issue.number}</code> in the description. If you asked for a Discussion thread, the arena opens it within ~1 hour.
               </li>
               <li>When the PR merges, points land on your profile automatically.</li>
             </ol>

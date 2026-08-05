@@ -3,6 +3,8 @@
 import sys
 from unittest.mock import patch
 
+import pytest
+
 sys.path.insert(0, "scripts")
 
 from discussions import (  # noqa: E402, I001
@@ -20,12 +22,35 @@ from discussions import (  # noqa: E402, I001
     add_pr_closed_comment,
     add_rank_up_comment,
     create_welcome_discussion,
+    delete_discussion,
     get_repo_and_category_id,
     process_notification_events,
 )
 
 
 # ── helpers ──────────────────────────────────────────────────
+
+
+# Every name the dispatcher tests dispatch to. They all opted in, so the
+# existing expectations describe a consenting user; the dedicated consent
+# tests below override this.
+CONSENTING_USERS = ("alice", "bob", "newbie", "speedy")
+
+
+def _prefs(*usernames: str, discussion: bool = True) -> dict:
+    """Build a preferences doc granting arena consent to *usernames*."""
+    return {
+        "version": 1,
+        "users": {
+            u: {
+                "leaderboard": True,
+                "discussion": discussion,
+                "notifications_ack": True,
+            }
+            for u in usernames
+        },
+        "processed_issues": [],
+    }
 
 
 def _make_scores(
@@ -319,6 +344,20 @@ class TestCommentPosters:
 
 class TestProcessNotificationEvents:
     """Tests for the process_notification_events orchestrator."""
+
+    @pytest.fixture(autouse=True)
+    def _consent(self):
+        """Grant arena consent to every user these tests dispatch to.
+
+        Without this the dispatcher reads the real preferences file and
+        correctly drops everything, which is what the consent tests below
+        assert explicitly.
+        """
+        with patch(
+            "discussions.load_preferences",
+            return_value=_prefs(*CONSENTING_USERS),
+        ):
+            yield
 
     def test_no_events_returns_scores_unchanged(self):
         """Empty event list short-circuits without API calls."""
@@ -727,3 +766,145 @@ class TestProcessNotificationEvents:
         mock_comment.assert_called_once()
         # first_merge received the node_id populated by the welcome.
         assert mock_comment.call_args[0][0] == "D_auto"
+
+
+# ── consent gate ─────────────────────────────────────────────
+
+
+class TestConsentGate:
+    """The dispatcher must publish nothing without recorded consent."""
+
+    @patch("discussions.create_welcome_discussion")
+    @patch("discussions.get_repo_and_category_id")
+    def test_non_member_welcome_is_dropped(self, mock_ids, mock_create):
+        """A user with no preferences entry gets no Discussion."""
+        mock_ids.return_value = ("R_123", "DC_cat")
+        scores = _make_scores()
+        events = [
+            {
+                "type": "welcome",
+                "username": "stranger",
+                "issue_key": "org/repo#1",
+                "pr_url": "https://github.com/org/repo/pull/10",
+            }
+        ]
+
+        result = process_notification_events(events, scores, _prefs("alice"))
+
+        mock_create.assert_not_called()
+        assert "stranger" not in result["players"]
+
+    @patch("discussions.create_welcome_discussion")
+    @patch("discussions.get_repo_and_category_id")
+    def test_member_without_discussion_consent_is_dropped(
+        self, mock_ids, mock_create
+    ):
+        """Opting into the leaderboard alone creates no thread."""
+        mock_ids.return_value = ("R_123", "DC_cat")
+        scores = _make_scores()
+        events = [
+            {
+                "type": "welcome",
+                "username": "quiet",
+                "issue_key": "org/repo#1",
+                "pr_url": "https://github.com/org/repo/pull/10",
+            }
+        ]
+
+        result = process_notification_events(
+            events, scores, _prefs("quiet", discussion=False)
+        )
+
+        mock_create.assert_not_called()
+        assert "quiet" not in result["players"]
+
+    @patch("discussions.add_first_merge_comment")
+    @patch("discussions.get_repo_and_category_id")
+    def test_comment_events_need_consent_too(self, mock_ids, mock_comment):
+        """A stale node ID does not license a comment after opt-out."""
+        mock_ids.return_value = ("R_123", "DC_cat")
+        scores = _make_scores(
+            players={"alice": _make_player(discussion_node_id="D_old")}
+        )
+        events = [
+            {
+                "type": "first_merge",
+                "username": "alice",
+                "points": 2,
+                "rank_name": "Hello World Engineer",
+                "issue_key": "org/repo#1",
+                "pr_url": "https://github.com/org/repo/pull/10",
+            }
+        ]
+
+        process_notification_events(events, scores, _prefs())
+
+        mock_comment.assert_not_called()
+
+    @patch("discussions.create_welcome_discussion")
+    @patch("discussions.get_repo_and_category_id")
+    def test_consent_lookup_is_case_insensitive(self, mock_ids, mock_create):
+        """GitHub logins vary in case; consent must still be found."""
+        mock_ids.return_value = ("R_123", "DC_cat")
+        mock_create.return_value = "D_new"
+        scores = _make_scores()
+        events = [
+            {
+                "type": "welcome",
+                "username": "AliCe",
+                "issue_key": "org/repo#1",
+                "pr_url": "https://github.com/org/repo/pull/10",
+            }
+        ]
+
+        process_notification_events(events, scores, _prefs("alice"))
+
+        mock_create.assert_called_once()
+
+    @patch(
+        "discussions.load_preferences",
+        return_value={"version": 1, "users": {}, "processed_issues": []},
+    )
+    @patch("discussions.create_welcome_discussion")
+    @patch("discussions.get_repo_and_category_id")
+    def test_omitted_prefs_fall_back_to_disk_and_fail_closed(
+        self, mock_ids, mock_create, mock_load
+    ):
+        """Forgetting to pass prefs must block, never publish."""
+        mock_ids.return_value = ("R_123", "DC_cat")
+        events = [
+            {
+                "type": "welcome",
+                "username": "alice",
+                "issue_key": "org/repo#1",
+                "pr_url": "https://github.com/org/repo/pull/10",
+            }
+        ]
+
+        process_notification_events(events, _make_scores())
+
+        mock_load.assert_called_once()
+        mock_create.assert_not_called()
+
+
+class TestDeleteDiscussion:
+    """Withdrawing consent takes the thread down."""
+
+    @patch("discussions.github_graphql")
+    def test_delete_discussion_sends_node_id(self, mock_gql):
+        """The delete mutation targets the given node."""
+        mock_gql.return_value = {
+            "deleteDiscussion": {"clientMutationId": None}
+        }
+
+        delete_discussion("D_gone")
+
+        call_vars = mock_gql.call_args[0][1]
+        assert call_vars["input"]["id"] == "D_gone"
+        assert "deleteDiscussion" in mock_gql.call_args[0][0]
+
+    @patch("discussions.github_graphql", side_effect=RuntimeError("nope"))
+    def test_delete_failure_propagates(self, _mock_gql):
+        """Callers decide how to handle a failed delete."""
+        with pytest.raises(RuntimeError):
+            delete_discussion("D_gone")

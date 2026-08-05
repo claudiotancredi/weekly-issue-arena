@@ -8,6 +8,7 @@ import {
   effectiveLimits,
   totalIssuesAtLevel,
 } from "../lib/levels";
+import { JOIN_ARENA_URL, LEAVE_ARENA_URL } from "../lib/links";
 
 const repoCount = getRepoCount();
 const levels = getLevels();
@@ -34,22 +35,75 @@ const maxTotal = totalIssuesAtLevel(maxLevel.level);
         </p>
         <p>
           Every <strong class="text-white">hour</strong>, another action checks whether any listed
-          issues have been closed by a pull request. If your PR closes an Arena issue, you automatically
-          earn points &mdash; which feed both your personal rank and the shared Arena Level.
+          issues have been closed by a pull request. If your PR closes an Arena issue and you have
+          joined the arena, you automatically earn points &mdash; which feed both your personal rank
+          and the shared Arena Level.
         </p>
         <p>
-          No registration required. Contributions are detected via GitHub's public metadata.
+          Contributions are detected via GitHub's public metadata, but the arena only ever looks at
+          people who asked it to. See <a href="#joining" class="text-accent hover:underline">Joining the arena</a>.
         </p>
+      </div>
+    </section>
+
+    <!-- Joining -->
+    <section id="joining" class="mb-12 scroll-mt-20">
+      <h2 class="text-xl font-bold text-white mb-4">Joining the Arena</h2>
+      <div class="space-y-3 text-sm text-zinc-400">
+        <p>
+          The arena is <strong class="text-white">opt-in</strong>. Until you submit the join form,
+          nothing about you enters it: your pull requests are ignored, your username never appears
+          on the leaderboard or in the statistics, and no Discussion ever mentions you. There is no
+          account and no password &mdash; the form <em>is</em> the sign-up, and a bot closes it as
+          soon as your choices are stored.
+        </p>
+        <p>The form asks for two separate permissions:</p>
+        <ul class="space-y-2 pl-1">
+          <li class="flex gap-2">
+            <span class="text-accent">&bull;</span>
+            <span><strong class="text-white">Public leaderboard</strong> &mdash; required. Your
+            username, points and rank become part of the public standings.</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="text-accent">&bull;</span>
+            <span><strong class="text-white">Personal update discussion</strong> &mdash; optional.
+            When your first qualifying PR is spotted, the bot opens one Discussion thread that
+            mentions you and posts every later merge, rank-up and status change there. Leave it
+            unchecked to earn points with zero mentions and zero notifications.</span>
+          </li>
+        </ul>
+        <p>
+          Nothing happens the moment you join. The arena starts reacting to you the first time you
+          open a pull request that closes an arena issue &mdash; that is when the welcome thread
+          appears, if you asked for one.
+        </p>
+        <p>
+          Changed your mind? Submit the join form again to update your choices, or
+          <a href={LEAVE_ARENA_URL} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">leave the arena</a>
+          to have your username, points, history and Discussion thread deleted. Your pull requests
+          are untouched either way &mdash; they live upstream and stay merged.
+        </p>
+      </div>
+      <div class="mt-6">
+        <a
+          href={JOIN_ARENA_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block rounded-lg bg-accent px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
+        >
+          Join the Arena
+        </a>
       </div>
     </section>
 
     <!-- Your first PR, in 4 steps -->
     <section class="mb-12">
-      <h2 class="text-xl font-bold text-white mb-4">Your first PR, in 4 steps</h2>
+      <h2 class="text-xl font-bold text-white mb-4">Your first PR, in 5 steps</h2>
       <ol class="space-y-3 text-sm text-zinc-400 list-decimal list-inside">
+        <li><strong class="text-white"><a href={JOIN_ARENA_URL} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Join the arena</a></strong> once. Nothing you do counts until you have.</li>
         <li><strong class="text-white">Fork the repo</strong> on GitHub and clone your fork locally. Create a branch off <code class="text-white">main</code>.</li>
         <li><strong class="text-white">Implement your fix.</strong> Read the issue thread first — many maintainers share hints or constraints in the comments.</li>
-        <li><strong class="text-white">Open a pull request</strong> back to the original repo. Include <code class="text-white">Closes #N</code> (or <code class="text-white">Fixes #N</code> / <code class="text-white">Resolves #N</code>) in the description so the issue auto-closes when the PR merges. The arena detects the PR within ~1 hour and opens a welcome Discussion thread — future status updates (merges, points, rank-ups) are posted there as comments.</li>
+        <li><strong class="text-white">Open a pull request</strong> back to the original repo. Include <code class="text-white">Closes #N</code> (or <code class="text-white">Fixes #N</code> / <code class="text-white">Resolves #N</code>) in the description so the issue auto-closes when the PR merges. The arena detects the PR within ~1 hour and, if you asked for a discussion thread, opens your welcome thread — future status updates (merges, points, rank-ups) are posted there as comments.</li>
         <li><strong class="text-white">Wait for review.</strong> When your first PR merges, the arena credits points automatically and unlocks your Arena Card — a badge you can embed in your GitHub profile README.</li>
       </ol>
     </section>
@@ -63,7 +117,8 @@ const maxTotal = totalIssuesAtLevel(maxLevel.level);
         <li class="flex gap-2"><span class="text-accent">&bull;</span> Issues with no PR after 7 days are dropped from tracking</li>
         <li class="flex gap-2"><span class="text-accent">&bull;</span> Your PR must reference the issue via a closing keyword (<code class="text-white">fixes #N</code>, <code class="text-white">closes #N</code>, <code class="text-white">resolves #N</code>) or be linked through GitHub's sidebar</li>
         <li class="flex gap-2"><span class="text-accent">&bull;</span> If multiple PRs reference the same issue, <strong class="text-white">only the one that closes it</strong> earns points</li>
-        <li class="flex gap-2"><span class="text-accent">&bull;</span> All contributors to Arena-listed issues are treated as participants</li>
+        <li class="flex gap-2"><span class="text-accent">&bull;</span> Only contributors who <a href={JOIN_ARENA_URL} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">joined the arena</a> are tracked or credited</li>
+        <li class="flex gap-2"><span class="text-accent">&bull;</span> An issue claimed by a PR shows as <strong class="text-white">PR Proposed</strong> whether or not its author is in the arena, so nobody duplicates work</li>
       </ul>
       <div class="mt-4 flex flex-wrap gap-4 text-xs text-zinc-400">
         <span>🟢 <strong class="text-green-400">Open</strong> — no PRs yet</span>
@@ -185,10 +240,14 @@ const maxTotal = totalIssuesAtLevel(maxLevel.level);
         <div>
           <h3 class="text-sm font-semibold text-white">My PR was merged but I didn't get points.</h3>
           <p class="mt-1 text-sm text-zinc-400">
-            Make sure your PR references the issue &mdash; either via a closing keyword
+            First, check that you have
+            <a href={JOIN_ARENA_URL} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">joined the arena</a> &mdash;
+            PRs from people who have not joined are not tracked, and joining does not apply
+            retroactively to a PR that already merged. Second, make sure your PR references the
+            issue &mdash; either via a closing keyword
             (<code class="text-white">fixes #N</code>, <code class="text-white">closes #N</code>,
             <code class="text-white">resolves #N</code>) in the PR body, or by linking the issue
-            through GitHub's sidebar. If you did link it, open a thread in
+            through GitHub's sidebar. If both are true, open a thread in
             <a href="https://github.com/claudiotancredi/weekly-issue-arena/discussions" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Discussions</a>.
           </p>
         </div>
@@ -216,7 +275,21 @@ const maxTotal = totalIssuesAtLevel(maxLevel.level);
         <div>
           <h3 class="text-sm font-semibold text-white">What if I contributed without knowing about the Arena?</h3>
           <p class="mt-1 text-sm text-zinc-400">
-            You're still counted. All contributors to Arena-listed issues are treated equally.
+            Then nothing happened, by design. The arena does not track, name or notify anyone who
+            has not opted in &mdash; it will not appear in your notifications uninvited. If you
+            like the idea, <a href={JOIN_ARENA_URL} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">join</a>
+            and your next PR will count. Past PRs are not credited retroactively.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-white">How do I stop the notifications, or leave entirely?</h3>
+          <p class="mt-1 text-sm text-zinc-400">
+            Every arena Discussion has an <strong class="text-white">Unsubscribe</strong> button in
+            its sidebar &mdash; that alone stops the notifications while keeping your points.
+            To turn the thread off for good, submit the join form again with the discussion box
+            unchecked and the thread is deleted. To remove yourself completely, use
+            <a href={LEAVE_ARENA_URL} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Leave the Arena</a>:
+            your entry, points, history and thread are all erased.
           </p>
         </div>
         <div>
@@ -249,6 +322,14 @@ const maxTotal = totalIssuesAtLevel(maxLevel.level);
     <section class="rounded-lg border border-border bg-surface-card p-6">
       <h2 class="text-lg font-bold text-white mb-3">Contributing to the Arena</h2>
       <div class="flex flex-wrap gap-3">
+        <a
+          href={JOIN_ARENA_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
+        >
+          Join the Arena
+        </a>
         <a
           href="https://github.com/claudiotancredi/weekly-issue-arena/discussions"
           target="_blank"

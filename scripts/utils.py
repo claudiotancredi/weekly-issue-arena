@@ -21,6 +21,26 @@ if GITHUB_TOKEN:
     HEADERS["Authorization"] = f"Bearer {GITHUB_TOKEN}"
 
 
+def _check_rate_limit(resp: requests.Response, label: str) -> None:
+    """Warn when the rate limit runs low, exit when it is exhausted."""
+    remaining = resp.headers.get("X-RateLimit-Remaining")
+    if remaining is None:
+        return
+    remaining = int(remaining)
+    if remaining < 100:
+        reset_ts = int(resp.headers.get("X-RateLimit-Reset", 0))
+        reset_at = datetime.fromtimestamp(
+            reset_ts, tz=timezone.utc
+        ).isoformat()
+        log.warning(
+            f"{label} rate limit low: "
+            f"{remaining} remaining. Resets at {reset_at}"
+        )
+    if resp.status_code == 403 and remaining == 0:
+        log.error(f"{label} rate limit exhausted.")
+        raise SystemExit(1)
+
+
 def github_get(url: str, **kwargs) -> requests.Response:
     """Make a GET request to the GitHub API with rate-limit awareness.
 
@@ -29,23 +49,23 @@ def github_get(url: str, **kwargs) -> requests.Response:
     """
     kwargs.setdefault("timeout", 15)
     resp = requests.get(url, headers=HEADERS, **kwargs)
+    _check_rate_limit(resp, "GitHub API")
+    return resp
 
-    remaining = resp.headers.get("X-RateLimit-Remaining")
-    if remaining is not None:
-        remaining = int(remaining)
-        if remaining < 100:
-            reset_ts = int(resp.headers.get("X-RateLimit-Reset", 0))
-            reset_at = datetime.fromtimestamp(
-                reset_ts, tz=timezone.utc
-            ).isoformat()
-            log.warning(
-                f"GitHub API rate limit low: "
-                f"{remaining} remaining. Resets at {reset_at}"
-            )
-        if resp.status_code == 403 and remaining == 0:
-            log.error("GitHub API rate limit exhausted.")
-            raise SystemExit(1)
 
+def github_post(url: str, json_body: dict, **kwargs) -> requests.Response:
+    """POST to the GitHub REST API with rate-limit awareness."""
+    kwargs.setdefault("timeout", 15)
+    resp = requests.post(url, headers=HEADERS, json=json_body, **kwargs)
+    _check_rate_limit(resp, "GitHub API")
+    return resp
+
+
+def github_patch(url: str, json_body: dict, **kwargs) -> requests.Response:
+    """PATCH the GitHub REST API with rate-limit awareness."""
+    kwargs.setdefault("timeout", 15)
+    resp = requests.patch(url, headers=HEADERS, json=json_body, **kwargs)
+    _check_rate_limit(resp, "GitHub API")
     return resp
 
 

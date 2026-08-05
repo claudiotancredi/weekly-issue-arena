@@ -1,0 +1,76 @@
+name: 🎟️ Join the Arena
+description: Opt in so your pull requests count towards the Weekly Issue Arena.
+title: "Join the Arena"
+labels: ["arena-consent"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Welcome!
+
+        The Weekly Issue Arena only tracks people who ask to be tracked.
+        Until you submit this form, **nothing about you enters the arena** —
+        your pull requests are ignored, your username and profile picture never appear on the
+        leaderboard, and no Discussion mentions you.
+
+        Submitting this form is your consent. A bot stores your choices in
+        [`.arena_state/preferences.json`](https://github.com/claudiotancredi/weekly-issue-arena/blob/main/.arena_state/preferences.json)
+        and closes this issue right away — that is the whole sign-up.
+
+        Nothing happens at the moment you join. The arena starts reacting to
+        you the first time you open a pull request that closes an arena issue.
+
+        Changed your mind later? Submit this form again to update your choices,
+        or open a [Leave the Arena](https://github.com/claudiotancredi/weekly-issue-arena/issues/new?template=leave_the_arena.yml)
+        issue to be removed completely.
+
+  - type: checkboxes
+    id: leaderboard
+    attributes:
+      label: Public leaderboard
+      description: >-
+        Required. This is the core of the arena.
+      options:
+        - label: >-
+            Show my GitHub username and profile picture on the public leaderboard and statistics
+          required: true
+
+  - type: checkboxes
+    id: discussion
+    attributes:
+      label: Personal arena update discussion
+      description: >-
+        Optional. When your first qualifying pull request is detected, the bot
+        opens one Discussion thread that mentions you, then posts your merges,
+        rank-ups and status changes there as comments. Leave this unchecked to
+        earn points with zero mentions and zero notifications. If you uncheck it
+        after a thread already exists, that thread is deleted.
+      options:
+        - label: >-
+            Create my personal arena update discussion
+          required: false
+
+  - type: checkboxes
+    id: notifications
+    attributes:
+      label: Notifications
+      description: >-
+        Required. GitHub subscribes you automatically to any Discussion that
+        mentions you, so we want to be sure you know how to switch that off.
+      options:
+        - label: >-
+            I understand that GitHub will subscribe me to any arena Discussion
+            that mentions me, and that I can stop those notifications at any
+            time with the "Unsubscribe" button in the thread's sidebar
+          required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else? (optional)
+      description: >-
+        Free-form. Not parsed by the bot — just a place to say hi or flag
+        something.
+      placeholder: Optional.
+    validations:
+      required: false

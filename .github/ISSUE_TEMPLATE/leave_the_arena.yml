@@ -1,0 +1,43 @@
+name: 🚪 Leave the Arena
+description: Remove yourself and your data from the Weekly Issue Arena.
+title: "Leave the Arena"
+labels: ["arena-consent"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Sorry to see you go
+
+        Submitting this form removes you from the arena. A bot handles it and
+        closes this issue right away.
+
+        Only your own account is affected — the account that opens this issue.
+
+  - type: checkboxes
+    id: leave
+    attributes:
+      label: Confirm removal
+      description: >-
+        Your entry in `.arena_state/preferences.json` is deleted, your points,
+        rank and contribution history are erased from the leaderboard and the
+        website, and your personal arena Discussion thread is deleted if one
+        exists. Your pull requests are untouched — they live in the upstream
+        repositories and stay merged. This cannot be undone, but you can always
+        rejoin later with a fresh Join the Arena form (starting from zero
+        points).
+      options:
+        - label: >-
+            Remove my username, my profile picture, my points and my arena Discussion thread from
+            the Weekly Issue Arena
+          required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything we should improve? (optional)
+      description: >-
+        Free-form. Not parsed by the bot. Feedback is welcome but never
+        required.
+      placeholder: Optional.
+    validations:
+      required: false

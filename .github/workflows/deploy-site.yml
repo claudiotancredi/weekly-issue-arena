@@ -5,6 +5,11 @@ on:
     workflows:
       - "\U0001F504 Weekly Issue Refresh"
       - "\U0001F3C6 Hourly Leaderboard Update"
+      # Consent changes must reach the site immediately: the bot's
+      # "[skip ci]" commit suppresses the push trigger below, so without
+      # this a departing contributor would stay visible until the next
+      # hourly run.
+      - "\U0001F39F️ Arena Consent Sync"
     types: [completed]
     branches: [main]
 

@@ -1,27 +1,4 @@
 {
-  "2026-W31": {
-    "fetched_at": "2026-07-31T17:00:00+00:00",
-    "issues": {
-      "gfi": [],
-      "bug": [
-        {
-          "number": 51192,
-          "title": "[Dependency]: Bump torchvision to a release containing the CVE-2026-65918 fix",
-          "url": "https://github.com/vllm-project/vllm/issues/51192",
-          "owner": "vllm-project",
-          "repo": "vllm",
-          "repo_url": "https://github.com/vllm-project/vllm",
-          "created_at": "2026-08-05T19:55:38Z",
-          "updated_at": "2026-08-05T19:55:38Z",
-          "author": "albayrakonur",
-          "listed_at": "2026-07-31T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": true
-        }
-      ],
-      "hard": []
-    }
-  },
   "2026-W32": {
     "fetched_at": "2026-08-07T17:00:00+00:00",
     "issues": {

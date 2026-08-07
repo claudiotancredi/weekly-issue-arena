@@ -63,26 +63,26 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Rabbit Batch Subscriber approach ](https://github.com/ag2ai/faststream/issues/1975) | [ag2ai/faststream](https://github.com/ag2ai/faststream) | 🟢 Open |
-| 2 | [[Feature]: MCP Task Support](https://github.com/agentscope-ai/agentscope-java/issues/217) | [agentscope-ai/agentscope-java](https://github.com/agentscope-ai/agentscope-java) | 🟢 Open |
-| 3 | [Remove redundant use of catch2](https://github.com/microsoft/ebpf-for-windows/issues/3954) | [microsoft/ebpf-for-windows](https://github.com/microsoft/ebpf-for-windows) | 🟢 Open |
-| 4 | [Add DANRA tutorial notebook with pytest-nbmake](https://github.com/mllam/neural-lam/issues/69) | [mllam/neural-lam](https://github.com/mllam/neural-lam) | 🟢 Open |
-| 5 | [Feature: Broker event handlers](https://github.com/ag2ai/faststream/issues/1545) | [ag2ai/faststream](https://github.com/ag2ai/faststream) | 🟢 Open |
-| 6 | [GRPO (RL) 训练交流群](https://github.com/modelscope/ms-swift/issues/3076) | [modelscope/ms-swift](https://github.com/modelscope/ms-swift) | 🟢 Open |
-| 7 | [Feature Request: Efficient Poisson Binomial PMF/CDF in tfp](https://github.com/tensorflow/probability/issues/1453) | [tensorflow/probability](https://github.com/tensorflow/probability) | 🟢 Open |
-| 8 | [Labeling Hebrew text causes words to mix](https://github.com/HumanSignal/label-studio/issues/1888) | [HumanSignal/label-studio](https://github.com/HumanSignal/label-studio) | 🟢 Open |
-| 9 | [[tx] Reactivate type checking with `ty`](https://github.com/NovaSky-AI/SkyRL/issues/673) | [NovaSky-AI/SkyRL](https://github.com/NovaSky-AI/SkyRL) | 🟢 Open |
-| 10 | [Supporting syntax highlighting for TOML-formatted values ...](https://github.com/hashicorp/consul/issues/12668) | [hashicorp/consul](https://github.com/hashicorp/consul) | 🟢 Open |
-| 11 | [sc.pl.paga: TypeError: paga() got an unexpected keyword a...](https://github.com/scverse/scanpy/issues/1203) | [scverse/scanpy](https://github.com/scverse/scanpy) | 🟢 Open |
-| 12 | [OpenSSL doesn't validate version field when parsing RSA P...](https://github.com/openssl/openssl/issues/26467) | [openssl/openssl](https://github.com/openssl/openssl) | 🟢 Open |
-| 13 | [Add a new Healthcare domain for medical patient support i...](https://github.com/sierra-research/tau2-bench/issues/127) | [sierra-research/tau2-bench](https://github.com/sierra-research/tau2-bench) | 🟢 Open |
-| 14 | [Inconsistent error messages when returning the wrong type...](https://github.com/python/cpython/issues/130821) | [python/cpython](https://github.com/python/cpython) | 🟢 Open |
-| 15 | [Handle CA2227 appropriately](https://github.com/microsoft/PowerToys/issues/11646) | [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | 🟢 Open |
-| 16 | [Functions to implement from GEOS ](https://github.com/shapely/shapely/issues/1570) | [shapely/shapely](https://github.com/shapely/shapely) | 🟢 Open |
-| 17 | [Docs for old supported versions should indicate that a ne...](https://github.com/django/djangoproject.com/issues/1122) | [django/djangoproject.com](https://github.com/django/djangoproject.com) | 🟢 Open |
-| 18 | [Show selection bounding box width/height in the X/Y rulers](https://github.com/GraphiteEditor/Graphite/issues/1969) | [GraphiteEditor/Graphite](https://github.com/GraphiteEditor/Graphite) | 🟢 Open |
-| 19 | [providing sample weights to glm.fit() and glm.fit.sparse()](https://github.com/tensorflow/probability/issues/252) | [tensorflow/probability](https://github.com/tensorflow/probability) | 🟢 Open |
-| 20 | [ENH: Improvements to new ARIMA-type estimators](https://github.com/statsmodels/statsmodels/issues/6159) | [statsmodels/statsmodels](https://github.com/statsmodels/statsmodels) | 🟢 Open |
+| 1 | [logger for request storage](https://github.com/vapor/vapor/issues/2489) | [vapor/vapor](https://github.com/vapor/vapor) | 🟢 Open |
+| 2 | [Make an example of RAG over urls](https://github.com/tryAGI/LangChain/issues/106) | [tryAGI/LangChain](https://github.com/tryAGI/LangChain) | 🟢 Open |
+| 3 | [The semi-hidden debug panel, opened with ! shortcut stopp...](https://github.com/maplibre/maputnik/issues/940) | [maplibre/maputnik](https://github.com/maplibre/maputnik) | 🟢 Open |
+| 4 | [Spark SQL Functions Coverage and Parity - String](https://github.com/lakehq/sail/issues/508) | [lakehq/sail](https://github.com/lakehq/sail) | 🟢 Open |
+| 5 | [[YSQL] Support SPLIT INTO syntax for matviews](https://github.com/yugabyte/yugabyte-db/issues/17797) | [yugabyte/yugabyte-db](https://github.com/yugabyte/yugabyte-db) | 🟢 Open |
+| 6 | [Replace `go.uber.go/atomic` with Go standard library `syn...](https://github.com/grafana/loki/issues/20673) | [grafana/loki](https://github.com/grafana/loki) | 🟢 Open |
+| 7 | [Clean code in updater and label updater](https://github.com/zinggAI/zingg/issues/262) | [zinggAI/zingg](https://github.com/zinggAI/zingg) | 🟢 Open |
+| 8 | [HTTP/2 server push](https://github.com/grafana/k6/issues/881) | [grafana/k6](https://github.com/grafana/k6) | 🟢 Open |
+| 9 | [Improve descriptions of plasma physics in documentation](https://github.com/PlasmaPy/PlasmaPy/issues/3258) | [PlasmaPy/PlasmaPy](https://github.com/PlasmaPy/PlasmaPy) | 🟢 Open |
+| 10 | [Allow users to define cursor mode based on device type](https://github.com/responsively-org/responsively-app/issues/577) | [responsively-org/responsively-app](https://github.com/responsively-org/responsively-app) | 🟢 Open |
+| 11 | [Synth Settings Ring: Remember last Focused Setting](https://github.com/nvaccess/nvda/issues/9804) | [nvaccess/nvda](https://github.com/nvaccess/nvda) | 🟢 Open |
+| 12 | [[DatabaseLoader] Create higher level convenient methods f...](https://github.com/dotnet/machinelearning/issues/4182) | [dotnet/machinelearning](https://github.com/dotnet/machinelearning) | 🟢 Open |
+| 13 | [[Betatesting] Car junction exercise](https://github.com/JdeRobot/RoboticsAcademy/issues/3456) | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) | 🟢 Open |
+| 14 | [Add Fermi distribution function](https://github.com/PlasmaPy/PlasmaPy/issues/478) | [PlasmaPy/PlasmaPy](https://github.com/PlasmaPy/PlasmaPy) | 🟢 Open |
+| 15 | [Allow different output formats in parallel (e.g. for SBOM...](https://github.com/pypa/pip-audit/issues/753) | [pypa/pip-audit](https://github.com/pypa/pip-audit) | 🟢 Open |
+| 16 | [feat: Implement functions using geos library](https://github.com/apache/sedona-db/issues/224) | [apache/sedona-db](https://github.com/apache/sedona-db) | 🟢 Open |
+| 17 | [Add a new Healthcare domain for medical patient support i...](https://github.com/sierra-research/tau2-bench/issues/127) | [sierra-research/tau2-bench](https://github.com/sierra-research/tau2-bench) | 🟢 Open |
+| 18 | [Spark SQL Functions Coverage and Parity - Lambda ](https://github.com/lakehq/sail/issues/229) | [lakehq/sail](https://github.com/lakehq/sail) | 🟢 Open |
+| 19 | [Add metadata to migrations table](https://github.com/typeorm/typeorm/issues/3375) | [typeorm/typeorm](https://github.com/typeorm/typeorm) | 🟢 Open |
+| 20 | [Replace `requests` with async httpx](https://github.com/skyportal/skyportal/issues/2377) | [skyportal/skyportal](https://github.com/skyportal/skyportal) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -93,20 +93,20 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [CodeLens References not shown](https://github.com/dotnet/roslyn/issues/39615) | [dotnet/roslyn](https://github.com/dotnet/roslyn) | 🟢 Open |
-| 2 | [[SETUP-BUG] Installing and configuring mlflow-openclaw](https://github.com/mlflow/mlflow/issues/23137) | [mlflow/mlflow](https://github.com/mlflow/mlflow) | 🟢 Open |
-| 3 | [Kana translation incorrect: should be いく](https://github.com/lingdojo/kana-dojo/issues/27187) | [lingdojo/kana-dojo](https://github.com/lingdojo/kana-dojo) | 🟢 Open |
-| 4 | [[Dependency]: Bump torchvision to a release containing th...](https://github.com/vllm-project/vllm/issues/51192) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟡 PR Proposed |
-| 5 | [Worker container error when publishing (TimeLimitExceeded)](https://github.com/taranis-ai/taranis-ai/issues/613) | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | 🟢 Open |
-| 6 | [Doc: `:option:` directives link to incorrect pages](https://github.com/OSGeo/gdal/issues/14670) | [OSGeo/gdal](https://github.com/OSGeo/gdal) | 🟢 Open |
-| 7 | [bug(core): `atrace_as_chain_group` leaves runs pending on...](https://github.com/langchain-ai/langchain/issues/39163) | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 🟢 Open |
-| 8 | [deepeyes fixed](https://github.com/verl-project/verl/issues/5358) | [verl-project/verl](https://github.com/verl-project/verl) | 🟢 Open |
-| 9 | [[bug]: Still Crashing when i "Invoke" ROCm 7.1](https://github.com/invoke-ai/InvokeAI/issues/9374) | [invoke-ai/InvokeAI](https://github.com/invoke-ai/InvokeAI) | 🟢 Open |
-| 10 | [[Bug]: augmentations.rs: dict_get panics on missing key i...](https://github.com/kornia/kornia-rs/issues/1058) | [kornia/kornia-rs](https://github.com/kornia/kornia-rs) | 🟢 Open |
-| 11 | [bug: ripgrep preinstall 安装失败无提示](https://github.com/claude-code-best/claude-code/issues/1318) | [claude-code-best/claude-code](https://github.com/claude-code-best/claude-code) | 🟢 Open |
-| 12 | [[BUG] Refresh Data Selector button not working](https://github.com/opensearch-project/OpenSearch-Dashboards/issues/10986) | [opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards) | 🟢 Open |
-| 13 | [GPU AD failing](https://github.com/SciML/NeuralPDE.jl/issues/1052) | [SciML/NeuralPDE.jl](https://github.com/SciML/NeuralPDE.jl) | 🟢 Open |
-| 14 | [[BUG] ICE when compiling kernel converting `Float32` to `...](https://github.com/NVIDIA/cutlass/issues/3429) | [NVIDIA/cutlass](https://github.com/NVIDIA/cutlass) | 🟢 Open |
+| 1 | [SAPI5 synthesizers fail to initialize with "Class not reg...](https://github.com/nvaccess/nvda/issues/20273) | [nvaccess/nvda](https://github.com/nvaccess/nvda) | 🟢 Open |
+| 2 | [Invalid Arrow data from JSONL](https://github.com/huggingface/datasets/issues/5531) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
+| 3 | [qm9_nn_conv.py yields very large and inconsistent results](https://github.com/pyg-team/pytorch_geometric/issues/10517) | [pyg-team/pytorch_geometric](https://github.com/pyg-team/pytorch_geometric) | 🟢 Open |
+| 4 | [[Bug]: [Bug] Windows 下 Chrome Native Host 注册项未创建，@chrome ...](https://github.com/BigPizzaV3/CodexPlusPlus/issues/403) | [BigPizzaV3/CodexPlusPlus](https://github.com/BigPizzaV3/CodexPlusPlus) | 🟢 Open |
+| 5 | [Microsoft Store listing cannot be found despite v0.11.0 r...](https://github.com/freedomofpress/dangerzone/issues/1546) | [freedomofpress/dangerzone](https://github.com/freedomofpress/dangerzone) | 🟢 Open |
+| 6 | [Bug: AirDropping audiobooks from old phone to new phone c...](https://github.com/TortugaPower/BookPlayer/issues/1558) | [TortugaPower/BookPlayer](https://github.com/TortugaPower/BookPlayer) | 🟢 Open |
+| 7 | [[BUG] issue 1189的延续](https://github.com/NanmiCoder/cc-haha/issues/1197) | [NanmiCoder/cc-haha](https://github.com/NanmiCoder/cc-haha) | 🟢 Open |
+| 8 | [[Bug]:](https://github.com/nikopueringer/CorridorKey/issues/258) | [nikopueringer/CorridorKey](https://github.com/nikopueringer/CorridorKey) | 🟢 Open |
+| 9 | [objfile paths are not standardized](https://github.com/pwndbg/pwndbg/issues/3641) | [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) | 🟢 Open |
+| 10 | [Sybase row validation fails when white space in key values](https://github.com/GoogleCloudPlatform/professional-services-data-validator/issues/1801) | [GoogleCloudPlatform/professional-services-data-validator](https://github.com/GoogleCloudPlatform/professional-services-data-validator) | 🟢 Open |
+| 11 | [/load_expr re-runs the full stat pipeline on every POST e...](https://github.com/buckaroo-data/buckaroo/issues/899) | [buckaroo-data/buckaroo](https://github.com/buckaroo-data/buckaroo) | 🟢 Open |
+| 12 | [Error: DNS resolution failed: locltest.com](https://github.com/ParabolInc/parabol/issues/13333) | [ParabolInc/parabol](https://github.com/ParabolInc/parabol) | 🟢 Open |
+| 13 | [[BUG] ProtonVPN GUI not working when installed using ujus...](https://github.com/secureblue/secureblue/issues/2297) | [secureblue/secureblue](https://github.com/secureblue/secureblue) | 🟢 Open |
+| 14 | [ Microsoft.ML.TorchSharp.Tests.QATests.TestSimpleQA follo...](https://github.com/dotnet/machinelearning/issues/6978) | [dotnet/machinelearning](https://github.com/dotnet/machinelearning) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -118,15 +118,15 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 2 | [Link photos from NextCloud](https://github.com/LibrePhotos/librephotos/issues/55) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
-| 3 | [Automatically propagate changes from Taranis AI to MISP](https://github.com/taranis-ai/taranis-ai/issues/631) | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | 🟢 Open |
-| 4 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 5 | [Share places, people and things when sharing the picture(...](https://github.com/LibrePhotos/librephotos/issues/166) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
-| 6 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 7 | [Preserving dtype for float32 / float64 in transformers](https://github.com/scikit-learn/scikit-learn/issues/11000) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 8 | [Proper distributed tests](https://github.com/lightly-ai/lightly/issues/1982) | [lightly-ai/lightly](https://github.com/lightly-ai/lightly) | 🟢 Open |
-| 9 | [Conflit View: NewsItem and Story conflicts improvements](https://github.com/taranis-ai/taranis-ai/issues/591) | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | 🟢 Open |
-| 10 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 2 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 3 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 4 | [Proper distributed tests](https://github.com/lightly-ai/lightly/issues/1982) | [lightly-ai/lightly](https://github.com/lightly-ai/lightly) | 🟢 Open |
+| 5 | [RFC Improving guidance for common CI failures for new con...](https://github.com/scikit-learn/scikit-learn/issues/33594) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 6 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 7 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 8 | [Newlines should not be scaped when using setting usetex=True](https://github.com/matplotlib/matplotlib/issues/29628) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 9 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 10 | [Migrate from Travis CI/CD to Github CI/CD](https://github.com/Cloud-CV/EvalAI/issues/4553) | [Cloud-CV/EvalAI](https://github.com/Cloud-CV/EvalAI) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

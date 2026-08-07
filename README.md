@@ -96,7 +96,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 1 | [CodeLens References not shown](https://github.com/dotnet/roslyn/issues/39615) | [dotnet/roslyn](https://github.com/dotnet/roslyn) | 🟢 Open |
 | 2 | [[SETUP-BUG] Installing and configuring mlflow-openclaw](https://github.com/mlflow/mlflow/issues/23137) | [mlflow/mlflow](https://github.com/mlflow/mlflow) | 🟢 Open |
 | 3 | [Kana translation incorrect: should be いく](https://github.com/lingdojo/kana-dojo/issues/27187) | [lingdojo/kana-dojo](https://github.com/lingdojo/kana-dojo) | 🟢 Open |
-| 4 | [[Dependency]: Bump torchvision to a release containing th...](https://github.com/vllm-project/vllm/issues/51192) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟢 Open |
+| 4 | [[Dependency]: Bump torchvision to a release containing th...](https://github.com/vllm-project/vllm/issues/51192) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟡 PR Proposed |
 | 5 | [Worker container error when publishing (TimeLimitExceeded)](https://github.com/taranis-ai/taranis-ai/issues/613) | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | 🟢 Open |
 | 6 | [Doc: `:option:` directives link to incorrect pages](https://github.com/OSGeo/gdal/issues/14670) | [OSGeo/gdal](https://github.com/OSGeo/gdal) | 🟢 Open |
 | 7 | [bug(core): `atrace_as_chain_group` leaves runs pending on...](https://github.com/langchain-ai/langchain/issues/39163) | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 🟢 Open |

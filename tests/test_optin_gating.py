@@ -345,7 +345,14 @@ class TestStubQualifies:
 
 
 class TestExternalPendingStatus:
-    """An outsider's claim shows on the board without naming them."""
+    """An outsider's claim shows on the board without naming them.
+
+    Display and retention are deliberately different: a non-participant's
+    claim marks the issue as taken while it is on the board, but must not
+    keep it alive past the 7-day window. Held open, such an issue is
+    invisible (only the current week renders) and uncreditable, yet costs
+    a timeline request every hour for up to 28 weeks.
+    """
 
     @patch("update_leaderboard.gather_issue_prs")
     def test_external_pending_marks_issue_as_claimed(self, mock_gather):
@@ -363,8 +370,8 @@ class TestExternalPendingStatus:
         assert events == []
 
     @patch("update_leaderboard.gather_issue_prs")
-    def test_external_pending_keeps_issue_past_deadline(self, mock_gather):
-        """A claimed issue is not dropped at the 7-day mark."""
+    def test_external_pending_does_not_survive_deadline(self, mock_gather):
+        """An outsider's claim alone stops the tracking at 7 days."""
         mock_gather.return_value = _bundle(external=True)
         issue = _make_issue()
         issue["listed_at"] = (
@@ -372,9 +379,75 @@ class TestExternalPendingStatus:
         ).isoformat()
         week = _make_week([issue])
 
-        process_week("2026-W31", week, _make_scores(), set(), _prefs(), set())
+        _, _, status = process_week(
+            "2026-W31", week, _make_scores(), set(), _prefs(), set()
+        )
+
+        assert issue["closed"] is True
+        assert status["org/proj#1"]["state"] == "closed"
+
+    @patch("update_leaderboard.gather_issue_prs")
+    def test_member_pending_does_survive_deadline(self, mock_gather):
+        """A participant's open PR still buys the full 28-week window."""
+        mock_gather.return_value = _bundle(prs=[_gathered_pr(author="alice")])
+        issue = _make_issue()
+        issue["listed_at"] = (
+            datetime.now(timezone.utc) - timedelta(days=10)
+        ).isoformat()
+        week = _make_week([issue])
+
+        process_week(
+            "2026-W31",
+            week,
+            _make_scores(),
+            set(),
+            _prefs("alice"),
+            {"alice"},
+        )
 
         assert issue.get("closed") is not True
+        assert issue["has_pr"] is True
+
+    @patch("update_leaderboard.gather_issue_prs")
+    def test_member_claim_outside_window_does_not_survive(self, mock_gather):
+        """A participant's late PR earns no extension either."""
+        mock_gather.return_value = _bundle(
+            prs=[_gathered_pr(author="alice", within_deadline=False)]
+        )
+        issue = _make_issue()
+        issue["listed_at"] = (
+            datetime.now(timezone.utc) - timedelta(days=10)
+        ).isoformat()
+        week = _make_week([issue])
+
+        process_week(
+            "2026-W31",
+            week,
+            _make_scores(),
+            set(),
+            _prefs("alice"),
+            {"alice"},
+        )
+
+        assert issue["closed"] is True
+
+    @patch("update_leaderboard.gather_issue_prs")
+    def test_member_claim_shows_before_deadline(self, mock_gather):
+        """Inside the window, a participant's claim marks the issue too."""
+        mock_gather.return_value = _bundle(prs=[_gathered_pr(author="alice")])
+        issue = _make_issue()
+        week = _make_week([issue])
+
+        _, _, status = process_week(
+            "2026-W31",
+            week,
+            _make_scores(),
+            set(),
+            _prefs("alice"),
+            {"alice"},
+        )
+
+        assert status["org/proj#1"]["has_pr"] is True
 
     @patch("update_leaderboard.gather_issue_prs")
     def test_no_claim_leaves_issue_open(self, mock_gather):

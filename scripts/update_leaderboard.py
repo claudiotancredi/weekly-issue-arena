@@ -594,7 +594,10 @@ def process_week(
     Resolved issues are marked with ``closed=True`` in-place so they remain
     visible on the website during their week. A separate cleanup step in
     ``main()`` removes them from old weeks once a new week has started.
-    Issues with a pending PR are left open and tracked for up to 28 weeks.
+    Issues with a pending PR from a participant are left open and tracked
+    for up to 28 weeks. A claim by a non-participant marks the issue as
+    taken while it is on the board, but does not extend its life past the
+    7-day window — see the retention comment in the loop below.
 
     ``welcomed_in_run`` is a shared set of usernames welcomed during this
     run. Pass the same set across every ``process_week`` call and through
@@ -679,16 +682,29 @@ def process_week(
                 )
             )
 
-            # If the issue is still open, check if the PR window has expired
+            # If the issue is still open, check if the PR window has expired.
+            #
+            # A claim by a non-participant and a claim by a participant mean
+            # different things, so they are kept apart:
+            #
+            #   * Display (``has_pr``) counts both. While the issue is on the
+            #     board, a claim is a claim — nobody should duplicate work
+            #     someone else has already started.
+            #   * Retention past the deadline counts participants only. An
+            #     issue held open for a non-participant is invisible (only
+            #     the current week is rendered) and uncreditable (their PR is
+            #     never fetched, and the window for any new qualifying PR has
+            #     closed), yet it would cost a timeline request every hour for
+            #     up to 28 weeks. That is pure waste, so it is dropped.
             if issue_state == "open":
-                qualifying_pending = external_pending or any(
+                member_pending = any(
                     pr["state"] == "open"
                     and pr["has_closing_keyword"]
                     and pr["within_deadline"]
                     for pr in prs
                 )
                 if now > deadline:
-                    if qualifying_pending:
+                    if member_pending:
                         log.info(
                             f"Issue {issue_key} has a pending PR "
                             f"— keeping in tracking"
@@ -697,11 +713,12 @@ def process_week(
                     else:
                         log.info(
                             f"Issue {issue_key} still open past "
-                            f"7-day window with no PR — marking closed"
+                            f"7-day window with no qualifying PR from a "
+                            f"participant — marking closed"
                         )
                         issue["closed"] = True
                 else:
-                    issue["has_pr"] = qualifying_pending
+                    issue["has_pr"] = member_pending or external_pending
                 status_map[issue_key] = {
                     "state": "closed" if issue.get("closed") else "open",
                     "has_pr": bool(issue.get("has_pr")),

@@ -93,7 +93,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [SAPI5 synthesizers fail to initialize with "Class not reg...](https://github.com/nvaccess/nvda/issues/20273) | [nvaccess/nvda](https://github.com/nvaccess/nvda) | 🟢 Open |
+| 1 | [SAPI5 synthesizers fail to initialize with "Class not reg...](https://github.com/nvaccess/nvda/issues/20273) | [nvaccess/nvda](https://github.com/nvaccess/nvda) | 🔴 Closed |
 | 2 | [Invalid Arrow data from JSONL](https://github.com/huggingface/datasets/issues/5531) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
 | 3 | [qm9_nn_conv.py yields very large and inconsistent results](https://github.com/pyg-team/pytorch_geometric/issues/10517) | [pyg-team/pytorch_geometric](https://github.com/pyg-team/pytorch_geometric) | 🟢 Open |
 | 4 | [[Bug]: [Bug] Windows 下 Chrome Native Host 注册项未创建，@chrome ...](https://github.com/BigPizzaV3/CodexPlusPlus/issues/403) | [BigPizzaV3/CodexPlusPlus](https://github.com/BigPizzaV3/CodexPlusPlus) | 🟢 Open |

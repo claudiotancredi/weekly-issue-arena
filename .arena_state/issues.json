@@ -297,7 +297,8 @@
           "author": "drewbush44-ac",
           "listed_at": "2026-08-07T17:00:00+00:00",
           "language": "Python",
-          "has_pr": false
+          "has_pr": false,
+          "closed": true
         },
         {
           "number": 5531,

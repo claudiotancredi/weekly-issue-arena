@@ -99,7 +99,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 4 | [[Bug]: [Bug] Windows 下 Chrome Native Host 注册项未创建，@chrome ...](https://github.com/BigPizzaV3/CodexPlusPlus/issues/403) | [BigPizzaV3/CodexPlusPlus](https://github.com/BigPizzaV3/CodexPlusPlus) | 🟢 Open |
 | 5 | [Microsoft Store listing cannot be found despite v0.11.0 r...](https://github.com/freedomofpress/dangerzone/issues/1546) | [freedomofpress/dangerzone](https://github.com/freedomofpress/dangerzone) | 🟢 Open |
 | 6 | [Bug: AirDropping audiobooks from old phone to new phone c...](https://github.com/TortugaPower/BookPlayer/issues/1558) | [TortugaPower/BookPlayer](https://github.com/TortugaPower/BookPlayer) | 🟢 Open |
-| 7 | [[BUG] issue 1189的延续](https://github.com/NanmiCoder/cc-haha/issues/1197) | [NanmiCoder/cc-haha](https://github.com/NanmiCoder/cc-haha) | 🟢 Open |
+| 7 | [[BUG] issue 1189的延续](https://github.com/NanmiCoder/cc-haha/issues/1197) | [NanmiCoder/cc-haha](https://github.com/NanmiCoder/cc-haha) | 🔴 Closed |
 | 8 | [[Bug]:](https://github.com/nikopueringer/CorridorKey/issues/258) | [nikopueringer/CorridorKey](https://github.com/nikopueringer/CorridorKey) | 🟢 Open |
 | 9 | [objfile paths are not standardized](https://github.com/pwndbg/pwndbg/issues/3641) | [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) | 🟢 Open |
 | 10 | [Sybase row validation fails when white space in key values](https://github.com/GoogleCloudPlatform/professional-services-data-validator/issues/1801) | [GoogleCloudPlatform/professional-services-data-validator](https://github.com/GoogleCloudPlatform/professional-services-data-validator) | 🟢 Open |

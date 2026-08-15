@@ -99,7 +99,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 4 | [main_arena heap recovery failing on arch package (glibc 2...](https://github.com/pwndbg/pwndbg/issues/4074) | [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) | 🟢 Open |
 | 5 | [UnbalancedSinkhorn Transport fails to transform due to "n...](https://github.com/PythonOT/POT/issues/650) | [PythonOT/POT](https://github.com/PythonOT/POT) | 🟢 Open |
 | 6 | [Global asset page not showing partitioned assets as unsyn...](https://github.com/dagster-io/dagster/issues/22553) | [dagster-io/dagster](https://github.com/dagster-io/dagster) | 🟢 Open |
-| 7 | [InpaintProcessor.preprocess returns a bare tensor when no...](https://github.com/huggingface/diffusers/issues/14470) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 7 | [InpaintProcessor.preprocess returns a bare tensor when no...](https://github.com/huggingface/diffusers/issues/14470) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟡 PR Proposed |
 | 8 | [Could not play stream [ERROR_CODE_IO_NETWORK_CONNECTION_T...](https://github.com/TeamNewPipe/NewPipe/issues/13765) | [TeamNewPipe/NewPipe](https://github.com/TeamNewPipe/NewPipe) | 🟢 Open |
 | 9 | [Missing type promotion in user defined functions with fun...](https://github.com/RumbleDB/rumble/issues/1284) | [RumbleDB/rumble](https://github.com/RumbleDB/rumble) | 🟢 Open |
 | 10 | [PytestRemovedIn10Warning (pytest version 9.1.1.) with skl...](https://github.com/scikit-learn/scikit-learn/issues/34738) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟡 PR Proposed |

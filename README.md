@@ -102,7 +102,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 7 | [InpaintProcessor.preprocess returns a bare tensor when no...](https://github.com/huggingface/diffusers/issues/14470) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟡 PR Proposed |
 | 8 | [Could not play stream [ERROR_CODE_IO_NETWORK_CONNECTION_T...](https://github.com/TeamNewPipe/NewPipe/issues/13765) | [TeamNewPipe/NewPipe](https://github.com/TeamNewPipe/NewPipe) | 🟢 Open |
 | 9 | [Missing type promotion in user defined functions with fun...](https://github.com/RumbleDB/rumble/issues/1284) | [RumbleDB/rumble](https://github.com/RumbleDB/rumble) | 🟢 Open |
-| 10 | [PytestRemovedIn10Warning (pytest version 9.1.1.) with skl...](https://github.com/scikit-learn/scikit-learn/issues/34738) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟡 PR Proposed |
+| 10 | [PytestRemovedIn10Warning (pytest version 9.1.1.) with skl...](https://github.com/scikit-learn/scikit-learn/issues/34738) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🔴 Closed |
 | 11 | [Bug: http_tls_config certs do not rotate](https://github.com/grafana/mimir/issues/15525) | [grafana/mimir](https://github.com/grafana/mimir) | 🟢 Open |
 | 12 | [Better handling of 429 errors when reading from cloud pat...](https://github.com/NVIDIA-NeMo/Curator/issues/1569) | [NVIDIA-NeMo/Curator](https://github.com/NVIDIA-NeMo/Curator) | 🟢 Open |
 | 13 | [Admin "deduplicate faces" action is non-functional on lar...](https://github.com/LibrePhotos/librephotos/issues/1918) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |

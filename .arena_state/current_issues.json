@@ -52,7 +52,7 @@
     "repo": "Rustchain",
     "number": 302,
     "category": "gfi",
-    "has_pr": true,
+    "has_pr": false,
     "language": "Python"
   },
   {

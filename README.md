@@ -69,7 +69,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 4 | [[Task]: Move expires_in field after scope while configuri...](https://github.com/appsmithorg/appsmith/issues/31059) | [appsmithorg/appsmith](https://github.com/appsmithorg/appsmith) | 🟢 Open |
 | 5 | [server notification in the command line](https://github.com/Ericsson/codechecker/issues/1916) | [Ericsson/codechecker](https://github.com/Ericsson/codechecker) | 🟢 Open |
 | 6 | [Convex Hull node](https://github.com/GraphiteEditor/Graphite/issues/1673) | [GraphiteEditor/Graphite](https://github.com/GraphiteEditor/Graphite) | 🟢 Open |
-| 7 | [[BOUNTY] Write a Blog Post About RustChain — 5 RTC](https://github.com/Scottcjn/Rustchain/issues/302) | [Scottcjn/Rustchain](https://github.com/Scottcjn/Rustchain) | 🟡 PR Proposed |
+| 7 | [[BOUNTY] Write a Blog Post About RustChain — 5 RTC](https://github.com/Scottcjn/Rustchain/issues/302) | [Scottcjn/Rustchain](https://github.com/Scottcjn/Rustchain) | 🟢 Open |
 | 8 | [tu_collector in clang only environment](https://github.com/Ericsson/codechecker/issues/2260) | [Ericsson/codechecker](https://github.com/Ericsson/codechecker) | 🟢 Open |
 | 9 | [Add support for git mergetool](https://github.com/jelmer/dulwich/issues/1822) | [jelmer/dulwich](https://github.com/jelmer/dulwich) | 🟢 Open |
 | 10 | [Ensure the utilities module passes MyPy type checks](https://github.com/huggingface/lerobot/issues/1727) | [huggingface/lerobot](https://github.com/huggingface/lerobot) | 🟢 Open |

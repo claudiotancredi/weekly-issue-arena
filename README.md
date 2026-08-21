@@ -63,26 +63,26 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Manually select picture as album cover ](https://github.com/LibrePhotos/librephotos/issues/429) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
-| 2 | [Type highlighting in `inspect_types`](https://github.com/numba/numba/issues/4286) | [numba/numba](https://github.com/numba/numba) | 🟢 Open |
-| 3 | [Can not reproduce Qwen3-Embedding results](https://github.com/embeddings-benchmark/mteb/issues/2907) | [embeddings-benchmark/mteb](https://github.com/embeddings-benchmark/mteb) | 🟢 Open |
-| 4 | [[Task]: Move expires_in field after scope while configuri...](https://github.com/appsmithorg/appsmith/issues/31059) | [appsmithorg/appsmith](https://github.com/appsmithorg/appsmith) | 🟢 Open |
-| 5 | [server notification in the command line](https://github.com/Ericsson/codechecker/issues/1916) | [Ericsson/codechecker](https://github.com/Ericsson/codechecker) | 🟢 Open |
-| 6 | [Convex Hull node](https://github.com/GraphiteEditor/Graphite/issues/1673) | [GraphiteEditor/Graphite](https://github.com/GraphiteEditor/Graphite) | 🟢 Open |
-| 7 | [[BOUNTY] Write a Blog Post About RustChain — 5 RTC](https://github.com/Scottcjn/Rustchain/issues/302) | [Scottcjn/Rustchain](https://github.com/Scottcjn/Rustchain) | 🟢 Open |
-| 8 | [tu_collector in clang only environment](https://github.com/Ericsson/codechecker/issues/2260) | [Ericsson/codechecker](https://github.com/Ericsson/codechecker) | 🟢 Open |
-| 9 | [Add support for git mergetool](https://github.com/jelmer/dulwich/issues/1822) | [jelmer/dulwich](https://github.com/jelmer/dulwich) | 🟢 Open |
-| 10 | [Ensure the utilities module passes MyPy type checks](https://github.com/huggingface/lerobot/issues/1727) | [huggingface/lerobot](https://github.com/huggingface/lerobot) | 🟢 Open |
-| 11 | [[Good First Issue][NNCF][Tests]: Refactor weights compres...](https://github.com/openvinotoolkit/nncf/issues/3129) | [openvinotoolkit/nncf](https://github.com/openvinotoolkit/nncf) | 🟢 Open |
-| 12 | [List on fdroid](https://github.com/simonoppowa/OpenNutriTracker/issues/126) | [simonoppowa/OpenNutriTracker](https://github.com/simonoppowa/OpenNutriTracker) | 🟢 Open |
-| 13 | [[Bug]: Creating a split transaction directly jumps to the...](https://github.com/actualbudget/actual/issues/8522) | [actualbudget/actual](https://github.com/actualbudget/actual) | 🟢 Open |
-| 14 | [国内如何加速docker build？](https://github.com/THU-MAIC/OpenMAIC/issues/663) | [THU-MAIC/OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) | 🟢 Open |
-| 15 | [Label the TLS in vmmap](https://github.com/pwndbg/pwndbg/issues/1570) | [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) | 🟢 Open |
-| 16 | [FP8 Blockwise Training Tracker](https://github.com/pytorch/ao/issues/3290) | [pytorch/ao](https://github.com/pytorch/ao) | 🟢 Open |
-| 17 | [Feature Request: Implement missing ops from backends](https://github.com/ggml-org/llama.cpp/issues/14909) | [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 🟢 Open |
-| 18 | [[Bug]: Installing npm @actual-app/sync-server ends up wit...](https://github.com/actualbudget/actual/issues/8584) | [actualbudget/actual](https://github.com/actualbudget/actual) | 🟢 Open |
-| 19 | [TreeSatAI-time-series](https://github.com/torchgeo/torchgeo/issues/3776) | [torchgeo/torchgeo](https://github.com/torchgeo/torchgeo) | 🟢 Open |
-| 20 | [BUG: views not adhering to sort order in view definition](https://github.com/beekeeper-studio/beekeeper-studio/issues/1521) | [beekeeper-studio/beekeeper-studio](https://github.com/beekeeper-studio/beekeeper-studio) | 🟢 Open |
+| 1 | [Consider if the editor light level (day/night) buttons sh...](https://github.com/Revolutionary-Games/Thrive/issues/6039) | [Revolutionary-Games/Thrive](https://github.com/Revolutionary-Games/Thrive) | 🟢 Open |
+| 2 | [[CHORE]: GitHub Actions to build docs, with diagrams and ...](https://github.com/IBM/mcp-context-forge/issues/307) | [IBM/mcp-context-forge](https://github.com/IBM/mcp-context-forge) | 🟢 Open |
+| 3 | [Got it working on Windows - need a tester](https://github.com/bghira/SimpleTuner/issues/2119) | [bghira/SimpleTuner](https://github.com/bghira/SimpleTuner) | 🟢 Open |
+| 4 | [Add codecs for the `video` asset type](https://github.com/meeb/tubesync/issues/1460) | [meeb/tubesync](https://github.com/meeb/tubesync) | 🟢 Open |
+| 5 | [Add keyboard shortcuts for "New tab in container"](https://github.com/brave/brave-browser/issues/56745) | [brave/brave-browser](https://github.com/brave/brave-browser) | 🟢 Open |
+| 6 | [journald log driver: support --log-opt labels to promote ...](https://github.com/podman-container-tools/podman/issues/28187) | [podman-container-tools/podman](https://github.com/podman-container-tools/podman) | 🟢 Open |
+| 7 | [Need help for training a 44k model](https://github.com/shivammehta25/Matcha-TTS/issues/133) | [shivammehta25/Matcha-TTS](https://github.com/shivammehta25/Matcha-TTS) | 🟢 Open |
+| 8 | [Testing for the Service Robotics exercises in direct ROS 2](https://github.com/JdeRobot/RoboticsAcademy/issues/3912) | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) | 🟢 Open |
+| 9 | [Create a `Container` model](https://github.com/meeb/tubesync/issues/1423) | [meeb/tubesync](https://github.com/meeb/tubesync) | 🟢 Open |
+| 10 | [[C++][Parquet] Expand ParquetVersion enum values](https://github.com/apache/arrow/issues/40096) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
+| 11 | [[Python][Dataset] The first table schema becomes a common...](https://github.com/apache/arrow/issues/27905) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
+| 12 | [remove click](https://github.com/dlt-hub/dlt/issues/1658) | [dlt-hub/dlt](https://github.com/dlt-hub/dlt) | 🟢 Open |
+| 13 | [[Betatesting] Object Detection exercise](https://github.com/JdeRobot/RoboticsAcademy/issues/3465) | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) | 🟢 Open |
+| 14 | [[cmd/mdatagen] Move feature gates for metadata.yaml](https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/46116) | [open-telemetry/opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib) | 🟢 Open |
+| 15 | [[RFC]: Qwen3-Omni RL Support on FSDP with vLLM-Omni rollout](https://github.com/verl-project/verl-omni/issues/183) | [verl-project/verl-omni](https://github.com/verl-project/verl-omni) | 🟢 Open |
+| 16 | [Use cross-references for internal links](https://github.com/the-turing-way/the-turing-way/issues/3699) | [the-turing-way/the-turing-way](https://github.com/the-turing-way/the-turing-way) | 🟢 Open |
+| 17 | [German characters in html notation will not correctly con...](https://github.com/karakeep-app/karakeep/issues/728) | [karakeep-app/karakeep](https://github.com/karakeep-app/karakeep) | 🟢 Open |
+| 18 | [Add Support for Perforce TeamHub and P4 Version Control P...](https://github.com/The-PR-Agent/pr-agent/issues/2003) | [The-PR-Agent/pr-agent](https://github.com/The-PR-Agent/pr-agent) | 🟢 Open |
+| 19 | [change the localizer condition identifiers](https://github.com/nilearn/nilearn/issues/2386) | [nilearn/nilearn](https://github.com/nilearn/nilearn) | 🟢 Open |
+| 20 | [YaRN的疑惑](https://github.com/jingyaogong/minimind/issues/602) | [jingyaogong/minimind](https://github.com/jingyaogong/minimind) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -93,20 +93,20 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [[websockets] motilal: _start_heartbeat is a no-op + passi...](https://github.com/marketcalls/openalgo/issues/1365) | [marketcalls/openalgo](https://github.com/marketcalls/openalgo) | 🟢 Open |
-| 2 | [Apple SDK sync status reports 0 saved records even when d...](https://github.com/the-momentum/open-wearables/issues/1415) | [the-momentum/open-wearables](https://github.com/the-momentum/open-wearables) | 🟢 Open |
-| 3 | [[vllm_omni, rollout] BAGEL LoRA rollout generation ~28% s...](https://github.com/verl-project/verl-omni/issues/248) | [verl-project/verl-omni](https://github.com/verl-project/verl-omni) | 🟢 Open |
-| 4 | [main_arena heap recovery failing on arch package (glibc 2...](https://github.com/pwndbg/pwndbg/issues/4074) | [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) | 🟢 Open |
-| 5 | [UnbalancedSinkhorn Transport fails to transform due to "n...](https://github.com/PythonOT/POT/issues/650) | [PythonOT/POT](https://github.com/PythonOT/POT) | 🟢 Open |
-| 6 | [Global asset page not showing partitioned assets as unsyn...](https://github.com/dagster-io/dagster/issues/22553) | [dagster-io/dagster](https://github.com/dagster-io/dagster) | 🟢 Open |
-| 7 | [InpaintProcessor.preprocess returns a bare tensor when no...](https://github.com/huggingface/diffusers/issues/14470) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟡 PR Proposed |
-| 8 | [Could not play stream [ERROR_CODE_IO_NETWORK_CONNECTION_T...](https://github.com/TeamNewPipe/NewPipe/issues/13765) | [TeamNewPipe/NewPipe](https://github.com/TeamNewPipe/NewPipe) | 🟢 Open |
-| 9 | [Missing type promotion in user defined functions with fun...](https://github.com/RumbleDB/rumble/issues/1284) | [RumbleDB/rumble](https://github.com/RumbleDB/rumble) | 🟢 Open |
-| 10 | [PytestRemovedIn10Warning (pytest version 9.1.1.) with skl...](https://github.com/scikit-learn/scikit-learn/issues/34738) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🔴 Closed |
-| 11 | [Bug: http_tls_config certs do not rotate](https://github.com/grafana/mimir/issues/15525) | [grafana/mimir](https://github.com/grafana/mimir) | 🟢 Open |
-| 12 | [Better handling of 429 errors when reading from cloud pat...](https://github.com/NVIDIA-NeMo/Curator/issues/1569) | [NVIDIA-NeMo/Curator](https://github.com/NVIDIA-NeMo/Curator) | 🟢 Open |
-| 13 | [Admin "deduplicate faces" action is non-functional on lar...](https://github.com/LibrePhotos/librephotos/issues/1918) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
-| 14 | [[Bug] Unsloth Desktop trys to use my amd 7600x cpus inter...](https://github.com/unslothai/unsloth/issues/8847) | [unslothai/unsloth](https://github.com/unslothai/unsloth) | 🟢 Open |
+| 1 | [bug: confusing behaviour of --only-dirs + --follow-symlin...](https://github.com/eza-community/eza/issues/1873) | [eza-community/eza](https://github.com/eza-community/eza) | 🟢 Open |
+| 2 | [test_reproject fails on Debian sid](https://github.com/corteva/rioxarray/issues/924) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
+| 3 | [🚨 SyntaxError: Unterminated string in JSON at position 24...](https://github.com/super-productivity/super-productivity/issues/4616) | [super-productivity/super-productivity](https://github.com/super-productivity/super-productivity) | 🟢 Open |
+| 4 | [Provided kubernetes values.yaml does not work at all on Mac](https://github.com/dagster-io/dagster/issues/34134) | [dagster-io/dagster](https://github.com/dagster-io/dagster) | 🟢 Open |
+| 5 | [[Bug]: OOM when loading weights, but AR stage startup fai...](https://github.com/vllm-project/vllm-ascend/issues/14720) | [vllm-project/vllm-ascend](https://github.com/vllm-project/vllm-ascend) | 🟢 Open |
+| 6 | [[Security] SSRF via unrestricted proxy endpoint (proxy.go...](https://github.com/h2oai/wave/issues/2492) | [h2oai/wave](https://github.com/h2oai/wave) | 🟢 Open |
+| 7 | [Ray logging function not quite working](https://github.com/ray-project/ray/issues/46644) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
+| 8 | [v8.2.0 breaks side-by-side events](https://github.com/visjs/vis-timeline/issues/1917) | [visjs/vis-timeline](https://github.com/visjs/vis-timeline) | 🟢 Open |
+| 9 | [`POLARS_AUTO_STRUCTIFY` env var still works after `Config...](https://github.com/pola-rs/polars/issues/28776) | [pola-rs/polars](https://github.com/pola-rs/polars) | 🟢 Open |
+| 10 | [`with_maximized` causes a second window to flash and clos...](https://github.com/emilk/egui/issues/5975) | [emilk/egui](https://github.com/emilk/egui) | 🟢 Open |
+| 11 | [How to configure any LLM?](https://github.com/jupyterlab/jupyter-ai/issues/1622) | [jupyterlab/jupyter-ai](https://github.com/jupyterlab/jupyter-ai) | 🟢 Open |
+| 12 | [Modify regex](https://github.com/jupyterlab/jupyter-ai/issues/1236) | [jupyterlab/jupyter-ai](https://github.com/jupyterlab/jupyter-ai) | 🟢 Open |
+| 13 | [Watch mode is very slow](https://github.com/modem-dev/hunk/issues/543) | [modem-dev/hunk](https://github.com/modem-dev/hunk) | 🟢 Open |
+| 14 | ['Cannot redraw item: no parent attached' if cluster exist...](https://github.com/visjs/vis-timeline/issues/169) | [visjs/vis-timeline](https://github.com/visjs/vis-timeline) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -117,16 +117,16 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Improve tests by using global_random_seed fixture to make...](https://github.com/scikit-learn/scikit-learn/issues/22827) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 2 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 3 | [Share places, people and things when sharing the picture(...](https://github.com/LibrePhotos/librephotos/issues/166) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
-| 4 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 5 | [Seafile integration](https://github.com/LibrePhotos/librephotos/issues/247) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
-| 6 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 7 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 8 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
-| 9 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 10 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 1 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 2 | [RFC Improving guidance for common CI failures for new con...](https://github.com/scikit-learn/scikit-learn/issues/33594) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 3 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 4 | [Newlines should not be scaped when using setting usetex=True](https://github.com/matplotlib/matplotlib/issues/29628) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 5 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 6 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 7 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 8 | [Update demo video on adding packages for Using ExecuTorch...](https://github.com/pytorch/executorch/issues/17425) | [pytorch/executorch](https://github.com/pytorch/executorch) | 🟢 Open |
+| 9 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 10 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

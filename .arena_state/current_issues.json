@@ -4,6 +4,7 @@
     "repo": "Thrive",
     "number": 6039,
     "category": "gfi",
+    "has_pr": false,
     "language": "C#"
   },
   {
@@ -11,6 +12,7 @@
     "repo": "mcp-context-forge",
     "number": 307,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -18,6 +20,7 @@
     "repo": "SimpleTuner",
     "number": 2119,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -25,6 +28,7 @@
     "repo": "tubesync",
     "number": 1460,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -32,6 +36,7 @@
     "repo": "brave-browser",
     "number": 56745,
     "category": "gfi",
+    "has_pr": false,
     "language": null
   },
   {
@@ -39,6 +44,7 @@
     "repo": "podman",
     "number": 28187,
     "category": "gfi",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -46,6 +52,7 @@
     "repo": "Matcha-TTS",
     "number": 133,
     "category": "gfi",
+    "has_pr": false,
     "language": "Jupyter Notebook"
   },
   {
@@ -53,6 +60,7 @@
     "repo": "RoboticsAcademy",
     "number": 3912,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -60,6 +68,7 @@
     "repo": "tubesync",
     "number": 1423,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -67,6 +76,7 @@
     "repo": "arrow",
     "number": 40096,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -74,6 +84,7 @@
     "repo": "arrow",
     "number": 27905,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -81,6 +92,7 @@
     "repo": "dlt",
     "number": 1658,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -88,6 +100,7 @@
     "repo": "RoboticsAcademy",
     "number": 3465,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -95,6 +108,7 @@
     "repo": "opentelemetry-collector-contrib",
     "number": 46116,
     "category": "gfi",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -102,6 +116,7 @@
     "repo": "verl-omni",
     "number": 183,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -109,6 +124,7 @@
     "repo": "the-turing-way",
     "number": 3699,
     "category": "gfi",
+    "has_pr": false,
     "language": "TeX"
   },
   {
@@ -116,6 +132,7 @@
     "repo": "karakeep",
     "number": 728,
     "category": "gfi",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -123,6 +140,7 @@
     "repo": "pr-agent",
     "number": 2003,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -130,6 +148,7 @@
     "repo": "nilearn",
     "number": 2386,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -137,6 +156,7 @@
     "repo": "minimind",
     "number": 602,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -144,6 +164,7 @@
     "repo": "eza",
     "number": 1873,
     "category": "bug",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -151,6 +172,7 @@
     "repo": "rioxarray",
     "number": 924,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -158,6 +180,7 @@
     "repo": "super-productivity",
     "number": 4616,
     "category": "bug",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -165,6 +188,7 @@
     "repo": "dagster",
     "number": 34134,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -172,6 +196,7 @@
     "repo": "vllm-ascend",
     "number": 14720,
     "category": "bug",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -179,6 +204,7 @@
     "repo": "wave",
     "number": 2492,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -186,6 +212,7 @@
     "repo": "ray",
     "number": 46644,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -193,6 +220,7 @@
     "repo": "vis-timeline",
     "number": 1917,
     "category": "bug",
+    "has_pr": false,
     "language": "JavaScript"
   },
   {
@@ -200,6 +228,7 @@
     "repo": "polars",
     "number": 28776,
     "category": "bug",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -207,6 +236,7 @@
     "repo": "egui",
     "number": 5975,
     "category": "bug",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -214,6 +244,7 @@
     "repo": "jupyter-ai",
     "number": 1622,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -221,6 +252,7 @@
     "repo": "jupyter-ai",
     "number": 1236,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -228,6 +260,7 @@
     "repo": "hunk",
     "number": 543,
     "category": "bug",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -235,6 +268,7 @@
     "repo": "vis-timeline",
     "number": 169,
     "category": "bug",
+    "has_pr": false,
     "language": "JavaScript"
   },
   {
@@ -242,6 +276,7 @@
     "repo": "matplotlib",
     "number": 20243,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -249,6 +284,7 @@
     "repo": "scikit-learn",
     "number": 33594,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -256,6 +292,7 @@
     "repo": "scikit-learn",
     "number": 33965,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -263,6 +300,7 @@
     "repo": "matplotlib",
     "number": 29628,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -270,6 +308,7 @@
     "repo": "pandas",
     "number": 9379,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -277,6 +316,7 @@
     "repo": "diffusers",
     "number": 12600,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -284,6 +324,7 @@
     "repo": "rasterio",
     "number": 1270,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -291,6 +332,7 @@
     "repo": "executorch",
     "number": 17425,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -298,6 +340,7 @@
     "repo": "diffusers",
     "number": 9508,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -305,6 +348,7 @@
     "repo": "pandas",
     "number": 43770,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   }
 ]

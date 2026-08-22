@@ -65,7 +65,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 |---|-------|------------|--------|
 | 1 | [Consider if the editor light level (day/night) buttons sh...](https://github.com/Revolutionary-Games/Thrive/issues/6039) | [Revolutionary-Games/Thrive](https://github.com/Revolutionary-Games/Thrive) | 🟢 Open |
 | 2 | [[CHORE]: GitHub Actions to build docs, with diagrams and ...](https://github.com/IBM/mcp-context-forge/issues/307) | [IBM/mcp-context-forge](https://github.com/IBM/mcp-context-forge) | 🟢 Open |
-| 3 | [Got it working on Windows - need a tester](https://github.com/bghira/SimpleTuner/issues/2119) | [bghira/SimpleTuner](https://github.com/bghira/SimpleTuner) | 🟢 Open |
+| 3 | [Got it working on Windows - need a tester](https://github.com/bghira/SimpleTuner/issues/2119) | [bghira/SimpleTuner](https://github.com/bghira/SimpleTuner) | 🔴 Closed |
 | 4 | [Add codecs for the `video` asset type](https://github.com/meeb/tubesync/issues/1460) | [meeb/tubesync](https://github.com/meeb/tubesync) | 🟢 Open |
 | 5 | [Add keyboard shortcuts for "New tab in container"](https://github.com/brave/brave-browser/issues/56745) | [brave/brave-browser](https://github.com/brave/brave-browser) | 🟢 Open |
 | 6 | [journald log driver: support --log-opt labels to promote ...](https://github.com/podman-container-tools/podman/issues/28187) | [podman-container-tools/podman](https://github.com/podman-container-tools/podman) | 🟢 Open |

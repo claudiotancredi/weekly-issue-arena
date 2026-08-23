@@ -104,7 +104,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 9 | [`POLARS_AUTO_STRUCTIFY` env var still works after `Config...](https://github.com/pola-rs/polars/issues/28776) | [pola-rs/polars](https://github.com/pola-rs/polars) | 🟢 Open |
 | 10 | [`with_maximized` causes a second window to flash and clos...](https://github.com/emilk/egui/issues/5975) | [emilk/egui](https://github.com/emilk/egui) | 🟢 Open |
 | 11 | [How to configure any LLM?](https://github.com/jupyterlab/jupyter-ai/issues/1622) | [jupyterlab/jupyter-ai](https://github.com/jupyterlab/jupyter-ai) | 🟢 Open |
-| 12 | [Modify regex](https://github.com/jupyterlab/jupyter-ai/issues/1236) | [jupyterlab/jupyter-ai](https://github.com/jupyterlab/jupyter-ai) | 🟢 Open |
+| 12 | [Modify regex](https://github.com/jupyterlab/jupyter-ai/issues/1236) | [jupyterlab/jupyter-ai](https://github.com/jupyterlab/jupyter-ai) | 🟡 PR Proposed |
 | 13 | [Watch mode is very slow](https://github.com/modem-dev/hunk/issues/543) | [modem-dev/hunk](https://github.com/modem-dev/hunk) | 🟢 Open |
 | 14 | ['Cannot redraw item: no parent attached' if cluster exist...](https://github.com/visjs/vis-timeline/issues/169) | [visjs/vis-timeline](https://github.com/visjs/vis-timeline) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->

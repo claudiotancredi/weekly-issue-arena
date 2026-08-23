@@ -252,7 +252,7 @@
     "repo": "jupyter-ai",
     "number": 1236,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {

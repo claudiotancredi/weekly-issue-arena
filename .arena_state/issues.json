@@ -1,632 +1,4 @@
 {
-  "2026-W34": {
-    "fetched_at": "2026-08-21T17:00:00+00:00",
-    "issues": {
-      "gfi": [
-        {
-          "number": 6039,
-          "title": "Consider if the editor light level (day/night) buttons should default to day",
-          "url": "https://github.com/Revolutionary-Games/Thrive/issues/6039",
-          "owner": "Revolutionary-Games",
-          "repo": "Thrive",
-          "repo_url": "https://github.com/Revolutionary-Games/Thrive",
-          "created_at": "2025-03-25T10:58:07Z",
-          "updated_at": "2026-06-04T13:55:00Z",
-          "author": "hhyyrylainen",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "C#",
-          "has_pr": false
-        },
-        {
-          "number": 307,
-          "title": "[CHORE]: GitHub Actions to build docs, with diagrams and test report, and deploy to GitHub Pages using MkDocs on every push to main",
-          "url": "https://github.com/IBM/mcp-context-forge/issues/307",
-          "owner": "IBM",
-          "repo": "mcp-context-forge",
-          "repo_url": "https://github.com/IBM/mcp-context-forge",
-          "created_at": "2025-07-07T06:22:10Z",
-          "updated_at": "2026-06-16T09:26:14Z",
-          "author": "crivetimihai",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 2119,
-          "title": "Got it working on Windows - need a tester",
-          "url": "https://github.com/bghira/SimpleTuner/issues/2119",
-          "owner": "bghira",
-          "repo": "SimpleTuner",
-          "repo_url": "https://github.com/bghira/SimpleTuner",
-          "created_at": "2025-12-09T17:24:54Z",
-          "updated_at": "2026-02-06T01:27:45Z",
-          "author": "Helikaon23s",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false,
-          "closed": true
-        },
-        {
-          "number": 1460,
-          "title": "Add codecs for the `video` asset type",
-          "url": "https://github.com/meeb/tubesync/issues/1460",
-          "owner": "meeb",
-          "repo": "tubesync",
-          "repo_url": "https://github.com/meeb/tubesync",
-          "created_at": "2026-04-18T11:10:36Z",
-          "updated_at": "2026-04-18T15:22:03Z",
-          "author": "tcely",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 56745,
-          "title": "Add keyboard shortcuts for \"New tab in container\"",
-          "url": "https://github.com/brave/brave-browser/issues/56745",
-          "owner": "brave",
-          "repo": "brave-browser",
-          "repo_url": "https://github.com/brave/brave-browser",
-          "created_at": "2026-06-29T12:36:08Z",
-          "updated_at": "2026-08-13T04:51:32Z",
-          "author": "toddyoe",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": null,
-          "has_pr": false
-        },
-        {
-          "number": 28187,
-          "title": "journald log driver: support --log-opt labels to promote container labels as structured journal fields",
-          "url": "https://github.com/podman-container-tools/podman/issues/28187",
-          "owner": "podman-container-tools",
-          "repo": "podman",
-          "repo_url": "https://github.com/podman-container-tools/podman",
-          "created_at": "2026-03-03T21:10:46Z",
-          "updated_at": "2026-08-18T10:29:08Z",
-          "author": "ItsGlassPlus1",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Go",
-          "has_pr": false
-        },
-        {
-          "number": 133,
-          "title": "Need help for training a 44k model",
-          "url": "https://github.com/shivammehta25/Matcha-TTS/issues/133",
-          "owner": "shivammehta25",
-          "repo": "Matcha-TTS",
-          "repo_url": "https://github.com/shivammehta25/Matcha-TTS",
-          "created_at": "2025-01-13T05:12:51Z",
-          "updated_at": "2026-02-11T13:20:42Z",
-          "author": "ILG2021",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Jupyter Notebook",
-          "has_pr": false
-        },
-        {
-          "number": 3912,
-          "title": "Testing for the Service Robotics exercises in direct ROS 2",
-          "url": "https://github.com/JdeRobot/RoboticsAcademy/issues/3912",
-          "owner": "JdeRobot",
-          "repo": "RoboticsAcademy",
-          "repo_url": "https://github.com/JdeRobot/RoboticsAcademy",
-          "created_at": "2026-07-08T07:22:01Z",
-          "updated_at": "2026-07-11T12:48:26Z",
-          "author": "aquintan4",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 1423,
-          "title": "Create a `Container` model",
-          "url": "https://github.com/meeb/tubesync/issues/1423",
-          "owner": "meeb",
-          "repo": "tubesync",
-          "repo_url": "https://github.com/meeb/tubesync",
-          "created_at": "2026-03-15T16:41:51Z",
-          "updated_at": "2026-04-18T15:29:01Z",
-          "author": "tcely",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 40096,
-          "title": "[C++][Parquet] Expand ParquetVersion enum values",
-          "url": "https://github.com/apache/arrow/issues/40096",
-          "owner": "apache",
-          "repo": "arrow",
-          "repo_url": "https://github.com/apache/arrow",
-          "created_at": "2024-02-15T17:44:54Z",
-          "updated_at": "2026-08-14T20:31:45Z",
-          "author": "pitrou",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "C++",
-          "has_pr": false
-        },
-        {
-          "number": 27905,
-          "title": "[Python][Dataset] The first table schema becomes a common schema for the full Dataset",
-          "url": "https://github.com/apache/arrow/issues/27905",
-          "owner": "apache",
-          "repo": "arrow",
-          "repo_url": "https://github.com/apache/arrow",
-          "created_at": "2021-03-24T21:31:51Z",
-          "updated_at": "2026-08-15T09:00:02Z",
-          "author": "asfimport",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "C++",
-          "has_pr": false
-        },
-        {
-          "number": 1658,
-          "title": "remove click",
-          "url": "https://github.com/dlt-hub/dlt/issues/1658",
-          "owner": "dlt-hub",
-          "repo": "dlt",
-          "repo_url": "https://github.com/dlt-hub/dlt",
-          "created_at": "2024-08-02T13:01:55Z",
-          "updated_at": "2026-07-16T20:13:19Z",
-          "author": "rudolfix",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 3465,
-          "title": "[Betatesting] Object Detection exercise",
-          "url": "https://github.com/JdeRobot/RoboticsAcademy/issues/3465",
-          "owner": "JdeRobot",
-          "repo": "RoboticsAcademy",
-          "repo_url": "https://github.com/JdeRobot/RoboticsAcademy",
-          "created_at": "2026-02-12T17:43:42Z",
-          "updated_at": "2026-07-12T13:47:03Z",
-          "author": "javizqh",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 46116,
-          "title": "[cmd/mdatagen] Move feature gates for metadata.yaml",
-          "url": "https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/46116",
-          "owner": "open-telemetry",
-          "repo": "opentelemetry-collector-contrib",
-          "repo_url": "https://github.com/open-telemetry/opentelemetry-collector-contrib",
-          "created_at": "2023-05-11T10:27:07Z",
-          "updated_at": "2026-08-04T09:42:29Z",
-          "author": "mx-psi",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Go",
-          "has_pr": false
-        },
-        {
-          "number": 183,
-          "title": "[RFC]: Qwen3-Omni RL Support on FSDP with vLLM-Omni rollout",
-          "url": "https://github.com/verl-project/verl-omni/issues/183",
-          "owner": "verl-project",
-          "repo": "verl-omni",
-          "repo_url": "https://github.com/verl-project/verl-omni",
-          "created_at": "2026-06-16T21:36:37Z",
-          "updated_at": "2026-07-22T08:11:34Z",
-          "author": "qinganrice",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 3699,
-          "title": "Use cross-references for internal links",
-          "url": "https://github.com/the-turing-way/the-turing-way/issues/3699",
-          "owner": "the-turing-way",
-          "repo": "the-turing-way",
-          "repo_url": "https://github.com/the-turing-way/the-turing-way",
-          "created_at": "2024-06-04T15:03:00Z",
-          "updated_at": "2026-07-07T09:57:36Z",
-          "author": "JimMadge",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "TeX",
-          "has_pr": false
-        },
-        {
-          "number": 728,
-          "title": "German characters in html notation will not correctly converted",
-          "url": "https://github.com/karakeep-app/karakeep/issues/728",
-          "owner": "karakeep-app",
-          "repo": "karakeep",
-          "repo_url": "https://github.com/karakeep-app/karakeep",
-          "created_at": "2024-12-11T18:24:01Z",
-          "updated_at": "2026-07-29T16:50:02Z",
-          "author": "Eragos",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "TypeScript",
-          "has_pr": false
-        },
-        {
-          "number": 2003,
-          "title": "Add Support for Perforce TeamHub and P4 Version Control Provider",
-          "url": "https://github.com/The-PR-Agent/pr-agent/issues/2003",
-          "owner": "The-PR-Agent",
-          "repo": "pr-agent",
-          "repo_url": "https://github.com/The-PR-Agent/pr-agent",
-          "created_at": "2025-08-19T09:28:52Z",
-          "updated_at": "2026-08-16T09:30:08Z",
-          "author": "ofir-frd",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 2386,
-          "title": "change the localizer condition identifiers",
-          "url": "https://github.com/nilearn/nilearn/issues/2386",
-          "owner": "nilearn",
-          "repo": "nilearn",
-          "repo_url": "https://github.com/nilearn/nilearn",
-          "created_at": "2018-10-08T17:49:26Z",
-          "updated_at": "2026-05-13T05:39:10Z",
-          "author": "bthirion",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 602,
-          "title": "YaRN\u7684\u7591\u60d1",
-          "url": "https://github.com/jingyaogong/minimind/issues/602",
-          "owner": "jingyaogong",
-          "repo": "minimind",
-          "repo_url": "https://github.com/jingyaogong/minimind",
-          "created_at": "2025-12-25T14:58:27Z",
-          "updated_at": "2026-01-07T12:08:06Z",
-          "author": "github-luffy",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        }
-      ],
-      "bug": [
-        {
-          "number": 1873,
-          "title": "bug: confusing behaviour of --only-dirs + --follow-symlinks + --tree",
-          "url": "https://github.com/eza-community/eza/issues/1873",
-          "owner": "eza-community",
-          "repo": "eza",
-          "repo_url": "https://github.com/eza-community/eza",
-          "created_at": "2026-07-14T22:51:47Z",
-          "updated_at": "2026-08-07T12:31:42Z",
-          "author": "schuelermine",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Rust",
-          "has_pr": false
-        },
-        {
-          "number": 924,
-          "title": "test_reproject fails on Debian sid",
-          "url": "https://github.com/corteva/rioxarray/issues/924",
-          "owner": "corteva",
-          "repo": "rioxarray",
-          "repo_url": "https://github.com/corteva/rioxarray",
-          "created_at": "2026-05-03T18:15:36Z",
-          "updated_at": "2026-05-03T21:23:36Z",
-          "author": "avalentino",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 4616,
-          "title": "\ud83d\udea8 SyntaxError: Unterminated string in JSON at position 24567 (line 1 column 24568) when syncing via Nextcloud",
-          "url": "https://github.com/super-productivity/super-productivity/issues/4616",
-          "owner": "super-productivity",
-          "repo": "super-productivity",
-          "repo_url": "https://github.com/super-productivity/super-productivity",
-          "created_at": "2025-06-19T10:19:13Z",
-          "updated_at": "2026-08-21T10:04:10Z",
-          "author": "surlebeat",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "TypeScript",
-          "has_pr": false
-        },
-        {
-          "number": 34134,
-          "title": "Provided kubernetes values.yaml does not work at all on Mac",
-          "url": "https://github.com/dagster-io/dagster/issues/34134",
-          "owner": "dagster-io",
-          "repo": "dagster",
-          "repo_url": "https://github.com/dagster-io/dagster",
-          "created_at": "2026-08-15T13:19:48Z",
-          "updated_at": "2026-08-15T13:19:48Z",
-          "author": "MitchellWeg",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 14720,
-          "title": "[Bug]: OOM when loading weights, but AR stage startup failed after fix",
-          "url": "https://github.com/vllm-project/vllm-ascend/issues/14720",
-          "owner": "vllm-project",
-          "repo": "vllm-ascend",
-          "repo_url": "https://github.com/vllm-project/vllm-ascend",
-          "created_at": "2026-08-21T06:48:35Z",
-          "updated_at": "2026-08-21T06:48:35Z",
-          "author": "NilouBao",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "C++",
-          "has_pr": false
-        },
-        {
-          "number": 2492,
-          "title": "[Security] SSRF via unrestricted proxy endpoint (proxy.go:119)",
-          "url": "https://github.com/h2oai/wave/issues/2492",
-          "owner": "h2oai",
-          "repo": "wave",
-          "repo_url": "https://github.com/h2oai/wave",
-          "created_at": "2026-04-23T17:00:30Z",
-          "updated_at": "2026-04-23T17:00:30Z",
-          "author": "MuraveyApp",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 46644,
-          "title": "Ray logging function not quite working",
-          "url": "https://github.com/ray-project/ray/issues/46644",
-          "owner": "ray-project",
-          "repo": "ray",
-          "repo_url": "https://github.com/ray-project/ray",
-          "created_at": "2024-07-15T21:26:23Z",
-          "updated_at": "2026-08-21T02:10:34Z",
-          "author": "wxie2013",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 1917,
-          "title": "v8.2.0 breaks side-by-side events",
-          "url": "https://github.com/visjs/vis-timeline/issues/1917",
-          "owner": "visjs",
-          "repo": "vis-timeline",
-          "repo_url": "https://github.com/visjs/vis-timeline",
-          "created_at": "2025-08-28T17:21:09Z",
-          "updated_at": "2025-12-05T15:22:18Z",
-          "author": "awidener3",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "JavaScript",
-          "has_pr": false
-        },
-        {
-          "number": 28776,
-          "title": "`POLARS_AUTO_STRUCTIFY` env var still works after `Config.set_auto_structify` was removed in 2.0",
-          "url": "https://github.com/pola-rs/polars/issues/28776",
-          "owner": "pola-rs",
-          "repo": "polars",
-          "repo_url": "https://github.com/pola-rs/polars",
-          "created_at": "2026-08-11T12:13:40Z",
-          "updated_at": "2026-08-21T11:11:24Z",
-          "author": "TNieuwdorp",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Rust",
-          "has_pr": false
-        },
-        {
-          "number": 5975,
-          "title": "`with_maximized` causes a second window to flash and close on startup before the main window opens",
-          "url": "https://github.com/emilk/egui/issues/5975",
-          "owner": "emilk",
-          "repo": "egui",
-          "repo_url": "https://github.com/emilk/egui",
-          "created_at": "2025-04-11T10:32:56Z",
-          "updated_at": "2026-08-20T14:02:27Z",
-          "author": "Abestanis",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Rust",
-          "has_pr": false
-        },
-        {
-          "number": 1622,
-          "title": "How to configure any LLM?",
-          "url": "https://github.com/jupyterlab/jupyter-ai/issues/1622",
-          "owner": "jupyterlab",
-          "repo": "jupyter-ai",
-          "repo_url": "https://github.com/jupyterlab/jupyter-ai",
-          "created_at": "2026-07-24T13:24:44Z",
-          "updated_at": "2026-07-26T19:12:29Z",
-          "author": "haesleinhuepf",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 1236,
-          "title": "Modify regex",
-          "url": "https://github.com/jupyterlab/jupyter-ai/issues/1236",
-          "owner": "jupyterlab",
-          "repo": "jupyter-ai",
-          "repo_url": "https://github.com/jupyterlab/jupyter-ai",
-          "created_at": "2025-02-08T08:15:39Z",
-          "updated_at": "2026-08-15T03:10:16Z",
-          "author": "AInitikesh",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": true
-        },
-        {
-          "number": 543,
-          "title": "Watch mode is very slow",
-          "url": "https://github.com/modem-dev/hunk/issues/543",
-          "owner": "modem-dev",
-          "repo": "hunk",
-          "repo_url": "https://github.com/modem-dev/hunk",
-          "created_at": "2026-07-15T06:49:46Z",
-          "updated_at": "2026-08-19T07:29:17Z",
-          "author": "dorshinar",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "TypeScript",
-          "has_pr": false
-        },
-        {
-          "number": 169,
-          "title": "'Cannot redraw item: no parent attached' if cluster exists when nested groups are expanded",
-          "url": "https://github.com/visjs/vis-timeline/issues/169",
-          "owner": "visjs",
-          "repo": "vis-timeline",
-          "repo_url": "https://github.com/visjs/vis-timeline",
-          "created_at": "2019-11-05T20:13:50Z",
-          "updated_at": "2026-06-12T04:30:58Z",
-          "author": "async0x42",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "JavaScript",
-          "has_pr": false
-        }
-      ],
-      "hard": [
-        {
-          "number": 20243,
-          "title": "matplotlib eventplot not shows all the binary data for big number of events",
-          "url": "https://github.com/matplotlib/matplotlib/issues/20243",
-          "owner": "matplotlib",
-          "repo": "matplotlib",
-          "repo_url": "https://github.com/matplotlib/matplotlib",
-          "created_at": "2021-05-16T20:38:34Z",
-          "updated_at": "2026-08-04T08:33:59Z",
-          "author": "lorenzgutierrez",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 33594,
-          "title": "RFC Improving guidance for common CI failures for new contributors",
-          "url": "https://github.com/scikit-learn/scikit-learn/issues/33594",
-          "owner": "scikit-learn",
-          "repo": "scikit-learn",
-          "repo_url": "https://github.com/scikit-learn/scikit-learn",
-          "created_at": "2026-03-22T01:10:51Z",
-          "updated_at": "2026-07-22T03:13:55Z",
-          "author": "virchan",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 33965,
-          "title": "Native categorical splitting enhancements in DecisionTree, ExtraTree, RandomForest and ExtraTrees",
-          "url": "https://github.com/scikit-learn/scikit-learn/issues/33965",
-          "owner": "scikit-learn",
-          "repo": "scikit-learn",
-          "repo_url": "https://github.com/scikit-learn/scikit-learn",
-          "created_at": "2026-05-10T17:10:50Z",
-          "updated_at": "2026-07-25T22:24:41Z",
-          "author": "adam2392",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 29628,
-          "title": "Newlines should not be scaped when using setting usetex=True",
-          "url": "https://github.com/matplotlib/matplotlib/issues/29628",
-          "owner": "matplotlib",
-          "repo": "matplotlib",
-          "repo_url": "https://github.com/matplotlib/matplotlib",
-          "created_at": "2025-02-16T08:16:47Z",
-          "updated_at": "2025-12-08T07:35:56Z",
-          "author": "juanep97",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 9379,
-          "title": "pandas.read_csv() won't read back in complex number dtypes from pandas.DataFrame.to_csv()",
-          "url": "https://github.com/pandas-dev/pandas/issues/9379",
-          "owner": "pandas-dev",
-          "repo": "pandas",
-          "repo_url": "https://github.com/pandas-dev/pandas",
-          "created_at": "2015-01-30T18:31:55Z",
-          "updated_at": "2025-10-08T16:15:19Z",
-          "author": "jason-s",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 12600,
-          "title": "Add KV Cache for Autoregressive Inference",
-          "url": "https://github.com/huggingface/diffusers/issues/12600",
-          "owner": "huggingface",
-          "repo": "diffusers",
-          "repo_url": "https://github.com/huggingface/diffusers",
-          "created_at": "2025-11-06T08:03:55Z",
-          "updated_at": "2026-05-06T20:36:05Z",
-          "author": "DN6",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 1270,
-          "title": "Document potential traps around Rasterio's multiple environments vs. GDAL's single environment",
-          "url": "https://github.com/rasterio/rasterio/issues/1270",
-          "owner": "rasterio",
-          "repo": "rasterio",
-          "repo_url": "https://github.com/rasterio/rasterio",
-          "created_at": "2018-02-06T06:34:05Z",
-          "updated_at": "2025-12-20T05:29:44Z",
-          "author": "geowurster",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 17425,
-          "title": "Update demo video on adding packages for Using ExecuTorch on iOS",
-          "url": "https://github.com/pytorch/executorch/issues/17425",
-          "owner": "pytorch",
-          "repo": "executorch",
-          "repo_url": "https://github.com/pytorch/executorch",
-          "created_at": "2026-02-12T20:06:27Z",
-          "updated_at": "2026-05-14T21:57:32Z",
-          "author": "nil-is-all",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 9508,
-          "title": "AnimateDiff SparseCtrl RGB does not work as expected",
-          "url": "https://github.com/huggingface/diffusers/issues/9508",
-          "owner": "huggingface",
-          "repo": "diffusers",
-          "repo_url": "https://github.com/huggingface/diffusers",
-          "created_at": "2024-09-23T21:42:54Z",
-          "updated_at": "2025-08-10T16:47:50Z",
-          "author": "a-r-r-o-w",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 43770,
-          "title": "BUG: Groupby.median returns absurd results for complex",
-          "url": "https://github.com/pandas-dev/pandas/issues/43770",
-          "owner": "pandas-dev",
-          "repo": "pandas",
-          "repo_url": "https://github.com/pandas-dev/pandas",
-          "created_at": "2021-09-27T19:27:06Z",
-          "updated_at": "2026-05-11T02:47:11Z",
-          "author": "debnathshoham",
-          "listed_at": "2026-08-21T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        }
-      ]
-    }
-  },
   "2026-W35": {
     "fetched_at": "2026-08-28T17:00:00+00:00",
     "issues": {
@@ -642,7 +14,8 @@
           "updated_at": "2026-04-19T18:46:28Z",
           "author": "igorlukanin",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Rust"
+          "language": "Rust",
+          "has_pr": false
         },
         {
           "number": 14909,
@@ -655,7 +28,8 @@
           "updated_at": "2026-08-17T02:38:01Z",
           "author": "am17an",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": null
+          "language": null,
+          "has_pr": false
         },
         {
           "number": 2049,
@@ -668,7 +42,8 @@
           "updated_at": "2026-05-28T14:08:47Z",
           "author": "andreyvelich",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 1122,
@@ -681,7 +56,8 @@
           "updated_at": "2026-08-07T17:36:16Z",
           "author": "rolandcrosby",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 1479,
@@ -694,7 +70,8 @@
           "updated_at": "2025-12-05T10:49:32Z",
           "author": "s373r",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Rust"
+          "language": "Rust",
+          "has_pr": false
         },
         {
           "number": 1996,
@@ -707,7 +84,8 @@
           "updated_at": "2026-07-03T12:54:47Z",
           "author": "Muennighoff",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 510,
@@ -720,7 +98,8 @@
           "updated_at": "2026-01-14T10:38:16Z",
           "author": "argamanza",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C++"
+          "language": "C++",
+          "has_pr": false
         },
         {
           "number": 2907,
@@ -733,7 +112,8 @@
           "updated_at": "2026-06-11T17:49:26Z",
           "author": "dzaripov",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 407,
@@ -746,7 +126,8 @@
           "updated_at": "2025-12-15T12:52:03Z",
           "author": "Krock21",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C++"
+          "language": "C++",
+          "has_pr": false
         },
         {
           "number": 430,
@@ -759,7 +140,8 @@
           "updated_at": "2026-05-25T07:32:40Z",
           "author": "alexgleason",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "TypeScript"
+          "language": "TypeScript",
+          "has_pr": false
         },
         {
           "number": 56577,
@@ -772,7 +154,8 @@
           "updated_at": "2026-05-25T12:29:02Z",
           "author": "miretskiy",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Go"
+          "language": "Go",
+          "has_pr": false
         },
         {
           "number": 2729,
@@ -785,7 +168,8 @@
           "updated_at": "2026-08-24T21:30:46Z",
           "author": "github-actions[bot]",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 266,
@@ -798,7 +182,8 @@
           "updated_at": "2026-02-09T20:36:02Z",
           "author": "IvanMurzak",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C#"
+          "language": "C#",
+          "has_pr": false
         },
         {
           "number": 10476,
@@ -811,7 +196,8 @@
           "updated_at": "2026-07-14T04:37:28Z",
           "author": "NielsPT",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 1592,
@@ -824,7 +210,8 @@
           "updated_at": "2026-08-27T12:10:33Z",
           "author": "WesleyW",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C"
+          "language": "C",
+          "has_pr": false
         },
         {
           "number": 609,
@@ -837,7 +224,8 @@
           "updated_at": "2026-03-06T14:12:39Z",
           "author": "arthurmensch",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 11467,
@@ -850,7 +238,8 @@
           "updated_at": "2026-02-07T16:03:53Z",
           "author": "emilk",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Rust"
+          "language": "Rust",
+          "has_pr": false
         },
         {
           "number": 244,
@@ -863,7 +252,8 @@
           "updated_at": "2026-08-28T10:54:33Z",
           "author": "caoqianyun",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Go"
+          "language": "Go",
+          "has_pr": false
         },
         {
           "number": 1242,
@@ -876,7 +266,8 @@
           "updated_at": "2026-05-19T10:07:52Z",
           "author": "slavafomin",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "TypeScript"
+          "language": "TypeScript",
+          "has_pr": false
         },
         {
           "number": 40096,
@@ -889,7 +280,8 @@
           "updated_at": "2026-08-14T20:31:45Z",
           "author": "pitrou",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C++"
+          "language": "C++",
+          "has_pr": false
         }
       ],
       "bug": [
@@ -904,7 +296,8 @@
           "updated_at": "2026-08-13T23:28:14Z",
           "author": "fkiraly",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 5531,
@@ -917,7 +310,8 @@
           "updated_at": "2026-08-09T14:17:06Z",
           "author": "lhoestq",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 3761,
@@ -930,7 +324,8 @@
           "updated_at": "2026-04-30T19:45:42Z",
           "author": "m-richards",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 29220,
@@ -943,7 +338,8 @@
           "updated_at": "2026-08-08T10:44:44Z",
           "author": "J-J-Chiarella",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "JavaScript"
+          "language": "JavaScript",
+          "has_pr": false
         },
         {
           "number": 2247,
@@ -956,7 +352,8 @@
           "updated_at": "2026-08-26T19:24:47Z",
           "author": "Menghua1",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C#"
+          "language": "C#",
+          "has_pr": false
         },
         {
           "number": 337,
@@ -969,7 +366,8 @@
           "updated_at": "2026-08-18T01:59:34Z",
           "author": "tony1155",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 11022,
@@ -982,7 +380,8 @@
           "updated_at": "2026-08-25T02:56:59Z",
           "author": "hysts",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 8557,
@@ -995,7 +394,8 @@
           "updated_at": "2026-05-15T19:01:35Z",
           "author": "wtbarnes",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 31941,
@@ -1008,7 +408,8 @@
           "updated_at": "2026-08-26T16:45:14Z",
           "author": "danielgafni",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 21337,
@@ -1021,7 +422,8 @@
           "updated_at": "2026-08-28T14:46:25Z",
           "author": "davemurphy",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Rust"
+          "language": "Rust",
+          "has_pr": false
         },
         {
           "number": 29261,
@@ -1034,7 +436,8 @@
           "updated_at": "2026-08-14T16:44:58Z",
           "author": "jabraham17",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Chapel"
+          "language": "Chapel",
+          "has_pr": false
         },
         {
           "number": 12459,
@@ -1047,7 +450,8 @@
           "updated_at": "2026-08-20T19:32:08Z",
           "author": "CharlesHMJr",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C++"
+          "language": "C++",
+          "has_pr": false
         },
         {
           "number": 3578,
@@ -1060,7 +464,8 @@
           "updated_at": "2026-08-28T03:47:48Z",
           "author": "otzpt",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Rust"
+          "language": "Rust",
+          "has_pr": false
         },
         {
           "number": 3339,
@@ -1073,7 +478,8 @@
           "updated_at": "2026-08-16T12:49:32Z",
           "author": "unixfox",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Crystal"
+          "language": "Crystal",
+          "has_pr": false
         }
       ],
       "hard": [
@@ -1088,7 +494,8 @@
           "updated_at": "2025-12-20T05:29:44Z",
           "author": "geowurster",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 9379,
@@ -1101,7 +508,8 @@
           "updated_at": "2025-10-08T16:15:19Z",
           "author": "jason-s",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 11000,
@@ -1114,7 +522,8 @@
           "updated_at": "2026-07-18T07:43:37Z",
           "author": "glemaitre",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 22827,
@@ -1127,7 +536,8 @@
           "updated_at": "2026-08-17T11:03:15Z",
           "author": "ogrisel",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 12600,
@@ -1140,7 +550,8 @@
           "updated_at": "2026-05-06T20:36:05Z",
           "author": "DN6",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 1433,
@@ -1153,7 +564,8 @@
           "updated_at": "2026-03-14T15:34:19Z",
           "author": "diraol",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 31597,
@@ -1166,7 +578,8 @@
           "updated_at": "2026-05-27T13:26:43Z",
           "author": "story645",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 9508,
@@ -1179,7 +592,8 @@
           "updated_at": "2025-08-10T16:47:50Z",
           "author": "a-r-r-o-w",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 20243,
@@ -1192,7 +606,8 @@
           "updated_at": "2026-08-22T15:25:29Z",
           "author": "lorenzgutierrez",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 43770,
@@ -1205,7 +620,8 @@
           "updated_at": "2026-05-11T02:47:11Z",
           "author": "debnathshoham",
           "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         }
       ]
     }

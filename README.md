@@ -63,26 +63,26 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Consider if the editor light level (day/night) buttons sh...](https://github.com/Revolutionary-Games/Thrive/issues/6039) | [Revolutionary-Games/Thrive](https://github.com/Revolutionary-Games/Thrive) | 🟢 Open |
-| 2 | [[CHORE]: GitHub Actions to build docs, with diagrams and ...](https://github.com/IBM/mcp-context-forge/issues/307) | [IBM/mcp-context-forge](https://github.com/IBM/mcp-context-forge) | 🟢 Open |
-| 3 | [Got it working on Windows - need a tester](https://github.com/bghira/SimpleTuner/issues/2119) | [bghira/SimpleTuner](https://github.com/bghira/SimpleTuner) | 🔴 Closed |
-| 4 | [Add codecs for the `video` asset type](https://github.com/meeb/tubesync/issues/1460) | [meeb/tubesync](https://github.com/meeb/tubesync) | 🟢 Open |
-| 5 | [Add keyboard shortcuts for "New tab in container"](https://github.com/brave/brave-browser/issues/56745) | [brave/brave-browser](https://github.com/brave/brave-browser) | 🟢 Open |
-| 6 | [journald log driver: support --log-opt labels to promote ...](https://github.com/podman-container-tools/podman/issues/28187) | [podman-container-tools/podman](https://github.com/podman-container-tools/podman) | 🟢 Open |
-| 7 | [Need help for training a 44k model](https://github.com/shivammehta25/Matcha-TTS/issues/133) | [shivammehta25/Matcha-TTS](https://github.com/shivammehta25/Matcha-TTS) | 🟢 Open |
-| 8 | [Testing for the Service Robotics exercises in direct ROS 2](https://github.com/JdeRobot/RoboticsAcademy/issues/3912) | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) | 🟢 Open |
-| 9 | [Create a `Container` model](https://github.com/meeb/tubesync/issues/1423) | [meeb/tubesync](https://github.com/meeb/tubesync) | 🟢 Open |
-| 10 | [[C++][Parquet] Expand ParquetVersion enum values](https://github.com/apache/arrow/issues/40096) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
-| 11 | [[Python][Dataset] The first table schema becomes a common...](https://github.com/apache/arrow/issues/27905) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
-| 12 | [remove click](https://github.com/dlt-hub/dlt/issues/1658) | [dlt-hub/dlt](https://github.com/dlt-hub/dlt) | 🟢 Open |
-| 13 | [[Betatesting] Object Detection exercise](https://github.com/JdeRobot/RoboticsAcademy/issues/3465) | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) | 🟢 Open |
-| 14 | [[cmd/mdatagen] Move feature gates for metadata.yaml](https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/46116) | [open-telemetry/opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib) | 🟢 Open |
-| 15 | [[RFC]: Qwen3-Omni RL Support on FSDP with vLLM-Omni rollout](https://github.com/verl-project/verl-omni/issues/183) | [verl-project/verl-omni](https://github.com/verl-project/verl-omni) | 🟢 Open |
-| 16 | [Use cross-references for internal links](https://github.com/the-turing-way/the-turing-way/issues/3699) | [the-turing-way/the-turing-way](https://github.com/the-turing-way/the-turing-way) | 🟢 Open |
-| 17 | [German characters in html notation will not correctly con...](https://github.com/karakeep-app/karakeep/issues/728) | [karakeep-app/karakeep](https://github.com/karakeep-app/karakeep) | 🟢 Open |
-| 18 | [Add Support for Perforce TeamHub and P4 Version Control P...](https://github.com/The-PR-Agent/pr-agent/issues/2003) | [The-PR-Agent/pr-agent](https://github.com/The-PR-Agent/pr-agent) | 🟢 Open |
-| 19 | [change the localizer condition identifiers](https://github.com/nilearn/nilearn/issues/2386) | [nilearn/nilearn](https://github.com/nilearn/nilearn) | 🟢 Open |
-| 20 | [YaRN的疑惑](https://github.com/jingyaogong/minimind/issues/602) | [jingyaogong/minimind](https://github.com/jingyaogong/minimind) | 🟢 Open |
+| 1 | [Native distinct counts in ClickHouse dialect](https://github.com/cube-js/cube/issues/2334) | [cube-js/cube](https://github.com/cube-js/cube) | 🟢 Open |
+| 2 | [Feature Request: Implement missing ops from backends](https://github.com/ggml-org/llama.cpp/issues/14909) | [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 🟢 Open |
+| 3 | [Automate Katib Releases](https://github.com/kubeflow/katib/issues/2049) | [kubeflow/katib](https://github.com/kubeflow/katib) | 🟢 Open |
+| 4 | [Docs for old supported versions should indicate that a ne...](https://github.com/django/djangoproject.com/issues/1122) | [django/djangoproject.com](https://github.com/django/djangoproject.com) | 🟢 Open |
+| 5 | [GQL: Removing duplicate structure declarations (input/out...](https://github.com/kamu-data/kamu-cli/issues/1479) | [kamu-data/kamu-cli](https://github.com/kamu-data/kamu-cli) | 🟢 Open |
+| 6 | [Add instructor models](https://github.com/embeddings-benchmark/mteb/issues/1996) | [embeddings-benchmark/mteb](https://github.com/embeddings-benchmark/mteb) | 🟢 Open |
+| 7 | [Allow sub directory formatting based on existing file nam...](https://github.com/flameshot-org/flameshot/issues/510) | [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | 🟢 Open |
+| 8 | [Can not reproduce Qwen3-Embedding results](https://github.com/embeddings-benchmark/mteb/issues/2907) | [embeddings-benchmark/mteb](https://github.com/embeddings-benchmark/mteb) | 🟢 Open |
+| 9 | [[Query Tracker] Add ability to pass DECLARE parameters to...](https://github.com/ytsaurus/ytsaurus/issues/407) | [ytsaurus/ytsaurus](https://github.com/ytsaurus/ytsaurus) | 🟢 Open |
+| 10 | [Provide examples in documentation for common use cases](https://github.com/matrix-org/matrix-js-sdk/issues/430) | [matrix-org/matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk) | 🟢 Open |
+| 11 | [Explicit auth with TEMP tokens](https://github.com/cockroachdb/cockroach/issues/56577) | [cockroachdb/cockroach](https://github.com/cockroachdb/cockroach) | 🟢 Open |
+| 12 | [docs: Update stale documentation - GOVERNANCE.md](https://github.com/microsoft/hve-core/issues/2729) | [microsoft/hve-core](https://github.com/microsoft/hve-core) | 🟢 Open |
+| 13 | [Add Unity-MCP to Docker Hub MCP registry](https://github.com/IvanMurzak/Unity-MCP/issues/266) | [IvanMurzak/Unity-MCP](https://github.com/IvanMurzak/Unity-MCP) | 🟢 Open |
+| 14 | [Using return value of a function that returns None is not...](https://github.com/pylint-dev/pylint/issues/10476) | [pylint-dev/pylint](https://github.com/pylint-dev/pylint) | 🟢 Open |
+| 15 | [Check for port mismatch between `--master_addresses` and ...](https://github.com/yugabyte/yugabyte-db/issues/1592) | [yugabyte/yugabyte-db](https://github.com/yugabyte/yugabyte-db) | 🟢 Open |
+| 16 | [Implement `inverse_transform` for MultiMaskers that suppo...](https://github.com/nilearn/nilearn/issues/609) | [nilearn/nilearn](https://github.com/nilearn/nilearn) | 🟢 Open |
+| 17 | [Update our Rust dependencies](https://github.com/rerun-io/rerun/issues/11467) | [rerun-io/rerun](https://github.com/rerun-io/rerun) | 🟢 Open |
+| 18 | [[good first issue] docs: Help us build integration guides...](https://github.com/TencentCloud/CubeSandbox/issues/244) | [TencentCloud/CubeSandbox](https://github.com/TencentCloud/CubeSandbox) | 🟢 Open |
+| 19 | [Dashboards: lock visualization to a specific date range](https://github.com/opensearch-project/OpenSearch-Dashboards/issues/1242) | [opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards) | 🟢 Open |
+| 20 | [[C++][Parquet] Expand ParquetVersion enum values](https://github.com/apache/arrow/issues/40096) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -93,20 +93,20 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [bug: confusing behaviour of --only-dirs + --follow-symlin...](https://github.com/eza-community/eza/issues/1873) | [eza-community/eza](https://github.com/eza-community/eza) | 🟢 Open |
-| 2 | [test_reproject fails on Debian sid](https://github.com/corteva/rioxarray/issues/924) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
-| 3 | [🚨 SyntaxError: Unterminated string in JSON at position 24...](https://github.com/super-productivity/super-productivity/issues/4616) | [super-productivity/super-productivity](https://github.com/super-productivity/super-productivity) | 🟢 Open |
-| 4 | [Provided kubernetes values.yaml does not work at all on Mac](https://github.com/dagster-io/dagster/issues/34134) | [dagster-io/dagster](https://github.com/dagster-io/dagster) | 🟢 Open |
-| 5 | [[Bug]: OOM when loading weights, but AR stage startup fai...](https://github.com/vllm-project/vllm-ascend/issues/14720) | [vllm-project/vllm-ascend](https://github.com/vllm-project/vllm-ascend) | 🟢 Open |
-| 6 | [[Security] SSRF via unrestricted proxy endpoint (proxy.go...](https://github.com/h2oai/wave/issues/2492) | [h2oai/wave](https://github.com/h2oai/wave) | 🟢 Open |
-| 7 | [Ray logging function not quite working](https://github.com/ray-project/ray/issues/46644) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
-| 8 | [v8.2.0 breaks side-by-side events](https://github.com/visjs/vis-timeline/issues/1917) | [visjs/vis-timeline](https://github.com/visjs/vis-timeline) | 🟢 Open |
-| 9 | [`POLARS_AUTO_STRUCTIFY` env var still works after `Config...](https://github.com/pola-rs/polars/issues/28776) | [pola-rs/polars](https://github.com/pola-rs/polars) | 🟢 Open |
-| 10 | [`with_maximized` causes a second window to flash and clos...](https://github.com/emilk/egui/issues/5975) | [emilk/egui](https://github.com/emilk/egui) | 🟢 Open |
-| 11 | [How to configure any LLM?](https://github.com/jupyterlab/jupyter-ai/issues/1622) | [jupyterlab/jupyter-ai](https://github.com/jupyterlab/jupyter-ai) | 🟢 Open |
-| 12 | [Modify regex](https://github.com/jupyterlab/jupyter-ai/issues/1236) | [jupyterlab/jupyter-ai](https://github.com/jupyterlab/jupyter-ai) | 🟡 PR Proposed |
-| 13 | [Watch mode is very slow](https://github.com/modem-dev/hunk/issues/543) | [modem-dev/hunk](https://github.com/modem-dev/hunk) | 🟢 Open |
-| 14 | ['Cannot redraw item: no parent attached' if cluster exist...](https://github.com/visjs/vis-timeline/issues/169) | [visjs/vis-timeline](https://github.com/visjs/vis-timeline) | 🟢 Open |
+| 1 | [[BUG] unsafe unpickling in v2 beta code - reported by @ha...](https://github.com/sktime/pytorch-forecasting/issues/2380) | [sktime/pytorch-forecasting](https://github.com/sktime/pytorch-forecasting) | 🟢 Open |
+| 2 | [Invalid Arrow data from JSONL](https://github.com/huggingface/datasets/issues/5531) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
+| 3 | [BUG: pandas main regression empty df loc](https://github.com/geopandas/geopandas/issues/3761) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
+| 4 | [Complex Scripts (E.g., Korean Hangul) Don’t Work at Start](https://github.com/TryGhost/Ghost/issues/29220) | [TryGhost/Ghost](https://github.com/TryGhost/Ghost) | 🟢 Open |
+| 5 | [[All & Namespace mode] Health model entity query fails: `...](https://github.com/microsoft/mcp/issues/2247) | [microsoft/mcp](https://github.com/microsoft/mcp) | 🟢 Open |
+| 6 | [[Bug] SRC 结束后残留 Python 后端，崩溃堆栈可能触发「需要用户接管」误判](https://github.com/AUTO-MAS-Project/AUTO-MAS/issues/337) | [AUTO-MAS-Project/AUTO-MAS](https://github.com/AUTO-MAS-Project/AUTO-MAS) | 🟢 Open |
+| 7 | [Unexpected scroll and incorrect cell selection after filt...](https://github.com/gradio-app/gradio/issues/11022) | [gradio-app/gradio](https://github.com/gradio-app/gradio) | 🟢 Open |
+| 8 | [EVE L2 URLS as returned by VSO are incorrect](https://github.com/sunpy/sunpy/issues/8557) | [sunpy/sunpy](https://github.com/sunpy/sunpy) | 🟢 Open |
+| 9 | [[UI] configs for backfills are not automatically scaffolded](https://github.com/dagster-io/dagster/issues/31941) | [dagster-io/dagster](https://github.com/dagster-io/dagster) | 🟢 Open |
+| 10 | [uvx crashes with SIGABRT / abort() on macOS when launched...](https://github.com/astral-sh/uv/issues/21337) | [astral-sh/uv](https://github.com/astral-sh/uv) | 🟢 Open |
+| 11 | [[Bug]: Cannot return promoted expression in a tuple with ...](https://github.com/chapel-lang/chapel/issues/29261) | [chapel-lang/chapel](https://github.com/chapel-lang/chapel) | 🟢 Open |
+| 12 | [XGBoostError: input stream corrupted when unpickling a Li...](https://github.com/dmlc/xgboost/issues/12459) | [dmlc/xgboost](https://github.com/dmlc/xgboost) | 🟢 Open |
+| 13 | [hook claude: silent no-op on any command containing a pipe](https://github.com/rtk-ai/rtk/issues/3578) | [rtk-ai/rtk](https://github.com/rtk-ai/rtk) | 🟢 Open |
+| 14 | [[Bug] storyboard is incorrect on embed pages](https://github.com/iv-org/invidious/issues/3339) | [iv-org/invidious](https://github.com/iv-org/invidious) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -117,15 +117,15 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 2 | [RFC Improving guidance for common CI failures for new con...](https://github.com/scikit-learn/scikit-learn/issues/33594) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 3 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 4 | [Newlines should not be scaped when using setting usetex=True](https://github.com/matplotlib/matplotlib/issues/29628) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 5 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 6 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 7 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
-| 8 | [Update demo video on adding packages for Using ExecuTorch...](https://github.com/pytorch/executorch/issues/17425) | [pytorch/executorch](https://github.com/pytorch/executorch) | 🟢 Open |
-| 9 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 1 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 2 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 3 | [Preserving dtype for float32 / float64 in transformers](https://github.com/scikit-learn/scikit-learn/issues/11000) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 4 | [Improve tests by using global_random_seed fixture to make...](https://github.com/scikit-learn/scikit-learn/issues/22827) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 5 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 6 | [Criar documentação de arquitetura (ARCHITECTURE.md)](https://github.com/okfn-brasil/querido-diario/issues/1433) | [okfn-brasil/querido-diario](https://github.com/okfn-brasil/querido-diario) | 🟢 Open |
+| 7 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 8 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 9 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 | 10 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 

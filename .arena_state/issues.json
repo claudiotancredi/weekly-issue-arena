@@ -169,7 +169,7 @@
           "author": "github-actions[bot]",
           "listed_at": "2026-08-28T17:00:00+00:00",
           "language": "Python",
-          "has_pr": false
+          "has_pr": true
         },
         {
           "number": 266,
@@ -423,7 +423,8 @@
           "author": "davemurphy",
           "listed_at": "2026-08-28T17:00:00+00:00",
           "language": "Rust",
-          "has_pr": false
+          "has_pr": false,
+          "closed": true
         },
         {
           "number": 29261,

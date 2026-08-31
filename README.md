@@ -74,7 +74,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 9 | [[Query Tracker] Add ability to pass DECLARE parameters to...](https://github.com/ytsaurus/ytsaurus/issues/407) | [ytsaurus/ytsaurus](https://github.com/ytsaurus/ytsaurus) | 🟢 Open |
 | 10 | [Provide examples in documentation for common use cases](https://github.com/matrix-org/matrix-js-sdk/issues/430) | [matrix-org/matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk) | 🟢 Open |
 | 11 | [Explicit auth with TEMP tokens](https://github.com/cockroachdb/cockroach/issues/56577) | [cockroachdb/cockroach](https://github.com/cockroachdb/cockroach) | 🟢 Open |
-| 12 | [docs: Update stale documentation - GOVERNANCE.md](https://github.com/microsoft/hve-core/issues/2729) | [microsoft/hve-core](https://github.com/microsoft/hve-core) | 🟢 Open |
+| 12 | [docs: Update stale documentation - GOVERNANCE.md](https://github.com/microsoft/hve-core/issues/2729) | [microsoft/hve-core](https://github.com/microsoft/hve-core) | 🟡 PR Proposed |
 | 13 | [Add Unity-MCP to Docker Hub MCP registry](https://github.com/IvanMurzak/Unity-MCP/issues/266) | [IvanMurzak/Unity-MCP](https://github.com/IvanMurzak/Unity-MCP) | 🟢 Open |
 | 14 | [Using return value of a function that returns None is not...](https://github.com/pylint-dev/pylint/issues/10476) | [pylint-dev/pylint](https://github.com/pylint-dev/pylint) | 🟢 Open |
 | 15 | [Check for port mismatch between `--master_addresses` and ...](https://github.com/yugabyte/yugabyte-db/issues/1592) | [yugabyte/yugabyte-db](https://github.com/yugabyte/yugabyte-db) | 🟢 Open |
@@ -102,7 +102,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 7 | [Unexpected scroll and incorrect cell selection after filt...](https://github.com/gradio-app/gradio/issues/11022) | [gradio-app/gradio](https://github.com/gradio-app/gradio) | 🟢 Open |
 | 8 | [EVE L2 URLS as returned by VSO are incorrect](https://github.com/sunpy/sunpy/issues/8557) | [sunpy/sunpy](https://github.com/sunpy/sunpy) | 🟢 Open |
 | 9 | [[UI] configs for backfills are not automatically scaffolded](https://github.com/dagster-io/dagster/issues/31941) | [dagster-io/dagster](https://github.com/dagster-io/dagster) | 🟢 Open |
-| 10 | [uvx crashes with SIGABRT / abort() on macOS when launched...](https://github.com/astral-sh/uv/issues/21337) | [astral-sh/uv](https://github.com/astral-sh/uv) | 🟢 Open |
+| 10 | [uvx crashes with SIGABRT / abort() on macOS when launched...](https://github.com/astral-sh/uv/issues/21337) | [astral-sh/uv](https://github.com/astral-sh/uv) | 🔴 Closed |
 | 11 | [[Bug]: Cannot return promoted expression in a tuple with ...](https://github.com/chapel-lang/chapel/issues/29261) | [chapel-lang/chapel](https://github.com/chapel-lang/chapel) | 🟢 Open |
 | 12 | [XGBoostError: input stream corrupted when unpickling a Li...](https://github.com/dmlc/xgboost/issues/12459) | [dmlc/xgboost](https://github.com/dmlc/xgboost) | 🟢 Open |
 | 13 | [hook claude: silent no-op on any command containing a pipe](https://github.com/rtk-ai/rtk/issues/3578) | [rtk-ai/rtk](https://github.com/rtk-ai/rtk) | 🟢 Open |

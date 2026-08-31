@@ -92,7 +92,7 @@
     "repo": "hve-core",
     "number": 2729,
     "category": "gfi",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {

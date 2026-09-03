@@ -74,7 +74,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 9 | [[Query Tracker] Add ability to pass DECLARE parameters to...](https://github.com/ytsaurus/ytsaurus/issues/407) | [ytsaurus/ytsaurus](https://github.com/ytsaurus/ytsaurus) | 🟢 Open |
 | 10 | [Provide examples in documentation for common use cases](https://github.com/matrix-org/matrix-js-sdk/issues/430) | [matrix-org/matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk) | 🟢 Open |
 | 11 | [Explicit auth with TEMP tokens](https://github.com/cockroachdb/cockroach/issues/56577) | [cockroachdb/cockroach](https://github.com/cockroachdb/cockroach) | 🟢 Open |
-| 12 | [docs: Update stale documentation - GOVERNANCE.md](https://github.com/microsoft/hve-core/issues/2729) | [microsoft/hve-core](https://github.com/microsoft/hve-core) | 🟡 PR Proposed |
+| 12 | [docs: Update stale documentation - GOVERNANCE.md](https://github.com/microsoft/hve-core/issues/2729) | [microsoft/hve-core](https://github.com/microsoft/hve-core) | 🔴 Closed |
 | 13 | [Add Unity-MCP to Docker Hub MCP registry](https://github.com/IvanMurzak/Unity-MCP/issues/266) | [IvanMurzak/Unity-MCP](https://github.com/IvanMurzak/Unity-MCP) | 🟢 Open |
 | 14 | [Using return value of a function that returns None is not...](https://github.com/pylint-dev/pylint/issues/10476) | [pylint-dev/pylint](https://github.com/pylint-dev/pylint) | 🟢 Open |
 | 15 | [Check for port mismatch between `--master_addresses` and ...](https://github.com/yugabyte/yugabyte-db/issues/1592) | [yugabyte/yugabyte-db](https://github.com/yugabyte/yugabyte-db) | 🟢 Open |

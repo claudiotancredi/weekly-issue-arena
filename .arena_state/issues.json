@@ -169,7 +169,8 @@
           "author": "github-actions[bot]",
           "listed_at": "2026-08-28T17:00:00+00:00",
           "language": "Python",
-          "has_pr": true
+          "has_pr": true,
+          "closed": true
         },
         {
           "number": 266,

@@ -63,26 +63,26 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Native distinct counts in ClickHouse dialect](https://github.com/cube-js/cube/issues/2334) | [cube-js/cube](https://github.com/cube-js/cube) | 🟢 Open |
-| 2 | [Feature Request: Implement missing ops from backends](https://github.com/ggml-org/llama.cpp/issues/14909) | [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 🟢 Open |
-| 3 | [Automate Katib Releases](https://github.com/kubeflow/katib/issues/2049) | [kubeflow/katib](https://github.com/kubeflow/katib) | 🟢 Open |
-| 4 | [Docs for old supported versions should indicate that a ne...](https://github.com/django/djangoproject.com/issues/1122) | [django/djangoproject.com](https://github.com/django/djangoproject.com) | 🟢 Open |
-| 5 | [GQL: Removing duplicate structure declarations (input/out...](https://github.com/kamu-data/kamu-cli/issues/1479) | [kamu-data/kamu-cli](https://github.com/kamu-data/kamu-cli) | 🟢 Open |
-| 6 | [Add instructor models](https://github.com/embeddings-benchmark/mteb/issues/1996) | [embeddings-benchmark/mteb](https://github.com/embeddings-benchmark/mteb) | 🟢 Open |
-| 7 | [Allow sub directory formatting based on existing file nam...](https://github.com/flameshot-org/flameshot/issues/510) | [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | 🟢 Open |
-| 8 | [Can not reproduce Qwen3-Embedding results](https://github.com/embeddings-benchmark/mteb/issues/2907) | [embeddings-benchmark/mteb](https://github.com/embeddings-benchmark/mteb) | 🟢 Open |
-| 9 | [[Query Tracker] Add ability to pass DECLARE parameters to...](https://github.com/ytsaurus/ytsaurus/issues/407) | [ytsaurus/ytsaurus](https://github.com/ytsaurus/ytsaurus) | 🟢 Open |
-| 10 | [Provide examples in documentation for common use cases](https://github.com/matrix-org/matrix-js-sdk/issues/430) | [matrix-org/matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk) | 🟢 Open |
-| 11 | [Explicit auth with TEMP tokens](https://github.com/cockroachdb/cockroach/issues/56577) | [cockroachdb/cockroach](https://github.com/cockroachdb/cockroach) | 🟢 Open |
-| 12 | [docs: Update stale documentation - GOVERNANCE.md](https://github.com/microsoft/hve-core/issues/2729) | [microsoft/hve-core](https://github.com/microsoft/hve-core) | 🔴 Closed |
-| 13 | [Add Unity-MCP to Docker Hub MCP registry](https://github.com/IvanMurzak/Unity-MCP/issues/266) | [IvanMurzak/Unity-MCP](https://github.com/IvanMurzak/Unity-MCP) | 🟢 Open |
-| 14 | [Using return value of a function that returns None is not...](https://github.com/pylint-dev/pylint/issues/10476) | [pylint-dev/pylint](https://github.com/pylint-dev/pylint) | 🟢 Open |
-| 15 | [Check for port mismatch between `--master_addresses` and ...](https://github.com/yugabyte/yugabyte-db/issues/1592) | [yugabyte/yugabyte-db](https://github.com/yugabyte/yugabyte-db) | 🟢 Open |
-| 16 | [Implement `inverse_transform` for MultiMaskers that suppo...](https://github.com/nilearn/nilearn/issues/609) | [nilearn/nilearn](https://github.com/nilearn/nilearn) | 🟢 Open |
-| 17 | [Update our Rust dependencies](https://github.com/rerun-io/rerun/issues/11467) | [rerun-io/rerun](https://github.com/rerun-io/rerun) | 🟢 Open |
-| 18 | [[good first issue] docs: Help us build integration guides...](https://github.com/TencentCloud/CubeSandbox/issues/244) | [TencentCloud/CubeSandbox](https://github.com/TencentCloud/CubeSandbox) | 🟢 Open |
-| 19 | [Dashboards: lock visualization to a specific date range](https://github.com/opensearch-project/OpenSearch-Dashboards/issues/1242) | [opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards) | 🟢 Open |
-| 20 | [[C++][Parquet] Expand ParquetVersion enum values](https://github.com/apache/arrow/issues/40096) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
+| 1 | [[Enhancement]Optimize volcano end-to-end scheduling large...](https://github.com/volcano-sh/volcano/issues/3852) | [volcano-sh/volcano](https://github.com/volcano-sh/volcano) | 🟢 Open |
+| 2 | [Whisper/Shout plugin API](https://github.com/mumble-voip/mumble/issues/7218) | [mumble-voip/mumble](https://github.com/mumble-voip/mumble) | 🟢 Open |
+| 3 | [Refactor Type Checking Imports](https://github.com/collective/icalendar/issues/1707) | [collective/icalendar](https://github.com/collective/icalendar) | 🟢 Open |
+| 4 | [Call for User-Contributed Examples and Tutorials!](https://github.com/pyro-ppl/pyro/issues/1461) | [pyro-ppl/pyro](https://github.com/pyro-ppl/pyro) | 🟢 Open |
+| 5 | [Parallel Abstracion Layer (PAL) design ](https://github.com/kornia/kornia-rs/issues/538) | [kornia/kornia-rs](https://github.com/kornia/kornia-rs) | 🟢 Open |
+| 6 | [registry-creds addon: secrets stored with different name ...](https://github.com/kubernetes/minikube/issues/2805) | [kubernetes/minikube](https://github.com/kubernetes/minikube) | 🟢 Open |
+| 7 | [chore(geopandas): Add more edge cases to the `test_match_...](https://github.com/apache/sedona/issues/2392) | [apache/sedona](https://github.com/apache/sedona) | 🟢 Open |
+| 8 | [Datamodules that have fixed train/val/test should allow f...](https://github.com/torchgeo/torchgeo/issues/219) | [torchgeo/torchgeo](https://github.com/torchgeo/torchgeo) | 🟢 Open |
+| 9 | [Unable to open new tab with ctrl+click on search results](https://github.com/suitenumerique/docs/issues/2603) | [suitenumerique/docs](https://github.com/suitenumerique/docs) | 🟢 Open |
+| 10 | [meson build does not install nlohmann_json*.cmake files](https://github.com/nlohmann/json/issues/3885) | [nlohmann/json](https://github.com/nlohmann/json) | 🟢 Open |
+| 11 | [Instructions for manual update](https://github.com/RimSort/RimSort/issues/1051) | [RimSort/RimSort](https://github.com/RimSort/RimSort) | 🟢 Open |
+| 12 | [In some situations bin/logstash-plugins can fail to run](https://github.com/elastic/logstash/issues/13698) | [elastic/logstash](https://github.com/elastic/logstash) | 🟢 Open |
+| 13 | [Client.scheduler_info needs better documentation](https://github.com/dask/distributed/issues/2378) | [dask/distributed](https://github.com/dask/distributed) | 🟢 Open |
+| 14 | [[docdb] Expose rocksdb background thread debug info in th...](https://github.com/yugabyte/yugabyte-db/issues/4711) | [yugabyte/yugabyte-db](https://github.com/yugabyte/yugabyte-db) | 🟢 Open |
+| 15 | [Automate C# formatting using dotnet-format](https://github.com/dotnet/spark/issues/19) | [dotnet/spark](https://github.com/dotnet/spark) | 🟢 Open |
+| 16 | [Memory search - Find pattern very slow](https://github.com/x64dbg/x64dbg/issues/2689) | [x64dbg/x64dbg](https://github.com/x64dbg/x64dbg) | 🟢 Open |
+| 17 | [[core] Split raylet  cython file into multiple files](https://github.com/ray-project/ray/issues/51080) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
+| 18 | [help messages shouldnt exceed 80 columns](https://github.com/radareorg/radare2/issues/23392) | [radareorg/radare2](https://github.com/radareorg/radare2) | 🟢 Open |
+| 19 | [Crons: Status Chart X-Axis Makes No Sense for 1H Time Ran...](https://github.com/getsentry/sentry/issues/72139) | [getsentry/sentry](https://github.com/getsentry/sentry) | 🟢 Open |
+| 20 | [Add stack trace to warnings](https://github.com/ManimCommunity/manim/issues/4981) | [ManimCommunity/manim](https://github.com/ManimCommunity/manim) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -93,20 +93,20 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [[BUG] unsafe unpickling in v2 beta code - reported by @ha...](https://github.com/sktime/pytorch-forecasting/issues/2380) | [sktime/pytorch-forecasting](https://github.com/sktime/pytorch-forecasting) | 🟢 Open |
-| 2 | [Invalid Arrow data from JSONL](https://github.com/huggingface/datasets/issues/5531) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
-| 3 | [BUG: pandas main regression empty df loc](https://github.com/geopandas/geopandas/issues/3761) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
-| 4 | [Complex Scripts (E.g., Korean Hangul) Don’t Work at Start](https://github.com/TryGhost/Ghost/issues/29220) | [TryGhost/Ghost](https://github.com/TryGhost/Ghost) | 🟢 Open |
-| 5 | [[All & Namespace mode] Health model entity query fails: `...](https://github.com/microsoft/mcp/issues/2247) | [microsoft/mcp](https://github.com/microsoft/mcp) | 🟢 Open |
-| 6 | [[Bug] SRC 结束后残留 Python 后端，崩溃堆栈可能触发「需要用户接管」误判](https://github.com/AUTO-MAS-Project/AUTO-MAS/issues/337) | [AUTO-MAS-Project/AUTO-MAS](https://github.com/AUTO-MAS-Project/AUTO-MAS) | 🟢 Open |
-| 7 | [Unexpected scroll and incorrect cell selection after filt...](https://github.com/gradio-app/gradio/issues/11022) | [gradio-app/gradio](https://github.com/gradio-app/gradio) | 🟢 Open |
-| 8 | [EVE L2 URLS as returned by VSO are incorrect](https://github.com/sunpy/sunpy/issues/8557) | [sunpy/sunpy](https://github.com/sunpy/sunpy) | 🟢 Open |
-| 9 | [[UI] configs for backfills are not automatically scaffolded](https://github.com/dagster-io/dagster/issues/31941) | [dagster-io/dagster](https://github.com/dagster-io/dagster) | 🟢 Open |
-| 10 | [uvx crashes with SIGABRT / abort() on macOS when launched...](https://github.com/astral-sh/uv/issues/21337) | [astral-sh/uv](https://github.com/astral-sh/uv) | 🔴 Closed |
-| 11 | [[Bug]: Cannot return promoted expression in a tuple with ...](https://github.com/chapel-lang/chapel/issues/29261) | [chapel-lang/chapel](https://github.com/chapel-lang/chapel) | 🟢 Open |
-| 12 | [XGBoostError: input stream corrupted when unpickling a Li...](https://github.com/dmlc/xgboost/issues/12459) | [dmlc/xgboost](https://github.com/dmlc/xgboost) | 🟢 Open |
-| 13 | [hook claude: silent no-op on any command containing a pipe](https://github.com/rtk-ai/rtk/issues/3578) | [rtk-ai/rtk](https://github.com/rtk-ai/rtk) | 🟢 Open |
-| 14 | [[Bug] storyboard is incorrect on embed pages](https://github.com/iv-org/invidious/issues/3339) | [iv-org/invidious](https://github.com/iv-org/invidious) | 🟢 Open |
+| 1 | [Empty Exception for each open_rasterio call](https://github.com/corteva/rioxarray/issues/929) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
+| 2 | [Windows: collection name "." is stored as the collections...](https://github.com/qdrant/qdrant/issues/10418) | [qdrant/qdrant](https://github.com/qdrant/qdrant) | 🟢 Open |
+| 3 | [fix(ce): reconcile embedder vector dimensionality (Hashin...](https://github.com/potpie-ai/potpie/issues/909) | [potpie-ai/potpie](https://github.com/potpie-ai/potpie) | 🟢 Open |
+| 4 | [[Bug]: Issues with saving settings on new firmware](https://github.com/meshtastic/firmware/issues/11717) | [meshtastic/firmware](https://github.com/meshtastic/firmware) | 🟢 Open |
+| 5 | [[Bug] HRMS Web: Hardcoded UI strings bypass translations](https://github.com/frappe/hrms/issues/5113) | [frappe/hrms](https://github.com/frappe/hrms) | 🟢 Open |
+| 6 | [Feature Request: Configurable field exclusions for ETag c...](https://github.com/pimutils/vdirsyncer/issues/1214) | [pimutils/vdirsyncer](https://github.com/pimutils/vdirsyncer) | 🟢 Open |
+| 7 | [When passing entire resources to a for_each, deprecation ...](https://github.com/opentofu/opentofu/issues/4238) | [opentofu/opentofu](https://github.com/opentofu/opentofu) | 🟢 Open |
+| 8 | [Use released model for non-English centric evals](https://github.com/mozilla/translations/issues/1330) | [mozilla/translations](https://github.com/mozilla/translations) | 🟢 Open |
+| 9 | [Misc. bug: Inconsistent Vulkan segfault](https://github.com/ggml-org/llama.cpp/issues/10528) | [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 🟢 Open |
+| 10 | [Blog template displays post excerpt on individual post page](https://github.com/emdash-cms/emdash/issues/2893) | [emdash-cms/emdash](https://github.com/emdash-cms/emdash) | 🟢 Open |
+| 11 | [`jl_send_preempt_signal` can allow a Julia thread to exec...](https://github.com/JuliaLang/julia/issues/62863) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |
+| 12 | [当我pnpm build 的时候 报错 listChapterVersions 未导出](https://github.com/Narcooo/inkos/issues/375) | [Narcooo/inkos](https://github.com/Narcooo/inkos) | 🟢 Open |
+| 13 | [`findKotlinMagicFunTest` task causes "No such file or dir...](https://github.com/autonomousapps/dependency-analysis-gradle-plugin/issues/1827) | [autonomousapps/dependency-analysis-gradle-plugin](https://github.com/autonomousapps/dependency-analysis-gradle-plugin) | 🟢 Open |
+| 14 | [Status page: Not all sensors displayed](https://github.com/FlexMeasures/flexmeasures/issues/2478) | [FlexMeasures/flexmeasures](https://github.com/FlexMeasures/flexmeasures) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -117,16 +117,16 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 1 | [Unconsistent result when using sum or mean function on Co...](https://github.com/JuliaLang/julia/issues/15523) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |
 | 2 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 3 | [Preserving dtype for float32 / float64 in transformers](https://github.com/scikit-learn/scikit-learn/issues/11000) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 4 | [Improve tests by using global_random_seed fixture to make...](https://github.com/scikit-learn/scikit-learn/issues/22827) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 5 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 6 | [Criar documentação de arquitetura (ARCHITECTURE.md)](https://github.com/okfn-brasil/querido-diario/issues/1433) | [okfn-brasil/querido-diario](https://github.com/okfn-brasil/querido-diario) | 🟢 Open |
-| 7 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 8 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 9 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 10 | [BUG: Groupby.median returns absurd results for complex](https://github.com/pandas-dev/pandas/issues/43770) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 3 | [`isSibling` and `isAncestor` checks](https://github.com/CadQuery/cadquery/issues/1801) | [CadQuery/cadquery](https://github.com/CadQuery/cadquery) | 🟢 Open |
+| 4 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 5 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 6 | [Proposal: Add `cisd` function for argument in degrees](https://github.com/JuliaLang/julia/issues/60445) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |
+| 7 | [Array API support for CalibratedClassifierCV](https://github.com/scikit-learn/scikit-learn/issues/31869) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 8 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 9 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 10 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

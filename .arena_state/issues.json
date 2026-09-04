@@ -1,633 +1,4 @@
 {
-  "2026-W35": {
-    "fetched_at": "2026-08-28T17:00:00+00:00",
-    "issues": {
-      "gfi": [
-        {
-          "number": 2334,
-          "title": "Native distinct counts in ClickHouse dialect",
-          "url": "https://github.com/cube-js/cube/issues/2334",
-          "owner": "cube-js",
-          "repo": "cube",
-          "repo_url": "https://github.com/cube-js/cube",
-          "created_at": "2021-03-11T03:48:14Z",
-          "updated_at": "2026-04-19T18:46:28Z",
-          "author": "igorlukanin",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Rust",
-          "has_pr": false
-        },
-        {
-          "number": 14909,
-          "title": "Feature Request: Implement missing ops from backends",
-          "url": "https://github.com/ggml-org/llama.cpp/issues/14909",
-          "owner": "ggml-org",
-          "repo": "llama.cpp",
-          "repo_url": "https://github.com/ggml-org/llama.cpp",
-          "created_at": "2025-07-28T03:39:11Z",
-          "updated_at": "2026-08-17T02:38:01Z",
-          "author": "am17an",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": null,
-          "has_pr": false
-        },
-        {
-          "number": 2049,
-          "title": "Automate Katib Releases",
-          "url": "https://github.com/kubeflow/katib/issues/2049",
-          "owner": "kubeflow",
-          "repo": "katib",
-          "repo_url": "https://github.com/kubeflow/katib",
-          "created_at": "2022-12-02T13:32:51Z",
-          "updated_at": "2026-05-28T14:08:47Z",
-          "author": "andreyvelich",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 1122,
-          "title": "Docs for old supported versions should indicate that a newer version is available",
-          "url": "https://github.com/django/djangoproject.com/issues/1122",
-          "owner": "django",
-          "repo": "djangoproject.com",
-          "repo_url": "https://github.com/django/djangoproject.com",
-          "created_at": "2021-11-15T14:38:21Z",
-          "updated_at": "2026-08-07T17:36:16Z",
-          "author": "rolandcrosby",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 1479,
-          "title": "GQL: Removing duplicate structure declarations (input/output)",
-          "url": "https://github.com/kamu-data/kamu-cli/issues/1479",
-          "owner": "kamu-data",
-          "repo": "kamu-cli",
-          "repo_url": "https://github.com/kamu-data/kamu-cli",
-          "created_at": "2025-12-05T10:49:32Z",
-          "updated_at": "2025-12-05T10:49:32Z",
-          "author": "s373r",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Rust",
-          "has_pr": false
-        },
-        {
-          "number": 1996,
-          "title": "Add instructor models",
-          "url": "https://github.com/embeddings-benchmark/mteb/issues/1996",
-          "owner": "embeddings-benchmark",
-          "repo": "mteb",
-          "repo_url": "https://github.com/embeddings-benchmark/mteb",
-          "created_at": "2025-02-06T20:21:45Z",
-          "updated_at": "2026-07-03T12:54:47Z",
-          "author": "Muennighoff",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 510,
-          "title": "Allow sub directory formatting based on existing file name formatting",
-          "url": "https://github.com/flameshot-org/flameshot/issues/510",
-          "owner": "flameshot-org",
-          "repo": "flameshot",
-          "repo_url": "https://github.com/flameshot-org/flameshot",
-          "created_at": "2019-04-23T17:27:40Z",
-          "updated_at": "2026-01-14T10:38:16Z",
-          "author": "argamanza",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C++",
-          "has_pr": false
-        },
-        {
-          "number": 2907,
-          "title": "Can not reproduce Qwen3-Embedding results",
-          "url": "https://github.com/embeddings-benchmark/mteb/issues/2907",
-          "owner": "embeddings-benchmark",
-          "repo": "mteb",
-          "repo_url": "https://github.com/embeddings-benchmark/mteb",
-          "created_at": "2025-07-15T16:25:55Z",
-          "updated_at": "2026-06-11T17:49:26Z",
-          "author": "dzaripov",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 407,
-          "title": "[Query Tracker] Add ability to pass DECLARE parameters to YQL queries",
-          "url": "https://github.com/ytsaurus/ytsaurus/issues/407",
-          "owner": "ytsaurus",
-          "repo": "ytsaurus",
-          "repo_url": "https://github.com/ytsaurus/ytsaurus",
-          "created_at": "2024-02-28T08:22:38Z",
-          "updated_at": "2025-12-15T12:52:03Z",
-          "author": "Krock21",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C++",
-          "has_pr": false
-        },
-        {
-          "number": 430,
-          "title": "Provide examples in documentation for common use cases",
-          "url": "https://github.com/matrix-org/matrix-js-sdk/issues/430",
-          "owner": "matrix-org",
-          "repo": "matrix-js-sdk",
-          "repo_url": "https://github.com/matrix-org/matrix-js-sdk",
-          "created_at": "2017-05-02T15:36:22Z",
-          "updated_at": "2026-05-25T07:32:40Z",
-          "author": "alexgleason",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "TypeScript",
-          "has_pr": false
-        },
-        {
-          "number": 56577,
-          "title": "Explicit auth with TEMP tokens",
-          "url": "https://github.com/cockroachdb/cockroach/issues/56577",
-          "owner": "cockroachdb",
-          "repo": "cockroach",
-          "repo_url": "https://github.com/cockroachdb/cockroach",
-          "created_at": "2020-11-11T14:54:24Z",
-          "updated_at": "2026-05-25T12:29:02Z",
-          "author": "miretskiy",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Go",
-          "has_pr": false
-        },
-        {
-          "number": 2729,
-          "title": "docs: Update stale documentation - GOVERNANCE.md",
-          "url": "https://github.com/microsoft/hve-core/issues/2729",
-          "owner": "microsoft",
-          "repo": "hve-core",
-          "repo_url": "https://github.com/microsoft/hve-core",
-          "created_at": "2026-08-17T09:29:44Z",
-          "updated_at": "2026-08-24T21:30:46Z",
-          "author": "github-actions[bot]",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": true,
-          "closed": true
-        },
-        {
-          "number": 266,
-          "title": "Add Unity-MCP to Docker Hub MCP registry",
-          "url": "https://github.com/IvanMurzak/Unity-MCP/issues/266",
-          "owner": "IvanMurzak",
-          "repo": "Unity-MCP",
-          "repo_url": "https://github.com/IvanMurzak/Unity-MCP",
-          "created_at": "2025-10-01T05:12:17Z",
-          "updated_at": "2026-02-09T20:36:02Z",
-          "author": "IvanMurzak",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C#",
-          "has_pr": false
-        },
-        {
-          "number": 10476,
-          "title": "Using return value of a function that returns None is not always reported.",
-          "url": "https://github.com/pylint-dev/pylint/issues/10476",
-          "owner": "pylint-dev",
-          "repo": "pylint",
-          "repo_url": "https://github.com/pylint-dev/pylint",
-          "created_at": "2025-08-05T07:59:07Z",
-          "updated_at": "2026-07-14T04:37:28Z",
-          "author": "NielsPT",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 1592,
-          "title": "Check for port mismatch between `--master_addresses` and `--rpc_bind_addresses`",
-          "url": "https://github.com/yugabyte/yugabyte-db/issues/1592",
-          "owner": "yugabyte",
-          "repo": "yugabyte-db",
-          "repo_url": "https://github.com/yugabyte/yugabyte-db",
-          "created_at": "2019-06-20T23:23:11Z",
-          "updated_at": "2026-08-27T12:10:33Z",
-          "author": "WesleyW",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C",
-          "has_pr": false
-        },
-        {
-          "number": 609,
-          "title": "Implement `inverse_transform` for MultiMaskers that supports multiprocessing",
-          "url": "https://github.com/nilearn/nilearn/issues/609",
-          "owner": "nilearn",
-          "repo": "nilearn",
-          "repo_url": "https://github.com/nilearn/nilearn",
-          "created_at": "2015-06-12T14:07:25Z",
-          "updated_at": "2026-03-06T14:12:39Z",
-          "author": "arthurmensch",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 11467,
-          "title": "Update our Rust dependencies",
-          "url": "https://github.com/rerun-io/rerun/issues/11467",
-          "owner": "rerun-io",
-          "repo": "rerun",
-          "repo_url": "https://github.com/rerun-io/rerun",
-          "created_at": "2025-10-08T13:40:05Z",
-          "updated_at": "2026-02-07T16:03:53Z",
-          "author": "emilk",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Rust",
-          "has_pr": false
-        },
-        {
-          "number": 244,
-          "title": "[good first issue] docs: Help us build integration guides with mainstream AI agent frameworks",
-          "url": "https://github.com/TencentCloud/CubeSandbox/issues/244",
-          "owner": "TencentCloud",
-          "repo": "CubeSandbox",
-          "repo_url": "https://github.com/TencentCloud/CubeSandbox",
-          "created_at": "2026-05-14T07:49:18Z",
-          "updated_at": "2026-08-28T10:54:33Z",
-          "author": "caoqianyun",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Go",
-          "has_pr": false
-        },
-        {
-          "number": 1242,
-          "title": "Dashboards: lock visualization to a specific date range",
-          "url": "https://github.com/opensearch-project/OpenSearch-Dashboards/issues/1242",
-          "owner": "opensearch-project",
-          "repo": "OpenSearch-Dashboards",
-          "repo_url": "https://github.com/opensearch-project/OpenSearch-Dashboards",
-          "created_at": "2022-02-12T20:20:22Z",
-          "updated_at": "2026-05-19T10:07:52Z",
-          "author": "slavafomin",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "TypeScript",
-          "has_pr": false
-        },
-        {
-          "number": 40096,
-          "title": "[C++][Parquet] Expand ParquetVersion enum values",
-          "url": "https://github.com/apache/arrow/issues/40096",
-          "owner": "apache",
-          "repo": "arrow",
-          "repo_url": "https://github.com/apache/arrow",
-          "created_at": "2024-02-15T17:44:54Z",
-          "updated_at": "2026-08-14T20:31:45Z",
-          "author": "pitrou",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C++",
-          "has_pr": false
-        }
-      ],
-      "bug": [
-        {
-          "number": 2380,
-          "title": "[BUG] unsafe unpickling in v2 beta code - reported by @hackchang",
-          "url": "https://github.com/sktime/pytorch-forecasting/issues/2380",
-          "owner": "sktime",
-          "repo": "pytorch-forecasting",
-          "repo_url": "https://github.com/sktime/pytorch-forecasting",
-          "created_at": "2026-08-13T15:32:34Z",
-          "updated_at": "2026-08-13T23:28:14Z",
-          "author": "fkiraly",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 5531,
-          "title": "Invalid Arrow data from JSONL",
-          "url": "https://github.com/huggingface/datasets/issues/5531",
-          "owner": "huggingface",
-          "repo": "datasets",
-          "repo_url": "https://github.com/huggingface/datasets",
-          "created_at": "2023-02-14T15:39:49Z",
-          "updated_at": "2026-08-09T14:17:06Z",
-          "author": "lhoestq",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 3761,
-          "title": "BUG: pandas main regression empty df loc",
-          "url": "https://github.com/geopandas/geopandas/issues/3761",
-          "owner": "geopandas",
-          "repo": "geopandas",
-          "repo_url": "https://github.com/geopandas/geopandas",
-          "created_at": "2026-04-07T10:30:35Z",
-          "updated_at": "2026-04-30T19:45:42Z",
-          "author": "m-richards",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 29220,
-          "title": "Complex Scripts (E.g., Korean Hangul) Don\u2019t Work at Start",
-          "url": "https://github.com/TryGhost/Ghost/issues/29220",
-          "owner": "TryGhost",
-          "repo": "Ghost",
-          "repo_url": "https://github.com/TryGhost/Ghost",
-          "created_at": "2026-05-05T20:43:26Z",
-          "updated_at": "2026-08-08T10:44:44Z",
-          "author": "J-J-Chiarella",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "JavaScript",
-          "has_pr": false
-        },
-        {
-          "number": 2247,
-          "title": "[All & Namespace mode] Health model entity query fails: `monitor_healthmodels_entity_get` doesn\u2019t support `Microsoft.CloudHealth`",
-          "url": "https://github.com/microsoft/mcp/issues/2247",
-          "owner": "microsoft",
-          "repo": "mcp",
-          "repo_url": "https://github.com/microsoft/mcp",
-          "created_at": "2026-03-27T09:06:35Z",
-          "updated_at": "2026-08-26T19:24:47Z",
-          "author": "Menghua1",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C#",
-          "has_pr": false
-        },
-        {
-          "number": 337,
-          "title": "[Bug] SRC \u7ed3\u675f\u540e\u6b8b\u7559 Python \u540e\u7aef\uff0c\u5d29\u6e83\u5806\u6808\u53ef\u80fd\u89e6\u53d1\u300c\u9700\u8981\u7528\u6237\u63a5\u7ba1\u300d\u8bef\u5224",
-          "url": "https://github.com/AUTO-MAS-Project/AUTO-MAS/issues/337",
-          "owner": "AUTO-MAS-Project",
-          "repo": "AUTO-MAS",
-          "repo_url": "https://github.com/AUTO-MAS-Project/AUTO-MAS",
-          "created_at": "2026-08-04T13:30:38Z",
-          "updated_at": "2026-08-18T01:59:34Z",
-          "author": "tony1155",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 11022,
-          "title": "Unexpected scroll and incorrect cell selection after filtering in `gr.Dataframe`",
-          "url": "https://github.com/gradio-app/gradio/issues/11022",
-          "owner": "gradio-app",
-          "repo": "gradio",
-          "repo_url": "https://github.com/gradio-app/gradio",
-          "created_at": "2025-04-15T06:28:25Z",
-          "updated_at": "2026-08-25T02:56:59Z",
-          "author": "hysts",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 8557,
-          "title": "EVE L2 URLS as returned by VSO are incorrect",
-          "url": "https://github.com/sunpy/sunpy/issues/8557",
-          "owner": "sunpy",
-          "repo": "sunpy",
-          "repo_url": "https://github.com/sunpy/sunpy",
-          "created_at": "2026-03-25T21:09:50Z",
-          "updated_at": "2026-05-15T19:01:35Z",
-          "author": "wtbarnes",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 31941,
-          "title": "[UI] configs for backfills are not automatically scaffolded",
-          "url": "https://github.com/dagster-io/dagster/issues/31941",
-          "owner": "dagster-io",
-          "repo": "dagster",
-          "repo_url": "https://github.com/dagster-io/dagster",
-          "created_at": "2025-08-26T13:25:17Z",
-          "updated_at": "2026-08-26T16:45:14Z",
-          "author": "danielgafni",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 21337,
-          "title": "uvx crashes with SIGABRT / abort() on macOS when launched non-interactively via subprocess stdio piping",
-          "url": "https://github.com/astral-sh/uv/issues/21337",
-          "owner": "astral-sh",
-          "repo": "uv",
-          "repo_url": "https://github.com/astral-sh/uv",
-          "created_at": "2026-08-28T11:34:26Z",
-          "updated_at": "2026-08-28T14:46:25Z",
-          "author": "davemurphy",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Rust",
-          "has_pr": false,
-          "closed": true
-        },
-        {
-          "number": 29261,
-          "title": "[Bug]: Cannot return promoted expression in a tuple with an explicit domain",
-          "url": "https://github.com/chapel-lang/chapel/issues/29261",
-          "owner": "chapel-lang",
-          "repo": "chapel",
-          "repo_url": "https://github.com/chapel-lang/chapel",
-          "created_at": "2026-08-14T16:44:58Z",
-          "updated_at": "2026-08-14T16:44:58Z",
-          "author": "jabraham17",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Chapel",
-          "has_pr": false
-        },
-        {
-          "number": 12459,
-          "title": "XGBoostError: input stream corrupted when unpickling a Linux-trained Booster on Windows (xgboost 3.3.0)",
-          "url": "https://github.com/dmlc/xgboost/issues/12459",
-          "owner": "dmlc",
-          "repo": "xgboost",
-          "repo_url": "https://github.com/dmlc/xgboost",
-          "created_at": "2026-08-13T23:47:08Z",
-          "updated_at": "2026-08-20T19:32:08Z",
-          "author": "CharlesHMJr",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "C++",
-          "has_pr": false
-        },
-        {
-          "number": 3578,
-          "title": "hook claude: silent no-op on any command containing a pipe",
-          "url": "https://github.com/rtk-ai/rtk/issues/3578",
-          "owner": "rtk-ai",
-          "repo": "rtk",
-          "repo_url": "https://github.com/rtk-ai/rtk",
-          "created_at": "2026-08-15T11:44:55Z",
-          "updated_at": "2026-08-28T03:47:48Z",
-          "author": "otzpt",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Rust",
-          "has_pr": false
-        },
-        {
-          "number": 3339,
-          "title": "[Bug] storyboard is incorrect on embed pages",
-          "url": "https://github.com/iv-org/invidious/issues/3339",
-          "owner": "iv-org",
-          "repo": "invidious",
-          "repo_url": "https://github.com/iv-org/invidious",
-          "created_at": "2022-10-08T12:21:36Z",
-          "updated_at": "2026-08-16T12:49:32Z",
-          "author": "unixfox",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Crystal",
-          "has_pr": false
-        }
-      ],
-      "hard": [
-        {
-          "number": 1270,
-          "title": "Document potential traps around Rasterio's multiple environments vs. GDAL's single environment",
-          "url": "https://github.com/rasterio/rasterio/issues/1270",
-          "owner": "rasterio",
-          "repo": "rasterio",
-          "repo_url": "https://github.com/rasterio/rasterio",
-          "created_at": "2018-02-06T06:34:05Z",
-          "updated_at": "2025-12-20T05:29:44Z",
-          "author": "geowurster",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 9379,
-          "title": "pandas.read_csv() won't read back in complex number dtypes from pandas.DataFrame.to_csv()",
-          "url": "https://github.com/pandas-dev/pandas/issues/9379",
-          "owner": "pandas-dev",
-          "repo": "pandas",
-          "repo_url": "https://github.com/pandas-dev/pandas",
-          "created_at": "2015-01-30T18:31:55Z",
-          "updated_at": "2025-10-08T16:15:19Z",
-          "author": "jason-s",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 11000,
-          "title": "Preserving dtype for float32 / float64 in transformers",
-          "url": "https://github.com/scikit-learn/scikit-learn/issues/11000",
-          "owner": "scikit-learn",
-          "repo": "scikit-learn",
-          "repo_url": "https://github.com/scikit-learn/scikit-learn",
-          "created_at": "2018-04-20T11:34:39Z",
-          "updated_at": "2026-07-18T07:43:37Z",
-          "author": "glemaitre",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 22827,
-          "title": "Improve tests by using global_random_seed fixture to make them less seed-sensitive",
-          "url": "https://github.com/scikit-learn/scikit-learn/issues/22827",
-          "owner": "scikit-learn",
-          "repo": "scikit-learn",
-          "repo_url": "https://github.com/scikit-learn/scikit-learn",
-          "created_at": "2022-03-14T10:15:11Z",
-          "updated_at": "2026-08-17T11:03:15Z",
-          "author": "ogrisel",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 12600,
-          "title": "Add KV Cache for Autoregressive Inference",
-          "url": "https://github.com/huggingface/diffusers/issues/12600",
-          "owner": "huggingface",
-          "repo": "diffusers",
-          "repo_url": "https://github.com/huggingface/diffusers",
-          "created_at": "2025-11-06T08:03:55Z",
-          "updated_at": "2026-05-06T20:36:05Z",
-          "author": "DN6",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 1433,
-          "title": "Criar documenta\u00e7\u00e3o de arquitetura (ARCHITECTURE.md)",
-          "url": "https://github.com/okfn-brasil/querido-diario/issues/1433",
-          "owner": "okfn-brasil",
-          "repo": "querido-diario",
-          "repo_url": "https://github.com/okfn-brasil/querido-diario",
-          "created_at": "2026-03-14T15:25:27Z",
-          "updated_at": "2026-03-14T15:34:19Z",
-          "author": "diraol",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 31597,
-          "title": "[Doc]: incorporate artist architecture content from matplotlib papers",
-          "url": "https://github.com/matplotlib/matplotlib/issues/31597",
-          "owner": "matplotlib",
-          "repo": "matplotlib",
-          "repo_url": "https://github.com/matplotlib/matplotlib",
-          "created_at": "2026-05-01T15:05:32Z",
-          "updated_at": "2026-05-27T13:26:43Z",
-          "author": "story645",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 9508,
-          "title": "AnimateDiff SparseCtrl RGB does not work as expected",
-          "url": "https://github.com/huggingface/diffusers/issues/9508",
-          "owner": "huggingface",
-          "repo": "diffusers",
-          "repo_url": "https://github.com/huggingface/diffusers",
-          "created_at": "2024-09-23T21:42:54Z",
-          "updated_at": "2025-08-10T16:47:50Z",
-          "author": "a-r-r-o-w",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 20243,
-          "title": "matplotlib eventplot not shows all the binary data for big number of events",
-          "url": "https://github.com/matplotlib/matplotlib/issues/20243",
-          "owner": "matplotlib",
-          "repo": "matplotlib",
-          "repo_url": "https://github.com/matplotlib/matplotlib",
-          "created_at": "2021-05-16T20:38:34Z",
-          "updated_at": "2026-08-22T15:25:29Z",
-          "author": "lorenzgutierrez",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        },
-        {
-          "number": 43770,
-          "title": "BUG: Groupby.median returns absurd results for complex",
-          "url": "https://github.com/pandas-dev/pandas/issues/43770",
-          "owner": "pandas-dev",
-          "repo": "pandas",
-          "repo_url": "https://github.com/pandas-dev/pandas",
-          "created_at": "2021-09-27T19:27:06Z",
-          "updated_at": "2026-05-11T02:47:11Z",
-          "author": "debnathshoham",
-          "listed_at": "2026-08-28T17:00:00+00:00",
-          "language": "Python",
-          "has_pr": false
-        }
-      ]
-    }
-  },
   "2026-W36": {
     "fetched_at": "2026-09-04T17:00:00+00:00",
     "issues": {
@@ -643,7 +14,8 @@
           "updated_at": "2026-06-26T09:28:51Z",
           "author": "JesseStutler",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Go"
+          "language": "Go",
+          "has_pr": false
         },
         {
           "number": 7218,
@@ -656,7 +28,8 @@
           "updated_at": "2026-08-16T09:33:33Z",
           "author": "TinouHD",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "C++"
+          "language": "C++",
+          "has_pr": false
         },
         {
           "number": 1707,
@@ -669,7 +42,8 @@
           "updated_at": "2026-09-03T17:42:31Z",
           "author": "Priyanshu-pulak",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 1461,
@@ -682,7 +56,8 @@
           "updated_at": "2025-12-29T11:47:16Z",
           "author": "martinjankowiak",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 538,
@@ -695,7 +70,8 @@
           "updated_at": "2026-04-06T04:00:58Z",
           "author": "sidd-27",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Rust"
+          "language": "Rust",
+          "has_pr": false
         },
         {
           "number": 2805,
@@ -708,7 +84,8 @@
           "updated_at": "2026-08-13T23:31:23Z",
           "author": "ohookins",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Go"
+          "language": "Go",
+          "has_pr": false
         },
         {
           "number": 2392,
@@ -721,7 +98,8 @@
           "updated_at": "2026-09-02T04:17:32Z",
           "author": "petern48",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Java"
+          "language": "Java",
+          "has_pr": false
         },
         {
           "number": 219,
@@ -734,7 +112,8 @@
           "updated_at": "2026-08-26T02:35:28Z",
           "author": "calebrob6",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 2603,
@@ -747,7 +126,8 @@
           "updated_at": "2026-08-31T15:28:13Z",
           "author": "virgile-dev",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 3885,
@@ -760,7 +140,8 @@
           "updated_at": "2026-01-22T08:10:08Z",
           "author": "heitbaum",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "C++"
+          "language": "C++",
+          "has_pr": false
         },
         {
           "number": 1051,
@@ -773,7 +154,8 @@
           "updated_at": "2026-02-20T22:31:32Z",
           "author": "Hans-be",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 13698,
@@ -786,7 +168,8 @@
           "updated_at": "2026-01-16T20:06:10Z",
           "author": "yaauie",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Java"
+          "language": "Java",
+          "has_pr": false
         },
         {
           "number": 2378,
@@ -799,7 +182,8 @@
           "updated_at": "2026-04-05T05:38:36Z",
           "author": "mikewheel",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 4711,
@@ -812,7 +196,8 @@
           "updated_at": "2026-08-27T12:10:31Z",
           "author": "bmatican",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "C"
+          "language": "C",
+          "has_pr": false
         },
         {
           "number": 19,
@@ -825,7 +210,8 @@
           "updated_at": "2026-08-03T02:02:08Z",
           "author": "imback82",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "C#"
+          "language": "C#",
+          "has_pr": false
         },
         {
           "number": 2689,
@@ -838,7 +224,8 @@
           "updated_at": "2026-03-02T01:41:14Z",
           "author": "htdag",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "C++"
+          "language": "C++",
+          "has_pr": false
         },
         {
           "number": 51080,
@@ -851,7 +238,8 @@
           "updated_at": "2026-08-27T04:29:49Z",
           "author": "dentiny",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 23392,
@@ -864,7 +252,8 @@
           "updated_at": "2026-08-09T14:51:20Z",
           "author": "trufae",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "C"
+          "language": "C",
+          "has_pr": false
         },
         {
           "number": 72139,
@@ -877,7 +266,8 @@
           "updated_at": "2026-09-01T22:20:31Z",
           "author": "JeremiaAu",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 4981,
@@ -890,7 +280,8 @@
           "updated_at": "2026-09-02T05:23:41Z",
           "author": "GniLudio",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         }
       ],
       "bug": [
@@ -905,7 +296,8 @@
           "updated_at": "2026-06-09T17:49:26Z",
           "author": "djmallum",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 10418,
@@ -918,7 +310,8 @@
           "updated_at": "2026-09-01T09:05:15Z",
           "author": "woaiqjj",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Rust"
+          "language": "Rust",
+          "has_pr": false
         },
         {
           "number": 909,
@@ -931,7 +324,8 @@
           "updated_at": "2026-07-19T11:13:12Z",
           "author": "nndn",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 11717,
@@ -944,7 +338,8 @@
           "updated_at": "2026-09-04T11:37:59Z",
           "author": "qtxalan",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "C++"
+          "language": "C++",
+          "has_pr": false
         },
         {
           "number": 5113,
@@ -957,7 +352,8 @@
           "updated_at": "2026-08-28T07:47:22Z",
           "author": "trung4it",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 1214,
@@ -970,7 +366,8 @@
           "updated_at": "2026-04-01T16:33:40Z",
           "author": "balli1187",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 4238,
@@ -983,7 +380,8 @@
           "updated_at": "2026-08-25T01:36:23Z",
           "author": "Yantrio",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Go"
+          "language": "Go",
+          "has_pr": false
         },
         {
           "number": 1330,
@@ -996,7 +394,8 @@
           "updated_at": "2026-09-01T18:31:03Z",
           "author": "evgenyrp",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "C++"
+          "language": "C++",
+          "has_pr": false
         },
         {
           "number": 10528,
@@ -1009,7 +408,8 @@
           "updated_at": "2026-09-03T11:25:53Z",
           "author": "robbycbennett",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": null
+          "language": null,
+          "has_pr": false
         },
         {
           "number": 2893,
@@ -1022,7 +422,8 @@
           "updated_at": "2026-09-03T13:38:47Z",
           "author": "topwebs",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "TypeScript"
+          "language": "TypeScript",
+          "has_pr": false
         },
         {
           "number": 62863,
@@ -1035,7 +436,8 @@
           "updated_at": "2026-08-25T02:29:31Z",
           "author": "topolarity",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Julia"
+          "language": "Julia",
+          "has_pr": false
         },
         {
           "number": 375,
@@ -1048,7 +450,8 @@
           "updated_at": "2026-08-12T14:13:42Z",
           "author": "gamelifezhao",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "TypeScript"
+          "language": "TypeScript",
+          "has_pr": false
         },
         {
           "number": 1827,
@@ -1061,7 +464,8 @@
           "updated_at": "2026-08-20T03:45:28Z",
           "author": "sschuberth",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Kotlin"
+          "language": "Kotlin",
+          "has_pr": false
         },
         {
           "number": 2478,
@@ -1074,7 +478,8 @@
           "updated_at": "2026-09-04T10:09:51Z",
           "author": "nhoening",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         }
       ],
       "hard": [
@@ -1089,7 +494,8 @@
           "updated_at": "2025-09-29T14:19:21Z",
           "author": "Kolaru",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Julia"
+          "language": "Julia",
+          "has_pr": false
         },
         {
           "number": 9379,
@@ -1102,7 +508,8 @@
           "updated_at": "2025-10-08T16:15:19Z",
           "author": "jason-s",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 1801,
@@ -1115,7 +522,8 @@
           "updated_at": "2025-04-11T17:54:26Z",
           "author": "adam-urbanczyk",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 31597,
@@ -1128,7 +536,8 @@
           "updated_at": "2026-05-27T13:26:43Z",
           "author": "story645",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 1270,
@@ -1141,7 +550,8 @@
           "updated_at": "2025-12-20T05:29:44Z",
           "author": "geowurster",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 60445,
@@ -1154,7 +564,8 @@
           "updated_at": "2026-01-15T20:51:19Z",
           "author": "jondeuce",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Julia"
+          "language": "Julia",
+          "has_pr": false
         },
         {
           "number": 31869,
@@ -1167,7 +578,8 @@
           "updated_at": "2026-09-01T11:55:33Z",
           "author": "lorentzenchr",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 20243,
@@ -1180,7 +592,8 @@
           "updated_at": "2026-08-22T15:25:29Z",
           "author": "lorenzgutierrez",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 33965,
@@ -1193,7 +606,8 @@
           "updated_at": "2026-08-28T02:57:38Z",
           "author": "adam2392",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         },
         {
           "number": 9508,
@@ -1206,7 +620,8 @@
           "updated_at": "2025-08-10T16:47:50Z",
           "author": "a-r-r-o-w",
           "listed_at": "2026-09-04T17:00:00+00:00",
-          "language": "Python"
+          "language": "Python",
+          "has_pr": false
         }
       ]
     }

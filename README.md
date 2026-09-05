@@ -82,7 +82,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 17 | [[core] Split raylet  cython file into multiple files](https://github.com/ray-project/ray/issues/51080) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
 | 18 | [help messages shouldnt exceed 80 columns](https://github.com/radareorg/radare2/issues/23392) | [radareorg/radare2](https://github.com/radareorg/radare2) | 🟢 Open |
 | 19 | [Crons: Status Chart X-Axis Makes No Sense for 1H Time Ran...](https://github.com/getsentry/sentry/issues/72139) | [getsentry/sentry](https://github.com/getsentry/sentry) | 🟢 Open |
-| 20 | [Add stack trace to warnings](https://github.com/ManimCommunity/manim/issues/4981) | [ManimCommunity/manim](https://github.com/ManimCommunity/manim) | 🟡 PR Proposed |
+| 20 | [Add stack trace to warnings](https://github.com/ManimCommunity/manim/issues/4981) | [ManimCommunity/manim](https://github.com/ManimCommunity/manim) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>

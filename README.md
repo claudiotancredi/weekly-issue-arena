@@ -73,7 +73,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 8 | [Datamodules that have fixed train/val/test should allow f...](https://github.com/torchgeo/torchgeo/issues/219) | [torchgeo/torchgeo](https://github.com/torchgeo/torchgeo) | 🟢 Open |
 | 9 | [Unable to open new tab with ctrl+click on search results](https://github.com/suitenumerique/docs/issues/2603) | [suitenumerique/docs](https://github.com/suitenumerique/docs) | 🟢 Open |
 | 10 | [meson build does not install nlohmann_json*.cmake files](https://github.com/nlohmann/json/issues/3885) | [nlohmann/json](https://github.com/nlohmann/json) | 🟢 Open |
-| 11 | [Instructions for manual update](https://github.com/RimSort/RimSort/issues/1051) | [RimSort/RimSort](https://github.com/RimSort/RimSort) | 🟢 Open |
+| 11 | [Instructions for manual update](https://github.com/RimSort/RimSort/issues/1051) | [RimSort/RimSort](https://github.com/RimSort/RimSort) | 🟡 PR Proposed |
 | 12 | [In some situations bin/logstash-plugins can fail to run](https://github.com/elastic/logstash/issues/13698) | [elastic/logstash](https://github.com/elastic/logstash) | 🟢 Open |
 | 13 | [Client.scheduler_info needs better documentation](https://github.com/dask/distributed/issues/2378) | [dask/distributed](https://github.com/dask/distributed) | 🟢 Open |
 | 14 | [[docdb] Expose rocksdb background thread debug info in th...](https://github.com/yugabyte/yugabyte-db/issues/4711) | [yugabyte/yugabyte-db](https://github.com/yugabyte/yugabyte-db) | 🟢 Open |
@@ -94,7 +94,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [Empty Exception for each open_rasterio call](https://github.com/corteva/rioxarray/issues/929) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
-| 2 | [Windows: collection name "." is stored as the collections...](https://github.com/qdrant/qdrant/issues/10418) | [qdrant/qdrant](https://github.com/qdrant/qdrant) | 🟢 Open |
+| 2 | [Windows: collection name "." is stored as the collections...](https://github.com/qdrant/qdrant/issues/10418) | [qdrant/qdrant](https://github.com/qdrant/qdrant) | 🟡 PR Proposed |
 | 3 | [fix(ce): reconcile embedder vector dimensionality (Hashin...](https://github.com/potpie-ai/potpie/issues/909) | [potpie-ai/potpie](https://github.com/potpie-ai/potpie) | 🟢 Open |
 | 4 | [[Bug]: Issues with saving settings on new firmware](https://github.com/meshtastic/firmware/issues/11717) | [meshtastic/firmware](https://github.com/meshtastic/firmware) | 🟢 Open |
 | 5 | [[Bug] HRMS Web: Hardcoded UI strings bypass translations](https://github.com/frappe/hrms/issues/5113) | [frappe/hrms](https://github.com/frappe/hrms) | 🟢 Open |

@@ -84,7 +84,7 @@
     "repo": "RimSort",
     "number": 1051,
     "category": "gfi",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {
@@ -172,7 +172,7 @@
     "repo": "qdrant",
     "number": 10418,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Rust"
   },
   {

@@ -155,7 +155,7 @@
           "author": "Hans-be",
           "listed_at": "2026-09-04T17:00:00+00:00",
           "language": "Python",
-          "has_pr": false
+          "has_pr": true
         },
         {
           "number": 13698,
@@ -311,7 +311,7 @@
           "author": "woaiqjj",
           "listed_at": "2026-09-04T17:00:00+00:00",
           "language": "Rust",
-          "has_pr": false
+          "has_pr": true
         },
         {
           "number": 909,

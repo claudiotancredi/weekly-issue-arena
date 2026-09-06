@@ -164,7 +164,7 @@
     "repo": "rioxarray",
     "number": 929,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {
@@ -220,7 +220,7 @@
     "repo": "translations",
     "number": 1330,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "C++"
   },
   {

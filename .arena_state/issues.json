@@ -297,7 +297,7 @@
           "author": "djmallum",
           "listed_at": "2026-09-04T17:00:00+00:00",
           "language": "Python",
-          "has_pr": false
+          "has_pr": true
         },
         {
           "number": 10418,
@@ -395,7 +395,7 @@
           "author": "evgenyrp",
           "listed_at": "2026-09-04T17:00:00+00:00",
           "language": "C++",
-          "has_pr": false
+          "has_pr": true
         },
         {
           "number": 10528,

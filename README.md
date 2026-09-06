@@ -93,14 +93,14 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Empty Exception for each open_rasterio call](https://github.com/corteva/rioxarray/issues/929) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟢 Open |
+| 1 | [Empty Exception for each open_rasterio call](https://github.com/corteva/rioxarray/issues/929) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟡 PR Proposed |
 | 2 | [Windows: collection name "." is stored as the collections...](https://github.com/qdrant/qdrant/issues/10418) | [qdrant/qdrant](https://github.com/qdrant/qdrant) | 🟡 PR Proposed |
 | 3 | [fix(ce): reconcile embedder vector dimensionality (Hashin...](https://github.com/potpie-ai/potpie/issues/909) | [potpie-ai/potpie](https://github.com/potpie-ai/potpie) | 🟢 Open |
 | 4 | [[Bug]: Issues with saving settings on new firmware](https://github.com/meshtastic/firmware/issues/11717) | [meshtastic/firmware](https://github.com/meshtastic/firmware) | 🟢 Open |
 | 5 | [[Bug] HRMS Web: Hardcoded UI strings bypass translations](https://github.com/frappe/hrms/issues/5113) | [frappe/hrms](https://github.com/frappe/hrms) | 🟢 Open |
 | 6 | [Feature Request: Configurable field exclusions for ETag c...](https://github.com/pimutils/vdirsyncer/issues/1214) | [pimutils/vdirsyncer](https://github.com/pimutils/vdirsyncer) | 🟢 Open |
 | 7 | [When passing entire resources to a for_each, deprecation ...](https://github.com/opentofu/opentofu/issues/4238) | [opentofu/opentofu](https://github.com/opentofu/opentofu) | 🟢 Open |
-| 8 | [Use released model for non-English centric evals](https://github.com/mozilla/translations/issues/1330) | [mozilla/translations](https://github.com/mozilla/translations) | 🟢 Open |
+| 8 | [Use released model for non-English centric evals](https://github.com/mozilla/translations/issues/1330) | [mozilla/translations](https://github.com/mozilla/translations) | 🟡 PR Proposed |
 | 9 | [Misc. bug: Inconsistent Vulkan segfault](https://github.com/ggml-org/llama.cpp/issues/10528) | [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 🟢 Open |
 | 10 | [Blog template displays post excerpt on individual post page](https://github.com/emdash-cms/emdash/issues/2893) | [emdash-cms/emdash](https://github.com/emdash-cms/emdash) | 🟢 Open |
 | 11 | [`jl_send_preempt_signal` can allow a Julia thread to exec...](https://github.com/JuliaLang/julia/issues/62863) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |

@@ -106,7 +106,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 11 | [`jl_send_preempt_signal` can allow a Julia thread to exec...](https://github.com/JuliaLang/julia/issues/62863) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |
 | 12 | [当我pnpm build 的时候 报错 listChapterVersions 未导出](https://github.com/Narcooo/inkos/issues/375) | [Narcooo/inkos](https://github.com/Narcooo/inkos) | 🟢 Open |
 | 13 | [`findKotlinMagicFunTest` task causes "No such file or dir...](https://github.com/autonomousapps/dependency-analysis-gradle-plugin/issues/1827) | [autonomousapps/dependency-analysis-gradle-plugin](https://github.com/autonomousapps/dependency-analysis-gradle-plugin) | 🟢 Open |
-| 14 | [Status page: Not all sensors displayed](https://github.com/FlexMeasures/flexmeasures/issues/2478) | [FlexMeasures/flexmeasures](https://github.com/FlexMeasures/flexmeasures) | 🟢 Open |
+| 14 | [Status page: Not all sensors displayed](https://github.com/FlexMeasures/flexmeasures/issues/2478) | [FlexMeasures/flexmeasures](https://github.com/FlexMeasures/flexmeasures) | 🟡 PR Proposed |
 <!-- ISSUES:BUGS:END -->
 
 </details>

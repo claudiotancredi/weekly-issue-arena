@@ -94,7 +94,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [Empty Exception for each open_rasterio call](https://github.com/corteva/rioxarray/issues/929) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟡 PR Proposed |
-| 2 | [Windows: collection name "." is stored as the collections...](https://github.com/qdrant/qdrant/issues/10418) | [qdrant/qdrant](https://github.com/qdrant/qdrant) | 🟡 PR Proposed |
+| 2 | [Windows: collection name "." is stored as the collections...](https://github.com/qdrant/qdrant/issues/10418) | [qdrant/qdrant](https://github.com/qdrant/qdrant) | 🔴 Closed |
 | 3 | [fix(ce): reconcile embedder vector dimensionality (Hashin...](https://github.com/potpie-ai/potpie/issues/909) | [potpie-ai/potpie](https://github.com/potpie-ai/potpie) | 🟢 Open |
 | 4 | [[Bug]: Issues with saving settings on new firmware](https://github.com/meshtastic/firmware/issues/11717) | [meshtastic/firmware](https://github.com/meshtastic/firmware) | 🟢 Open |
 | 5 | [[Bug] HRMS Web: Hardcoded UI strings bypass translations](https://github.com/frappe/hrms/issues/5113) | [frappe/hrms](https://github.com/frappe/hrms) | 🟢 Open |

@@ -312,7 +312,8 @@
           "author": "woaiqjj",
           "listed_at": "2026-09-04T17:00:00+00:00",
           "language": "Rust",
-          "has_pr": true
+          "has_pr": true,
+          "closed": true
         },
         {
           "number": 909,

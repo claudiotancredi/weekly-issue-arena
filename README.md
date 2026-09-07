@@ -82,7 +82,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 17 | [[core] Split raylet  cython file into multiple files](https://github.com/ray-project/ray/issues/51080) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
 | 18 | [help messages shouldnt exceed 80 columns](https://github.com/radareorg/radare2/issues/23392) | [radareorg/radare2](https://github.com/radareorg/radare2) | 🟢 Open |
 | 19 | [Crons: Status Chart X-Axis Makes No Sense for 1H Time Ran...](https://github.com/getsentry/sentry/issues/72139) | [getsentry/sentry](https://github.com/getsentry/sentry) | 🟢 Open |
-| 20 | [Add stack trace to warnings](https://github.com/ManimCommunity/manim/issues/4981) | [ManimCommunity/manim](https://github.com/ManimCommunity/manim) | 🟢 Open |
+| 20 | [Add stack trace to warnings](https://github.com/ManimCommunity/manim/issues/4981) | [ManimCommunity/manim](https://github.com/ManimCommunity/manim) | 🟡 PR Proposed |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -96,7 +96,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 1 | [Empty Exception for each open_rasterio call](https://github.com/corteva/rioxarray/issues/929) | [corteva/rioxarray](https://github.com/corteva/rioxarray) | 🟡 PR Proposed |
 | 2 | [Windows: collection name "." is stored as the collections...](https://github.com/qdrant/qdrant/issues/10418) | [qdrant/qdrant](https://github.com/qdrant/qdrant) | 🔴 Closed |
 | 3 | [fix(ce): reconcile embedder vector dimensionality (Hashin...](https://github.com/potpie-ai/potpie/issues/909) | [potpie-ai/potpie](https://github.com/potpie-ai/potpie) | 🟢 Open |
-| 4 | [[Bug]: Issues with saving settings on new firmware](https://github.com/meshtastic/firmware/issues/11717) | [meshtastic/firmware](https://github.com/meshtastic/firmware) | 🟢 Open |
+| 4 | [[Bug]: Issues with saving settings on new firmware](https://github.com/meshtastic/firmware/issues/11717) | [meshtastic/firmware](https://github.com/meshtastic/firmware) | 🔴 Closed |
 | 5 | [[Bug] HRMS Web: Hardcoded UI strings bypass translations](https://github.com/frappe/hrms/issues/5113) | [frappe/hrms](https://github.com/frappe/hrms) | 🟢 Open |
 | 6 | [Feature Request: Configurable field exclusions for ETag c...](https://github.com/pimutils/vdirsyncer/issues/1214) | [pimutils/vdirsyncer](https://github.com/pimutils/vdirsyncer) | 🟢 Open |
 | 7 | [When passing entire resources to a for_each, deprecation ...](https://github.com/opentofu/opentofu/issues/4238) | [opentofu/opentofu](https://github.com/opentofu/opentofu) | 🟢 Open |

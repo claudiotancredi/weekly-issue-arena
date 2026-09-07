@@ -155,7 +155,8 @@
           "author": "Hans-be",
           "listed_at": "2026-09-04T17:00:00+00:00",
           "language": "Python",
-          "has_pr": true
+          "has_pr": true,
+          "closed": true
         },
         {
           "number": 13698,

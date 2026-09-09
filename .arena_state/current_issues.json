@@ -140,7 +140,7 @@
     "repo": "radare2",
     "number": 23392,
     "category": "gfi",
-    "has_pr": false,
+    "has_pr": true,
     "language": "C"
   },
   {

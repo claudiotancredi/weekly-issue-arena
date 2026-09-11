@@ -1,298 +1,254 @@
 [
   {
-    "owner": "volcano-sh",
-    "repo": "volcano",
-    "number": 3852,
+    "owner": "ankidroid",
+    "repo": "Anki-Android",
+    "number": 21780,
     "category": "gfi",
-    "has_pr": false,
+    "language": "Kotlin"
+  },
+  {
+    "owner": "chaosblade-io",
+    "repo": "chaosblade",
+    "number": 326,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "rclone",
+    "repo": "rclone",
+    "number": 8049,
+    "category": "gfi",
     "language": "Go"
   },
   {
-    "owner": "mumble-voip",
-    "repo": "mumble",
-    "number": 7218,
+    "owner": "CesiumGS",
+    "repo": "cesium",
+    "number": 11749,
     "category": "gfi",
-    "has_pr": false,
+    "language": "JavaScript"
+  },
+  {
+    "owner": "calibrain",
+    "repo": "shelfmark",
+    "number": 1130,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "modular",
+    "repo": "modular",
+    "number": 6920,
+    "category": "gfi",
+    "language": "Mojo"
+  },
+  {
+    "owner": "ggml-org",
+    "repo": "llama.cpp",
+    "number": 17488,
+    "category": "gfi",
     "language": "C++"
   },
   {
-    "owner": "collective",
-    "repo": "icalendar",
-    "number": 1707,
+    "owner": "zsh-users",
+    "repo": "zsh-syntax-highlighting",
+    "number": 645,
     "category": "gfi",
-    "has_pr": false,
+    "language": "Shell"
+  },
+  {
+    "owner": "scipy",
+    "repo": "scipy",
+    "number": 4368,
+    "category": "gfi",
     "language": "Python"
   },
   {
-    "owner": "pyro-ppl",
-    "repo": "pyro",
-    "number": 1461,
+    "owner": "cockroachdb",
+    "repo": "cockroach",
+    "number": 45464,
     "category": "gfi",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "kornia",
-    "repo": "kornia-rs",
-    "number": 538,
-    "category": "gfi",
-    "has_pr": false,
-    "language": "Rust"
-  },
-  {
-    "owner": "kubernetes",
-    "repo": "minikube",
-    "number": 2805,
-    "category": "gfi",
-    "has_pr": false,
     "language": "Go"
   },
   {
     "owner": "apache",
-    "repo": "sedona",
-    "number": 2392,
+    "repo": "arrow",
+    "number": 51265,
     "category": "gfi",
-    "has_pr": false,
-    "language": "Java"
-  },
-  {
-    "owner": "torchgeo",
-    "repo": "torchgeo",
-    "number": 219,
-    "category": "gfi",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "suitenumerique",
-    "repo": "docs",
-    "number": 2603,
-    "category": "gfi",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "nlohmann",
-    "repo": "json",
-    "number": 3885,
-    "category": "gfi",
-    "has_pr": false,
     "language": "C++"
   },
   {
-    "owner": "RimSort",
-    "repo": "RimSort",
-    "number": 1051,
+    "owner": "linkml",
+    "repo": "linkml",
+    "number": 3047,
     "category": "gfi",
-    "has_pr": true,
     "language": "Python"
   },
   {
-    "owner": "elastic",
-    "repo": "logstash",
-    "number": 13698,
+    "owner": "huggingface",
+    "repo": "diffusers",
+    "number": 9329,
     "category": "gfi",
-    "has_pr": false,
-    "language": "Java"
-  },
-  {
-    "owner": "dask",
-    "repo": "distributed",
-    "number": 2378,
-    "category": "gfi",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "yugabyte",
-    "repo": "yugabyte-db",
-    "number": 4711,
+    "owner": "highlightjs",
+    "repo": "highlight.js",
+    "number": 2777,
     "category": "gfi",
-    "has_pr": false,
-    "language": "C"
+    "language": "JavaScript"
   },
   {
-    "owner": "dotnet",
-    "repo": "spark",
-    "number": 19,
+    "owner": "llm-d",
+    "repo": "llm-d",
+    "number": 1472,
     "category": "gfi",
-    "has_pr": false,
-    "language": "C#"
+    "language": "Shell"
   },
   {
-    "owner": "x64dbg",
-    "repo": "x64dbg",
-    "number": 2689,
+    "owner": "openedx",
+    "repo": "openedx-platform",
+    "number": 38945,
     "category": "gfi",
-    "has_pr": false,
-    "language": "C++"
-  },
-  {
-    "owner": "ray-project",
-    "repo": "ray",
-    "number": 51080,
-    "category": "gfi",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "radareorg",
-    "repo": "radare2",
-    "number": 23392,
+    "owner": "OWASP",
+    "repo": "wstg",
+    "number": 5,
     "category": "gfi",
-    "has_pr": true,
-    "language": "C"
-  },
-  {
-    "owner": "getsentry",
-    "repo": "sentry",
-    "number": 72139,
-    "category": "gfi",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "ManimCommunity",
-    "repo": "manim",
-    "number": 4981,
+    "owner": "google",
+    "repo": "comprehensive-rust",
+    "number": 1305,
     "category": "gfi",
-    "has_pr": true,
+    "language": "Rust"
+  },
+  {
+    "owner": "pytorch",
+    "repo": "executorch",
+    "number": 10819,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "scipy",
+    "repo": "scipy",
+    "number": 16601,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "dagster-io",
+    "repo": "dagster",
+    "number": 34189,
+    "category": "bug",
     "language": "Python"
   },
   {
     "owner": "corteva",
     "repo": "rioxarray",
-    "number": 929,
+    "number": 174,
     "category": "bug",
-    "has_pr": true,
     "language": "Python"
   },
   {
-    "owner": "qdrant",
-    "repo": "qdrant",
-    "number": 10418,
+    "owner": "aboutcode-org",
+    "repo": "scancode-toolkit",
+    "number": 5229,
     "category": "bug",
-    "has_pr": true,
+    "language": "Python"
+  },
+  {
+    "owner": "tauri-apps",
+    "repo": "tauri",
+    "number": 15656,
+    "category": "bug",
     "language": "Rust"
   },
   {
-    "owner": "potpie-ai",
-    "repo": "potpie",
-    "number": 909,
+    "owner": "sktime",
+    "repo": "sktime",
+    "number": 11028,
     "category": "bug",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "meshtastic",
-    "repo": "firmware",
-    "number": 11717,
+    "owner": "bazelbuild",
+    "repo": "bazel",
+    "number": 27565,
     "category": "bug",
-    "has_pr": false,
+    "language": "Java"
+  },
+  {
+    "owner": "dask",
+    "repo": "dask",
+    "number": 10826,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "onnx",
+    "repo": "onnx",
+    "number": 8343,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "colmap",
+    "repo": "colmap",
+    "number": 765,
+    "category": "bug",
     "language": "C++"
   },
   {
-    "owner": "frappe",
-    "repo": "hrms",
-    "number": 5113,
+    "owner": "tauri-apps",
+    "repo": "tauri",
+    "number": 14675,
     "category": "bug",
-    "has_pr": false,
-    "language": "Python"
+    "language": "Rust"
   },
   {
-    "owner": "pimutils",
-    "repo": "vdirsyncer",
-    "number": 1214,
+    "owner": "syncthing",
+    "repo": "syncthing",
+    "number": 10869,
     "category": "bug",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "opentofu",
-    "repo": "opentofu",
-    "number": 4238,
-    "category": "bug",
-    "has_pr": false,
     "language": "Go"
   },
   {
-    "owner": "mozilla",
-    "repo": "translations",
-    "number": 1330,
+    "owner": "deepmodeling",
+    "repo": "deepmd-kit",
+    "number": 5993,
     "category": "bug",
-    "has_pr": true,
-    "language": "C++"
-  },
-  {
-    "owner": "ggml-org",
-    "repo": "llama.cpp",
-    "number": 10528,
-    "category": "bug",
-    "has_pr": false,
-    "language": null
-  },
-  {
-    "owner": "emdash-cms",
-    "repo": "emdash",
-    "number": 2893,
-    "category": "bug",
-    "has_pr": false,
-    "language": "TypeScript"
-  },
-  {
-    "owner": "JuliaLang",
-    "repo": "julia",
-    "number": 62863,
-    "category": "bug",
-    "has_pr": false,
-    "language": "Julia"
-  },
-  {
-    "owner": "Narcooo",
-    "repo": "inkos",
-    "number": 375,
-    "category": "bug",
-    "has_pr": false,
-    "language": "TypeScript"
-  },
-  {
-    "owner": "autonomousapps",
-    "repo": "dependency-analysis-gradle-plugin",
-    "number": 1827,
-    "category": "bug",
-    "has_pr": false,
-    "language": "Kotlin"
-  },
-  {
-    "owner": "FlexMeasures",
-    "repo": "flexmeasures",
-    "number": 2478,
-    "category": "bug",
-    "has_pr": true,
     "language": "Python"
   },
   {
-    "owner": "JuliaLang",
-    "repo": "julia",
-    "number": 15523,
-    "category": "hard",
-    "has_pr": false,
-    "language": "Julia"
-  },
-  {
-    "owner": "pandas-dev",
-    "repo": "pandas",
-    "number": 9379,
-    "category": "hard",
-    "has_pr": false,
+    "owner": "traceopt-ai",
+    "repo": "traceml",
+    "number": 371,
+    "category": "bug",
     "language": "Python"
   },
   {
-    "owner": "CadQuery",
-    "repo": "cadquery",
-    "number": 1801,
+    "owner": "calibrain",
+    "repo": "shelfmark",
+    "number": 1301,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "huggingface",
+    "repo": "diffusers",
+    "number": 6586,
     "category": "hard",
-    "has_pr": false,
+    "language": "Python"
+  },
+  {
+    "owner": "huggingface",
+    "repo": "diffusers",
+    "number": 12600,
+    "category": "hard",
     "language": "Python"
   },
   {
@@ -300,7 +256,34 @@
     "repo": "matplotlib",
     "number": 31597,
     "category": "hard",
-    "has_pr": false,
+    "language": "Python"
+  },
+  {
+    "owner": "aboutcode-org",
+    "repo": "scancode-toolkit",
+    "number": 3719,
+    "category": "hard",
+    "language": "Python"
+  },
+  {
+    "owner": "sequelize",
+    "repo": "sequelize",
+    "number": 18269,
+    "category": "hard",
+    "language": "TypeScript"
+  },
+  {
+    "owner": "pandas-dev",
+    "repo": "pandas",
+    "number": 9379,
+    "category": "hard",
+    "language": "Python"
+  },
+  {
+    "owner": "scikit-learn",
+    "repo": "scikit-learn",
+    "number": 31869,
+    "category": "hard",
     "language": "Python"
   },
   {
@@ -308,47 +291,20 @@
     "repo": "rasterio",
     "number": 1270,
     "category": "hard",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "JuliaLang",
-    "repo": "julia",
-    "number": 60445,
+    "owner": "aboutcode-org",
+    "repo": "scancode-toolkit",
+    "number": 4156,
     "category": "hard",
-    "has_pr": false,
-    "language": "Julia"
-  },
-  {
-    "owner": "scikit-learn",
-    "repo": "scikit-learn",
-    "number": 31869,
-    "category": "hard",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "matplotlib",
-    "repo": "matplotlib",
-    "number": 20243,
+    "owner": "sequelize",
+    "repo": "sequelize",
+    "number": 2325,
     "category": "hard",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "scikit-learn",
-    "repo": "scikit-learn",
-    "number": 33965,
-    "category": "hard",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "huggingface",
-    "repo": "diffusers",
-    "number": 9508,
-    "category": "hard",
-    "has_pr": false,
-    "language": "Python"
+    "language": "TypeScript"
   }
 ]

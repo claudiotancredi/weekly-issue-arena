@@ -4,6 +4,7 @@
     "repo": "Anki-Android",
     "number": 21780,
     "category": "gfi",
+    "has_pr": false,
     "language": "Kotlin"
   },
   {
@@ -11,6 +12,7 @@
     "repo": "chaosblade",
     "number": 326,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -18,6 +20,7 @@
     "repo": "rclone",
     "number": 8049,
     "category": "gfi",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -25,6 +28,7 @@
     "repo": "cesium",
     "number": 11749,
     "category": "gfi",
+    "has_pr": false,
     "language": "JavaScript"
   },
   {
@@ -32,6 +36,7 @@
     "repo": "shelfmark",
     "number": 1130,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -39,6 +44,7 @@
     "repo": "modular",
     "number": 6920,
     "category": "gfi",
+    "has_pr": false,
     "language": "Mojo"
   },
   {
@@ -46,6 +52,7 @@
     "repo": "llama.cpp",
     "number": 17488,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -53,6 +60,7 @@
     "repo": "zsh-syntax-highlighting",
     "number": 645,
     "category": "gfi",
+    "has_pr": false,
     "language": "Shell"
   },
   {
@@ -60,6 +68,7 @@
     "repo": "scipy",
     "number": 4368,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -67,6 +76,7 @@
     "repo": "cockroach",
     "number": 45464,
     "category": "gfi",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -74,6 +84,7 @@
     "repo": "arrow",
     "number": 51265,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -81,6 +92,7 @@
     "repo": "linkml",
     "number": 3047,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -88,6 +100,7 @@
     "repo": "diffusers",
     "number": 9329,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -95,6 +108,7 @@
     "repo": "highlight.js",
     "number": 2777,
     "category": "gfi",
+    "has_pr": false,
     "language": "JavaScript"
   },
   {
@@ -102,6 +116,7 @@
     "repo": "llm-d",
     "number": 1472,
     "category": "gfi",
+    "has_pr": false,
     "language": "Shell"
   },
   {
@@ -109,6 +124,7 @@
     "repo": "openedx-platform",
     "number": 38945,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -116,6 +132,7 @@
     "repo": "wstg",
     "number": 5,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -123,6 +140,7 @@
     "repo": "comprehensive-rust",
     "number": 1305,
     "category": "gfi",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -130,6 +148,7 @@
     "repo": "executorch",
     "number": 10819,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -137,6 +156,7 @@
     "repo": "scipy",
     "number": 16601,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -144,6 +164,7 @@
     "repo": "dagster",
     "number": 34189,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -151,6 +172,7 @@
     "repo": "rioxarray",
     "number": 174,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -158,6 +180,7 @@
     "repo": "scancode-toolkit",
     "number": 5229,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -165,6 +188,7 @@
     "repo": "tauri",
     "number": 15656,
     "category": "bug",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -172,6 +196,7 @@
     "repo": "sktime",
     "number": 11028,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -179,6 +204,7 @@
     "repo": "bazel",
     "number": 27565,
     "category": "bug",
+    "has_pr": false,
     "language": "Java"
   },
   {
@@ -186,6 +212,7 @@
     "repo": "dask",
     "number": 10826,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -193,6 +220,7 @@
     "repo": "onnx",
     "number": 8343,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -200,6 +228,7 @@
     "repo": "colmap",
     "number": 765,
     "category": "bug",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -207,6 +236,7 @@
     "repo": "tauri",
     "number": 14675,
     "category": "bug",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -214,6 +244,7 @@
     "repo": "syncthing",
     "number": 10869,
     "category": "bug",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -221,6 +252,7 @@
     "repo": "deepmd-kit",
     "number": 5993,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -228,6 +260,7 @@
     "repo": "traceml",
     "number": 371,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -235,6 +268,7 @@
     "repo": "shelfmark",
     "number": 1301,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -242,6 +276,7 @@
     "repo": "diffusers",
     "number": 6586,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -249,6 +284,7 @@
     "repo": "diffusers",
     "number": 12600,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -256,6 +292,7 @@
     "repo": "matplotlib",
     "number": 31597,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -263,6 +300,7 @@
     "repo": "scancode-toolkit",
     "number": 3719,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -270,6 +308,7 @@
     "repo": "sequelize",
     "number": 18269,
     "category": "hard",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -277,6 +316,7 @@
     "repo": "pandas",
     "number": 9379,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -284,6 +324,7 @@
     "repo": "scikit-learn",
     "number": 31869,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -291,6 +332,7 @@
     "repo": "rasterio",
     "number": 1270,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -298,6 +340,7 @@
     "repo": "scancode-toolkit",
     "number": 4156,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -305,6 +348,7 @@
     "repo": "sequelize",
     "number": 2325,
     "category": "hard",
+    "has_pr": false,
     "language": "TypeScript"
   }
 ]

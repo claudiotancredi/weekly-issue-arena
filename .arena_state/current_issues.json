@@ -4,6 +4,7 @@
     "repo": "oasis",
     "number": 37,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -11,6 +12,7 @@
     "repo": "bun",
     "number": 21361,
     "category": "gfi",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -18,6 +20,7 @@
     "repo": "Unity-MCP",
     "number": 266,
     "category": "gfi",
+    "has_pr": false,
     "language": "C#"
   },
   {
@@ -25,6 +28,7 @@
     "repo": "sentry",
     "number": 98565,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -32,6 +36,7 @@
     "repo": "navigation2",
     "number": 5037,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -39,6 +44,7 @@
     "repo": "firmware",
     "number": 9584,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -46,6 +52,7 @@
     "repo": "mteb",
     "number": 1883,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -53,6 +60,7 @@
     "repo": "pipedream",
     "number": 21896,
     "category": "gfi",
+    "has_pr": false,
     "language": "JavaScript"
   },
   {
@@ -60,6 +68,7 @@
     "repo": "alltheplaces",
     "number": 18308,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -67,6 +76,7 @@
     "repo": "firmware",
     "number": 8750,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -74,6 +84,7 @@
     "repo": "Files",
     "number": 10472,
     "category": "gfi",
+    "has_pr": false,
     "language": "C#"
   },
   {
@@ -81,6 +92,7 @@
     "repo": "root",
     "number": 14543,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -88,6 +100,7 @@
     "repo": "radare2",
     "number": 17019,
     "category": "gfi",
+    "has_pr": false,
     "language": "C"
   },
   {
@@ -95,6 +108,7 @@
     "repo": "root",
     "number": 16968,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -102,6 +116,7 @@
     "repo": "vllm",
     "number": 32335,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -109,6 +124,7 @@
     "repo": "verl-omni",
     "number": 191,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -116,6 +132,7 @@
     "repo": "gravitino",
     "number": 9673,
     "category": "gfi",
+    "has_pr": false,
     "language": "Java"
   },
   {
@@ -123,6 +140,7 @@
     "repo": "symfony",
     "number": 53309,
     "category": "gfi",
+    "has_pr": false,
     "language": "PHP"
   },
   {
@@ -130,6 +148,7 @@
     "repo": "cpython",
     "number": 131178,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -137,6 +156,7 @@
     "repo": "llama.cpp",
     "number": 20632,
     "category": "gfi",
+    "has_pr": false,
     "language": null
   },
   {
@@ -144,6 +164,7 @@
     "repo": "geopandas",
     "number": 3685,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -151,6 +172,7 @@
     "repo": "chroma",
     "number": 7738,
     "category": "bug",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -158,6 +180,7 @@
     "repo": "sentry",
     "number": 123755,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -165,6 +188,7 @@
     "repo": "mlflow",
     "number": 25963,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -172,6 +196,7 @@
     "repo": "evidently",
     "number": 686,
     "category": "bug",
+    "has_pr": false,
     "language": "Jupyter Notebook"
   },
   {
@@ -179,6 +204,7 @@
     "repo": "eodag",
     "number": 2128,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -186,6 +212,7 @@
     "repo": "copier",
     "number": 1842,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -193,6 +220,7 @@
     "repo": "shelfmark",
     "number": 1272,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -200,6 +228,7 @@
     "repo": "ComfyUI_frontend",
     "number": 15928,
     "category": "bug",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -207,6 +236,7 @@
     "repo": "autogluon",
     "number": 4856,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -214,6 +244,7 @@
     "repo": "polars",
     "number": 23553,
     "category": "bug",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -221,6 +252,7 @@
     "repo": "datasets",
     "number": 3638,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -228,6 +260,7 @@
     "repo": "essentials",
     "number": 985,
     "category": "bug",
+    "has_pr": false,
     "language": "Kotlin"
   },
   {
@@ -235,6 +268,7 @@
     "repo": "ollama",
     "number": 18509,
     "category": "bug",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -242,6 +276,7 @@
     "repo": "diffusers",
     "number": 6586,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -249,6 +284,7 @@
     "repo": "matplotlib",
     "number": 20243,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -256,6 +292,7 @@
     "repo": "scancode-toolkit",
     "number": 4409,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -263,6 +300,7 @@
     "repo": "scancode-toolkit",
     "number": 378,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -270,6 +308,7 @@
     "repo": "scikit-learn",
     "number": 31869,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -277,6 +316,7 @@
     "repo": "querido-diario",
     "number": 1433,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -284,6 +324,7 @@
     "repo": "matplotlib",
     "number": 31597,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -291,6 +332,7 @@
     "repo": "diffusers",
     "number": 9508,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -298,6 +340,7 @@
     "repo": "rasterio",
     "number": 1270,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -305,6 +348,7 @@
     "repo": "lightly",
     "number": 1982,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   }
 ]

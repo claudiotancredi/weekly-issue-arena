@@ -64,7 +64,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [[Feature Request] Add More Unit Test to OASIS](https://github.com/camel-ai/oasis/issues/37) | [camel-ai/oasis](https://github.com/camel-ai/oasis) | 🟢 Open |
-| 2 | [Misleading error message "URL must not be a blank string"...](https://github.com/oven-sh/bun/issues/21361) | [oven-sh/bun](https://github.com/oven-sh/bun) | 🟢 Open |
+| 2 | [Misleading error message "URL must not be a blank string"...](https://github.com/oven-sh/bun/issues/21361) | [oven-sh/bun](https://github.com/oven-sh/bun) | 🟡 PR Proposed |
 | 3 | [Add Unity-MCP to Docker Hub MCP registry](https://github.com/IvanMurzak/Unity-MCP/issues/266) | [IvanMurzak/Unity-MCP](https://github.com/IvanMurzak/Unity-MCP) | 🟢 Open |
 | 4 | [RU translation mistake](https://github.com/getsentry/sentry/issues/98565) | [getsentry/sentry](https://github.com/getsentry/sentry) | 🟢 Open |
 | 5 | [Constrain distance from robot to path: helper function, C...](https://github.com/ros-navigation/navigation2/issues/5037) | [ros-navigation/navigation2](https://github.com/ros-navigation/navigation2) | 🟢 Open |

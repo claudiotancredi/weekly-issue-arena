@@ -96,7 +96,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 1 | [BUG: gpd.read_file pyogrio use_arrow sometimes delays on ...](https://github.com/geopandas/geopandas/issues/3685) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
 | 2 | [[Bug]: Hi I can see docker command is wrong in documents ...](https://github.com/chroma-core/chroma/issues/7738) | [chroma-core/chroma](https://github.com/chroma-core/chroma) | 🟢 Open |
 | 3 | [Duplicated Cron Monitor environments after project transfer](https://github.com/getsentry/sentry/issues/123755) | [getsentry/sentry](https://github.com/getsentry/sentry) | 🟢 Open |
-| 4 | [[BUG][FR] Assessment columns are limited to the first 100...](https://github.com/mlflow/mlflow/issues/25963) | [mlflow/mlflow](https://github.com/mlflow/mlflow) | 🟡 PR Proposed |
+| 4 | [[BUG][FR] Assessment columns are limited to the first 100...](https://github.com/mlflow/mlflow/issues/25963) | [mlflow/mlflow](https://github.com/mlflow/mlflow) | 🟢 Open |
 | 5 | [New scikit-learn version 1.3.0 breaks EmbeddingsDriftMetr...](https://github.com/evidentlyai/evidently/issues/686) | [evidentlyai/evidently](https://github.com/evidentlyai/evidently) | 🟢 Open |
 | 6 | [ValidationError attribute parameters is not usefull anymore](https://github.com/CS-SI/eodag/issues/2128) | [CS-SI/eodag](https://github.com/CS-SI/eodag) | 🟢 Open |
 | 7 | [dst_path has inconsistent behavior](https://github.com/copier-org/copier/issues/1842) | [copier-org/copier](https://github.com/copier-org/copier) | 🟢 Open |

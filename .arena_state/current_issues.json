@@ -188,7 +188,7 @@
     "repo": "mlflow",
     "number": 25963,
     "category": "bug",
-    "has_pr": true,
+    "has_pr": false,
     "language": "Python"
   },
   {

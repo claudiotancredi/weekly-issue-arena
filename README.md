@@ -63,26 +63,26 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [[Feature Request] Add More Unit Test to OASIS](https://github.com/camel-ai/oasis/issues/37) | [camel-ai/oasis](https://github.com/camel-ai/oasis) | 🟢 Open |
-| 2 | [Misleading error message "URL must not be a blank string"...](https://github.com/oven-sh/bun/issues/21361) | [oven-sh/bun](https://github.com/oven-sh/bun) | 🟡 PR Proposed |
-| 3 | [Add Unity-MCP to Docker Hub MCP registry](https://github.com/IvanMurzak/Unity-MCP/issues/266) | [IvanMurzak/Unity-MCP](https://github.com/IvanMurzak/Unity-MCP) | 🟢 Open |
-| 4 | [RU translation mistake](https://github.com/getsentry/sentry/issues/98565) | [getsentry/sentry](https://github.com/getsentry/sentry) | 🟢 Open |
-| 5 | [Constrain distance from robot to path: helper function, C...](https://github.com/ros-navigation/navigation2/issues/5037) | [ros-navigation/navigation2](https://github.com/ros-navigation/navigation2) | 🟢 Open |
-| 6 | [[Feature Request]: Joystick for all boards](https://github.com/meshtastic/firmware/issues/9584) | [meshtastic/firmware](https://github.com/meshtastic/firmware) | 🟢 Open |
-| 7 | [Add GenBench](https://github.com/embeddings-benchmark/mteb/issues/1883) | [embeddings-benchmark/mteb](https://github.com/embeddings-benchmark/mteb) | 🟢 Open |
-| 8 | [eBay Creating/Publishing Listings](https://github.com/PipedreamHQ/pipedream/issues/21896) | [PipedreamHQ/pipedream](https://github.com/PipedreamHQ/pipedream) | 🟢 Open |
-| 9 | [Ensure all spiders set a category](https://github.com/alltheplaces/alltheplaces/issues/18308) | [alltheplaces/alltheplaces](https://github.com/alltheplaces/alltheplaces) | 🟢 Open |
-| 10 | [[Feature Request]: Add Support for LTC2941 (RAK16002 Coul...](https://github.com/meshtastic/firmware/issues/8750) | [meshtastic/firmware](https://github.com/meshtastic/firmware) | 🟢 Open |
-| 11 | [Feature: Use IPTC Location metadata fields instead of rev...](https://github.com/files-community/Files/issues/10472) | [files-community/Files](https://github.com/files-community/Files) | 🟢 Open |
-| 12 | [[ROOT-11018] Set 'symmetric' axis](https://github.com/root-project/root/issues/14543) | [root-project/root](https://github.com/root-project/root) | 🟢 Open |
-| 13 | [META - Handle antidisassembly tricks](https://github.com/radareorg/radare2/issues/17019) | [radareorg/radare2](https://github.com/radareorg/radare2) | 🟢 Open |
-| 14 | [Secondary TGAxis NDC coordinates for following zoom of pr...](https://github.com/root-project/root/issues/16968) | [root-project/root](https://github.com/root-project/root) | 🟢 Open |
-| 15 | [[Feature]: Extract KV-Cache update from all attention bac...](https://github.com/vllm-project/vllm/issues/32335) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟢 Open |
-| 16 | [MetaX MACA support path for VeRL-Omni](https://github.com/verl-project/verl-omni/issues/191) | [verl-project/verl-omni](https://github.com/verl-project/verl-omni) | 🟢 Open |
-| 17 | [[Improvement] Reuse the FileSystem cache in the fileset s...](https://github.com/apache/gravitino/issues/9673) | [apache/gravitino](https://github.com/apache/gravitino) | 🟢 Open |
-| 18 | [Missing translations for Vietnamese (vi)](https://github.com/symfony/symfony/issues/53309) | [symfony/symfony](https://github.com/symfony/symfony) | 🟢 Open |
-| 19 | [Add tests for command-line interface](https://github.com/python/cpython/issues/131178) | [python/cpython](https://github.com/python/cpython) | 🟢 Open |
-| 20 | [Feature Request: Graceful reasoning budget termination. A...](https://github.com/ggml-org/llama.cpp/issues/20632) | [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 🟢 Open |
+| 1 | [How can I initialize multiple instances of different mode...](https://github.com/Lightning-AI/LitServe/issues/572) | [Lightning-AI/LitServe](https://github.com/Lightning-AI/LitServe) | 🟢 Open |
+| 2 | [uu shred has a different probability distribution of over...](https://github.com/uutils/coreutils/issues/11611) | [uutils/coreutils](https://github.com/uutils/coreutils) | 🟢 Open |
+| 3 | [[FEAT]  toggle ujust SHSTK/IBT](https://github.com/secureblue/secureblue/issues/1295) | [secureblue/secureblue](https://github.com/secureblue/secureblue) | 🟢 Open |
+| 4 | [Migrate documentation away from GitBook](https://github.com/apache/pinot/issues/17281) | [apache/pinot](https://github.com/apache/pinot) | 🟢 Open |
+| 5 | [HTTP/2 server push](https://github.com/grafana/k6/issues/881) | [grafana/k6](https://github.com/grafana/k6) | 🟢 Open |
+| 6 | [`dotnet sln add` should allow non-project files to be add...](https://github.com/dotnet/sdk/issues/9611) | [dotnet/sdk](https://github.com/dotnet/sdk) | 🟢 Open |
+| 7 | [Allow sub directory formatting based on existing file nam...](https://github.com/flameshot-org/flameshot/issues/510) | [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | 🟢 Open |
+| 8 | [[Feature]: browser navigate support user actions](https://github.com/bytedance/UI-TARS-desktop/issues/393) | [bytedance/UI-TARS-desktop](https://github.com/bytedance/UI-TARS-desktop) | 🟢 Open |
+| 9 | [Update protobuf library](https://github.com/grafana/k6/issues/4585) | [grafana/k6](https://github.com/grafana/k6) | 🟢 Open |
+| 10 | [Create Python SDK for Open Wearables API](https://github.com/the-momentum/open-wearables/issues/119) | [the-momentum/open-wearables](https://github.com/the-momentum/open-wearables) | 🟢 Open |
+| 11 | [Safeguard `reduce` transform memory use](https://github.com/vectordotdev/vector/issues/3027) | [vectordotdev/vector](https://github.com/vectordotdev/vector) | 🟢 Open |
+| 12 | [Store token files with `0600` permissions](https://github.com/beetbox/beets/issues/6984) | [beetbox/beets](https://github.com/beetbox/beets) | 🟢 Open |
+| 13 | [include cursor in screenshot](https://github.com/flameshot-org/flameshot/issues/604) | [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | 🟢 Open |
+| 14 | [Multiple genres are written to files joined](https://github.com/beetbox/beets/issues/5491) | [beetbox/beets](https://github.com/beetbox/beets) | 🟢 Open |
+| 15 | [Improve visibility of plugin developer documentation](https://github.com/RachelForster/Shinsekai/issues/208) | [RachelForster/Shinsekai](https://github.com/RachelForster/Shinsekai) | 🟢 Open |
+| 16 | [Stress testing for high-frequency data access](https://github.com/the-momentum/open-wearables/issues/169) | [the-momentum/open-wearables](https://github.com/the-momentum/open-wearables) | 🟢 Open |
+| 17 | [When consumer is paused check if it's paused](https://github.com/confluentinc/confluent-kafka-python/issues/1793) | [confluentinc/confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python) | 🟢 Open |
+| 18 | [Requirements files should be a key in the kind.yml, and t...](https://github.com/mozilla/translations/issues/588) | [mozilla/translations](https://github.com/mozilla/translations) | 🟢 Open |
+| 19 | [enhance: clean up -Wunused-variable warnings in segcore C...](https://github.com/milvus-io/milvus/issues/50966) | [milvus-io/milvus](https://github.com/milvus-io/milvus) | 🟢 Open |
+| 20 | [[Mapeamento] Lista de municípios que usam INSTAR](https://github.com/okfn-brasil/querido-diario/issues/1088) | [okfn-brasil/querido-diario](https://github.com/okfn-brasil/querido-diario) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -93,20 +93,20 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [BUG: gpd.read_file pyogrio use_arrow sometimes delays on ...](https://github.com/geopandas/geopandas/issues/3685) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
-| 2 | [[Bug]: Hi I can see docker command is wrong in documents ...](https://github.com/chroma-core/chroma/issues/7738) | [chroma-core/chroma](https://github.com/chroma-core/chroma) | 🟢 Open |
-| 3 | [Duplicated Cron Monitor environments after project transfer](https://github.com/getsentry/sentry/issues/123755) | [getsentry/sentry](https://github.com/getsentry/sentry) | 🔴 Closed |
-| 4 | [[BUG][FR] Assessment columns are limited to the first 100...](https://github.com/mlflow/mlflow/issues/25963) | [mlflow/mlflow](https://github.com/mlflow/mlflow) | 🟢 Open |
-| 5 | [New scikit-learn version 1.3.0 breaks EmbeddingsDriftMetr...](https://github.com/evidentlyai/evidently/issues/686) | [evidentlyai/evidently](https://github.com/evidentlyai/evidently) | 🟢 Open |
-| 6 | [ValidationError attribute parameters is not usefull anymore](https://github.com/CS-SI/eodag/issues/2128) | [CS-SI/eodag](https://github.com/CS-SI/eodag) | 🟢 Open |
-| 7 | [dst_path has inconsistent behavior](https://github.com/copier-org/copier/issues/1842) | [copier-org/copier](https://github.com/copier-org/copier) | 🟢 Open |
-| 8 | [[BUG] Hardcover API tokens are shorter and fail check](https://github.com/calibrain/shelfmark/issues/1272) | [calibrain/shelfmark](https://github.com/calibrain/shelfmark) | 🟢 Open |
-| 9 | [Serialized link endpoints are not remapped after merge-bo...](https://github.com/Comfy-Org/ComfyUI_frontend/issues/15928) | [Comfy-Org/ComfyUI_frontend](https://github.com/Comfy-Org/ComfyUI_frontend) | 🟢 Open |
-| 10 | [[tabular] Log warning when user specifies a s3 path for T...](https://github.com/autogluon/autogluon/issues/4856) | [autogluon/autogluon](https://github.com/autogluon/autogluon) | 🟢 Open |
-| 11 | [pl.Expr().meta.root_names() returns wrong value](https://github.com/pola-rs/polars/issues/23553) | [pola-rs/polars](https://github.com/pola-rs/polars) | 🟢 Open |
-| 12 | [AutoTokenizer hash value got change after datasets.map](https://github.com/huggingface/datasets/issues/3638) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
-| 13 | [[Bug]: Night light gets toggled on after closing selected...](https://github.com/sameerasw/essentials/issues/985) | [sameerasw/essentials](https://github.com/sameerasw/essentials) | 🟢 Open |
-| 14 | [Ollama refusing tool role, which always worked fine in ll...](https://github.com/ollama/ollama/issues/18509) | [ollama/ollama](https://github.com/ollama/ollama) | 🟢 Open |
+| 1 | [Drive write tools are unusable in service-account / domai...](https://github.com/taylorwilsdon/google_workspace_mcp/issues/1027) | [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 🟢 Open |
+| 2 | [External devices not showing](https://github.com/yorukot/superfile/issues/1637) | [yorukot/superfile](https://github.com/yorukot/superfile) | 🟢 Open |
+| 3 | [Proxying Karakeep via container name vs IP address breaks...](https://github.com/karakeep-app/karakeep/issues/2292) | [karakeep-app/karakeep](https://github.com/karakeep-app/karakeep) | 🟢 Open |
+| 4 | [【陷入模版死锁问题】使用v35脚本进行逆向操作在某些情况下似乎会导致模型死循环，不明原因](https://github.com/MDX-Tom/gpt-instruct/issues/5) | [MDX-Tom/gpt-instruct](https://github.com/MDX-Tom/gpt-instruct) | 🟢 Open |
+| 5 | [/tmp folder is filling with monolith and playwright files](https://github.com/karakeep-app/karakeep/issues/1974) | [karakeep-app/karakeep](https://github.com/karakeep-app/karakeep) | 🟢 Open |
+| 6 | [仅息屏未休眠状态执行定时任务时，任务停滞直至结束息屏状态](https://github.com/MaaAssistantArknights/MaaAssistantArknights/issues/18337) | [MaaAssistantArknights/MaaAssistantArknights](https://github.com/MaaAssistantArknights/MaaAssistantArknights) | 🟢 Open |
+| 7 | [[Bug]: 最新版和之前的版本都不行：聚合运营商启动codex会弹登录页](https://github.com/BigPizzaV3/CodexPlusPlus/issues/1604) | [BigPizzaV3/CodexPlusPlus](https://github.com/BigPizzaV3/CodexPlusPlus) | 🟢 Open |
+| 8 | [Shared library versioning issues](https://github.com/tesseract-ocr/tesseract/issues/2749) | [tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract) | 🟢 Open |
+| 9 | [[Bug]:  Jaeger Query unable to fetch store span index](https://github.com/jaegertracing/jaeger/issues/9583) | [jaegertracing/jaeger](https://github.com/jaegertracing/jaeger) | 🟢 Open |
+| 10 | [Suunto workouts are limited to 100 items during historica...](https://github.com/the-momentum/open-wearables/issues/1570) | [the-momentum/open-wearables](https://github.com/the-momentum/open-wearables) | 🟢 Open |
+| 11 | [[Bug]  dateBetween() returns incorrect number of days in ...](https://github.com/AppFlowy-IO/AppFlowy/issues/9042) | [AppFlowy-IO/AppFlowy](https://github.com/AppFlowy-IO/AppFlowy) | 🟢 Open |
+| 12 | [[Extração] Corrigir arquivos HTML de Porto Alegre/RS (IBG...](https://github.com/okfn-brasil/querido-diario/issues/1545) | [okfn-brasil/querido-diario](https://github.com/okfn-brasil/querido-diario) | 🟢 Open |
+| 13 | [[Bug]: 使用桌面版连接远程openserver是，粘贴图片无法识别。](https://github.com/OpenCoworkAI/open-codesign/issues/415) | [OpenCoworkAI/open-codesign](https://github.com/OpenCoworkAI/open-codesign) | 🟢 Open |
+| 14 | [BUG: Multithreading with Thread Safe Enabled MEM Dataset ...](https://github.com/rasterio/rasterio/issues/3499) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -117,16 +117,16 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [[Tracker] use micro-conditioning for the SDXL trainers](https://github.com/huggingface/diffusers/issues/6586) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 2 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 3 | [New license request: Sync up with https://github.com/LeCh...](https://github.com/aboutcode-org/scancode-toolkit/issues/4409) | [aboutcode-org/scancode-toolkit](https://github.com/aboutcode-org/scancode-toolkit) | 🟢 Open |
-| 4 | [Scan Benchmarks](https://github.com/aboutcode-org/scancode-toolkit/issues/378) | [aboutcode-org/scancode-toolkit](https://github.com/aboutcode-org/scancode-toolkit) | 🟢 Open |
-| 5 | [Array API support for CalibratedClassifierCV](https://github.com/scikit-learn/scikit-learn/issues/31869) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 6 | [Criar documentação de arquitetura (ARCHITECTURE.md)](https://github.com/okfn-brasil/querido-diario/issues/1433) | [okfn-brasil/querido-diario](https://github.com/okfn-brasil/querido-diario) | 🟢 Open |
-| 7 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 8 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 9 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
-| 10 | [Proper distributed tests](https://github.com/lightly-ai/lightly/issues/1982) | [lightly-ai/lightly](https://github.com/lightly-ai/lightly) | 🟢 Open |
+| 1 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 2 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 3 | [[Feature]: [Stanford B04] Support Python bytes and Parque...](https://github.com/milvus-io/milvus/issues/53861) | [milvus-io/milvus](https://github.com/milvus-io/milvus) | 🟢 Open |
+| 4 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 5 | [Migrate from Travis CI/CD to Github CI/CD](https://github.com/Cloud-CV/EvalAI/issues/4553) | [Cloud-CV/EvalAI](https://github.com/Cloud-CV/EvalAI) | 🟢 Open |
+| 6 | [[Tracker] use micro-conditioning for the SDXL trainers](https://github.com/huggingface/diffusers/issues/6586) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 7 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 8 | [[Feature]: [Stanford B03] Project and retrieve BLOB value...](https://github.com/milvus-io/milvus/issues/53860) | [milvus-io/milvus](https://github.com/milvus-io/milvus) | 🟢 Open |
+| 9 | [Array API support for CalibratedClassifierCV](https://github.com/scikit-learn/scikit-learn/issues/31869) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 10 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

@@ -4,6 +4,7 @@
     "repo": "LitServe",
     "number": 572,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -11,6 +12,7 @@
     "repo": "coreutils",
     "number": 11611,
     "category": "gfi",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -18,6 +20,7 @@
     "repo": "secureblue",
     "number": 1295,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -25,6 +28,7 @@
     "repo": "pinot",
     "number": 17281,
     "category": "gfi",
+    "has_pr": false,
     "language": "Java"
   },
   {
@@ -32,6 +36,7 @@
     "repo": "k6",
     "number": 881,
     "category": "gfi",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -39,6 +44,7 @@
     "repo": "sdk",
     "number": 9611,
     "category": "gfi",
+    "has_pr": false,
     "language": "C#"
   },
   {
@@ -46,6 +52,7 @@
     "repo": "flameshot",
     "number": 510,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -53,6 +60,7 @@
     "repo": "UI-TARS-desktop",
     "number": 393,
     "category": "gfi",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -60,6 +68,7 @@
     "repo": "k6",
     "number": 4585,
     "category": "gfi",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -67,6 +76,7 @@
     "repo": "open-wearables",
     "number": 119,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -74,6 +84,7 @@
     "repo": "vector",
     "number": 3027,
     "category": "gfi",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -81,6 +92,7 @@
     "repo": "beets",
     "number": 6984,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -88,6 +100,7 @@
     "repo": "flameshot",
     "number": 604,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -95,6 +108,7 @@
     "repo": "beets",
     "number": 5491,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -102,6 +116,7 @@
     "repo": "Shinsekai",
     "number": 208,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -109,6 +124,7 @@
     "repo": "open-wearables",
     "number": 169,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -116,6 +132,7 @@
     "repo": "confluent-kafka-python",
     "number": 1793,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -123,6 +140,7 @@
     "repo": "translations",
     "number": 588,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -130,6 +148,7 @@
     "repo": "milvus",
     "number": 50966,
     "category": "gfi",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -137,6 +156,7 @@
     "repo": "querido-diario",
     "number": 1088,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -144,6 +164,7 @@
     "repo": "google_workspace_mcp",
     "number": 1027,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -151,6 +172,7 @@
     "repo": "superfile",
     "number": 1637,
     "category": "bug",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -158,6 +180,7 @@
     "repo": "karakeep",
     "number": 2292,
     "category": "bug",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -165,6 +188,7 @@
     "repo": "gpt-instruct",
     "number": 5,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -172,6 +196,7 @@
     "repo": "karakeep",
     "number": 1974,
     "category": "bug",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -179,6 +204,7 @@
     "repo": "MaaAssistantArknights",
     "number": 18337,
     "category": "bug",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -186,6 +212,7 @@
     "repo": "CodexPlusPlus",
     "number": 1604,
     "category": "bug",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -193,6 +220,7 @@
     "repo": "tesseract",
     "number": 2749,
     "category": "bug",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -200,6 +228,7 @@
     "repo": "jaeger",
     "number": 9583,
     "category": "bug",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -207,6 +236,7 @@
     "repo": "open-wearables",
     "number": 1570,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -214,6 +244,7 @@
     "repo": "AppFlowy",
     "number": 9042,
     "category": "bug",
+    "has_pr": false,
     "language": "Dart"
   },
   {
@@ -221,6 +252,7 @@
     "repo": "querido-diario",
     "number": 1545,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -228,6 +260,7 @@
     "repo": "open-codesign",
     "number": 415,
     "category": "bug",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -235,6 +268,7 @@
     "repo": "rasterio",
     "number": 3499,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -242,6 +276,7 @@
     "repo": "matplotlib",
     "number": 31597,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -249,6 +284,7 @@
     "repo": "rasterio",
     "number": 1270,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -256,6 +292,7 @@
     "repo": "milvus",
     "number": 53861,
     "category": "hard",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -263,6 +300,7 @@
     "repo": "pandas",
     "number": 9379,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -270,6 +308,7 @@
     "repo": "EvalAI",
     "number": 4553,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -277,6 +316,7 @@
     "repo": "diffusers",
     "number": 6586,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -284,6 +324,7 @@
     "repo": "diffusers",
     "number": 9508,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -291,6 +332,7 @@
     "repo": "milvus",
     "number": 53860,
     "category": "hard",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -298,6 +340,7 @@
     "repo": "scikit-learn",
     "number": 31869,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -305,6 +348,7 @@
     "repo": "matplotlib",
     "number": 20243,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   }
 ]

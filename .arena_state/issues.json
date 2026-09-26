@@ -437,7 +437,8 @@
           "author": "juzismao",
           "listed_at": "2026-09-25T17:00:00+00:00",
           "language": "Dart",
-          "has_pr": false
+          "has_pr": false,
+          "closed": true
         },
         {
           "number": 1545,

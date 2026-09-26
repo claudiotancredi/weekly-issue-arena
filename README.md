@@ -103,7 +103,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 8 | [Shared library versioning issues](https://github.com/tesseract-ocr/tesseract/issues/2749) | [tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract) | 🟢 Open |
 | 9 | [[Bug]:  Jaeger Query unable to fetch store span index](https://github.com/jaegertracing/jaeger/issues/9583) | [jaegertracing/jaeger](https://github.com/jaegertracing/jaeger) | 🟢 Open |
 | 10 | [Suunto workouts are limited to 100 items during historica...](https://github.com/the-momentum/open-wearables/issues/1570) | [the-momentum/open-wearables](https://github.com/the-momentum/open-wearables) | 🟢 Open |
-| 11 | [[Bug]  dateBetween() returns incorrect number of days in ...](https://github.com/AppFlowy-IO/AppFlowy/issues/9042) | [AppFlowy-IO/AppFlowy](https://github.com/AppFlowy-IO/AppFlowy) | 🟢 Open |
+| 11 | [[Bug]  dateBetween() returns incorrect number of days in ...](https://github.com/AppFlowy-IO/AppFlowy/issues/9042) | [AppFlowy-IO/AppFlowy](https://github.com/AppFlowy-IO/AppFlowy) | 🔴 Closed |
 | 12 | [[Extração] Corrigir arquivos HTML de Porto Alegre/RS (IBG...](https://github.com/okfn-brasil/querido-diario/issues/1545) | [okfn-brasil/querido-diario](https://github.com/okfn-brasil/querido-diario) | 🟢 Open |
 | 13 | [[Bug]: 使用桌面版连接远程openserver是，粘贴图片无法识别。](https://github.com/OpenCoworkAI/open-codesign/issues/415) | [OpenCoworkAI/open-codesign](https://github.com/OpenCoworkAI/open-codesign) | 🟢 Open |
 | 14 | [BUG: Multithreading with Thread Safe Enabled MEM Dataset ...](https://github.com/rasterio/rasterio/issues/3499) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |

@@ -97,7 +97,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 2 | [unzip_file() silently ignores pathlib.Path inputs, breaki...](https://github.com/pytroll/satpy/issues/3456) | [pytroll/satpy](https://github.com/pytroll/satpy) | 🟢 Open |
 | 3 | [loki.secretfilter: with two instances whose gitleaks_conf...](https://github.com/grafana/alloy/issues/7293) | [grafana/alloy](https://github.com/grafana/alloy) | 🟢 Open |
 | 4 | [Crash when running old release in new workspace](https://github.com/kamu-data/kamu-cli/issues/1589) | [kamu-data/kamu-cli](https://github.com/kamu-data/kamu-cli) | 🟢 Open |
-| 5 | [Loss Divergence after 250 Steps during Gemma 4 4B Joint D...](https://github.com/NVIDIA-NeMo/Automodel/issues/4022) | [NVIDIA-NeMo/Automodel](https://github.com/NVIDIA-NeMo/Automodel) | 🟢 Open |
+| 5 | [Loss Divergence after 250 Steps during Gemma 4 4B Joint D...](https://github.com/NVIDIA-NeMo/Automodel/issues/4022) | [NVIDIA-NeMo/Automodel](https://github.com/NVIDIA-NeMo/Automodel) | 🟡 PR Proposed |
 | 6 | [[Bug] Clipboard image synchronization fails between host ...](https://github.com/winboat-org/winboat/issues/371) | [winboat-org/winboat](https://github.com/winboat-org/winboat) | 🟢 Open |
 | 7 | [Permalinks to features do not work if the feature is afte...](https://github.com/Flagsmith/flagsmith/issues/4239) | [Flagsmith/flagsmith](https://github.com/Flagsmith/flagsmith) | 🟢 Open |
 | 8 | [Building on Fedora 44](https://github.com/FULU-Foundation/OrcaSlicer-bambulab/issues/38) | [FULU-Foundation/OrcaSlicer-bambulab](https://github.com/FULU-Foundation/OrcaSlicer-bambulab) | 🟢 Open |

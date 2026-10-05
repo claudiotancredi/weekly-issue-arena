@@ -196,7 +196,7 @@
     "repo": "Automodel",
     "number": 4022,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {

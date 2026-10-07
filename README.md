@@ -66,7 +66,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 1 | [Performance: replace `Control.Monad.Writer` by `Control.M...](https://github.com/agda/agda/issues/8229) | [agda/agda](https://github.com/agda/agda) | 🟢 Open |
 | 2 | [Documentation Translation (we first need committed transl...](https://github.com/highlightjs/highlight.js/issues/2777) | [highlightjs/highlight.js](https://github.com/highlightjs/highlight.js) | 🟢 Open |
 | 3 | [[Serve][LLM] SGLangServer multi-replica support](https://github.com/ray-project/ray/issues/62480) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
-| 4 | [i18n(vi): 14 strings translate the key label instead of t...](https://github.com/super-productivity/super-productivity/issues/10149) | [super-productivity/super-productivity](https://github.com/super-productivity/super-productivity) | 🟢 Open |
+| 4 | [i18n(vi): 14 strings translate the key label instead of t...](https://github.com/super-productivity/super-productivity/issues/10149) | [super-productivity/super-productivity](https://github.com/super-productivity/super-productivity) | 🟡 PR Proposed |
 | 5 | [Add New Quickstarts for More Languages (Rust, Ruby, C++, ...](https://github.com/keploy/keploy/issues/3521) | [keploy/keploy](https://github.com/keploy/keploy) | 🟢 Open |
 | 6 | [Improve observability of fast reorg ADD INDEX progress](https://github.com/pingcap/tidb/issues/56986) | [pingcap/tidb](https://github.com/pingcap/tidb) | 🟢 Open |
 | 7 | [Preparing a statement is slower than with SQLite](https://github.com/tursodatabase/turso/issues/220) | [tursodatabase/turso](https://github.com/tursodatabase/turso) | 🟢 Open |

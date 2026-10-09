@@ -4,6 +4,7 @@
     "repo": "Leaflet",
     "number": 8477,
     "category": "gfi",
+    "has_pr": false,
     "language": "JavaScript"
   },
   {
@@ -11,6 +12,7 @@
     "repo": "QGIS-Documentation",
     "number": 11273,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -18,6 +20,7 @@
     "repo": "chatwoot",
     "number": 6911,
     "category": "gfi",
+    "has_pr": false,
     "language": "Ruby"
   },
   {
@@ -25,6 +28,7 @@
     "repo": "pudl",
     "number": 5566,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -32,6 +36,7 @@
     "repo": "ytsaurus",
     "number": 1729,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -39,6 +44,7 @@
     "repo": "qiskit",
     "number": 15307,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -46,6 +52,7 @@
     "repo": "envoy",
     "number": 20238,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -53,6 +60,7 @@
     "repo": "retina",
     "number": 338,
     "category": "gfi",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -60,6 +68,7 @@
     "repo": "envoy",
     "number": 34285,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -67,6 +76,7 @@
     "repo": "gitui",
     "number": 2556,
     "category": "gfi",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -74,6 +84,7 @@
     "repo": "metabase",
     "number": 20604,
     "category": "gfi",
+    "has_pr": false,
     "language": "Clojure"
   },
   {
@@ -81,6 +92,7 @@
     "repo": "radare2",
     "number": 17019,
     "category": "gfi",
+    "has_pr": false,
     "language": "C"
   },
   {
@@ -88,6 +100,7 @@
     "repo": "kubernetes",
     "number": 138149,
     "category": "gfi",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -95,6 +108,7 @@
     "repo": "hertzbeat",
     "number": 3197,
     "category": "gfi",
+    "has_pr": false,
     "language": "Java"
   },
   {
@@ -102,6 +116,7 @@
     "repo": "FreeCAD",
     "number": 31162,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -109,6 +124,7 @@
     "repo": "terminal",
     "number": 11767,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -116,6 +132,7 @@
     "repo": "chatwoot",
     "number": 1655,
     "category": "gfi",
+    "has_pr": false,
     "language": "Ruby"
   },
   {
@@ -123,6 +140,7 @@
     "repo": "vllm",
     "number": 25700,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -130,6 +148,7 @@
     "repo": "nuxt",
     "number": 31638,
     "category": "gfi",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -137,6 +156,7 @@
     "repo": "CubeSandbox",
     "number": 241,
     "category": "gfi",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -144,6 +164,7 @@
     "repo": "runtime",
     "number": 135432,
     "category": "bug",
+    "has_pr": false,
     "language": "C#"
   },
   {
@@ -151,6 +172,7 @@
     "repo": "freeswitch",
     "number": 2500,
     "category": "bug",
+    "has_pr": false,
     "language": "C"
   },
   {
@@ -158,6 +180,7 @@
     "repo": "GeometryOps.jl",
     "number": 468,
     "category": "bug",
+    "has_pr": false,
     "language": "Julia"
   },
   {
@@ -165,6 +188,7 @@
     "repo": "pandera",
     "number": 928,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -172,6 +196,7 @@
     "repo": "concourse",
     "number": 9719,
     "category": "bug",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -179,6 +204,7 @@
     "repo": "gradio",
     "number": 13932,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -186,6 +212,7 @@
     "repo": "DocsGPT",
     "number": 3036,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -193,6 +220,7 @@
     "repo": "odysseus",
     "number": 6631,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -200,6 +228,7 @@
     "repo": "executorch",
     "number": 23453,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -207,6 +236,7 @@
     "repo": "QOwnNotes",
     "number": 3785,
     "category": "bug",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -214,6 +244,7 @@
     "repo": "opencodex",
     "number": 6740,
     "category": "bug",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -221,6 +252,7 @@
     "repo": "datasets",
     "number": 2904,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -228,6 +260,7 @@
     "repo": "dataframe",
     "number": 2133,
     "category": "bug",
+    "has_pr": false,
     "language": "Kotlin"
   },
   {
@@ -235,6 +268,7 @@
     "repo": "dsh-desktop",
     "number": 284,
     "category": "bug",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -242,6 +276,7 @@
     "repo": "librephotos",
     "number": 166,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -249,6 +284,7 @@
     "repo": "pandas",
     "number": 70087,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -256,6 +292,7 @@
     "repo": "matplotlib",
     "number": 31597,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -263,6 +300,7 @@
     "repo": "matplotlib",
     "number": 20243,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -270,6 +308,7 @@
     "repo": "diffusers",
     "number": 6586,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -277,6 +316,7 @@
     "repo": "thanos",
     "number": 7071,
     "category": "hard",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -284,6 +324,7 @@
     "repo": "librephotos",
     "number": 181,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -291,6 +332,7 @@
     "repo": "pandas",
     "number": 50782,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -298,6 +340,7 @@
     "repo": "scikit-learn",
     "number": 31869,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -305,6 +348,7 @@
     "repo": "diffusers",
     "number": 12600,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   }
 ]

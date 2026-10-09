@@ -63,26 +63,26 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Performance: replace `Control.Monad.Writer` by `Control.M...](https://github.com/agda/agda/issues/8229) | [agda/agda](https://github.com/agda/agda) | 🟢 Open |
-| 2 | [Documentation Translation (we first need committed transl...](https://github.com/highlightjs/highlight.js/issues/2777) | [highlightjs/highlight.js](https://github.com/highlightjs/highlight.js) | 🟢 Open |
-| 3 | [[Serve][LLM] SGLangServer multi-replica support](https://github.com/ray-project/ray/issues/62480) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
-| 4 | [i18n(vi): 14 strings translate the key label instead of t...](https://github.com/super-productivity/super-productivity/issues/10149) | [super-productivity/super-productivity](https://github.com/super-productivity/super-productivity) | 🟡 PR Proposed |
-| 5 | [Add New Quickstarts for More Languages (Rust, Ruby, C++, ...](https://github.com/keploy/keploy/issues/3521) | [keploy/keploy](https://github.com/keploy/keploy) | 🟢 Open |
-| 6 | [Improve observability of fast reorg ADD INDEX progress](https://github.com/pingcap/tidb/issues/56986) | [pingcap/tidb](https://github.com/pingcap/tidb) | 🟢 Open |
-| 7 | [Preparing a statement is slower than with SQLite](https://github.com/tursodatabase/turso/issues/220) | [tursodatabase/turso](https://github.com/tursodatabase/turso) | 🟢 Open |
-| 8 | [docs: guide on using django migrations with hasura](https://github.com/hasura/graphql-engine/issues/1184) | [hasura/graphql-engine](https://github.com/hasura/graphql-engine) | 🟢 Open |
-| 9 | [[Bug] Cannot load qwen3-vl series with lora adapter on vllm.](https://github.com/unslothai/unsloth/issues/3560) | [unslothai/unsloth](https://github.com/unslothai/unsloth) | 🟢 Open |
-| 10 | [Automate managing of network policy resources for every t...](https://github.com/kubeflow/trainer/issues/3120) | [kubeflow/trainer](https://github.com/kubeflow/trainer) | 🟢 Open |
-| 11 | [docs: Encourage "frontends" outside of mopidy](https://github.com/mopidy/mopidy/issues/1492) | [mopidy/mopidy](https://github.com/mopidy/mopidy) | 🟢 Open |
-| 12 | [use lazy map for dataset preprocessing](https://github.com/NVIDIA-NeMo/Automodel/issues/1917) | [NVIDIA-NeMo/Automodel](https://github.com/NVIDIA-NeMo/Automodel) | 🟢 Open |
-| 13 | [alias to generate tensor with random uniform distribution.](https://github.com/pytorch/pytorch/issues/67321) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🟢 Open |
-| 14 | [Add `cargo-dist` packaging for `limbo` and `liblimbo_sqli...](https://github.com/tursodatabase/turso/issues/162) | [tursodatabase/turso](https://github.com/tursodatabase/turso) | 🟢 Open |
-| 15 | [Fix typo: rename ActionMetadata.funtion_name → function_n...](https://github.com/flyteorg/flyte/issues/7558) | [flyteorg/flyte](https://github.com/flyteorg/flyte) | 🟢 Open |
-| 16 | [Update all API docs to document defaults and configs more...](https://github.com/kubernetes-sigs/agent-sandbox/issues/1104) | [kubernetes-sigs/agent-sandbox](https://github.com/kubernetes-sigs/agent-sandbox) | 🟢 Open |
-| 17 | [Disclose exact pending reason for failed to schedule lora](https://github.com/vllm-project/aibrix/issues/1885) | [vllm-project/aibrix](https://github.com/vllm-project/aibrix) | 🟢 Open |
-| 18 | [Defaults only exist for Euclidean impls](https://github.com/smartcorelib/smartcore/issues/174) | [smartcorelib/smartcore](https://github.com/smartcorelib/smartcore) | 🟢 Open |
-| 19 | [Enhance git commit with missing options](https://github.com/jelmer/dulwich/issues/1845) | [jelmer/dulwich](https://github.com/jelmer/dulwich) | 🟢 Open |
-| 20 | [[DO NOT CLOSE] TorchRL call for contributions and near-te...](https://github.com/pytorch/rl/issues/509) | [pytorch/rl](https://github.com/pytorch/rl) | 🟢 Open |
+| 1 | [Evergreen language in the documentation](https://github.com/Leaflet/Leaflet/issues/8477) | [Leaflet/Leaflet](https://github.com/Leaflet/Leaflet) | 🟢 Open |
+| 2 | [Add control over layout scale bar unit position (Request ...](https://github.com/qgis/QGIS-Documentation/issues/11273) | [qgis/QGIS-Documentation](https://github.com/qgis/QGIS-Documentation) | 🟢 Open |
+| 3 | [Feature Request to add chatwoot directly install in plesk...](https://github.com/chatwoot/chatwoot/issues/6911) | [chatwoot/chatwoot](https://github.com/chatwoot/chatwoot) | 🟢 Open |
+| 4 | [Validate `core_rus7__yearly_balance_sheet_assets` and cor...](https://github.com/catalyst-cooperative/pudl/issues/5566) | [catalyst-cooperative/pudl](https://github.com/catalyst-cooperative/pudl) | 🟢 Open |
+| 5 | [yt set --recursive does not work for attributes when pare...](https://github.com/ytsaurus/ytsaurus/issues/1729) | [ytsaurus/ytsaurus](https://github.com/ytsaurus/ytsaurus) | 🟢 Open |
+| 6 | [Expose Target angle bounds and angle wrapping pass to the...](https://github.com/Qiskit/qiskit/issues/15307) | [Qiskit/qiskit](https://github.com/Qiskit/qiskit) | 🟢 Open |
+| 7 | [Fix proper noun capitalization in documentation](https://github.com/envoyproxy/envoy/issues/20238) | [envoyproxy/envoy](https://github.com/envoyproxy/envoy) | 🟢 Open |
+| 8 | [Prometheus metrics build info: `retina_build_info`](https://github.com/microsoft/retina/issues/338) | [microsoft/retina](https://github.com/microsoft/retina) | 🟢 Open |
+| 9 | [Support envoy.service.discovery.v3.ResourceName in respon...](https://github.com/envoyproxy/envoy/issues/34285) | [envoyproxy/envoy](https://github.com/envoyproxy/envoy) | 🟢 Open |
+| 10 | [Support opening inside of Helix](https://github.com/gitui-org/gitui/issues/2556) | [gitui-org/gitui](https://github.com/gitui-org/gitui) | 🟢 Open |
+| 11 | [Migrate `locale` and `is_qbnewb` columns in `core_user` t...](https://github.com/metabase/metabase/issues/20604) | [metabase/metabase](https://github.com/metabase/metabase) | 🟢 Open |
+| 12 | [META - Handle antidisassembly tricks](https://github.com/radareorg/radare2/issues/17019) | [radareorg/radare2](https://github.com/radareorg/radare2) | 🟢 Open |
+| 13 | [Migrate DRA components to support granular authorization ...](https://github.com/kubernetes/kubernetes/issues/138149) | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 🟢 Open |
+| 14 | [IPMI Monitoring Data Interruption Issue](https://github.com/apache/hertzbeat/issues/3197) | [apache/hertzbeat](https://github.com/apache/hertzbeat) | 🟢 Open |
+| 15 | [STEP import: "Show progress bar when importing" option is...](https://github.com/FreeCAD/FreeCAD/issues/31162) | [FreeCAD/FreeCAD](https://github.com/FreeCAD/FreeCAD) | 🟢 Open |
+| 16 | [x:Bind not Binding](https://github.com/microsoft/terminal/issues/11767) | [microsoft/terminal](https://github.com/microsoft/terminal) | 🟢 Open |
+| 17 | [[CW-2868] Integration for Microsoft Teams](https://github.com/chatwoot/chatwoot/issues/1655) | [chatwoot/chatwoot](https://github.com/chatwoot/chatwoot) | 🟢 Open |
+| 18 | [[RFC]: Limit the use of envvars in vLLM](https://github.com/vllm-project/vllm/issues/25700) | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🟢 Open |
+| 19 | [Nested page scroll behavior](https://github.com/nuxt/nuxt/issues/31638) | [nuxt/nuxt](https://github.com/nuxt/nuxt) | 🟢 Open |
+| 20 | [[good first issue] docs: Help us build the troubleshootin...](https://github.com/TencentCloud/CubeSandbox/issues/241) | [TencentCloud/CubeSandbox](https://github.com/TencentCloud/CubeSandbox) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -93,20 +93,20 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [[Bug] Checkpoint storage grows rapidly because cumulative...](https://github.com/bytedance/deer-flow/issues/4138) | [bytedance/deer-flow](https://github.com/bytedance/deer-flow) | 🟢 Open |
-| 2 | [unzip_file() silently ignores pathlib.Path inputs, breaki...](https://github.com/pytroll/satpy/issues/3456) | [pytroll/satpy](https://github.com/pytroll/satpy) | 🟢 Open |
-| 3 | [loki.secretfilter: with two instances whose gitleaks_conf...](https://github.com/grafana/alloy/issues/7293) | [grafana/alloy](https://github.com/grafana/alloy) | 🟢 Open |
-| 4 | [Crash when running old release in new workspace](https://github.com/kamu-data/kamu-cli/issues/1589) | [kamu-data/kamu-cli](https://github.com/kamu-data/kamu-cli) | 🔴 Closed |
-| 5 | [Loss Divergence after 250 Steps during Gemma 4 4B Joint D...](https://github.com/NVIDIA-NeMo/Automodel/issues/4022) | [NVIDIA-NeMo/Automodel](https://github.com/NVIDIA-NeMo/Automodel) | 🟡 PR Proposed |
-| 6 | [[Bug] Clipboard image synchronization fails between host ...](https://github.com/winboat-org/winboat/issues/371) | [winboat-org/winboat](https://github.com/winboat-org/winboat) | 🟢 Open |
-| 7 | [Permalinks to features do not work if the feature is afte...](https://github.com/Flagsmith/flagsmith/issues/4239) | [Flagsmith/flagsmith](https://github.com/Flagsmith/flagsmith) | 🟢 Open |
-| 8 | [Building on Fedora 44](https://github.com/FULU-Foundation/OrcaSlicer-bambulab/issues/38) | [FULU-Foundation/OrcaSlicer-bambulab](https://github.com/FULU-Foundation/OrcaSlicer-bambulab) | 🟢 Open |
-| 9 | [[Bug] incorrect date for YouTube shorts](https://github.com/iv-org/invidious/issues/4890) | [iv-org/invidious](https://github.com/iv-org/invidious) | 🟢 Open |
-| 10 | [Graph node context , may require truncating.](https://github.com/nolabs-ai/deepfabric/issues/444) | [nolabs-ai/deepfabric](https://github.com/nolabs-ai/deepfabric) | 🟢 Open |
-| 11 | [[DJL Android] Enable Android 16 KB page size support](https://github.com/deepjavalibrary/djl/issues/3815) | [deepjavalibrary/djl](https://github.com/deepjavalibrary/djl) | 🟢 Open |
-| 12 | [Satellites with Alpha-5 catalog numbers collapse onto one...](https://github.com/bilawalsidhu/gods-eye-view/issues/751) | [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) | 🟢 Open |
-| 13 | [Bazel Cquery rdeps false warning with alias target](https://github.com/bazelbuild/bazel/issues/31397) | [bazelbuild/bazel](https://github.com/bazelbuild/bazel) | 🟢 Open |
-| 14 | [Warning: padding_side using the conversational API.](https://github.com/huggingface/huggingface.js/issues/444) | [huggingface/huggingface.js](https://github.com/huggingface/huggingface.js) | 🟢 Open |
+| 1 | [JIT: SIMD Min/Max and 64-bit multiplication can reread al...](https://github.com/dotnet/runtime/issues/135432) | [dotnet/runtime](https://github.com/dotnet/runtime) | 🟢 Open |
+| 2 | [segfault on video_bug_thread ](https://github.com/signalwire/freeswitch/issues/2500) | [signalwire/freeswitch](https://github.com/signalwire/freeswitch) | 🟢 Open |
+| 3 | [Spherical Sutherland-Hodgman: its own empty-intersection ...](https://github.com/JuliaGeo/GeometryOps.jl/issues/468) | [JuliaGeo/GeometryOps.jl](https://github.com/JuliaGeo/GeometryOps.jl) | 🟢 Open |
+| 4 | [AttributeError: Can't pickle local object 'Check.greater_...](https://github.com/unionai-oss/pandera/issues/928) | [unionai-oss/pandera](https://github.com/unionai-oss/pandera) | 🟢 Open |
+| 5 | [Database storage grows unboundedly due to missing GC cove...](https://github.com/concourse/concourse/issues/9719) | [concourse/concourse](https://github.com/concourse/concourse) | 🟢 Open |
+| 6 | [Streaming into `gr.Chatbot` / `gr.Markdown` re-parses, re...](https://github.com/gradio-app/gradio/issues/13932) | [gradio-app/gradio](https://github.com/gradio-app/gradio) | 🟢 Open |
+| 7 | [🐛 Bug Report: Sitemap loader follows nested sitemaps with...](https://github.com/arc53/DocsGPT/issues/3036) | [arc53/DocsGPT](https://github.com/arc53/DocsGPT) | 🟢 Open |
+| 8 | [Request authority denies tools the router offers: custom ...](https://github.com/odysseus-dev/odysseus/issues/6631) | [odysseus-dev/odysseus](https://github.com/odysseus-dev/odysseus) | 🟢 Open |
+| 9 | [yolo26 example breaks on portable with ultralytics newer ...](https://github.com/pytorch/executorch/issues/23453) | [pytorch/executorch](https://github.com/pytorch/executorch) | 🟢 Open |
+| 10 | [[BUG] Encrypted notes can lose password protection after ...](https://github.com/pbek/QOwnNotes/issues/3785) | [pbek/QOwnNotes](https://github.com/pbek/QOwnNotes) | 🟢 Open |
+| 11 | [[Bug] Intermittent pooled Codex upstream response.failed ...](https://github.com/lidge-jun/opencodex/issues/6740) | [lidge-jun/opencodex](https://github.com/lidge-jun/opencodex) | 🟢 Open |
+| 12 | [FORCE_REDOWNLOAD does not work](https://github.com/huggingface/datasets/issues/2904) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
+| 13 | [`toDataFrame` drops the `?` of a type parameter inside a ...](https://github.com/Kotlin/dataframe/issues/2133) | [Kotlin/dataframe](https://github.com/Kotlin/dataframe) | 🟢 Open |
+| 14 | [无法添加新的模型](https://github.com/dataelement/dsh-desktop/issues/284) | [dataelement/dsh-desktop](https://github.com/dataelement/dsh-desktop) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -117,16 +117,16 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Automatic rename files](https://github.com/LibrePhotos/librephotos/issues/307) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
-| 2 | [Seafile integration](https://github.com/LibrePhotos/librephotos/issues/247) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
+| 1 | [Share places, people and things when sharing the picture(...](https://github.com/LibrePhotos/librephotos/issues/166) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
+| 2 | [BUG: `pandas` allows comparing complex numbers](https://github.com/pandas-dev/pandas/issues/70087) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
 | 3 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 4 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 5 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 6 | [[Tracker] use micro-conditioning for the SDXL trainers](https://github.com/huggingface/diffusers/issues/6586) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 7 | [BUG: `pandas` allows comparing complex numbers](https://github.com/pandas-dev/pandas/issues/70087) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 8 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 9 | [Criar documentação de arquitetura (ARCHITECTURE.md)](https://github.com/okfn-brasil/querido-diario/issues/1433) | [okfn-brasil/querido-diario](https://github.com/okfn-brasil/querido-diario) | 🟢 Open |
-| 10 | [Array API support for CalibratedClassifierCV](https://github.com/scikit-learn/scikit-learn/issues/31869) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 4 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 5 | [[Tracker] use micro-conditioning for the SDXL trainers](https://github.com/huggingface/diffusers/issues/6586) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 6 | [Consider gRPC alternatives](https://github.com/thanos-io/thanos/issues/7071) | [thanos-io/thanos](https://github.com/thanos-io/thanos) | 🟢 Open |
+| 7 | [[Feature Request] Synchronized watching slideshow / videos](https://github.com/LibrePhotos/librephotos/issues/181) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
+| 8 | [BUG: Complex Numbers Not Imported Correctly Under JSON Read](https://github.com/pandas-dev/pandas/issues/50782) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 9 | [Array API support for CalibratedClassifierCV](https://github.com/scikit-learn/scikit-learn/issues/31869) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 10 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

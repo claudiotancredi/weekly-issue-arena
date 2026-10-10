@@ -99,7 +99,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 4 | [AttributeError: Can't pickle local object 'Check.greater_...](https://github.com/unionai-oss/pandera/issues/928) | [unionai-oss/pandera](https://github.com/unionai-oss/pandera) | 🟢 Open |
 | 5 | [Database storage grows unboundedly due to missing GC cove...](https://github.com/concourse/concourse/issues/9719) | [concourse/concourse](https://github.com/concourse/concourse) | 🟢 Open |
 | 6 | [Streaming into `gr.Chatbot` / `gr.Markdown` re-parses, re...](https://github.com/gradio-app/gradio/issues/13932) | [gradio-app/gradio](https://github.com/gradio-app/gradio) | 🟢 Open |
-| 7 | [🐛 Bug Report: Sitemap loader follows nested sitemaps with...](https://github.com/arc53/DocsGPT/issues/3036) | [arc53/DocsGPT](https://github.com/arc53/DocsGPT) | 🟢 Open |
+| 7 | [🐛 Bug Report: Sitemap loader follows nested sitemaps with...](https://github.com/arc53/DocsGPT/issues/3036) | [arc53/DocsGPT](https://github.com/arc53/DocsGPT) | 🟡 PR Proposed |
 | 8 | [Request authority denies tools the router offers: custom ...](https://github.com/odysseus-dev/odysseus/issues/6631) | [odysseus-dev/odysseus](https://github.com/odysseus-dev/odysseus) | 🟢 Open |
 | 9 | [yolo26 example breaks on portable with ultralytics newer ...](https://github.com/pytorch/executorch/issues/23453) | [pytorch/executorch](https://github.com/pytorch/executorch) | 🟢 Open |
 | 10 | [[BUG] Encrypted notes can lose password protection after ...](https://github.com/pbek/QOwnNotes/issues/3785) | [pbek/QOwnNotes](https://github.com/pbek/QOwnNotes) | 🟢 Open |

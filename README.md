@@ -102,7 +102,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 7 | [🐛 Bug Report: Sitemap loader follows nested sitemaps with...](https://github.com/arc53/DocsGPT/issues/3036) | [arc53/DocsGPT](https://github.com/arc53/DocsGPT) | 🟡 PR Proposed |
 | 8 | [Request authority denies tools the router offers: custom ...](https://github.com/odysseus-dev/odysseus/issues/6631) | [odysseus-dev/odysseus](https://github.com/odysseus-dev/odysseus) | 🟢 Open |
 | 9 | [yolo26 example breaks on portable with ultralytics newer ...](https://github.com/pytorch/executorch/issues/23453) | [pytorch/executorch](https://github.com/pytorch/executorch) | 🟢 Open |
-| 10 | [[BUG] Encrypted notes can lose password protection after ...](https://github.com/pbek/QOwnNotes/issues/3785) | [pbek/QOwnNotes](https://github.com/pbek/QOwnNotes) | 🟢 Open |
+| 10 | [[BUG] Encrypted notes can lose password protection after ...](https://github.com/pbek/QOwnNotes/issues/3785) | [pbek/QOwnNotes](https://github.com/pbek/QOwnNotes) | 🔴 Closed |
 | 11 | [[Bug] Intermittent pooled Codex upstream response.failed ...](https://github.com/lidge-jun/opencodex/issues/6740) | [lidge-jun/opencodex](https://github.com/lidge-jun/opencodex) | 🟢 Open |
 | 12 | [FORCE_REDOWNLOAD does not work](https://github.com/huggingface/datasets/issues/2904) | [huggingface/datasets](https://github.com/huggingface/datasets) | 🟢 Open |
 | 13 | [`toDataFrame` drops the `?` of a type parameter inside a ...](https://github.com/Kotlin/dataframe/issues/2133) | [Kotlin/dataframe](https://github.com/Kotlin/dataframe) | 🟢 Open |

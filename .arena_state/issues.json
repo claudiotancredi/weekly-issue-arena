@@ -423,7 +423,8 @@
           "author": "pbek",
           "listed_at": "2026-10-09T17:00:00+00:00",
           "language": "C++",
-          "has_pr": false
+          "has_pr": false,
+          "closed": true
         },
         {
           "number": 6740,

@@ -284,7 +284,7 @@
     "repo": "pandas",
     "number": 70087,
     "category": "hard",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {

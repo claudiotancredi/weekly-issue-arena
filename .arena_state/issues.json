@@ -510,7 +510,7 @@
           "author": "cmp0xff",
           "listed_at": "2026-10-09T17:00:00+00:00",
           "language": "Python",
-          "has_pr": false
+          "has_pr": true
         },
         {
           "number": 31597,

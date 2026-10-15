@@ -118,7 +118,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [Share places, people and things when sharing the picture(...](https://github.com/LibrePhotos/librephotos/issues/166) | [LibrePhotos/librephotos](https://github.com/LibrePhotos/librephotos) | 🟢 Open |
-| 2 | [BUG: `pandas` allows comparing complex numbers](https://github.com/pandas-dev/pandas/issues/70087) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 2 | [BUG: `pandas` allows comparing complex numbers](https://github.com/pandas-dev/pandas/issues/70087) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟡 PR Proposed |
 | 3 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 | 4 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 | 5 | [[Tracker] use micro-conditioning for the SDXL trainers](https://github.com/huggingface/diffusers/issues/6586) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |

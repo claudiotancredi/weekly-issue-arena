@@ -104,7 +104,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 9 | [DynamicGroup: removing a middle row leaves the vacated ta...](https://github.com/Comfy-Org/ComfyUI_frontend/issues/21092) | [Comfy-Org/ComfyUI_frontend](https://github.com/Comfy-Org/ComfyUI_frontend) | 🟢 Open |
 | 10 | [Header navigation dropdowns are clipped beyond the left e...](https://github.com/ToolJet/ToolJet/issues/18414) | [ToolJet/ToolJet](https://github.com/ToolJet/ToolJet) | 🟢 Open |
 | 11 | [# `categorical_distance_func` removal leaves categorical ...](https://github.com/optuna/optuna/issues/6874) | [optuna/optuna](https://github.com/optuna/optuna) | 🟢 Open |
-| 12 | [Map growth in aggregate can be 3x of size](https://github.com/apache/datafusion/issues/25606) | [apache/datafusion](https://github.com/apache/datafusion) | 🟢 Open |
+| 12 | [Map growth in aggregate can be 3x of size](https://github.com/apache/datafusion/issues/25606) | [apache/datafusion](https://github.com/apache/datafusion) | 🟡 PR Proposed |
 | 13 | [Fix whole module analysis (Ctrl+A)](https://github.com/x64dbg/x64dbg/issues/2536) | [x64dbg/x64dbg](https://github.com/x64dbg/x64dbg) | 🟢 Open |
 | 14 | [🐛 Bug: BuiltInAgent passes its system prompt inside `mess...](https://github.com/CopilotKit/CopilotKit/issues/7846) | [CopilotKit/CopilotKit](https://github.com/CopilotKit/CopilotKit) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->

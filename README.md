@@ -64,7 +64,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [Add a Shinsekai dev skill for contributors](https://github.com/RachelForster/Shinsekai/issues/197) | [RachelForster/Shinsekai](https://github.com/RachelForster/Shinsekai) | 🟢 Open |
-| 2 | [Overlong slides should be split up or reworked into a sma...](https://github.com/google/comprehensive-rust/issues/2445) | [google/comprehensive-rust](https://github.com/google/comprehensive-rust) | 🟢 Open |
+| 2 | [Overlong slides should be split up or reworked into a sma...](https://github.com/google/comprehensive-rust/issues/2445) | [google/comprehensive-rust](https://github.com/google/comprehensive-rust) | 🟡 PR Proposed |
 | 3 | [Add plot description to sensors_to_show ](https://github.com/FlexMeasures/flexmeasures/issues/1194) | [FlexMeasures/flexmeasures](https://github.com/FlexMeasures/flexmeasures) | 🟢 Open |
 | 4 | [FR: Use filesets for sparse checkouts](https://github.com/jj-vcs/jj/issues/7815) | [jj-vcs/jj](https://github.com/jj-vcs/jj) | 🟢 Open |
 | 5 | [Clean up warnings in doc build](https://github.com/dask/dask/issues/5610) | [dask/dask](https://github.com/dask/dask) | 🟢 Open |

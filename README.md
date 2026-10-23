@@ -63,26 +63,26 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Add a Shinsekai dev skill for contributors](https://github.com/RachelForster/Shinsekai/issues/197) | [RachelForster/Shinsekai](https://github.com/RachelForster/Shinsekai) | 🟢 Open |
-| 2 | [Overlong slides should be split up or reworked into a sma...](https://github.com/google/comprehensive-rust/issues/2445) | [google/comprehensive-rust](https://github.com/google/comprehensive-rust) | 🟡 PR Proposed |
-| 3 | [Add plot description to sensors_to_show ](https://github.com/FlexMeasures/flexmeasures/issues/1194) | [FlexMeasures/flexmeasures](https://github.com/FlexMeasures/flexmeasures) | 🟢 Open |
-| 4 | [FR: Use filesets for sparse checkouts](https://github.com/jj-vcs/jj/issues/7815) | [jj-vcs/jj](https://github.com/jj-vcs/jj) | 🟢 Open |
-| 5 | [Clean up warnings in doc build](https://github.com/dask/dask/issues/5610) | [dask/dask](https://github.com/dask/dask) | 🟢 Open |
-| 6 | [add tool to generate a turnRatio file based on turning di...](https://github.com/eclipse-sumo/sumo/issues/13338) | [eclipse-sumo/sumo](https://github.com/eclipse-sumo/sumo) | 🟢 Open |
-| 7 | [[Core] ray._raylet.ObjectRef and ray.types.ObjectRef type...](https://github.com/ray-project/ray/issues/53591) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
-| 8 | [[Feat] Option to sort points with r.out.xyz](https://github.com/OSGeo/grass/issues/1505) | [OSGeo/grass](https://github.com/OSGeo/grass) | 🟢 Open |
-| 9 | [Add a tutorial on Lifecycle nodes](https://github.com/ros2/ros2_documentation/issues/4924) | [ros2/ros2_documentation](https://github.com/ros2/ros2_documentation) | 🟢 Open |
-| 10 | [Replace instances of pa.PandasDtype enum with python, num...](https://github.com/unionai-oss/pandera/issues/311) | [unionai-oss/pandera](https://github.com/unionai-oss/pandera) | 🟢 Open |
-| 11 | [Create a Github CI action that automatically updates exam...](https://github.com/pantsbuild/pants/issues/21029) | [pantsbuild/pants](https://github.com/pantsbuild/pants) | 🟢 Open |
-| 12 | [[Feature Request] Support for font customization / adding...](https://github.com/HarnessMD/munder-difflin/issues/95) | [HarnessMD/munder-difflin](https://github.com/HarnessMD/munder-difflin) | 🟢 Open |
-| 13 | [[Good First Issue]: Extend C API interface](https://github.com/openvinotoolkit/openvino/issues/22001) | [openvinotoolkit/openvino](https://github.com/openvinotoolkit/openvino) | 🟢 Open |
-| 14 | [QueryEditorProps should be removed from the code base](https://github.com/perses/perses/issues/3202) | [perses/perses](https://github.com/perses/perses) | 🟢 Open |
-| 15 | [Have parity between pre confirmation statuses and `Succes...](https://github.com/FuelLabs/fuel-core/issues/3160) | [FuelLabs/fuel-core](https://github.com/FuelLabs/fuel-core) | 🟢 Open |
-| 16 | [docs: tighten prose in integrations/, graph_stores/, vect...](https://github.com/semantica-agi/semantica/issues/1425) | [semantica-agi/semantica](https://github.com/semantica-agi/semantica) | 🟢 Open |
-| 17 | [Replace `MultiFunction`s with `DAGTraverser`s](https://github.com/firedrakeproject/firedrake/issues/5098) | [firedrakeproject/firedrake](https://github.com/firedrakeproject/firedrake) | 🟢 Open |
-| 18 | [【启航计划】PaddlePaddle API兼容性增强](https://github.com/PaddlePaddle/Paddle/issues/76301) | [PaddlePaddle/Paddle](https://github.com/PaddlePaddle/Paddle) | 🟢 Open |
-| 19 | [[cueweb] Add a way to send a job from Monitor Cue to the ...](https://github.com/AcademySoftwareFoundation/OpenCue/issues/2542) | [AcademySoftwareFoundation/OpenCue](https://github.com/AcademySoftwareFoundation/OpenCue) | 🟢 Open |
-| 20 | [Experiment with generate `allow_columns_to_appear_in_same...](https://github.com/diesel-rs/diesel/issues/2555) | [diesel-rs/diesel](https://github.com/diesel-rs/diesel) | 🟢 Open |
+| 1 | [DOC: add additional gallery examples](https://github.com/geopandas/geopandas/issues/529) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
+| 2 | [Website: Notify Users when Graph Rendering is Truncated](https://github.com/CodeGraphContext/CodeGraphContext/issues/1111) | [CodeGraphContext/CodeGraphContext](https://github.com/CodeGraphContext/CodeGraphContext) | 🟢 Open |
+| 3 | [Mozilla Thunderbird  add-ons (ATN)](https://github.com/badges/shields/issues/6994) | [badges/shields](https://github.com/badges/shields) | 🟢 Open |
+| 4 | [[Enhancement] Replace Reddit/Instagram/Twitter/Wikipedia....](https://github.com/iv-org/invidious/issues/2415) | [iv-org/invidious](https://github.com/iv-org/invidious) | 🟢 Open |
+| 5 | [[Feature Request] Expanded OIDC user options](https://github.com/calibrain/shelfmark/issues/838) | [calibrain/shelfmark](https://github.com/calibrain/shelfmark) | 🟢 Open |
+| 6 | [Able to switch off question recommendation](https://github.com/Canner/WrenAI/issues/1202) | [Canner/WrenAI](https://github.com/Canner/WrenAI) | 🟢 Open |
+| 7 | [[BUG]: marker.colorbar.thicknessmode='pixels' collapses s...](https://github.com/plotly/plotly.py/issues/5615) | [plotly/plotly.py](https://github.com/plotly/plotly.py) | 🟢 Open |
+| 8 | [Improve docstrings in `InversePropensityWeighting` class](https://github.com/pymc-labs/CausalPy/issues/388) | [pymc-labs/CausalPy](https://github.com/pymc-labs/CausalPy) | 🟢 Open |
+| 9 | [Unified caching of expensive attributes](https://github.com/qutip/qutip/issues/453) | [qutip/qutip](https://github.com/qutip/qutip) | 🟢 Open |
+| 10 | [Migrate internal `ops.*` calls to `backend.ops.*`](https://github.com/keras-team/keras/issues/23696) | [keras-team/keras](https://github.com/keras-team/keras) | 🟢 Open |
+| 11 | [Make all tutorials multi-language](https://github.com/dmlc/xgboost/issues/11413) | [dmlc/xgboost](https://github.com/dmlc/xgboost) | 🟢 Open |
+| 12 | [Refactor: use native async fn in trait syntax](https://github.com/databendlabs/databend/issues/12201) | [databendlabs/databend](https://github.com/databendlabs/databend) | 🟢 Open |
+| 13 | [[Feature Request]: Memory (SQLAlchemy chat store) serves ...](https://github.com/run-llama/llama_index/issues/23246) | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🟢 Open |
+| 14 | [Better support for plotting text in 3D at different heights](https://github.com/GenericMappingTools/pygmt/issues/1393) | [GenericMappingTools/pygmt](https://github.com/GenericMappingTools/pygmt) | 🟢 Open |
+| 15 | [A plugin, skill, adapter or routine that fails to initial...](https://github.com/sipyourdrink-ltd/bernstein/issues/5108) | [sipyourdrink-ltd/bernstein](https://github.com/sipyourdrink-ltd/bernstein) | 🟢 Open |
+| 16 | [different colored action buttons](https://github.com/flameshot-org/flameshot/issues/3885) | [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | 🟢 Open |
+| 17 | [☂️ eslint core](https://github.com/oxc-project/oxc/issues/479) | [oxc-project/oxc](https://github.com/oxc-project/oxc) | 🟢 Open |
+| 18 | [[New Check]: Ensure OneDrive external content sharing is ...](https://github.com/prowler-cloud/prowler/issues/11801) | [prowler-cloud/prowler](https://github.com/prowler-cloud/prowler) | 🟢 Open |
+| 19 | [Optimize summaryStatistics for primitive Bags](https://github.com/eclipse-collections/eclipse-collections/issues/1373) | [eclipse-collections/eclipse-collections](https://github.com/eclipse-collections/eclipse-collections) | 🟢 Open |
+| 20 | [[Clang] Explain satisfaction failure for more type traits](https://github.com/llvm/llvm-project/issues/141911) | [llvm/llvm-project](https://github.com/llvm/llvm-project) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -93,20 +93,20 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [[SR-7230] Improve error message for statement that begins...](https://github.com/swiftlang/swift/issues/49778) | [swiftlang/swift](https://github.com/swiftlang/swift) | 🟢 Open |
-| 2 | [Affect not just integer targets](https://github.com/unionai-oss/pandera/issues/2555) | [unionai-oss/pandera](https://github.com/unionai-oss/pandera) | 🟢 Open |
-| 3 | [[Bug] Separate controller information from cable information](https://github.com/darrylmorley/whatcable/issues/650) | [darrylmorley/whatcable](https://github.com/darrylmorley/whatcable) | 🟢 Open |
-| 4 | [BUG: adding a colorbar to a subplot ignores shared axes](https://github.com/geopandas/geopandas/issues/3885) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
-| 5 | [[Bug]: Again german title to long for box](https://github.com/AprilNEA/OpenLogi/issues/1856) | [AprilNEA/OpenLogi](https://github.com/AprilNEA/OpenLogi) | 🟢 Open |
-| 6 | [rclone does not update properly to 1.75.2](https://github.com/rclone/rclone/issues/10105) | [rclone/rclone](https://github.com/rclone/rclone) | 🟢 Open |
-| 7 | [Open charts - Fix & Enhancement needed](https://github.com/marketcalls/openalgo/issues/2153) | [marketcalls/openalgo](https://github.com/marketcalls/openalgo) | 🟢 Open |
-| 8 | [Reminder of issue #9073. "Segmentation fault in coast usi...](https://github.com/GenericMappingTools/gmt/issues/9106) | [GenericMappingTools/gmt](https://github.com/GenericMappingTools/gmt) | 🟢 Open |
-| 9 | [DynamicGroup: removing a middle row leaves the vacated ta...](https://github.com/Comfy-Org/ComfyUI_frontend/issues/21092) | [Comfy-Org/ComfyUI_frontend](https://github.com/Comfy-Org/ComfyUI_frontend) | 🟢 Open |
-| 10 | [Header navigation dropdowns are clipped beyond the left e...](https://github.com/ToolJet/ToolJet/issues/18414) | [ToolJet/ToolJet](https://github.com/ToolJet/ToolJet) | 🟢 Open |
-| 11 | [# `categorical_distance_func` removal leaves categorical ...](https://github.com/optuna/optuna/issues/6874) | [optuna/optuna](https://github.com/optuna/optuna) | 🟢 Open |
-| 12 | [Map growth in aggregate can be 3x of size](https://github.com/apache/datafusion/issues/25606) | [apache/datafusion](https://github.com/apache/datafusion) | 🟡 PR Proposed |
-| 13 | [Fix whole module analysis (Ctrl+A)](https://github.com/x64dbg/x64dbg/issues/2536) | [x64dbg/x64dbg](https://github.com/x64dbg/x64dbg) | 🟢 Open |
-| 14 | [🐛 Bug: BuiltInAgent passes its system prompt inside `mess...](https://github.com/CopilotKit/CopilotKit/issues/7846) | [CopilotKit/CopilotKit](https://github.com/CopilotKit/CopilotKit) | 🟡 PR Proposed |
+| 1 | [If a frame doesn't contain `MCInIcePrimary`, the wrong pa...](https://github.com/graphnet-team/graphnet/issues/870) | [graphnet-team/graphnet](https://github.com/graphnet-team/graphnet) | 🟢 Open |
+| 2 | [[BUG]MCP Server does not prompt for calling the best prac...](https://github.com/microsoft/mcp/issues/3859) | [microsoft/mcp](https://github.com/microsoft/mcp) | 🟢 Open |
+| 3 | [A deferred `always_last` event runs with the event data o...](https://github.com/gradio-app/gradio/issues/13990) | [gradio-app/gradio](https://github.com/gradio-app/gradio) | 🟢 Open |
+| 4 | [caniuse-lite is outdated](https://github.com/ray-project/ray/issues/34830) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
+| 5 | [_compute_sum_of_squares uses pandas.DataFrame.groupby wit...](https://github.com/dask/dask/issues/10826) | [dask/dask](https://github.com/dask/dask) | 🟢 Open |
+| 6 | [Windows Smart App Control blocks unsigned uv-managed CPyt...](https://github.com/astral-sh/uv/issues/22869) | [astral-sh/uv](https://github.com/astral-sh/uv) | 🟢 Open |
+| 7 | [Duplicate metric names silently replace objective values ...](https://github.com/optuna/optuna/issues/6898) | [optuna/optuna](https://github.com/optuna/optuna) | 🟢 Open |
+| 8 | [[Bug]: DataTable.FilterBar weird behavior: not visible wh...](https://github.com/medusajs/medusa/issues/16623) | [medusajs/medusa](https://github.com/medusajs/medusa) | 🟢 Open |
+| 9 | [claude code auto compress fails with "deepseek-v4.1-flash...](https://github.com/ollama/ollama/issues/19249) | [ollama/ollama](https://github.com/ollama/ollama) | 🟢 Open |
+| 10 | [[Serve][LLM] SGLangServer multi-replica support](https://github.com/ray-project/ray/issues/62480) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
+| 11 | [Fuzzer: A lot of random panics/timeout/overflows](https://github.com/emilk/egui/issues/8739) | [emilk/egui](https://github.com/emilk/egui) | 🟢 Open |
+| 12 | [[BUG] [v2] Automatic bucket creation is not functional](https://github.com/flyteorg/flyte/issues/6863) | [flyteorg/flyte](https://github.com/flyteorg/flyte) | 🟢 Open |
+| 13 | [[AlertZero] Rule link in the rule tuning proposal modal i...](https://github.com/elastic/kibana/issues/297087) | [elastic/kibana](https://github.com/elastic/kibana) | 🟢 Open |
+| 14 | [Sub-pixel binning causes text rendering issues on Android...](https://github.com/emilk/egui/issues/8694) | [emilk/egui](https://github.com/emilk/egui) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -117,16 +117,16 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 2 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 3 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 4 | [Array API support for CalibratedClassifierCV](https://github.com/scikit-learn/scikit-learn/issues/31869) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 5 | [Support setting the random seed during initialization](https://github.com/taichi-dev/taichi/issues/2734) | [taichi-dev/taichi](https://github.com/taichi-dev/taichi) | 🟢 Open |
-| 6 | [pivot and pivot_table not able to handle complex numbers](https://github.com/pandas-dev/pandas/issues/25221) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 7 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 8 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 9 | [BUG: Complex Numbers Not Imported Correctly Under JSON Read](https://github.com/pandas-dev/pandas/issues/50782) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
-| 10 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 1 | [[Tracker] use micro-conditioning for the SDXL trainers](https://github.com/huggingface/diffusers/issues/6586) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 2 | [abstract complex?](https://github.com/JuliaLang/julia/issues/33246) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |
+| 3 | [[Feature]: [Stanford GJ01] Define Growing JSON extraction...](https://github.com/milvus-io/milvus/issues/53855) | [milvus-io/milvus](https://github.com/milvus-io/milvus) | 🟢 Open |
+| 4 | [pivot and pivot_table not able to handle complex numbers](https://github.com/pandas-dev/pandas/issues/25221) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 5 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 6 | [Printf for complex numbers](https://github.com/JuliaLang/julia/issues/58617) | [JuliaLang/julia](https://github.com/JuliaLang/julia) | 🟢 Open |
+| 7 | [[Enhancement]: [Stanford R02] Bound NGRAM regex branch ca...](https://github.com/milvus-io/milvus/issues/53863) | [milvus-io/milvus](https://github.com/milvus-io/milvus) | 🟢 Open |
+| 8 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 9 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 10 | [BUG: Complex Numbers Not Imported Correctly Under JSON Read](https://github.com/pandas-dev/pandas/issues/50782) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

@@ -72,7 +72,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 7 | [[BUG]: marker.colorbar.thicknessmode='pixels' collapses s...](https://github.com/plotly/plotly.py/issues/5615) | [plotly/plotly.py](https://github.com/plotly/plotly.py) | 🟢 Open |
 | 8 | [Improve docstrings in `InversePropensityWeighting` class](https://github.com/pymc-labs/CausalPy/issues/388) | [pymc-labs/CausalPy](https://github.com/pymc-labs/CausalPy) | 🟡 PR Proposed |
 | 9 | [Unified caching of expensive attributes](https://github.com/qutip/qutip/issues/453) | [qutip/qutip](https://github.com/qutip/qutip) | 🟢 Open |
-| 10 | [Migrate internal `ops.*` calls to `backend.ops.*`](https://github.com/keras-team/keras/issues/23696) | [keras-team/keras](https://github.com/keras-team/keras) | 🟢 Open |
+| 10 | [Migrate internal `ops.*` calls to `backend.ops.*`](https://github.com/keras-team/keras/issues/23696) | [keras-team/keras](https://github.com/keras-team/keras) | 🟡 PR Proposed |
 | 11 | [Make all tutorials multi-language](https://github.com/dmlc/xgboost/issues/11413) | [dmlc/xgboost](https://github.com/dmlc/xgboost) | 🟢 Open |
 | 12 | [Refactor: use native async fn in trait syntax](https://github.com/databendlabs/databend/issues/12201) | [databendlabs/databend](https://github.com/databendlabs/databend) | 🟢 Open |
 | 13 | [[Feature Request]: Memory (SQLAlchemy chat store) serves ...](https://github.com/run-llama/llama_index/issues/23246) | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🟢 Open |

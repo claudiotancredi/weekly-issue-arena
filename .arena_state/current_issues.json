@@ -196,7 +196,7 @@
     "repo": "dask",
     "number": 10826,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {

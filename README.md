@@ -97,7 +97,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 2 | [[BUG]MCP Server does not prompt for calling the best prac...](https://github.com/microsoft/mcp/issues/3859) | [microsoft/mcp](https://github.com/microsoft/mcp) | 🟢 Open |
 | 3 | [A deferred `always_last` event runs with the event data o...](https://github.com/gradio-app/gradio/issues/13990) | [gradio-app/gradio](https://github.com/gradio-app/gradio) | 🟢 Open |
 | 4 | [caniuse-lite is outdated](https://github.com/ray-project/ray/issues/34830) | [ray-project/ray](https://github.com/ray-project/ray) | 🟢 Open |
-| 5 | [_compute_sum_of_squares uses pandas.DataFrame.groupby wit...](https://github.com/dask/dask/issues/10826) | [dask/dask](https://github.com/dask/dask) | 🟢 Open |
+| 5 | [_compute_sum_of_squares uses pandas.DataFrame.groupby wit...](https://github.com/dask/dask/issues/10826) | [dask/dask](https://github.com/dask/dask) | 🟡 PR Proposed |
 | 6 | [Windows Smart App Control blocks unsigned uv-managed CPyt...](https://github.com/astral-sh/uv/issues/22869) | [astral-sh/uv](https://github.com/astral-sh/uv) | 🟢 Open |
 | 7 | [Duplicate metric names silently replace objective values ...](https://github.com/optuna/optuna/issues/6898) | [optuna/optuna](https://github.com/optuna/optuna) | 🟢 Open |
 | 8 | [[Bug]: DataTable.FilterBar weird behavior: not visible wh...](https://github.com/medusajs/medusa/issues/16623) | [medusajs/medusa](https://github.com/medusajs/medusa) | 🟢 Open |

@@ -65,7 +65,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 |---|-------|------------|--------|
 | 1 | [DOC: add additional gallery examples](https://github.com/geopandas/geopandas/issues/529) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
 | 2 | [Website: Notify Users when Graph Rendering is Truncated](https://github.com/CodeGraphContext/CodeGraphContext/issues/1111) | [CodeGraphContext/CodeGraphContext](https://github.com/CodeGraphContext/CodeGraphContext) | 🟢 Open |
-| 3 | [Mozilla Thunderbird  add-ons (ATN)](https://github.com/badges/shields/issues/6994) | [badges/shields](https://github.com/badges/shields) | 🟢 Open |
+| 3 | [Mozilla Thunderbird  add-ons (ATN)](https://github.com/badges/shields/issues/6994) | [badges/shields](https://github.com/badges/shields) | 🟡 PR Proposed |
 | 4 | [[Enhancement] Replace Reddit/Instagram/Twitter/Wikipedia....](https://github.com/iv-org/invidious/issues/2415) | [iv-org/invidious](https://github.com/iv-org/invidious) | 🟢 Open |
 | 5 | [[Feature Request] Expanded OIDC user options](https://github.com/calibrain/shelfmark/issues/838) | [calibrain/shelfmark](https://github.com/calibrain/shelfmark) | 🟢 Open |
 | 6 | [Able to switch off question recommendation](https://github.com/Canner/WrenAI/issues/1202) | [Canner/WrenAI](https://github.com/Canner/WrenAI) | 🟢 Open |

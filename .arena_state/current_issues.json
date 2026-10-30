@@ -4,6 +4,7 @@
     "repo": "maui",
     "number": 12857,
     "category": "gfi",
+    "has_pr": false,
     "language": "C#"
   },
   {
@@ -11,6 +12,7 @@
     "repo": "Cirq",
     "number": 1189,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -18,6 +20,7 @@
     "repo": "Graphite",
     "number": 3771,
     "category": "gfi",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -25,6 +28,7 @@
     "repo": "Graphite",
     "number": 3422,
     "category": "gfi",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -32,6 +36,7 @@
     "repo": "penpot",
     "number": 10339,
     "category": "gfi",
+    "has_pr": false,
     "language": "Clojure"
   },
   {
@@ -39,6 +44,7 @@
     "repo": "scikit-learn-intelex",
     "number": 3518,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -46,6 +52,7 @@
     "repo": "servo",
     "number": 49280,
     "category": "gfi",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -53,6 +60,7 @@
     "repo": "translated-content",
     "number": 34957,
     "category": "gfi",
+    "has_pr": false,
     "language": "Markdown"
   },
   {
@@ -60,6 +68,7 @@
     "repo": "vllm",
     "number": 25750,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -67,6 +76,7 @@
     "repo": "nncf",
     "number": 3129,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -74,6 +84,7 @@
     "repo": "airflow",
     "number": 9327,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -81,6 +92,7 @@
     "repo": "ramalama",
     "number": 2437,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -88,6 +100,7 @@
     "repo": "NewPipe",
     "number": 13705,
     "category": "gfi",
+    "has_pr": false,
     "language": "Java"
   },
   {
@@ -95,6 +108,7 @@
     "repo": "iced",
     "number": 286,
     "category": "gfi",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -102,6 +116,7 @@
     "repo": "envoy",
     "number": 34285,
     "category": "gfi",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -109,6 +124,7 @@
     "repo": "rocketride-server",
     "number": 1302,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -116,6 +132,7 @@
     "repo": "translated-content",
     "number": 16027,
     "category": "gfi",
+    "has_pr": false,
     "language": "Markdown"
   },
   {
@@ -123,6 +140,7 @@
     "repo": "biopython",
     "number": 3989,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -130,6 +148,7 @@
     "repo": "FreeTube",
     "number": 5618,
     "category": "gfi",
+    "has_pr": false,
     "language": "Vue"
   },
   {
@@ -137,6 +156,7 @@
     "repo": "poetry",
     "number": 3155,
     "category": "gfi",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -144,6 +164,7 @@
     "repo": "scikit-learn",
     "number": 35143,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -151,6 +172,7 @@
     "repo": "scikit-learn-intelex",
     "number": 3401,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -158,6 +180,7 @@
     "repo": "langchain",
     "number": 41534,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -165,6 +188,7 @@
     "repo": "Enzyme.jl",
     "number": 3871,
     "category": "bug",
+    "has_pr": false,
     "language": "Julia"
   },
   {
@@ -172,6 +196,7 @@
     "repo": "scikit-learn",
     "number": 34673,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -179,6 +204,7 @@
     "repo": "spotify-downloader",
     "number": 2827,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -186,6 +212,7 @@
     "repo": "opentelemetry-collector-contrib",
     "number": 51868,
     "category": "bug",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -193,6 +220,7 @@
     "repo": "taro",
     "number": 19581,
     "category": "bug",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -200,6 +228,7 @@
     "repo": "xla",
     "number": 7939,
     "category": "bug",
+    "has_pr": false,
     "language": "C++"
   },
   {
@@ -207,6 +236,7 @@
     "repo": "crosstl",
     "number": 3610,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -214,6 +244,7 @@
     "repo": "rasterio",
     "number": 3179,
     "category": "bug",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -221,6 +252,7 @@
     "repo": "winboat",
     "number": 916,
     "category": "bug",
+    "has_pr": false,
     "language": "TypeScript"
   },
   {
@@ -228,6 +260,7 @@
     "repo": "bun",
     "number": 47358,
     "category": "bug",
+    "has_pr": false,
     "language": "Rust"
   },
   {
@@ -235,6 +268,7 @@
     "repo": "grass",
     "number": 8048,
     "category": "bug",
+    "has_pr": false,
     "language": "C"
   },
   {
@@ -242,6 +276,7 @@
     "repo": "diffusers",
     "number": 12600,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -249,6 +284,7 @@
     "repo": "thanos",
     "number": 7071,
     "category": "hard",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -256,6 +292,7 @@
     "repo": "scikit-learn",
     "number": 22383,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -263,6 +300,7 @@
     "repo": "rasterio",
     "number": 1270,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -270,6 +308,7 @@
     "repo": "diffusers",
     "number": 6586,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -277,6 +316,7 @@
     "repo": "pandas",
     "number": 25221,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -284,6 +324,7 @@
     "repo": "matplotlib",
     "number": 20243,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -291,6 +332,7 @@
     "repo": "pandas",
     "number": 9379,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   },
   {
@@ -298,6 +340,7 @@
     "repo": "thanos",
     "number": 903,
     "category": "hard",
+    "has_pr": false,
     "language": "Go"
   },
   {
@@ -305,6 +348,7 @@
     "repo": "matplotlib",
     "number": 31597,
     "category": "hard",
+    "has_pr": false,
     "language": "Python"
   }
 ]

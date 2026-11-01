@@ -220,7 +220,7 @@
     "repo": "taro",
     "number": 19581,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "TypeScript"
   },
   {

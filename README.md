@@ -100,7 +100,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 5 | [Zero `sample_weight` raises ValueError in IsolationForest...](https://github.com/scikit-learn/scikit-learn/issues/34673) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
 | 6 | [Wrong song downloaded for Japanese titles: kanji get slug...](https://github.com/spotDL/spotify-downloader/issues/2827) | [spotDL/spotify-downloader](https://github.com/spotDL/spotify-downloader) | 🟢 Open |
 | 7 | [Compiling using go 1.27 results in a binary that panics o...](https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/51868) | [open-telemetry/opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib) | 🟢 Open |
-| 8 | [[Vue3] Vue 3.5.31+ 文本框 v-model 更新时报 getRootNode is not a ...](https://github.com/NervJS/taro/issues/19581) | [NervJS/taro](https://github.com/NervJS/taro) | 🟡 PR Proposed |
+| 8 | [[Vue3] Vue 3.5.31+ 文本框 v-model 更新时报 getRootNode is not a ...](https://github.com/NervJS/taro/issues/19581) | [NervJS/taro](https://github.com/NervJS/taro) | 🔴 Closed |
 | 9 | [TPU V4-32 Failed to get global TPU topology.](https://github.com/pytorch/xla/issues/7939) | [pytorch/xla](https://github.com/pytorch/xla) | 🟢 Open |
 | 10 | [Slang input: the translation loses ExecutionMode.EarlyFra...](https://github.com/CrossGL/crosstl/issues/3610) | [CrossGL/crosstl](https://github.com/CrossGL/crosstl) | 🟢 Open |
 | 11 | [Rotated rasters and bounds](https://github.com/rasterio/rasterio/issues/3179) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |

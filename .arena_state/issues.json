@@ -395,7 +395,8 @@
           "author": "hx199776",
           "listed_at": "2026-10-30T17:00:00+00:00",
           "language": "TypeScript",
-          "has_pr": true
+          "has_pr": true,
+          "closed": true
         },
         {
           "number": 7939,

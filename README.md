@@ -122,7 +122,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 3 | [Add friedman's H statistic](https://github.com/scikit-learn/scikit-learn/issues/22383) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
 | 4 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
 | 5 | [[Tracker] use micro-conditioning for the SDXL trainers](https://github.com/huggingface/diffusers/issues/6586) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 6 | [pivot and pivot_table not able to handle complex numbers](https://github.com/pandas-dev/pandas/issues/25221) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 6 | [pivot and pivot_table not able to handle complex numbers](https://github.com/pandas-dev/pandas/issues/25221) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟡 PR Proposed |
 | 7 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
 | 8 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
 | 9 | [Allow setting retention per metric (e.g rule aggregation)](https://github.com/thanos-io/thanos/issues/903) | [thanos-io/thanos](https://github.com/thanos-io/thanos) | 🟢 Open |

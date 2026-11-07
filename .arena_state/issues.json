@@ -437,7 +437,8 @@
           "author": "Kyuyrii",
           "listed_at": "2026-11-06T17:00:00+00:00",
           "language": "C++",
-          "has_pr": false
+          "has_pr": false,
+          "closed": true
         },
         {
           "number": 35,

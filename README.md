@@ -103,7 +103,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 8 | [PlaceboInTime and pymc-forecast follow-ups after #1261](https://github.com/pymc-labs/CausalPy/issues/1284) | [pymc-labs/CausalPy](https://github.com/pymc-labs/CausalPy) | 🟢 Open |
 | 9 | [Configuration binders differ when collection elements lac...](https://github.com/dotnet/runtime/issues/136974) | [dotnet/runtime](https://github.com/dotnet/runtime) | 🟢 Open |
 | 10 | [[Bug] v5.12.3：截图执行器反复初始化失败后资源创建失衡，私有内存达 17 GiB、句柄达 40 万](https://github.com/MaaXYZ/MaaFramework/issues/1583) | [MaaXYZ/MaaFramework](https://github.com/MaaXYZ/MaaFramework) | 🟢 Open |
-| 11 | [Outdated version on the Snap Store stable channel.](https://github.com/flameshot-org/flameshot/issues/4439) | [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | 🟢 Open |
+| 11 | [Outdated version on the Snap Store stable channel.](https://github.com/flameshot-org/flameshot/issues/4439) | [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | 🔴 Closed |
 | 12 | [This jailbreak is  not working for reading memory of a ga...](https://github.com/MDX-Tom/gpt-instruct/issues/35) | [MDX-Tom/gpt-instruct](https://github.com/MDX-Tom/gpt-instruct) | 🟢 Open |
 | 13 | [为啥部署破甲之后让gpt5.6sol逆向一个app还是提示不会进行改包等操作](https://github.com/MDX-Tom/gpt-instruct/issues/22) | [MDX-Tom/gpt-instruct](https://github.com/MDX-Tom/gpt-instruct) | 🟢 Open |
 | 14 | [CI reliability is poor](https://github.com/beeware/briefcase/issues/2969) | [beeware/briefcase](https://github.com/beeware/briefcase) | 🟢 Open |

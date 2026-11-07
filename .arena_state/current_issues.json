@@ -164,7 +164,7 @@
     "repo": "rocketride-server",
     "number": 3093,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {

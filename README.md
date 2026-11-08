@@ -80,7 +80,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 15 | [🍭[Roadmap] ms-swift3.6-3.8](https://github.com/modelscope/ms-swift/issues/4561) | [modelscope/ms-swift](https://github.com/modelscope/ms-swift) | 🟢 Open |
 | 16 | [Weights information missing for DRUNet](https://github.com/deepinv/deepinv/issues/899) | [deepinv/deepinv](https://github.com/deepinv/deepinv) | 🟢 Open |
 | 17 | [Add asymptotic confidence intervals for average treatment...](https://github.com/py-why/dowhy/issues/336) | [py-why/dowhy](https://github.com/py-why/dowhy) | 🟢 Open |
-| 18 | [`soup eval gate`: an empty suite file prints pydantic's r...](https://github.com/MakazhanAlpamys/Soup/issues/2295) | [MakazhanAlpamys/Soup](https://github.com/MakazhanAlpamys/Soup) | 🟢 Open |
+| 18 | [`soup eval gate`: an empty suite file prints pydantic's r...](https://github.com/MakazhanAlpamys/Soup/issues/2295) | [MakazhanAlpamys/Soup](https://github.com/MakazhanAlpamys/Soup) | 🟡 PR Proposed |
 | 19 | [[Pipeline] AnimateDiff + SparseControl + ControlNet](https://github.com/huggingface/diffusers/issues/9329) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 | 20 | [Migrate open issues and PRs from darwish repo](https://github.com/topgrade-rs/topgrade/issues/400) | [topgrade-rs/topgrade](https://github.com/topgrade-rs/topgrade) | 🟢 Open |
 <!-- ISSUES:GFI:END -->

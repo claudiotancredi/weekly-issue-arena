@@ -140,7 +140,7 @@
     "repo": "Soup",
     "number": 2295,
     "category": "gfi",
-    "has_pr": false,
+    "has_pr": true,
     "language": "Python"
   },
   {

@@ -100,7 +100,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 5 | [Python backend model missing model.py remains stuck in LO...](https://github.com/triton-inference-server/server/issues/8766) | [triton-inference-server/server](https://github.com/triton-inference-server/server) | 🟢 Open |
 | 6 | [NullReferenceException in DataFrame.BinaryOperators](https://github.com/dotnet/machinelearning/issues/5677) | [dotnet/machinelearning](https://github.com/dotnet/machinelearning) | 🟢 Open |
 | 7 | [DisAsm, hotkeys for text copying do not work](https://github.com/rizinorg/cutter/issues/3094) | [rizinorg/cutter](https://github.com/rizinorg/cutter) | 🟢 Open |
-| 8 | [PlaceboInTime and pymc-forecast follow-ups after #1261](https://github.com/pymc-labs/CausalPy/issues/1284) | [pymc-labs/CausalPy](https://github.com/pymc-labs/CausalPy) | 🟢 Open |
+| 8 | [PlaceboInTime and pymc-forecast follow-ups after #1261](https://github.com/pymc-labs/CausalPy/issues/1284) | [pymc-labs/CausalPy](https://github.com/pymc-labs/CausalPy) | 🔴 Closed |
 | 9 | [Configuration binders differ when collection elements lac...](https://github.com/dotnet/runtime/issues/136974) | [dotnet/runtime](https://github.com/dotnet/runtime) | 🟢 Open |
 | 10 | [[Bug] v5.12.3：截图执行器反复初始化失败后资源创建失衡，私有内存达 17 GiB、句柄达 40 万](https://github.com/MaaXYZ/MaaFramework/issues/1583) | [MaaXYZ/MaaFramework](https://github.com/MaaXYZ/MaaFramework) | 🟢 Open |
 | 11 | [Outdated version on the Snap Store stable channel.](https://github.com/flameshot-org/flameshot/issues/4439) | [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | 🔴 Closed |
@@ -117,7 +117,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🟢 Open |
+| 1 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🔴 Closed |
 | 2 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 | 3 | [Dialect-package tests: DB-backed tests next to the dialec...](https://github.com/sequelize/sequelize/issues/18451) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |
 | 4 | [How to achieve customized polymorphic association in sequ...](https://github.com/sequelize/sequelize/issues/10961) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |

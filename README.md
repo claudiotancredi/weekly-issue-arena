@@ -94,7 +94,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [ai: a generated SELECT can leave a session-level lock on ...](https://github.com/rocketride-org/rocketride-server/issues/3093) | [rocketride-org/rocketride-server](https://github.com/rocketride-org/rocketride-server) | 🟡 PR Proposed |
-| 2 | [qwen3-next-80B-Thinking npu环境进行grpo 保存权重时AttributeError: ...](https://github.com/modelscope/ms-swift/issues/10514) | [modelscope/ms-swift](https://github.com/modelscope/ms-swift) | 🟢 Open |
+| 2 | [qwen3-next-80B-Thinking npu环境进行grpo 保存权重时AttributeError: ...](https://github.com/modelscope/ms-swift/issues/10514) | [modelscope/ms-swift](https://github.com/modelscope/ms-swift) | 🔴 Closed |
 | 3 | [[问题] 红米电视A55 2025款开启航拍壁纸之后，HDMI无法正常显示画面、电视自带影视app画面卡顿闪黑](https://github.com/pengchujin/aerial-tv/issues/1304) | [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv) | 🟢 Open |
 | 4 | [Cookbook Dependencies Install installs CPU-only llama.cpp...](https://github.com/odysseus-dev/odysseus/issues/6656) | [odysseus-dev/odysseus](https://github.com/odysseus-dev/odysseus) | 🟢 Open |
 | 5 | [Python backend model missing model.py remains stuck in LO...](https://github.com/triton-inference-server/server/issues/8766) | [triton-inference-server/server](https://github.com/triton-inference-server/server) | 🟢 Open |

@@ -75,7 +75,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 10 | [[BUG]: TOZEROY FILL IS FILLING AREAS OF THE PLOT THAT HAS...](https://github.com/plotly/plotly.py/issues/5632) | [plotly/plotly.py](https://github.com/plotly/plotly.py) | 🟢 Open |
 | 11 | [[Feature][Connector-v2][MySQL] Support dynamic discovery...](https://github.com/apache/seatunnel/issues/10203) | [apache/seatunnel](https://github.com/apache/seatunnel) | 🟢 Open |
 | 12 | [Collector: On preview of source, show message if no items...](https://github.com/taranis-ai/taranis-ai/issues/283) | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | 🟢 Open |
-| 13 | [DOC: signal: add FIR filter examples](https://github.com/scipy/scipy/issues/4368) | [scipy/scipy](https://github.com/scipy/scipy) | 🟡 PR Proposed |
+| 13 | [DOC: signal: add FIR filter examples](https://github.com/scipy/scipy/issues/4368) | [scipy/scipy](https://github.com/scipy/scipy) | 🟢 Open |
 | 14 | [[Wh/BH/Quasar] Cleanup typedef](https://github.com/tenstorrent/tt-metal/issues/44424) | [tenstorrent/tt-metal](https://github.com/tenstorrent/tt-metal) | 🟢 Open |
 | 15 | [🍭[Roadmap] ms-swift3.6-3.8](https://github.com/modelscope/ms-swift/issues/4561) | [modelscope/ms-swift](https://github.com/modelscope/ms-swift) | 🟢 Open |
 | 16 | [Weights information missing for DRUNet](https://github.com/deepinv/deepinv/issues/899) | [deepinv/deepinv](https://github.com/deepinv/deepinv) | 🟢 Open |

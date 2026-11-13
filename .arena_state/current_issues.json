@@ -1,346 +1,275 @@
 [
   {
-    "owner": "cuga-project",
-    "repo": "cuga-agent",
-    "number": 903,
+    "owner": "Qiskit",
+    "repo": "qiskit",
+    "number": 17056,
     "category": "gfi",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "yzhao062",
-    "repo": "pyod",
-    "number": 183,
+    "owner": "NeuroTechX",
+    "repo": "moabb",
+    "number": 376,
     "category": "gfi",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "dotnet",
-    "repo": "runtime",
-    "number": 43093,
+    "owner": "vectordotdev",
+    "repo": "vector",
+    "number": 23329,
     "category": "gfi",
-    "has_pr": false,
-    "language": "C#"
-  },
-  {
-    "owner": "py-why",
-    "repo": "dowhy",
-    "number": 407,
-    "category": "gfi",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "tlaplus",
-    "repo": "tlaplus",
-    "number": 1196,
-    "category": "gfi",
-    "has_pr": false,
-    "language": "Java"
-  },
-  {
-    "owner": "dotnet",
-    "repo": "runtime",
-    "number": 105130,
-    "category": "gfi",
-    "has_pr": false,
-    "language": "C#"
-  },
-  {
-    "owner": "MaartenGr",
-    "repo": "BERTopic",
-    "number": 2154,
-    "category": "gfi",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "apache",
-    "repo": "arrow",
-    "number": 37065,
-    "category": "gfi",
-    "has_pr": false,
-    "language": "C++"
-  },
-  {
-    "owner": "jj-vcs",
-    "repo": "jj",
-    "number": 7990,
-    "category": "gfi",
-    "has_pr": false,
     "language": "Rust"
   },
   {
-    "owner": "plotly",
-    "repo": "plotly.py",
-    "number": 5632,
+    "owner": "pydata",
+    "repo": "pydata-sphinx-theme",
+    "number": 1629,
     "category": "gfi",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "apache",
-    "repo": "seatunnel",
-    "number": 10203,
+    "owner": "cartography-cncf",
+    "repo": "cartography",
+    "number": 2980,
     "category": "gfi",
-    "has_pr": false,
-    "language": "Java"
-  },
-  {
-    "owner": "taranis-ai",
-    "repo": "taranis-ai",
-    "number": 283,
-    "category": "gfi",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "scipy",
-    "repo": "scipy",
-    "number": 4368,
+    "owner": "python",
+    "repo": "cpython",
+    "number": 131178,
     "category": "gfi",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "tenstorrent",
-    "repo": "tt-metal",
-    "number": 44424,
-    "category": "gfi",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "modelscope",
-    "repo": "ms-swift",
-    "number": 4561,
-    "category": "gfi",
-    "has_pr": false,
     "language": "Python"
   },
   {
     "owner": "deepinv",
     "repo": "deepinv",
-    "number": 899,
+    "number": 643,
     "category": "gfi",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "py-why",
-    "repo": "dowhy",
-    "number": 336,
+    "owner": "grafana",
+    "repo": "mimir",
+    "number": 2689,
     "category": "gfi",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "MakazhanAlpamys",
-    "repo": "Soup",
-    "number": 2295,
-    "category": "gfi",
-    "has_pr": true,
-    "language": "Python"
+    "language": "Go"
   },
   {
     "owner": "huggingface",
     "repo": "diffusers",
     "number": 9329,
     "category": "gfi",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "topgrade-rs",
-    "repo": "topgrade",
-    "number": 400,
+    "owner": "FZJ-IEK3-VSA",
+    "repo": "glaes",
+    "number": 166,
     "category": "gfi",
-    "has_pr": false,
-    "language": "Rust"
-  },
-  {
-    "owner": "rocketride-org",
-    "repo": "rocketride-server",
-    "number": 3093,
-    "category": "bug",
-    "has_pr": true,
     "language": "Python"
   },
   {
-    "owner": "modelscope",
-    "repo": "ms-swift",
-    "number": 10514,
-    "category": "bug",
-    "has_pr": false,
+    "owner": "pytorch",
+    "repo": "pytorch",
+    "number": 135011,
+    "category": "gfi",
     "language": "Python"
   },
   {
-    "owner": "pengchujin",
-    "repo": "aerial-tv",
-    "number": 1304,
-    "category": "bug",
-    "has_pr": false,
-    "language": "Kotlin"
-  },
-  {
-    "owner": "odysseus-dev",
-    "repo": "odysseus",
-    "number": 6656,
-    "category": "bug",
-    "has_pr": false,
+    "owner": "cartography-cncf",
+    "repo": "cartography",
+    "number": 1477,
+    "category": "gfi",
     "language": "Python"
   },
   {
-    "owner": "triton-inference-server",
-    "repo": "server",
-    "number": 8766,
-    "category": "bug",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "dotnet",
-    "repo": "machinelearning",
-    "number": 5677,
-    "category": "bug",
-    "has_pr": false,
-    "language": "C#"
-  },
-  {
-    "owner": "rizinorg",
-    "repo": "cutter",
-    "number": 3094,
-    "category": "bug",
-    "has_pr": false,
+    "owner": "apache",
+    "repo": "arrow",
+    "number": 55458,
+    "category": "gfi",
     "language": "C++"
   },
   {
-    "owner": "pymc-labs",
-    "repo": "CausalPy",
-    "number": 1284,
+    "owner": "mdn",
+    "repo": "translated-content",
+    "number": 14373,
+    "category": "gfi",
+    "language": "Markdown"
+  },
+  {
+    "owner": "qgis",
+    "repo": "QGIS-Documentation",
+    "number": 11343,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "meshery",
+    "repo": "meshery",
+    "number": 20755,
+    "category": "gfi",
+    "language": "Go"
+  },
+  {
+    "owner": "PyCalendar",
+    "repo": "icalendar",
+    "number": 1152,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "ManimCommunity",
+    "repo": "manim",
+    "number": 5032,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "Bears-R-Us",
+    "repo": "arkouda",
+    "number": 1373,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "PyCalendar",
+    "repo": "icalendar",
+    "number": 1851,
+    "category": "gfi",
+    "language": "Python"
+  },
+  {
+    "owner": "ROCm",
+    "repo": "AMDMIGraphX",
+    "number": 5487,
     "category": "bug",
-    "has_pr": false,
+    "language": "C++"
+  },
+  {
+    "owner": "Nano-Collective",
+    "repo": "nanocoder",
+    "number": 2167,
+    "category": "bug",
+    "language": "TypeScript"
+  },
+  {
+    "owner": "iflytek",
+    "repo": "astron-rpa",
+    "number": 574,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "ParabolInc",
+    "repo": "parabol",
+    "number": 11500,
+    "category": "bug",
+    "language": "TypeScript"
+  },
+  {
+    "owner": "vylor",
+    "repo": "rioxarray",
+    "number": 174,
+    "category": "bug",
+    "language": null
+  },
+  {
+    "owner": "deepinv",
+    "repo": "deepinv",
+    "number": 741,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "deepinv",
+    "repo": "deepinv",
+    "number": 1487,
+    "category": "bug",
     "language": "Python"
   },
   {
     "owner": "dotnet",
     "repo": "runtime",
-    "number": 136974,
+    "number": 136991,
     "category": "bug",
-    "has_pr": false,
     "language": "C#"
   },
   {
-    "owner": "MaaXYZ",
-    "repo": "MaaFramework",
-    "number": 1583,
+    "owner": "traceloop",
+    "repo": "openllmetry",
+    "number": 4505,
     "category": "bug",
-    "has_pr": false,
-    "language": "C++"
-  },
-  {
-    "owner": "flameshot-org",
-    "repo": "flameshot",
-    "number": 4439,
-    "category": "bug",
-    "has_pr": false,
-    "language": "C++"
-  },
-  {
-    "owner": "MDX-Tom",
-    "repo": "gpt-instruct",
-    "number": 35,
-    "category": "bug",
-    "has_pr": false,
     "language": "Python"
   },
   {
-    "owner": "MDX-Tom",
-    "repo": "gpt-instruct",
-    "number": 22,
+    "owner": "ParabolInc",
+    "repo": "parabol",
+    "number": 14116,
     "category": "bug",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "beeware",
-    "repo": "briefcase",
-    "number": 2969,
-    "category": "bug",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "pandas-dev",
-    "repo": "pandas",
-    "number": 9379,
-    "category": "hard",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "huggingface",
-    "repo": "diffusers",
-    "number": 9508,
-    "category": "hard",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "sequelize",
-    "repo": "sequelize",
-    "number": 18451,
-    "category": "hard",
-    "has_pr": false,
     "language": "TypeScript"
   },
   {
-    "owner": "sequelize",
-    "repo": "sequelize",
-    "number": 10961,
+    "owner": "Xilinx",
+    "repo": "brevitas",
+    "number": 1608,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "openvinotoolkit",
+    "repo": "openvino",
+    "number": 39837,
+    "category": "bug",
+    "language": "C++"
+  },
+  {
+    "owner": "existence-master",
+    "repo": "Sentient",
+    "number": 459,
+    "category": "bug",
+    "language": "Python"
+  },
+  {
+    "owner": "ImranR98",
+    "repo": "Obtainium",
+    "number": 3514,
+    "category": "bug",
+    "language": "Dart"
+  },
+  {
+    "owner": "aboutcode-org",
+    "repo": "scancode-toolkit",
+    "number": 4156,
     "category": "hard",
-    "has_pr": false,
-    "language": "TypeScript"
+    "language": "Python"
+  },
+  {
+    "owner": "aboutcode-org",
+    "repo": "scancode-toolkit",
+    "number": 3719,
+    "category": "hard",
+    "language": "Python"
   },
   {
     "owner": "scikit-learn",
     "repo": "scikit-learn",
     "number": 33965,
     "category": "hard",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "matplotlib",
-    "repo": "matplotlib",
-    "number": 20243,
-    "category": "hard",
-    "has_pr": false,
     "language": "Python"
   },
   {
     "owner": "huggingface",
     "repo": "diffusers",
-    "number": 12600,
+    "number": 6586,
     "category": "hard",
-    "has_pr": false,
     "language": "Python"
   },
   {
     "owner": "scikit-learn",
     "repo": "scikit-learn",
-    "number": 22383,
+    "number": 22827,
     "category": "hard",
-    "has_pr": false,
-    "language": "Python"
-  },
-  {
-    "owner": "matplotlib",
-    "repo": "matplotlib",
-    "number": 31597,
-    "category": "hard",
-    "has_pr": false,
     "language": "Python"
   },
   {
@@ -348,7 +277,34 @@
     "repo": "rasterio",
     "number": 1270,
     "category": "hard",
-    "has_pr": false,
+    "language": "Python"
+  },
+  {
+    "owner": "sequelize",
+    "repo": "sequelize",
+    "number": 10961,
+    "category": "hard",
+    "language": "TypeScript"
+  },
+  {
+    "owner": "sequelize",
+    "repo": "sequelize",
+    "number": 18450,
+    "category": "hard",
+    "language": "TypeScript"
+  },
+  {
+    "owner": "matplotlib",
+    "repo": "matplotlib",
+    "number": 31597,
+    "category": "hard",
+    "language": "Python"
+  },
+  {
+    "owner": "huggingface",
+    "repo": "diffusers",
+    "number": 9508,
+    "category": "hard",
     "language": "Python"
   }
 ]

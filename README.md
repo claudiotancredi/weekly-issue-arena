@@ -63,26 +63,26 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [[Bug]: USABILITY - CUGA Agent + Bob does not install as-i...](https://github.com/cuga-project/cuga-agent/issues/903) | [cuga-project/cuga-agent](https://github.com/cuga-project/cuga-agent) | 🟢 Open |
-| 2 | [function generate_data ](https://github.com/yzhao062/pyod/issues/183) | [yzhao062/pyod](https://github.com/yzhao062/pyod) | 🟢 Open |
-| 3 | [[mono] Implement pinvoke-detach-1.cs tests on Windows](https://github.com/dotnet/runtime/issues/43093) | [dotnet/runtime](https://github.com/dotnet/runtime) | 🟢 Open |
-| 4 | [regression adjusted estimator for propensity_score_weighting](https://github.com/py-why/dowhy/issues/407) | [py-why/dowhy](https://github.com/py-why/dowhy) | 🟢 Open |
-| 5 | [Create and curate a TLA+ Dataset for LLM Training and Eva...](https://github.com/tlaplus/tlaplus/issues/1196) | [tlaplus/tlaplus](https://github.com/tlaplus/tlaplus) | 🟢 Open |
-| 6 | [[iOS][HybridGlobalization] Clean-up internal testing rela...](https://github.com/dotnet/runtime/issues/105130) | [dotnet/runtime](https://github.com/dotnet/runtime) | 🟢 Open |
-| 7 | [Custom labels in dynamic modeling and topic per class](https://github.com/MaartenGr/BERTopic/issues/2154) | [MaartenGr/BERTopic](https://github.com/MaartenGr/BERTopic) | 🟢 Open |
-| 8 | [[C++][Parquet] Provide std::optional-based APIs for stati...](https://github.com/apache/arrow/issues/37065) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
-| 9 | [FR: Better defaults for `trunk()`](https://github.com/jj-vcs/jj/issues/7990) | [jj-vcs/jj](https://github.com/jj-vcs/jj) | 🟢 Open |
-| 10 | [[BUG]: TOZEROY FILL IS FILLING AREAS OF THE PLOT THAT HAS...](https://github.com/plotly/plotly.py/issues/5632) | [plotly/plotly.py](https://github.com/plotly/plotly.py) | 🟢 Open |
-| 11 | [[Feature][Connector-v2][MySQL] Support dynamic discovery...](https://github.com/apache/seatunnel/issues/10203) | [apache/seatunnel](https://github.com/apache/seatunnel) | 🟢 Open |
-| 12 | [Collector: On preview of source, show message if no items...](https://github.com/taranis-ai/taranis-ai/issues/283) | [taranis-ai/taranis-ai](https://github.com/taranis-ai/taranis-ai) | 🟢 Open |
-| 13 | [DOC: signal: add FIR filter examples](https://github.com/scipy/scipy/issues/4368) | [scipy/scipy](https://github.com/scipy/scipy) | 🟢 Open |
-| 14 | [[Wh/BH/Quasar] Cleanup typedef](https://github.com/tenstorrent/tt-metal/issues/44424) | [tenstorrent/tt-metal](https://github.com/tenstorrent/tt-metal) | 🟢 Open |
-| 15 | [🍭[Roadmap] ms-swift3.6-3.8](https://github.com/modelscope/ms-swift/issues/4561) | [modelscope/ms-swift](https://github.com/modelscope/ms-swift) | 🟢 Open |
-| 16 | [Weights information missing for DRUNet](https://github.com/deepinv/deepinv/issues/899) | [deepinv/deepinv](https://github.com/deepinv/deepinv) | 🟢 Open |
-| 17 | [Add asymptotic confidence intervals for average treatment...](https://github.com/py-why/dowhy/issues/336) | [py-why/dowhy](https://github.com/py-why/dowhy) | 🟢 Open |
-| 18 | [`soup eval gate`: an empty suite file prints pydantic's r...](https://github.com/MakazhanAlpamys/Soup/issues/2295) | [MakazhanAlpamys/Soup](https://github.com/MakazhanAlpamys/Soup) | 🟡 PR Proposed |
-| 19 | [[Pipeline] AnimateDiff + SparseControl + ControlNet](https://github.com/huggingface/diffusers/issues/9329) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 20 | [Migrate open issues and PRs from darwish repo](https://github.com/topgrade-rs/topgrade/issues/400) | [topgrade-rs/topgrade](https://github.com/topgrade-rs/topgrade) | 🟢 Open |
+| 1 | [HoareOptimizer incorrectly cancels Pauli evolution/rotati...](https://github.com/Qiskit/qiskit/issues/17056) | [Qiskit/qiskit](https://github.com/Qiskit/qiskit) | 🟢 Open |
+| 2 | [Remove dataset-dependent args in CCA pipelines](https://github.com/NeuroTechX/moabb/issues/376) | [NeuroTechX/moabb](https://github.com/NeuroTechX/moabb) | 🟢 Open |
+| 3 | [Remove patch dependencies](https://github.com/vectordotdev/vector/issues/23329) | [vectordotdev/vector](https://github.com/vectordotdev/vector) | 🟢 Open |
+| 4 | [many users struggle with version switcher/banner handling](https://github.com/pydata/pydata-sphinx-theme/issues/1629) | [pydata/pydata-sphinx-theme](https://github.com/pydata/pydata-sphinx-theme) | 🟢 Open |
+| 5 | [Scaleway: extend coverage to the remaining API domains](https://github.com/cartography-cncf/cartography/issues/2980) | [cartography-cncf/cartography](https://github.com/cartography-cncf/cartography) | 🟢 Open |
+| 6 | [Add tests for command-line interface](https://github.com/python/cpython/issues/131178) | [python/cpython](https://github.com/python/cpython) | 🟢 Open |
+| 7 | [Physics User Guide more verbose](https://github.com/deepinv/deepinv/issues/643) | [deepinv/deepinv](https://github.com/deepinv/deepinv) | 🟢 Open |
+| 8 | [Inject test license into ct install test of GEM](https://github.com/grafana/mimir/issues/2689) | [grafana/mimir](https://github.com/grafana/mimir) | 🟢 Open |
+| 9 | [[Pipeline] AnimateDiff + SparseControl + ControlNet](https://github.com/huggingface/diffusers/issues/9329) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 10 | [Investigate plots in folder glaes/images - update or delete](https://github.com/FZJ-IEK3-VSA/glaes/issues/166) | [FZJ-IEK3-VSA/glaes](https://github.com/FZJ-IEK3-VSA/glaes) | 🟢 Open |
+| 11 | [dynamo (re)compilation issues: shape (1,1), nn.Parameter,...](https://github.com/pytorch/pytorch/issues/135011) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🟢 Open |
+| 12 | [AWS missing Assets/Resource](https://github.com/cartography-cncf/cartography/issues/1477) | [cartography-cncf/cartography](https://github.com/cartography-cncf/cartography) | 🟢 Open |
+| 13 | [[Python] Some tests that are off by default use NumPy wit...](https://github.com/apache/arrow/issues/55458) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
+| 14 | [Synchronize with latest updates to MDN writing guidelines](https://github.com/mdn/translated-content/issues/14373) | [mdn/translated-content](https://github.com/mdn/translated-content) | 🟢 Open |
+| 15 | [Add a Help button to the 3D map view top toolbar (Request...](https://github.com/qgis/QGIS-Documentation/issues/11343) | [qgis/QGIS-Documentation](https://github.com/qgis/QGIS-Documentation) | 🟢 Open |
+| 16 | [[Docs] Improve FAQ layout on the Meshery Playground page](https://github.com/meshery/meshery/issues/20755) | [meshery/meshery](https://github.com/meshery/meshery) | 🟢 Open |
+| 17 | [`None` type does not get linked in Sphinx](https://github.com/PyCalendar/icalendar/issues/1152) | [PyCalendar/icalendar](https://github.com/PyCalendar/icalendar) | 🟢 Open |
+| 18 | [Use `config.` instead of `config["..."]` to preserve type](https://github.com/ManimCommunity/manim/issues/5032) | [ManimCommunity/manim](https://github.com/ManimCommunity/manim) | 🟢 Open |
+| 19 | [Typechecking in code imported from akutil](https://github.com/Bears-R-Us/arkouda/issues/1373) | [Bears-R-Us/arkouda](https://github.com/Bears-R-Us/arkouda) | 🟢 Open |
+| 20 | [property accessors for vRecur (first-timer collaboration)](https://github.com/PyCalendar/icalendar/issues/1851) | [PyCalendar/icalendar](https://github.com/PyCalendar/icalendar) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -93,20 +93,20 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [ai: a generated SELECT can leave a session-level lock on ...](https://github.com/rocketride-org/rocketride-server/issues/3093) | [rocketride-org/rocketride-server](https://github.com/rocketride-org/rocketride-server) | 🟡 PR Proposed |
-| 2 | [qwen3-next-80B-Thinking npu环境进行grpo 保存权重时AttributeError: ...](https://github.com/modelscope/ms-swift/issues/10514) | [modelscope/ms-swift](https://github.com/modelscope/ms-swift) | 🔴 Closed |
-| 3 | [[问题] 红米电视A55 2025款开启航拍壁纸之后，HDMI无法正常显示画面、电视自带影视app画面卡顿闪黑](https://github.com/pengchujin/aerial-tv/issues/1304) | [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv) | 🟢 Open |
-| 4 | [Cookbook Dependencies Install installs CPU-only llama.cpp...](https://github.com/odysseus-dev/odysseus/issues/6656) | [odysseus-dev/odysseus](https://github.com/odysseus-dev/odysseus) | 🟢 Open |
-| 5 | [Python backend model missing model.py remains stuck in LO...](https://github.com/triton-inference-server/server/issues/8766) | [triton-inference-server/server](https://github.com/triton-inference-server/server) | 🟢 Open |
-| 6 | [NullReferenceException in DataFrame.BinaryOperators](https://github.com/dotnet/machinelearning/issues/5677) | [dotnet/machinelearning](https://github.com/dotnet/machinelearning) | 🟢 Open |
-| 7 | [DisAsm, hotkeys for text copying do not work](https://github.com/rizinorg/cutter/issues/3094) | [rizinorg/cutter](https://github.com/rizinorg/cutter) | 🟢 Open |
-| 8 | [PlaceboInTime and pymc-forecast follow-ups after #1261](https://github.com/pymc-labs/CausalPy/issues/1284) | [pymc-labs/CausalPy](https://github.com/pymc-labs/CausalPy) | 🔴 Closed |
-| 9 | [Configuration binders differ when collection elements lac...](https://github.com/dotnet/runtime/issues/136974) | [dotnet/runtime](https://github.com/dotnet/runtime) | 🟢 Open |
-| 10 | [[Bug] v5.12.3：截图执行器反复初始化失败后资源创建失衡，私有内存达 17 GiB、句柄达 40 万](https://github.com/MaaXYZ/MaaFramework/issues/1583) | [MaaXYZ/MaaFramework](https://github.com/MaaXYZ/MaaFramework) | 🟢 Open |
-| 11 | [Outdated version on the Snap Store stable channel.](https://github.com/flameshot-org/flameshot/issues/4439) | [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | 🔴 Closed |
-| 12 | [This jailbreak is  not working for reading memory of a ga...](https://github.com/MDX-Tom/gpt-instruct/issues/35) | [MDX-Tom/gpt-instruct](https://github.com/MDX-Tom/gpt-instruct) | 🟢 Open |
-| 13 | [为啥部署破甲之后让gpt5.6sol逆向一个app还是提示不会进行改包等操作](https://github.com/MDX-Tom/gpt-instruct/issues/22) | [MDX-Tom/gpt-instruct](https://github.com/MDX-Tom/gpt-instruct) | 🟢 Open |
-| 14 | [CI reliability is poor](https://github.com/beeware/briefcase/issues/2969) | [beeware/briefcase](https://github.com/beeware/briefcase) | 🟢 Open |
+| 1 | [`simplify_qdq` produces NaN when the folded add or concat...](https://github.com/ROCm/AMDMIGraphX/issues/5487) | [ROCm/AMDMIGraphX](https://github.com/ROCm/AMDMIGraphX) | 🟢 Open |
+| 2 | [[Bug] write_file overwrites a file that changed on disk a...](https://github.com/Nano-Collective/nanocoder/issues/2167) | [Nano-Collective/nanocoder](https://github.com/Nano-Collective/nanocoder) | 🟢 Open |
+| 3 | [[Bug]: 无法注册账号](https://github.com/iflytek/astron-rpa/issues/574) | [iflytek/astron-rpa](https://github.com/iflytek/astron-rpa) | 🟢 Open |
+| 4 | [jira projects list duplicates in the filter](https://github.com/ParabolInc/parabol/issues/11500) | [ParabolInc/parabol](https://github.com/ParabolInc/parabol) | 🟢 Open |
+| 5 | [open_rasterio fails when NetCDF subdataset contains more ...](https://github.com/vylor/rioxarray/issues/174) | [vylor/rioxarray](https://github.com/vylor/rioxarray) | 🟢 Open |
+| 6 | [Broken examples](https://github.com/deepinv/deepinv/issues/741) | [deepinv/deepinv](https://github.com/deepinv/deepinv) | 🟢 Open |
+| 7 | [Extra aliasing in deepinv.utils.plot](https://github.com/deepinv/deepinv/issues/1487) | [deepinv/deepinv](https://github.com/deepinv/deepinv) | 🟢 Open |
+| 8 | [SoundPlayer.Play() does not preserve in-memory WAV buffer...](https://github.com/dotnet/runtime/issues/136991) | [dotnet/runtime](https://github.com/dotnet/runtime) | 🟢 Open |
+| 9 | [fix(openai): @dont_throw is a no-op on Responses API wrap...](https://github.com/traceloop/openllmetry/issues/4505) | [traceloop/openllmetry](https://github.com/traceloop/openllmetry) | 🟢 Open |
+| 10 | [Make retro inspirations more like standups](https://github.com/ParabolInc/parabol/issues/14116) | [ParabolInc/parabol](https://github.com/ParabolInc/parabol) | 🟢 Open |
+| 11 | [ResNet example can't be exported with dynamo](https://github.com/Xilinx/brevitas/issues/1608) | [Xilinx/brevitas](https://github.com/Xilinx/brevitas) | 🟢 Open |
+| 12 | [[Bug][CPU][ONNX FE]: Dynamic uint8 BitShift RIGHT rounds ...](https://github.com/openvinotoolkit/openvino/issues/39837) | [openvinotoolkit/openvino](https://github.com/openvinotoolkit/openvino) | 🟢 Open |
+| 13 | [Tool row above a waiting approval card says "Wrote file" ...](https://github.com/existence-master/Sentient/issues/459) | [existence-master/Sentient](https://github.com/existence-master/Sentient) | 🟢 Open |
+| 14 | [Citron emulator has a new url](https://github.com/ImranR98/Obtainium/issues/3514) | [ImranR98/Obtainium](https://github.com/ImranR98/Obtainium) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
@@ -117,16 +117,16 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [pandas.read_csv() won't read back in complex number dtype...](https://github.com/pandas-dev/pandas/issues/9379) | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) | 🔴 Closed |
-| 2 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 3 | [Dialect-package tests: DB-backed tests next to the dialec...](https://github.com/sequelize/sequelize/issues/18451) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |
-| 4 | [How to achieve customized polymorphic association in sequ...](https://github.com/sequelize/sequelize/issues/10961) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |
-| 5 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 6 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 7 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 8 | [Add friedman's H statistic](https://github.com/scikit-learn/scikit-learn/issues/22383) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 1 | [Consider adding modelgo licenses](https://github.com/aboutcode-org/scancode-toolkit/issues/4156) | [aboutcode-org/scancode-toolkit](https://github.com/aboutcode-org/scancode-toolkit) | 🟢 Open |
+| 2 | [Consider adding ESA licenses and other misc. licenses.](https://github.com/aboutcode-org/scancode-toolkit/issues/3719) | [aboutcode-org/scancode-toolkit](https://github.com/aboutcode-org/scancode-toolkit) | 🟢 Open |
+| 3 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 4 | [[Tracker] use micro-conditioning for the SDXL trainers](https://github.com/huggingface/diffusers/issues/6586) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 5 | [Improve tests by using global_random_seed fixture to make...](https://github.com/scikit-learn/scikit-learn/issues/22827) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 6 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 7 | [How to achieve customized polymorphic association in sequ...](https://github.com/sequelize/sequelize/issues/10961) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |
+| 8 | [Validate options at runtime: reject unsupported and unkno...](https://github.com/sequelize/sequelize/issues/18450) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |
 | 9 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 10 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 10 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

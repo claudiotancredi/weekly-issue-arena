@@ -104,7 +104,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 9 | [fix(openai): @dont_throw is a no-op on Responses API wrap...](https://github.com/traceloop/openllmetry/issues/4505) | [traceloop/openllmetry](https://github.com/traceloop/openllmetry) | 🟢 Open |
 | 10 | [Make retro inspirations more like standups](https://github.com/ParabolInc/parabol/issues/14116) | [ParabolInc/parabol](https://github.com/ParabolInc/parabol) | 🟢 Open |
 | 11 | [ResNet example can't be exported with dynamo](https://github.com/Xilinx/brevitas/issues/1608) | [Xilinx/brevitas](https://github.com/Xilinx/brevitas) | 🟢 Open |
-| 12 | [[Bug][CPU][ONNX FE]: Dynamic uint8 BitShift RIGHT rounds ...](https://github.com/openvinotoolkit/openvino/issues/39837) | [openvinotoolkit/openvino](https://github.com/openvinotoolkit/openvino) | 🟢 Open |
+| 12 | [[Bug][CPU][ONNX FE]: Dynamic uint8 BitShift RIGHT rounds ...](https://github.com/openvinotoolkit/openvino/issues/39837) | [openvinotoolkit/openvino](https://github.com/openvinotoolkit/openvino) | 🟡 PR Proposed |
 | 13 | [Tool row above a waiting approval card says "Wrote file" ...](https://github.com/existence-master/Sentient/issues/459) | [existence-master/Sentient](https://github.com/existence-master/Sentient) | 🟢 Open |
 | 14 | [Citron emulator has a new url](https://github.com/ImranR98/Obtainium/issues/3514) | [ImranR98/Obtainium](https://github.com/ImranR98/Obtainium) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->

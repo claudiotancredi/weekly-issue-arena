@@ -348,7 +348,7 @@
           "author": "gzvincen",
           "listed_at": "2026-11-20T17:00:00+00:00",
           "language": "JavaScript",
-          "has_pr": false
+          "has_pr": true
         },
         {
           "number": 3899,
@@ -446,7 +446,7 @@
           "author": "rjdotdev",
           "listed_at": "2026-11-20T17:00:00+00:00",
           "language": "TypeScript",
-          "has_pr": false
+          "has_pr": true
         },
         {
           "number": 7369,

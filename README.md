@@ -95,14 +95,14 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 |---|-------|------------|--------|
 | 1 | [Can't modify text in TextInput onChangeText callback on A...](https://github.com/react/react-native/issues/23578) | [react/react-native](https://github.com/react/react-native) | 🟢 Open |
 | 2 | [Duplicate metric names silently replace objective values ...](https://github.com/optuna/optuna/issues/6898) | [optuna/optuna](https://github.com/optuna/optuna) | 🟡 PR Proposed |
-| 3 | [[Bug]: 最新版本Codex应用皮肤后报错](https://github.com/Fei-Away/Codex-Dream-Skin/issues/453) | [Fei-Away/Codex-Dream-Skin](https://github.com/Fei-Away/Codex-Dream-Skin) | 🟢 Open |
+| 3 | [[Bug]: 最新版本Codex应用皮肤后报错](https://github.com/Fei-Away/Codex-Dream-Skin/issues/453) | [Fei-Away/Codex-Dream-Skin](https://github.com/Fei-Away/Codex-Dream-Skin) | 🟡 PR Proposed |
 | 4 | [BUG: ec/fc plotting aliases fail with RGBA tuples](https://github.com/geopandas/geopandas/issues/3899) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
 | 5 | [Fix interactions plot](https://github.com/MAIF/shapash/issues/837) | [MAIF/shapash](https://github.com/MAIF/shapash) | 🟢 Open |
 | 6 | [多组件插件的启用状态判断有误；插件开关会重置组件启用配置](https://github.com/dsh-market/dsh-market/issues/1150) | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 🟢 Open |
 | 7 | [macOS: installer window cannot be moved and the submit bu...](https://github.com/HarnessMD/munder-difflin/issues/305) | [HarnessMD/munder-difflin](https://github.com/HarnessMD/munder-difflin) | 🟢 Open |
 | 8 | [[LoRA] Text-encoder LoRA loading assumes CLIP module name...](https://github.com/huggingface/diffusers/issues/15020) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 | 9 | [Ambigous error when consumer is fenced by group.instance.id](https://github.com/confluentinc/confluent-kafka-python/issues/869) | [confluentinc/confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python) | 🟢 Open |
-| 10 | [Offer mobile public catalog search only for queries web w...](https://github.com/elie222/rakazo/issues/5992) | [elie222/rakazo](https://github.com/elie222/rakazo) | 🟢 Open |
+| 10 | [Offer mobile public catalog search only for queries web w...](https://github.com/elie222/rakazo/issues/5992) | [elie222/rakazo](https://github.com/elie222/rakazo) | 🟡 PR Proposed |
 | 11 | [Deadlock when loading xarray data through ncdata with loc...](https://github.com/SciTools/iris/issues/7369) | [SciTools/iris](https://github.com/SciTools/iris) | 🟢 Open |
 | 12 | [Incorrect prototype of the clone syscall in pwnlib.shellc...](https://github.com/Gallopsled/pwntools/issues/2283) | [Gallopsled/pwntools](https://github.com/Gallopsled/pwntools) | 🟢 Open |
 | 13 | [Windows checkpoint and pause dump reserved device windows...](https://github.com/smol-machines/smolvm/issues/2133) | [smol-machines/smolvm](https://github.com/smol-machines/smolvm) | 🟢 Open |

@@ -180,7 +180,7 @@
     "repo": "Codex-Dream-Skin",
     "number": 453,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "JavaScript"
   },
   {
@@ -236,7 +236,7 @@
     "repo": "rakazo",
     "number": 5992,
     "category": "bug",
-    "has_pr": false,
+    "has_pr": true,
     "language": "TypeScript"
   },
   {

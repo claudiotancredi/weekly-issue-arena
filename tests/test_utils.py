@@ -123,6 +123,13 @@ class TestUpdateReadmeSection:
         assert "bbb" in result
         assert "aaa" not in result
 
+    def test_backslashes_in_body_inserted_verbatim(self):
+        """Backslashes and group refs in the body are not regex escapes."""
+        content = "<!-- T:START -->old<!-- T:END -->"
+        body = "| C:\\home\\user \\1 \\g<0> |\n"
+        result = update_readme_section(content, "T", body)
+        assert result == f"<!-- T:START -->\n{body}<!-- T:END -->"
+
 
 # ── github_get ────────────────────────────────────────────────
 

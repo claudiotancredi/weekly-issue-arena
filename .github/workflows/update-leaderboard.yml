@@ -20,11 +20,18 @@ concurrency:
 jobs:
   update-leaderboard:
     runs-on: ubuntu-latest
+    # Skip after a failed refresh: nothing new to score.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          # Latest main, not the event SHA: delayed runs and re-runs
+          # would otherwise rewrite .arena_state/ from a stale base.
+          ref: main
 
       - name: Check if waiting for issue refresh
         if: github.event_name == 'schedule'

@@ -21,6 +21,9 @@ jobs:
         uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          # Latest main, not the event SHA: delayed runs and re-runs
+          # would otherwise rewrite .arena_state/ from a stale base.
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v6

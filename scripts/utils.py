@@ -277,8 +277,14 @@ def atomic_write_json(path: Path, data, indent: int = 2) -> None:
 def update_readme_section(content: str, tag: str, new_body: str) -> str:
     """Replace content between matching START/END markers."""
     pattern = rf"(<!-- {tag}:START -->).*?(<!-- {tag}:END -->)"
-    replacement = rf"\1\n{new_body}\2"
-    updated, count = re.subn(pattern, replacement, content, flags=re.DOTALL)
+    # A callable replacement is inserted verbatim. A template string would
+    # parse backslashes in new_body (e.g. "\h" in an issue title) as escapes.
+    updated, count = re.subn(
+        pattern,
+        lambda m: f"{m.group(1)}\n{new_body}{m.group(2)}",
+        content,
+        flags=re.DOTALL,
+    )
     if count == 0:
         log.warning(f"Marker {tag} not found in README")
     return updated

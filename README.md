@@ -63,26 +63,26 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:GFI:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [HoareOptimizer incorrectly cancels Pauli evolution/rotati...](https://github.com/Qiskit/qiskit/issues/17056) | [Qiskit/qiskit](https://github.com/Qiskit/qiskit) | 🟢 Open |
-| 2 | [Remove dataset-dependent args in CCA pipelines](https://github.com/NeuroTechX/moabb/issues/376) | [NeuroTechX/moabb](https://github.com/NeuroTechX/moabb) | 🟢 Open |
-| 3 | [Remove patch dependencies](https://github.com/vectordotdev/vector/issues/23329) | [vectordotdev/vector](https://github.com/vectordotdev/vector) | 🟢 Open |
-| 4 | [many users struggle with version switcher/banner handling](https://github.com/pydata/pydata-sphinx-theme/issues/1629) | [pydata/pydata-sphinx-theme](https://github.com/pydata/pydata-sphinx-theme) | 🟢 Open |
-| 5 | [Scaleway: extend coverage to the remaining API domains](https://github.com/cartography-cncf/cartography/issues/2980) | [cartography-cncf/cartography](https://github.com/cartography-cncf/cartography) | 🟢 Open |
-| 6 | [Add tests for command-line interface](https://github.com/python/cpython/issues/131178) | [python/cpython](https://github.com/python/cpython) | 🟢 Open |
-| 7 | [Physics User Guide more verbose](https://github.com/deepinv/deepinv/issues/643) | [deepinv/deepinv](https://github.com/deepinv/deepinv) | 🟢 Open |
-| 8 | [Inject test license into ct install test of GEM](https://github.com/grafana/mimir/issues/2689) | [grafana/mimir](https://github.com/grafana/mimir) | 🟢 Open |
-| 9 | [[Pipeline] AnimateDiff + SparseControl + ControlNet](https://github.com/huggingface/diffusers/issues/9329) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 10 | [Investigate plots in folder glaes/images - update or delete](https://github.com/FZJ-IEK3-VSA/glaes/issues/166) | [FZJ-IEK3-VSA/glaes](https://github.com/FZJ-IEK3-VSA/glaes) | 🟢 Open |
-| 11 | [dynamo (re)compilation issues: shape (1,1), nn.Parameter,...](https://github.com/pytorch/pytorch/issues/135011) | [pytorch/pytorch](https://github.com/pytorch/pytorch) | 🟢 Open |
-| 12 | [AWS missing Assets/Resource](https://github.com/cartography-cncf/cartography/issues/1477) | [cartography-cncf/cartography](https://github.com/cartography-cncf/cartography) | 🟢 Open |
-| 13 | [[Python] Some tests that are off by default use NumPy wit...](https://github.com/apache/arrow/issues/55458) | [apache/arrow](https://github.com/apache/arrow) | 🟢 Open |
-| 14 | [Synchronize with latest updates to MDN writing guidelines](https://github.com/mdn/translated-content/issues/14373) | [mdn/translated-content](https://github.com/mdn/translated-content) | 🟢 Open |
-| 15 | [Add a Help button to the 3D map view top toolbar (Request...](https://github.com/qgis/QGIS-Documentation/issues/11343) | [qgis/QGIS-Documentation](https://github.com/qgis/QGIS-Documentation) | 🟢 Open |
-| 16 | [[Docs] Improve FAQ layout on the Meshery Playground page](https://github.com/meshery/meshery/issues/20755) | [meshery/meshery](https://github.com/meshery/meshery) | 🟢 Open |
-| 17 | [`None` type does not get linked in Sphinx](https://github.com/PyCalendar/icalendar/issues/1152) | [PyCalendar/icalendar](https://github.com/PyCalendar/icalendar) | 🟢 Open |
-| 18 | [Use `config.` instead of `config["..."]` to preserve type](https://github.com/ManimCommunity/manim/issues/5032) | [ManimCommunity/manim](https://github.com/ManimCommunity/manim) | 🟢 Open |
-| 19 | [Typechecking in code imported from akutil](https://github.com/Bears-R-Us/arkouda/issues/1373) | [Bears-R-Us/arkouda](https://github.com/Bears-R-Us/arkouda) | 🟢 Open |
-| 20 | [property accessors for vRecur (first-timer collaboration)](https://github.com/PyCalendar/icalendar/issues/1851) | [PyCalendar/icalendar](https://github.com/PyCalendar/icalendar) | 🟢 Open |
+| 1 | [TorchAO ROCM tests are taking a long time](https://github.com/pytorch/ao/issues/2367) | [pytorch/ao](https://github.com/pytorch/ao) | 🟢 Open |
+| 2 | [Composer shows a disabled send button instead of Stop whi...](https://github.com/GoDiao/dreamcoder/issues/240) | [GoDiao/dreamcoder](https://github.com/GoDiao/dreamcoder) | 🟢 Open |
+| 3 | [add tool to generate a turnRatio file based on turning di...](https://github.com/eclipse-sumo/sumo/issues/13338) | [eclipse-sumo/sumo](https://github.com/eclipse-sumo/sumo) | 🟢 Open |
+| 4 | [Implement suggestions from huggingface](https://github.com/weecology/DeepForest/issues/937) | [weecology/DeepForest](https://github.com/weecology/DeepForest) | 🟢 Open |
+| 5 | [Long-term goal: synchronize all outdated pages](https://github.com/mdn/translated-content/issues/16027) | [mdn/translated-content](https://github.com/mdn/translated-content) | 🟢 Open |
+| 6 | [Multiple good-first-issue bugs in capacity plugin, backfi...](https://github.com/volcano-sh/volcano/issues/5048) | [volcano-sh/volcano](https://github.com/volcano-sh/volcano) | 🟢 Open |
+| 7 | [`configure_file()` needs an option to verify all `configu...](https://github.com/mesonbuild/meson/issues/2978) | [mesonbuild/meson](https://github.com/mesonbuild/meson) | 🟢 Open |
+| 8 | [[Feature] Replace nested tensor logic with pytree](https://github.com/vllm-project/llm-compressor/issues/3161) | [vllm-project/llm-compressor](https://github.com/vllm-project/llm-compressor) | 🟢 Open |
+| 9 | [loaders and dumpers to_file signature should be extended ...](https://github.com/linkml/linkml/issues/1243) | [linkml/linkml](https://github.com/linkml/linkml) | 🟢 Open |
+| 10 | [Add "speed" property to playback state API's](https://github.com/jellyfin/jellyfin/issues/8971) | [jellyfin/jellyfin](https://github.com/jellyfin/jellyfin) | 🟢 Open |
+| 11 | [Syntax highlighting support for various languages (tree-s...](https://github.com/lapce/lapce/issues/272) | [lapce/lapce](https://github.com/lapce/lapce) | 🟢 Open |
+| 12 | [[meta] Add new `HttpSpec` checks](https://github.com/wemake-services/django-modern-rest/issues/1341) | [wemake-services/django-modern-rest](https://github.com/wemake-services/django-modern-rest) | 🟢 Open |
+| 13 | [activeDeadlineSeconds like capability in a job](https://github.com/volcano-sh/volcano/issues/2761) | [volcano-sh/volcano](https://github.com/volcano-sh/volcano) | 🟢 Open |
+| 14 | [Fix type hinting of avro messages](https://github.com/confluentinc/confluent-kafka-python/issues/466) | [confluentinc/confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python) | 🟢 Open |
+| 15 | [Add generator for CSV on the Web (CSVW)](https://github.com/linkml/linkml/issues/86) | [linkml/linkml](https://github.com/linkml/linkml) | 🟢 Open |
+| 16 | [[golden-path] Adoption Guide: Prioritizing Development](https://github.com/backstage/backstage/issues/31751) | [backstage/backstage](https://github.com/backstage/backstage) | 🟢 Open |
+| 17 | [Harness: count assistant responses, not content blocks, f...](https://github.com/GoDiao/dreamcoder/issues/274) | [GoDiao/dreamcoder](https://github.com/GoDiao/dreamcoder) | 🟢 Open |
+| 18 | [[RFC]: Improve zero-dimensional ndarray creation in tests...](https://github.com/stdlib-js/stdlib/issues/16654) | [stdlib-js/stdlib](https://github.com/stdlib-js/stdlib) | 🟢 Open |
+| 19 | [[Feature Request] Support for font customization / adding...](https://github.com/HarnessMD/munder-difflin/issues/95) | [HarnessMD/munder-difflin](https://github.com/HarnessMD/munder-difflin) | 🟢 Open |
+| 20 | [Adjust the playground to support the auth token](https://github.com/FuelLabs/fuel-core/issues/3140) | [FuelLabs/fuel-core](https://github.com/FuelLabs/fuel-core) | 🟢 Open |
 <!-- ISSUES:GFI:END -->
 
 </details>
@@ -93,40 +93,38 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 <!-- ISSUES:BUGS:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [`simplify_qdq` produces NaN when the folded add or concat...](https://github.com/ROCm/AMDMIGraphX/issues/5487) | [ROCm/AMDMIGraphX](https://github.com/ROCm/AMDMIGraphX) | 🟢 Open |
-| 2 | [[Bug] write_file overwrites a file that changed on disk a...](https://github.com/Nano-Collective/nanocoder/issues/2167) | [Nano-Collective/nanocoder](https://github.com/Nano-Collective/nanocoder) | 🟢 Open |
-| 3 | [[Bug]: 无法注册账号](https://github.com/iflytek/astron-rpa/issues/574) | [iflytek/astron-rpa](https://github.com/iflytek/astron-rpa) | 🟢 Open |
-| 4 | [jira projects list duplicates in the filter](https://github.com/ParabolInc/parabol/issues/11500) | [ParabolInc/parabol](https://github.com/ParabolInc/parabol) | 🟢 Open |
-| 5 | [open_rasterio fails when NetCDF subdataset contains more ...](https://github.com/vylor/rioxarray/issues/174) | [vylor/rioxarray](https://github.com/vylor/rioxarray) | 🟢 Open |
-| 6 | [Broken examples](https://github.com/deepinv/deepinv/issues/741) | [deepinv/deepinv](https://github.com/deepinv/deepinv) | 🟢 Open |
-| 7 | [Extra aliasing in deepinv.utils.plot](https://github.com/deepinv/deepinv/issues/1487) | [deepinv/deepinv](https://github.com/deepinv/deepinv) | 🟢 Open |
-| 8 | [SoundPlayer.Play() does not preserve in-memory WAV buffer...](https://github.com/dotnet/runtime/issues/136991) | [dotnet/runtime](https://github.com/dotnet/runtime) | 🟢 Open |
-| 9 | [fix(openai): @dont_throw is a no-op on Responses API wrap...](https://github.com/traceloop/openllmetry/issues/4505) | [traceloop/openllmetry](https://github.com/traceloop/openllmetry) | 🟢 Open |
-| 10 | [Make retro inspirations more like standups](https://github.com/ParabolInc/parabol/issues/14116) | [ParabolInc/parabol](https://github.com/ParabolInc/parabol) | 🟢 Open |
-| 11 | [ResNet example can't be exported with dynamo](https://github.com/Xilinx/brevitas/issues/1608) | [Xilinx/brevitas](https://github.com/Xilinx/brevitas) | 🟢 Open |
-| 12 | [[Bug][CPU][ONNX FE]: Dynamic uint8 BitShift RIGHT rounds ...](https://github.com/openvinotoolkit/openvino/issues/39837) | [openvinotoolkit/openvino](https://github.com/openvinotoolkit/openvino) | 🟡 PR Proposed |
-| 13 | [Tool row above a waiting approval card says "Wrote file" ...](https://github.com/existence-master/Sentient/issues/459) | [existence-master/Sentient](https://github.com/existence-master/Sentient) | 🟢 Open |
-| 14 | [Citron emulator has a new url](https://github.com/ImranR98/Obtainium/issues/3514) | [ImranR98/Obtainium](https://github.com/ImranR98/Obtainium) | 🟢 Open |
+| 1 | [Can't modify text in TextInput onChangeText callback on A...](https://github.com/react/react-native/issues/23578) | [react/react-native](https://github.com/react/react-native) | 🟢 Open |
+| 2 | [Duplicate metric names silently replace objective values ...](https://github.com/optuna/optuna/issues/6898) | [optuna/optuna](https://github.com/optuna/optuna) | 🟢 Open |
+| 3 | [[Bug]: 最新版本Codex应用皮肤后报错](https://github.com/Fei-Away/Codex-Dream-Skin/issues/453) | [Fei-Away/Codex-Dream-Skin](https://github.com/Fei-Away/Codex-Dream-Skin) | 🟢 Open |
+| 4 | [BUG: ec/fc plotting aliases fail with RGBA tuples](https://github.com/geopandas/geopandas/issues/3899) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
+| 5 | [Fix interactions plot](https://github.com/MAIF/shapash/issues/837) | [MAIF/shapash](https://github.com/MAIF/shapash) | 🟢 Open |
+| 6 | [多组件插件的启用状态判断有误；插件开关会重置组件启用配置](https://github.com/dsh-market/dsh-market/issues/1150) | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 🟢 Open |
+| 7 | [macOS: installer window cannot be moved and the submit bu...](https://github.com/HarnessMD/munder-difflin/issues/305) | [HarnessMD/munder-difflin](https://github.com/HarnessMD/munder-difflin) | 🟢 Open |
+| 8 | [[LoRA] Text-encoder LoRA loading assumes CLIP module name...](https://github.com/huggingface/diffusers/issues/15020) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 9 | [Ambigous error when consumer is fenced by group.instance.id](https://github.com/confluentinc/confluent-kafka-python/issues/869) | [confluentinc/confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python) | 🟢 Open |
+| 10 | [Offer mobile public catalog search only for queries web w...](https://github.com/elie222/rakazo/issues/5992) | [elie222/rakazo](https://github.com/elie222/rakazo) | 🟢 Open |
+| 11 | [Deadlock when loading xarray data through ncdata with loc...](https://github.com/SciTools/iris/issues/7369) | [SciTools/iris](https://github.com/SciTools/iris) | 🟢 Open |
+| 12 | [Incorrect prototype of the clone syscall in pwnlib.shellc...](https://github.com/Gallopsled/pwntools/issues/2283) | [Gallopsled/pwntools](https://github.com/Gallopsled/pwntools) | 🟢 Open |
+| 13 | [Windows checkpoint and pause dump reserved device windows...](https://github.com/smol-machines/smolvm/issues/2133) | [smol-machines/smolvm](https://github.com/smol-machines/smolvm) | 🟢 Open |
+| 14 | [VertexAiSessionService.listSessions with userId: '' retur...](https://github.com/google/adk-js/issues/1380) | [google/adk-js](https://github.com/google/adk-js) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 
 </details>
 
 <details>
-<summary> 😓 Hard Issues (10)</summary>
+<summary> 😓 Hard Issues (8)</summary>
 
 <!-- ISSUES:HARD:START -->
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
-| 1 | [Consider adding modelgo licenses](https://github.com/aboutcode-org/scancode-toolkit/issues/4156) | [aboutcode-org/scancode-toolkit](https://github.com/aboutcode-org/scancode-toolkit) | 🟢 Open |
-| 2 | [Consider adding ESA licenses and other misc. licenses.](https://github.com/aboutcode-org/scancode-toolkit/issues/3719) | [aboutcode-org/scancode-toolkit](https://github.com/aboutcode-org/scancode-toolkit) | 🟢 Open |
-| 3 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 4 | [[Tracker] use micro-conditioning for the SDXL trainers](https://github.com/huggingface/diffusers/issues/6586) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
-| 5 | [Improve tests by using global_random_seed fixture to make...](https://github.com/scikit-learn/scikit-learn/issues/22827) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
-| 6 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
-| 7 | [How to achieve customized polymorphic association in sequ...](https://github.com/sequelize/sequelize/issues/10961) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |
-| 8 | [Validate options at runtime: reject unsupported and unkno...](https://github.com/sequelize/sequelize/issues/18450) | [sequelize/sequelize](https://github.com/sequelize/sequelize) | 🟢 Open |
-| 9 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 10 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 1 | [Native categorical splitting enhancements in DecisionTree...](https://github.com/scikit-learn/scikit-learn/issues/33965) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 2 | [Document potential traps around Rasterio's multiple envir...](https://github.com/rasterio/rasterio/issues/1270) | [rasterio/rasterio](https://github.com/rasterio/rasterio) | 🟢 Open |
+| 3 | [matplotlib eventplot not shows all the binary data for bi...](https://github.com/matplotlib/matplotlib/issues/20243) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 4 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
+| 5 | [Add friedman's H statistic](https://github.com/scikit-learn/scikit-learn/issues/22383) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
+| 6 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
+| 7 | [No CI job exercises the Metal 4 MPS path that current-mac...](https://github.com/kornia/kornia/issues/4207) | [kornia/kornia](https://github.com/kornia/kornia) | 🟢 Open |
+| 8 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
 </details>

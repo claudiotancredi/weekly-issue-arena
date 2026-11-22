@@ -105,7 +105,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 10 | [Offer mobile public catalog search only for queries web w...](https://github.com/elie222/rakazo/issues/5992) | [elie222/rakazo](https://github.com/elie222/rakazo) | 🟡 PR Proposed |
 | 11 | [Deadlock when loading xarray data through ncdata with loc...](https://github.com/SciTools/iris/issues/7369) | [SciTools/iris](https://github.com/SciTools/iris) | 🟢 Open |
 | 12 | [Incorrect prototype of the clone syscall in pwnlib.shellc...](https://github.com/Gallopsled/pwntools/issues/2283) | [Gallopsled/pwntools](https://github.com/Gallopsled/pwntools) | 🟢 Open |
-| 13 | [Windows checkpoint and pause dump reserved device windows...](https://github.com/smol-machines/smolvm/issues/2133) | [smol-machines/smolvm](https://github.com/smol-machines/smolvm) | 🟢 Open |
+| 13 | [Windows checkpoint and pause dump reserved device windows...](https://github.com/smol-machines/smolvm/issues/2133) | [smol-machines/smolvm](https://github.com/smol-machines/smolvm) | 🔴 Closed |
 | 14 | [VertexAiSessionService.listSessions with userId: '' retur...](https://github.com/google/adk-js/issues/1380) | [google/adk-js](https://github.com/google/adk-js) | 🟢 Open |
 <!-- ISSUES:BUGS:END -->
 

@@ -79,7 +79,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 14 | [Fix type hinting of avro messages](https://github.com/confluentinc/confluent-kafka-python/issues/466) | [confluentinc/confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python) | 🟢 Open |
 | 15 | [Add generator for CSV on the Web (CSVW)](https://github.com/linkml/linkml/issues/86) | [linkml/linkml](https://github.com/linkml/linkml) | 🟢 Open |
 | 16 | [[golden-path] Adoption Guide: Prioritizing Development](https://github.com/backstage/backstage/issues/31751) | [backstage/backstage](https://github.com/backstage/backstage) | 🟢 Open |
-| 17 | [Harness: count assistant responses, not content blocks, f...](https://github.com/GoDiao/dreamcoder/issues/274) | [GoDiao/dreamcoder](https://github.com/GoDiao/dreamcoder) | 🟢 Open |
+| 17 | [Harness: count assistant responses, not content blocks, f...](https://github.com/GoDiao/dreamcoder/issues/274) | [GoDiao/dreamcoder](https://github.com/GoDiao/dreamcoder) | 🟡 PR Proposed |
 | 18 | [[RFC]: Improve zero-dimensional ndarray creation in tests...](https://github.com/stdlib-js/stdlib/issues/16654) | [stdlib-js/stdlib](https://github.com/stdlib-js/stdlib) | 🟢 Open |
 | 19 | [[Feature Request] Support for font customization / adding...](https://github.com/HarnessMD/munder-difflin/issues/95) | [HarnessMD/munder-difflin](https://github.com/HarnessMD/munder-difflin) | 🟢 Open |
 | 20 | [Adjust the playground to support the auth token](https://github.com/FuelLabs/fuel-core/issues/3140) | [FuelLabs/fuel-core](https://github.com/FuelLabs/fuel-core) | 🟢 Open |
@@ -102,7 +102,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 7 | [macOS: installer window cannot be moved and the submit bu...](https://github.com/HarnessMD/munder-difflin/issues/305) | [HarnessMD/munder-difflin](https://github.com/HarnessMD/munder-difflin) | 🟢 Open |
 | 8 | [[LoRA] Text-encoder LoRA loading assumes CLIP module name...](https://github.com/huggingface/diffusers/issues/15020) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 | 9 | [Ambigous error when consumer is fenced by group.instance.id](https://github.com/confluentinc/confluent-kafka-python/issues/869) | [confluentinc/confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python) | 🟢 Open |
-| 10 | [Offer mobile public catalog search only for queries web w...](https://github.com/elie222/rakazo/issues/5992) | [elie222/rakazo](https://github.com/elie222/rakazo) | 🟡 PR Proposed |
+| 10 | [Offer mobile public catalog search only for queries web w...](https://github.com/elie222/rakazo/issues/5992) | [elie222/rakazo](https://github.com/elie222/rakazo) | 🔴 Closed |
 | 11 | [Deadlock when loading xarray data through ncdata with loc...](https://github.com/SciTools/iris/issues/7369) | [SciTools/iris](https://github.com/SciTools/iris) | 🟢 Open |
 | 12 | [Incorrect prototype of the clone syscall in pwnlib.shellc...](https://github.com/Gallopsled/pwntools/issues/2283) | [Gallopsled/pwntools](https://github.com/Gallopsled/pwntools) | 🟢 Open |
 | 13 | [Windows checkpoint and pause dump reserved device windows...](https://github.com/smol-machines/smolvm/issues/2133) | [smol-machines/smolvm](https://github.com/smol-machines/smolvm) | 🔴 Closed |

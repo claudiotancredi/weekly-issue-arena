@@ -262,7 +262,7 @@
           "author": "GoDiao",
           "listed_at": "2026-11-20T17:00:00+00:00",
           "language": "TypeScript",
-          "has_pr": false
+          "has_pr": true
         },
         {
           "number": 16654,
@@ -446,7 +446,8 @@
           "author": "rjdotdev",
           "listed_at": "2026-11-20T17:00:00+00:00",
           "language": "TypeScript",
-          "has_pr": true
+          "has_pr": true,
+          "closed": true
         },
         {
           "number": 7369,

@@ -65,7 +65,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 |---|-------|------------|--------|
 | 1 | [TorchAO ROCM tests are taking a long time](https://github.com/pytorch/ao/issues/2367) | [pytorch/ao](https://github.com/pytorch/ao) | 🟢 Open |
 | 2 | [Composer shows a disabled send button instead of Stop whi...](https://github.com/GoDiao/dreamcoder/issues/240) | [GoDiao/dreamcoder](https://github.com/GoDiao/dreamcoder) | 🟢 Open |
-| 3 | [add tool to generate a turnRatio file based on turning di...](https://github.com/eclipse-sumo/sumo/issues/13338) | [eclipse-sumo/sumo](https://github.com/eclipse-sumo/sumo) | 🟢 Open |
+| 3 | [add tool to generate a turnRatio file based on turning di...](https://github.com/eclipse-sumo/sumo/issues/13338) | [eclipse-sumo/sumo](https://github.com/eclipse-sumo/sumo) | 🟡 PR Proposed |
 | 4 | [Implement suggestions from huggingface](https://github.com/weecology/DeepForest/issues/937) | [weecology/DeepForest](https://github.com/weecology/DeepForest) | 🟢 Open |
 | 5 | [Long-term goal: synchronize all outdated pages](https://github.com/mdn/translated-content/issues/16027) | [mdn/translated-content](https://github.com/mdn/translated-content) | 🟢 Open |
 | 6 | [Multiple good-first-issue bugs in capacity plugin, backfi...](https://github.com/volcano-sh/volcano/issues/5048) | [volcano-sh/volcano](https://github.com/volcano-sh/volcano) | 🟢 Open |

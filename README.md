@@ -94,7 +94,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | # | Title | Repository | Status |
 |---|-------|------------|--------|
 | 1 | [Can't modify text in TextInput onChangeText callback on A...](https://github.com/react/react-native/issues/23578) | [react/react-native](https://github.com/react/react-native) | 🟢 Open |
-| 2 | [Duplicate metric names silently replace objective values ...](https://github.com/optuna/optuna/issues/6898) | [optuna/optuna](https://github.com/optuna/optuna) | 🟢 Open |
+| 2 | [Duplicate metric names silently replace objective values ...](https://github.com/optuna/optuna/issues/6898) | [optuna/optuna](https://github.com/optuna/optuna) | 🟡 PR Proposed |
 | 3 | [[Bug]: 最新版本Codex应用皮肤后报错](https://github.com/Fei-Away/Codex-Dream-Skin/issues/453) | [Fei-Away/Codex-Dream-Skin](https://github.com/Fei-Away/Codex-Dream-Skin) | 🟡 PR Proposed |
 | 4 | [BUG: ec/fc plotting aliases fail with RGBA tuples](https://github.com/geopandas/geopandas/issues/3899) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
 | 5 | [Fix interactions plot](https://github.com/MAIF/shapash/issues/837) | [MAIF/shapash](https://github.com/MAIF/shapash) | 🟢 Open |

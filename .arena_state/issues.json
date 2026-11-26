@@ -376,7 +376,8 @@
           "author": "guillaume-vignal",
           "listed_at": "2026-11-20T17:00:00+00:00",
           "language": "Jupyter Notebook",
-          "has_pr": false
+          "has_pr": false,
+          "closed": true
         },
         {
           "number": 1150,

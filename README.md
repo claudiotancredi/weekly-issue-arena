@@ -97,7 +97,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 2 | [Duplicate metric names silently replace objective values ...](https://github.com/optuna/optuna/issues/6898) | [optuna/optuna](https://github.com/optuna/optuna) | 🟢 Open |
 | 3 | [[Bug]: 最新版本Codex应用皮肤后报错](https://github.com/Fei-Away/Codex-Dream-Skin/issues/453) | [Fei-Away/Codex-Dream-Skin](https://github.com/Fei-Away/Codex-Dream-Skin) | 🟡 PR Proposed |
 | 4 | [BUG: ec/fc plotting aliases fail with RGBA tuples](https://github.com/geopandas/geopandas/issues/3899) | [geopandas/geopandas](https://github.com/geopandas/geopandas) | 🟢 Open |
-| 5 | [Fix interactions plot](https://github.com/MAIF/shapash/issues/837) | [MAIF/shapash](https://github.com/MAIF/shapash) | 🟢 Open |
+| 5 | [Fix interactions plot](https://github.com/MAIF/shapash/issues/837) | [MAIF/shapash](https://github.com/MAIF/shapash) | 🔴 Closed |
 | 6 | [多组件插件的启用状态判断有误；插件开关会重置组件启用配置](https://github.com/dsh-market/dsh-market/issues/1150) | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 🔴 Closed |
 | 7 | [macOS: installer window cannot be moved and the submit bu...](https://github.com/HarnessMD/munder-difflin/issues/305) | [HarnessMD/munder-difflin](https://github.com/HarnessMD/munder-difflin) | 🟢 Open |
 | 8 | [[LoRA] Text-encoder LoRA loading assumes CLIP module name...](https://github.com/huggingface/diffusers/issues/15020) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |

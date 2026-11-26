@@ -172,7 +172,7 @@
     "repo": "optuna",
     "number": 6898,
     "category": "bug",
-    "has_pr": true,
+    "has_pr": false,
     "language": "Python"
   },
   {

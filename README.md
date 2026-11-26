@@ -123,7 +123,7 @@ Opt in once, with one form. Nothing about you is tracked until you do.
 | 4 | [Add KV Cache for Autoregressive Inference](https://github.com/huggingface/diffusers/issues/12600) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 | 5 | [Add friedman's H statistic](https://github.com/scikit-learn/scikit-learn/issues/22383) | [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | 🟢 Open |
 | 6 | [[Doc]: incorporate artist architecture content from matpl...](https://github.com/matplotlib/matplotlib/issues/31597) | [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) | 🟢 Open |
-| 7 | [No CI job exercises the Metal 4 MPS path that current-mac...](https://github.com/kornia/kornia/issues/4207) | [kornia/kornia](https://github.com/kornia/kornia) | 🟢 Open |
+| 7 | [No CI job exercises the Metal 4 MPS path that current-mac...](https://github.com/kornia/kornia/issues/4207) | [kornia/kornia](https://github.com/kornia/kornia) | 🔴 Closed |
 | 8 | [AnimateDiff SparseCtrl RGB does not work as expected](https://github.com/huggingface/diffusers/issues/9508) | [huggingface/diffusers](https://github.com/huggingface/diffusers) | 🟢 Open |
 <!-- ISSUES:HARD:END -->
 
